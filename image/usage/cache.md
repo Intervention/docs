@@ -30,7 +30,7 @@ Simply pass every manipulation operation as a Closure callback:
 ```php
 // pass calls to image cache
 $img = Image::cache(function($image) {
-    return $image->make('public/foo.jpg')->resize(300, 200)->greyscale();
+    $image->make('public/foo.jpg')->resize(300, 200)->greyscale();
 });
 ```
 

@@ -27,7 +27,7 @@ Mixed - based on ```returnObj``` parameter.
 ```php
 // create a cached image and set a lifetime and return as object instead of string
 $img = Image::cache(function($image) {
-   return $image->make('public/foo.jpg')->resize(300, 200)->greyscale();
+   $image->make('public/foo.jpg')->resize(300, 200)->greyscale();
 }, 10, true);
 ```
 
