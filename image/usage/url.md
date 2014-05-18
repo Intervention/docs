@@ -1,0 +1,69 @@
+# URL based image manipulation
+
+Within a Laravel application it is possible to use the URL to manipulate images dynamically. The manipulated version of the an image will be stored in the cache and will be loaded directly without resource-intensive GD operation.
+
+An image has to be uploaded only once. All manipulations like resizing or cropping will be handled later, when the file is accessed via a HTTP request like this:
+
+> http://yourhost.com/{route-name}/{template-name}/{file-name}
+
+## Installation
+
+Follow this few easy steps to hook the URL based image manipulation directly into your Laravel application. Once enabled the package generates a dynamic route, which forms the URL mentioned above and uses the caching system specified by your Laravel configuration.
+
+### 1. Install packages
+To use URL based image manipulation make sure you have installed the latest versions of both **intervention/image** and **intervention/imagecache** and of course a Laravel application. Refer to the [installation guide](/getting_started/installation) of intervention/image and [intervention/imagecache](/usage/cache), if you need help on this. After installation follow a few easy steps to [integrate Intervention Image into Laravel](/getting_started/laravel).
+
+### 2. Publish package configuration
+If everything is installed and set **import the configuration file** of the caching package, by running the following artisan command:
+
+> $ php artisan config:publish intervention/imagecache
+
+You will find the configuration file in your app directory and you may edit it to your needs:
+
+```/app/config/packages/intervention/imagecache/imagecache.php```
+
+### 3. Name the Route
+
+By default URL based image manipulation is disabled. To enable it, you just need to **define a name for the route** in the configuration file mentioned above. This handle will define the first part of the URI. In this example we name the route ```imagecache```.
+
+> 'route' => 'imagecache'
+
+Essentialy that's it. You may now list all registered routes by entering the following artisan command and check if the new route is listed correctly.
+
+> $ php artisan route
+
+### 4. Define source directories
+
+Now you have to let PHP know, where to search for images. You may define as many directories as you like. For example define all the upload directories of your application. The application will search the directories for the <code>filename</code> submited in the route.
+
+> 'paths' => array(
+>     'storage/uploads/images',
+>     public_path('img')
+> )
+
+It makes sense to save image files with a unique filename in these directories. Otherwise the package will return the image that is found first.
+
+### 5. Templates
+
+The templates are defined as Closure callbacks, where you can define any manipulation operation. The configuration file comes with three different basic callbacks.
+
+- **small** (120x90 pixel)
+- **medium** (240x180 pixel)
+- **large** (480x360 pixel)
+
+The key of the **templates** array in the configuration file will define the template name as the second part of the url.
+
+You may always access the original image file, too.
+
+- **original**
+
+Feel free to adapt the configuration to your needs. Especially the templates are just basic examples and they are not limited to resizing. You can use every method of ```intervention/image``` available.
+
+
+### 5. Image Cache Lifetime
+
+Once the route is accessed the first time, the image will be searched, edited according to the template and stored in the cache. So the next time you access the URL, all the GD manipulation is bypassed and the file will come directly from the cache.
+
+You can define a custom lifetime, to define the **minutes** until the next image is created.
+
+> 'lifetime' => 43200

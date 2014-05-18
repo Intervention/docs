@@ -1,6 +1,9 @@
 # Intervention Image
 
-Intervention Image is an open source **image handling and manipulation** wrapper library using PHP GD library.
+Intervention Image is an open source **PHP image handling and manipulation** library. It provides an easier and expressive way to create, edit, and compose images and supports currently the two most common image processing libraries.
+
+- **GD Library**
+- **Imagick**
 
 The class is written to make PHP image manipulating more easier and expressive. No matter if you want to create image thumbnails, watermarks or format large image files Intervention Image helps you to manage every task in an easy way with as little lines of code as possible.
 
@@ -10,8 +13,8 @@ The library follows the FIG standard **PSR-2** to ensure a high level of interop
 
 The library requires at least **PHP version 5.3** and comes with **Laravel 4 Facades and Service Providers** to simplify the optional framework integration.
 
-* [Read the installation guide](installation)
-* [Read about Laravel 4 integration](laravel)
+<a href="/getting_started/installation" class="button">Read the installation guide</a><a href="/getting_started/laravel" class="button">Read about Laravel 4 integration</a>
+
 
 ## Basic Examples
 
