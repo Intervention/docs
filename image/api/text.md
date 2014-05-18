@@ -37,7 +37,7 @@ Set font size in pixels. **Font sizing is only available if a font file is set a
 
 > public Intervention\Image\Font color(mixed $color)
 
-Set color of the text in one of the available <a href="<?php echo route('doc', array('/formats/color')) ?>">color formats</a>. Default: #000000
+Set color of the text in one of the available [color formats](/getting_started/formats). Default: #000000
 
 #### Horizontal Alignment
 

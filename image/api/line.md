@@ -21,7 +21,20 @@ X-Coordinate of the end point.
 Y-Coordinate of the end point.
 
 ### callback
-Define appearance of line. See examples below.
+Define appearance of line. See examples below. Use the following methods to pass details.
+
+#### color
+
+> public Intervention\Image\AbstractShape color(string $color)
+
+Set color of the line in one of the available [color formats](/getting_started/formats). Default: #000000
+
+#### width
+
+> public Intervention\Image\AbstractShape width(integer $width)
+
+Set the width of the line in pixels. **Option is not available with GD driver** Default: 1
+
 
 ## Return Values
 Instance of Intervention\Image\Image
