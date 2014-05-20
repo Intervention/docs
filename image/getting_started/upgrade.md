@@ -21,7 +21,7 @@ In order to keep your application compatible, you need to keep in mind the follo
 * Changed arguments for [line()](/api/line) method. Now uses callback to define further options.
 * Changed arguments for [rectangle()](/api/rectangle) method. Now uses callback to define further options.
 
-### Dropped methods
+### Removed methods
 
 * ```open()``` no longer exists, use [make()](/api/make) instead.
 * ```raw()``` no longer exists, use [make()](/api/make) instead.
