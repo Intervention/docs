@@ -31,6 +31,7 @@ $img->blur(15);
 
 ## See also
 
+- [sharpen](/api/sharpen)
 - [pixelate](/api/pixelate)
 - [brightness](/api/brightness)
 - [contrast](/api/contrast)
