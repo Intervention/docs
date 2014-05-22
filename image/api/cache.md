@@ -33,4 +33,4 @@ $img = Image::cache(function($image) {
 
 
 ## See also
-- [Further Information about Image Caching](/usage/cache)
+- [Further Information about Image Caching](/use/cache)
