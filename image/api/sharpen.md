@@ -9,7 +9,7 @@ Sharpen current image with a certain **amount**. Use values between ```0``` and 
 ## Parameters
 
 ### amount (optional)
-The amount of the sharpening strength. Method accepts values between 0 and 100. Default: 30
+The amount of the sharpening strength. Method accepts values between 0 and 100. Default: 10
 
 ## Return Values
 Instance of Intervention\Image\Image
