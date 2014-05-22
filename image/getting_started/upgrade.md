@@ -2,6 +2,11 @@
 
 Although I tried to keep the update to Version 2.x of Intervention Image as compatible as possible, some things have changed. Some methods became redundant, other things have been simplified and therefore had to change. 
 
+## New Features
+
+- Additional support of PHP's Imagick extension
+- Image Filter architecture
+
 In order to keep your application compatible, you need to keep in mind the following changes, when upgrading.
 
 ### New Methods

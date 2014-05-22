@@ -17,6 +17,19 @@ The new height of the image
 ### callback (optional)
 
 Closure callback defining constraints on the resize. It's possible to contraint the **aspect-ratio** and/or a unwanted **upsizing** of the image. See examples below.
+
+#### aspectRatio
+
+> public Intervention\Image\Size aspectRatio()
+
+Constraint the current aspect-ratio if the image.
+
+#### upsize
+
+> public Intervention\Image\Size upsize()
+
+Keep image from being upsized.
+
     
 ## Return Values
 Resized instance of Intervention\Image

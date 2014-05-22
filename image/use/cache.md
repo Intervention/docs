@@ -11,7 +11,7 @@ The principle is simple. Once the caching package is installed, you are able to 
 
 Require the caching package via Composer in your composer.json.
 
-> "intervention/imagecache": "dev-master"
+> "intervention/imagecache": "2.*"
 
 Run Composer to install or update the new requirement.
 
