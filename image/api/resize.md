@@ -60,7 +60,7 @@ $img->resize(null, 200, function ($constraint) {
 });
 
 // prevent possible upsizing
-$img->resize(null, 400, true, function ($constraint) {
+$img->resize(null, 400, function ($constraint) {
     $constraint->aspectRatio();
     $constraint->upsize();
 });
