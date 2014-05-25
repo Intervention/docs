@@ -15,7 +15,7 @@ Width of the new image resource.
 Height of the new image resource.
 
 ### bgcolor (optional)
-Optional Background-color of the image resource. Pass a color in one of the supported [color formats](/getting_startet/formats) or just leave it blank to get a transparent background.
+Optional Background-color of the image resource. Pass a color in one of the supported [color formats](/getting_started/formats) or just leave it blank to get a transparent background.
 
 
 ## Return Values
