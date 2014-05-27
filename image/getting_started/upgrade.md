@@ -5,13 +5,20 @@ Although I tried to keep the update to Version 2.x of Intervention Image as comp
 ## New Features
 
 - Additional support of PHP's Imagick extension
+- Sharpening Images
+- Auto Orientating
 - Image Filter architecture
 
 In order to keep your application compatible, you need to keep in mind the following changes, when upgrading.
 
 ### New Methods
 
+* [width()](/api/width) retrieves current width of image.
+* [height()](/api/height) retrieves current height of image.
+* [sharpen()](/api/sharpen) applies sharpen filter to image.
+* [orientate()](/api/orientate) auto-adjusts image orientation.
 * [filter()](/api/filter) applies filter to an image.
+* [getCore()](/api/getCore) get resource of image driver (Imagick object or GD resource).
 
 ### Changed Method names
 
@@ -31,3 +38,8 @@ In order to keep your application compatible, you need to keep in mind the follo
 * ```open()``` no longer exists, use [make()](/api/make) instead.
 * ```raw()``` no longer exists, use [make()](/api/make) instead.
 * ```grayscale()``` no longer exists, use [greyscale()](/api/greyscale) instead.
+
+### Removed properties
+
+* ```width``` property has been removed, use [width()](/api/width) instead.
+* ```height``` property has been removed, use [height()](/api/height) instead.
