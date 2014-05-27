@@ -36,5 +36,5 @@ $img->save('public/bar.jpg');
 
 See also
 
-[make](/api/make)
-[open](/api/open)
+- [make](/api/make)
+- [open](/api/open)
