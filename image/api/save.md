@@ -4,7 +4,7 @@
 
 > public Intervention\Image\Image save( [string $path, [int $quality]] )
 
-Save the current state of the image object in filesystem. Define optionally a certain **path** where the image should be saved. The image type will be defined by the file extension. For example if you pass ```foo.jpg``` the image will be saved as a JPG file. You can also optionally set the **quality** of the image file as second parameter.
+Save the current state of the image object in filesystem. Define optionally a certain **path** where the image should be saved. The image type will be defined by the file extension. For example if you pass ```foo.jpg``` the image will be saved as a JPG file. If there is no extension available, the library will first try to use the MIME type of the image to define the encoding, if this also fails the image will be encoded as JPEG. You can also optionally set the **quality** of the image file as second parameter.
 
 
 ## Parameters
