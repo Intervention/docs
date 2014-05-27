@@ -37,4 +37,4 @@ $img->save('public/bar.jpg');
 See also
 
 - [make](/api/make)
-- [open](/api/open)
+- [encode](/api/encode)
