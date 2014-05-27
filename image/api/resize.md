@@ -32,7 +32,7 @@ Keep image from being upsized.
 
     
 ## Return Values
-Resized instance of Intervention\Image
+Instance of Intervention\Image\Image
 
 ## Examples
 

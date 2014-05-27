@@ -26,3 +26,7 @@ $data = Image::make('public/foo.jpg')->exif();
 // read model of the camera
 $name = Image::make('public/foo.jpg')->exif('Model');
 ```
+
+## See also
+
+- [orientate](/api/orientate)
