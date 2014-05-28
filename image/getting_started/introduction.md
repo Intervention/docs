@@ -6,7 +6,7 @@ The class is written to make PHP image manipulating more easier and expressive. 
 
 The library follows the FIG standard **PSR-2** to ensure a high level of interoperability between shared PHP code and is fully **unit-tested**.
 
-<p class="note">Intervention Image 2.0 is out now. Supporting both GD and Imagick library. <a href="/getting_started/upgrade">Read more</a></p>
+<p class="note"><strong>Intervention Image 2.0 is out now. Supporting both GD and Imagick library. <a href="/getting_started/upgrade">Read more</a></strong></p>
 
 ## Getting started
 
