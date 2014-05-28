@@ -2,7 +2,7 @@
 
 ## Description
 
-> public Intervention\Image\Image fit(int $width, int $height)
+> public Intervention\Image\Image fit( int $width, [int $height] )
 
 Combine cropping and resizing to format image in a smart way. The method will find the best fitting aspect ratio of your given **width and height** on the current image automatically, cut it out and resize it to the given dimension.
 
@@ -12,8 +12,8 @@ Combine cropping and resizing to format image in a smart way. The method will fi
 ### width
 The width the image will be resized to after cropping out the best fitting aspect ratio.
 
-### height
-The height the image will be resized to after cropping out the best fitting aspect ratio.
+### height (optional)
+The height the image will be resized to after cropping out the best fitting aspect ratio. If no height is given, method will use same value as width.
 
 
 
