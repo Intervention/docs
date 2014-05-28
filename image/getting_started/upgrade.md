@@ -43,3 +43,7 @@ In order to keep your application compatible, you need to keep in mind the follo
 
 * ```width``` property has been removed, use [width()](/api/width) instead.
 * ```height``` property has been removed, use [height()](/api/height) instead.
+
+### Other
+
+To keep naming consistent the filename of the configuration file for *intervention/imagecache* was renamed from `config/imagecache.php` to `config/config.php`.
