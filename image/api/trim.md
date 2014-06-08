@@ -6,6 +6,8 @@
 
 Trim away image space in given color. Define an optional **base** to pick a color at a certain position and borders that should be trimmed **away**. You can also set an optional **tolerance** level, to trim similar colors and add a **feathering** border around the trimed image.
 
+<div class="note">Note: Resource intensive with GD driver. Use with care.</div>
+
 ## Parameters
 
 ### base
