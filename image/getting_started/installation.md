@@ -1,5 +1,19 @@
 # Installation
 
+## System Requirements
+
+Intervention Image requires the following components to work correctly.
+
+- PHP >= 5.3
+- Fileinfo Extension
+
+And one of the following image libraries.
+
+- GD Library (>=2.0)
+- Imagick PHP extension (>=6.3.8)
+
+## Composer Installation
+
 The best way to install Intervention Image is quickly and easily with [Composer](http://getcomposer.org/).
 
 Require the package via Composer in your ```composer.json```.
