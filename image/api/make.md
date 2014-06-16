@@ -18,6 +18,7 @@ Source to create an image from. The method responds to the following input types
 - **resource** - PHP resource of type gd.
 - **object** - Imagick instance
 - **object** - Intervention\Image\Image instance
+- **object** - Symfony\Component\HttpFoundation\File\UploadedFile instance
 
 ## Return Values
 Instance of Intervention\Image\Image
@@ -38,6 +39,9 @@ $img = Image::make($resource);
 
 // create a new image directly from an url
 $img = Image::make('http://example.com/example.jpg');
+
+// create a new image directly from Laravel file upload
+$img = Image::make(Input::file('photo'));
 ```
 
 ## See also
