@@ -2,17 +2,27 @@
 
 These notes cover the major enhancements and changes for every release. For a full change list view the [Commits on Github](https://github.com/Intervention/image/commits/master).
 
+## 2.0.5
+
+- Bugfixes
+
 ## 2.0.4
 
 - Added possibility to init directly from Laravel upload object.
 
+## 2.0.3
+
+- Bugfixes
+
 ## 2.0.2
 
 - [Auto Orientating](/api/orientate)
+- Bugfixes
 
 ## 2.0.1
 
 - [Sharpening Images](/api/sharpen)
+- Bugfixes
 
 ## 2.0.0
 
