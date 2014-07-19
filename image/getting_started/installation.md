@@ -30,7 +30,44 @@ or
 
 > $ php composer.phar update
 
-Now you are able to require the ```vendor/autoload.php``` file to PSR-0 autoload the library.
+Now you are able to require the new ```vendor/autoload.php``` file to PSR-0 autoload the library.
+
+The next step is to decide, if you want to integrate Intervention Image into the **Laravel framework**. If you don't want to use the library with Laravel, just skip the following step and continue with the description of **native usage**.
+
+---
+
+
+## Laravel Usage
+
+Intervention Image has optional support for [Laravel 4](http://laravel.com) and comes with a **Service Provider and Facades** for easy integration. The `vendor/autoload.php` is included by Laravel, so you don't have to require it again. Just see the instructions below.
+
+After you have installed Intervention Image, open your Laravel config file ```config/app.php``` and add the following lines.
+
+In the ```$providers``` array add the service providers for this package.
+
+> 'Intervention\Image\ImageServiceProvider'
+
+Add the facade of this package to the ```$aliases``` array.
+
+> 'Image' => 'Intervention\Image\Facades\Image'
+
+Now the Image Class will be auto-loaded by Laravel.
+
+
+### Configuration
+
+By default Intervention Image uses PHP's GD library extension to process all images. If you want to switch to Imagick, you can pull a configuration file into your application by running the following artisan command.
+
+> $ php artisan config:publish intervention/image
+
+This command copies a configuration file to ```app/config/packages/intervention/image/config.php```, where you can alter the driver settings for you application locally.
+
+
+---
+
+## Native Usage
+
+Intervention Image doesn't require Laravel or any other framework at all. If you want to use it as is, you just have to require the composer autoload file to instatiate image objects as shown in the following example.
 
 #### Example
 
@@ -44,53 +81,3 @@ use Intervention\Image\ImageManagerStatic as Image;
 // and you are ready to go ...
 $image = Image::make('public/foo.jpg')->resize(300, 200);
 ```
-
-The Image class also has optional **Laravel 4 support**. The integration into the framework is done in seconds.
-
-Read more about [Laravel 4 integration](laravel).
-
----
-
-# Configuration
-
-Currently Intervention Image supports two Image processing extensions.
-
-- **GD**
-- **Imagick**
-
-Make sure you have one of these installed in your PHP environment, before you start.
-
-### Driver Settings
-
-The configuration file is ```src/config/config.php```. In this file you can define which library should be used by all commands.
-
-> 'driver' => 'imagick'
-
-#### Laravel Configuration
-
-If you're using Laravel, you can pull a configuration file into your application by running the following artisan command.
-
-> $ php artisan config:publish intervention/image
-
-This command copies a configuration file to ```app/config/packages/intervention/image/config.php```, where you can alter the driver settings for you application locally.
-
-### Memory Settings
-
-Image manipulation in PHP is a very memory consuming task. Since most tasks in PHP don't exhaust default memory limits, you have to make sure your PHP configuration is able to allocate enough memory to handle large images.
-
-The following php.ini directives are important.
-
-#### memory_limit
-
-Sets a maximum amount of memory in bytes that a script is allowed to allocate. Resizing a 3000 x 2000 pixel image to 300 x 200 may take up to 32MB memory.
-
-#### upload_max_filesize
-
-If you're planing to upload large images, verify that this setting for the maximum size of file uploads fits your needs.
-
-Read more in the official PHP documentation for:
-
-* [memory_limit](http://www.php.net/manual/en/ini.core.php#ini.memory-limit)
-* [upload_max_filesize](http://www.php.net/manual/en/ini.core.php#ini.upload-max-filesize)
-
-It's possible to set these directives in your [php.ini](http://www.php.net/manual/en/ini.core.php) or at runtime with [ini_set](http://www.php.net/manual/en/function.ini-set.php).
