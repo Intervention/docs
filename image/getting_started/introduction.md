@@ -6,13 +6,11 @@ The class is written to make PHP image manipulating more easier and expressive. 
 
 The library follows the FIG standard **PSR-2** to ensure a high level of interoperability between shared PHP code and is fully **unit-tested**.
 
-<p class="note"><strong>Intervention Image 2.0 is out now. Supporting both GD and Imagick library. <a href="/getting_started/upgrade">Read more</a></strong></p>
-
 ## Getting started
 
 The library requires at least **PHP version 5.3** and comes with **Laravel 4 Facades and Service Providers** to simplify the optional framework integration.
 
-<p><a href="/getting_started/installation" class="button">Read the installation guide</a><a href="/getting_started/laravel" class="button">Read about Laravel 4 integration</a></p>
+<p><a href="/getting_started/installation" class="button">Read the installation guide</a><a href="/getting_started/installation#laravel" class="button">Read about Laravel 4 integration</a></p>
 
 ---
 

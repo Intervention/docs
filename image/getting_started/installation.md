@@ -36,7 +36,7 @@ The next step is to decide, if you want to integrate Intervention Image into the
 
 ---
 
-
+<a name="laravel"></a>
 ## Laravel Usage
 
 Intervention Image has optional support for [Laravel 4](http://laravel.com) and comes with a **Service Provider and Facades** for easy integration. The `vendor/autoload.php` is included by Laravel, so you don't have to require it again. Just see the instructions below.
