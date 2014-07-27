@@ -38,4 +38,4 @@ Do the same in one line of code.
 $img = Image::make('public/foo.jpg')->resize(320, 240)->insert('public/watermark.png');
 ```
 
-To view more code examples read the documentation on the individual methods make, resize, insert and save.
+To view more code examples read the documentation on the individual methods [make](/api/make), [resize](/api/resize), [insert](/api/insert), [save](/api/save) and the introduction to [basic usage](/use/basics).
