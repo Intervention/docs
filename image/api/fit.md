@@ -2,9 +2,9 @@
 
 ## Description
 
-> public Intervention\Image\Image fit( int $width, [int $height] )
+> public Intervention\Image\Image fit( int $width, [ [int $height], [Closure $callback] ])
 
-Combine cropping and resizing to format image in a smart way. The method will find the best fitting aspect ratio of your given **width and height** on the current image automatically, cut it out and resize it to the given dimension.
+Combine cropping and resizing to format image in a smart way. The method will find the best fitting aspect ratio of your given **width and height** on the current image automatically, cut it out and resize it to the given dimension. You may pass an optional Closure **callback** as third parameter, to prevent possible upsizing.
 
 
 ## Parameters
@@ -15,6 +15,14 @@ The width the image will be resized to after cropping out the best fitting aspec
 ### height (optional)
 The height the image will be resized to after cropping out the best fitting aspect ratio. If no height is given, method will use same value as width.
 
+### callback (optional)
+Closure callback defining constraint to prevent unwanted **upsizing** of the image. See examples below.
+
+#### upsize
+
+> public Intervention\Image\Size upsize()
+
+Keep image from being upsized.
 
 
 
@@ -32,6 +40,11 @@ $img->fit(600, 360);
 
 // crop the best fitting 1:1 ratio (200x200) and resize to 200x200 pixel
 $img->fit(200);
+
+// add callback functionality to retain maximal original image size
+$img->fit(800, 600, function ($constraint) {
+    $constraint->upsize();
+});
 ```
 
 

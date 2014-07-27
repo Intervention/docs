@@ -67,3 +67,4 @@ $img->circle(70, 150, 100, function ($draw) {
 - [line](/api/line)
 - [rectangle](/api/rectangle)
 - [ellipse](/api/ellipse)
+- [polygon](/api/polygon)

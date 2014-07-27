@@ -41,3 +41,4 @@ $img->pixel('#ff0000', 64, 64);
 - [rectangle](/api/rectangle)
 - [circle](/api/circle)
 - [ellipse](/api/ellipse)
+- [polygon](/api/polygon)

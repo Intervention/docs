@@ -63,3 +63,4 @@ $img->line(10, 10, 195, 195, function ($draw) {
 - [rectangle](/api/rectangle)
 - [circle](/api/circle)
 - [ellipse](/api/ellipse)
+- [polygon](/api/polygon)

@@ -67,3 +67,4 @@ $img->rectangle(5, 5, 195, 195, function ($draw) {
 - [line](/api/line)
 - [circle](/api/circle)
 - [ellipse](/api/ellipse)
+- [polygon](/api/polygon)

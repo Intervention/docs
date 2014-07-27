@@ -68,3 +68,4 @@ $img->ellipse(150, 200, 300, 200, function ($draw) {
 - [line](/api/line)
 - [rectangle](/api/rectangle)
 - [circle](/api/circle)
+- [polygon](/api/polygon)
