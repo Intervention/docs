@@ -6,7 +6,9 @@
 
 Save the current state of the image object in filesystem. Define optionally a certain **path** where the image should be saved. You can also optionally set the **quality** of the image file as second parameter.
 
-The image type will be defined by the file extension. For example if you pass ```foo.jpg``` the image will be saved as a JPG file. If there is no extension available, the library will first try to use the MIME type of the image to define the encoding, if this also fails the image will be encoded as JPEG. 
+The image type will be defined by the file extension. For example if you pass ```foo.jpg``` the image will be saved as a JPG file. If there is no extension available, the library will first try to use the MIME type of the image to define the encoding, if this also fails the image will be encoded as JPEG.
+
+Furthermore the image will always be saved in RGB color mode without an embeded color profile.
 
 
 ## Parameters
