@@ -2,6 +2,11 @@
 
 These notes cover the major enhancements and changes for every release. For a full change list view the [Commits on Github](https://github.com/Intervention/image/commits/master).
 
+### 2.0.7 - August 10th, 2014
+
+- Removed Illuminate dependencies.
+- Changed signature of ImageManager constructor. Pass configuration as array.
+
 ### 2.0.6 - July 28th, 2014
 
 - Added option to prevent upsizing in [fit()](/api/fit) method.

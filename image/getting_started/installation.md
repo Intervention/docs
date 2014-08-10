@@ -76,7 +76,28 @@ Intervention Image doesn't require Laravel or any other framework at all. If you
 require 'vendor/autoload.php';
 
 // import the Intervention Image Manager Class
+use Intervention\Image\ImageManager;
+
+// create an image manager instance with favored driver
+$manager = new ImageManager(array('driver' => 'imagick'));
+
+// to finally create image instances
+$image = $manager->make('public/foo.jpg')->resize(300, 200);
+```
+
+You might also use the static version of ImageManager as shown in the example below.
+
+#### Static Example
+
+```php
+// include composer autoload
+require 'vendor/autoload.php';
+
+// import the Intervention Image Manager Class
 use Intervention\Image\ImageManagerStatic as Image;
+
+// configure with favored image driver (gd by default)
+Image::configure(array('driver' => 'imagick'));
 
 // and you are ready to go ...
 $image = Image::make('public/foo.jpg')->resize(300, 200);
