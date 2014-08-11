@@ -19,6 +19,7 @@ This command copies a configuration file to ```app/config/packages/intervention/
 
 Currently you can choose between `gd` and `imagick` support.
 
+--- 
 
 ## Native Configuration
 

@@ -2,7 +2,8 @@
 
 Responsible for content according to german law § 5 TMG:
 
-**Oliver Vogel Mediendesign**  
+**Oliver Vogel**  
+**Mediendesign**  
 Legienstraße 16  
 24103 Kiel  
 Germany  

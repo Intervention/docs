@@ -2,7 +2,7 @@
 
 The easiest way to return an image directly to the users browser, is to output the [response()](/api/response) method. It will automatically send HTTP headers according to the currently image and output encoded image data.
 
-#### Sending HTTP response
+#### Sending a HTTP response
 
 ```php
 // create a new image resource
@@ -12,7 +12,7 @@ $img = Image::canvas(800, 600, '#ff0000');
 echo $img->response('jpg', 70);
 ```
 
-#### Sending HTTP response manually
+#### Sending HTTP responses manually
 
 ```php
 // create a new image resource
@@ -32,7 +32,7 @@ Read more about HTTP responses in the [api documentation](/api/response).
 
 In Laravel applications it is almost the same thing, apart from that you can return the method's output directly from your route.
 
-#### Sending HTTP response in Laravel
+#### Sending a HTTP response in Laravel
 
 ```php
 Route::get('/', function()
@@ -43,7 +43,7 @@ Route::get('/', function()
 });
 ```
 
-#### Attaching images to HTTP responses in Laravel Applications
+#### Attaching images to a HTTP response in Laravel Applications
 
 ```php
 Route::get('/', function()
