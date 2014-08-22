@@ -2,9 +2,33 @@
 
 The readable image formats depend on the choosen driver (GD or Imagick) and your local configuration. As writable output Intervention Image currently supports the following major format.
 
-- JPEG Format
-- PNG Format
-- GIF Format
+<table>
+    <tr>
+        <th>&nbsp;</th>
+        <th>JPEG</th>
+        <th>PNG</th>
+        <th>GIF</th>
+        <th>TIF</th>
+        <th>BMP</th>
+    </tr>
+    <tr>
+        <th>GD</th>
+        <th>Read/Write</th>
+        <th>Read/Write</th>
+        <th>Read/Write</th>
+        <th>-</th>
+        <th>-</th>
+    </tr>
+    <tr>
+        <th>Imagick</th>
+        <th>Read/Write</th>
+        <th>Read/Write</th>
+        <th>Read/Write</th>
+        <th>Read/Write</th>
+        <th>Read/Write</th>
+    </tr>
+</table>
+
 
 See documentation of [make](/api/make) method to see how to read image formats from different sources.
 
