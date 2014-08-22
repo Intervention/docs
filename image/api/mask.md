@@ -15,9 +15,11 @@ The image source that will be applied as alpha mask. The method can handle the f
 - **string** - Path of the image in filesystem.
 - **string** - URL of an image (```allow_url_fopen``` must be enabled).
 - **string** - Binary image data.
+- **string** - Data-URL encoded image data.
 - **resource** - PHP resource of type gd.
 - **object** - Imagick instance
 - **object** - Intervention\Image\Image instance
+- **object** - Symfony\Component\HttpFoundation\File\UploadedFile instance
 
 
 ### mask_with_alpha (optional)

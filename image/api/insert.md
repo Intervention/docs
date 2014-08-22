@@ -13,10 +13,13 @@ Paste a given **image source** over the current image with an optional **positio
 The image source that will inserted on top of the current image. The method can handle the following types of input:
 
 - **string** - Path of the image in filesystem.
+- **string** - URL of an image (```allow_url_fopen``` must be enabled).
 - **string** - Binary image data.
+- **string** - Data-URL encoded image data.
 - **resource** - PHP resource of type gd.
-- **object** - Instance of Imagick
-- **object** - Instance of Intervention\Image\Image
+- **object** - Imagick instance
+- **object** - Intervention\Image\Image instance
+- **object** - Symfony\Component\HttpFoundation\File\UploadedFile instance
 
 ### position (optional)
 Set a position where image will be inserted. For example if you are setting the anchor to ```bottom-left``` the image will be positioned at the bottom-left border of the current image. The position of the new image will be calculated relatively to this location.
