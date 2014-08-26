@@ -3,7 +3,7 @@
 - [Reading Images](#reading)
 - [Creating Images](#creating)
 - [Editing Images](#editing)
-- [Saving Images](#saving)
+- [Outputting Images](#output)
 
 ---
 
@@ -20,12 +20,14 @@ $img = Image::make('foo/bar/baz.jpg');
 
 The method is highly variable. It not only reads filepaths but also the following input formats.
 
-- Path of the image in filesystem
-- URL of an image
-- Binary image data
-- PHP resource of type gd
+- Path of the image in filesystem.
+- URL of an image (```allow_url_fopen``` must be enabled).
+- Binary image data.
+- Data-URL encoded image data.
+- PHP resource of type gd.
 - Imagick instance
 - Intervention\Image\Image instance
+- Symfony\Component\HttpFoundation\File\UploadedFile instance
 
 See more examples to initiate image instances in the [api documentation](/api/make).
 
@@ -110,10 +112,10 @@ See the **api documentation** for the whole list of commands.
 
 ---
 
-<a name="saving"></a>
-## Saving Images
+<a name="output"></a>
+## Outputting Images
 
-To save the current state of the image object in filesystem just call [save()](/api/save). Define optionally a certain path where the image should be saved. The image type will be defined by the file extension. For example if you pass foo.jpg the image will be saved as a JPG file. You can also optionally set the quality of the image file as second parameter.
+To create actually image data from an image object, you can access methods like [encode](/api/encode) to create encoded image data or use [save](/api/encode) to write an image into the filesystem. It's also possible to send a HTTP [response](/api/response) with current image data.
 
 #### Save an image in filesystem
 
@@ -121,4 +123,10 @@ To save the current state of the image object in filesystem just call [save()](/
 Image::make('foo.jpg')->resize(300, 200)->save('bar.jpg');
 ```
 
-See more examples to save an image in the [api documentation](/api/save).
+Read more about [image HTTP responses](/use/http).
+
+### Outputting Image data
+
+- [encode()](/api/encode)
+- [save()](/api/save)
+- [response()](/api/response)

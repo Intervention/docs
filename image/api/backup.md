@@ -4,7 +4,7 @@
 
 > public Intervention\Image\Image backup()
 
-Backups current image state as fallback for [reset method](/api/reset). Overwrites older states on every call.
+Backups current image state as fallback for [reset method](/api/reset). Overwrites older state on every call.
 
 
 ## Parameters

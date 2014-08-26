@@ -1,6 +1,6 @@
 # Image Formats
 
-The readable image formats depend on the choosen driver (GD or Imagick) and your local configuration. As writable output Intervention Image currently supports the following major format.
+The readable image formats depend on the choosen driver (GD or Imagick) and your local configuration. By default Intervention Image currently supports the following major formats.
 
 <table>
     <tr>
@@ -30,7 +30,7 @@ The readable image formats depend on the choosen driver (GD or Imagick) and your
 </table>
 
 
-See documentation of [make](/api/make) method to see how to read image formats from different sources.
+See documentation of [make](/api/make) method to see how to read image formats from different sources, respectively [encode](/api/encode) and [save](/api/save) to learn how to output images.
 
 ---
 
