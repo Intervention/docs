@@ -7,23 +7,7 @@ Currently Intervention Image supports two Image processing extensions.
 
 Make sure you have one of these installed in your PHP environment, before you start.
 
-## Laravel Configuration
-
-If you're using Laravel, you can pull a configuration file into your application by running the following artisan command.
-
-> $ php artisan config:publish intervention/image
-
-This command copies a configuration file to ```app/config/packages/intervention/image/config.php```, where you can alter the driver settings for you application locally and define which library should be used by all commands.
-
-> 'driver' => 'imagick'
-
-Currently you can choose between `gd` and `imagick` support.
-
---- 
-
-## Native Configuration
-
-If you are not using Laravel or any other framework, you're able to pass the configuration as an array directly into the ImageManager.
+You're able to configure Intervention Image to use one of these libraries for all its operations. Just pass the configuration as an array directly into the ImageManager.
 
 #### Example
 
@@ -62,6 +46,29 @@ $image = Image::make('public/foo.jpg')->resize(300, 200);
 
 
 --- 
+
+
+
+
+
+
+
+## Configuration in Laravel
+
+If you're using Laravel, you can pull a configuration file into your application by running the following artisan command.
+
+> $ php artisan config:publish intervention/image
+
+This command copies a configuration file to ```app/config/packages/intervention/image/config.php```, where you can alter the driver settings for you application locally and define which library should be used by all commands.
+
+> 'driver' => 'imagick'
+
+Currently you can choose between `gd` and `imagick` support.
+
+--- 
+
+
+
 
 ## Memory Settings
 
