@@ -36,7 +36,7 @@ Instance of Intervention\Image\Image
 $img = Image::canvas(800, 600, '#ddd');
 
 // define polygon points
-$values = array(
+$points = array(
     40,  50,  // Point 1 (x, y)
     20,  240, // Point 2 (x, y)
     60,  60,  // Point 3 (x, y)
