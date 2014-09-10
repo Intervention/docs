@@ -2,6 +2,12 @@
 
 These notes cover the major enhancements and changes for every release. For a full change list view the [Commits on Github](https://github.com/Intervention/image/commits/master).
 
+### 2.0.9 - September 8th, 2014
+
+- Added optional constraint parameter to widen and heighten
+- Added optional position argument to fit command
+- Performance improvements
+
 ### 2.0.8 - August 25th, 2014
 
 - Added support of writing BMP format with Imagick driver.
