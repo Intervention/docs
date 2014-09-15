@@ -4,7 +4,7 @@
 
 > public Intervention\Image\Image text( string $text, [integer $x, [integer $y, [Closure $callback]]] )
 
-Write a **text** string to the current image at an optional **x,y position**. You can define more details like font-size, font-file and alignment via a **callback** as the fourth parameter.
+Write a **text** string to the current image at an optional **x,y basepoint position**. You can define more details like font-size, font-file and alignment via a **callback** as the fourth parameter.
 
 
 ## Parameters
@@ -43,13 +43,13 @@ Set color of the text in one of the available [color formats](/getting_started/f
 
 > public Intervention\Image\Font align(string $align)
 
-Set horizontal text alignment. Possible values are left, right and center. Default: left
+Set horizontal text alignment relative to given basepoint. Possible values are left, right and center. Default: left
 
 #### Vertical Alignment
 
 > public Intervention\Image\Font valign(string $valign)
 
-Set vertical text alignment. Possible values are top, bottom and middle. Default: bottom
+Set vertical text alignment relative to given basepoint. Possible values are top, bottom and middle. Default: bottom
 
 #### Rotation Angle
 

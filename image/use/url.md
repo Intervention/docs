@@ -51,6 +51,19 @@ The templates are defined as Closure callbacks, where you can define any manipul
 - **medium** (240x180 pixel)
 - **large** (480x360 pixel)
 
+> 'templates' => array(
+>     'small' => function($image) { 
+>         return $image->fit(120, 90);
+>     },
+>     'medium' => function($image) {
+>         return $image->fit(240, 180);
+>     },
+>     'large' => function($image) {
+>         return $image->fit(480, 360);
+>     }
+> )
+
+
 The key of the **templates** array in the configuration file will define the template name as the second part of the url.
 
 You may always access the original image file, too.
@@ -58,6 +71,18 @@ You may always access the original image file, too.
 - **original**
 
 Feel free to adapt the configuration to your needs. Especially the templates are just basic examples and they are not limited to resizing. You can use every method of ```intervention/image``` available.
+
+#### Custom image quality and format
+
+By default all images requested via URL based image manipulation are generated in the same format as the original with default quality. You can specify custom output settings by passing encoded data in the template.
+
+> 'templates' => array(
+>     'small_low_quality_jpg' => function($image) { 
+>         return $image->fit(120, 90)->encode('jpg', 20);
+>     },
+> )
+
+
 
 
 ### 5. Image Cache Lifetime
