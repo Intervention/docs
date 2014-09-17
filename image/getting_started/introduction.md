@@ -26,7 +26,7 @@ $img->resize(320, 240);
 // and insert a watermark for example
 $img->insert('public/watermark.png');
 
-// finally we save the image as a new image
+// finally we save the image as a new file
 $img->save('public/bar.jpg');
 ```
 
