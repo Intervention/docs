@@ -2,13 +2,14 @@
 
 ## Description
 
-> public Intervention\Image\Image reset()
+> public Intervention\Image\Image reset( [string $name] )
 
-Resets all of the modifications to a state saved previously by [backup](/api/backup).
+Resets all of the modifications to a state saved previously by [backup](/api/backup) under an optional **name**.
 
 ## Parameters
 
-none
+### name (optional)
+The name of the backup in memory. Default: *default*
 
 
 ## Return Values
@@ -28,7 +29,7 @@ $img->resize(320, 240);
 $img->invert();
 $img->save('public/small.jpg');
 
-// reset image (return to backuped state)
+// reset image (return to backup state)
 $img->reset();
 
 // perform other modifications

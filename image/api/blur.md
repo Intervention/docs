@@ -16,7 +16,7 @@ The amount of the blur strength. Use values between 0 and 100. Default: 1
 ## Return Values
 Instance of Intervention\Image\Image
 
-Examples
+## Examples
 
 ```php
 // create new Intervention Image
