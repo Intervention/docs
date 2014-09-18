@@ -87,7 +87,7 @@ $image = Image::make('public/foo.jpg')->resize(300, 200);
 <a name="laravel"></a>
 ## Integration in Laravel 
 
-Intervention Image has optional support for [Laravel 4](http://laravel.com) and comes with a **Service Provider and Facades** for easy integration. The `vendor/autoload.php` is included by Laravel, so you don't have to require or autoload manually. Just see the instructions below.
+Intervention Image has optional support for [Laravel](http://laravel.com) and comes with a **Service Provider and Facades** for easy integration. The `vendor/autoload.php` is included by Laravel, so you don't have to require or autoload manually. Just see the instructions below.
 
 After you have installed Intervention Image, open your Laravel config file ```config/app.php``` and add the following lines.
 
