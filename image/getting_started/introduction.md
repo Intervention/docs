@@ -8,9 +8,9 @@ The library follows the FIG standard **PSR-2** to ensure a high level of interop
 
 ## Getting started
 
-The library requires at least **PHP version 5.3** and comes with **Laravel 4 Facades and Service Providers** to simplify the optional framework integration.
+The library requires at least **PHP version 5.3** and comes with **Laravel Facades and Service Providers** to simplify the optional framework integration.
 
-<p><a href="/getting_started/installation" class="button">Read the installation guide</a><a href="/getting_started/installation#laravel" class="button">Read about Laravel 4 integration</a></p>
+<p><a href="/getting_started/installation" class="button">Read the installation guide</a><a href="/getting_started/installation#laravel" class="button">Read about Laravel integration</a></p>
 
 ---
 
@@ -26,7 +26,7 @@ $img->resize(320, 240);
 // and insert a watermark for example
 $img->insert('public/watermark.png');
 
-// finally we save the image as a new image
+// finally we save the image as a new file
 $img->save('public/bar.jpg');
 ```
 
