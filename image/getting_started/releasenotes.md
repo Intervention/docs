@@ -2,6 +2,11 @@
 
 These notes cover the major enhancements and changes for every release. For a full change list view the [Commits on Github](https://github.com/Intervention/image/commits/master).
 
+### 2.0.10 - September 22nd, 2014
+
+- Named [backup](/api/backup) instances by
+- Bugfixes
+
 ### 2.0.9 - September 8th, 2014
 
 - Added optional constraint parameter to widen and heighten
