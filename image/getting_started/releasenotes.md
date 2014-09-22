@@ -4,7 +4,7 @@ These notes cover the major enhancements and changes for every release. For a fu
 
 ### 2.0.10 - September 22nd, 2014
 
-- Named [backup](/api/backup) instances by
+- Named [backup](/api/backup) instances
 - Bugfixes
 
 ### 2.0.9 - September 8th, 2014
