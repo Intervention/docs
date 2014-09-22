@@ -11,9 +11,11 @@ Encodes the current image in given **format** and given **image quality**.
 ### format (optional)
 Define the encoding format from one of the following formats:
 
-- **jpg** — return jpeg encoded image data
-- **png** — return png encoded image data
-- **gif** — return gif encoded image data
+- **jpg** — return JPEG encoded image data
+- **png** — return Portable Network Graphics (PNG) encoded image data
+- **gif** — return Graphics Interchange Format (GIF) encoded image data
+- **tif** — return Tagged Image File Format (TIFF) encoded image data
+- **bmp** — return Bitmap (BMP) encoded image data
 - **data-url** — encode current image data in data URI scheme (RFC 2397)
 
 By default the method will return data encoded in the type of the current image. If no image type is defined yet, data will be encoded as jpeg.

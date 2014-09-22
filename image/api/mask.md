@@ -19,7 +19,7 @@ The image source that will be applied as alpha mask. The method can handle the f
 - **resource** - PHP resource of type gd.
 - **object** - Imagick instance
 - **object** - Intervention\Image\Image instance
-- **object** - Symfony\Component\HttpFoundation\File\UploadedFile instance
+- **object** - SplFileInfo instance
 
 
 ### mask_with_alpha (optional)

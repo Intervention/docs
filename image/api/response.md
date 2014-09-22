@@ -11,9 +11,11 @@ Sends HTTP response with current image in given **format** and **quality**.
 ### format (optional)
 Define the encoding format from one of the following formats:
 
-- **jpg** — return jpeg encoded image data
-- **png** — return png encoded image data
-- **gif** — return gif encoded image data
+- **jpg** — return JPEG encoded image data
+- **png** — return Portable Network Graphics (PNG) encoded image data
+- **gif** — return Graphics Interchange Format (GIF) encoded image data
+- **tif** — return Tagged Image File Format (TIFF) encoded image data
+- **bmp** — return Bitmap (BMP) encoded image data
 
 By default the response data will be encoded in the type of the current image. If no image type is defined yet, method will return jpeg encoded data.
 

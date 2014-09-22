@@ -19,7 +19,7 @@ The image source that will inserted on top of the current image. The method can 
 - **resource** - PHP resource of type gd.
 - **object** - Imagick instance
 - **object** - Intervention\Image\Image instance
-- **object** - Symfony\Component\HttpFoundation\File\UploadedFile instance
+- **object** - SplFileInfo instance
 
 ### position (optional)
 Set a position where image will be inserted. For example if you are setting the anchor to ```bottom-left``` the image will be positioned at the bottom-left border of the current image. The position of the new image will be calculated relatively to this location.
