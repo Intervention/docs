@@ -21,7 +21,7 @@ or
 
 > $ php composer.phar update
 
-Now you are able to require the vendor/autoload.php file to PSR-0 autoload the library.
+Now you are able to require the vendor/autoload.php file to PSR-4 autoload the library.
 
 ## Usage
 

@@ -2,6 +2,10 @@
 
 These notes cover the major enhancements and changes for every release. For a full change list view the [Commits on Github](https://github.com/Intervention/image/commits/master).
 
+### 2.0.11 - September 29th, 2014
+
+- PSR-4 autoloading
+
 ### 2.0.10 - September 22nd, 2014
 
 - Named [backup](/api/backup) instances

@@ -30,7 +30,7 @@ or
 
 > $ php composer.phar update
 
-Now you are able to require the new ```vendor/autoload.php``` file to PSR-0 autoload the library.
+Now you are able to require the new ```vendor/autoload.php``` file to PSR-4 autoload the library.
 
 The next step is to decide, if you want to integrate Intervention Image into the **Laravel framework**. If you want to use the library with Laravel, just skip the following step and continue with the description of [Laravel Integration](#laravel).
 
