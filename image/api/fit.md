@@ -29,11 +29,11 @@ Set a position where cutout will be positioned. By default the best fitting aspe
 
 The possible values are:
 
-- top-left (default)
+- top-left
 - top
 - top-right
 - left
-- center
+- center (default)
 - right
 - bottom-left
 - bottom
