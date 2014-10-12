@@ -7,9 +7,9 @@ Intervention Image requires the following components to work correctly.
 - PHP >= 5.3
 - Fileinfo Extension
 
-And one of the following image libraries.
+And **one of** the following image libraries.
 
-- GD Library (>=2.0)
+- GD Library (>=2.0) &hellip; **or** &hellip;
 - Imagick PHP extension (>=6.3.8)
 
 ---
