@@ -18,19 +18,11 @@ And **one of** the following image libraries.
 
 The best way to install Intervention Image is quickly and easily with [Composer](http://getcomposer.org/).
 
-Require the package via Composer in your ```composer.json```.
+To install the most recent version via Composer, run the following command.
 
-> "intervention/image": "2.*"
+> $ php composer.phar require intervention/image
 
-Run Composer to install or update the new requirement.
-
-> $ php composer.phar install
-
-or
-
-> $ php composer.phar update
-
-Now you are able to require the new ```vendor/autoload.php``` file to PSR-4 autoload the library.
+Now your ```composer.json``` has been updated automatically and you're able to require the just created ```vendor/autoload.php``` file to PSR-4 autoload the library.
 
 The next step is to decide, if you want to integrate Intervention Image into the **Laravel framework**. If you want to use the library with Laravel, just skip the following step and continue with the description of [Laravel Integration](#laravel).
 
