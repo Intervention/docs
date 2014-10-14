@@ -18,7 +18,7 @@ And **one of** the following image libraries.
 
 The best way to install Intervention Image is quickly and easily with [Composer](http://getcomposer.org/).
 
-To install the most recent version via Composer, run the following command.
+To install the most recent version, run the following command.
 
 > $ php composer.phar require intervention/image
 
@@ -27,11 +27,7 @@ Now your ```composer.json``` has been updated automatically and you're able to r
 The next step is to decide, if you want to integrate Intervention Image into the **Laravel framework**. If you want to use the library with Laravel, just skip the following step and continue with the description of [Laravel Integration](#laravel).
 
 
-
-
 ---
-
-
 
 
 ## Usage
