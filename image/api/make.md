@@ -20,7 +20,7 @@ Source to create an image from. The method responds to the following input types
 - **resource** - PHP resource of type gd.
 - **object** - Imagick instance
 - **object** - Intervention\Image\Image instance
-- **object** - SplFileInfo instance
+- **object** - SplFileInfo instance (To handle Laravel file uploads via Symfony\Component\HttpFoundation\File\UploadedFile)
 
 ## Return Values
 Instance of Intervention\Image\Image

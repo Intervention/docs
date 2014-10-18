@@ -2,7 +2,7 @@
 
 ## Description
 
-> public Intervention\Image\Image fill(mixed $filling, [integer $x, integer $y])
+> public Intervention\Image\ImageManager fill(mixed $filling, [integer $x, integer $y])
 
 Fill current image with given **color** or another **image** used as tile for filling. Pass optional **x, y coordinates** to start at a certain point.
 
@@ -22,7 +22,7 @@ The fill color or image pattern. Pass a **color** as one of the different [color
 - **resource** - PHP resource of type gd.
 - **object** - Imagick instance
 - **object** - Intervention\Image\Image instance
-- **object** - SplFileInfo instance
+- **object** - SplFileInfo instance (To handle Laravel file uploads via Symfony\Component\HttpFoundation\File\UploadedFile)
 
 ### x (optional)
 Starting point on x-axis for the filling.

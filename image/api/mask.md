@@ -20,7 +20,7 @@ The image source that will be applied as alpha mask. The method can handle the f
 - **resource** - PHP resource of type gd.
 - **object** - Imagick instance
 - **object** - Intervention\Image\Image instance
-- **object** - SplFileInfo instance
+- **object** - SplFileInfo instance (To handle Laravel file uploads via Symfony\Component\HttpFoundation\File\UploadedFile)
 
 
 ### mask_with_alpha (optional)

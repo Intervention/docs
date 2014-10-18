@@ -2,7 +2,7 @@
 
 ## Description
 
-> public Intervention\Image\Image canvas(integer $width, integer $height, [mixed $bgcolor])
+> public Intervention\Image\ImageManager canvas(integer $width, integer $height, [mixed $bgcolor])
 
 Factory method to create a new empty image instance with given **width and height**. You can define a **background-color** optionally. By default the canvas background is transparent.
 

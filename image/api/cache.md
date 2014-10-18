@@ -2,7 +2,7 @@
 
 ## Description
 
-> public Intervention\Image\Image cache( Closure $callback, [int $lifetime, [bool $returnObj]] )
+> public Intervention\Image\ImageManager cache( Closure $callback, [int $lifetime, [bool $returnObj]] )
 
 Method to create a new cached image instance from a **Closure callback**. Pass a **lifetime** in minutes for the callback and decide whether you want to get an Intervention Image instance as **return value** or just receive the image stream.
 
