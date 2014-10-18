@@ -25,10 +25,10 @@ The method is highly variable. It not only reads filepaths but also the followin
 - Binary image data.
 - Data-URL encoded image data.
 - Base64 encoded image data.
-- PHP resource of type gd.
-- Imagick instance
+- PHP resource of type gd. (when using GD driver)
+- Imagick instance (when using Imagick driver)
 - Intervention\Image\Image instance
-- Symfony\Component\HttpFoundation\File\UploadedFile instance
+- SplFileInfo instance (To handle Laravel file uploads via Symfony\Component\HttpFoundation\File\UploadedFile)
 
 See more examples to initiate image instances in the [api documentation](/api/make).
 

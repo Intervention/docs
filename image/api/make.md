@@ -17,8 +17,8 @@ Source to create an image from. The method responds to the following input types
 - **string** - Binary image data.
 - **string** - Data-URL encoded image data.
 - **string** - Base64 encoded image data.
-- **resource** - PHP resource of type gd.
-- **object** - Imagick instance
+- **resource** - PHP resource of type gd. (when using GD driver)
+- **object** - Imagick instance (when using Imagick driver)
 - **object** - Intervention\Image\Image instance
 - **object** - SplFileInfo instance (To handle Laravel file uploads via Symfony\Component\HttpFoundation\File\UploadedFile)
 
