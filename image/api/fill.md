@@ -18,6 +18,7 @@ The fill color or image pattern. Pass a **color** as one of the different [color
 - **string** - URL of an image (```allow_url_fopen``` must be enabled).
 - **string** - Binary image data.
 - **string** - Data-URL encoded image data.
+- **string** - Base64 encoded image data.
 - **resource** - PHP resource of type gd.
 - **object** - Imagick instance
 - **object** - Intervention\Image\Image instance

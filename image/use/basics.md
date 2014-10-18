@@ -24,6 +24,7 @@ The method is highly variable. It not only reads filepaths but also the followin
 - URL of an image (```allow_url_fopen``` must be enabled).
 - Binary image data.
 - Data-URL encoded image data.
+- Base64 encoded image data.
 - PHP resource of type gd.
 - Imagick instance
 - Intervention\Image\Image instance
