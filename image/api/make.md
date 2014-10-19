@@ -2,9 +2,9 @@
 
 ## Description
 
-> public static Intervention\Image\Image make( mixed $source )
+> public static Intervention\Image\ImageManager make( mixed $source )
 
-Universal factory method to create a new image instance from **source**, which can be a filepath, a GD image resource, an Imagick object or a binary image data.
+Universal factory method to create a new image instance from **source**. The method is highly variable to read all the input types listed below.
 
 ## Parameters
 
@@ -31,13 +31,11 @@ Instance of Intervention\Image\Image
 // create a new image resource from file
 $img = Image::make('public/foo.jpg');
 
-// create a new image resource from binary data
-$data = file_get_contents('public/foo.jpg');
-$img = Image::make($data);
+// or create a new image resource from binary data
+$img = Image::make(file_get_contents('public/foo.jpg'));
 
 // create a new image from gd resource
-$resource = imagecreatefromjpeg('public/foo.jpg');
-$img = Image::make($resource);
+$img = Image::make(imagecreatefromjpeg('public/foo.jpg'));
 
 // create a new image directly from an url
 $img = Image::make('http://example.com/example.jpg');
