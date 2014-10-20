@@ -2,6 +2,13 @@
 
 These notes cover the major enhancements and changes for every release. For a full change list view the [Commits on Github](https://github.com/Intervention/image/commits/master).
 
+### 2.0.12 - October 20th, 2014
+
+- Improved phpDoc to make development easier with IDE.
+- Added method [filesize()](/api/filesize).
+- Added support to decode directly from base64 encoded data.
+
+
 ### 2.0.11 - September 29th, 2014
 
 - PSR-4 autoloading
