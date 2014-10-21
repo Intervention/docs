@@ -6,6 +6,8 @@
 
 Set the **opacity** in percent of the current image ranging from 100% for opaque and 0% for full transparency.
 
+**Note: Performance intensive on larger images. Use with care.**
+
 ## Parameters
 
 ### transparency
