@@ -24,7 +24,7 @@ By default the method will return data encoded in the type of the current image.
 Define the quality of the encoded image optionally. Data ranging from 0 (poor quality, small file) to 100 (best quality, big file). Quality is only applied if you're encoding JPG format since PNG compression is lossless and does not affect image quality. Default: 90.
 
 ## Return Values
-Instance of Intervention\Image\Image
+Instance of Intervention\Image\Image with attached encoded image data. Instance can be casted to string to access data.
 
 ## Examples
 
