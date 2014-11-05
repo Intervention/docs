@@ -10,6 +10,8 @@ The readable image formats depend on the choosen driver (GD or Imagick) and your
         <th>GIF</th>
         <th>TIF</th>
         <th>BMP</th>
+        <th>ICO</th>
+        <th>PSD</th>
     </tr>
     <tr>
         <th>GD</th>
@@ -18,9 +20,13 @@ The readable image formats depend on the choosen driver (GD or Imagick) and your
         <th>Read/Write</th>
         <th>-</th>
         <th>-</th>
+        <th>-</th>
+        <th>-</th>
     </tr>
     <tr>
         <th>Imagick</th>
+        <th>Read/Write</th>
+        <th>Read/Write</th>
         <th>Read/Write</th>
         <th>Read/Write</th>
         <th>Read/Write</th>
