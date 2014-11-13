@@ -10,7 +10,7 @@ Intervention Image requires the following components to work correctly.
 And **one of** the following image libraries.
 
 - GD Library (>=2.0) &hellip; **or** &hellip;
-- Imagick PHP extension (>=6.3.8)
+- Imagick PHP extension (>=6.5.7)
 
 ---
 
