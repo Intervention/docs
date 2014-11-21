@@ -2,15 +2,15 @@
 
 ## Description
 
-> public Intervention\Image\Image circle( integer $radius, integer $x, integer $y, [Closure $callback] )
+> public Intervention\Image\Image circle( integer $diameter, integer $x, integer $y, [Closure $callback] )
 
-Draw a circle at given **x, y, coordinates** with given **radius**. You can define the **appearance** of the circle by an optional closure callback.
+Draw a circle at given **x, y, coordinates** with given **diameter**. You can define the **appearance** of the circle by an optional closure callback.
 
 
 ## Parameters
 
-### radius
-radius of the circle in pixels.
+### diameter
+Diameter of the circle in pixels.
 
 ### pos_x
 x-coordinate of the center.
