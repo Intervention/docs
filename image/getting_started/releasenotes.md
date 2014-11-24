@@ -2,6 +2,10 @@
 
 These notes cover the major enhancements and changes for every release. For a full change list view the [Commits on Github](https://github.com/Intervention/image/commits/master).
 
+### 2.0.14 - November 24th, 2014
+
+- Bugfixes
+
 ### 2.0.13 - November 10th, 2014
 
 - Added support of writing ICO format with Imagick driver.
