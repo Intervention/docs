@@ -116,7 +116,7 @@ See the **api documentation** for the whole list of commands.
 <a name="output"></a>
 ## Outputting Images
 
-To create actually image data from an image object, you can access methods like [encode](/api/encode) to create encoded image data or use [save](/api/encode) to write an image into the filesystem. It's also possible to send a HTTP [response](/api/response) with current image data.
+To create actually image data from an image object, you can access methods like [encode](/api/encode) to create encoded image data or use [save](/api/save) to write an image into the filesystem. It's also possible to send a HTTP [response](/api/response) with current image data.
 
 #### Save an image in filesystem
 
