@@ -2,6 +2,11 @@
 
 These notes cover the major enhancements and changes for every release. For a full change list view the [Commits on Github](https://github.com/Intervention/image/commits/master).
 
+### 2.0.15 - December 15th, 2014
+
+- Exception is thrown, when trying to initialize an image from an URL but file is not found.
+- Bugfixes
+
 ### 2.0.14 - November 24th, 2014
 
 - Bugfixes
