@@ -2,7 +2,7 @@
 
 ## Description
 
-> public Intervention\Image\Image response( [string $format, [integer $quality]] )
+> public Intervention\Image\Image response([string $format, [integer $quality]])
 
 Sends HTTP response with current image in given **format** and **quality**.
 

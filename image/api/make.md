@@ -2,7 +2,7 @@
 
 ## Description
 
-> public static Intervention\Image\ImageManager make( mixed $source )
+> public static Intervention\Image\ImageManager make(mixed $source)
 
 Universal factory method to create a new image instance from **source**. The method is highly variable to read all the input types listed below.
 

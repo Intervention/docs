@@ -2,7 +2,7 @@
 
 ## Description
 
-> public Intervention\Image\Image text( string $text, [integer $x, [integer $y, [Closure $callback]]] )
+> public Intervention\Image\Image text(string $text, [integer $x, [integer $y, [Closure $callback]]])
 
 Write a **text** string to the current image at an optional **x,y basepoint position**. You can define more details like font-size, font-file and alignment via a **callback** as the fourth parameter.
 

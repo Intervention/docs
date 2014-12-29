@@ -2,7 +2,7 @@
 
 ## Description
 
-> public Intervention\Image\Image width ()
+> public Intervention\Image\Image width()
 
 Returns the width in pixels of the current image.
 

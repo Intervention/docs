@@ -2,7 +2,7 @@
 
 ## Description
 
-> public Intervention\Image\Image height ()
+> public Intervention\Image\Image height()
 
 Returns the height in pixels of the current image.
 

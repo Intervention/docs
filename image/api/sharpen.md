@@ -2,7 +2,7 @@
 
 ## Description
 
-> public Intervention\Image\Image sharpen( [integer $amount] )
+> public Intervention\Image\Image sharpen([integer $amount])
 
 Sharpen current image with an optional **amount**. Use values between ```0``` and ```100```.
 

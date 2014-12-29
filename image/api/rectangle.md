@@ -2,7 +2,7 @@
 
 ## Description
 
-> public Intervention\Image\Image rectangle( int $x1, int $y1, int $x2, int $y2, [Closure $callback])
+> public Intervention\Image\Image rectangle(int $x1, int $y1, int $x2, int $y2, [Closure $callback])
 
 Draw a colored rectangle on current image with top-left corner on **x,y point 1** and bottom-right corner at **x,y point 2**. Define the overall appearance of the shape by passing a Closure **callback** as an optional parameter.
 

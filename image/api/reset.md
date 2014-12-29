@@ -2,7 +2,7 @@
 
 ## Description
 
-> public Intervention\Image\Image reset( [string $name] )
+> public Intervention\Image\Image reset([string $name])
 
 Resets all of the modifications to a state saved previously by [backup](/api/backup) under an optional **name**.
 

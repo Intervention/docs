@@ -2,7 +2,7 @@
 
 ## Description
 
-> public Intervention\Image\Image mask( mixed $source, [bool $mask_with_alpha] )
+> public Intervention\Image\Image mask(mixed $source, [bool $mask_with_alpha])
 
 Apply a given **image source** as alpha mask to the current image to change current opacity. Mask will be resized to the current image size. By default a greyscale version of the mask is converted to alpha values, but you can set **mask_with_alpha** to apply the actual alpha channel. Any transparency values of the current image will be maintained. 
 

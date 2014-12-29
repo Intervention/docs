@@ -2,7 +2,7 @@
 
 ## Description
 
-> public Intervention\Image\Image line( int $x1, int $y1, int $x2, int $y2, [Closure $callback] )
+> public Intervention\Image\Image line(int $x1, int $y1, int $x2, int $y2, [Closure $callback])
 
 Draw a line from **x,y point 1** to **x,y point 2** on current image. Define **color and/or width** of line in an optional Closure callback.
 

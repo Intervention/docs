@@ -2,7 +2,7 @@
 
 ## Description
 
-> public Intervention\Image\Image save( [string $path, [int $quality]] )
+> public Intervention\Image\Image save([string $path, [int $quality]])
 
 Save the current state of the image object in filesystem. Define optionally a certain **path** where the image should be saved. You can also optionally set the **quality** of the image file as second parameter.
 

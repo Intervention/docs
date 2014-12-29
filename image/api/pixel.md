@@ -2,7 +2,7 @@
 
 ## Description
 
-> public Intervention\Image\Image pixel( mixed $color, integer $x, integer $y )
+> public Intervention\Image\Image pixel(mixed $color, integer $x, integer $y)
 
 Draw a single pixel in given **color** on **x, y position**.
 

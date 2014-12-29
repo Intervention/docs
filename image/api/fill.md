@@ -2,7 +2,7 @@
 
 ## Description
 
-> public Intervention\Image\ImageManager fill(mixed $filling, [integer $x, integer $y])
+> public Intervention\Image\Image fill(mixed $filling, [integer $x, integer $y])
 
 Fill current image with given **color** or another **image** used as tile for filling. Pass optional **x, y coordinates** to start at a certain point.
 

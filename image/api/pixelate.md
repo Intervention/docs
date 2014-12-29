@@ -2,7 +2,7 @@
 
 ## Description
 
-> public Intervention\Image\Image pixelate( integer $size )
+> public Intervention\Image\Image pixelate(integer $size)
 
 Applies a pixelation effect to the current image with a given **size** of pixels.
 

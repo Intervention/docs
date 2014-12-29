@@ -2,7 +2,7 @@
 
 ## Description
 
-> public Intervention\Image\Image widen ( integer $width, [Closure $callback] )
+> public Intervention\Image\Image widen(integer $width, [Closure $callback])
 
 Resizes the current image to new **width**, constraining aspect ratio. Pass an optional Closure **callback** as third parameter, to apply additional constraints like preventing possible upsizing.
 

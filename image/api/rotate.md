@@ -2,7 +2,7 @@
 
 ## Description
 
-> public Intervention\Image\Image rotate( float $angle, [string $bgcolor] )
+> public Intervention\Image\Image rotate(float $angle, [string $bgcolor])
 
 Rotate the current image counter-clockwise by a given **angle**. Optionally define a **background color** for the uncovered zone after the rotation.
 

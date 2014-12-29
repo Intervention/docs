@@ -2,7 +2,7 @@
 
 ## Description
 
-> public Intervention\Image\Image pickColor( int $x, int $y, [string $format] )
+> public Intervention\Image\Image pickColor(int $x, int $y, [string $format])
 
 Pick a color at **point x, y** out of current image and return in optional given **format**.
 
