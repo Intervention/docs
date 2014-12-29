@@ -107,6 +107,7 @@ Take a look at some of the methods in the following list.
 - [height()](/api/height)
 - [mime()](/api/mime)
 - [exif()](/api/exif)
+- [iptc()](/api/iptc)
 
 
 See the **api documentation** for the whole list of commands.
