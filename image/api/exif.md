@@ -29,4 +29,5 @@ $name = Image::make('public/foo.jpg')->exif('Model');
 
 ## See also
 
+- [iptc](/api/iptc)
 - [orientate](/api/orientate)
