@@ -4,7 +4,7 @@
 
 > public Intervention\Image\Image mime()
 
-Read MIME Type of current image instance, if it's already set.
+Read MIME Type of current image instance, if it's already defined.
 
 ## Parameters
 
