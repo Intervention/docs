@@ -2,6 +2,10 @@
 
 These notes cover the major enhancements and changes for every release. For a full change list view the [Commits on Github](https://github.com/Intervention/image/commits/master).
 
+### 2.0.17 - January 5th, 2015
+
+- Added method [iptc()](/api/iptc).
+
 ### 2.0.16 - December 22nd, 2014
 
 - Bugfixes
