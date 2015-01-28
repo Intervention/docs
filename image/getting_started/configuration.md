@@ -57,9 +57,15 @@ $image = Image::make('public/foo.jpg')->resize(300, 200);
 
 If you're using Laravel, you can pull a configuration file into your application by running the following artisan command.
 
+#### Publish configuration in Laravel 5
+
+> $ php artisan vendor:publish
+
+#### Publish configuration in Laravel 4
+
 > $ php artisan config:publish intervention/image
 
-This command copies a configuration file to ```app/config/packages/intervention/image/config.php```, where you can alter the driver settings for you application locally and define which library should be used by all commands.
+In Laravel 5 applications the configuration file is copied to ```config/image.php```, in older Laravel 4 applications you will find the file at ```app/config/packages/intervention/image/config.php```. With this copy you can alter the image driver settings for you application locally and define which library should be used by all commands..
 
 > 'driver' => 'imagick'
 

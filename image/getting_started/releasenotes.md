@@ -2,6 +2,11 @@
 
 These notes cover the major enhancements and changes for every release. For a full change list view the [Commits on Github](https://github.com/Intervention/image/commits/master).
 
+### 2.1.0 - January 28th, 2015
+
+- Support for Laravel 5
+- Bugfixes
+
 ### 2.0.17 - January 5th, 2015
 
 - Added method [iptc()](/api/iptc).
