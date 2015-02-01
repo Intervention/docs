@@ -8,6 +8,6 @@ Legienstraße 16
 24103 Kiel  
 Germany  
 
-[info@olivervogel.net](mailto:info@olivervogel.net)
+[info@olivervogel.com](mailto:info@olivervogel.com)
 
-[http://olivervogel.net](http://olivervogel.net)
+[http://olivervogel.com](http://olivervogel.com)
