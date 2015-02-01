@@ -6,20 +6,11 @@ The caching library uses the [Illuminate/Cache](https://github.com/illuminate/ca
 
 The principle is simple. Once the caching package is installed, you are able to call the static cache method. Every method call to the Intervention Image class is captured and checked by the caching interface. If this particular sequence of operations already have taken place, the data will be loaded directly from the cache instead of a resource-intensive GD operation.
 
-
 ## Installation
 
-Require the caching package via Composer in your composer.json.
+Require the caching package via Composer by running the following command:
 
-> "intervention/imagecache": "2.*"
-
-Run Composer to install or update the new requirement.
-
-> $ php composer.phar install
-
-or
-
-> $ php composer.phar update
+> $ php composer.phar require intervention/imagecache
 
 Now you are able to require the vendor/autoload.php file to PSR-4 autoload the library.
 
