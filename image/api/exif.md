@@ -4,7 +4,7 @@
 
 > public Intervention\Image\Image exif([string $key])
 
-Read Exif meta data from current image.
+Read Exif meta data from current image. Image object must be instantiated from file path.
 
 **Note: PHP must be compiled in with ```--enable-exif``` to use this method. Windows users must also have the ```mbstring``` extension enabled.**
 
