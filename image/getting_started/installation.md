@@ -96,7 +96,7 @@ By default Intervention Image uses PHP's GD library extension to process all ima
 
 #### Publish configuration in Laravel 5
 
-> $ php artisan vendor:publish
+> $ php artisan vendor:publish --provider="Intervention\Image\ImageServiceProviderLaravel5"
 
 
 #### Publish configuration in Laravel 4
