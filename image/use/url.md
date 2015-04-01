@@ -43,6 +43,8 @@ Now you have to let PHP know, where to search for images. You may define as many
 
 It makes sense to save image files with a unique filename in these directories. Otherwise the package will return the image that is found first.
 
+**Note: For security reasons the route only accepts filenames consisting of the following characters a-z, A-Z, 0-9, - (minus), _ (underscore), / (slash) and . (dot).**
+
 ### 5. Templates
 
 The templates are defined as Closure callbacks, where you can define any manipulation operation. The configuration file comes with three different basic callbacks.
