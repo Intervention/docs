@@ -47,43 +47,67 @@ It makes sense to save image files with a unique filename in these directories. 
 
 ### 5. Templates
 
-The templates are defined as Closure callbacks, where you can define any manipulation operation. The configuration file comes with three different basic callbacks.
+The templates are defined as names of [filter classes](/use/filters), where you can define any manipulation operation. The configuration file comes with three different basic callbacks.
 
 - **small** (120x90 pixel)
 - **medium** (240x180 pixel)
 - **large** (480x360 pixel)
 
+Feel free to adapt the configuration to your needs. Especially the templates are just basic examples and they are not limited to resizing. You can use every method of ```intervention/image``` available.
+
 > 'templates' => array(
->     'small' => function($image) { 
->         return $image->fit(120, 90);
->     },
->     'medium' => function($image) {
->         return $image->fit(240, 180);
->     },
->     'large' => function($image) {
->         return $image->fit(480, 360);
->     }
+>     'small' => 'Intervention\Image\Templates\Small',
+>     'medium' => 'Intervention\Image\Templates\Medium',
+>     'large' => 'Intervention\Image\Templates\Large'
 > )
 
-
-The key of the **templates** array in the configuration file will define the template name as the second part of the url.
+The key of the **templates** array in the configuration file will define the template name as the second part of the url. The value defines the name of the applied filter class. 
 
 You may always access the original image file, too.
 
 - **original**
 
-Feel free to adapt the configuration to your needs. Especially the templates are just basic examples and they are not limited to resizing. You can use every method of ```intervention/image``` available.
+#### Filter class example
+
+Take a look at the following example of a template filter class to learn more about [filter classes](/use/filters) and define your own templates anywhere you like.
+
+```php
+<?php
+
+namespace YourApp\Filters;
+
+use Intervention\Image\Image;
+use Intervention\Image\Filters\FilterInterface;
+
+class MyFilter implements FilterInterface
+{
+    public function applyFilter(Image $image)
+    {
+        return $image->fit(120, 90)->greyscale();
+    }
+}
+```
+
+After the class is loaded you can add it to the templates array in your configuration file.
+
+> 'templates' => array(
+>     'small' => 'Intervention\Image\Templates\Small',
+>     'medium' => 'Intervention\Image\Templates\Medium',
+>     'large' => 'Intervention\Image\Templates\Large',
+>     'foo' => 'YourApp\Filters\MyFilter'
+> )
+
 
 #### Custom image quality and format
 
-By default all images requested via URL based image manipulation are generated in the same format as the original with default quality. You can specify custom output settings by passing encoded data in the template.
+By default all images requested via URL based image manipulation are generated in the same format as the original with default quality. You can specify custom output settings by passing encoded data in the template class.
 
-> 'templates' => array(
->     'small_low_quality_jpg' => function($image) { 
->         return $image->fit(120, 90)->encode('jpg', 20);
->     },
-> )
-
+```php
+public function applyFilter(Image $image)
+{
+    return $image->fit(120, 90)->encode('jpg', 20);
+}
+```
 
 
 
