@@ -30,7 +30,7 @@ Instance of Intervention\Image\Image with attached encoded image data. Instance 
 
 ```php
 // encode png image as jpg
-$png = (string) Image::make('public/foo.png')->encode('jpg', 75);
+$jpg = (string) Image::make('public/foo.png')->encode('jpg', 75);
 
 // encode image as data-url
 $data = (string) Image::make('public/bar.png')->encode('data-url');
