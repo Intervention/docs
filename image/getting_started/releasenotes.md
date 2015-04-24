@@ -2,7 +2,7 @@
 
 These notes cover the major enhancements and changes for every release. For a full change list view the [Commits on Github](https://github.com/Intervention/image/commits/master).
 
-### 2.1.4 - April 22nd, 2015
+### 2.2.0 - April 24th, 2015
 
 - Changed internal handling of resizing with Imagick driver
 - Introduced cachable Class Templates for [URL based image manipulation](/use/url)
