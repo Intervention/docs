@@ -2,6 +2,10 @@
 
 These notes cover the major enhancements and changes for every release. For a full change list view the [Commits on Github](https://github.com/Intervention/image/commits/master).
 
+### 2.2.1 - May 11th, 2015
+
+- Added IoC container alias to enable automatic dependency injection
+
 ### 2.2.0 - April 24th, 2015
 
 - Changed internal handling of resizing with Imagick driver
