@@ -14,13 +14,19 @@ Follow this few easy steps to hook the URL based image manipulation directly int
 To use URL based image manipulation make sure you have installed the latest versions of both **intervention/image** and **intervention/imagecache** and of course a Laravel application. Refer to the [installation guide](/getting_started/installation) of intervention/image and [intervention/imagecache](/use/cache), if you need help on this. After installation follow a few easy steps to [integrate Intervention Image into Laravel](/getting_started/laravel).
 
 ### 2. Publish package configuration
-If everything is installed and set **import the configuration file** of the caching package, by running the following artisan command:
+If everything is installed and set **import the configuration file** of the caching package, by running one of the following artisan commands:
 
-> $ php artisan config:publish intervention/imagecache
+#### Publish configuration in Laravel 5
+
+> $ php artisan vendor:publish
+
+#### Publish configuration in Laravel 4
+
+> $ php artisan config:publish intervention/image
 
 You will find the configuration file in your app directory and you may edit it to your needs:
 
-```/app/config/packages/intervention/imagecache/imagecache.php```
+```imagecache.php```
 
 ### 3. Name the Route
 
