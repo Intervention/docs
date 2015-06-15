@@ -2,6 +2,10 @@
 
 These notes cover the major enhancements and changes for every release. For a full change list view the [Commits on Github](https://github.com/Intervention/image/commits/master).
 
+### 2.2.2 June 15th, 2015
+
+- Bugfixes and internal improvements
+
 ### 2.2.1 - May 11th, 2015
 
 - Added IoC container alias to enable automatic dependency injection
