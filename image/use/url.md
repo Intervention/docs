@@ -22,7 +22,7 @@ If everything is installed and set **import the configuration file** of the cach
 
 #### Publish configuration in Laravel 4
 
-> $ php artisan config:publish intervention/image
+> $ php artisan config:publish intervention/imagecache
 
 You will find the configuration file in your app directory and you may edit it to your needs:
 
