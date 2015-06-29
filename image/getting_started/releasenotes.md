@@ -2,6 +2,13 @@
 
 These notes cover the major enhancements and changes for every release. For a full change list view the [Commits on Github](https://github.com/Intervention/image/commits/master).
 
+### 2.3.0 June 29th, 2015
+
+- Changed requirement to PHP >= 5.4
+- Added method [stream()](/api/stream).
+- Added method [psrResponse()](/api/psrResponse).
+- Bugfixes
+
 ### 2.2.2 June 15th, 2015
 
 - Bugfixes and internal improvements
