@@ -2,6 +2,10 @@
 
 These notes cover the major enhancements and changes for every release. For a full change list view the [Commits on Github](https://github.com/Intervention/image/commits/master).
 
+### 2.3.1 July 13th, 2015
+
+- Added ServiceProvider for [Laravel Lumen](http://lumen.laravel.com/)
+
 ### 2.3.0 June 29th, 2015
 
 - Changed requirement to PHP >= 5.4
