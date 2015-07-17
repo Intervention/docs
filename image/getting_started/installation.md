@@ -4,7 +4,7 @@
 
 Intervention Image requires the following components to work correctly.
 
-- PHP >= 5.3
+- PHP >= 5.4
 - Fileinfo Extension
 
 And **one of** the following image libraries.
