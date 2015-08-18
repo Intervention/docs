@@ -8,7 +8,7 @@ The library follows the FIG standard **PSR-2** to ensure a high level of interop
 
 ## Getting started
 
-The library requires at least **PHP version 5.3** and comes with **Laravel Facades and Service Providers** to simplify the optional framework integration.
+The library requires at least **PHP version 5.4** and comes with **Laravel Facades and Service Providers** to simplify the optional framework integration.
 
 <p><a href="/getting_started/installation" class="button">Read the installation guide</a><a href="/getting_started/installation#laravel" class="button">Read about Laravel integration</a></p>
 
