@@ -1,6 +1,6 @@
-# Imprint
+# Legal notice
 
-Responsible for content according to german law § 5 TMG:
+Responsible in compliance with § 5 TMG:
 
 **Oliver Vogel**  
 **Mediendesign**  
