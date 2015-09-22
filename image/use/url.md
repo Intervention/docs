@@ -55,9 +55,9 @@ It makes sense to save image files with a unique filename in these directories. 
 
 The templates are defined as names of [filter classes](/use/filters), where you can define any manipulation operation. The configuration file comes with three different basic callbacks.
 
-- **small** (120x90 pixel)
-- **medium** (240x180 pixel)
-- **large** (480x360 pixel)
+- **small** - 120x90 Pixel
+- **medium** - 240x180 Pixel
+- **large** - 480x360 Pixel
 
 Feel free to adapt the configuration to your needs. Especially the templates are just basic examples and they are not limited to resizing. You can use every method of ```intervention/image``` available.
 
@@ -69,9 +69,16 @@ Feel free to adapt the configuration to your needs. Especially the templates are
 
 The key of the **templates** array in the configuration file will define the template name as the second part of the url. The value defines the name of the applied filter class. 
 
-You may always access the original image file, too.
+#### Accessing the original image file
 
-- **original**
+There are a the following built-in routes, you can use to bypass any template and access the original file directly.
+
+- **original** - Send HTTP response with original image file.
+- **download** - Send HTTP response and forces the browser to download the original image file, instead of displaying it.
+
+Just use the name instead of the template name.
+
+> http://yourhost.com/{route-name}/original/{file-name}
 
 #### Filter class example
 
