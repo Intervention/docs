@@ -4,9 +4,9 @@
 
 > public Intervention\Image\Image orientate()
 
-This method reads the EXIF image profile setting 'Orientation' and performs a rotation on the image to display the image correctly.
+This method reads the EXIF image profile setting 'Orientation' and performs a rotation on the image to display the image correctly. **Image object must be instantiated from file path to read the EXIF data correctly.**
 
-**Note: PHP must be compiled in with ```--enable-exif``` to use this method. Windows users must also have the ```mbstring``` extension enabled.**
+**Note: PHP must be compiled in with ```--enable-exif``` to use this method. Windows users must also have the ```mbstring``` extension enabled. **
 
 ## Parameters
 
