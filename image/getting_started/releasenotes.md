@@ -2,6 +2,10 @@
 
 These notes cover the major enhancements and changes for every release. For a full change list view the [Commits on Github](https://github.com/Intervention/image/commits/master).
 
+### 2.3.3 November 27th
+
+- Minor improvements
+
 ### 2.3.2 August 17th
 
 - Bugfixes
