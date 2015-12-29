@@ -11,7 +11,7 @@ An image has to be uploaded only once. All manipulations like resizing or croppi
 Follow this few easy steps to hook the URL based image manipulation directly into your Laravel application. Once enabled the package generates a dynamic route, which forms the URL mentioned above and uses the caching system specified by your Laravel configuration.
 
 ### 1. Install packages
-To use URL based image manipulation make sure you have installed the latest versions of both **intervention/image** and **intervention/imagecache** and of course a Laravel application. Refer to the [installation guide](/getting_started/installation) of intervention/image and [intervention/imagecache](/use/cache), if you need help on this. After installation follow a few easy steps to [integrate Intervention Image into Laravel](/getting_started/laravel).
+To use URL based image manipulation make sure you have installed the latest versions of both **intervention/image** and **intervention/imagecache** and of course a Laravel application. Refer to the [installation guide](/getting_started/installation) of intervention/image and [intervention/imagecache](/use/cache), if you need help on this. After installation follow a few easy steps to [integrate Intervention Image into Laravel](/getting_started/installation#laravel).
 
 ### 2. Publish package configuration
 If everything is installed and set **import the configuration file** of the caching package, by running one of the following artisan commands:
