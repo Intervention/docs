@@ -81,11 +81,11 @@ After you have installed Intervention Image, open your Laravel config file ```co
 
 In the ```$providers``` array add the service providers for this package.
 
-> 'Intervention\Image\ImageServiceProvider'
+> Intervention\Image\ImageServiceProvider::class
 
 Add the facade of this package to the ```$aliases``` array.
 
-> 'Image' => 'Intervention\Image\Facades\Image'
+> 'Image' => Intervention\Image\Facades\Image::class
 
 Now the Image Class will be auto-loaded by Laravel.
 
