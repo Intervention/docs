@@ -42,4 +42,4 @@ $img->save();
 
 - [limitColors](/api/limitColors)
 - [save](/api/save)
-- [encode](/api/encde)
+- [encode](/api/encode)
