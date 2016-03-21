@@ -4,7 +4,7 @@
     
 > public Intervention\Image\Image resize (integer $width, integer $height, [Closure $callback])
 
-Resizes current image based on given **width** and/or **height**. To contraint the resize command, pass an optional Closure **callback** as third parameter.
+Resizes current image based on given **width** and/or **height**. To constraint the resize command, pass an optional Closure **callback** as third parameter.
     
 ## Parameters
 
@@ -16,7 +16,7 @@ The new height of the image
 
 ### callback (optional)
 
-Closure callback defining constraints on the resize. It's possible to contraint the **aspect-ratio** and/or a unwanted **upsizing** of the image. See examples below.
+Closure callback defining constraints on the resize. It's possible to constraint the **aspect-ratio** and/or a unwanted **upsizing** of the image. See examples below.
 
 #### aspectRatio
 
