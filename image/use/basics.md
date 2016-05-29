@@ -8,6 +8,49 @@
 ---
 
 <a name="reading"></a>
+## Quickstart
+
+#### Example
+
+```php
+// include composer autoload
+require 'vendor/autoload.php';
+
+// import the Intervention Image Manager Class
+use Intervention\Image\ImageManager;
+
+// create an image manager instance with favored driver
+$manager = new ImageManager(array('driver' => 'imagick'));
+
+// to finally create image instances
+$image = $manager->make('public/foo.jpg')->resize(300, 200);
+```
+
+You might also use the static version of ImageManager as shown in the example below.
+
+#### Static Example
+
+```php
+// include composer autoload
+require 'vendor/autoload.php';
+
+// import the Intervention Image Manager Class
+use Intervention\Image\ImageManagerStatic as Image;
+
+// configure with favored image driver (gd by default)
+Image::configure(array('driver' => 'imagick'));
+
+// and you are ready to go ...
+$image = Image::make('public/foo.jpg')->resize(300, 200);
+```
+
+You can read more detailed information about [installation](/getting_started/installation) and [configuration](/getting_started/configuration).
+
+---
+
+
+
+<a name="reading"></a>
 ## Reading Images
 
 Intervention Image makes it super easy to read images. The Library takes away any annoying work, the only thing you have to do is to give a file path to the method [make()](/api/make).
