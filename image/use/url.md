@@ -36,7 +36,7 @@ By default URL based image manipulation is disabled. To enable it, you just need
 
 Essentialy that's it. You may now list all registered routes by entering the following artisan command and check if the new route is listed correctly.
 
-> $ php artisan route
+> $ php artisan route:list
 
 ### 4. Define source directories
 
