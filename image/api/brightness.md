@@ -4,7 +4,7 @@
 
 > public Intervention\Image\Image brightness( integer $level )
 
-Changes the brightness of the current image by the given **level**. Use values between ```-100``` for min. brightness ```0``` for no change and ```+100``` for max. brightness.
+Changes the brightness of the current image by the given **level**. Use values between ```-100``` for min. brightness ```0``` for no change and ```+100``` for max brightness.
 
 
 ## Parameters
