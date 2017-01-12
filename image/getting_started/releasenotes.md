@@ -2,6 +2,12 @@
 
 These notes cover the major enhancements and changes for every release. For a full change list view the [Commits on Github](https://github.com/Intervention/image/commits/master).
 
+### 2.3.9 January 12th 2017
+
+- Laravel 5.4 compatibility
+- Fixed issue when reading image from stream if stream is not seekable
+- Added EXIF support to imagick driver without requiring exif extension
+
 ### 2.3.8 September 1st 2016
 
 - Bugfixes
