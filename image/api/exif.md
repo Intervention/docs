@@ -6,7 +6,9 @@
 
 Read Exif meta data from current image. **Image object must be instantiated from file path to read the EXIF data correctly.**
 
-**Note: PHP must be compiled in with ```--enable-exif``` to use this method. Windows users must also have the ```mbstring``` extension enabled.**
+## Availability
+
+The Imagick driver comes with built-in exif support since version 2.3.9 of this library. Otherwise PHP must be compiled in with ```--enable-exif``` to use this method. Windows users must also have the ```mbstring``` extension enabled. When both the Imagick driver and the extension are available, the extension will be used.
 
 ## Parameters
 
