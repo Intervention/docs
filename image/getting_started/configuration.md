@@ -33,7 +33,7 @@ You might also use the static version of ImageManager as shown in the example be
 // include composer autoload
 require 'vendor/autoload.php';
 
-// import the Intervention Image Manager Class
+// import the Inftervention Image Manager Class
 use Intervention\Image\ImageManagerStatic as Image;
 
 // configure with favored image driver (gd by default)
@@ -96,3 +96,50 @@ Read more in the official PHP documentation for:
 * [upload_max_filesize](http://www.php.net/manual/en/ini.core.php#ini.upload-max-filesize)
 
 It's possible to set these directives in your [php.ini](http://www.php.net/manual/en/ini.core.php) or at runtime with [ini_set](http://www.php.net/manual/en/function.ini-set.php).
+
+---
+
+## Extending
+
+Since version 2.3.10 you're able to extend Intervention Image and let it to use your own driver for all its operations. Your driver has to extend the AbstractDriver. More likely you just want to change to behaviour in the default GD and Imagick drivers. To let Intervention Image use the driver, just pass the driver into configuration array, as shown in the example below.
+
+#### Example
+
+```php
+// include composer autoload
+require 'vendor/autoload.php';
+
+use Intervention\Image\Imagick\Driver as ImagickDriver;
+
+class MyDriver extends ImagickDriver {
+    /**
+     * Executes named command on given image
+     *
+     * @param  Image  $image
+     * @param  string $name
+     * @param  array $arguments
+     * @return \Intervention\Image\Commands\AbstractCommand
+     */
+    public function executeCommand($image, $name, $arguments)
+    {
+        $commandName = $this->getCommandClassName($name);
+        $command = new $commandName($arguments);
+        
+        if ($name === 'exif') {
+            $command->dontPreferExtension();
+        }
+        
+        $command->execute($image);
+
+        return $command;
+    }
+}
+
+// import the Inftervention Image Manager Class
+use Intervention\Image\ImageManagerStatic as Image;
+
+// configure with favored image driver (gd by default)
+Image::configure(array('driver' => new MyDriver()));
+
+// and you are ready to go ...
+$image = Image::make('public/foo.jpg')->resize(300, 200);
