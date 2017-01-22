@@ -101,7 +101,7 @@ It's possible to set these directives in your [php.ini](http://www.php.net/manua
 
 ## Extending
 
-Since version 2.3.10 you're able to extend Intervention Image and let it to use your own driver for all its operations. Your driver has to extend the AbstractDriver. More likely you just want to change to behaviour in the default GD and Imagick drivers. To let Intervention Image use the driver, just pass the driver into configuration array, as shown in the example below.
+Since version 2.3.10 you're able to extend Intervention Image and let it to use your own driver for all its operations. Your driver has to extend the AbstractDriver. More likely you just want to change some behaviour in the default GD and Imagick drivers. To let Intervention Image use the driver, just pass the driver into configuration array, as shown in the example below.
 
 #### Example
 
