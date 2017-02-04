@@ -2,6 +2,15 @@
 
 These notes cover the major enhancements and changes for every release. For a full change list view the [Commits on Github](https://github.com/Intervention/image/commits/master).
 
+### 2.3.11 February 4th 2017
+
+- Added base expection class
+- Fixed bug with constant in newer Imagick versions
+
+### 2.3.10 January 12th 2017
+
+- Laravel Lumen 5.4 compatibility
+
 ### 2.3.9 January 12th 2017
 
 - Laravel 5.4 compatibility
