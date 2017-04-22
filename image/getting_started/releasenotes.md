@@ -2,6 +2,11 @@
 
 These notes cover the major enhancements and changes for every release. For a full change list view the [Commits on Github](https://github.com/Intervention/image/commits/master).
 
+### 2.3.12 April 22nd 2017
+
+- Fixed IDE error
+- Fixed bug when reading long file names
+
 ### 2.3.11 February 4th 2017
 
 - Added base expection class
