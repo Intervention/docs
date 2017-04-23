@@ -2,6 +2,11 @@
 
 These notes cover the major enhancements and changes for every release. For a full change list view the [Commits on Github](https://github.com/Intervention/image/commits/master).
 
+### 2.3.13 April 23rd 2017
+
+- Fixed bug when detecting file names as base64 encoded data
+- Phpdoc fixes 
+
 ### 2.3.12 April 22nd 2017
 
 - Fixed IDE error
