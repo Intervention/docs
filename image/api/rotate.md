@@ -12,7 +12,7 @@ Rotate the current image counter-clockwise by a given **angle**. Optionally defi
 The rotation angle in degrees to rotate the image counter-clockwise.
 
 ### bgcolor (optional)
-A background color for the uncovered zone after the rotation. The background color can be passed in in different [color formats](/getting_started/formats). Default: ```#000000```
+A background color for the uncovered zone after the rotation. The background color can be passed in different [color formats](/getting_started/formats). Default: ```#ffffff```
 
 
 ## Return Values

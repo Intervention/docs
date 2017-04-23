@@ -36,7 +36,7 @@ Determine that the resizing is going to happen in relative mode. Meaning that th
 
 
 ### bgcolor (optional)
-A background color for the new areas of the image. The background color can be passed in in different [color formats](/getting_started/formats). Default: ```#000000```
+A background color for the new areas of the image. The background color can be passed in different [color formats](/getting_started/formats). Default: ```#ffffff```
 
 
 ## Return Values
