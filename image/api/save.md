@@ -29,11 +29,14 @@ Instance of Intervention\Image\Image
 // open and resize an image file
 $img = Image::make('public/foo.jpg')->resize(300, 200);
 
-// save file as png with medium quality
-$img->save('public/bar.png', 60);
+// save file as jpg with medium quality
+$img->save('public/bar.jpg', 60);
 
-// save the same file as jpeg with default quality
-$img->save('public/bar.jpg');
+// save the same file as jpg with default quality
+$img->save('public/baz.jpg');
+
+// save the file in png format
+$img->save('public/bar.png');
 ```
 
 See also
