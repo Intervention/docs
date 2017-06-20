@@ -22,7 +22,7 @@ Closure callback defining constraints on the resize. It's possible to constraint
 
 > public Intervention\Image\Size aspectRatio()
 
-Constraint the current aspect-ratio if the image. As a shortcut to proportional resizing you can use [widen()](/api/widen) or [heighten()](/api/heighten).
+Constraint the current aspect-ratio of the image. As a shortcut to proportional resizing you can use [widen()](/api/widen) or [heighten()](/api/heighten).
 
 #### upsize
 
