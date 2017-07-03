@@ -2,6 +2,14 @@
 
 These notes cover the major enhancements and changes for every release. For a full change list view the [Commits on Github](https://github.com/Intervention/image/commits/master).
 
+### 2.3.14 July 3rd 2017
+
+- Support of Laravel 5.5 package Auto-Discovery
+- Allow images to be initiated from PSR StreamInterfaces
+- Allow parenthesis in filenames when using ImageCache package
+- Bugfixes and Improvements
+- Phpdoc fixes 
+
 ### 2.3.13 April 23rd 2017
 
 - Fixed bug when detecting file names as base64 encoded data
