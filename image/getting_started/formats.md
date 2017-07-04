@@ -12,29 +12,33 @@ The readable image formats depend on the choosen driver (GD or Imagick) and your
         <th>BMP</th>
         <th>ICO</th>
         <th>PSD</th>
+        <th>WebP</th>
     </tr>
     <tr>
         <th>GD</th>
-        <th>Read/Write</th>
-        <th>Read/Write</th>
-        <th>Read/Write</th>
+        <th>✔️</th>
+        <th>✔️</th>
+        <th>✔️</th>
         <th>-</th>
         <th>-</th>
         <th>-</th>
         <th>-</th>
+        <th>✔️ &ast;</th>
     </tr>
     <tr>
         <th>Imagick</th>
-        <th>Read/Write</th>
-        <th>Read/Write</th>
-        <th>Read/Write</th>
-        <th>Read/Write</th>
-        <th>Read/Write</th>
-        <th>Read/Write</th>
-        <th>Read/Write</th>
+        <th>✔️</th>
+        <th>✔️</th>
+        <th>✔️</th>
+        <th>✔️</th>
+        <th>✔️</th>
+        <th>✔️</th>
+        <th>✔️</th>
+        <th>✔️ &ast;</th>
     </tr>
 </table>
 
+&ast; For WebP support **GD** driver must be used with PHP 5 >= 5.5.0 or PHP 7 in order to use [imagewebp()](http://php.net/manual/en/function.imagewebp.php). If **Imagick** is used, it must be compiled with libwebp for WebP support.
 
 See documentation of [make](/api/make) method to see how to read image formats from different sources, respectively [encode](/api/encode) and [save](/api/save) to learn how to output images.
 

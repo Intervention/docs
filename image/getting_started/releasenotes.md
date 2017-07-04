@@ -2,6 +2,10 @@
 
 These notes cover the major enhancements and changes for every release. For a full change list view the [Commits on Github](https://github.com/Intervention/image/commits/master).
 
+### 2.4.0 July 4th 2017
+
+- Added WebP support
+
 ### 2.3.14 July 3rd 2017
 
 - Support of Laravel 5.5 package Auto-Discovery

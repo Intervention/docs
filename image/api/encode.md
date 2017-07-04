@@ -16,6 +16,9 @@ Define the encoding format from one of the following formats:
 - **gif** — return Graphics Interchange Format (GIF) encoded image data
 - **tif** — return Tagged Image File Format (TIFF) encoded image data
 - **bmp** — return Bitmap (BMP) encoded image data
+- **ico** — return ICO encoded image data
+- **psd** — return Photoshop Document (PSD) encoded image data
+- **webp** — return WebP encoded image data
 - **data-url** — encode current image data in data URI scheme (RFC 2397)
 
 By default the method will return data encoded in the type of the current image. If no image type is defined yet, data will be encoded as jpeg.
