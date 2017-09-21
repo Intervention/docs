@@ -2,6 +2,12 @@
 
 These notes cover the major enhancements and changes for every release. For a full change list view the [Commits on Github](https://github.com/Intervention/image/commits/master).
 
+### 2.4.1 September 21st 2017
+
+- Fixed Bug with PNG images losing transparency when cloned with GD driver
+- Added getBoxSize() method for imagick fonts
+- Internally switched to short array syntax
+
 ### 2.4.0 July 4th 2017
 
 - Added WebP support
