@@ -2,6 +2,13 @@
 
 These notes cover the major enhancements and changes for every release. For a full change list view the [Commits on Github](https://github.com/Intervention/image/commits/master).
 
+### 2.4.2 May 29th 2017
+
+- Restrict the maximum rotation value to 360 degrees
+- Added more MIME types to support more image types
+- Added getBoxSize() method for Intervention/Image/Imagick/Font
+- Bugfixes
+
 ### 2.4.1 September 21st 2017
 
 - Fixed Bug with PNG images losing transparency when cloned with GD driver
