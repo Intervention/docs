@@ -4,7 +4,7 @@ These notes cover the major enhancements and changes for every release. For a fu
 
 ### 2.4.3 June 1st 2019
 
-- Support for Symfone HTTP response
+- Support for Symfony HTTP response
 - Internal code optimization
 - Bugfixes
 
