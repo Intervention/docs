@@ -2,7 +2,13 @@
 
 These notes cover the major enhancements and changes for every release. For a full change list view the [Commits on Github](https://github.com/Intervention/image/commits/master).
 
-### 2.4.2 May 29th 2017
+### 2.4.3 June 1st 2019
+
+- Support for Symfone HTTP response
+- Internal code optimization
+- Bugfixes
+
+### 2.4.2 May 29th 2018
 
 - Restrict the maximum rotation value to 360 degrees
 - Added more MIME types to support more image types
