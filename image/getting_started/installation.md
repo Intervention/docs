@@ -92,7 +92,7 @@ Now the Image Class will be auto-loaded by Laravel.
 
 ### Configuration
 
-By default Intervention Image uses PHP's GD library extension to process all images. If you want to switch to Imagick, you can pull a configuration file into your application by running on of the following artisan command.
+By default Intervention Image uses PHP's GD library extension to process all images. If you want to switch to Imagick, you can pull a configuration file into your application by running one of the following artisan command.
 
 #### Publish configuration in Laravel 5
 
