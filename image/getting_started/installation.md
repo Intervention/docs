@@ -94,16 +94,16 @@ Now the Image Class will be auto-loaded by Laravel.
 
 By default Intervention Image uses PHP's GD library extension to process all images. If you want to switch to Imagick, you can pull a configuration file into your application by running one of the following artisan command.
 
-#### Publish configuration in Laravel 5
+#### Publish configuration in Laravel
 
-> $ php artisan vendor:publish --provider="Intervention\Image\ImageServiceProviderLaravel5"
+> $ php artisan vendor:publish --provider="Intervention\Image\ImageServiceProviderLaravelRecent"
 
 
-#### Publish configuration in Laravel 4
+#### Publish configuration in Laravel <= 4
 
 > $ php artisan config:publish intervention/image
 
-In Laravel 5 applications the configuration file is copied to ```config/image.php```, in older Laravel 4 applications you will find the file at ```app/config/packages/intervention/image/config.php```. With this copy you can alter the image driver settings for you application locally.
+In recent Laravel applications the configuration file is copied to ```config/image.php```, in older Laravel 4 applications you will find the file at ```app/config/packages/intervention/image/config.php```. With this copy you can alter the image driver settings for you application locally.
 
 #### Example
 

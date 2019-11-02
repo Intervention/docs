@@ -2,6 +2,10 @@
 
 These notes cover the major enhancements and changes for every release. For a full change list view the [Commits on Github](https://github.com/Intervention/image/commits/master).
 
+### 2.5.1 November 2nd 2019
+
+- Fixed issues with Laravel 6 / PHP 7.3 compatibility
+
 ### 2.5.0 June 24th 2019
 
 - Added format parameter to save() method
