@@ -38,7 +38,7 @@ Instance of Intervention\Image\Image
 
 ```php
 // create instance
-$img = Image::make('public/foo.jpg')
+$img = Image::make('public/foo.jpg');
 
 // resize image to fixed size
 $img->resize(300, 200);
