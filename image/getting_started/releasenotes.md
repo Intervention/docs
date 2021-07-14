@@ -2,6 +2,22 @@
 
 These notes cover the major enhancements and changes for every release. For a full change list view the [Commits on Github](https://github.com/Intervention/image/commits/master).
 
+### 2.6.0 July 14th 2021
+
+- Support for encoding JP2 images
+- Support for encoding JFIF images
+- Support for AV1 Image File Format (AVIF)
+- Support for encoding BMP images also with GD driver
+- Support for encoding WebP images also with GD driver
+- Support for floating point number when passing angles to rotate()
+- Support for reading exif data for images not loaded from file
+- Bugfix for DataUrl containing newlines inside data
+- Changed HTTP version to 1.1 in request when loading images from url
+- Fixed PHP 8 compatibility issue
+- Fixed compatibility issue with newer Laravel versions
+- Fixed issue when converting PNG to WebP
+- Minor improvements
+
 ### 2.5.1 November 2nd 2019
 
 - Fixed issues with Laravel 6 / PHP 7.3 compatibility

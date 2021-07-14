@@ -20,7 +20,7 @@ The readable image formats depend on the choosen driver (GD or Imagick) and your
         <th>✔️</th>
         <th>✔️</th>
         <th>-</th>
-        <th>-</th>
+        <th>✔️ &ast &ast</th>
         <th>-</th>
         <th>-</th>
         <th>✔️ &ast;</th>
@@ -39,6 +39,8 @@ The readable image formats depend on the choosen driver (GD or Imagick) and your
 </table>
 
 &ast; For WebP support **GD** driver must be used with PHP 5 >= 5.5.0 or PHP 7 in order to use [imagewebp()](http://php.net/manual/en/function.imagewebp.php). If **Imagick** is used, it must be compiled with libwebp for WebP support.
+
+&ast;&ast; For BMP support **GD** driver must be used with PHP >= 7.2.0 or PHP 8 in order to use [imagewebp()](https://www.php.net/manual/en/function.imagebmp.php).
 
 See documentation of [make](/api/make) method to see how to read image formats from different sources, respectively [encode](/api/encode) and [save](/api/save) to learn how to output images.
 
