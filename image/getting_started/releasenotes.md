@@ -2,6 +2,10 @@
 
 These notes cover the major enhancements and changes for every release. For a full change list view the [Commits on Github](https://github.com/Intervention/image/commits/master).
 
+### 2.6.1 July 22nd 2021
+
+- Bugfix
+
 ### 2.6.0 July 14th 2021
 
 - Support for encoding JP2 images

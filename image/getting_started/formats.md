@@ -20,7 +20,7 @@ The readable image formats depend on the choosen driver (GD or Imagick) and your
         <th>✔️</th>
         <th>✔️</th>
         <th>-</th>
-        <th>✔️ &ast &ast</th>
+        <th>✔️ &ast;&ast;</th>
         <th>-</th>
         <th>-</th>
         <th>✔️ &ast;</th>
