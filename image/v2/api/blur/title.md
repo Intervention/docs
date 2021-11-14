@@ -1,0 +1,2 @@
+# blur
+## Blurs an image
