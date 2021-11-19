@@ -1,4 +1,4 @@
-> public Intervention\Image\Image blur( [integer $amount] )
+> public Intervention\Image\Image blur([integer $amount])
 
 **Note: Performance intensive on larger amounts of blur with GD driver. Use with care.**
 

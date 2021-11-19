@@ -1,0 +1,2 @@
+# pixelate()
+## Pixelate an image

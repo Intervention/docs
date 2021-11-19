@@ -1,0 +1,2 @@
+# mime()
+## Get MIME Type

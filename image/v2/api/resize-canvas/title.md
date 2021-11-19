@@ -1,0 +1,2 @@
+# resizeCanvas()
+## Resize image boundaries

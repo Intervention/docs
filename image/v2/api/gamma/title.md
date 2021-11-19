@@ -1,0 +1,2 @@
+# gamma()
+## Apply gamma correction

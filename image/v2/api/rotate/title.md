@@ -1,0 +1,2 @@
+# rotate()
+## Rotate an image

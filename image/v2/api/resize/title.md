@@ -1,0 +1,2 @@
+# resize()
+## Resize current image

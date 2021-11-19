@@ -1,0 +1,2 @@
+# reset()
+## Reset image instance
