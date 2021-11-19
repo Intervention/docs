@@ -1,5 +1,3 @@
-# Installation
-
 ## System Requirements
 
 Intervention Image requires the following components to work correctly.
@@ -12,7 +10,6 @@ And **one of** the following image libraries.
 - GD Library (>=2.0) &hellip; **or** &hellip;
 - Imagick PHP extension (>=6.5.7)
 
----
 
 ## Composer Installation
 
@@ -25,9 +22,6 @@ To install the most recent version, run the following command.
 Now your ```composer.json``` has been updated automatically and you're able to require the just created ```vendor/autoload.php``` file to PSR-4 autoload the library.
 
 The next step is to decide, if you want to integrate Intervention Image into the **Laravel framework**. If you want to use the library with Laravel, just skip the following step and continue with the description of [Laravel Integration](#laravel).
-
-
----
 
 
 ## Usage
@@ -67,10 +61,6 @@ Image::configure(array('driver' => 'imagick'));
 // and you are ready to go ...
 $image = Image::make('public/foo.jpg')->resize(300, 200);
 ```
-
-
----
-
 
 <a name="laravel"></a>
 ## Integration in Laravel 

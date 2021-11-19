@@ -1,5 +1,3 @@
-# HTTP Responses
-
 The easiest way to return an image directly to the users browser, is to output the [response()](/api/response) method. It will automatically send HTTP headers according to the currently image and output encoded image data.
 
 #### Sending a HTTP response
@@ -25,8 +23,6 @@ echo $img->encode('png');
 
 
 Read more about HTTP responses in the [api documentation](/api/response).
-
----
 
 ## HTTP responses in Laravel Applications
 

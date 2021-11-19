@@ -1,8 +1,4 @@
-## Description
-
 > public Intervention\Image\Image blur( [integer $amount] )
-
-Apply a gaussian blur filter with a optional **amount** on the current image. Use values between ```0``` and ```100```.
 
 **Note: Performance intensive on larger amounts of blur with GD driver. Use with care.**
 

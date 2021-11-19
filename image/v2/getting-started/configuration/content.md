@@ -1,4 +1,4 @@
-# Configuration
+## Supported PHP image libraries
 
 Currently Intervention Image supports two Image processing extensions.
 
@@ -9,7 +9,7 @@ Make sure you have one of these installed in your PHP environment, before you st
 
 You're able to configure Intervention Image to use one of these libraries for all its operations. Just pass the configuration as an array directly into the ImageManager.
 
-#### Example
+### Example
 
 ```php
 // include composer autoload
@@ -27,7 +27,7 @@ $image = $manager->make('public/foo.jpg')->resize(300, 200);
 
 You might also use the static version of ImageManager as shown in the example below.
 
-#### Static Example
+### Static Example
 
 ```php
 // include composer autoload
@@ -44,24 +44,15 @@ $image = Image::make('public/foo.jpg')->resize(300, 200);
 ```
 
 
-
---- 
-
-
-
-
-
-
-
 ## Configuration in Laravel
 
 If you're using Laravel, you can pull a configuration file into your application by running the following artisan command.
 
-#### Publish configuration in Laravel 5
+### Publish configuration in Laravel 5
 
 > $ php artisan vendor:publish
 
-#### Publish configuration in Laravel 4
+### Publish configuration in Laravel 4
 
 > $ php artisan config:publish intervention/image
 
@@ -70,10 +61,6 @@ In Laravel 5 applications the configuration file is copied to ```config/image.ph
 > 'driver' => 'imagick'
 
 Currently you can choose between `gd` and `imagick` support.
-
---- 
-
-
 
 
 ## Memory Settings

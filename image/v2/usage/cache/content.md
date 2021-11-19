@@ -1,5 +1,3 @@
-# Image Caching
-
 The optional package [Intervention Image Cache](https://packagist.org/packages/intervention/imagecache) extends the package to be capable of image caching.
 
 The caching library uses the [Illuminate/Cache](https://github.com/illuminate/cache/) package which is part of Laravel and can be easily integrated into the [Laravel Framework](http://laravel.com). Based on your Laravel cache configuration you are able to choose between Filesystem, Database, Memcached or Redis for the temporary buffer store.

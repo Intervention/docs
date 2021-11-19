@@ -1,2 +1,2 @@
 # blur
-## Blurs an image
+## Apply a gaussian blur filter with a optional amount on the current image.

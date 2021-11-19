@@ -1,5 +1,3 @@
-# URL based image manipulation
-
 Within a Laravel application it is possible to use the URL to manipulate images dynamically. The manipulated version of the an image will be stored in the cache and will be loaded directly without resource-intensive GD operation.
 
 An image has to be uploaded only once. All manipulations like resizing or cropping will be handled later, when the file is accessed via a HTTP request like this:
@@ -121,8 +119,6 @@ public function applyFilter(Image $image)
     return $image->fit(120, 90)->encode('jpg', 20);
 }
 ```
-
-
 
 ### 5. Image Cache Lifetime
 

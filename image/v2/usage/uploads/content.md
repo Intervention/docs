@@ -1,5 +1,3 @@
-# Image Uploads
-
 PHP lets people upload files and with Intervention Image you can easily pass an uploaded image to the [make()](/api/make) method. The standard way is to get the temp. file information from the ```$_FILES``` array.
 
 Read more about file uploads in the official [PHP documentation](http://www.php.net/manual/en/features.file-upload.php).
@@ -16,8 +14,6 @@ $img->fit(300, 200);
 // save image
 $img->save('foo/bar.jpg');
 ```
-
----
 
 ## Handling image uploads in Laravel
 

@@ -1,5 +1,3 @@
-# Upgrading from 1.x to 2.x
-
 Although I tried to keep the update to Version 2.x of Intervention Image as compatible as possible, some things have changed. Some methods became redundant, other things have been simplified and therefore had to change. 
 
 ## New Features
@@ -19,6 +17,8 @@ In order to keep your application compatible, you need to keep in mind the follo
 * [orientate()](/api/orientate) auto-adjusts image orientation.
 * [filter()](/api/filter) applies filter to an image.
 * [getCore()](/api/getCore) get resource of image driver (Imagick object or GD resource).
+
+## API changes
 
 ### Changed Method names
 

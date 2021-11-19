@@ -1,5 +1,3 @@
-# Image Filters
-
 Image Filters in Intervention Image give you the useful possibility to group image transformations commands into a dedicated object. This object defines which command, in which order and with which arguments should be called on an image instance.
 
 Intervention Image provides the basic ```Intervention\Image\Filters\FilterInterface```, which all filters need to implement.

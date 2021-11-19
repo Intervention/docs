@@ -1,14 +1,9 @@
-# Basic Usage
+## Quickstart
 
 - [Reading Images](#reading)
 - [Creating Images](#creating)
 - [Editing Images](#editing)
 - [Outputting Images](#output)
-
----
-
-<a name="reading"></a>
-## Quickstart
 
 #### Example
 
@@ -46,9 +41,6 @@ $image = Image::make('public/foo.jpg')->resize(300, 200);
 
 You can read more detailed information about [installation](/getting_started/installation) and [configuration](/getting_started/configuration).
 
----
-
-
 
 <a name="reading"></a>
 ## Reading Images
@@ -75,8 +67,6 @@ The method is highly variable. It not only reads filepaths but also the followin
 
 See more examples to initiate image instances in the [api documentation](/api/make).
 
----
-
 <a name="creating"></a>
 ## Creating Images
 
@@ -89,8 +79,6 @@ $img = Image::canvas(800, 600, '#ccc');
 ```
 
 See more examples to create new image instances in the [api documentation](/api/canvas).
-
----
 
 <a name="editing"></a>
 ## Editing Images
@@ -154,8 +142,6 @@ Take a look at some of the methods in the following list.
 
 
 See the **api documentation** for the whole list of commands.
-
----
 
 <a name="output"></a>
 ## Outputting Images

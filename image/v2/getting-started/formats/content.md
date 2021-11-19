@@ -1,5 +1,3 @@
-# Image Formats
-
 The readable image formats depend on the choosen driver (GD or Imagick) and your local configuration. By default Intervention Image currently supports the following major formats.
 
 <table>
@@ -43,8 +41,6 @@ The readable image formats depend on the choosen driver (GD or Imagick) and your
 &ast;&ast; For BMP support **GD** driver must be used with PHP >= 7.2.0 or PHP 8 in order to use [imagewebp()](https://www.php.net/manual/en/function.imagebmp.php).
 
 See documentation of [make](/api/make) method to see how to read image formats from different sources, respectively [encode](/api/encode) and [save](/api/save) to learn how to output images.
-
----
 
 # Color Formats
 
