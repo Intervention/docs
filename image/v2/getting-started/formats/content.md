@@ -1,3 +1,5 @@
+## Image Formats
+
 The readable image formats depend on the choosen driver (GD or Imagick) and your local configuration. By default Intervention Image currently supports the following major formats.
 
 <table>
@@ -42,11 +44,11 @@ The readable image formats depend on the choosen driver (GD or Imagick) and your
 
 See documentation of [make](/api/make) method to see how to read image formats from different sources, respectively [encode](/api/encode) and [save](/api/save) to learn how to output images.
 
-# Color Formats
+## Color Formats
 
 Intervention Image supports four ways to define colors for its methods.
 
-## Integer Format
+### Integer Format
 By default the [pickColor](/api/pickColor) method returns the RGB value as integer. You can also pass a color in this format to all other methods.
 
 #### Examples
@@ -62,8 +64,7 @@ $rgb = imagecolorat($im, 10, 15);
 $img->fill($rgb);
 ```
 
-
-## Array Format
+### Array Format
 
 Pass the RGB integers of a color as a PHP array with or without an alpha value between 1 (opaque) and 0 (full transparency).
 
@@ -71,13 +72,13 @@ Pass the RGB integers of a color as a PHP array with or without an alpha value b
 
 ```php
 // color in array format
-$img->fill(array(255, 0, 0));
+$img->fill([255, 0, 0]);
 
 // color in array format with alpha value
-$img->fill(array(255, 255, 255, 0.5));
+$img->fill([255, 255, 255, 0.5]);
 ```
 
-## Hexadecimal Format
+### Hexadecimal Format
 You can pass colors as a hex triplet used normally in HTML and CSS. It's possible to use six-digit format as well as the shorthand form.
 
 #### Examples
@@ -93,9 +94,7 @@ $img->fill('#cccccc');
 $img->fill('cccccc');
 ```
 
-
-
-## RGB &amp; RGBA string format
+### RGB &amp; RGBA string format
 RGB string values in functional notations are also supported. If you want to include an **alpha** value use the RGBA format like in the following example.
 
 #### Examples

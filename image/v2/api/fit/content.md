@@ -1,6 +1,4 @@
-## Description
-
-> public Intervention\Image\Image fit( int $width, [ [int $height], [Closure $callback, [ string $position ]] ])
+> public Intervention\Image\Image fit(int $width, [[int $height], [Closure $callback, [string $position]]])
 
 Combine cropping and resizing to format image in a smart way. The method will find the best fitting aspect ratio of your given **width and height** on the current image automatically, cut it out and resize it to the given dimension. You may pass an optional Closure **callback** as third parameter, to prevent possible upsizing and a custom **position** of the cutout as fourth parameter.
 
@@ -39,7 +37,7 @@ The possible values are:
 
 
 ## Return Values
-Instance of Intervention\Image\Image
+Instance of `Intervention\Image\Image`
 
 ## Examples
 

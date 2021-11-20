@@ -1,2 +1,2 @@
 # gamma()
-## Apply gamma correction
+## Apply gamma correction to the current image

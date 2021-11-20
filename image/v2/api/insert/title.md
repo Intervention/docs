@@ -1,2 +1,2 @@
 # insert()
-## Paste over another image
+## Place another image on current image

@@ -1,2 +1,2 @@
 # greyscale()
-## Turn an image into a greyscale version
+## Turn the current image into a greyscale version

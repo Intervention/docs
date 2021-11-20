@@ -1,2 +1,2 @@
 # cache()
-## Create cached images
+## Cached image processing

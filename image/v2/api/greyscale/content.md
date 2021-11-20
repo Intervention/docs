@@ -1,16 +1,13 @@
-## Description
-
 > public Intervention\Image\Image greyscale()
 
 Turns image into a greyscale version.
-
 
 ## Parameters
 
 none
 
 ## Return Values
-Instance of Intervention\Image\Image
+Instance of `Intervention\Image\Image`
 
 ## Examples
 

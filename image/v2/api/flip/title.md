@@ -1,2 +1,2 @@
 # flip()
-## Mirror an image
+## Mirror the current image vertically or horizontally

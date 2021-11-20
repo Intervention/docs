@@ -1,2 +1,2 @@
 # interlace()
-## Toggle interlaced mode
+## Enable or disabled interlaced mode of the current image

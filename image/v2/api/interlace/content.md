@@ -1,18 +1,15 @@
-## Description
-
 > public Intervention\Image\Image interlace([boolean $interlace])
 
 Determine whether an image should be encoded in interlaced or standard mode by toggling **interlace** mode with a boolean parameter. If an JPEG image is set interlaced the image will be processed as a progressive JPEG.
 
-
 ## Parameters
 
 ### interlace (optional)
-If interlace is set to boolean ```true``` the image will be encoded interlaced. If the parameter is set to ```false``` interlaced mode is turned off. Default: true
+If interlace is set to boolean `true` the image will be encoded interlaced. If the parameter is set to `false` interlaced mode is turned off. Default: `true`
 
 
 ## Return Values
-Instance of Intervention\Image\Image
+Instance of `Intervention\Image\Image`
 
 ## Examples
 

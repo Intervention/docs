@@ -1,2 +1,2 @@
 # contrast()
-## Change the contrast of an image
+## Change the color contrast of the current image

@@ -1,2 +1,2 @@
 # invert()
-## Invert colors of an image
+## Invert the colors of the current image

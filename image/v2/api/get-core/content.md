@@ -1,5 +1,3 @@
-## Description
-
 > public Intervention\Image\Image getCore()
 
 Returns the current image in core format of the particular driver. If you're using GD, you will get the the current **GD resource** as return value. If you have setup the Imagick driver, the method will return the current image information as an **Imagick object**.
@@ -9,6 +7,7 @@ Returns the current image in core format of the particular driver. If you're usi
 none
 
 ## Return Values
+
 mixed - depends on configured driver
 
 ## Examples

@@ -17,7 +17,7 @@ Optional Background-color of the image resource. Pass a color in one of the supp
 
 
 ## Return Values
-Instance of Intervention\Image\Image
+Instance of `Intervention\Image\Image`
 
 ## Examples
 

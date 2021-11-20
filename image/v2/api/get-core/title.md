@@ -1,2 +1,2 @@
 # getCore()
-## Read core instance of image
+## Read core instance of the current image

@@ -1,5 +1,3 @@
-## Description
-
 > public Intervention\Image\Image line(int $x1, int $y1, int $x2, int $y2, [Closure $callback])
 
 Draw a line from **x,y point 1** to **x,y point 2** on current image. Define **color and/or width** of line in an optional Closure callback.
@@ -25,17 +23,17 @@ Define appearance of line. See examples below. Use the following methods to pass
 
 > public Intervention\Image\AbstractShape color(string $color)
 
-Set color of the line in one of the available [color formats](/getting_started/formats). Default: #000000
+Set color of the line in one of the available [color formats](/getting_started/formats). Default: `#000000`
 
 #### width
 
 > public Intervention\Image\AbstractShape width(integer $width)
 
-Set the width of the line in pixels. **Option is not available with GD driver** Default: 1
+Set the width of the line in pixels. **Option is not available with GD driver** Default: `1`
 
 
 ## Return Values
-Instance of Intervention\Image\Image
+Instance of `Intervention\Image\Image`
 
 ## Examples
 

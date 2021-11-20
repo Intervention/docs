@@ -1,2 +1,2 @@
 # limitColors()
-## Set a maximum number of colors
+## Reduce number of colors for the current image

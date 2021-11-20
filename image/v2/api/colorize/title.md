@@ -1,2 +1,2 @@
 # colorize()
-## Change color balance of an image
+## Change the color balance of the current image

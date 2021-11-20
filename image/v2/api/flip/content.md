@@ -1,6 +1,6 @@
 ## Description
 
-> public Intervention\Image\Image flip( [mixed $mode] )
+> public Intervention\Image\Image flip([string $mode])
 
 Mirror the current image horizontally or vertically by specifying the **mode**.
 
@@ -12,7 +12,7 @@ Specify the mode the image will be flipped. You can set ```h``` for horizontal (
 
 
 ## Return Values
-Instance of Intervention\Image\Image
+Instance of `Intervention\Image\Image`
 
 ## Examples
 

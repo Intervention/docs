@@ -1,2 +1,2 @@
 # height()
-## Get height of image
+## Get the height in pixels of the current image

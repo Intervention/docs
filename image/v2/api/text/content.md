@@ -86,6 +86,6 @@ $img->text('foo', 0, 0, function($font) {
 
 // draw transparent text
 $img->text('foo', 0, 0, function($font) {
-    $font->color(array(255, 255, 255, 0.5));
+    $font->color([255, 255, 255, 0.5]);
 });
 ```

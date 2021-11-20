@@ -1,2 +1,2 @@
 # filter()
-## apply filter on image
+## Apply a predefined filter to the current image

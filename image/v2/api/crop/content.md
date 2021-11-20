@@ -1,9 +1,6 @@
-## Description
-
 > public Intervention\Image\Image crop(int $width, int $height, [int $x, int $y])
 
 Cut out a rectangular part of the current image with given **width and height**. Define optional **x,y coordinates** to move the top-left corner of the cutout to a certain position.
-
 
 ## Parameters
 
@@ -20,7 +17,7 @@ X-Coordinate of the top-left corner if the rectangular cutout. By default the re
 Y-Coordinate of the top-left corner if the rectangular cutout. By default the rectangular part will be centered on the current image.
 
 ## Return Values
-Instance of Intervention\Image\Image
+Instance of `Intervention\Image\Image`
 
 ## Examples
 
@@ -31,7 +28,6 @@ $img = Image::make('public/foo.jpg');
 // crop image
 $img->crop(100, 100, 25, 25);
 ```
-
 
 ## See also
 

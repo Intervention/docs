@@ -1,2 +1,2 @@
 # exif()
-## Reads Exif data from image
+## Read Exif meta data from the current image

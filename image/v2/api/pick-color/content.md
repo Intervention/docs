@@ -15,10 +15,10 @@ y-coordinate of the pixel the color is picked from.
 ### format (optional)
 Select the color to be formated in one of the different types:
 
-- **array**: ```array(255, 255, 255, 1)```
-- **rgb**: ```rgb(255, 255, 255)```
-- **rgba**: ```rgba(255, 255, 255, 0.5)```
-- **hex**: ```#cccccc```
+- **array**: ```[255, 255, 255, 1]```
+- **string (rgb)**: ```rgb(255, 255, 255)```
+- **string (rgba)**: ```rgba(255, 255, 255, 0.5)```
+- **string (hex)**: ```#cccccc```
 - **int**: ```16776956```
 
 By default the method returns the RGB value of that pixel as an array. Use the integer format to pass colors directly into any GD Library functions.

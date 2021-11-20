@@ -1,5 +1,3 @@
-## Description
-
 > public Intervention\Image\Image heighten(integer $height, [Closure $callback])
 
 Resizes the current image to new **height**, constraining aspect ratio. Pass an optional Closure **callback** as third parameter, to apply additional constraints like preventing possible upsizing.
@@ -18,10 +16,8 @@ Closure callback defining constraint to prevent unwanted **upsizing** of the ima
 
 Keep image from being upsized.
 
-
-
 ## Return Values
-Resized instance of Intervention\Image\Image
+Resized instance of `Intervention\Image\Image`
 
 ## Examples
 

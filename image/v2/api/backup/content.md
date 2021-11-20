@@ -1,5 +1,3 @@
-## Description
-
 > public Intervention\Image\Image backup([string $name])
 
 Backups current image state as fallback for [reset method](/api/reset) under an optional **name**. Overwrites older state on every call, unless a different name is passed.
@@ -11,7 +9,7 @@ Backups current image state as fallback for [reset method](/api/reset) under an 
 The name of the backup in memory. Default: *default*
 
 ## Return Values
-Instance of Intervention\Image\Image
+Instance of `Intervention\Image\Image`
 
 ## Examples
 

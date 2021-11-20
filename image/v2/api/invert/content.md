@@ -1,9 +1,6 @@
-## Description
-
 > public Intervention\Image\Image invert()
 
-Reverses all colors of the current image.
-
+Invert all colors of the current image.
 
 ## Parameters
 

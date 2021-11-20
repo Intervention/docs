@@ -10,10 +10,9 @@ And **one of** the following image libraries.
 - GD Library (>=2.0) &hellip; **or** &hellip;
 - Imagick PHP extension (>=6.5.7)
 
-
 ## Composer Installation
 
-The best way to install Intervention Image is quickly and easily with [Composer](http://getcomposer.org/).
+The best way to install Intervention Image is quickly and easily with [Composer](https://getcomposer.org/).
 
 To install the most recent version, run the following command.
 
@@ -38,7 +37,7 @@ require 'vendor/autoload.php';
 use Intervention\Image\ImageManager;
 
 // create an image manager instance with favored driver
-$manager = new ImageManager(array('driver' => 'imagick'));
+$manager = new ImageManager(['driver' => 'imagick']);
 
 // to finally create image instances
 $image = $manager->make('public/foo.jpg')->resize(300, 200);
@@ -56,7 +55,7 @@ require 'vendor/autoload.php';
 use Intervention\Image\ImageManagerStatic as Image;
 
 // configure with favored image driver (gd by default)
-Image::configure(array('driver' => 'imagick'));
+Image::configure(['driver' => 'imagick']);
 
 // and you are ready to go ...
 $image = Image::make('public/foo.jpg')->resize(300, 200);
@@ -71,11 +70,15 @@ After you have installed Intervention Image, open your Laravel config file ```co
 
 In the ```$providers``` array add the service providers for this package.
 
-> Intervention\Image\ImageServiceProvider::class
+```
+Intervention\Image\ImageServiceProvider::class
+```
 
 Add the facade of this package to the ```$aliases``` array.
 
-> 'Image' => Intervention\Image\Facades\Image::class
+```php
+'Image' => Intervention\Image\Facades\Image::class
+```
 
 Now the Image Class will be auto-loaded by Laravel.
 
@@ -99,10 +102,8 @@ In recent Laravel applications the configuration file is copied to ```config/ima
 
 ```php
 // usage inside a laravel route
-Route::get('/', function()
-{
+Route::get('/', function() {
     $img = Image::make('foo.jpg')->resize(300, 200);
-
     return $img->response('jpg');
 });
 ```

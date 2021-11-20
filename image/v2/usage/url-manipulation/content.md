@@ -30,7 +30,9 @@ You will find the configuration file in your app directory and you may edit it t
 
 By default URL based image manipulation is disabled. To enable it, you just need to **define a name for the route** in the configuration file mentioned above. This handle will define the first part of the URI. In this example we name the route ```imagecache```.
 
-> 'route' => 'imagecache'
+```php
+'route' => 'imagecache'
+```
 
 Essentialy that's it. You may now list all registered routes by entering the following artisan command and check if the new route is listed correctly.
 
@@ -40,10 +42,12 @@ Essentialy that's it. You may now list all registered routes by entering the fol
 
 Now you have to let PHP know, where to search for images. You may define as many directories as you like. For example define all the upload directories of your application. The application will search the directories for the <code>filename</code> submited in the route.
 
-> 'paths' => array(
->     'storage/uploads/images',
->     public_path('img')
-> )
+```php
+'paths' => [
+    'storage/uploads/images',
+    public_path('img')
+]
+```
 
 It makes sense to save image files with a unique filename in these directories. Otherwise the package will return the image that is found first.
 
@@ -59,11 +63,13 @@ The templates are defined as names of [filter classes](/use/filters), where you 
 
 Feel free to adapt the configuration to your needs. Especially the templates are just basic examples and they are not limited to resizing. You can use every method of ```intervention/image``` available.
 
-> 'templates' => array(
->     'small' => 'Intervention\Image\Templates\Small',
->     'medium' => 'Intervention\Image\Templates\Medium',
->     'large' => 'Intervention\Image\Templates\Large'
-> )
+```php
+'templates' => [
+    'small' => 'Intervention\Image\Templates\Small',
+    'medium' => 'Intervention\Image\Templates\Medium',
+    'large' => 'Intervention\Image\Templates\Large'
+]
+```
 
 The key of the **templates** array in the configuration file will define the template name as the second part of the url. The value defines the name of the applied filter class. 
 
@@ -101,12 +107,14 @@ class MyFilter implements FilterInterface
 
 After the class is loaded you can add it to the templates array in your configuration file.
 
-> 'templates' => array(
->     'small' => 'Intervention\Image\Templates\Small',
->     'medium' => 'Intervention\Image\Templates\Medium',
->     'large' => 'Intervention\Image\Templates\Large',
->     'foo' => 'YourApp\Filters\MyFilter'
-> )
+```php
+'templates' => [
+    'small' => 'Intervention\Image\Templates\Small',
+    'medium' => 'Intervention\Image\Templates\Medium',
+    'large' => 'Intervention\Image\Templates\Large',
+    'foo' => 'YourApp\Filters\MyFilter'
+]
+```
 
 
 #### Custom image quality and format
@@ -126,4 +134,6 @@ Once the route is accessed the first time, the image will be searched, edited ac
 
 You can define a custom lifetime, to define the **minutes** until the next image is created.
 
-> 'lifetime' => 43200
+```php
+'lifetime' => 43200
+```

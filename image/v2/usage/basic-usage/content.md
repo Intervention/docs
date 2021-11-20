@@ -15,7 +15,7 @@ require 'vendor/autoload.php';
 use Intervention\Image\ImageManager;
 
 // create an image manager instance with favored driver
-$manager = new ImageManager(array('driver' => 'imagick'));
+$manager = new ImageManager(['driver' => 'imagick']);
 
 // to finally create image instances
 $image = $manager->make('public/foo.jpg')->resize(300, 200);
@@ -33,7 +33,7 @@ require 'vendor/autoload.php';
 use Intervention\Image\ImageManagerStatic as Image;
 
 // configure with favored image driver (gd by default)
-Image::configure(array('driver' => 'imagick'));
+Image::configure(['driver' => 'imagick']);
 
 // and you are ready to go ...
 $image = Image::make('public/foo.jpg')->resize(300, 200);

@@ -1,5 +1,3 @@
-## Description
-
 > public Intervention\Image\Image ellipse(int $width, int $height, int $x, int $y, [Closure $callback])
 
 Draw a **colored** ellipse at given **x, y, coordinates**. You can define **width** and **height** and set the **appearance** of the circle by an optional closure callback.
@@ -7,10 +5,10 @@ Draw a **colored** ellipse at given **x, y, coordinates**. You can define **widt
 ## Parameters
 
 ### width
-width of the ellipse. Default: 10
+width of the ellipse. Default: `10`
 
 ### height
-The ellipse height. Default: 10
+The ellipse height. Default: `10`
 
 ### x
 x-coordinate of the center.
@@ -23,18 +21,18 @@ Define appearance of ellipse. See examples below. Use the following methods to p
 
 #### background
 
-> public Intervention\Image\AbstractShape background( string $color )
+> public Intervention\Image\AbstractShape background(string $color)
 
 Define the background-color of the ellipse in one of the available [color formats](/getting_started/formats).
 
 #### border
 
-> public Intervention\Image\AbstractShape border( integer $width, string $color )
+> public Intervention\Image\AbstractShape border(integer $width, string $color)
 
 Define the border of the ellipse. Set width as pixels in the first and the border-color in one of the available [color formats](/getting_started/formats) as second parameter.
 
 ## Return Values
-Instance of Intervention\Image\Image
+Instance of `Intervention\Image\Image`
 
 ## Examples
 

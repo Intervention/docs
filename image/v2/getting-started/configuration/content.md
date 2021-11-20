@@ -19,7 +19,7 @@ require 'vendor/autoload.php';
 use Intervention\Image\ImageManager;
 
 // create an image manager instance with favored driver
-$manager = new ImageManager(array('driver' => 'imagick'));
+$manager = new ImageManager(['driver' => 'imagick']);
 
 // to finally create image instances
 $image = $manager->make('public/foo.jpg')->resize(300, 200);
@@ -37,7 +37,7 @@ require 'vendor/autoload.php';
 use Intervention\Image\ImageManagerStatic as Image;
 
 // configure with favored image driver (gd by default)
-Image::configure(array('driver' => 'imagick'));
+Image::configure(['driver' => 'imagick']);
 
 // and you are ready to go ...
 $image = Image::make('public/foo.jpg')->resize(300, 200);
@@ -58,10 +58,11 @@ If you're using Laravel, you can pull a configuration file into your application
 
 In Laravel 5 applications the configuration file is copied to ```config/image.php```, in older Laravel 4 applications you will find the file at ```app/config/packages/intervention/image/config.php```. With this copy you can alter the image driver settings for you application locally and define which library should be used by all commands..
 
-> 'driver' => 'imagick'
+```php
+'driver' => 'imagick'
+```
 
 Currently you can choose between `gd` and `imagick` support.
-
 
 ## Memory Settings
 

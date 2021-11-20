@@ -1,9 +1,6 @@
-## Description
-
-> public Intervention\Image\Image circle( integer $diameter, integer $x, integer $y, [Closure $callback] )
+> public Intervention\Image\Image circle(integer $diameter, integer $x, integer $y, [Closure $callback])
 
 Draw a circle at given **x, y, coordinates** with given **diameter**. You can define the **appearance** of the circle by an optional closure callback.
-
 
 ## Parameters
 
@@ -21,21 +18,21 @@ Define appearance of circle. See examples below. Use the following methods to pa
 
 #### background
 
-> public Intervention\Image\AbstractShape background( string $color )
+> public Intervention\Image\AbstractShape background(string $color)
 
 Define the background-color of the circle in one of the available [color formats](/getting_started/formats).
 
 #### border
 
-> public Intervention\Image\AbstractShape border( integer $width, string $color )
+> public Intervention\Image\AbstractShape border(integer $width, string $color)
 
 Define the border of the circle. Set width as pixels in the first and the border-color in one of the available [color formats](/getting_started/formats) as second parameter.
 
 
 ## Return Values
-Instance of Intervention\Image\Image
+Instance of `Intervention\Image\Image`
 
-##Examples
+## Examples
 
 ```php
 // create empty canvas with background color

@@ -1,5 +1,3 @@
-## Description
-
 > public Intervention\Image\Image colorize(integer $red, integer $green, integer $blue)
 
 Change the RGB color values of the current image on the given channels **red**, **green** and **blue**. The input values are normalized so you have to include parameters from ```100``` for maximum color value ```0``` for no change and ```-100``` to take out all the certain color on the image.
@@ -8,17 +6,17 @@ Change the RGB color values of the current image on the given channels **red**, 
 ## Parameters
 
 ### red
-Add or take out a amount of red color on the image. Use values between -100 and +100.
+Add or take out a amount of red color on the image. Use values between `-100` and `+100`.
 
 ### green
-Add or take out a amount of green color on the image. Use values between -100 and +100.
+Add or take out a amount of green color on the image. Use values between `-100` and `+100`.
 
 ### blue
-Add or take out a amount of blue color on the image. Use values between -100 and +100.
+Add or take out a amount of blue color on the image. Use values between `-100` and `+100`.
 
 
 ## Return Values
-Instance of Intervention\Image\Image
+Instance of `Intervention\Image\Image`
 
 ## Examples
 

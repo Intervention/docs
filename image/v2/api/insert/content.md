@@ -1,9 +1,6 @@
-## Description
-
 > public Intervention\Image\Image insert(mixed $source, [string $position, [integer $x, integer $y]])
 
 Paste a given **image source** over the current image with an optional **position** and a **offset coordinate**. This method can be used to apply another image as watermark because the transparency values are maintained.
-
 
 ## Parameters
 
@@ -17,8 +14,8 @@ The image source that will inserted on top of the current image. The method can 
 - **string** - Base64 encoded image data.
 - **resource** - PHP resource of type gd. (when using GD driver)
 - **object** - Imagick instance (when using Imagick driver)
-- **object** - Intervention\Image\Image instance
-- **object** - SplFileInfo instance (To handle Laravel file uploads via Symfony\Component\HttpFoundation\File\UploadedFile)
+- **object** - `Intervention\Image\Image` instance
+- **object** - SplFileInfo instance (To handle Laravel file uploads via `Symfony\Component\HttpFoundation\File\UploadedFile`)
 
 ### position (optional)
 Set a position where image will be inserted. For example if you are setting the anchor to ```bottom-left``` the image will be positioned at the bottom-left border of the current image. The position of the new image will be calculated relatively to this location.
@@ -42,7 +39,7 @@ Optional relative offset of the new image on x-axis of the current image. Offset
 Optional relative offset of the new image on y-axis of the current image. Offset will be calculated relative to the position parameter. Default: 0
 
 ## Return Values
-Instance of Intervention\Image\Image
+Instance of `Intervention\Image\Image`
 
 ## Examples
 

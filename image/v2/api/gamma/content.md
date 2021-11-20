@@ -1,18 +1,14 @@
-## Description
+> public Intervention\Image\Image gamma(float $correction)
 
-> public Intervention\Image\Image gamma( float $correction )
-
-Performs a gamma correction operation on the current image.
-
+Apply a gamma correction operation on the current image.
 
 ## Parameters
 
 ### correction
 Gamma compensation value.
 
-
 ## Return Values
-Instance of Intervention\Image\Image
+Instance of `Intervention\Image\Image`
 
 ## Examples
 

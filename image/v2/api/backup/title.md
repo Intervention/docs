@@ -1,2 +1,2 @@
 # backup()
-## Backups current image state
+## Save a backup of the current image state

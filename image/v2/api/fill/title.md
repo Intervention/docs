@@ -1,2 +1,2 @@
 # fill()
-# Fill image with color or pattern
+## Fill the current image with a color or pattern

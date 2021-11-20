@@ -1,2 +1,2 @@
 # iptc()
-## Reads IPTC meta data from image
+## Reads IPTC meta data from the current image

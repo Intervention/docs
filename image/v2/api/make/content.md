@@ -1,5 +1,3 @@
-## Description
-
 > public static Intervention\Image\ImageManager make(mixed $source)
 
 Universal factory method to create a new image instance from **source**. The method is highly variable to read all the input types listed below.
@@ -17,11 +15,11 @@ Source to create an image from. The method responds to the following input types
 - **string** - Base64 encoded image data.
 - **resource** - PHP resource of type gd. (when using GD driver)
 - **object** - Imagick instance (when using Imagick driver)
-- **object** - Intervention\Image\Image instance
-- **object** - SplFileInfo instance (To handle Laravel file uploads via Symfony\Component\HttpFoundation\File\UploadedFile)
+- **object** - `Intervention\Image\Image` instance
+- **object** - SplFileInfo instance (To handle Laravel file uploads via `Symfony\Component\HttpFoundation\File\UploadedFile`)
 
 ## Return Values
-Instance of Intervention\Image\Image
+Instance of `Intervention\Image\Image`
 
 ## Examples
 

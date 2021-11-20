@@ -47,7 +47,7 @@ Image::make('public/foo.jpg')->trim();
 Image::make('public/foo.jpg')->trim('bottom-right');
 
 // trim image (only top and bottom with transparency)
-Image::make('public/foo.jpg')->trim('transparent', array('top', 'bottom'));
+Image::make('public/foo.jpg')->trim('transparent', ['top', 'bottom']);
 
 // trim image (only left side top-left color)
 Image::make('public/foo.jpg')->trim('top-left', 'left');

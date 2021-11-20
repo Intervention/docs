@@ -1,2 +1,2 @@
 # fit()
-## Crop and resize combined
+## Cut out and resize a rectangular part of the current image

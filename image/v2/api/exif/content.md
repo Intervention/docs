@@ -1,5 +1,3 @@
-## Description
-
 > public Intervention\Image\Image exif([string $key])
 
 Read Exif meta data from current image. **Image object must be instantiated from file path to read the EXIF data correctly.**
@@ -15,7 +13,7 @@ Optionally index key to retrieve only particular data. By default all data avail
 
 
 ## Return Values
-Associative array of all Exif data available or mixed data for particular value. If no meta data can be found, method will return NULL.
+Associative array of all Exif data available or mixed data for particular value. If no meta data can be found, method will return `null`.
 
 ## Examples
 

@@ -34,14 +34,14 @@ Instance of Intervention\Image\Image
 $img = Image::canvas(800, 600, '#ddd');
 
 // define polygon points
-$points = array(
+$points = [
     40,  50,  // Point 1 (x, y)
     20,  240, // Point 2 (x, y)
     60,  60,  // Point 3 (x, y)
     240, 20,  // Point 4 (x, y)
     50,  40,  // Point 5 (x, y)
     10,  10   // Point 6 (x, y)
-);
+];
 
 // draw a filled blue polygon with red border
 $img->polygon($points, function ($draw) {

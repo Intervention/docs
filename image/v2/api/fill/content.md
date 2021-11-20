@@ -6,7 +6,6 @@ Fill current image with given **color** or another **image** used as tile for fi
 
 If a certain position is defined, the color at that point on the original image is used to perform a flood fill. If no x,y coordinates are passed, the whole picture is filled no matter what is beneath.
 
-
 ## Parameters
 
 ### filling
@@ -19,8 +18,8 @@ The fill color or image pattern. Pass a **color** as one of the different [color
 - **string** - Base64 encoded image data.
 - **resource** - PHP resource of type gd. (when using GD driver)
 - **object** - Imagick instance (when using Imagick driver)
-- **object** - Intervention\Image\Image instance
-- **object** - SplFileInfo instance (To handle Laravel file uploads via Symfony\Component\HttpFoundation\File\UploadedFile)
+- **object** - `Intervention\Image\Image` instance
+- **object** - SplFileInfo instance (To handle Laravel file uploads via `Symfony\Component\HttpFoundation\File\UploadedFile`)
 
 ### x (optional)
 Starting point on x-axis for the filling.
@@ -32,7 +31,7 @@ Starting point on y-axis for the filling.
 
 
 ## Return Values
-Instance of Intervention\Image\Image
+Instance of `Intervention\Image\Image`
 
 ## Examples
 

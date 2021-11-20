@@ -1,5 +1,3 @@
-## Description
-
 > public Intervention\Image\Image height()
 
 Returns the height in pixels of the current image.
@@ -9,6 +7,7 @@ Returns the height in pixels of the current image.
 none
 
 ## Return Values
+
 Height of current image as integer
 
 ## Examples
