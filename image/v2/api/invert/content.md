@@ -6,9 +6,8 @@ Invert all colors of the current image.
 
 none
 
-
 ## Return Values
-Instance of Intervention\Image\Image
+Instance of `Intervention\Image\Image`
 
 ## Examples
 
@@ -21,4 +20,3 @@ $img = Image::make('public/foo.jpg')->invert();
 
 - [brightness](/api/brightness)
 - [contrast](/api/contrast)
-
