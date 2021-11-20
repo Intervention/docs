@@ -1,2 +1,2 @@
 # rotate()
-## Rotate an image
+## Rotate the current image

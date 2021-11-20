@@ -1,2 +1,2 @@
 # mime()
-## Get MIME Type
+## Get MIME Type of the current image

@@ -1,5 +1,3 @@
-## Description
-
 > public Intervention\Image\Image mime()
 
 Read MIME Type of current image instance, if it's already defined.
@@ -11,7 +9,7 @@ none
 ## Return Values
 MIME Type of current image.
 
-Examples
+## Examples
 
 ```php
 // read mime type of image

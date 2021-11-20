@@ -1,2 +1,2 @@
 # response()
-## Attach image to new HTTP response
+## Sends HTTP response with current image attached

@@ -1,9 +1,6 @@
-## Description
-
 > public Intervention\Image\Image pixel(mixed $color, integer $x, integer $y)
 
 Draw a single pixel in given **color** on **x, y position**.
-
 
 ## Parameters
 
@@ -17,7 +14,7 @@ x-coordinate of the pixel.
 y-coordinate of the pixel.
 
 ## Return Values
-Instance of Intervention\Image\Image
+Instance of `Intervention\Image\Image`
 
 ## Examples
 

@@ -9,7 +9,7 @@ Returns the width in pixels of the current image.
 none
 
 ## Return Values
-Width of current image as integer
+Width of current image in pixels as integer
 
 ## Examples
 
@@ -17,7 +17,6 @@ Width of current image as integer
 // read width of image
 $width = Image::make('public/foo.jpg')->width();
 ```
-
 
 ## See also
 

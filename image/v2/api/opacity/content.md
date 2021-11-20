@@ -1,6 +1,4 @@
-## Description
-
-> public Intervention\Image\Image opacity( integer $transparency )
+> public Intervention\Image\Image opacity(integer $transparency)
 
 Set the **opacity** in percent of the current image ranging from 100% for opaque and 0% for full transparency.
 
@@ -9,11 +7,10 @@ Set the **opacity** in percent of the current image ranging from 100% for opaque
 ## Parameters
 
 ### transparency
-The new percent of transparency for the current image.
-
+The new percent of transparency as integer for the current image.
 
 ## Return Values
-Instance of Intervention\Image\Image
+Instance of `Intervention\Image\Image`
 
 ## Examples
 

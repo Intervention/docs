@@ -1,2 +1,2 @@
 # sharpen()
-## Sharpen an image
+## Sharpen the current image

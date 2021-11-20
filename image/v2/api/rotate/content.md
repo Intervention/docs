@@ -1,5 +1,3 @@
-## Description
-
 > public Intervention\Image\Image rotate(float $angle, [string $bgcolor])
 
 Rotate the current image counter-clockwise by a given **angle**. Optionally define a **background color** for the uncovered zone after the rotation.
@@ -10,11 +8,11 @@ Rotate the current image counter-clockwise by a given **angle**. Optionally defi
 The rotation angle in degrees to rotate the image counter-clockwise.
 
 ### bgcolor (optional)
-A background color for the uncovered zone after the rotation. The background color can be passed in different [color formats](/getting_started/formats). Default: ```#ffffff```, transparent if supported by the output format
+A background color for the uncovered zone after the rotation. The background color can be passed in different [color formats](/getting_started/formats). Default: `#ffffff`, transparent if supported by the output format
 
 
 ## Return Values
-Instance of Intervention\Image\Image
+Instance of `Intervention\Image\Image`
 
 ## Examples
 

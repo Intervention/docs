@@ -1,2 +1,2 @@
 # text()
-## Write text to an image
+## Write text to the current image

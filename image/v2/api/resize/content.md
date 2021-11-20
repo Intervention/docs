@@ -1,5 +1,3 @@
-## Description
-    
 > public Intervention\Image\Image resize (integer $width, integer $height, [Closure $callback])
 
 Resizes current image based on given **width** and/or **height**. To constraint the resize command, pass an optional Closure **callback** as third parameter.
@@ -28,9 +26,8 @@ Constraint the current aspect-ratio of the image. As a shortcut to proportional 
 
 Keep image from being upsized.
 
-    
 ## Return Values
-Instance of Intervention\Image\Image
+Instance of `Intervention\Image\Image`
 
 ## Examples
 

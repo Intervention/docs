@@ -1,2 +1,2 @@
 # widen()
-## Resize image proportionally to given width
+## Resize current image proportionally to given width

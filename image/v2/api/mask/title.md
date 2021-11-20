@@ -1,2 +1,2 @@
 # mask()
-## Apply an alpha mask to an image
+## Apply alpha masking to the current image

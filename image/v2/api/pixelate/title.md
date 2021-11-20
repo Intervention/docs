@@ -1,2 +1,2 @@
 # pixelate()
-## Pixelate an image
+## Apply pixelation filter to the current image

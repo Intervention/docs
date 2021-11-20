@@ -1,2 +1,2 @@
 # reset()
-## Reset image instance
+## Reset current image to a previously saved state

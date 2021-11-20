@@ -1,2 +1,2 @@
 # width()
-## Get width of image
+## Get width of current image

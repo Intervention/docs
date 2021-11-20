@@ -1,2 +1,2 @@
 # trim()
-## Trim away parts of an image
+## Trim away parts of color of the current image

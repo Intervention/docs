@@ -1,2 +1,2 @@
 # orientate()
-## Adjusts image orientation automatically
+## Adjusts the current image orientation automatically

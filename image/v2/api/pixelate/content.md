@@ -1,5 +1,3 @@
-## Description
-
 > public Intervention\Image\Image pixelate(integer $size)
 
 Applies a pixelation effect to the current image with a given **size** of pixels.
@@ -10,7 +8,7 @@ Applies a pixelation effect to the current image with a given **size** of pixels
 Size of the pixels.
 
 ## Return Values
-Instance of Intervention\Image\Image
+Instance of `Intervention\Image\Image`
 
 ## Examples
 

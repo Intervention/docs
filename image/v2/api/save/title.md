@@ -1,2 +1,2 @@
 # save()
-## Save image in filesystem
+## Encode and save the current image to a filesystem

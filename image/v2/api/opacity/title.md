@@ -1,2 +1,2 @@
 # opacity()
-## Set opacity of an image
+## Set opacity of the current image

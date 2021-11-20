@@ -11,7 +11,7 @@ The name of the backup in memory. Default: *default*
 
 
 ## Return Values
-Instance of Intervention\Image\Image
+Instance of `Intervention\Image\Image`
 
 ## Examples
 

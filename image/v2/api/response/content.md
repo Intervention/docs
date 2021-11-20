@@ -1,5 +1,3 @@
-## Description
-
 > public Intervention\Image\Image response([string $format, [integer $quality]])
 
 Sends HTTP response with current image in given **format** and **quality**.
@@ -18,11 +16,11 @@ Define the encoding format from one of the following formats:
 By default the response data will be encoded in the type of the current image. If no image type is defined yet, method will return jpeg encoded data.
 
 ### quality (optional)
-Define optionally the quality encoded image data ranging from 0 (poor quality, small file) to 100 (best quality, big file). Default: ```90```.
+Define optionally the quality encoded image data ranging from 0 (poor quality, small file) to 100 (best quality, big file). Default: `90`.
 
 
 ## Return Values
-Encoded image data after raw HTTP header is sent. If you are in a **Laravel framework** environment the method will return a **Illuminate\Http\Response** with the corresponding header fields already set.
+Encoded image data after raw HTTP header is sent. If you are in a **Laravel framework** environment the method will return a `Illuminate\Http\Response` with the corresponding header fields already set.
 
 ## Examples
 
@@ -39,8 +37,7 @@ echo $img->response();
 #### Laravel Example
 
 ```php
-Route::get('/', function()
-{
+Route::get('/', function() {
     return Image::make('foo/bar.jpg')->response('png');
 });
 ```

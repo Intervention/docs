@@ -1,5 +1,3 @@
-## Description
-
 > public Intervention\Image\Image widen(integer $width, [Closure $callback])
 
 Resizes the current image to new **width**, constraining aspect ratio. Pass an optional Closure **callback** as third parameter, to apply additional constraints like preventing possible upsizing.
@@ -18,10 +16,8 @@ Closure callback defining constraint to prevent unwanted **upsizing** of the ima
 
 Keep image from being upsized.
 
-
-
 ## Return Values
-Instance of Intervention\Image\Image
+Instance of `Intervention\Image\Image`
 
 ## Examples
 
@@ -34,7 +30,6 @@ $img = Image::make('public/foo.jpg')->widen(300, function ($constraint) {
     $constraint->upsize();
 });
 ```
-
 
 ## See also
 

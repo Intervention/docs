@@ -1,2 +1,2 @@
 # pickColor()
-## Pick a color out of an image
+## Pick a color out of the current image
