@@ -1,25 +1,3 @@
-
-
-
-
-## International Standard Serial Number (ISSN)
-
-Checks for a valid [International Standard Serial Number](https://en.wikipedia.org/wiki/International_Standard_Serial_Number) (ISSN).
-
-    public Intervention\Validation\Rules\Issn::__construct()
-
-
-
-
-
-
-
-## JSON Web Token (JWT)
-
-The given value must be a in format of a [JSON Web Token](https://en.wikipedia.org/wiki/JSON_Web_Token).
-
-    public Intervention\Validation\Rules\Jwt::__construct()
-
 ## Kebab case string
 
 The given value must be formated in [Kebab case](https://en.wikipedia.org/wiki/Letter_case#Special_case_styles).
