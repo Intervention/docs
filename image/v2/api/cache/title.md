@@ -1,2 +1,0 @@
-# cache()
-## Cached image processing

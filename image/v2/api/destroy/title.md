@@ -1,2 +1,0 @@
-# destroy()
-## Free up memory

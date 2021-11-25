@@ -1,1 +1,0 @@
-# URL based image manipulation
