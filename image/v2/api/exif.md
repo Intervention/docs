@@ -1,4 +1,4 @@
-# exif()
+# Image::exif
 ## Read Exif meta data from the current image
 
 > public Intervention\Image\Image exif([string $key])

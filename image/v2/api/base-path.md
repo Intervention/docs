@@ -1,4 +1,4 @@
-# basePath()
+# Image::basePath
 ## Get fully qualified path
 
 > public Intervention\Image\Image basePath()

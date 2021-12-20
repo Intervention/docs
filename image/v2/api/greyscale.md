@@ -1,4 +1,4 @@
-# greyscale()
+# Image::greyscale
 ## Turn the current image into a greyscale version
 
 > public Intervention\Image\Image greyscale()

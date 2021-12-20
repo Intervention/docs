@@ -1,4 +1,4 @@
-# interlace()
+# Image::interlace
 ## Enable or disabled interlaced mode of the current image
 
 > public Intervention\Image\Image interlace([boolean $interlace])

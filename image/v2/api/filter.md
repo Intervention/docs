@@ -1,4 +1,4 @@
-# filter()
+# Image::filter
 ## Apply a predefined filter to the current image
 
 > public Intervention\Image\Image filter(Intervention\Image\Filters\FilterInterface $filter)

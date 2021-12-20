@@ -1,4 +1,4 @@
-# text()
+# Image::text
 ## Write text to the current image
 
 > public Intervention\Image\Image text(string $text, [integer $x, [integer $y, [Closure $callback]]])

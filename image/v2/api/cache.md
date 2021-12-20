@@ -1,4 +1,4 @@
-# cache()
+# Image::cache
 ## Cached image processing
 
 > public Intervention\Image\ImageManager cache(Closure $callback, [int $lifetime, [bool $returnObj]])

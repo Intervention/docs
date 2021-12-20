@@ -1,4 +1,4 @@
-# save()
+# Image::save
 ## Encode and save the current image to a filesystem
 
 > public Intervention\Image\Image save([string $path, [int $quality], [string $format]])

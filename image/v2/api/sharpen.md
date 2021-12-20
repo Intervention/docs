@@ -1,4 +1,4 @@
-# sharpen()
+# Image::sharpen
 ## Sharpen the current image
 
 > public Intervention\Image\Image sharpen([integer $amount])

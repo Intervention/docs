@@ -1,4 +1,4 @@
-# response()
+# Image::response
 ## Sends HTTP response with current image attached
 
 > public Intervention\Image\Image response([string $format, [integer $quality]])

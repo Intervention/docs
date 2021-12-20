@@ -1,4 +1,4 @@
-# destroy()
+# Image::destroy
 ## Free up memory
 
 > public Intervention\Image\Image destroy()

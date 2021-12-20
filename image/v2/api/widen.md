@@ -1,4 +1,4 @@
-# widen()
+# Image::widen
 ## Resize current image proportionally to given width
 
 > public Intervention\Image\Image widen(integer $width, [Closure $callback])

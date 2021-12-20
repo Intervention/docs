@@ -1,4 +1,4 @@
-# brightness()
+# Image::brightness
 ## Change the brightness of an image
 
 > public Intervention\Image\Image brightness(integer $level)

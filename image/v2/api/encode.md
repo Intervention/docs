@@ -1,4 +1,4 @@
-# encode()
+# Image::encode
 ## Encode image
 
 > public Intervention\Image\Image encode([mixed $format, [int $quality]])

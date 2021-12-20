@@ -1,4 +1,4 @@
-# stream()
+# Image::stream
 ## Encoded current image and return PSR-7 stream
 
 > public Intervention\Image\Image stream([mixed $format, [int $quality]])

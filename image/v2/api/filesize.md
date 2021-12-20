@@ -1,4 +1,4 @@
-# filesize()
+# Image::filesize
 ## Gets file size of the current image
 
 > public Intervention\Image\Image filesize()

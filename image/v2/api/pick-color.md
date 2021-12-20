@@ -1,4 +1,4 @@
-# pickColor()
+# Image::pickColor
 ## Pick a color out of the current image
 
 > public Intervention\Image\Image pickColor(int $x, int $y, [string $format])

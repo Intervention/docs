@@ -1,4 +1,4 @@
-# invert()
+# Image::invert
 ## Invert the colors of the current image
 
 > public Intervention\Image\Image invert()

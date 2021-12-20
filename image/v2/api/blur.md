@@ -1,4 +1,4 @@
-# blur
+# Image::blur
 ## Apply a gaussian blur filter with a optional amount on the current image.
 
 > public Intervention\Image\Image blur([integer $amount])

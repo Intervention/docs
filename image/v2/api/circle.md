@@ -1,4 +1,4 @@
-# circle()
+# Image::circle
 ## Draw a circle to the current image
 
 > public Intervention\Image\Image circle(integer $diameter, integer $x, integer $y, [Closure $callback])

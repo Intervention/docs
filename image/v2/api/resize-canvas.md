@@ -1,4 +1,4 @@
-# resizeCanvas()
+# Image::resizeCanvas
 ## Resize the current image boundaries
 
 > public Intervention\Image\Image resizeCanvas (int $width, int $height, [string $anchor, [boolean $relative, [mixed $bgcolor]]])

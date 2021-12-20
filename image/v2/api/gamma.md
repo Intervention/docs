@@ -1,4 +1,4 @@
-# gamma()
+# Image::gamma
 ## Apply gamma correction to the current image
 
 > public Intervention\Image\Image gamma(float $correction)

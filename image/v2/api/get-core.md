@@ -1,4 +1,4 @@
-# getCore()
+# Image::getCore
 ## Read core instance of the current image
 
 > public Intervention\Image\Image getCore()

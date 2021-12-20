@@ -1,4 +1,4 @@
-# height()
+# Image::height
 ## Get the height in pixels of the current image
 
 > public Intervention\Image\Image height()

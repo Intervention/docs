@@ -1,4 +1,4 @@
-# pixelate()
+# Image::pixelate
 ## Apply pixelation filter to the current image
 
 > public Intervention\Image\Image pixelate(integer $size)

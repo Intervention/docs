@@ -1,4 +1,4 @@
-# psrResponse()
+# Image::psrResponse
 ## Attach the current image to new PSR-7 HTTP response
 
 > public Intervention\Image\Image psrResponse([mixed $format, [int $quality]])

@@ -1,4 +1,4 @@
-# trim()
+# Image::trim
 ## Trim away parts of color of the current image
 
 > public Intervention\Image\Image trim( [string $base, [array $away, [int $tolerance, [int $feather]]]] )

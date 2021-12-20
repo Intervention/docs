@@ -1,4 +1,4 @@
-# mask()
+# Image::mask
 ## Apply alpha masking to the current image
 
 > public Intervention\Image\Image mask(mixed $source, [bool $mask_with_alpha])

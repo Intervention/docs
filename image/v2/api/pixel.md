@@ -1,4 +1,4 @@
-# pixel()
+# Image::pixel
 ## Draw a single pixel to the current image
 
 > public Intervention\Image\Image pixel(mixed $color, integer $x, integer $y)

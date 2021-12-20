@@ -1,4 +1,4 @@
-# line()
+# Image::line
 ## Draw a line to the current image
 
 > public Intervention\Image\Image line(int $x1, int $y1, int $x2, int $y2, [Closure $callback])

@@ -1,4 +1,4 @@
-# flip()
+# Image::flip
 ## Mirror the current image vertically or horizontally
 
 > public Intervention\Image\Image flip([string $mode])

@@ -1,4 +1,4 @@
-# make()
+# Image::make
 ## Create a new image resource
 
 > public static Intervention\Image\ImageManager make(mixed $source)

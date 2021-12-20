@@ -1,4 +1,4 @@
-# polygon()
+# Image::polygon
 ## Draw a polygon to the current image
 
 > public Intervention\Image\Image polygon(array $points, [Closure $callback])

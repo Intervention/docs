@@ -1,4 +1,4 @@
-# ellipse()
+# Image::ellipse
 ## Draw an ellipse to the current image
 
 > public Intervention\Image\Image ellipse(int $width, int $height, int $x, int $y, [Closure $callback])

@@ -1,4 +1,4 @@
-# mime()
+# Image::mime
 ## Get MIME Type of the current image
 
 > public Intervention\Image\Image mime()

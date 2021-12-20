@@ -1,4 +1,4 @@
-# opacity()
+# Image::opacity
 ## Set opacity of the current image
 
 > public Intervention\Image\Image opacity(integer $transparency)

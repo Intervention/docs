@@ -1,4 +1,4 @@
-# colorize()
+# Image::colorize
 ## Change the color balance of the current image
 
 > public Intervention\Image\Image colorize(integer $red, integer $green, integer $blue)
