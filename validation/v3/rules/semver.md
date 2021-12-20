@@ -1,15 +1,15 @@
 # Semantic Versioning Rule
 ## Validate Semantic Version Numbers
 
-> public Intervention\Validation\Rules\SemVer __construct()
+> public Intervention\Validation\Rules\SemVer::__construct()
 
 The field under validation must be a valid version numbers using [Semantic Versioning](https://semver.org/).
 
-## Parameters
+### Parameters
 
 none
 
-## Example
+### Example
 
 ```php
 use Intervention\Validation\Rules\SemVer;

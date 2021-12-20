@@ -1,15 +1,15 @@
 # Camel case Rule
 ## Validate Camel case string
 
-> public Intervention\Validation\Rules\Camelcase __construct()
+> public Intervention\Validation\Rules\Camelcase::__construct()
 
 The field under validation must be a formated in [Camel case](https://en.wikipedia.org/wiki/Camel_case).
 
-## Parameters
+### Parameters
 
 none
 
-## Example
+### Example
 
 ```php
 use Intervention\Validation\Rules\Camelcase;

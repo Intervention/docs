@@ -5,11 +5,11 @@
 
 The value under validation must be a in format of a [JSON Web Token](https://en.wikipedia.org/wiki/JSON_Web_Token).
 
-## Parameters
+### Parameters
 
 none
 
-## Example
+### Example
 
 ```php
 use Intervention\Validation\Rules\Jwt;

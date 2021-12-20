@@ -1,15 +1,15 @@
 # HTML Clean Rule
 ## Validate a if text is free of HTML tags
 
-> public Intervention\Validation\Rules\HtmlClean __construct()
+> public Intervention\Validation\Rules\HtmlClean::__construct()
 
 The field under validation must be free of any html code.
 
-## Parameters
+### Parameters
 
 none
 
-## Example
+### Example
 
 ```php
 use Intervention\Validation\Rules\HtmlClean;

@@ -5,11 +5,11 @@
 
 Checks for a valid [International Standard Serial Number](https://en.wikipedia.org/wiki/International_Standard_Serial_Number) (ISSN).
 
-## Parameters
+### Parameters
 
 none
 
-## Example
+### Example
 
 ```php
 use Intervention\Validation\Rules\Issn;

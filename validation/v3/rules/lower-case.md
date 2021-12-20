@@ -1,15 +1,15 @@
 # Lower Case Rule
 ## Validate a string in lower case
 
-> public Intervention\Validation\Rules\Lowercase __construct()
+> public Intervention\Validation\Rules\Lowercase::__construct()
 
 The given value must be all lower case letters.
 
-## Parameters
+### Parameters
 
 none
 
-## Example
+### Example
 
 ```php
 use Intervention\Validation\Rules\Lowercase;

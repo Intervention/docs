@@ -1,15 +1,15 @@
 # IMEI Rule
 ## Validate International Mobile Equipment Identity 
 
-> public Intervention\Validation\Rules\Imei __construct()
+> public Intervention\Validation\Rules\Imei::__construct()
 
 The field under validation must be a [International Mobile Equipment Identity](https://en.wikipedia.org/wiki/International_Mobile_Equipment_Identity) (IMEI).
 
-## Parameters
+### Parameters
 
 none
 
-## Example
+### Example
 
 ```php
 use Intervention\Validation\Rules\Imei;

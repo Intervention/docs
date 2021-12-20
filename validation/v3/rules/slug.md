@@ -1,15 +1,15 @@
 # Slug Rule
 ## Validate a SEO-friendly short text
 
-> public Intervention\Validation\Rules\Slug __construct()
+> public Intervention\Validation\Rules\Slug::__construct()
 
 The field under validation must be a user- and [SEO-friendly short text](https://en.wikipedia.org/wiki/Clean_URL#Slug).
 
-## Parameters
+### Parameters
 
 none
 
-## Example
+### Example
 
 ```php
 use Intervention\Validation\Rules\Slug;

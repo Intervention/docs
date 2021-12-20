@@ -1,17 +1,17 @@
 # Hexadecimal Color Rule
 ## Validate a hexadecimal color code
 
-> public Intervention\Validation\Rules\HexColor __construct(?int $length = null)
+> public Intervention\Validation\Rules\HexColor::__construct(?int $length = null)
 
 The field under validation must be a valid [hexadecimal color code](https://en.wikipedia.org/wiki/Web_colors). 
 
-## Parameters
+### Parameters
 
-### length (optional)
+#### length (optional)
 
 Optional length as integer to check only for shorthand (3 characters) or full hexadecimal (6 characters) form.
 
-## Example
+### Example
 
 ```php
 use Intervention\Validation\Rules\HexColor;

@@ -1,17 +1,17 @@
 # GTIN Rule
 ## Validate a Global Trade Item Number
 
-> public Intervention\Validation\Rules\Gtin __construct(?int $length = null)
+> public Intervention\Validation\Rules\Gtin::__construct(?int $length = null)
 
 Checks for a valid [Global Trade Item Number](https://en.wikipedia.org/wiki/Global_Trade_Item_Number).
 
-## Parameters
+### Parameters
 
-### length (optional)
+#### length (optional)
 
 Optional integer length to check only for certain types (GTIN-8, GTIN-12, GTIN-13 or GTIN-14).
 
-## Example
+### Example
 
 ```php
 use Intervention\Validation\Rules\Gtin;

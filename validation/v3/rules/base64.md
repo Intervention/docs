@@ -1,15 +1,15 @@
 # Base64 Rule
 ## Validate a base64 encoded string
 
-> public Intervention\Validation\Rules\Base64 __construct()
+> public Intervention\Validation\Rules\Base64::__construct()
 
 The field under validation must be [Base64 encoded](https://en.wikipedia.org/wiki/Base64).
 
-## Parameters
+### Parameters
 
 none
 
-## Example
+### Example
 
 ```php
 use Intervention\Validation\Rules\Base64;

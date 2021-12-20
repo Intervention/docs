@@ -1,15 +1,15 @@
 # Luhn Rule
 ## Validate a string against Luhn algorithm
 
-> public Intervention\Validation\Rules\Luhn __construct()
+> public Intervention\Validation\Rules\Luhn::__construct()
 
 The given value must verify against its included [Luhn algorithm](https://en.wikipedia.org/wiki/Luhn_algorithm) check digit.
 
-## Parameters
+### Parameters
 
 none
 
-## Example
+### Example
 
 ```php
 use Intervention\Validation\Rules\Luhn;

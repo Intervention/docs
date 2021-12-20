@@ -1,15 +1,15 @@
 # Domain name Rule
 ## Validate Domain names
 
-> public Intervention\Validation\Rules\Domainname __construct()
+> public Intervention\Validation\Rules\Domainname::__construct()
 
 The field under validation must be a well formed [domainname](https://en.wikipedia.org/wiki/Domain_name).
 
-## Parameters
+### Parameters
 
 none
 
-## Example
+### Example
 
 ```php
 use Intervention\Validation\Rules\Domainname;

@@ -1,15 +1,15 @@
 # ULID Rule
 ## Validate a Universally Unique Lexicographically Sortable Identifier
 
-> public Intervention\Validation\Rules\Ulid __construct()
+> public Intervention\Validation\Rules\Ulid::__construct()
 
 The field under validation must be a valid [Universally Unique Lexicographically Sortable Identifier](https://github.com/ulid/spec).
 
-## Parameters
+### Parameters
 
 none
 
-## Example
+### Example
 
 ```php
 use Intervention\Validation\Rules\Ulid;

@@ -1,6 +1,4 @@
 # Installation
-## Easy Installation with Composer
-
 ## Installation with Composer
 
 You can install this package quick and easy with Composer.
