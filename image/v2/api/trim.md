@@ -63,6 +63,6 @@ Image::make('public/foo.jpg')->trim('top-left', null, 25, 50);
 ### See also
 
 - [resize](/v2/api/resize)
-- [resizeCanvas](/v2/api/resizeCanvas)
+- [resizeCanvas](/v2/api/resize-canvas)
 - [fit](/v2/api/fit)
 - [crop](/v2/api/crop)

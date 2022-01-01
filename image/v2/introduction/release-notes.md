@@ -123,7 +123,7 @@ These notes cover the major enhancements and changes for every release. For a fu
 
 - Changed requirement to PHP >= 5.4
 - Added method [stream()](/v2/api/stream).
-- Added method [psrResponse()](/v2/api/psrResponse).
+- Added method [psrResponse()](/v2/api/psr-response).
 - Bugfixes
 
 ### 2.2.2 June 15th, 2015

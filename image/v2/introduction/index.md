@@ -11,8 +11,8 @@ The library follows the FIG standard **PSR-2** to ensure a high level of interop
 
 The library requires at least **PHP version 5.4** and comes with **Laravel Facades and Service Providers** to simplify the optional framework integration.
 
-- Read the installation guide
-- Read about Laravel integration
+- [Read the installation guide](/v2/introduction/installation)
+- [Read about Laravel integration](/v2/introduction/installation#integration-in-laravel)
 
 ### Basic Examples
 
@@ -38,4 +38,4 @@ Do the same in one line of code.
 $img = Image::make('public/foo.jpg')->resize(320, 240)->insert('public/watermark.png');
 ```
 
-To view more code examples read the documentation on the individual methods [make](/v2/api/make), [resize](/v2/api/resize), [insert](/v2/api/insert), [save](/v2/api/save) and the introduction to [basic usage](/v2/usage/basic-usage).
+To view more code examples read the documentation on the individual methods [make](/v2/api/make), [resize](/v2/api/resize), [insert](/v2/api/insert), [save](/v2/api/save) and the introduction to [basic usage](/v2/usage/overview).

@@ -38,6 +38,6 @@ $img->save();
 
 ### See also
 
-- [limitColors](/v2/api/limitColors)
+- [limitColors](/v2/api/limit-colors)
 - [save](/v2/api/save)
 - [encode](/v2/api/encode)

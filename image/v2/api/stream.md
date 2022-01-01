@@ -34,6 +34,6 @@ $stream = Image::make('public/foo.png')->stream('jpg', 60);
 
 ### See also
 
-- [psrResponse](/v2/api/psrResponse)
+- [psrResponse](/v2/api/psr-response)
 - [encode](/v2/api/encode)
 - [save](/v2/api/save)

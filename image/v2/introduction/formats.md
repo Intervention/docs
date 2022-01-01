@@ -54,7 +54,7 @@ See documentation of [make](/v2/api/make) method to see how to read image format
 Intervention Image supports four ways to define colors for its methods.
 
 ### Integer Format
-By default the [pickColor](/v2/api/pickColor) method returns the RGB value as integer. You can also pass a color in this format to all other methods.
+By default the [pickColor](/v2/api/pick-color) method returns the RGB value as integer. You can also pass a color in this format to all other methods.
 
 #### Examples
 

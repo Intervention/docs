@@ -35,6 +35,6 @@ $img->crop(100, 100, 25, 25);
 ### See also
 
 - [resize](/v2/api/resize)
-- [resizeCanvas](/v2/api/resizeCanvas)
+- [resizeCanvas](/v2/api/resize-canvas)
 - [fit](/v2/api/fit)
 - [trim](/v2/api/trim)

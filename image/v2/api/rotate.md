@@ -31,4 +31,4 @@ $img->rotate(-45);
 
 - [flip](/v2/api/flip)
 - [resize](/v2/api/resize)
-- [resizeCanvas](/v2/api/resizeCanvas)
+- [resizeCanvas](/v2/api/resize-canvas)

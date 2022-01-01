@@ -21,7 +21,7 @@ In order to keep your application compatible, you need to keep in mind the follo
 - [sharpen()](/v2/api/sharpen) applies sharpen filter to image.
 - [orientate()](/v2/api/orientate) auto-adjusts image orientation.
 - [filter()](/v2/api/filter) applies filter to an image.
-- [getCore()](/v2/api/getCore) get resource of image driver (Imagick object or GD resource).
+- [getCore()](/v2/api/get-core) get resource of image driver (Imagick object or GD resource).
 
 ## API changes
 
@@ -52,4 +52,4 @@ In order to keep your application compatible, you need to keep in mind the follo
 ### Other
 
 - To keep naming consistent the filename of the configuration file for *intervention/imagecache* was renamed from `config/imagecache.php` to `config/config.php`.
-- For standalone use instantiate objects from `Intervention\Image\ImageManagerStatic` instead of `Intervention\Image\Image`. ([See example](/v2/getting-started/installation))
+- For standalone use instantiate objects from `Intervention\Image\ImageManagerStatic` instead of `Intervention\Image\Image`. ([See example](/v2/introduction/installation))

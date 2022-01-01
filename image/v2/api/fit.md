@@ -60,6 +60,6 @@ $img->fit(800, 600, function ($constraint) {
 ### See also
 
 - [resize](/v2/api/resize)
-- [resizeCanvas](/v2/api/resizeCanvas)
+- [resizeCanvas](/v2/api/resize-canvas)
 - [crop](/v2/api/crop)
 - [trim](/v2/api/trim)

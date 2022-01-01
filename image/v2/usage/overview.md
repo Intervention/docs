@@ -39,7 +39,7 @@ Image::configure(['driver' => 'imagick']);
 $image = Image::make('public/foo.jpg')->resize(300, 200);
 ```
 
-You can read more detailed information about [installation](/v2/getting-started/installation) and [configuration](/v2/getting-started/configuration).
+You can read more detailed information about [installation](/v2/introduction/installation) and [configuration](/v2/introduction/configuration).
 
 ## Reading Images
 
@@ -97,7 +97,7 @@ Take a look at some of the methods in the following list.
 - [widen()](/v2/api/widen)
 - [heighten()](/v2/api/heighten)
 - [fit()](/v2/api/fit)
-- [resizeCanvas()](/v2/api/resizeCanvas)
+- [resizeCanvas()](/v2/api/resize-canvas)
 - [crop()](/v2/api/crop)
 - [trim()](/v2/api/trim)
 

@@ -72,6 +72,6 @@ $img->resize(400, 400, function ($constraint) {
 - [widen](/v2/api/widen)
 - [heighten](/v2/api/heighten)
 - [fit](/v2/api/fit)
-- [resizeCanvas](/v2/api/resizeCanvas)
+- [resizeCanvas](/v2/api/resize-canvas)
 - [crop](/v2/api/crop)
 - [trim](/v2/api/trim)

@@ -5,7 +5,7 @@
 
 ## Image Formats
 
-Intervention Image is able to decode & encode the following image formats. Read more about image encoding in the [output section](/foo).
+Intervention Image is able to decode & encode the following image formats. Read more about image encoding in the [output section](/v3/basics/image-output).
 
 ### JPEG
 
