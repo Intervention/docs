@@ -20,11 +20,15 @@ Depending on your PHP installation Intervention Image lets you choose between tw
 
 The best way to install Intervention Image is quickly and easily with [Composer](https://getcomposer.org/).
 
-To install the 3.0-alpha version, run the following command.
+**This is an early alpha version and should installed for development and testing only.**
+
+First make sure to allow unstable releases by setting the `minimum-stability` value on your `composer.json` to `alpha`. Then continue by running the following command.
 
 ```bash
-$ composer require intervention/image@3.0-alpha
+$ composer require intervention/image ^3.0@alpha
 ```
+
+
 
 Your `composer.json` will be updated automatically and you're able use the classes of the package via the autoloader. To do so require the just created `vendor/autoload.php` file to PSR-4 autoload all your installed composer packages.
 
