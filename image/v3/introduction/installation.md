@@ -28,8 +28,6 @@ First make sure to allow unstable releases by setting the `minimum-stability` va
 $ composer require intervention/image ^3.0@alpha
 ```
 
-
-
 Your `composer.json` will be updated automatically and you're able use the classes of the package via the autoloader. To do so require the just created `vendor/autoload.php` file to PSR-4 autoload all your installed composer packages.
 
 After installation you can start to [use the library](/v3/basics/instantiation).
