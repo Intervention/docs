@@ -1,23 +1,28 @@
 # Calculator
-## Using the zodiac calculator class
+## Using the Zodiac Calculator Class
 
-The calculator class works a a starting point to transform different types of **date data** into zodiac objects.
+[TOC]
 
-### Instantiate from text dates
+The calculator class works a a starting point to transform different types of dates into zodiac objects.
 
-The calculator class can read dates in text format, which can represent a relative time (last monday, tomorrow, last day of next month) or an absolute time (first day of June 1983, 2011-11-11).
+### Instantiate from Scalar Dates
+
+The calculator class can read dates from **integer types** (unix timestamp) as well as **text strings**, which can represent a relative time (last monday, tomorrow, last day of next month) or an absolute time (first day of June 1983, 2011-11-11).
 
 ```php
 use Intervention\Zodiac\Calculator;
 
 // create from iso date
-$zodiac = Calculator::make('1980-09-15');
+$zodiac = Calculator::make('1992-03-19');
 
-// create from iso date
+// create from relative date
 $zodiac = (string) Calculator::make('first day of June 2008');
+
+// create from unix timestamp integer
+$zodiac = (string) Calculator::make(1641719287);
 ```
 
-### Instantiate from date objects
+### Instantiate from Date Objects
 
 You can also pass date objects (`DateTime` or `Carbon`) to instantiate new zodiac objects.
 
