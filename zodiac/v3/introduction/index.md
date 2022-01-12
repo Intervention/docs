@@ -21,4 +21,4 @@ $zodiac = Zodiac::make(new DateTime('1977-03-15')); // pisces
 $zodiac = Zodiac::make(Carbon::yesterday());
 ```
 
-Read how to [install the package](/v2/introduction/installation).
+Read how to [install the package](/v3/introduction/installation).
