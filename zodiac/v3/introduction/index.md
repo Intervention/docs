@@ -7,6 +7,8 @@ Intervention Zodiac is a calculator for zodiac signs to resolve the respective z
 
 ```php
 use Intervention\Zodiac\Calculator;
+use DateTime;
+use Carbon\Carbon;
 
 // get zodiac object from a date
 $zodiac = Zodiac::make('1980-09-15'); // virgo
