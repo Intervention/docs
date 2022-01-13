@@ -50,6 +50,8 @@ Route::get('/', function (Request $request) {
 });
 ```
 
+In Laravel the `localized()` method returns by default in the currently configured locale.
+
 ### Eloquent Model Trait
 
 By including `Intervention\Zodiac\Laravel\Traits\CanResolveZodiac` your Eloquent Model gets a new zodiac attribute, which is created based on the birthday attribute of the current model and returns a zodiac object.
@@ -62,8 +64,8 @@ class User extends Model
     // include trait
     use \Intervention\Zodiac\Laravel\Traits\CanResolveZodiac;
     
-    // Optional: If you want overwrite attribute. By default `birthday`
-    protected $zodiacAttribute = 'date_of_birth';
+    // optional: If you want overwrite attribute. By default `birthday`
+    protected $birthdayAttribute = 'date_of_birth';
 }
 ```
 
