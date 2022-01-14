@@ -36,4 +36,4 @@ $zodiac = Calculator::make(new DateTime('1977-03-15'));
 $zodiac = Calculator::make(Carbon::yesterday());
 ```
 
-Continue reading to learn what you can do with the [zodiac objects](/v3/usage/zodiac).
+Continue reading to learn what you can do with the [zodiac objects](/v3/api/zodiac).
