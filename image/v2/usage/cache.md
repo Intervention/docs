@@ -28,4 +28,4 @@ $img = Image::cache(function($image) {
 
 Read the [cache()](/api/cache) method documentation to find out more about the possibilities.
 
-To take the caching one step further, take a look at [URL based image manipulation](/use/url).
+To take the caching one step further, take a look at [URL based image manipulation](/usage/url-manipulation).

@@ -58,7 +58,7 @@ It makes sense to save image files with a unique filename in these directories. 
 
 ### 5. Templates
 
-The templates are defined as names of [filter classes](/use/filters), where you can define any manipulation operation. The configuration file comes with three different basic callbacks.
+The templates are defined as names of [filter classes](/usage/filters), where you can define any manipulation operation. The configuration file comes with three different basic callbacks.
 
 - **small** - 120x90 Pixel
 - **medium** - 240x180 Pixel
@@ -89,7 +89,7 @@ Just use the name instead of the template name.
 
 #### Filter class example
 
-Take a look at the following example of a template filter class to learn more about [filter classes](/use/filters) and define your own templates anywhere you like.
+Take a look at the following example of a template filter class to learn more about [filter classes](/usage/filters) and define your own templates anywhere you like.
 
 ```php
 <?php
