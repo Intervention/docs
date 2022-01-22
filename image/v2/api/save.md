@@ -18,7 +18,7 @@ Path to the file where to write the image data. If the image is created from a e
 Define optionally the quality of the image. It is normalized for all file types to a range from `0` (poor quality, small file) to `100` (best quality, big file). Quality is only applied if you're encoding JPG format since PNG compression is lossless and does not affect image quality. The default value is `90`.
 
 #### format (optional)
-By default the format of the saved image is defined by the file extension of the given path. Alternatively it is possible to define the image format by passing one of the [image format extension](/getting_started/formats) as a third parameter.
+By default the format of the saved image is defined by the file extension of the given path. Alternatively it is possible to define the image format by passing one of the [image format extension](/v2/getting_started/formats) as a third parameter.
 
 
 ### Return Values

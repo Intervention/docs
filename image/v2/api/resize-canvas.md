@@ -33,7 +33,7 @@ The possible values for this parameter are:
 Determine that the resizing is going to happen in relative mode. Meaning that the values of width or height will be added or substracted from the current height of the image. Default: `false`
 
 #### bgcolor (optional)
-A background color for the new areas of the image. The background color can be passed in different [color formats](/getting_started/formats). Default: `#ffffff`, transparent if supported by the output format
+A background color for the new areas of the image. The background color can be passed in different [color formats](/v2/getting_started/formats). Default: `#ffffff`, transparent if supported by the output format
 
 ### Return Values
 Resized instance of `Intervention\Image\Image`

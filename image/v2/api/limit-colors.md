@@ -11,7 +11,7 @@ Method converts the existing colors of the current image into a color table with
 Maximum number of colors that should be retained in the color palette. Or `null` to convert to truecolor.
 
 #### matte (optional)
-A color to blend transparent pixels against. Can be defined in one of the different [color formats](/getting_started/formats). Default: no matte color
+A color to blend transparent pixels against. Can be defined in one of the different [color formats](/v2/getting_started/formats). Default: no matte color
 
 ### Return Values
 Instance of `Intervention\Image\Image`

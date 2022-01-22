@@ -29,7 +29,7 @@ Set font size in pixels. **Font sizing is only available if a font file is set a
 
 > public Intervention\Image\Font color(mixed $color)
 
-Set color of the text in one of the available [color formats](/getting_started/formats). Default: `#000000`
+Set color of the text in one of the available [color formats](/v2/getting_started/formats). Default: `#000000`
 
 > public Intervention\Image\Font align(string $align)
 

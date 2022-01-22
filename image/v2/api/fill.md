@@ -10,7 +10,7 @@ If a certain position is defined, the color at that point on the original image 
 ### Parameters
 
 #### filling
-The fill color or image pattern. Pass a **color** as one of the different [color formats](/getting_started/formats) or to fill the image with tiles an image resource in the following formats:
+The fill color or image pattern. Pass a **color** as one of the different [color formats](/v2/getting_started/formats) or to fill the image with tiles an image resource in the following formats:
 
 - **string** - Path of the image in filesystem.
 - **string** - URL of an image (```allow_url_fopen``` must be enabled).

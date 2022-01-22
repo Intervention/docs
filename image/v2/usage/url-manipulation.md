@@ -12,7 +12,7 @@ An image has to be uploaded only once. All manipulations like resizing or croppi
 Follow this few easy steps to hook the URL based image manipulation directly into your Laravel application. Once enabled the package generates a dynamic route, which forms the URL mentioned above and uses the caching system specified by your Laravel configuration.
 
 ### 1. Install packages
-To use URL based image manipulation make sure you have installed the latest versions of both **intervention/image** and **intervention/imagecache** and of course a Laravel application. Refer to the [installation guide](/introduction/installation) of intervention/image and [intervention/imagecache](/usage/cache), if you need help on this. After installation follow a few easy steps to [integrate Intervention Image into Laravel](/getting_started/installation#laravel).
+To use URL based image manipulation make sure you have installed the latest versions of both **intervention/image** and **intervention/imagecache** and of course a Laravel application. Refer to the [installation guide](/v2/introduction/installation) of intervention/image and [intervention/imagecache](/v2/usage/cache), if you need help on this. After installation follow a few easy steps to [integrate Intervention Image into Laravel](/v2/getting_started/installation#laravel).
 
 ### 2. Publish package configuration
 If everything is installed and set **import the configuration file** of the caching package, by running one of the following artisan commands:
@@ -58,7 +58,7 @@ It makes sense to save image files with a unique filename in these directories. 
 
 ### 5. Templates
 
-The templates are defined as names of [filter classes](/usage/filters), where you can define any manipulation operation. The configuration file comes with three different basic callbacks.
+The templates are defined as names of [filter classes](/v2/usage/filters), where you can define any manipulation operation. The configuration file comes with three different basic callbacks.
 
 - **small** - 120x90 Pixel
 - **medium** - 240x180 Pixel
@@ -89,7 +89,7 @@ Just use the name instead of the template name.
 
 #### Filter class example
 
-Take a look at the following example of a template filter class to learn more about [filter classes](/usage/filters) and define your own templates anywhere you like.
+Take a look at the following example of a template filter class to learn more about [filter classes](/v2/usage/filters) and define your own templates anywhere you like.
 
 ```php
 <?php

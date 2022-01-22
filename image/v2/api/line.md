@@ -24,7 +24,7 @@ Define appearance of line. See examples below. Use the following methods to pass
 
 > public Intervention\Image\AbstractShape color(string $color)
 
-Set color of the line in one of the available [color formats](/getting_started/formats). Default: `#000000`
+Set color of the line in one of the available [color formats](/v2/getting_started/formats). Default: `#000000`
 
 > public Intervention\Image\AbstractShape width(integer $width)
 

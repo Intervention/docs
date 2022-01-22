@@ -26,6 +26,6 @@ $img = Image::cache(function($image) {
 });
 ```
 
-Read the [cache()](/api/cache) method documentation to find out more about the possibilities.
+Read the [cache()](/v2/api/cache) method documentation to find out more about the possibilities.
 
-To take the caching one step further, take a look at [URL based image manipulation](/usage/url-manipulation).
+To take the caching one step further, take a look at [URL based image manipulation](/v2/usage/url-manipulation).

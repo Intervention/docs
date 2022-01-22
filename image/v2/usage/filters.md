@@ -5,7 +5,7 @@ Image Filters in Intervention Image give you the useful possibility to group ima
 
 Intervention Image provides the basic ```Intervention\Image\Filters\FilterInterface```, which all filters need to implement.
 
-Once you have created your own filters, you can apply them using the [filter()](/api/filter) method.
+Once you have created your own filters, you can apply them using the [filter()](/v2/api/filter) method.
 
 #### Applying the demo filter
 
