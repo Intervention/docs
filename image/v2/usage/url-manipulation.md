@@ -17,7 +17,7 @@ To use URL based image manipulation make sure you have installed the latest vers
 ### 2. Publish package configuration
 If everything is installed and set **import the configuration file** of the caching package, by running one of the following artisan commands:
 
-#### Publish configuration in Laravel 5
+#### Publish configuration as of Laravel 5
 
 > $ php artisan vendor:publish
 
