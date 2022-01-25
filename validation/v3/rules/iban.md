@@ -12,7 +12,7 @@ none
 ### Example
 
 ```php
-use Intervention\Validation\Rules\Imei;
+use Intervention\Validation\Rules\Iban;
 
 $validator = Validator::make($request->all(), [
     'my-value' => new Iban(),
