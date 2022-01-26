@@ -15,6 +15,6 @@ none
 use Intervention\Validation\Rules\Slug;
 
 $validator = Validator::make($request->all(), [
-    'my-value' => new Slug(),
+    'attribute-key' => new Slug(),
 ]);
 ```

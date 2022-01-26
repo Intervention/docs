@@ -17,6 +17,6 @@ Country code string in [ISO-639-1](https://en.wikipedia.org/wiki/ISO_639-1) form
 use Intervention\Validation\Rules\Postalcode;
 
 $validator = Validator::make($request->all(), [
-    'my-value' => new Postalcode('de'),
+    'attribute-key' => new Postalcode('de'),
 ]);
 ```

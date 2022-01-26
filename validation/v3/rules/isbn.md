@@ -17,7 +17,7 @@ Optional length parameter as integer to check only for ISBN-10 or ISBN-13.
 use Intervention\Validation\Rules\Isbn;
 
 $validator = Validator::make($request->all(), [
-    'my-value' => new Isbn(10),
+    'attribute-key' => new Isbn(10),
 ]);
 ```
 

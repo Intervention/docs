@@ -15,7 +15,7 @@ none
 use Intervention\Validation\Rules\Imei;
 
 $validator = Validator::make($request->all(), [
-    'my-value' => new Imei(),
+    'attribute-key' => new Imei(),
 ]);
 ```
 

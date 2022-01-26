@@ -15,6 +15,6 @@ none
 use Intervention\Validation\Rules\Ulid;
 
 $validator = Validator::make($request->all(), [
-    'my-value' => new Ulid(),
+    'attribute-key' => new Ulid(),
 ]);
 ```

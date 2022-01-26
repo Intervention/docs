@@ -15,7 +15,7 @@ none
 use Intervention\Validation\Rules\Issn;
 
 $validator = Validator::make($request->all(), [
-    'my-value' => new Issn(),
+    'attribute-key' => new Issn(),
 ]);
 ```
 

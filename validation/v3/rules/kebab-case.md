@@ -15,7 +15,7 @@ none
 use Intervention\Validation\Rules\Kebabcase;
 
 $validator = Validator::make($request->all(), [
-    'my-value' => new Kebabcase(),
+    'attribute-key' => new Kebabcase(),
 ]);
 ```
 

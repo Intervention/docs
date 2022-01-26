@@ -17,7 +17,7 @@ Optional integer length to check only for certain types (GTIN-8, GTIN-12, GTIN-1
 use Intervention\Validation\Rules\Gtin;
 
 $validator = Validator::make($request->all(), [
-    'my-value' => new Gtin(14),
+    'attribute-key' => new Gtin(14),
 ]);
 ```
 

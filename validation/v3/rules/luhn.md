@@ -15,7 +15,7 @@ none
 use Intervention\Validation\Rules\Luhn;
 
 $validator = Validator::make($request->all(), [
-    'my-value' => new Luhn(),
+    'attribute-key' => new Luhn(),
 ]);
 ```
 

@@ -15,7 +15,7 @@ none
 use Intervention\Validation\Rules\Iban;
 
 $validator = Validator::make($request->all(), [
-    'my-value' => new Iban(),
+    'attribute-key' => new Iban(),
 ]);
 ```
 

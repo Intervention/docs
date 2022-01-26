@@ -15,7 +15,7 @@ none
 use Intervention\Validation\Rules\Jwt;
 
 $validator = Validator::make($request->all(), [
-    'my-value' => new Jwt(),
+    'attribute-key' => new Jwt(),
 ]);
 ```
 

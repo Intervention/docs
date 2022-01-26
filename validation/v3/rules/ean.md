@@ -17,7 +17,7 @@ Optional integer length (8 or 13) to check only for EAN-8 or EAN-13 or either on
 use Intervention\Validation\Rules\Ean;
 
 $validator = Validator::make($request->all(), [
-    'my-value' => new Ean(8),
+    'attribute-key' => new Ean(8),
 ]);
 ```
 

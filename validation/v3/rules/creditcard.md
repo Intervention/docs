@@ -15,6 +15,6 @@ none
 use Intervention\Validation\Rules\Creditcard;
 
 $validator = Validator::make($request->all(), [
-    'my-value' => new Creditcard(),
+    'attribute-key' => new Creditcard(),
 ]);
 ```

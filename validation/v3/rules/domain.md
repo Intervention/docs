@@ -15,6 +15,6 @@ none
 use Intervention\Validation\Rules\Domainname;
 
 $validator = Validator::make($request->all(), [
-    'my-value' => new Domainname(),
+    'attribute-key' => new Domainname(),
 ]);
 ```

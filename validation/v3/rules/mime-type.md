@@ -15,7 +15,7 @@ none
 use Intervention\Validation\Rules\MimeType;
 
 $validator = Validator::make($request->all(), [
-    'my-value' => new MimeType(),
+    'attribute-key' => new MimeType(),
 ]);
 ```
 

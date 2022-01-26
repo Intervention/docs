@@ -15,6 +15,6 @@ none
 use Intervention\Validation\Rules\Titlecase;
 
 $validator = Validator::make($request->all(), [
-    'my-value' => new Titlecase(),
+    'attribute-key' => new Titlecase(),
 ]);
 ```

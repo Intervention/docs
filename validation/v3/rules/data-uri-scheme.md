@@ -15,6 +15,6 @@ none
 use Intervention\Validation\Rules\DataUri;
 
 $validator = Validator::make($request->all(), [
-    'my-value' => new DataUri(),
+    'attribute-key' => new DataUri(),
 ]);
 ```

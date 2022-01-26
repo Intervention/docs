@@ -15,6 +15,6 @@ none
 use Intervention\Validation\Rules\Cidr;
 
 $validator = Validator::make($request->all(), [
-    'my-value' => new Cidr(),
+    'attribute-key' => new Cidr(),
 ]);
 ```

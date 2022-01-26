@@ -15,7 +15,7 @@ none
 use Intervention\Validation\Rules\Lowercase;
 
 $validator = Validator::make($request->all(), [
-    'my-value' => new Lowercase(),
+    'attribute-key' => new Lowercase(),
 ]);
 ```
 

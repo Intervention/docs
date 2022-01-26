@@ -15,6 +15,6 @@ none
 use Intervention\Validation\Rules\SemVer;
 
 $validator = Validator::make($request->all(), [
-    'my-value' => new SemVer(),
+    'attribute-key' => new SemVer(),
 ]);
 ```

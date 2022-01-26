@@ -15,6 +15,6 @@ none
 use Intervention\Validation\Rules\Uppercase;
 
 $validator = Validator::make($request->all(), [
-    'my-value' => new Uppercase(),
+    'attribute-key' => new Uppercase(),
 ]);
 ```

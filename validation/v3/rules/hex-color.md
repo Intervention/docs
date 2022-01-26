@@ -17,7 +17,7 @@ Optional length as integer to check only for shorthand (3 characters) or full he
 use Intervention\Validation\Rules\HexColor;
 
 $validator = Validator::make($request->all(), [
-    'my-value' => new HexColor(3),
+    'attribute-key' => new HexColor(3),
 ]);
 ```
 

@@ -15,7 +15,7 @@ none
 use Intervention\Validation\Rules\Isin;
 
 $validator = Validator::make($request->all(), [
-    'my-value' => new Isin(),
+    'attribute-key' => new Isin(),
 ]);
 ```
 

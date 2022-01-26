@@ -15,6 +15,6 @@ none
 use Intervention\Validation\Rules\Base64;
 
 $validator = Validator::make($request->all(), [
-    'my-value' => new Base64(),
+    'attribute-key' => new Base64(),
 ]);
 ```

@@ -15,6 +15,6 @@ none
 use Intervention\Validation\Rules\Snakecase;
 
 $validator = Validator::make($request->all(), [
-    'my-value' => new Snakecase(),
+    'attribute-key' => new Snakecase(),
 ]);
 ```

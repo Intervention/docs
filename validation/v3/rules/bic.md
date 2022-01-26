@@ -15,6 +15,6 @@ none
 use Intervention\Validation\Rules\Bic;
 
 $validator = Validator::make($request->all(), [
-    'my-value' => new Bic(),
+    'attribute-key' => new Bic(),
 ]);
 ```

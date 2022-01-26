@@ -15,6 +15,6 @@ none
 use Intervention\Validation\Rules\Username;
 
 $validator = Validator::make($request->all(), [
-    'my-value' => new Username(),
+    'attribute-key' => new Username(),
 ]);
 ```

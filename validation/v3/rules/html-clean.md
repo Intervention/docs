@@ -15,7 +15,7 @@ none
 use Intervention\Validation\Rules\HtmlClean;
 
 $validator = Validator::make($request->all(), [
-    'my-value' => new HtmlClean(),
+    'attribute-key' => new HtmlClean(),
 ]);
 ```
 

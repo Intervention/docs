@@ -15,6 +15,6 @@ none
 use Intervention\Validation\Rules\Camelcase;
 
 $validator = Validator::make($request->all(), [
-    'my-value' => new Camelcase(),
+    'attribute-key' => new Camelcase(),
 ]);
 ```

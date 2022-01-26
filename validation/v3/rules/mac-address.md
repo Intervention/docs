@@ -15,7 +15,7 @@ none
 use Intervention\Validation\Rules\MacAddress;
 
 $validator = Validator::make($request->all(), [
-    'my-value' => new MacAddress(),
+    'attribute-key' => new MacAddress(),
 ]);
 ```
 
