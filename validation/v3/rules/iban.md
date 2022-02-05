@@ -1,4 +1,4 @@
-# IBAN Clean Rule
+# IBAN Rule
 ## Validate International Bank Account Numbers
 
 > public Intervention\Validation\Rules\Iban::__construct()
