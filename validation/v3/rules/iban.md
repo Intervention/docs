@@ -18,5 +18,3 @@ $validator = Validator::make($request->all(), [
     'attribute-key' => new Iban(),
 ]);
 ```
-
-
