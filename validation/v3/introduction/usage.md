@@ -11,17 +11,14 @@ The Validation library is built to work with the Laravel Framework and provides 
 
 ```php
 use Illuminate\Support\Facades\Validator;
-use Intervention\Validation\Rules\Creditcard;
 use Intervention\Validation\Rules\HexColor;
-use Intervention\Validation\Rules\Username;
 
 $validator = Validator::make($request->all(), [
     'color' => new Hexcolor(3), // pass rule as object
-    'name' => ['required', 'min:3', 'max:20', new Username()], // combining rules works as well
+    'number' => ['required', 'creditcard'], // or pass rule as string
+    'name' => 'required|min:3|max:20|username', // combining rules works as well
 ]);
 ```
-
-**Make sure to pass any of the additional validation rules as objects and not as strings.**
 
 ### Customizing error messages
 
@@ -49,7 +46,8 @@ use Intervention\Validation\Exceptions\ValidationException;
 // use static factory method to create laravel validator
 $validator = Validator::make($request->all(), [
     'ccnumber' => new Creditcard(),
-    'iban' => ['required', new Iban()],
+    'iban' => ['required', 'iban'],
+    'color' => 'required|hexcolor:3',
 ]);
 
 // validate single values by calling static methods
