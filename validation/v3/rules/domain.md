@@ -1,5 +1,5 @@
 # Domain name Rule
-## Validate Domain names
+## Validate domain names
 
 > public Intervention\Validation\Rules\Domainname::__construct()
 

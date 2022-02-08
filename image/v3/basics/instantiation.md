@@ -1,5 +1,5 @@
 # Instantiation
-## Reading & Creating images
+## Reading & creating images
 
 [TOC]
 

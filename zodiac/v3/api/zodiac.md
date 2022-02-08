@@ -1,5 +1,5 @@
 # Zodiac
-## Working with Zodiac Objects
+## Working with zodiac objects
 
 [TOC]
 

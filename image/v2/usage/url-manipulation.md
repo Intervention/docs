@@ -1,5 +1,5 @@
 # URL based image manipulation
-## URL based image manipulation
+## Cached image operations based on URL patterns
 
 Within a Laravel application it is possible to use the URL to manipulate images dynamically. The manipulated version of the an image will be stored in the cache and will be loaded directly without resource-intensive GD operation.
 

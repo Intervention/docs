@@ -1,5 +1,5 @@
 # Usage
-## How to Use Intervention Zodiac
+## How to use Intervention Zodiac
 
 [TOC]
 

@@ -1,5 +1,5 @@
 # Image Filters
-## Image Filters
+## Bundle image operations in classes
 
 Image Filters in Intervention Image give you the useful possibility to group image transformations commands into a dedicated object. This object defines which command, in which order and with which arguments should be called on an image instance.
 

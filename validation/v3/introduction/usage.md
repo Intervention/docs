@@ -1,5 +1,5 @@
 # Usage
-## Basic Usage of Intervention Validation
+## Basic usage of Intervention Validation
 
 [TOC]
 

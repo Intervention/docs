@@ -1,5 +1,5 @@
 # Animations
-## Creating & Editing Animated Images
+## Creating & editing animated images
 
 ### Creating Animations
 

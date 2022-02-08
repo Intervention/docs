@@ -1,5 +1,5 @@
 # Supported Formats
-## Image & Color Formats
+## Image & color formats
 
 [TOC]
 

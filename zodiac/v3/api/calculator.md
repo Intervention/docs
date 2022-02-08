@@ -1,5 +1,5 @@
 # Calculator
-## Using the Zodiac Calculator Class
+## Using the zodiac calculator class
 
 [TOC]
 

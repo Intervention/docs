@@ -1,5 +1,5 @@
 # Custom Modifiers
-## Group image modifications in a class
+## Group image modifications in classes
 
 You can create your own combinations of image transformations and save them as a custom Image Modifier class.  This modifier defines which command, in which order and with which arguments should be called on an image instance.
 
