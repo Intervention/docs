@@ -1,0 +1,84 @@
+# Authenticator
+## Using the HTTP authenticator
+
+[TOC]
+
+## Creating the authenticator
+
+The workflow is easy. Just create an authenticator in the first step and secure your resource by checking for credentials with a second step.
+
+I strongly recommend using a library like [PHP dotenv](https://github.com/vlucas/phpdotenv) to store the credentials and keep usernames and passwords out of version control.
+
+### Using class constructor
+
+```php
+use Intervention\HttpAuth\HttpAuth;
+
+$auth = new HttpAuth(
+   'basic',
+   'Secure Resource',
+   'admin',
+   'secret'
+);
+```
+
+Alternatively use methods to set properties.
+
+```php
+use Intervention\HttpAuth\HttpAuth;
+
+$auth = new HttpAuth();
+$auth->withType('digest');
+$auth->withRealm('Secure');
+$auth->withCredentials('admin', 'secret');
+```
+
+### Using static factory methods
+
+The package comes with several static factory methods to create the authenticator.
+
+```php
+use Intervention\HttpAuth\HttpAuth;
+
+// create basic auth by array
+$auth = HttpAuth::make([
+    'type' => 'basic',
+    'realm' => 'Secure Resource',
+    'username' => 'admin',
+    'password' => 'secret',
+]);
+```
+
+Or create an authenticator by defining the authentication type directly.
+
+```php
+// create basic auth instance
+$auth = HttpAuth::basic('Secured Realm')->withCredentials('admin', 'secret');
+
+// create digest authenticator
+$auth = HttpAuth::digest('Secured Realm')->withCredentials('admin', 'secret');
+```
+
+## Securing the resource
+
+After you created a HTTP authenticator instance, you have to call `secure()` to secure the resource by checking for credentials. Otherwise nothing will happen.
+
+The server will send a HTTP response with the status code 401 and the browser will ask the user for a username and a password.
+
+
+```php
+use Intervention\HttpAuth\HttpAuth;
+
+// creating authenticator and checking credentials
+HttpAuth::make()->withCredentials('admin', 'secret')->secure();
+```
+
+Optionally you can provide a status message, which will be displayed to the user, when the credential check failed.
+
+
+```php
+use Intervention\HttpAuth\HttpAuth;
+
+// proving custom message for users with failed credential check
+HttpAuth::basic()->secure('Sorry, no access.');
+```
