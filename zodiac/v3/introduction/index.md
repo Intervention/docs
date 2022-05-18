@@ -11,16 +11,16 @@ use DateTime;
 use Carbon\Carbon;
 
 // get zodiac object from a date
-$zodiac = Zodiac::make('1980-09-15'); // virgo
+$zodiac = Calculator::make('1980-09-15'); // virgo
 
 // method takes mixed formats
-$zodiac = Zodiac::make('first day of June 2008'); // gemini
+$zodiac = Calculator::make('first day of June 2008'); // gemini
 
 // even DateTime objects
-$zodiac = Zodiac::make(new DateTime('1977-03-15')); // pisces
+$zodiac = Calculator::make(new DateTime('1977-03-15')); // pisces
 
 // get zodiac from a Carbon
-$zodiac = Zodiac::make(Carbon::yesterday());
+$zodiac = Calculator::make(Carbon::yesterday());
 ```
 
 Read how to [install the package](/v3/introduction/installation).
