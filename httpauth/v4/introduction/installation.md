@@ -9,4 +9,4 @@ Require the package via Composer:
 $ composer require intervention/httpauth
 ```
 
-After the installation you can start [using the authenticator](/v4/introduction/usage).
+After the installation you can start [using the authenticator](/v4/api/authenticator).

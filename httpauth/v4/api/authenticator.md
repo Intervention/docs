@@ -12,9 +12,9 @@ I strongly recommend using a library like [PHP dotenv](https://github.com/vlucas
 ### Using class constructor
 
 ```php
-use Intervention\HttpAuth\HttpAuth;
+use Intervention\HttpAuth\Authenticator;
 
-$auth = new HttpAuth(
+$auth = new Authenticator(
    'basic',
    'Secure Resource',
    'admin',
@@ -25,9 +25,9 @@ $auth = new HttpAuth(
 Alternatively use methods to set properties.
 
 ```php
-use Intervention\HttpAuth\HttpAuth;
+use Intervention\HttpAuth\Authenticator;
 
-$auth = new HttpAuth();
+$auth = new Authenticator();
 $auth->withType('digest');
 $auth->withRealm('Secure');
 $auth->withCredentials('admin', 'secret');
@@ -38,10 +38,10 @@ $auth->withCredentials('admin', 'secret');
 The package comes with several static factory methods to create the authenticator.
 
 ```php
-use Intervention\HttpAuth\HttpAuth;
+use Intervention\HttpAuth\Authenticator;
 
 // create basic auth by array
-$auth = HttpAuth::make([
+$auth = Authenticator::make([
     'type' => 'basic',
     'realm' => 'Secure Resource',
     'username' => 'admin',
@@ -52,11 +52,13 @@ $auth = HttpAuth::make([
 Or create an authenticator by defining the authentication type directly.
 
 ```php
+use Intervention\HttpAuth\Authenticator;
+
 // create basic auth instance
-$auth = HttpAuth::basic('Secured Realm')->withCredentials('admin', 'secret');
+$auth = Authenticator::basic('Secured Realm')->withCredentials('admin', 'secret');
 
 // create digest authenticator
-$auth = HttpAuth::digest('Secured Realm')->withCredentials('admin', 'secret');
+$auth = Authenticator::digest('Secured Realm')->withCredentials('admin', 'secret');
 ```
 
 ## Securing the resource
@@ -67,18 +69,18 @@ The server will send a HTTP response with the status code 401 and the browser wi
 
 
 ```php
-use Intervention\HttpAuth\HttpAuth;
+use Intervention\HttpAuth\Authenticator;
 
 // creating authenticator and checking credentials
-HttpAuth::make()->withCredentials('admin', 'secret')->secure();
+Authenticator::make()->withCredentials('admin', 'secret')->secure();
 ```
 
 Optionally you can provide a status message, which will be displayed to the user, when the credential check failed.
 
 
 ```php
-use Intervention\HttpAuth\HttpAuth;
+use Intervention\HttpAuth\Authenticator;
 
 // proving custom message for users with failed credential check
-HttpAuth::basic()->secure('Sorry, no access.');
+Authenticator::basic()->secure('Sorry, no access.');
 ```
