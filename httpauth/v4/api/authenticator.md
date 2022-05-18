@@ -75,8 +75,9 @@ use Intervention\HttpAuth\Authenticator;
 Authenticator::make()->withCredentials('admin', 'secret')->secure();
 ```
 
-Optionally you can provide a status message, which will be displayed to the user, when the credential check failed.
+### Customizing notice
 
+Optionally you can provide a status message, which will be displayed to the user, when the credential check failed.
 
 ```php
 use Intervention\HttpAuth\Authenticator;
