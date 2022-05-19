@@ -15,10 +15,10 @@ I strongly recommend using a library like [PHP dotenv](https://github.com/vlucas
 use Intervention\HttpAuth\Authenticator;
 
 $auth = new Authenticator(
-   'basic',
-   'Secure Resource',
-   'admin',
-   'secret'
+   'basic', // auth type
+   'Secure Resource', // name of realm
+   'admin', // username
+   'secret' // password
 );
 ```
 
