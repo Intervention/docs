@@ -56,7 +56,7 @@ Route::get('/', function()
     $response->header('Content-Type', 'image/png');
     
     // output
-    return $response
+    return $response;
 });
 ```
 
