@@ -34,6 +34,14 @@ Encoding & Decoding of PNG formated images is supported by all drivers.
 $image->toPng()->save('images/example.png');
 ```
 
+### Windows Bitmap
+
+Encoding & Decoding of BMP formated images is supported by all drivers.
+
+```php
+// encode and save an image instance in ms windows bitmap format
+$image->toBitmap()->save('images/example.bmp');
+```
 
 ## Color Formats
 
