@@ -37,14 +37,14 @@ $image->text('The quick brown fox', 120, 100);
 
 To define the overall appearance of the text and set more details you can pass a callback as an optional parameter. The callback places the calls on the FontInterface and listens to the following methods.
 
-## Example
+#### Example
 
 ```php
 // create test image
 $image = (new ImageManager('gd'))->make('images/example.jpg');
 
 // write text to image
-$image->text('The quick brown fox', 120, 100, function ($text) {
+$image->text('The quick brown fox', 120, 100, function ($font) {
     $font->filename('./fonts/comic-sans.ttf');
     $font->color('#b01735');
     $font->size(70);
@@ -55,7 +55,7 @@ $image->text('The quick brown fox', 120, 100, function ($text) {
 });
 ```
 
-## Font size
+### Font size
 
 > public FontInterface::size(float $size): FontInterface
 
@@ -67,7 +67,7 @@ Define a font size. By default a value of `12` will be applied.
 | - | - | - |
 | size | float | Font size to be applied |
 
-## Font file
+### Font file
 
 > public FontInterface::filename(string $filename): FontInterface
 
@@ -79,7 +79,7 @@ Set a path to a font file in file system in which the text should be written.
 | - | - | - |
 | filename | string | Path to a valid font file |
 
-## Color
+### Color
 
 > public FontInterface::color(mixed $color): FontInterface
 
@@ -91,7 +91,7 @@ Define the text color in one of the valid [color formats](/v3/introduction/forma
 | - | - | - |
 | color | mixed | Desired color of text |
 
-## Horizontal alignment
+### Horizontal alignment
 
 > public FontInterface::align(string $align): FontInterface
 
@@ -103,7 +103,7 @@ Define the horizontal alignment of the text to be written starting from the base
 | - | - | - |
 | align | string | Horizontal text alignment |
 
-## Vertical alignment
+### Vertical alignment
 
 > public FontInterface::valign(string $valign): FontInterface
 
@@ -115,7 +115,7 @@ Define the vertical alignment of the text to be written starting from the base p
 | - | - | - |
 | valign | string | Vertical text alignment |
 
-## Rotation
+### Rotation
 
 > public FontInterface::angle(float $angle): FontInterface
 
@@ -127,7 +127,7 @@ Rotate the text block clockwise with a desired angle.
 | - | - | - |
 | angle | float | Rotation angle |
 
-## Line height
+### Line height
 
 > public FontInterface::lineHeight(float $height): FontInterface
 
