@@ -16,6 +16,15 @@ JPEG is still the most used image format of the internet. GD and Imagick driver 
 $image->toJpeg()->save('images/example.jpg');
 ```
 
+### WebP
+
+Encoding & decoding of the WebP graphic format is supported by GD and Imagick driver.
+
+```php
+// encode and save an image instance in webp format
+$image->toWebp()->save('images/example.jpg');
+```
+
 ### GIF
 
 Since version 3 of Intervention Image there is full support for encoding & decoding of (**animated**) GIF files with GD and Imagick driver.

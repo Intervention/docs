@@ -9,7 +9,7 @@
 
 > public Image::toJpeg(int $quality = 75): EncodedImage
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Encode the current image instance in JPEG format in the given **quality** ranging between 0 for low quality to 100 for best quality.
 
 #### Parameters
 
@@ -32,18 +32,44 @@ $image = $manager->make('images/example.gif');
 $encoded = $image->toJpeg(90); // Intervention\Image\EncodedImage
 ```
 
+### Encoding WebP Format
+
+> public Image::toWebp(int $quality = 75): EncodedImage
+
+Encode the current image instance in the WebP graphic format in the given **quality** ranging between 0 for low quality to 100 for best quality.
+
+#### Parameters
+
+| Name | Type | Description |
+| - | - | - |
+| quality (optional) | integer | Encoding quality |
+
+#### Example
+
+```php
+use Intervention\Image\ImageManager;
+
+// create new manager instance with desired driver
+$manager = new ImageManager('gd');
+
+// reading gif image
+$image = $manager->make('images/example.gif');
+
+// encoding jpeg data
+$encoded = $image->toWebp(60); // Intervention\Image\EncodedImage
+```
 
 ### Encoding PNG Format
 
 > public Image::toPng(): EncodedImage
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Encode the current image instance in PNG format in the given **quality** ranging between 0 for low quality to 100 for best quality.
 
 ### Encoding GIF Format
 
 > public Image::toGif(): EncodedImage
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Encode the current image instance in GIF format in the given **quality** ranging between 0 for low quality to 100 for best quality.
 
 #### Parameters
 
