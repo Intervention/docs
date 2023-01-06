@@ -26,5 +26,5 @@ In a Laravel application it is also possible to pass an uploaded file directly t
 
 ```php
 // resizing an uploaded file
-Image::make(Input::file('photo'))->resize(300, 200)->save('foo.jpg');
+Image::make(Request::file('photo'))->resize(300, 200)->save('foo.jpg');
 ```
