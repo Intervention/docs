@@ -40,7 +40,7 @@ $img = Image::make(imagecreatefromjpeg('public/foo.jpg'));
 $img = Image::make('http://example.com/example.jpg');
 
 // create a new image directly from Laravel file upload
-$img = Image::make(Input::file('photo'));
+$img = Image::make(Request::file('photo'));
 ```
 
 ### See also
