@@ -1,7 +1,7 @@
 # Image::resize
 ## Resize the current image
 
-> public Intervention\Image\Image resize (integer $width, integer $height, [Closure $callback])
+> public Intervention\Image\Image resize (integer $width, integer $height, Closure $callback)
 
 Resizes current image based on given **width** and/or **height**. To constraint the resize command, pass an optional Closure **callback** as third parameter.
     
