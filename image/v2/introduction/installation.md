@@ -32,7 +32,7 @@ The next step is to decide, if you want to integrate Intervention Image into the
 
 ## Usage
 
-Intervention Image doesn't require Laravel or any other framework at all. If you want to use it as is, you just have to require the composer autoload file to instatiate image objects as shown in the following example.
+Intervention Image doesn't require Laravel or any other framework at all. If you want to use it as is, you just have to require the composer autoload file to instantiate image objects as shown in the following example.
 
 #### Example
 
