@@ -22,7 +22,7 @@ Encoding & decoding of the WebP graphic format is supported by GD and Imagick dr
 
 ```php
 // encode and save an image instance in webp format
-$image->toWebp()->save('images/example.jpg');
+$image->toWebp()->save('images/example.webp');
 ```
 
 ### GIF
