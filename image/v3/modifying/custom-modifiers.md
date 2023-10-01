@@ -57,5 +57,5 @@ $image = (new ImageManager('imagick'))
         ->read('images/example.jpg');
 
 // apply modifier
-$image->apply(new MyCustomModifier(25));
+$image->modify(new MyCustomModifier(25));
 ```
