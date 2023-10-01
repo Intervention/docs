@@ -7,14 +7,19 @@
 
 Before you begin with the installation make sure your server environment supports the following requirements.
 
-- PHP >= 8.0
+- PHP >= 8.1
 - A PHP image processing extension
 
 ### Image Processing Extension
 
 Depending on your PHP installation Intervention Image lets you choose between two different image processing libraries.
 
-**GD Image** or **ImageMagick** are the most popular image processing libraries for PHP. Your server environment must support at least one of them. GD is part of most PHP installations. However I recommend using ImageMagick because I think it is faster and more efficient especially for larger images.
+[GD Image](https://www.php.net/manual/en/book.image.php) or
+[ImageMagick](https://www.php.net/manual/en/book.imagick.php) are the most
+popular image processing libraries for PHP. Your server environment must
+support at least one of them. GD is part of most PHP installations. However I
+recommend using ImageMagick because I think it is faster and more efficient
+especially for larger images.
 
 ## Installation
 
