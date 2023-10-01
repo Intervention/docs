@@ -49,11 +49,11 @@ $image = $manager->read(file_get_contents('images/example.jpg'));
 
 ### Creating new images
 
-> public ImageManager::create(int $width, int $height, mixed $background = 'transparent'): ImageInterface
+> public ImageManager::create(int $width, int $height): ImageInterface
 
 Reading existing image sources is one thing, but what if you want to create your own images? Intervention Images can help you with that. You start with an instance of the `Intervention\Image\ImageManager` class and call the `create()` method with the desired image size as arguments. See the following example:
 
-By default the image is created with a **transparent background**. If you want to define a background color instead use an optional third parameter.
+By default the image is created with a **transparent background**. If you want to define a background color instead use the `fill()` method after creation.
 
 #### Parameters
 
@@ -61,7 +61,6 @@ By default the image is created with a **transparent background**. If you want t
 | - | - | - |
 | width | integer | Image width  |
 | height | integer | Image height  |
-| background (optional) | mixed | Background color  |
 
 #### Examples
 
@@ -75,5 +74,5 @@ $manager = new ImageManager('gd');
 $image = $manager->create(640, 480);
 
 // create new image 512x512 with grey background
-$image = $manager->create(512, 512, 'ccc');
+$image = $manager->create(512, 512)->fill('ccc');
 ```

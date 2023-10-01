@@ -62,7 +62,7 @@ You can pass colors as a hex triplet used normally in HTML and CSS. It's possibl
 
 ```php
 // create new image with red background
-$image = (new ImageManager('gd'))->create(300, 200, 'b53717');
+$image = (new ImageManager('gd'))->create(300, 200)->fill('b53717');
 ```
 ### RGB & RGBA Array Format
 
@@ -70,7 +70,7 @@ Pass the RGB integers of a color as a PHP array with or without an alpha value.
 
 ```php
 // create new image with half transparent background
-$image = (new ImageManager('gd'))->create(300, 200, [15, 20, 255, .5]);
+$image = (new ImageManager('gd'))->create(300, 200)->fill([15, 20, 255, .5]);
 ```
 
 ### RGB & RGBA String Format
@@ -79,7 +79,7 @@ RGB string values in functional notations are also supported. If you want to inc
 
 ```php
 // create new image with half transparent background
-$image = (new ImageManager('gd'))->create(300, 200, 'rgba(15, 20, 255, .5)');
+$image = (new ImageManager('gd'))->create(300, 200)->fill('rgba(15, 20, 255, .5)');
 ```
 
 ### Integer Format
@@ -88,5 +88,5 @@ A color is also recognized as an integer by all methods.
 
 ```php
 // create new image with background color
-$image = (new ImageManager('gd'))->create(300, 200, 1829283);
+$image = (new ImageManager('gd'))->create(300, 200)->fill(1829283);
 ```
