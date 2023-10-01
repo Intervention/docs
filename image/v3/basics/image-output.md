@@ -26,7 +26,7 @@ use Intervention\Image\ImageManager;
 $manager = new ImageManager('gd');
 
 // reading gif image
-$image = $manager->make('images/example.gif');
+$image = $manager->read('images/example.gif');
 
 // encoding jpeg data
 $encoded = $image->toJpeg(90); // Intervention\Image\EncodedImage
@@ -53,7 +53,7 @@ use Intervention\Image\ImageManager;
 $manager = new ImageManager('gd');
 
 // reading gif image
-$image = $manager->make('images/example.gif');
+$image = $manager->read('images/example.gif');
 
 // encoding jpeg data
 $encoded = $image->toWebp(60); // Intervention\Image\EncodedImage
@@ -103,7 +103,7 @@ use Intervention\Image\ImageManager;
 $manager = new ImageManager('gd');
 
 // reading gif image
-$image = $manager->make('images/example.gif');
+$image = $manager->read('images/example.gif');
 
 // saving jpeg file
 $encoded = $image->toJpeg()->save('images/test.jpg');
@@ -125,7 +125,7 @@ use Intervention\Image\ImageManager;
 $manager = new ImageManager('imagick');
 
 // reading gif image
-$image = $manager->make('images/example.gif');
+$image = $manager->read('images/example.gif');
 
 // encoding to gif data uri
 $data_uri = $image->toGif()->toDataUri();

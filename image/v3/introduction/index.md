@@ -25,7 +25,7 @@ use Intervention\Image\ImageManager;
 $manager = new ImageManager('imagick');
 
 // read image from file system
-$image = $manager->make('images/example.jpg');
+$image = $manager->read('images/example.jpg');
 
 // resize image proportionally to 300px width
 $image->scale(width: 300);

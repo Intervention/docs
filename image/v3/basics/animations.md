@@ -34,7 +34,7 @@ use Intervention\Image\ImageManager;
 $manager = new ImageManager('gd');
 
 // read animation
-$image = $manager->make('images/animation.gif');
+$image = $manager->read('images/animation.gif');
 
 // discard animation except second frame
 $image->discardAnimation(2);

@@ -7,9 +7,9 @@
 
 ### Reading image sources
 
-> public ImageManager::make(mixed $source): ImageInterface
+> public ImageManager::read(mixed $source): ImageInterface
 
-With Intervention Image you are able to read images from severeal different sources. The starting point is an instance of the `Intervention\Image\ImageManager` class. This class provides a universal method  `make()` to read different types of image sources.
+With Intervention Image you are able to read images from severeal different sources. The starting point is an instance of the `Intervention\Image\ImageManager` class. This class provides a universal method  `read()` to read different types of image sources.
 
 
 #### Parameters
@@ -39,10 +39,10 @@ use Intervention\Image\ImageManager;
 $manager = new ImageManager('imagick');
 
 // read image from filesystem
-$image = $manager->make('images/example.jpg');
+$image = $manager->read('images/example.jpg');
 
 // read image from binary data
-$image = $manager->make(file_get_contents('images/example.jpg'));
+$image = $manager->read(file_get_contents('images/example.jpg'));
 ```
 
 ## Creating Images

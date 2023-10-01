@@ -26,7 +26,7 @@ use Intervention\Image\ImageManager;
 $manager = new ImageManager('gd');
 
 // reading an image
-$image = $manager->make('images/example.png');
+$image = $manager->read('images/example.png');
 
 // increase brightness
 $image = $image->brightness(35);
@@ -54,7 +54,7 @@ use Intervention\Image\ImageManager;
 $manager = new ImageManager('gd');
 
 // reading an image
-$image = $manager->make('images/example.png');
+$image = $manager->read('images/example.png');
 
 // decreasing the contrast
 $image = $image->contrast(-10);
@@ -85,7 +85,7 @@ use Intervention\Image\ImageManager;
 $manager = new ImageManager('gd');
 
 // reading an image
-$image = $manager->make('images/example.png');
+$image = $manager->read('images/example.png');
 
 // apply blurring effect
 $image = $image->blur(3);
@@ -113,7 +113,7 @@ use Intervention\Image\ImageManager;
 $manager = new ImageManager('gd');
 
 // reading an image
-$image = $manager->make('images/example.png');
+$image = $manager->read('images/example.png');
 
 // apply blurring effect
 $image = $image->blur(3);
@@ -135,7 +135,7 @@ use Intervention\Image\ImageManager;
 $manager = new ImageManager('gd');
 
 // reading an image
-$image = $manager->make('images/example.png');
+$image = $manager->read('images/example.png');
 
 // invert colors
 $image = $image->invert();
@@ -163,7 +163,7 @@ use Intervention\Image\ImageManager;
 $manager = new ImageManager('gd');
 
 // reading an image
-$image = $manager->make('images/example.png');
+$image = $manager->read('images/example.png');
 
 // apply the pixelation effect
 $image = $image->pixelate(12);

@@ -20,7 +20,7 @@ use Intervention\Image\ImageManager;
 $manager = new ImageManager('gd');
 
 // reading an image
-$image = $manager->make('images/example.png');
+$image = $manager->read('images/example.png');
 
 // reading the image width
 $width = $image->width();
@@ -41,7 +41,7 @@ use Intervention\Image\ImageManager;
 $manager = new ImageManager('gd');
 
 // reading an image
-$image = $manager->make('images/example.png');
+$image = $manager->read('images/example.png');
 
 // reading the image height
 $height = $image->height();
@@ -62,7 +62,7 @@ use Intervention\Image\ImageManager;
 $manager = new ImageManager('gd');
 
 // reading an image
-$image = $manager->make('images/example.png');
+$image = $manager->read('images/example.png');
 
 // reading image size
 $size = $image->size();

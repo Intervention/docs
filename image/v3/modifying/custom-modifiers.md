@@ -54,7 +54,7 @@ use Intervention\Image\ImageManager;
 
 // create new image instance
 $image = (new ImageManager('imagick'))
-        ->make('images/example.jpg');
+        ->read('images/example.jpg');
 
 // apply modifier
 $image->apply(new MyCustomModifier(25));
