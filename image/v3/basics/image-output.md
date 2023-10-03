@@ -65,18 +65,83 @@ $encoded = $image->toWebp(60); // Intervention\Image\EncodedImage
 
 Encode the current image instance in PNG format in the given **quality** ranging between 0 for low quality to 100 for best quality.
 
+| Name | Type | Description |
+| - | - | - |
+| quality (optional) | integer | Encoding quality  |
+
+```php
+use Intervention\Image\ImageManager;
+
+// create new manager instance with desired driver
+$manager = new ImageManager('gd');
+
+// reading jpg image
+$image = $manager->read('images/example.jpg');
+
+// encoding jpeg data
+$encoded = $image->toPng(60); // Intervention\Image\EncodedImage
+```
+
 ### Encoding GIF Format
 
 > public Image::toGif(): EncodedImage
 
-Encode the current image instance in GIF format in the given **quality** ranging between 0 for low quality to 100 for best quality.
+Encode the current image instance in GIF format.
 
-#### Parameters
+```php
+use Intervention\Image\ImageManager;
+
+// create new manager instance with desired driver
+$manager = new ImageManager('gd');
+
+// reading jpg image
+$image = $manager->read('images/example.jpg');
+
+// encoding jpeg data
+$encoded = $image->toGif(); // Intervention\Image\EncodedImage
+```
+
+### Encoding Windows Bitmap Format
+
+> public Image::toBitmap(): EncodedImage
+
+Encode the current image instance in Windows Bitmap format.
+
+```php
+use Intervention\Image\ImageManager;
+
+// create new manager instance with desired driver
+$manager = new ImageManager('gd');
+
+// reading jpg image
+$image = $manager->read('images/example.jpg');
+
+// encoding jpeg data
+$encoded = $image->toBmp(60); // Intervention\Image\EncodedImage
+```
+
+### Encoding AV1 Image File Format (AVIF)
+
+> public Image::toAvif(): EncodedImage
+
+Encode the current image instance in AVIF format in the given **quality** ranging between 0 for low quality to 100 for best quality.
 
 | Name | Type | Description |
 | - | - | - |
 | quality (optional) | integer | Encoding quality  |
 
+```php
+use Intervention\Image\ImageManager;
+
+// create new manager instance with desired driver
+$manager = new ImageManager('gd');
+
+// reading jpg image
+$image = $manager->read('images/example.jpg');
+
+// encoding jpeg data
+$encoded = $image->toAvif(60); // Intervention\Image\EncodedImage
+```
 
 ## Handling of Encoded Image Data
 
