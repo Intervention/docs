@@ -76,3 +76,37 @@ $image = $manager->create(640, 480);
 // create new image 512x512 with grey background
 $image = $manager->create(512, 512)->fill('ccc');
 ```
+
+### Creating animations
+
+> public ImageManager::animate(callable $callback): ImageInterface
+
+It is also possible to create animated graphics. To do this, use the "animate"
+function. A callback function is passed to this function, which determines the
+source and the delay time of the individual animation images. It should be
+noted that the animation created in this way is output in a format that
+supports animations at all.
+
+Animations are possible in all supplied drivers.
+
+#### Parameters
+
+| Name | Type | Description |
+| - | - | - |
+| callback | callable | Animation setup |
+
+#### Examples
+
+```php
+use Intervention\Image\ImageManager;
+
+// create new manager instance with desired driver
+$manager = new ImageManager('gd');
+
+// create animated image with three frames and a delay of 250 ms for each frame
+$image = $manager->animate(function ($animation) use ($manager) {
+    $animation->add('images/frame01.png', .25);
+    $animation->add('images/frame02.png', .25);
+    $animation->add('images/frame03.png', .25);
+})->setLoops(4);
+```
