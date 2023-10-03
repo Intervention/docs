@@ -87,7 +87,7 @@ source and the delay time of the individual animation images. It should be
 noted that the animation created in this way is output in a format that
 supports animations at all.
 
-Animations are possible in all supplied drivers.
+Animations are possible in all supplied drivers. [Read more on how to modify animated images.](/v3/modifying/animations)
 
 #### Parameters
 
