@@ -43,6 +43,15 @@ Encoding & Decoding of PNG formated images is supported by all drivers.
 $image->toPng()->save('images/example.png');
 ```
 
+### AV1 Image File Format (AVIF)
+
+Encoding & Decoding of AVIF formated images is supported by all drivers.
+
+```php
+// encode and save an image instance in ms windows bitmap format
+$image->toAvif()->save('images/example.avif');
+```
+
 ### Windows Bitmap
 
 Encoding & Decoding of BMP formated images is supported by all drivers.
