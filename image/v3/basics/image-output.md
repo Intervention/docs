@@ -195,3 +195,24 @@ $image = $manager->read('images/example.gif');
 // encoding to gif data uri
 $data_uri = $image->toGif()->toDataUri();
 ```
+
+### Retrieve MIME Type of an encoded image
+
+> public EncodedImage::mimetype(): string
+
+This method takes the already encoded image data and wraps it in an base64 encoded data uri scheme. 
+
+#### Example
+
+```php
+use Intervention\Image\ImageManager;
+
+// create new manager instance with desired driver
+$manager = new ImageManager('imagick');
+
+// reading gif image
+$image = $manager->read('images/example.gif');
+
+// "image/jpeg"
+$mimetype = $image->toJpeg()->mimetype();
+```
