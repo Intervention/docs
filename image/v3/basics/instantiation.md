@@ -9,8 +9,10 @@
 
 > public ImageManager::read(mixed $source): ImageInterface
 
-With Intervention Image you are able to read images from severeal different sources. The starting point is an instance of the `Intervention\Image\ImageManager` class. This class provides a universal method  `read()` to read different types of image sources.
-
+With Intervention Image you are able to read images from severeal different
+sources. The starting point is an instance of the
+`Intervention\Image\ImageManager` class. This class provides a universal method
+`read()` to read different types of image sources.
 
 #### Parameters
 
@@ -23,6 +25,7 @@ With Intervention Image you are able to read images from severeal different sour
 This method not only supports filepaths as an argument. The following argument formats are accepted.
 
 - Path in filesystem
+- File Pointer resource
 - Raw binary image data
 - Base64 encoded image data
 - Data Uri
