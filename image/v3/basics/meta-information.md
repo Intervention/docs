@@ -75,7 +75,7 @@ $ratio = $size->getAspectRatio();
 
 ### Reading colors of certain pixels
 
-> public Image::pickColor(int $x, int $y, int $frame_key = 0): ?ColorInterface
+> public Image::getColor(int $x, int $y, int $frame_key = 0): ?ColorInterface
 
 Reads the color of the pixel specified via the X and Y coordinates.
 Furthermore, the key of the frame from which the color is taken can be
@@ -101,7 +101,7 @@ $manager = new ImageManager('imagick');
 $image = $manager->read('images/animation.gif');
 
 // read color information for frame 10 at position 23/9
-$color = $image->pickColor(23, 9, 10);
+$color = $image->getColor(23, 9, 10);
 
 // 'f3fbe6'
 $hex = $color->toHex();
@@ -121,7 +121,7 @@ $hex = $color->alpha();
 
 ### Reading all colors of certain pixels in animated images
 
-> public Image::pickColors(int $x, int $y): CollectionInterface
+> public Image::getColors(int $x, int $y): CollectionInterface
 
 Reads all colors of the pixel specified via the X and Y coordinates and passes
 them in a collection. For animated images, this collection will contain all
@@ -148,7 +148,7 @@ $manager = new ImageManager('imagick');
 $image = $manager->read('images/animation.gif');
 
 // read color information at position
-$colors = $image->pickColors(10, 10);
+$colors = $image->getColors(10, 10);
 
 // first color
 $color = $colors->first();
