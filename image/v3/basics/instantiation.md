@@ -107,7 +107,7 @@ use Intervention\Image\ImageManager;
 $manager = new ImageManager('gd');
 
 // create animated image with three frames and a delay of 250 ms for each frame
-$image = $manager->animate(function ($animation) use ($manager) {
+$image = $manager->animate(function ($animation) {
     $animation->add('images/frame01.png', .25);
     $animation->add('images/frame02.png', .25);
     $animation->add('images/frame03.png', .25);
