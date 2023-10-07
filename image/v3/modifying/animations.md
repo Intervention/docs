@@ -3,6 +3,26 @@
 
 [TOC]
 
+## Detect animations
+
+### Check the current image instance for animation
+
+> public Image::isAnimated(): bool
+
+Returns `true` if the image is animated. Otherwise `false` is returned.
+
+#### Examples
+
+```php
+use Intervention\Image\ImageManager;
+
+// create new manager instance with desired driver
+$manager = new ImageManager('gd');
+
+// true
+$result = $manager->read('images/animation.gif')->isAnimated();
+```
+
 ## Editing animations
 
 ### Changing the Animation Iteration Count
