@@ -5,7 +5,7 @@
 
 ## Inserting Images
 
-> public Image::place(mixed $element, string $position = 'top-left', int $offset_x = 0, int $offset_y = 0): ImageInterface
+> public Image::place($element, string $position = 'top-left', int $offset_x = 0, int $offset_y = 0): ImageInterface
 
 Inserts the image passed via `element` into the current image instance. The
 passed element can be one of the supported image sources. The image will be
@@ -41,9 +41,9 @@ $manager = new ImageManager('imagick');
 $image = $manager->read('test.png');
 
 // paste another image
-$img->insert('images/foo.png');
+$img->place('images/foo.png');
 
 // create a new Image instance and insert at bottom-right corner with 10px offset
 $watermark = Image::make('images/watermark.png');
-$img->insert($watermark, 'bottom-right', 10, 10);
+$img->place($watermark, 'bottom-right', 10, 10);
 ```
