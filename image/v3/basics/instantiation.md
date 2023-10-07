@@ -113,3 +113,24 @@ $image = $manager->animate(function ($animation) use ($manager) {
     $animation->add('images/frame03.png', .25);
 })->setLoops(4);
 ```
+
+```php
+// create new manager instance with desired driver
+$manager = new ImageManager('gd');
+
+// create a looping  5 frame circle animation by making 
+// own animation frames via the drawCircle method
+$animation = $manager->animate(function ($animation) use ($manager) {
+    for ($i = 1; $i <= 5; $i++) {
+        $animation->add(
+            $manager->create(300, 300) // frame size
+                ->fill('b53717') // frame background color
+                ->drawCircle(150, 150, function ($circle) use ($i) {
+                    $circle->radius(40 * $i); // radius of circle in pixels
+                    $circle->border('fff', 5); // border color & size
+                }),
+            .15 // frame delay
+        );
+    }
+})->setLoops(10);
+```
