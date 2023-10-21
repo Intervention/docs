@@ -5,11 +5,18 @@
 
 ## Image Formats
 
-Intervention Image is able to decode & encode the following image formats. Read more about image encoding in the [output section](/v3/basics/image-output).
+The readable image formats depend on the used driver. While with Imagick it is
+possible to read all formats that the library itself supports, with GD only the
+formats JPG, WebP, GIF, PNG, BMP and AVIF are readable and writable.
+
+Both drivers of Intervention Image are able to decode & encode the following
+image formats. Read more about image encoding in the [output
+section](/v3/basics/image-output).
 
 ### JPEG
 
-JPEG is still the most used image format of the internet. GD and Imagick driver of Intervention Image support encoding & decoding.
+JPEG is still the most used image format of the internet. GD and Imagick driver
+of Intervention Image support encoding & decoding.
 
 ```php
 // encode and save an image instance in jpeg format
@@ -18,7 +25,8 @@ $image->toJpeg()->save('images/example.jpg');
 
 ### WebP
 
-Encoding & decoding of the WebP graphic format is supported by GD and Imagick driver.
+Encoding & decoding of the WebP graphic format is supported by GD and Imagick
+driver.
 
 ```php
 // encode and save an image instance in webp format
@@ -27,7 +35,8 @@ $image->toWebp()->save('images/example.webp');
 
 ### GIF
 
-Since version 3 of Intervention Image there is full support for encoding & decoding of (**animated**) GIF files with GD and Imagick driver.
+Since version 3 of Intervention Image there is full support for encoding &
+decoding of (**animated**) GIF files with GD and Imagick driver.
 
 ```php
 // encode and save an image instance in gif format
@@ -63,7 +72,11 @@ $image->toBitmap()->save('images/example.bmp');
 
 ## Color Formats
 
-Intervention Image supports several formats to define colors for its methods.
+At the moment Intervention Image only supports the RGB color space. This means
+that all images are saved with this color space. Images with other color
+spaces are transformed into RGB. 
+
+The library supports several formats to define colors for its methods.
 
 ### Hexadecimal Format
 

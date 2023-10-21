@@ -106,17 +106,20 @@ $color = $image->pickColor(23, 9, 10);
 // 'f3fbe6'
 $hex = $color->toHex();
 
+// 'rgb(243, 251, 230)'
+$string = $color->toString();
+
 // (int) 243
-$red = $color->red();
+$red = $color->red()->toInt();
 
 // (int) 251
-$green = $color->green();
+$green = $color->green()->toInt();
 
 // (int) 230
-$blue = $color->blue();
+$blue = $color->blue()->toInt();
 
-// (float) 1
-$hex = $color->alpha();
+// (int) 255
+$alpha = $color->alpha()->toInt();
 ```
 
 ### Reading all colors of certain pixels in animated images
