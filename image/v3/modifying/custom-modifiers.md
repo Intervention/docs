@@ -53,7 +53,7 @@ Once the custom modifier is implemented, you can easily apply it to an image ins
 use Intervention\Image\ImageManager;
 
 // create new image instance
-$image = (new ImageManager('imagick'))
+$image = (new ImageManager(['driver' => 'imagick']))
         ->read('images/example.jpg');
 
 // apply modifier

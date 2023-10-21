@@ -39,7 +39,7 @@ If the given argument can not be decoded by the library an exception of type `In
 use Intervention\Image\ImageManager;
 
 // create new manager instance with desired driver
-$manager = new ImageManager('imagick');
+$manager = new ImageManager(['driver' => 'imagick']);
 
 // read image from filesystem
 $image = $manager->read('images/example.jpg');
@@ -71,7 +71,7 @@ By default the image is created with a **transparent background**. If you want t
 use Intervention\Image\ImageManager;
 
 // create new manager instance with desired driver
-$manager = new ImageManager('gd');
+$manager = new ImageManager(['driver' => 'gd']);
 
 // create new image 640x480
 $image = $manager->create(640, 480);
@@ -104,7 +104,7 @@ Animations are possible in all supplied drivers. [Read more on how to modify ani
 use Intervention\Image\ImageManager;
 
 // create new manager instance with desired driver
-$manager = new ImageManager('gd');
+$manager = new ImageManager(['driver' => 'gd']);
 
 // create animated image with three frames and a delay of 250 ms for each frame
 $image = $manager->animate(function ($animation) {
@@ -116,7 +116,7 @@ $image = $manager->animate(function ($animation) {
 
 ```php
 // create new manager instance with desired driver
-$manager = new ImageManager('gd');
+$manager = new ImageManager(['driver' => 'gd']);
 
 // create a looping  5 frame circle animation by making 
 // own animation frames via the drawCircle method

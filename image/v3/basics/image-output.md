@@ -23,7 +23,7 @@ Encode the current image instance in JPEG format in the given **quality** rangin
 use Intervention\Image\ImageManager;
 
 // create new manager instance with desired driver
-$manager = new ImageManager('gd');
+$manager = new ImageManager(['driver' => 'gd']);
 
 // reading gif image
 $image = $manager->read('images/example.gif');
@@ -50,7 +50,7 @@ Encode the current image instance in the WebP graphic format in the given **qual
 use Intervention\Image\ImageManager;
 
 // create new manager instance with desired driver
-$manager = new ImageManager('gd');
+$manager = new ImageManager(['driver' => 'gd']);
 
 // reading gif image
 $image = $manager->read('images/example.gif');
@@ -73,7 +73,7 @@ Encode the current image instance in PNG format in the given **quality** ranging
 use Intervention\Image\ImageManager;
 
 // create new manager instance with desired driver
-$manager = new ImageManager('gd');
+$manager = new ImageManager(['driver' => 'gd']);
 
 // reading jpg image
 $image = $manager->read('images/example.jpg');
@@ -92,7 +92,7 @@ Encode the current image instance in GIF format.
 use Intervention\Image\ImageManager;
 
 // create new manager instance with desired driver
-$manager = new ImageManager('gd');
+$manager = new ImageManager(['driver' => 'gd']);
 
 // reading jpg image
 $image = $manager->read('images/example.jpg');
@@ -111,7 +111,7 @@ Encode the current image instance in Windows Bitmap format.
 use Intervention\Image\ImageManager;
 
 // create new manager instance with desired driver
-$manager = new ImageManager('gd');
+$manager = new ImageManager(['driver' => 'gd']);
 
 // reading jpg image
 $image = $manager->read('images/example.jpg');
@@ -134,7 +134,7 @@ Encode the current image instance in AVIF format in the given **quality** rangin
 use Intervention\Image\ImageManager;
 
 // create new manager instance with desired driver
-$manager = new ImageManager('gd');
+$manager = new ImageManager(['driver' => 'gd']);
 
 // reading jpg image
 $image = $manager->read('images/example.jpg');
@@ -165,7 +165,7 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
 use Intervention\Image\ImageManager;
 
 // create new manager instance with desired driver
-$manager = new ImageManager('gd');
+$manager = new ImageManager(['driver' => 'gd']);
 
 // reading gif image
 $image = $manager->read('images/example.gif');
@@ -187,7 +187,7 @@ This method takes the already encoded image data and wraps it in an base64 encod
 use Intervention\Image\ImageManager;
 
 // create new manager instance with desired driver
-$manager = new ImageManager('imagick');
+$manager = new ImageManager(['driver' => 'imagick']);
 
 // reading gif image
 $image = $manager->read('images/example.gif');
@@ -208,7 +208,7 @@ This method takes the already encoded image data and wraps it in an base64 encod
 use Intervention\Image\ImageManager;
 
 // create new manager instance with desired driver
-$manager = new ImageManager('imagick');
+$manager = new ImageManager(['driver' => 'imagick']);
 
 // reading gif image
 $image = $manager->read('images/example.gif');

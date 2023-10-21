@@ -22,7 +22,7 @@ Draw a single pixel at given position defined by the coordinates **x** and **y**
 
 ```php
 // create an test image from a file
-$manager = new ImageManager('imagick');
+$manager = new ImageManager(['driver' => 'imagick']);
 $image = $manager->read('test.png');
 
 // draw three pixels at different positions
@@ -49,7 +49,7 @@ Draw a colored rectangle on the current image with its top left position at the 
 
 ```php
 // create an test image from a file
-$manager = new ImageManager('imagick');
+$manager = new ImageManager(['driver' => 'imagick']);
 $image = $manager->read('test.png');
 
 // draw an orange rectangle with a border
@@ -78,7 +78,7 @@ Draw a colored ellipse on the current image with its center position at the **x,
 
 ```php
 // create an test image from a file
-$manager = new ImageManager('imagick');
+$manager = new ImageManager(['driver' => 'imagick']);
 $image = $manager->read('test.png');
 
 // draw a red ellipse with a blue border
@@ -107,7 +107,7 @@ Draw a colored circle on the current image with its center position at the **x, 
 
 ```php
 // create an test image from a file
-$manager = new ImageManager('imagick');
+$manager = new ImageManager(['driver' => 'imagick']);
 $image = $manager->read('test.png');
 
 // draw a green circle with a white border
@@ -134,7 +134,7 @@ Draw a line on the current image. Define the overall appearance of the shape by 
 
 ```php
 // create an test image from a file
-$manager = new ImageManager('imagick');
+$manager = new ImageManager(['driver' => 'imagick']);
 $image = $manager->read('test.png');
 
 // draw a half transparent white line
@@ -162,7 +162,7 @@ Draw a polygon on the current image. Define the overall appearance of the shape 
 
 ```php
 // create an test image from a file
-$manager = new ImageManager('imagick');
+$manager = new ImageManager(['driver' => 'imagick']);
 $image = $manager->read('test.png');
 
 // draw a polygon

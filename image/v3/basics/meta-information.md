@@ -17,7 +17,7 @@ Reading the width in pixels from an image instance.
 use Intervention\Image\ImageManager;
 
 // create new manager instance with desired driver
-$manager = new ImageManager('gd');
+$manager = new ImageManager(['driver' => 'gd']);
 
 // reading an image
 $image = $manager->read('images/example.png');
@@ -38,7 +38,7 @@ Reading the pixel height from an image instance.
 use Intervention\Image\ImageManager;
 
 // create new manager instance with desired driver
-$manager = new ImageManager('gd');
+$manager = new ImageManager(['driver' => 'gd']);
 
 // reading an image
 $image = $manager->read('images/example.png');
@@ -59,7 +59,7 @@ Reading the image size from an instance.
 use Intervention\Image\ImageManager;
 
 // create new manager instance with desired driver
-$manager = new ImageManager('gd');
+$manager = new ImageManager(['driver' => 'gd']);
 
 // reading an image
 $image = $manager->read('images/example.png');
@@ -95,7 +95,7 @@ determined. However, this is only relevant for animated images.
 use Intervention\Image\ImageManager;
 
 // create new manager instance with desired driver
-$manager = new ImageManager('imagick');
+$manager = new ImageManager(['driver' => 'imagick']);
 
 // read an image
 $image = $manager->read('images/animation.gif');
@@ -142,7 +142,7 @@ frame.
 use Intervention\Image\ImageManager;
 
 // create new manager instance with desired driver
-$manager = new ImageManager('imagick');
+$manager = new ImageManager(['driver' => 'imagick']);
 
 // read an image
 $image = $manager->read('images/animation.gif');
@@ -183,7 +183,7 @@ the specified block is not found, `null` is returned as result.
 use Intervention\Image\ImageManager;
 
 // create new manager instance with desired driver
-$manager = new ImageManager('gd');
+$manager = new ImageManager(['driver' => 'gd']);
 
 // reading an image
 $image = $manager->read('images/example.jpg');

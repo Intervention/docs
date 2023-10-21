@@ -26,7 +26,7 @@ The method `resize()` simply stretches the image to the desired size. Use `resiz
 use Intervention\Image\ImageManager;
 
 // create new image instance
-$image = (new ImageManager('gd'))->read('images/example.jpg');
+$image = (new ImageManager(['driver' => 'gd']))->read('images/example.jpg');
 
 // resize to 300 x 200 pixel
 $image->resize(300, 200);
@@ -57,7 +57,7 @@ The method `resize()` simply stretches the image to the desired size. Use `resiz
 use Intervention\Image\ImageManager;
 
 // create new image instance (800 x 600)
-$image = (new ImageManager('gd'))->read('images/example.jpg');
+$image = (new ImageManager(['driver' => 'gd']))->read('images/example.jpg');
 
 $image = $image->resizeDown(2000, 100); // 800 x 100
 
@@ -89,7 +89,7 @@ Keep in mind that the resulting size my differ from the given arguments, because
 use Intervention\Image\ImageManager;
 
 // create new image instance (800 x 600)
-$image = (new ImageManager('gd'))->read('images/example.jpg');
+$image = (new ImageManager(['driver' => 'gd']))->read('images/example.jpg');
 
 // scale to fixed height
 $image->scale(height: 300); // 400 x 300
@@ -119,7 +119,7 @@ The method `resize()` simply stretches the image to the desired size. Use `resiz
 use Intervention\Image\ImageManager;
 
 // create new image instance
-$image = (new ImageManager('gd'))->read('images/example.jpg'); // 800 x 600
+$image = (new ImageManager(['driver' => 'gd']))->read('images/example.jpg'); // 800 x 600
 
 // scale down to fixed width
 $image->scaleDown(width: 200); // 200 x 150
@@ -153,7 +153,7 @@ For this method both width and height arguments are required. You can optional s
 use Intervention\Image\ImageManager;
 
 // create new image instance (800 x 600)
-$image = (new ImageManager('gd'))->read('images/example.jpg');
+$image = (new ImageManager(['driver' => 'gd']))->read('images/example.jpg');
 
 // crop the best fitting 5:3 (600x360) ratio and resize to 600x360 pixel
 $img->fit(600, 360);
@@ -186,7 +186,7 @@ This method has the same purpose and the same signature as `fit()` but the end r
 use Intervention\Image\ImageManager;
 
 // create new image instance
-$image = (new ImageManager('gd'))->read('images/example.jpg'); // 800 x 600
+$image = (new ImageManager(['driver' => 'gd']))->read('images/example.jpg'); // 800 x 600
 
 // fit down to 1200x720 (5:3)
 $img->fitDown(1200, 720); // 800 x 480 (5:3)
@@ -223,7 +223,7 @@ Padded resizing means that the original image is scaled until it fits the define
 use Intervention\Image\ImageManager;
 
 // create new image instance
-$image = (new ImageManager('gd'))->read('images/example.jpg');
+$image = (new ImageManager(['driver' => 'gd']))->read('images/example.jpg');
 
 // resize padded to 300 x 200
 $image->pad(300, 200, 'ccc');
@@ -254,7 +254,7 @@ This method does the same thing as `pad()` but does not exceed the size of the o
 use Intervention\Image\ImageManager;
 
 // create new image instance (800 x 600)
-$image = (new ImageManager('gd'))->read('images/example.jpg');
+$image = (new ImageManager(['driver' => 'gd']))->read('images/example.jpg');
 
 // resize padded without upsizing
 $image->padDown(900, 600);

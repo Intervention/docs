@@ -27,7 +27,7 @@ a callback as the fourth parameter.
 use Intervention\Image\ImageManager;
 
 // create new image instance
-$image = (new ImageManager('gd'))->read('images/example.jpg');
+$image = (new ImageManager(['driver' => 'gd']))->read('images/example.jpg');
 
 // write text at a certain position
 $image->text('The quick brown fox', 120, 100);
@@ -41,7 +41,7 @@ To define the overall appearance of the text and set more details you can pass a
 
 ```php
 // create test image
-$image = (new ImageManager('gd'))->read('images/example.jpg');
+$image = (new ImageManager(['driver' => 'gd']))->read('images/example.jpg');
 
 // write text to image
 $image->text('The quick brown fox', 120, 100, function ($font) {

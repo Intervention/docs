@@ -23,7 +23,7 @@ Change the brightness of the current image by a given level. Use values between 
 use Intervention\Image\ImageManager;
 
 // create new manager instance with desired driver
-$manager = new ImageManager('gd');
+$manager = new ImageManager(['driver' => 'gd']);
 
 // reading an image
 $image = $manager->read('images/example.png');
@@ -51,7 +51,7 @@ Change the contrast of the current image by a given level. Use values between `-
 use Intervention\Image\ImageManager;
 
 // create new manager instance with desired driver
-$manager = new ImageManager('gd');
+$manager = new ImageManager(['driver' => 'gd']);
 
 // reading an image
 $image = $manager->read('images/example.png');
@@ -82,7 +82,7 @@ Apply a gaussian blur effect on the current image. Use the optional `amount` arg
 use Intervention\Image\ImageManager;
 
 // create new manager instance with desired driver
-$manager = new ImageManager('gd');
+$manager = new ImageManager(['driver' => 'gd']);
 
 // reading an image
 $image = $manager->read('images/example.png');
@@ -110,7 +110,7 @@ Sharpen the current image instance with an optional `amount`.
 use Intervention\Image\ImageManager;
 
 // create new manager instance with desired driver
-$manager = new ImageManager('gd');
+$manager = new ImageManager(['driver' => 'gd']);
 
 // reading an image
 $image = $manager->read('images/example.png');
@@ -132,7 +132,7 @@ Invert all colors of the current image.
 use Intervention\Image\ImageManager;
 
 // create new manager instance with desired driver
-$manager = new ImageManager('gd');
+$manager = new ImageManager(['driver' => 'gd']);
 
 // reading an image
 $image = $manager->read('images/example.png');
@@ -160,7 +160,7 @@ Applies a pixelation effect on the current image with a given pixel size.
 use Intervention\Image\ImageManager;
 
 // create new manager instance with desired driver
-$manager = new ImageManager('gd');
+$manager = new ImageManager(['driver' => 'gd']);
 
 // reading an image
 $image = $manager->read('images/example.png');

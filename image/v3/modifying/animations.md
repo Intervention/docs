@@ -17,7 +17,7 @@ Returns `true` if the image is animated. Otherwise `false` is returned.
 use Intervention\Image\ImageManager;
 
 // create new manager instance with desired driver
-$manager = new ImageManager('gd');
+$manager = new ImageManager(['driver' => 'gd']);
 
 // true
 $result = $manager->read('images/animation.gif')->isAnimated();
@@ -43,7 +43,7 @@ Change the number of iterations the animation should loop over. Set to `0` to lo
 use Intervention\Image\ImageManager;
 
 // create new manager instance with desired driver
-$manager = new ImageManager('gd');
+$manager = new ImageManager(['driver' => 'gd']);
 
 // reading an animated gif
 $image = $manager->read('images/animation.gif');
@@ -70,7 +70,7 @@ Discards all animation frames of the current image instance except the one at th
 use Intervention\Image\ImageManager;
 
 // create new manager instance with desired driver
-$manager = new ImageManager('gd');
+$manager = new ImageManager(['driver' => 'gd']);
 
 // reading an animated gif
 $image = $manager->read('images/animation.gif');

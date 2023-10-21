@@ -37,7 +37,7 @@ The possible position values are:
 
 ```php
 // create an test image from a file
-$manager = new ImageManager('imagick');
+$manager = new ImageManager(['driver' => 'imagick']);
 $image = $manager->read('test.png');
 
 // paste another image

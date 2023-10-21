@@ -22,7 +22,7 @@ With version 3, the proven features have been improved and unique new details ha
 use Intervention\Image\ImageManager;
 
 // create image manager with desired driver
-$manager = new ImageManager('imagick');
+$manager = new ImageManager(['driver' => 'imagick']);
 
 // read image from file system
 $image = $manager->read('images/example.jpg');
