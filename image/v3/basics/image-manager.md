@@ -31,3 +31,6 @@ use Intervention\Image\ImageManager;
 // create new manager instance with desired driver
 $manager = new ImageManager(['driver' => 'imagick']);
 ```
+
+Read more about the different methods of the image manager in the
+[instantiation section](/v3/basics/instantiation)
