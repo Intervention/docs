@@ -67,35 +67,31 @@ Intervention Image supports several formats to define colors for its methods.
 
 ### Hexadecimal Format
 
-You can pass colors as a hex triplet used normally in HTML and CSS. It's possible to use six-digit format as well as the shorthand form. The leading `#` is optional.
+You can pass colors as a hex triplet used normally in HTML and CSS. It's
+possible to use six-digit format as well as the shorthand form. The leading `#`
+is optional.
 
 ```php
 // create new image with red background
 $image = (new ImageManager(['driver' => 'gd']))->create(300, 200)->fill('b53717');
 ```
-### RGB & RGBA Array Format
+### String Format
 
-Pass the RGB integers of a color as a PHP array with or without an alpha value.
-
-```php
-// create new image with half transparent background
-$image = (new ImageManager(['driver' => 'gd']))->create(300, 200)->fill([15, 20, 255, .5]);
-```
-
-### RGB & RGBA String Format
-
-RGB string values in functional notations are also supported. If you want to include an alpha value use the RGBA prefix like in the following example.
+RGB string values in functional notations are also supported. If you want to
+include an alpha value use the RGBA prefix like in the following example.
 
 ```php
 // create new image with half transparent background
 $image = (new ImageManager(['driver' => 'gd']))->create(300, 200)->fill('rgba(15, 20, 255, .5)');
 ```
 
-### Integer Format
+### HTML Color Names
 
-A color is also recognized as an integer by all methods.
+Intervention Image can read colors from the [extended 140 HTML color
+names](https://en.wikipedia.org/wiki/Web_colors#HTML_color_names) from the W3C
+specification.
 
 ```php
-// create new image with background color
-$image = (new ImageManager(['driver' => 'gd']))->create(300, 200)->fill(1829283);
+// create new image with half transparent background
+$image = (new ImageManager(['driver' => 'gd']))->create(300, 200)->fill('steelblue');
 ```
