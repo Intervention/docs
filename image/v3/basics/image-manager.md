@@ -7,15 +7,14 @@ The image manager works as a starting point for all operations. With this
 class you determine the used driver by configuration and then call the
 methods necessary for instantiation.
 
-## Creating a new image manager instance
-
-### Reading the pixel width
+## Create a new image manager instance
 
 > public ImageManager::__construct(array $options = []): ImageInterface
 
 The instantiation of the image manager configures the entire setup and
 specifies the driver. This option is required. The possible values for the
-driver are `gd` or `imagick`.
+driver are `gd` or `imagick`. If no options are given, the library uses `gd` as
+the default driver.
 
 #### Parameters
 
