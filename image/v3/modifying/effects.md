@@ -62,6 +62,82 @@ $image = $image->contrast(-10);
 
 ## Various Effects
 
+### Fill image with color
+
+> public Image::fill(mixed $color, ?int $x = null, ?int $y = null): ImageInterface
+
+Fills the current image with the passed color specification. Optionally it is
+possible to pass a position where the color fill should start. If these X and Y
+values are set the color will be applied with Flood Fill. This means that only
+colors that are at the specified position will be filled. If no position is
+passed, the whole image will be filled.
+
+#### Parameters
+
+| Name | Type | Description |
+| - | - | - |
+| color | mixed | Fill color in one of the different [color formats](/v3/introduction/formats#color-formats) |
+| x | int | Optional x-coordinate of the filling position |
+| y | int | Optional y-coordinate of the filling position |
+
+#### Examples
+
+```php
+use Intervention\Image\ImageManager;
+
+// create new manager instance with desired driver
+$manager = new ImageManager(['driver' => 'gd']);
+
+// reading an image
+$image = $manager->read('images/example.png');
+
+// flood fill image with color
+$image = $image->fill('#b53717', 10, 10);
+```
+
+### Mirror image horizontally
+
+> public Image::flip(): ImageInterface
+
+Mirror the current image horizontally.
+
+#### Examples
+
+```php
+use Intervention\Image\ImageManager;
+
+// create new manager instance with desired driver
+$manager = new ImageManager(['driver' => 'gd']);
+
+// reading an image
+$image = $manager->read('images/example.png');
+
+// flood fill image with color
+$image = $image->flip();
+```
+
+
+### Mirror image vertically
+
+> public Image::flop(): ImageInterface
+
+Mirror the current image vertically.
+
+#### Examples
+
+```php
+use Intervention\Image\ImageManager;
+
+// create new manager instance with desired driver
+$manager = new ImageManager(['driver' => 'gd']);
+
+// reading an image
+$image = $manager->read('images/example.png');
+
+// flood fill image with color
+$image = $image->flop();
+```
+
 ### Blur Effect
 
 > public Image::blur(int $amount = 5): ImageInterface
