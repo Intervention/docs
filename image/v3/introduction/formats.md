@@ -80,13 +80,16 @@ The library supports several formats to define colors for its methods.
 
 ### Hexadecimal Format
 
-You can pass colors as a hex triplet used normally in HTML and CSS. It's
-possible to use six-digit format as well as the shorthand form. The leading `#`
-is optional.
+You can pass colors as a RGB hex triplet used normally in HTML and CSS. It's
+possible to use the shorthand as well as the full format with or without alpha
+channel. The leading `#` is optional.
 
 ```php
 // create new image with red background
 $image = (new ImageManager(['driver' => 'gd']))->create(300, 200)->fill('b53717');
+
+// create new image with half transparent red background
+$image = (new ImageManager(['driver' => 'gd']))->create(300, 200)->fill('b5371766');
 ```
 ### String Format
 
