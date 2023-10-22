@@ -108,3 +108,19 @@ specification.
 // create new image with half transparent background
 $image = (new ImageManager(['driver' => 'gd']))->create(300, 200)->fill('steelblue');
 ```
+
+## Colorspaces
+
+The available colorspaces are primarily determined by the driver in use. The
+Imagick driver is compatible with RGB and CMYK colorspaces, while the GD driver
+only supports the RGB colorspace. The default colorspace for newly created
+images is RGB.
+
+When using the GD driver in Intervention Image to read CMYK images, they will
+be automatically converted to the RGB colorspace.
+
+Because the GD Driver does not support CMYK color space by default, it is not
+recommended to use it with CMYK images.
+
+Read how to read an modify colorspace in the section about [Meta
+Information](/v3/basics/meta-information).

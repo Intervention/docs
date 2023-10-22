@@ -160,6 +160,73 @@ $color = $colors->first();
 $color = $colors->get(6);
 ```
 
+## Colorspaces
+
+The supported colorspaces primarily depend on the driver used. While the
+library supports with Imagick driver RGB and CMYK colorspaces, the GD driver
+is limited to the RGB colorspace.
+
+If you are reading CMYK images with Intervention Image using the GD driver the
+images are transformed to RGB colorspace automatically.
+
+### Reading the Colorspace
+
+> public Image::getColorspace(): ColorspaceInterface
+
+This function reads the colorspace from the current image instance.
+
+#### Examples
+
+```php
+use Intervention\Image\ImageManager;
+
+// create new manager instance with desired driver
+$manager = new ImageManager(['driver' => 'imagick']);
+
+// reading an image
+$image = $manager->read('images/example.jpg');
+
+// read the colorspace object
+$colorspace = $image->getColorspace();
+```
+
+### Changing the Colorspace
+
+> public Image::setColorspace(string|ColorspaceInterface $colorspace): ImageInterface
+
+This function transforms the current image into the given colorspace. The
+target colorspace can be specified either as a colorspace object, as a class
+name, or as an abbreviation for the colorspace.
+
+#### Parameters
+
+| Name | Type | Description |
+| - | - | - |
+| colorspace | string|ColorspaceInterface | Target colorspace |
+
+#### Examples
+
+```php
+use Intervention\Image\ImageManager;
+use Intervention\Image\Colors\Rgb\Colorspace as RgbColorspace;
+use Intervention\Image\Colors\Cmyk\Colorspace as CmykColorspace;
+
+// create new manager instance with desired driver
+$manager = new ImageManager(['driver' => 'imagick']);
+
+// reading an image
+$image = $manager->read('images/example.jpg');
+
+// transform image to CMYK
+$colorspace = $image->setColorspace('cmyk');
+
+// transform image to rgb again
+$colorspace = $image->setColorspace(RgbColorspace::class);
+
+// and transform to cmyk again
+$colorspace = $image->setColorspace(new CmykColorspace());
+```
+
 ## Exif Information
 
 Currently Intervention Image is only able to read Exif information. The
