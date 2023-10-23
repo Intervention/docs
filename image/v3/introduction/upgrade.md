@@ -43,7 +43,6 @@ There are a few key features that further improve the library.
 - [basepath()](/v2/api/base-path) no longer exists
 - [cache()](/v2/api/cache) no longer exists
 - [colorize()](/v2/api/colorize) no longer exists
-- [crop()](/v2/api/crop) no longer exists
 - [filesize()](/v2/api/filesize) no longer exists
 - [gamma()](/v2/api/gamma) no longer exists
 - [getCore()](/v2/api/get-core) no longer exists
