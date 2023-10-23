@@ -202,7 +202,7 @@ name, or as an abbreviation for the colorspace.
 
 | Name | Type | Description |
 | - | - | - |
-| colorspace | string|ColorspaceInterface | Target colorspace |
+| colorspace | string or ColorspaceInterface | Target colorspace |
 
 #### Examples
 
@@ -245,7 +245,7 @@ the specified block is not found, `null` is returned as result.
 
 | Name | Type | Description |
 | - | - | - |
-| query | string|null | Optionally query exif information block directly |
+| query | string or null | Optionally query exif information block directly |
 
 #### Examples
 
