@@ -15,11 +15,6 @@ There are a few key features that further improve the library.
 - [Support for line height in font system](/v3/modifying/text-fonts)
 - [Object for encoded images](/v3/basics/image-output#handling-of-encoded-image-data)
 
-### New Methods
-
-Some methods have remained the same in terms of function, but have been given a
-new name or a new parameter signature.
-
 ## API Changes
 
 - [canvas()](/v2/api/canvas) is now handled by [create()](/v3/basics/instantiation#creating-new-images)
@@ -61,7 +56,7 @@ new name or a new parameter signature.
 - [psrResponse()](/v2/api/psr-response) no longer exists
 - [reset()](/v2/api/reset) no longer exists
 - [response()](/v2/api/response) no longer exists
-- [stream()](/v2/api/stream) no longer exists
+- [stream()](/v2/api/stream) no longer exists but you may use [toFilePointer()](/v3/basics/image-output#transform-encoded-image-to-file-pointer)
 - [trim()](/v2/api/trim) no longer exists
 
 ## Other Changes
@@ -73,3 +68,6 @@ new name or a new parameter signature.
   the framework and to highlight Intervention Image rather framework agnostic,
   which it always was.
 
+- It is no longer possible to create images from an URI directly. The data must
+  first be loaded by a dedicated HTTP client and then passed to the image
+  library. Intervention Image is not responsible for HTTP client operations.

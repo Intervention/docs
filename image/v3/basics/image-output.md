@@ -196,6 +196,27 @@ $image = $manager->read('images/example.gif');
 $data_uri = $image->toGif()->toDataUri();
 ```
 
+### Transform encoded image to file pointer
+
+> public EncodedImage::toFilePointer()
+
+Create a file pointer to handle the encoded image data.
+
+#### Example
+
+```php
+use Intervention\Image\ImageManager;
+
+// create new manager instance with desired driver
+$manager = new ImageManager(['driver' => 'imagick']);
+
+// reading gif image
+$image = $manager->read('images/example.gif');
+
+// create file pointer
+$pointer = $image->toJpeg()->toFilePointer();
+```
+
 ### Retrieve MIME Type of an encoded image
 
 > public EncodedImage::mimetype(): string
