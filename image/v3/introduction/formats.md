@@ -99,6 +99,9 @@ include an alpha value use the RGBA prefix like in the following example.
 ```php
 // create new image with half transparent background
 $image = (new ImageManager(['driver' => 'gd']))->create(300, 200)->fill('rgba(15, 20, 255, .5)');
+
+// create new image with red background
+$image = (new ImageManager(['driver' => 'gd']))->create(300, 200)->fill('rgb(255, 0, 0)');
 ```
 
 ### HTML Color Names

@@ -70,3 +70,5 @@ There are a few key features that further improve the library.
 - It is no longer possible to create images from an URI directly. The data must
   first be loaded by a dedicated HTTP client and then passed to the image
   library. Intervention Image is not responsible for HTTP client operations.
+
+- It is no longer possible to pass color values as array.

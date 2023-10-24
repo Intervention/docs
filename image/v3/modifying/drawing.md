@@ -60,7 +60,7 @@ $image = $manager->read('test.png');
 
 // draw three pixels at different positions
 $image->drawPixel(12, 30, 'ff00ff');
-$image->drawPixel(100, 1, [255, 255, 0]);
+$image->drawPixel(100, 1, 'rgb(255, 255, 0)');
 $image->drawPixel(200, 2, 'orange');
 ```
 
@@ -146,8 +146,8 @@ $image = $manager->read('test.png');
 // draw a green circle with a white border
 $image->drawCircle(10, 10, function ($circle) {
     $circle->radius(150); // radius of circle in pixels
-    $circle->background([0, 200, 0]); // background color
-    $circle->border([255, 255, 255], 1); // border color & size
+    $circle->background('lightblue'); // background color
+    $circle->border('b53717', 1); // border color & size
 });
 ```
 
@@ -174,7 +174,7 @@ $image = $manager->read('test.png');
 $image->drawLine(function ($line) {
     $line->from(10, 10); // starting point of line
     $line->to(300, 100); // ending point
-    $line->color([255, 255, 255, .5]); // color of line
+    $line->color('ff00ff'); // color of line
     $line->width(5); // line width in pixels
 });
 ```
