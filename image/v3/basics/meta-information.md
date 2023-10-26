@@ -75,7 +75,7 @@ $ratio = $size->getAspectRatio();
 
 ### Reading colors of certain pixels
 
-> public Image::pickColor(int $x, int $y, int $frame_key = 0): ?ColorInterface
+> public Image::pickColor(int $x, int $y, int $frame_key = 0): ColorInterface
 
 Reads the color of the pixel specified via the X and Y coordinates.
 Furthermore, the key of the frame from which the color is taken can be
