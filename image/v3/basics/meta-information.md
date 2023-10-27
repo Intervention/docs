@@ -230,6 +230,59 @@ $colorspace = $image->setColorspace(RgbColorspace::class);
 $colorspace = $image->setColorspace(new CmykColorspace());
 ```
 
+## Color Profiles
+
+Currently Intervention Image is only able to handle color profiles with the
+`ìmagick` driver.
+
+### Reading Color Profiles
+
+> public Image::profile(): ProfileInterface
+
+This function reads the ICC color profile from the current image instance. If
+no profile is found an `ColorException` is thrown.
+
+#### Examples
+
+```php
+use Intervention\Image\ImageManager;
+
+// create new manager instance with desired driver
+$manager = new ImageManager(['driver' => 'imagick']);
+
+// reading an image
+$image = $manager->read('images/example.jpg');
+
+// read the icc profile
+$profile = $image->profile();
+
+// save profile in file system
+$profile->save('my_profile.icc')
+```
+
+### Writing Color Profiles
+
+> public function setProfile(string|ProfileInterface $input): ImageInterface
+
+This function set a given ICC color profile to the current image instance.
+Usually the function takes the pathname of the profile, but it can also process
+an object that implements the ProfileInterface.
+
+#### Examples
+
+```php
+use Intervention\Image\ImageManager;
+
+// create new manager instance with desired driver
+$manager = new ImageManager(['driver' => 'imagick']);
+
+// reading an image
+$image = $manager->read('images/example.jpg');
+
+// set the new color profile
+$image->setProfile('profiles/profile.icc');
+```
+
 ## Exif Information
 
 Currently Intervention Image is only able to read Exif information. The
@@ -262,7 +315,7 @@ $manager = new ImageManager(['driver' => 'gd']);
 $image = $manager->read('images/example.jpg');
 
 // read the specific exif data
-$camery = $image->exif('IFD0.Model');
+$camera = $image->exif('IFD0.Model');
 
 // read all exif information
 $all = $image->exif();
