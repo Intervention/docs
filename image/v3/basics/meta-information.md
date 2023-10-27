@@ -64,11 +64,14 @@ $manager = new ImageManager(['driver' => 'gd']);
 // reading an image
 $image = $manager->read('images/example.png');
 
-// reading image size
+// read image size
 $size = $image->size();
 
 // read aspect ratio
-$ratio = $size->getAspectRatio();
+$ratio = $size->aspectRatio();
+
+// read width from size
+$width = $size()->width();
 ```
 
 ## Color Information
@@ -171,7 +174,7 @@ images are transformed to RGB colorspace automatically.
 
 ### Reading the Colorspace
 
-> public Image::getColorspace(): ColorspaceInterface
+> public Image::colorspace(): ColorspaceInterface
 
 This function reads the colorspace from the current image instance.
 
@@ -187,7 +190,7 @@ $manager = new ImageManager(['driver' => 'imagick']);
 $image = $manager->read('images/example.jpg');
 
 // read the colorspace object
-$colorspace = $image->getColorspace();
+$colorspace = $image->colorspace();
 ```
 
 ### Changing the Colorspace
@@ -234,7 +237,7 @@ possibility to change certain information blocks is not implemented.
 
 ### Reading Exif information
 
-> public Image::getExif(?string $query = null): mixed
+> public Image::exif(?string $query = null): mixed
 
 This function reads Exif information from the current image instance. You have
 the option to pass a parameter to read a specific block of information from the
@@ -259,10 +262,10 @@ $manager = new ImageManager(['driver' => 'gd']);
 $image = $manager->read('images/example.jpg');
 
 // read the specific exif data
-$camery = $image->getExif('IFD0.Model');
+$camery = $image->exif('IFD0.Model');
 
 // read all exif information
-$all = $image->getExif();
+$all = $image->exif();
 
 // the exif data block can be queried as well
 $camera = $all->get('IFD0.Model');

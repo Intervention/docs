@@ -21,7 +21,7 @@ There are a few key features that further improve the library.
 - [circle()](/v2/api/circle) is now handled by [drawCircle()](/v3/modifying/drawing#drawing-a-circle)
 - [ellipse()](/v2/api/ellipse) is now handled by [drawEllipse()](/v3/modifying/drawing#drawing-ellipses)
 - [encode()](/v2/api/encode) is now handled by [toJpeg()](https://image.intervention.io/v3/basics/image-output#encoding-jpeg-format), [toWebp()](https://image.intervention.io/v3/basics/image-output#encoding-webp-format), [toPng()](/v3/basics/image-output#encoding-png-format), [toGif()](/v3/basics/image-output#encoding-gif-format), [toBitmap()](/v3/basics/image-output#encoding-windows-bitmap-format) and [toAvif()](/v3/basics/image-output#encoding-av1-image-file-format-avif)
-- [exif()](/v2/api/exif) is now handled by [getExif()](/v3/basics/meta-information#exif-information)
+- [exif()](/v2/api/exif) is now handled by [exif()](/v3/basics/meta-information#exif-information) with a different signature
 - [fill()](/v3/modifying/effects#fill-image-with-color) currently only supports color values
 - [filter()](/v2/api/filter) is now handled by [modify()](/v3/modifying/custom-modifiers)
 - The resizing methods [resize()](/v2/api/resize), [resizeCanvas()](/v2/api/resize-canvas) and [fit()](/v2/api/fit), [widen()](/v2/api/widen) and [heighten()](/v2/api/heighten) have been completely rebuild and are now handled by [resize()](/v3/modifying/resizing), [resizeDown](/v3/modifying/resizing), [scale()](/v3/modifying/resizing), [scaleDown()](/v3/modifying/resizing), [fit()](/v3/modifying/resizing), [fitDown()](/v3/modifying/resizing), [pad()](/v3/modifying/resizing) and [padDown()](/v3/modifying/resizing)

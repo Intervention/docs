@@ -25,6 +25,27 @@ $result = $manager->read('images/animation.gif')->isAnimated();
 
 ## Editing animations
 
+### Reading the Animation Iteration Count
+
+> public Image::loops(): int
+
+Read the count of iterations of the animated image. `0` means the image loops continuously.
+
+#### Examples
+
+```php
+use Intervention\Image\ImageManager;
+
+// create new manager instance with desired driver
+$manager = new ImageManager(['driver' => 'gd']);
+
+// reading an animated gif
+$image = $manager->read('images/animation.gif');
+
+// return animation iteration count
+$count = $image->loops();
+```
+
 ### Changing the Animation Iteration Count
 
 > public Image::setLoops(int $count): ImageInterface
@@ -79,3 +100,33 @@ $image = $manager->read('images/animation.gif');
 $image = $image->removeAnimation(5);
 ```
 
+## Animation Frames
+### Read Animation Frames
+
+> public Image::frame(int $position = 0): FrameInterface
+
+Read the animation frame at the given position.
+
+#### Parameters
+
+| Name | Type | Description |
+| - | - | - |
+| position | integer | Position of the retrieved frame |
+
+#### Examples
+
+```php
+use Intervention\Image\ImageManager;
+
+// create new manager instance with desired driver
+$manager = new ImageManager(['driver' => 'gd']);
+
+// reading an animated gif
+$image = $manager->read('images/animation.gif');
+
+// Read frame 15
+$frame = $image->frame(15);
+
+// turn frame into image for further processing
+$frame_image = $frame->toImage();
+```
