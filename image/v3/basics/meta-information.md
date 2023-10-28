@@ -74,6 +74,63 @@ $ratio = $size->aspectRatio();
 $width = $size()->width();
 ```
 
+## Image Resolution
+
+### Reading the image resolution
+
+> public Image::resolution(): ResolutionInterface
+
+Reads out the image resolution of the current instance.
+
+#### Examples
+
+```php
+use Intervention\Image\ImageManager;
+
+// create new manager instance with desired driver
+$manager = new ImageManager(['driver' => 'gd']);
+
+// reading an image
+$image = $manager->read('images/example.png');
+
+// read image resolution object
+$resolution = $image->resolution();
+
+// read resolution for each axis
+$x = $resolution->x();
+$y = $resolution->y();
+```
+
+### Set the image resolution
+
+> public Image::setResolution(float $x, float $y): ImageInterface
+
+Set the image resolution in DPI for each axis. Please note that the resolution
+is encoded only for image formats that support this feature.
+
+#### Parameters
+
+| Name | Type | Description |
+| - | - | - |
+| x | float | Resolution on the x-axis |
+| y | float | Resolution on the y-axis |
+
+#### Examples
+
+```php
+use Intervention\Image\ImageManager;
+
+// create new manager instance with desired driver
+$manager = new ImageManager(['driver' => 'imagick']);
+
+// read an image
+$image = $manager->read('images/example.jpg');
+
+// set image resolution to 300 DPI 
+$image->setResolution(300, 300);
+```
+
+
 ## Color Information
 
 ### Reading colors of certain pixels
