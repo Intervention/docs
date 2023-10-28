@@ -26,6 +26,7 @@ This method not only supports filepaths as an argument. The following argument f
 
 - Path in filesystem
 - File Pointer resource
+- SplFileInfo object
 - Raw binary image data
 - Base64 encoded image data
 - Data Uri
