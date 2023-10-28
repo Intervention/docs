@@ -35,7 +35,7 @@ There are a few key features that further improve the library.
 - [polygon()](/v2/api/polygon) is handled by [drawPolygon()](/v3/modifying/drawing#drawing-a-polygon)
 - [rectangle()](/v2/api/rectangle) is handled by [drawRectangle()](/v3/modifying/drawing#drawing-a-rectangle)
 - [save()](/v2/api/save) is handled via an [encoded image](/v3/basics/image-output)
-- [text()](/v2/api/save) is handled via an [encoded image](/v3/basics/image-output)
+- [text()](/v2/api/save) still exists but has a new [signature](/v3/modifying/text-fonts)
 
 ## Removed Features
 
