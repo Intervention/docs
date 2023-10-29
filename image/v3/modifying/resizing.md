@@ -267,7 +267,7 @@ $image->padDown(500, 500, 'efefef');
 ## Crop Image
 ### Cut out a rectangular part
 
-> public Image::crop(int $width, int $height, string $position = 'center', int $offset_x = 0, int $offset_y = 0): ImageInterface
+> public Image::crop(int $width, int $height, int $offset_x = 0, int $offset_y = 0, string $position = 'top-left'): ImageInterface
 
 Cut out a rectangular part of the current image with given width and height.
 certain position. Define optional x,y offset coordinates to move the cutout by
@@ -279,9 +279,9 @@ the given amount of pixels.
 | - | - | - |
 | width | integer | Width of the rectangular cutout |
 | height | integer | Height of the rectangular cutout |
-| position (optional) | string | Position at which the cutout will be aligned |
 | offset_x (optional) | int | Amount of pixels the cutout will be moved on the x-axis |
 | offset_y (optional) | int | Amount of pixels the cutout will be moved on the y-axis |
+| position (optional) | string | Position at which the cutout will be aligned |
 
 #### Examples
 
@@ -291,11 +291,11 @@ use Intervention\Image\ImageManager;
 // create new image instance
 $image = (new ImageManager(['driver' => 'gd']))->read('images/example.jpg');
 
-// cut out a 200 x 150 pixel cutout from the bottom-right corner
-$image->crop(200, 150, 'bottom-right');
+// cut out a 200 x 150 pixel cutout at position 45,90
+$image->crop(200, 150, 45, 90);
 
-// crop a 40 x 40 pixel cutout from the top-center and move it 30 pixel down
-$image->crop(200, 150, 'top-center', 0 , 30);
+// crop a 40 x 40 pixel cutout from the bottom-right and move it 30 pixel down
+$image->crop(200, 150, 0 , 30, 'bottom-right');
 ```
 
 ### Padded resizing without exceeding the original size
