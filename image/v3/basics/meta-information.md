@@ -80,7 +80,7 @@ $width = $size()->width();
 
 > public Image::resolution(): ResolutionInterface
 
-Reads out the image resolution of the current instance.
+Reads out the image resolution of the current instance in DPI.
 
 #### Examples
 
@@ -95,6 +95,9 @@ $image = $manager->read('images/example.png');
 
 // read image resolution object
 $resolution = $image->resolution();
+
+// convert resolution to dpcm
+$resolution = $resolution->perCm();
 
 // read resolution for each axis
 $x = $resolution->x();
