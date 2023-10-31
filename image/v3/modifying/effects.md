@@ -87,6 +87,37 @@ $image = $manager->read('images/example.jpg');
 $image = $image->gamma(1.7);
 ```
 
+### Color Correction
+
+> public Image::colorize(int $red = 0, int $green = 0, int $blue = 0): ImageInterface
+
+Change the intensity level of the given color values of red, green and blue.
+The input values are normalized so you have to include parameters from 100 for
+maximum color intesity to 0 for no change and -100 to remove all the certain
+color on the image.
+
+#### Parameters
+
+| Name | Type | Description |
+| - | - | - |
+| red | int | Intesity correction of all red colors in image |
+| green | int | Intesity correction of all green colors in image |
+| blue | int | Intesity correction of all blue colors in image |
+
+#### Examples
+
+```php
+use Intervention\Image\ImageManager;
+
+// create new manager instance with desired driver
+$manager = new ImageManager(['driver' => 'imagick']);
+
+// reading an image
+$image = $manager->read('images/example.jpg');
+
+// change colors to a blue & green tone
+$image = $image->gamma(blue: 15, green: 10);
+```
 
 ## Various Effects
 
