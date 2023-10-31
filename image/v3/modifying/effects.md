@@ -3,7 +3,7 @@
 
 [TOC]
 
-## Brightness & Contrast
+## Brightness, Contrast & Colors
 
 ### Changing the Brightness
 
@@ -59,6 +59,34 @@ $image = $manager->read('images/example.png');
 // decreasing the contrast
 $image = $image->contrast(-10);
 ```
+
+### Gamma Correction
+
+> public Image::gamma(float $gamma): ImageInterface
+
+Apply a gamma correction operation on the current image.
+
+#### Parameters
+
+| Name | Type | Description |
+| - | - | - |
+| gamma | float | Gamma compensation value |
+
+#### Examples
+
+```php
+use Intervention\Image\ImageManager;
+
+// create new manager instance with desired driver
+$manager = new ImageManager(['driver' => 'imagick']);
+
+// reading an image
+$image = $manager->read('images/example.jpg');
+
+// apply gamma correction
+$image = $image->gamma(1.7);
+```
+
 
 ## Various Effects
 

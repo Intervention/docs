@@ -45,7 +45,6 @@ y [crop()](/v2/api/crop) still exists but has a new [signature](/v3/modifying/re
 - [cache()](/v2/api/cache) no longer exists
 - [colorize()](/v2/api/colorize) no longer exists
 - [filesize()](/v2/api/filesize) no longer exists
-- [gamma()](/v2/api/gamma) no longer exists
 - [getCore()](/v2/api/get-core) no longer exists
 - [interlace()](/v2/api/interlace) no longer exists
 - [limitColors()](/v2/api/limit-colors) no longer exists
