@@ -61,13 +61,15 @@ $encoded = $image->toWebp(60); // Intervention\Image\EncodedImage
 
 ### Encoding PNG Format
 
-> public Image::toPng(): EncodedImage
+> public Image::toPng(int $color_limit = 0): EncodedImage
 
-Encode the current image instance in PNG format in the given **quality** ranging between 0 for low quality to 100 for best quality.
+Encode the current image instance in PNG format. Optionally you can reduce the
+colors in the final result to the given limit. If the limit falls below
+256, the PNG is output with an indexed color palette.
 
 | Name | Type | Description |
 | - | - | - |
-| quality (optional) | integer | Encoding quality  |
+| color_limit (optional) | integer | Maximal number of colors in encoded image |
 
 ```php
 use Intervention\Image\ImageManager;
@@ -78,15 +80,16 @@ $manager = new ImageManager(['driver' => 'gd']);
 // reading jpg image
 $image = $manager->read('images/example.jpg');
 
-// encoding jpeg data
-$encoded = $image->toPng(60); // Intervention\Image\EncodedImage
+// encoding png image with a maximal color count of 32
+$encoded = $image->toPng(32); // Intervention\Image\EncodedImage
 ```
 
 ### Encoding GIF Format
 
-> public Image::toGif(): EncodedImage
+> public Image::toGif(int $color_limit = 0): EncodedImage
 
-Encode the current image instance in GIF format.
+Encode the current image instance in GIF format. Pass a color limit to reduce
+the colors in the final result.
 
 ```php
 use Intervention\Image\ImageManager;
@@ -97,15 +100,16 @@ $manager = new ImageManager(['driver' => 'gd']);
 // reading jpg image
 $image = $manager->read('images/example.jpg');
 
-// encoding jpeg data
-$encoded = $image->toGif(); // Intervention\Image\EncodedImage
+// encoding gif data
+$encoded = $image->toGif(24); // Intervention\Image\EncodedImage
 ```
 
 ### Encoding Windows Bitmap Format
 
-> public Image::toBitmap(): EncodedImage
+> public Image::toBitmap(int $color_limit = 0): EncodedImage
 
-Encode the current image instance in Windows Bitmap format.
+Encode the current image instance in Windows Bitmap format. Pass a color limit
+to reduce the colors in the final result.
 
 ```php
 use Intervention\Image\ImageManager;
@@ -116,15 +120,16 @@ $manager = new ImageManager(['driver' => 'gd']);
 // reading jpg image
 $image = $manager->read('images/example.jpg');
 
-// encoding jpeg data
-$encoded = $image->toBmp(60); // Intervention\Image\EncodedImage
+// encoding bitmap data
+$encoded = $image->toBmp(); // Intervention\Image\EncodedImage
 ```
 
 ### Encoding AV1 Image File Format (AVIF)
 
-> public Image::toAvif(): EncodedImage
+> public Image::toAvif(int $quality = 75): EncodedImage
 
-Encode the current image instance in AVIF format in the given **quality** ranging between 0 for low quality to 100 for best quality.
+Encode the current image instance in AVIF format in the given **quality**
+ranging between 0 for low quality to 100 for best quality.
 
 | Name | Type | Description |
 | - | - | - |
@@ -139,7 +144,7 @@ $manager = new ImageManager(['driver' => 'gd']);
 // reading jpg image
 $image = $manager->read('images/example.jpg');
 
-// encoding jpeg data
+// encode avif image 
 $encoded = $image->toAvif(60); // Intervention\Image\EncodedImage
 ```
 
