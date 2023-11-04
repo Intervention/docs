@@ -75,15 +75,24 @@ $image = $image->setLoops(1);
 
 ### Removing animation
 
-> public Image::removeAnimation(int $position = 0): ImageInterface
+> public Image::removeAnimation(int|string $position = 0): ImageInterface
 
-Discards all animation frames of the current image instance except the one at the given position. Turns an animated image into a static one.
+Discards all animation frames of the current image instance except the one at
+the given position. Turns an animated image into a static one.
+
+It is possible to specify the position as integer and string values. With the
+former, the exact position passed is searched for, while string values must
+represent a percentage value and the respective frame position is only
+determined approximately.
+
+If an integer is specified, the method throws an exception if the respective
+position is not found. This does not happen with percentage values.
 
 #### Parameters
 
 | Name | Type | Description |
 | - | - | - |
-| position | integer | Position of the frame that will be left |
+| position | integer or string | Position of the frame that will be left. |
 
 #### Examples
 
