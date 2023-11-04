@@ -82,8 +82,8 @@ the given position. Turns an animated image into a static one.
 
 It is possible to specify the position as integer and string values. With the
 former, the exact position passed is searched for, while string values must
-represent a percentage value and the respective frame position is only
-determined approximately.
+represent a percentage value between `0%` and `100%` and the respective frame
+position is only determined approximately.
 
 If an integer is specified, the method throws an exception if the respective
 position is not found. This does not happen with percentage values.
