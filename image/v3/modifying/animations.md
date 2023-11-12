@@ -107,6 +107,10 @@ $image = $manager->read('images/animation.gif');
 
 // Turn the animation into a static image displaying the frame at position 5
 $image = $image->removeAnimation(5);
+
+// do the same by choosing animation frame at 25% of the whole animation
+$image = $image->removeAnimation('25%');
+
 ```
 
 ## Animation Frames
