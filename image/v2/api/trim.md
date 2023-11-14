@@ -10,7 +10,7 @@ Trim away image space in given color. Define an optional **base** to pick a colo
 ### Parameters
 
 #### base
-Define the the point from where the trimming color is picked. For example if you set this parameter to `bottom-right`, all color will be trimmed away that is equal to the color in the bottom-left corner of the image.
+Define the point from where the trimming color is picked. For example if you set this parameter to `bottom-right`, all color will be trimmed away that is equal to the color in the bottom-left corner of the image.
 
 Possible values are:
 
