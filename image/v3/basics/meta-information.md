@@ -28,7 +28,7 @@ $width = $image->width();
 
 ### Reading the pixel height
 
-> public Image::width(): integer
+> public Image::height(): integer
 
 Reading the pixel height from an image instance.
 
