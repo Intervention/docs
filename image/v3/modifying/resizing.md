@@ -297,34 +297,3 @@ $image->crop(200, 150, 45, 90);
 // crop a 40 x 40 pixel cutout from the bottom-right and move it 30 pixel down
 $image->crop(200, 150, 0 , 30, 'bottom-right');
 ```
-
-### Padded resizing without exceeding the original size
-
-> public Image::padDown(int $width, int $height, $background = 'ffffff', string $position = 'center'): ImageInterface
-
-This method does the same thing as `pad()` but does not exceed the size of the original image. You can use this if you want to prevent up-sampling.
-
-#### Parameters
-
-| Name | Type | Description |
-| - | - | - |
-| width | integer | Image width. |
-| height | integer | Image width. |
-| background (optional) | mixed | Background color for the new areas of the image. |
-| position (optional) | string | Position where the original image is placed. |
-
-
-#### Examples
-
-```php
-use Intervention\Image\ImageManager;
-
-// create new image instance (800 x 600)
-$image = (new ImageManager(['driver' => 'gd']))->read('images/example.jpg');
-
-// resize padded without upsizing
-$image->padDown(900, 600);
-
-// padded resizing with background color
-$image->padDown(500, 500, 'efefef');
-```

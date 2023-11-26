@@ -112,34 +112,3 @@ $image = $image->removeAnimation(5);
 $image = $image->removeAnimation('25%');
 
 ```
-
-## Animation Frames
-### Read Animation Frames
-
-> public Image::frame(int $position = 0): FrameInterface
-
-Read the animation frame at the given position.
-
-#### Parameters
-
-| Name | Type | Description |
-| - | - | - |
-| position | integer | Position of the retrieved frame |
-
-#### Examples
-
-```php
-use Intervention\Image\ImageManager;
-
-// create new manager instance with desired driver
-$manager = new ImageManager(['driver' => 'gd']);
-
-// reading an animated gif
-$image = $manager->read('images/animation.gif');
-
-// Read frame 15
-$frame = $image->frame(15);
-
-// turn frame into image for further processing
-$frame_image = $frame->toImage();
-```
