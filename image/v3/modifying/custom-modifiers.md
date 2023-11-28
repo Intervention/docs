@@ -1,4 +1,5 @@
 # Custom Modifiers
+
 ## Group image modifications in classes
 
 You can create your own combinations of image transformations and save them as a custom Image Modifier class.  This modifier defines which command, in which order and with which arguments should be called on an image instance.
@@ -45,7 +46,7 @@ Once the custom modifier is implemented, you can easily apply it to an image ins
 
 | Name | Type | Description |
 | - | - | - |
-| modifier | Intervention\Image\Interfaces\ModifierInterface | Modifier object  |
+| modifier | Intervention\Image\Interfaces\ModifierInterface | Modifier object |
 
 #### Example
 
@@ -53,8 +54,7 @@ Once the custom modifier is implemented, you can easily apply it to an image ins
 use Intervention\Image\ImageManager;
 
 // create new image instance
-$image = (new ImageManager(['driver' => 'imagick']))
-        ->read('images/example.jpg');
+$image = ImageManager::imagick()->read('images/example.jpg');
 
 // apply modifier
 $image->modify(new MyCustomModifier(25));

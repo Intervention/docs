@@ -5,7 +5,7 @@
 
 ## Writing text
 
-> public Image::text(string $text, int $x, int $y, ?callable $settings = null): ImageInterface
+> public Image::text(string $text, int $x, int $y, callable $settings): ImageInterface
 
 Write a **text** string at the basepoint position of **x, y** to the current
 image. You can define more details like font-size, font-file and alignment via
@@ -27,7 +27,7 @@ a callback as the fourth parameter.
 use Intervention\Image\ImageManager;
 
 // create new image instance
-$image = (new ImageManager(['driver' => 'gd']))->read('images/example.jpg');
+$image = ImageManager::gd()->read('images/example.jpg');
 
 // write text at a certain position
 $image->text('The quick brown fox', 120, 100);
@@ -35,13 +35,17 @@ $image->text('The quick brown fox', 120, 100);
 ```
 ## Text & font settings
 
-To define the overall appearance of the text and set more details you can pass a callback as an optional parameter. The callback places the calls on the FontInterface and listens to the following methods.
+To define the overall appearance of the text and set more details you can pass
+a callback as an optional parameter. The callback places the calls on the
+FontInterface and listens to the following methods.
 
 #### Example
 
 ```php
+use Intervention\Image\ImageManager;
+
 // create test image
-$image = (new ImageManager(['driver' => 'gd']))->read('images/example.jpg');
+$image = ImageManager::imagick()->read('images/example.jpg');
 
 // write text to image
 $image->text('The quick brown fox', 120, 100, function ($font) {
@@ -95,7 +99,8 @@ Define the text color in one of the valid [color formats](/v3/introduction/forma
 
 > public FontInterface::align(string $align): FontInterface
 
-Define the horizontal alignment of the text to be written starting from the base point. Possible values are left, right and center. Default: `left`
+Define the horizontal alignment of the text to be written starting from the
+base point. Possible values are left, right and center. Default: `left`
 
 #### Parameters
 
@@ -107,7 +112,8 @@ Define the horizontal alignment of the text to be written starting from the base
 
 > public FontInterface::valign(string $valign): FontInterface
 
-Define the vertical alignment of the text to be written starting from the base point. Possible values are top, bottom and middle. Default: `bottom`
+Define the vertical alignment of the text to be written starting from the base
+point. Possible values are top, bottom and middle. Default: `bottom`
 
 #### Parameters
 
@@ -131,7 +137,8 @@ Rotate the text block clockwise with a desired angle.
 
 > public FontInterface::lineHeight(float $height): FontInterface
 
-Define the line height of the text block. Applies only for multi line text. Default value is `1.25`.
+Define the line height of the text block. Applies only for multi line text.
+Default value is `1.25`.
 
 #### Parameters
 

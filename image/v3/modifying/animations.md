@@ -15,9 +15,10 @@ Returns `true` if the image is animated. Otherwise `false` is returned.
 
 ```php
 use Intervention\Image\ImageManager;
+use Intervention\Image\Drivers\Gd\Driver;
 
 // create new manager instance with desired driver
-$manager = new ImageManager(['driver' => 'gd']);
+$manager = new ImageManager(Driver::class);
 
 // true
 $result = $manager->read('images/animation.gif')->isAnimated();
@@ -35,9 +36,10 @@ Read the count of iterations of the animated image. `0` means the image loops co
 
 ```php
 use Intervention\Image\ImageManager;
+use Intervention\Image\Drivers\Imagick\Driver;
 
 // create new manager instance with desired driver
-$manager = new ImageManager(['driver' => 'gd']);
+$manager = new ImageManager(new Driver());
 
 // reading an animated gif
 $image = $manager->read('images/animation.gif');
@@ -62,9 +64,10 @@ Change the number of iterations the animation should loop over. Set to `0` to lo
 
 ```php
 use Intervention\Image\ImageManager;
+use Intervention\Image\Drivers\Gd\Driver;
 
 // create new manager instance with desired driver
-$manager = new ImageManager(['driver' => 'gd']);
+$manager = new ImageManager(new Driver());
 
 // reading an animated gif
 $image = $manager->read('images/animation.gif');
@@ -98,9 +101,10 @@ position is not found. This does not happen with percentage values.
 
 ```php
 use Intervention\Image\ImageManager;
+use Intervention\Image\Drivers\Gd\Driver;
 
 // create new manager instance with desired driver
-$manager = new ImageManager(['driver' => 'gd']);
+$manager = new ImageManager(new Driver());
 
 // reading an animated gif
 $image = $manager->read('images/animation.gif');

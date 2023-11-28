@@ -25,9 +25,10 @@ passed, the whole image will be filled.
 
 ```php
 use Intervention\Image\ImageManager;
+use Intervention\Image\Drivers\Gd\Driver;
 
 // create new manager instance with desired driver
-$manager = new ImageManager(['driver' => 'gd']);
+$manager = new ImageManager(Driver::class);
 
 // reading an image
 $image = $manager->read('images/example.png');
@@ -54,8 +55,11 @@ Draw a single pixel at given position defined by the coordinates **x** and **y**
 #### Example
 
 ```php
+use Intervention\Image\ImageManager;
+use Intervention\Image\Drivers\Imagick\Driver;
+
 // create an test image from a file
-$manager = new ImageManager(['driver' => 'imagick']);
+$manager = new ImageManager(new Driver());
 $image = $manager->read('test.png');
 
 // draw three pixels at different positions
@@ -81,8 +85,11 @@ Draw a colored rectangle on the current image with its top left position at the 
 #### Example
 
 ```php
+use Intervention\Image\ImageManager;
+use Intervention\Image\Drivers\Gd\Driver;
+
 // create an test image from a file
-$manager = new ImageManager(['driver' => 'imagick']);
+$manager = new ImageManager(new Driver());
 $image = $manager->read('test.png');
 
 // draw an orange rectangle with a border
@@ -110,8 +117,11 @@ Draw a colored ellipse on the current image with its center position at the **x,
 #### Example
 
 ```php
+use Intervention\Image\ImageManager;
+use Intervention\Image\Drivers\Imagick\Driver;
+
 // create an test image from a file
-$manager = new ImageManager(['driver' => 'imagick']);
+$manager = new ImageManager(Driver::class);
 $image = $manager->read('test.png');
 
 // draw a red ellipse with a blue border
@@ -139,8 +149,11 @@ Draw a colored circle on the current image with its center position at the **x, 
 #### Example
 
 ```php
+use Intervention\Image\ImageManager;
+use Intervention\Image\Drivers\Gd\Driver;
+
 // create an test image from a file
-$manager = new ImageManager(['driver' => 'imagick']);
+$manager = new ImageManager(Driver::class);
 $image = $manager->read('test.png');
 
 // draw a green circle with a white border
@@ -166,8 +179,11 @@ Draw a line on the current image. Define the overall appearance of the shape by 
 #### Example
 
 ```php
+use Intervention\Image\ImageManager;
+use Intervention\Image\Drivers\Gd\Driver;
+
 // create an test image from a file
-$manager = new ImageManager(['driver' => 'imagick']);
+$manager = new ImageManager(Driver::class);
 $image = $manager->read('test.png');
 
 // draw a half transparent white line
@@ -194,8 +210,11 @@ Draw a polygon on the current image. Define the overall appearance of the shape 
 #### Example
 
 ```php
+use Intervention\Image\ImageManager;
+use Intervention\Image\Drivers\Imagick\Driver;
+
 // create an test image from a file
-$manager = new ImageManager(['driver' => 'imagick']);
+$manager = new ImageManager(new Driver());
 $image = $manager->read('test.png');
 
 // draw a polygon

@@ -21,9 +21,10 @@ Change the brightness of the current image by a given level. Use values between 
 
 ```php
 use Intervention\Image\ImageManager;
+use Intervention\Image\Drivers\Imagick\Driver;
 
 // create new manager instance with desired driver
-$manager = new ImageManager(['driver' => 'gd']);
+$manager = new ImageManager(new Driver());
 
 // reading an image
 $image = $manager->read('images/example.png');
@@ -49,9 +50,10 @@ Change the contrast of the current image by a given level. Use values between `-
 
 ```php
 use Intervention\Image\ImageManager;
+use Intervention\Image\Drivers\Gd\Driver;
 
 // create new manager instance with desired driver
-$manager = new ImageManager(['driver' => 'gd']);
+$manager = new ImageManager(Driver::class);
 
 // reading an image
 $image = $manager->read('images/example.png');
@@ -78,7 +80,7 @@ Apply a gamma correction operation on the current image.
 use Intervention\Image\ImageManager;
 
 // create new manager instance with desired driver
-$manager = new ImageManager(['driver' => 'imagick']);
+$manager = ImageManager::gd();
 
 // reading an image
 $image = $manager->read('images/example.jpg');
@@ -108,9 +110,10 @@ color on the image.
 
 ```php
 use Intervention\Image\ImageManager;
+use Intervention\Image\Drivers\Gd\Driver;
 
 // create new manager instance with desired driver
-$manager = new ImageManager(['driver' => 'imagick']);
+$manager = ImageManager::withDriver(Driver::class);
 
 // reading an image
 $image = $manager->read('images/example.jpg');
@@ -131,9 +134,10 @@ Mirror the current image horizontally.
 
 ```php
 use Intervention\Image\ImageManager;
+use Intervention\Image\Drivers\Imagick\Driver;
 
 // create new manager instance with desired driver
-$manager = new ImageManager(['driver' => 'gd']);
+$manager = new ImageManager(new Driver());
 
 // reading an image
 $image = $manager->read('images/example.png');
@@ -155,7 +159,7 @@ Mirror the current image vertically.
 use Intervention\Image\ImageManager;
 
 // create new manager instance with desired driver
-$manager = new ImageManager(['driver' => 'gd']);
+$manager = ImageManager::imagick();
 
 // reading an image
 $image = $manager->read('images/example.png');
@@ -182,9 +186,10 @@ Apply a gaussian blur effect on the current image. Use the optional `amount` arg
 
 ```php
 use Intervention\Image\ImageManager;
+use Intervention\Image\Drivers\Gd\Driver;
 
 // create new manager instance with desired driver
-$manager = new ImageManager(['driver' => 'gd']);
+$manager = new ImageManager(Driver::class);
 
 // reading an image
 $image = $manager->read('images/example.png');
@@ -212,7 +217,7 @@ Sharpen the current image instance with an optional `amount`.
 use Intervention\Image\ImageManager;
 
 // create new manager instance with desired driver
-$manager = new ImageManager(['driver' => 'gd']);
+$manager = ImageManager::imagick();
 
 // reading an image
 $image = $manager->read('images/example.png');
@@ -234,7 +239,7 @@ Invert all colors of the current image.
 use Intervention\Image\ImageManager;
 
 // create new manager instance with desired driver
-$manager = new ImageManager(['driver' => 'gd']);
+$manager = ImageManager::gd();
 
 // reading an image
 $image = $manager->read('images/example.png');
@@ -262,7 +267,7 @@ Applies a pixelation effect on the current image with a given pixel size.
 use Intervention\Image\ImageManager;
 
 // create new manager instance with desired driver
-$manager = new ImageManager(['driver' => 'gd']);
+$manager = ImageManager::withDriver(new Driver());
 
 // reading an image
 $image = $manager->read('images/example.png');

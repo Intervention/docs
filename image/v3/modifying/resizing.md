@@ -9,8 +9,10 @@
 
 > public Image::resize(?int $width, ?int $height): ImageInterface
 
-The method `resize()` simply stretches the image to the desired size. Use `resizeDown()` to change the size but do not exceed the original size of the image. The method support [named arguments](https://www.php.net/manual/en/functions.arguments.php#functions.named-arguments) to target just one axis for the modification. 
-
+The method `resize()` simply stretches the image to the desired size. Use
+`resizeDown()` to change the size but do not exceed the original size of the
+image. The method support [named arguments](https://www.php.net/manual/en/functions.arguments.php#functions.named-arguments)
+to target just one axis for the modification. 
 
 #### Parameters
 
@@ -26,7 +28,7 @@ The method `resize()` simply stretches the image to the desired size. Use `resiz
 use Intervention\Image\ImageManager;
 
 // create new image instance
-$image = (new ImageManager(['driver' => 'gd']))->read('images/example.jpg');
+$image = ImageManager::imagick()->read('images/example.jpg');
 
 // resize to 300 x 200 pixel
 $image->resize(300, 200);
@@ -40,7 +42,10 @@ $image->resize(height: 200);
 
 > public Image::resizeDown(?int $width, ?int $height): ImageInterface
 
-The method `resize()` simply stretches the image to the desired size. Use `resizeDown()` to change the size but do not exceed the original size of the image. The method support [named arguments](https://www.php.net/manual/en/functions.arguments.php#functions.named-arguments) to target just one axis for the modification. 
+The method `resize()` simply stretches the image to the desired size. Use
+`resizeDown()` to change the size but do not exceed the original size of the
+image. The method support [named arguments](https://www.php.net/manual/en/functions.arguments.php#functions.named-arguments)
+to target just one axis for the modification. 
 
 
 #### Parameters
@@ -57,7 +62,7 @@ The method `resize()` simply stretches the image to the desired size. Use `resiz
 use Intervention\Image\ImageManager;
 
 // create new image instance (800 x 600)
-$image = (new ImageManager(['driver' => 'gd']))->read('images/example.jpg');
+$image = ImageManager::imagick()->read('images/example.jpg');
 
 $image = $image->resizeDown(2000, 100); // 800 x 100
 
@@ -71,9 +76,12 @@ $image->resizeDown(width: 200);
 
 > public Image::scale(?int $width, ?int $height): ImageInterface
 
-Often you want to resize an image but do not want to distort the original image aspect ratio. For this kind of modification you can simply use the methods `scale()` or `scaleDown()`.
+Often you want to resize an image but do not want to distort the original image
+aspect ratio. For this kind of modification you can simply use the methods
+`scale()` or `scaleDown()`.
 
-Keep in mind that the resulting size my differ from the given arguments, because the aspect ratio will be maintained preferably.
+Keep in mind that the resulting size my differ from the given arguments,
+because the aspect ratio will be maintained preferably.
 
 #### Parameters
 
@@ -87,9 +95,11 @@ Keep in mind that the resulting size my differ from the given arguments, because
 
 ```php
 use Intervention\Image\ImageManager;
+use Intervention\Image\Drivers\Imagick\Driver;
 
 // create new image instance (800 x 600)
-$image = (new ImageManager(['driver' => 'gd']))->read('images/example.jpg');
+$manager = new ImageManager(new Driver());
+$image = $manager->read('images/example.jpg');
 
 // scale to fixed height
 $image->scale(height: 300); // 400 x 300
@@ -117,9 +127,11 @@ The method `resize()` simply stretches the image to the desired size. Use `resiz
 
 ```php
 use Intervention\Image\ImageManager;
+use Intervention\Image\Drivers\Gd\Driver;
 
 // create new image instance
-$image = (new ImageManager(['driver' => 'gd']))->read('images/example.jpg'); // 800 x 600
+$manager = new ImageManager(Driver::class);
+$image = $manager->read('images/example.jpg'); // 800 x 600
 
 // scale down to fixed width
 $image->scaleDown(width: 200); // 200 x 150
@@ -151,9 +163,11 @@ For this method both width and height arguments are required. You can optional s
 
 ```php
 use Intervention\Image\ImageManager;
+use Intervention\Image\Drivers\Gd\Driver;
 
 // create new image instance (800 x 600)
-$image = (new ImageManager(['driver' => 'gd']))->read('images/example.jpg');
+$manager = new ImageManager(Driver::class);
+$image = $manager->read('images/example.jpg');
 
 // crop the best fitting 5:3 (600x360) ratio and resize to 600x360 pixel
 $img->fit(600, 360);
@@ -186,7 +200,7 @@ This method has the same purpose and the same signature as `fit()` but the end r
 use Intervention\Image\ImageManager;
 
 // create new image instance
-$image = (new ImageManager(['driver' => 'gd']))->read('images/example.jpg'); // 800 x 600
+$image = ImageManager::imagick()->read('images/example.jpg'); // 800 x 600
 
 // fit down to 1200x720 (5:3)
 $img->fitDown(1200, 720); // 800 x 480 (5:3)
@@ -221,9 +235,11 @@ Padded resizing means that the original image is scaled until it fits the define
 
 ```php
 use Intervention\Image\ImageManager;
+use Intervention\Image\Drivers\Imagick\Driver;
 
 // create new image instance
-$image = (new ImageManager(['driver' => 'gd']))->read('images/example.jpg');
+$manager = ImageManager::withDriver(new Driver());
+$image = $manager->read('images/example.jpg');
 
 // resize padded to 300 x 200
 $image->pad(300, 200, 'ccc');
@@ -252,9 +268,10 @@ This method does the same thing as `pad()` but does not exceed the size of the o
 
 ```php
 use Intervention\Image\ImageManager;
+use Intervention\Image\Drivers\Gd\Driver;
 
 // create new image instance (800 x 600)
-$image = (new ImageManager(['driver' => 'gd']))->read('images/example.jpg');
+$image = ImageManager::withDriver(Driver::class)->read('images/example.jpg');
 
 // resize padded without upsizing
 $image->padDown(900, 600);
@@ -287,9 +304,11 @@ the given amount of pixels.
 
 ```php
 use Intervention\Image\ImageManager;
+use Intervention\Image\Drivers\Imagick\Driver;
 
 // create new image instance
-$image = (new ImageManager(['driver' => 'gd']))->read('images/example.jpg');
+$manager = new ImageManager(new Driver())
+$image = $manager->read('images/example.jpg');
 
 // cut out a 200 x 150 pixel cutout at position 45,90
 $image->crop(200, 150, 45, 90);

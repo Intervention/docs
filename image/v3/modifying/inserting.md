@@ -36,8 +36,10 @@ The possible position values are:
 #### Example
 
 ```php
+use Intervention\Image\ImageManager;
+
 // create an test image from a file
-$manager = new ImageManager(['driver' => 'imagick']);
+$manager = ImageManager::gd();
 $image = $manager->read('test.png');
 
 // paste another image
