@@ -38,9 +38,10 @@ If the given argument can not be decoded by the library an exception of type `In
 
 ```php
 use Intervention\Image\ImageManager;
+use Intervention\Image\Drivers\Imagick\Driver;
 
 // create new manager instance with desired driver
-$manager = new ImageManager(['driver' => 'imagick']);
+$manager = new ImageManager(new Driver());
 
 // read image from filesystem
 $image = $manager->read('images/example.jpg');
@@ -70,9 +71,10 @@ By default the image is created with a **transparent background**. If you want t
 
 ```php
 use Intervention\Image\ImageManager;
+use Intervention\Image\Drivers\Imagick\Driver;
 
 // create new manager instance with desired driver
-$manager = new ImageManager(['driver' => 'gd']);
+$manager = new ImageManager(Driver::class);
 
 // create new image 640x480
 $image = $manager->create(640, 480);
@@ -103,9 +105,10 @@ Animations are possible in all supplied drivers. [Read more on how to modify ani
 
 ```php
 use Intervention\Image\ImageManager;
+use Intervention\Image\Drivers\Gd\Driver;
 
 // create new manager instance with desired driver
-$manager = new ImageManager(['driver' => 'gd']);
+$manager = new ImageManager(new Driver());
 
 // create animated image with three frames and a delay of 250 ms for each frame
 $image = $manager->animate(function ($animation) {
@@ -116,8 +119,11 @@ $image = $manager->animate(function ($animation) {
 ```
 
 ```php
+use Intervention\Image\ImageManager;
+use Intervention\Image\Drivers\Imagick\Driver;
+
 // create new manager instance with desired driver
-$manager = new ImageManager(['driver' => 'gd']);
+$manager = new ImageManager(Driver::Class);
 
 // create a looping  5 frame circle animation by making 
 // own animation frames via the drawCircle method

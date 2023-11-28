@@ -15,9 +15,10 @@ Reading the width in pixels from an image instance.
 
 ```php
 use Intervention\Image\ImageManager;
+use Intervention\Image\Drivers\Imagick\Driver;
 
 // create new manager instance with desired driver
-$manager = new ImageManager(['driver' => 'gd']);
+$manager = new ImageManager(new Driver());
 
 // reading an image
 $image = $manager->read('images/example.png');
@@ -36,9 +37,10 @@ Reading the pixel height from an image instance.
 
 ```php
 use Intervention\Image\ImageManager;
+use Intervention\Image\Drivers\Gd\Driver;
 
 // create new manager instance with desired driver
-$manager = new ImageManager(['driver' => 'gd']);
+$manager = new ImageManager(new Driver());
 
 // reading an image
 $image = $manager->read('images/example.png');
@@ -57,9 +59,10 @@ Reading the image size from an instance.
 
 ```php
 use Intervention\Image\ImageManager;
+use Intervention\Image\Drivers\Imagick\Driver;
 
 // create new manager instance with desired driver
-$manager = new ImageManager(['driver' => 'gd']);
+$manager = new ImageManager(Driver::class);
 
 // reading an image
 $image = $manager->read('images/example.png');
@@ -86,9 +89,10 @@ Reads out the image resolution of the current instance in DPI.
 
 ```php
 use Intervention\Image\ImageManager;
+use Intervention\Image\Drivers\Gd\Driver;
 
 // create new manager instance with desired driver
-$manager = new ImageManager(['driver' => 'gd']);
+$manager = new ImageManager(Driver::class);
 
 // reading an image
 $image = $manager->read('images/example.png');
@@ -122,9 +126,10 @@ is encoded only for image formats that support this feature.
 
 ```php
 use Intervention\Image\ImageManager;
+use Intervention\Image\Drivers\Gd\Driver;
 
 // create new manager instance with desired driver
-$manager = new ImageManager(['driver' => 'imagick']);
+$manager = new ImageManager(new Driver());
 
 // read an image
 $image = $manager->read('images/example.jpg');
@@ -156,9 +161,10 @@ determined. However, this is only relevant for animated images.
 
 ```php
 use Intervention\Image\ImageManager;
+use Intervention\Image\Drivers\Gd\Driver;
 
 // create new manager instance with desired driver
-$manager = new ImageManager(['driver' => 'imagick']);
+$manager = new ImageManager(Driver::class);
 
 // read an image
 $image = $manager->read('images/animation.gif');
@@ -206,9 +212,10 @@ frame.
 
 ```php
 use Intervention\Image\ImageManager;
+use Intervention\Image\Drivers\Imagick\Driver;
 
 // create new manager instance with desired driver
-$manager = new ImageManager(['driver' => 'imagick']);
+$manager = new ImageManager(new Driver());
 
 // read an image
 $image = $manager->read('images/animation.gif');
@@ -242,9 +249,10 @@ This function reads the colorspace from the current image instance.
 
 ```php
 use Intervention\Image\ImageManager;
+use Intervention\Image\Drivers\Gd\Driver;
 
 // create new manager instance with desired driver
-$manager = new ImageManager(['driver' => 'imagick']);
+$manager = new ImageManager(Driver::class);
 
 // reading an image
 $image = $manager->read('images/example.jpg');
@@ -271,11 +279,12 @@ name, or as an abbreviation for the colorspace.
 
 ```php
 use Intervention\Image\ImageManager;
+use Intervention\Image\Drivers\Imagick\Driver;
 use Intervention\Image\Colors\Rgb\Colorspace as RgbColorspace;
 use Intervention\Image\Colors\Cmyk\Colorspace as CmykColorspace;
 
 // create new manager instance with desired driver
-$manager = new ImageManager(['driver' => 'imagick']);
+$manager = new ImageManager(new Driver());
 
 // reading an image
 $image = $manager->read('images/example.jpg');
@@ -306,9 +315,10 @@ no profile is found an `ColorException` is thrown.
 
 ```php
 use Intervention\Image\ImageManager;
+use Intervention\Image\Drivers\Imagick\Driver;
 
 // create new manager instance with desired driver
-$manager = new ImageManager(['driver' => 'imagick']);
+$manager = new ImageManager(new Driver());
 
 // reading an image
 $image = $manager->read('images/example.jpg');
@@ -332,9 +342,10 @@ an object that implements the ProfileInterface.
 
 ```php
 use Intervention\Image\ImageManager;
+use Intervention\Image\Drivers\Imagick\Driver;
 
 // create new manager instance with desired driver
-$manager = new ImageManager(['driver' => 'imagick']);
+$manager = new ImageManager(Driver::class);
 
 // reading an image
 $image = $manager->read('images/example.jpg');
@@ -367,9 +378,10 @@ the specified block is not found, `null` is returned as result.
 
 ```php
 use Intervention\Image\ImageManager;
+use Intervention\Image\Drivers\Imagick\Driver;
 
 // create new manager instance with desired driver
-$manager = new ImageManager(['driver' => 'gd']);
+$manager = new ImageManager(new Driver());
 
 // reading an image
 $image = $manager->read('images/example.jpg');

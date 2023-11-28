@@ -9,7 +9,8 @@
 
 > public Image::toJpeg(int $quality = 75): EncodedImage
 
-Encode the current image instance in JPEG format in the given **quality** ranging between 0 for low quality to 100 for best quality.
+Encode the current image instance in JPEG format in the given **quality**
+ranging between 0 for low quality to 100 for best quality.
 
 #### Parameters
 
@@ -21,9 +22,10 @@ Encode the current image instance in JPEG format in the given **quality** rangin
 
 ```php
 use Intervention\Image\ImageManager;
+use Intervention\Image\Drivers\Gd\Driver;
 
 // create new manager instance with desired driver
-$manager = new ImageManager(['driver' => 'gd']);
+$manager = new ImageManager(Driver::class);
 
 // reading gif image
 $image = $manager->read('images/example.gif');
@@ -48,9 +50,10 @@ Encode the current image instance in the WebP graphic format in the given **qual
 
 ```php
 use Intervention\Image\ImageManager;
+use Intervention\Image\Drivers\Imagick\Driver;
 
 // create new manager instance with desired driver
-$manager = new ImageManager(['driver' => 'gd']);
+$manager = new ImageManager(new Driver());
 
 // reading gif image
 $image = $manager->read('images/example.gif');
@@ -73,9 +76,10 @@ colors in the final result to the given limit. If the limit falls below
 
 ```php
 use Intervention\Image\ImageManager;
+use Intervention\Image\Drivers\Gd\Driver;
 
 // create new manager instance with desired driver
-$manager = new ImageManager(['driver' => 'gd']);
+$manager = new ImageManager(Driver::class);
 
 // reading jpg image
 $image = $manager->read('images/example.jpg');
@@ -93,9 +97,10 @@ the colors in the final result.
 
 ```php
 use Intervention\Image\ImageManager;
+use Intervention\Image\Drivers\Gd\Driver;
 
 // create new manager instance with desired driver
-$manager = new ImageManager(['driver' => 'gd']);
+$manager = new ImageManager(new Driver());
 
 // reading jpg image
 $image = $manager->read('images/example.jpg');
@@ -113,9 +118,10 @@ to reduce the colors in the final result.
 
 ```php
 use Intervention\Image\ImageManager;
+use Intervention\Image\Drivers\Imagick\Driver;
 
 // create new manager instance with desired driver
-$manager = new ImageManager(['driver' => 'gd']);
+$manager = new ImageManager(Driver::class);
 
 // reading jpg image
 $image = $manager->read('images/example.jpg');
@@ -137,9 +143,10 @@ ranging between 0 for low quality to 100 for best quality.
 
 ```php
 use Intervention\Image\ImageManager;
+use Intervention\Image\Drivers\Imagick\Driver;
 
 // create new manager instance with desired driver
-$manager = new ImageManager(['driver' => 'gd']);
+$manager = new ImageManager(new Driver());
 
 // reading jpg image
 $image = $manager->read('images/example.jpg');
@@ -168,9 +175,10 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
 
 ```php
 use Intervention\Image\ImageManager;
+use Intervention\Image\Drivers\Imagick\Driver;
 
 // create new manager instance with desired driver
-$manager = new ImageManager(['driver' => 'gd']);
+$manager = new ImageManager(Driver::class);
 
 // reading gif image
 $image = $manager->read('images/example.gif');
@@ -190,9 +198,10 @@ This method takes the already encoded image data and wraps it in an base64 encod
 
 ```php
 use Intervention\Image\ImageManager;
+use Intervention\Image\Drivers\Gd\Driver;
 
 // create new manager instance with desired driver
-$manager = new ImageManager(['driver' => 'imagick']);
+$manager = new ImageManager(new Driver());
 
 // reading gif image
 $image = $manager->read('images/example.gif');
@@ -211,9 +220,10 @@ Create a file pointer to handle the encoded image data.
 
 ```php
 use Intervention\Image\ImageManager;
+use Intervention\Image\Drivers\Imagick\Driver;
 
 // create new manager instance with desired driver
-$manager = new ImageManager(['driver' => 'imagick']);
+$manager = new ImageManager(Driver::class);
 
 // reading gif image
 $image = $manager->read('images/example.gif');
@@ -232,9 +242,10 @@ This method takes the already encoded image data and wraps it in an base64 encod
 
 ```php
 use Intervention\Image\ImageManager;
+use Intervention\Image\Drivers\Imagick\Driver;
 
 // create new manager instance with desired driver
-$manager = new ImageManager(['driver' => 'imagick']);
+$manager = new ImageManager(new Driver());
 
 // reading gif image
 $image = $manager->read('images/example.gif');
