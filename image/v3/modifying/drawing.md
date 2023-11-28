@@ -197,7 +197,7 @@ $image->drawLine(function ($line) {
 
 ## Drawing a polygon
 
-> public Image::drawPolygon(?callable $init = null): ImageInterface
+> public Image::drawPolygon(callable $init): ImageInterface
 
 Draw a polygon on the current image. Define the overall appearance of the shape by passing a **init** callback as an optional parameter.
 
