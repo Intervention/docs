@@ -130,3 +130,24 @@ recommended to use it with CMYK images.
 
 Read how to read an modify colorspace in the section about [Meta
 Information](/v3/basics/meta-information).
+
+### Converting Colors to other Colorspaces
+
+Colors can always be converted to the supported color spaces. This is also
+possible if the driver does not support this color space.
+
+```php
+use Intervention\Image\ImageManager;
+use Intervention\Image\Drivers\Imagick\Driver;
+use Intervention\Image\Colors\Rgb\Colorspace as RgbColorspace;
+
+// read CMYK image from filesystem
+$manager = new ImageManager(new Driver());
+$image = $manager->read('example.tif');
+
+// retrieve color of pixel at given position
+$cmyk_color = $image->pickColor(120, 300);
+
+// convert color to RGB color space
+$rgb_color = $color->convertTo(RgbColorspace::class);
+```
