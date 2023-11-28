@@ -19,7 +19,7 @@ There are a few key features that further improve the library.
 
 - [canvas()](/v2/api/canvas) is now handled by [create()](/v3/basics/instantiation#creating-new-images)
 - [circle()](/v2/api/circle) is now handled by [drawCircle()](/v3/modifying/drawing#drawing-a-circle)
-y [crop()](/v2/api/crop) still exists but has a new [signature](/v3/modifying/resizing#crop-image)
+- [crop()](/v2/api/crop) still exists but has a new [signature](/v3/modifying/resizing#crop-image)
 - [ellipse()](/v2/api/ellipse) is now handled by [drawEllipse()](/v3/modifying/drawing#drawing-ellipses)
 - [encode()](/v2/api/encode) is now handled by [toJpeg()](https://image.intervention.io/v3/basics/image-output#encoding-jpeg-format), [toWebp()](https://image.intervention.io/v3/basics/image-output#encoding-webp-format), [toPng()](/v3/basics/image-output#encoding-png-format), [toGif()](/v3/basics/image-output#encoding-gif-format), [toBitmap()](/v3/basics/image-output#encoding-windows-bitmap-format) and [toAvif()](/v3/basics/image-output#encoding-av1-image-file-format-avif)
 - [exif()](/v2/api/exif) is now handled by [exif()](/v3/basics/meta-information#exif-information) with a different signature
