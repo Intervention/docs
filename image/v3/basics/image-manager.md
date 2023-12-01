@@ -62,10 +62,10 @@ use Intervention\Image\ImageManager;
 use Intervention\Image\Drivers\Imagick\Driver;
 
 // create new manager instance with desired driver
-$manager = ImageManager::withDriver(new Driver())
+$manager = ImageManager::withDriver(new Driver());
 
 // or create new manager by class name
-$manager = ImageManager::withDriver(Driver::class)
+$manager = ImageManager::withDriver(Driver::class);
 ```
 
 ### Static GD Driver Constructor
@@ -81,7 +81,7 @@ directly without arguments.
 use Intervention\Image\ImageManager;
 
 // create new image manager with gd driver
-$manager = ImageManager::gd()
+$manager = ImageManager::gd();
 ```
 
 ### Static Imagick Driver Constructor
@@ -97,7 +97,7 @@ instance with Imagick driver directly.
 use Intervention\Image\ImageManager;
 
 // create new image manager with gd driver
-$manager = ImageManager::imagick()
+$manager = ImageManager::imagick();
 ```
 
 Read more about the different methods of the image manager in the
