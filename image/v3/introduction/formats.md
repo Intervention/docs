@@ -72,11 +72,12 @@ $image->toBitmap()->save('images/example.bmp');
 
 ## Color Formats
 
-At the moment Intervention Image only supports the RGB color space. This means
-that all images are saved with this color space. Images with other color
-spaces are transformed into RGB. 
-
 The library supports several formats to define colors for its methods.
+
+The input values for colors can deviate from the actual color space of the
+image. It is therefore possible, to draw on an image in CMYK space with an HSV
+color specification. The colors are automatically converted to the target color
+space.
 
 ### Hexadecimal Format
 
@@ -93,6 +94,8 @@ $image = (new ImageManager(['driver' => 'gd']))->create(300, 200)->fill('b537176
 ```
 ### String Format
 
+#### RGB strings
+
 RGB string values in functional notations are also supported. If you want to
 include an alpha value use the RGBA prefix like in the following example.
 
@@ -102,6 +105,27 @@ $image = (new ImageManager(['driver' => 'gd']))->create(300, 200)->fill('rgba(15
 
 // create new image with red background
 $image = (new ImageManager(['driver' => 'gd']))->create(300, 200)->fill('rgb(255, 0, 0)');
+```
+
+#### CMYK strings
+
+CMYK string values in functional notations are also supported.
+
+```php
+// create new image with background
+$image = (new ImageManager(['driver' => 'gd']))->create(300, 200)->fill('cmyk(100, 100, 55, 60)');
+```
+
+#### HSV/HSB strings
+
+It is also possible to pass color values strings in the RGB alternative HSV/HSB.
+
+```php
+// create new image with half transparent background
+$image = ImageManager::imagick()->read('example.jpg');
+
+// draw colored pixel
+$image->drawPixel(120, 200, 'hsv(230, 15, 75)');
 ```
 
 ### HTML Color Names
@@ -123,7 +147,8 @@ only supports the RGB colorspace. The default colorspace for newly created
 images is RGB.
 
 When using the GD driver in Intervention Image to read CMYK images, they will
-be automatically converted to the RGB colorspace.
+be automatically converted to the RGB colorspace, which can lead to color
+deviations.
 
 Because the GD Driver does not support CMYK color space by default, it is not
 recommended to use it with CMYK images.
@@ -131,23 +156,30 @@ recommended to use it with CMYK images.
 Read how to read an modify colorspace in the section about [Meta
 Information](/v3/basics/meta-information).
 
-### Converting Colors to other Colorspaces
+### Converting Colors to other Colorspaces or formats
 
 Colors can always be converted to the supported color spaces. This is also
 possible if the driver does not support this color space.
 
+Although the two drivers only support RGB and CMYK color spaces, color objects
+can also be converted into the following formats.
+
+- `Intervention\Image\Colors\Rgb\Colorspace`
+- `Intervention\Image\Colors\Cmyk\Colorspace`
+- `Intervention\Image\Colors\Hsv\Colorspace`
+
 ```php
 use Intervention\Image\ImageManager;
 use Intervention\Image\Drivers\Imagick\Driver;
-use Intervention\Image\Colors\Rgb\Colorspace as RgbColorspace;
+use Intervention\Image\Colors\Hsv\Colorspace as HsvColorspace;
 
-// read CMYK image from filesystem
+// read RGB image from filesystem
 $manager = new ImageManager(new Driver());
-$image = $manager->read('example.tif');
+$image = $manager->read('example.jpg');
 
 // retrieve color of pixel at given position
-$cmyk_color = $image->pickColor(120, 300);
+$color = $image->pickColor(100, 100);
 
-// convert color to RGB color space
-$rgb_color = $color->convertTo(RgbColorspace::class);
+// convert color to HSV format
+$color = (string) $color->convertTo(HsvColorspace::class); // 'hsv(220, 10, 65)'
 ```
