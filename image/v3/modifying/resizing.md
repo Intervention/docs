@@ -218,8 +218,13 @@ $image->fitDown(900, 450, 'left'); // 800 x 400 px
 
 > public Image::pad(int $width, int $height, $background = 'ffffff', string $position = 'center'): ImageInterface
 
-Padded resizing means that the original image is scaled until it fits the defined target size with unchanged aspect ratio. Compared to the `fit()` method, this call does not create cropped areas, but new empty areas on the sides of the result image. These are filled with the specified background color.
-
+Padded resizing means that the original image is scaled until it fits the
+defined target size with unchanged aspect ratio. The original image is not
+scaled up but only down.
+     
+Compared to the fit() method, this method does not create cropped areas, but
+possibly new empty areas on the sides of the result image. These are filled
+with the specified background color.
 
 #### Parameters
 
@@ -248,11 +253,12 @@ $image->pad(300, 200, 'ccc');
 $image->pad(500, 500, position: 'top-left');
 ```
 
-### Padded resizing without exceeding the original size
+### Padded resizing with upscaling
 
-> public Image::padDown(int $width, int $height, $background = 'ffffff', string $position = 'center'): ImageInterface
+> public Image::contain(int $width, int $height, $background = 'ffffff', string $position = 'center'): ImageInterface
 
-This method does the same thing as `pad()` but does not exceed the size of the original image. You can use this if you want to prevent up-sampling.
+ This method does the same as `pad()`, but the original image is also scaled
+ up if the target size exceeds the original size.
 
 #### Parameters
 
@@ -274,10 +280,10 @@ use Intervention\Image\Drivers\Gd\Driver;
 $image = ImageManager::withDriver(Driver::class)->read('images/example.jpg');
 
 // resize padded without upsizing
-$image->padDown(900, 600);
+$image->contain(900, 600);
 
 // padded resizing with background color
-$image->padDown(500, 500, 'efefef');
+$image->contain(500, 500, 'efefef');
 ```
 
 
