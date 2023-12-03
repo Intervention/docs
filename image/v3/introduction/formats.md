@@ -139,6 +139,17 @@ specification.
 $image = (new ImageManager(['driver' => 'gd']))->create(300, 200)->fill('steelblue');
 ```
 
+### Transparency
+
+If it is necessary to specify transparency as a color, this can always be done
+with the keyword `transparent`.
+
+```php
+$manager = ImageManager::gd();
+$image = $manager->read('images/example.png');
+$image->pad(300, 200, 'transparent');
+```
+
 ## Colorspaces
 
 The available colorspaces are primarily determined by the driver in use. The
