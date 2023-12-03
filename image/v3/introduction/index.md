@@ -20,7 +20,7 @@ matter if you want to create image thumbnails, set watermarks or format large
 image files Intervention Image helps you to manage every task with as little
 lines of code as possible.
 
-With version 3, the proven features have been improved and unique new details
+With version 3, the solid features have been improved and unique new details
 have been added. 
 
 ### Code Example
