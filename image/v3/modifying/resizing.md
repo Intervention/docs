@@ -144,9 +144,9 @@ $image->scaleDown(height: 300); //  400 x 300
 
 ### Cropping & Resizing Combined
 
-> public Image::fit(int $width, int $height, string $position = 'center'): ImageInterface
+> public Image::cover(int $width, int $height, string $position = 'center'): ImageInterface
 
-The `fit()` method is a two step combination of trimming excess pixels and resizing to achieve a certain result size. This method takes the given dimensions and scales it to the largest possible size matching the original size. Then this size is positioned on the original and cut out before being resized to the desired size from the arguments.
+The `cover()` method is a two step combination of trimming excess pixels and resizing to achieve a certain result size. This method takes the given dimensions and scales it to the largest possible size matching the original size. Then this size is positioned on the original and cut out before being resized to the desired size from the arguments.
 
 For this method both width and height arguments are required. You can optional set a position to determine where the image should be trimmed.
 
@@ -170,20 +170,20 @@ $manager = new ImageManager(Driver::class);
 $image = $manager->read('images/example.jpg');
 
 // crop the best fitting 5:3 (600x360) ratio and resize to 600x360 pixel
-$img->fit(600, 360);
+$img->cover(600, 360);
 
 // crop the best fitting 1:1 ratio (200x200) and resize to 200x200 pixel
-$img->fit(200, 200);
+$img->cover(200, 200);
 
-// fit to 300x300 and position crop on the left
-$image->fit(300, 300, 'left'); // 300 x 300 px
+// cover a size of 300x300 and position crop on the left
+$image->cover(300, 300, 'left'); // 300 x 300 px
 ```
 
 ### Fitted resizing without exceeding the original size
 
-> public Image::fitDown(int $width, int $height, string $position = 'center'): ImageInterface
+> public Image::coverDown(int $width, int $height, string $position = 'center'): ImageInterface
 
-This method has the same purpose and the same signature as `fit()` but the end result pixel size will never be larger than the original image. Use this if you want to prevent up-sampling your image.
+This method has the same purpose and the same signature as `cover()` but the end result pixel size will never be larger than the original image. Use this if you want to prevent up-sampling your image.
 
 
 #### Parameters
@@ -202,14 +202,14 @@ use Intervention\Image\ImageManager;
 // create new image instance
 $image = ImageManager::imagick()->read('images/example.jpg'); // 800 x 600
 
-// fit down to 1200x720 (5:3)
-$img->fitDown(1200, 720); // 800 x 480 (5:3)
+// resize down to 1200x720 (5:3)
+$img->coverDown(1200, 720); // 800 x 480 (5:3)
 
-// fit down to 900x900 (1:1)
-$img->fitDown(900, 900); // 600 x 600
+// resize down to 900x900 (1:1)
+$img->coverDown(900, 900); // 600 x 600
 
-// fit down to 900x450 (2:1) and position left
-$image->fitDown(900, 450, 'left'); // 800 x 400 px
+// resize down to 900x450 (2:1) and position left
+$image->coverDown(900, 450, 'left'); // 800 x 400 px
 ```
 
 ## Padded Image Resizing
@@ -222,7 +222,7 @@ Padded resizing means that the original image is scaled until it fits the
 defined target size with unchanged aspect ratio. The original image is not
 scaled up but only down.
      
-Compared to the fit() method, this method does not create cropped areas, but
+Compared to the cover() method, this method does not create cropped areas, but
 possibly new empty areas on the sides of the result image. These are filled
 with the specified background color.
 
@@ -321,4 +321,72 @@ $image->crop(200, 150, 45, 90);
 
 // crop a 40 x 40 pixel cutout from the bottom-right and move it 30 pixel down
 $image->crop(200, 150, 0 , 30, 'bottom-right');
+```
+
+
+## Resize Image Canvas
+### Resize Image Boundaries without resampling the original image
+
+> public Image::resizeCanvas(?int $width, ?int $height, mixed $background = 'ffffff', string $position = 'center'): ImageInterface
+
+This function changes the size of the image borders without recalculating the
+actual image. If the specified sizes are larger than the original, the image
+area is added in the specified color. If the specified sizes are smaller, the
+original image area is cropped. The given position is taken into account and
+determines at which edge of the image the change is made.
+
+#### Parameters
+
+| Name | Type | Description |
+| - | - | - |
+| width | null or integer | Width of the new image area |
+| height | null or integer | Height of the new image area |
+| background (optional) | mixed | Background color for the new areas of the image |
+| position (optional) | string | Position where the image size will be added or subtracted |
+
+#### Examples
+
+```php
+use Intervention\Image\ImageManager;
+use Intervention\Image\Drivers\Imagick\Driver;
+
+// create new image instance
+$manager = new ImageManager(new Driver())
+$image = $manager->read('images/example.jpg');
+
+// resize image area to 800 x 600 and fill new area with yellow
+$image->resizeCanvas(800, 600, 'ff0');
+```
+
+### Resize Image Boundaries relative to the Original
+
+> public Image::resizeCanvasRelative(?int $width, ?int $height, mixed $background = 'ffffff', string $position = 'center'): ImageInterface
+
+This function behaves in the same way as `resizeCanvas()`, but here relative values are
+specified which are either added or subtracted from the original size.
+
+#### Parameters
+
+| Name | Type | Description |
+| - | - | - |
+| width | null or integer | Amount which will be added or subtracted to the original width |
+| height | null or integer | Amount which will be added or subtracted to the original height |
+| background (optional) | mixed | Background color for the new areas of the image |
+| position (optional) | string | Position where the image size will be added or subtracted |
+
+#### Examples
+
+```php
+use Intervention\Image\ImageManager;
+use Intervention\Image\Drivers\Imagick\Driver;
+
+// create new image instance
+$manager = new ImageManager(new Driver())
+$image = $manager->read('images/example.jpg');
+
+// add 50 pixels in green at each side of the image
+$image->resizeCanvas(50, 50, 'green');
+
+// add 20 red pixels to the height at the bottom of the image
+$image->resizeCanvas(height: 20, background: 'ff0000', position: 'bottom');
 ```

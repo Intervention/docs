@@ -25,7 +25,7 @@ There are a few key features that further improve the library.
 - [exif()](/v2/api/exif) is now handled by [exif()](/v3/basics/meta-information#exif-information) with a different signature
 - [fill()](/v3/modifying/effects#fill-image-with-color) currently only supports color values
 - [filter()](/v2/api/filter) is now handled by [modify()](/v3/modifying/custom-modifiers)
-- The resizing methods [resize()](/v2/api/resize), [resizeCanvas()](/v2/api/resize-canvas) and [fit()](/v2/api/fit), [widen()](/v2/api/widen) and [heighten()](/v2/api/heighten) have been completely rebuild and are now handled by [resize()](/v3/modifying/resizing), [resizeDown](/v3/modifying/resizing), [scale()](/v3/modifying/resizing), [scaleDown()](/v3/modifying/resizing), [fit()](/v3/modifying/resizing), [fitDown()](/v3/modifying/resizing), [pad()](/v3/modifying/resizing) and [contain()](/v3/modifying/resizing)
+- The resizing methods [resize()](/v2/api/resize), [fit()](/v2/api/fit), [widen()](/v2/api/widen) and [heighten()](/v2/api/heighten) have been completely rebuild and are now handled by [resize()](/v3/modifying/resizing), [resizeDown](/v3/modifying/resizing), [scale()](/v3/modifying/resizing), [scaleDown()](/v3/modifying/resizing), [cover()](/v3/modifying/resizing), [coverDown()](/v3/modifying/resizing), [pad()](/v3/modifying/resizing) and [contain()](/v3/modifying/resizing)
 - [flip()](/v2/api/flip) still exists but has a new signature and is handled by [flip()](/v3/modifying/effects#mirror-image-horizontally) and [flop()](/v3/modifying/effects#mirror-image-vertically)
 - [insert()](/v2/api/insert) has been replaced by [place()](/v3/modifying/inserting)
 - [line()](/v2/api/line) has been replaced by [drawLine()](/v3/modifying/drawing#drawing-a-line)
@@ -37,6 +37,7 @@ There are a few key features that further improve the library.
 - [rectangle()](/v2/api/rectangle) is handled by [drawRectangle()](/v3/modifying/drawing#drawing-a-rectangle)
 - [save()](/v2/api/save) is handled via an [encoded image](/v3/basics/image-output)
 - [text()](/v2/api/save) still exists but has a new [signature](/v3/modifying/text-fonts)
+- [resizeCanvas()](/v2/api/resize-canvas) still exists but has a new [signature](/v3/modifying/resizing)
 
 ## Removed Features
 
