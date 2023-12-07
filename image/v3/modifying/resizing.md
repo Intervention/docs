@@ -112,8 +112,12 @@ $image->scale(200, 100); // 200 x 150
 
 > public Image::scaleDown(?int $width, ?int $height): ImageInterface
 
-The method `resize()` simply stretches the image to the desired size. Use `resizeDown()` to change the size but do not exceed the original size of the image. The method support [named arguments](https://www.php.net/manual/en/functions.arguments.php#functions.named-arguments) to target just one axis for the modification. 
+The method `resize()` simply stretches the image to the desired size. Use
+`resizeDown()` to change the size but do not exceed the original size of the
+image. The method support [named arguments](https://www.php.net/manual/en/functions.arguments.php#functions.named-arguments)
+to target just one axis for the modification. 
 
+Please note that the size of the result may differ from the given parameter values.
 
 #### Parameters
 
@@ -146,9 +150,14 @@ $image->scaleDown(height: 300); //  400 x 300
 
 > public Image::cover(int $width, int $height, string $position = 'center'): ImageInterface
 
-The `cover()` method is a two step combination of trimming excess pixels and resizing to achieve a certain result size. This method takes the given dimensions and scales it to the largest possible size matching the original size. Then this size is positioned on the original and cut out before being resized to the desired size from the arguments.
+The `cover()` method is a two step combination of trimming excess pixels and
+resizing to achieve a certain result size. This method takes the given
+dimensions and scales it to the largest possible size matching the original
+size. Then this size is positioned on the original and cut out before being
+resized to the desired size from the arguments.
 
-For this method both width and height arguments are required. You can optional set a position to determine where the image should be trimmed.
+For this method both width and height arguments are required. You can optional
+set a position to determine which part of the image should remain in focus.
 
 #### Parameters
 
@@ -183,8 +192,11 @@ $image->cover(300, 300, 'left'); // 300 x 300 px
 
 > public Image::coverDown(int $width, int $height, string $position = 'center'): ImageInterface
 
-This method has the same purpose and the same signature as `cover()` but the end result pixel size will never be larger than the original image. Use this if you want to prevent up-sampling your image.
+This method has the same purpose and the same signature as `cover()` but the
+end result pixel size will never be larger than the original image. Use this if
+you want to prevent up-sampling your image.
 
+Please note that the size of the result may differ from the given parameter values.
 
 #### Parameters
 
@@ -222,7 +234,7 @@ Padded resizing means that the original image is scaled until it fits the
 defined target size with unchanged aspect ratio. The original image is not
 scaled up but only down.
      
-Compared to the cover() method, this method does not create cropped areas, but
+Compared to the `cover()` method, this method does not create cropped areas, but
 possibly new empty areas on the sides of the result image. These are filled
 with the specified background color.
 
@@ -282,7 +294,7 @@ $image = ImageManager::withDriver(Driver::class)->read('images/example.jpg');
 // resize padded without upsizing
 $image->contain(900, 600);
 
-// padded resizing with background color
+// padded resizing with grey background color
 $image->contain(500, 500, 'efefef');
 ```
 
