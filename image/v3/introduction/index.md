@@ -12,6 +12,7 @@ the two most common image processing libraries **GD Library** and **Imagick**.
 
 - Support for GD & Imagick
 - Manipulation of animated images
+- Support for Colorspaces and Profiles
 - Improved architecture
 - PSR-12 standardized
 

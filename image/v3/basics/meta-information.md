@@ -73,6 +73,10 @@ $size = $image->size();
 // read aspect ratio
 $ratio = $size->aspectRatio();
 
+// determine image format
+$is_portrait = $size->isPortrait(); // true
+$is_landscape = $size->isLandscape(); // false
+
 // read width from size
 $width = $size()->width();
 ```

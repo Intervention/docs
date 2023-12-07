@@ -26,21 +26,26 @@ especially for larger images.
 ## Installation
 
 The best way to install Intervention Image is quickly and easily with
-[Composer](https://getcomposer.org/).
-
-**This is an early beta version and should installed for development and testing only.**
-
-First make sure to allow unstable releases by setting the `minimum-stability`
-value on your `composer.json` to `beta`. Then continue by running the following
-command.
+[Composer](https://getcomposer.org/) by running the following command.
 
 ```bash
-$ composer require intervention/image ^3.0@beta
+$ composer require intervention/image
 ```
 
-Your `composer.json` will be updated automatically and you're able use the
-classes of the package via the autoloader. To do so require the just created
+This will install Intervention Image with the most recent version, your
+`composer.json` will be updated automatically and you're able use the classes
+of the package via the autoloader. To do so require the just created
 `vendor/autoload.php` file to PSR-4 autoload all your installed composer
 packages.
 
-After installation you can start to [use the library](/v3/basics/instantiation).
+```php
+require './vendor/autoload.php';
+ 
+use Intervention\Image\ImageManager;
+use Intervention\Image\Drivers\Imagick\Driver;
+
+// create new manager instance with desired driver
+$manager = new ImageManager(new Driver());
+```
+
+After installation you can start to [use the image manager](/v3/basics/image-manager) and how to [read or create image instances](/v3/basics/instantiation).
