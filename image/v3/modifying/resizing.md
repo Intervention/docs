@@ -345,7 +345,7 @@ This function changes the size of the image borders without recalculating the
 actual image. If the specified sizes are larger than the original, the image
 area is added in the specified color. If the specified sizes are smaller, the
 original image area is cropped. The given position is taken into account and
-determines at which edge of the image the change is made.
+determines where the original image is fixed.
 
 #### Parameters
 
@@ -354,7 +354,7 @@ determines at which edge of the image the change is made.
 | width | null or integer | Width of the new image area |
 | height | null or integer | Height of the new image area |
 | background (optional) | mixed | Background color for the new areas of the image |
-| position (optional) | string | Position where the image size will be added or subtracted |
+| position (optional) | string | Position where the original image will be fixed |
 
 #### Examples
 
@@ -384,7 +384,7 @@ specified which are either added or subtracted from the original size.
 | width | null or integer | Amount which will be added or subtracted to the original width |
 | height | null or integer | Amount which will be added or subtracted to the original height |
 | background (optional) | mixed | Background color for the new areas of the image |
-| position (optional) | string | Position where the image size will be added or subtracted |
+| position (optional) | string | Position where the original image will be fixed |
 
 #### Examples
 
