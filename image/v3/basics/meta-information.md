@@ -358,6 +358,26 @@ $image = $manager->read('images/example.jpg');
 $image->setProfile('profiles/profile.icc');
 ```
 
+### Remove Color Profile
+
+> public function removeProfile(): ImageInterface
+
+Removes all color profiles from the current image.
+
+#### Examples
+
+```php
+use Intervention\Image\ImageManager;
+use Intervention\Image\Drivers\Imagick\Driver;
+
+// create new manager instance with desired driver
+$manager = new ImageManager(Driver::class);
+
+// read image and remove profile
+$image = $manager->read('images/example.jpg')->removeProfile();
+```
+
+
 ## Exif Information
 
 Currently Intervention Image is only able to read Exif information. The
