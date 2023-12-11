@@ -9,6 +9,7 @@ Before you begin with the installation make sure your server environment
 supports the following requirements.
 
 - PHP >= 8.1
+- Mbstring PHP Extension
 - A PHP image processing extension
 
 ### Image Processing Extension
@@ -17,16 +18,15 @@ Depending on your PHP installation Intervention Image lets you choose between
 two different image processing libraries.
 
 [GD Image](https://www.php.net/manual/en/book.image.php) or
-[ImageMagick](https://www.php.net/manual/en/book.imagick.php) are the most
-popular image processing libraries for PHP. Your server environment must
-support at least one of them. GD is part of most PHP installations. However I
-recommend using ImageMagick because I think it is faster and more efficient
-especially for larger images.
+[ImageMagick](https://www.php.net/manual/en/book.imagick.php) are both
+supported. Your server environment must support at least one of them. GD is
+part of most PHP installations. However I recommend using ImageMagick because I
+think it is faster and more efficient especially for larger images.
 
 ## Installation
 
-The best way to install Intervention Image is quickly and easily with
-[Composer](https://getcomposer.org/) by running the following command.
+Install Intervention Image with [Composer](https://getcomposer.org/) by running
+the following command.
 
 ```bash
 $ composer require intervention/image
