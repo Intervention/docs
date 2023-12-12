@@ -125,7 +125,7 @@ $manager = new ImageManager(Driver::class);
 $image = $manager->read('test.png');
 
 // draw a red ellipse with a blue border
-$image->drawRectangle(10, 10, function ($ellipse) {
+$image->drawEllipse(10, 10, function ($ellipse) {
     $ellipse->size(180, 125); // width & height of ellipse
     $ellipse->background('f00'); // background color
     $ellipse->border('00f', 1); // border color & size
