@@ -5,7 +5,7 @@
 
 ## Encoding Images
 
-### Encoding Images
+### General encoding
 
 > public Image::encode(EncoderInterface $encoder = new AutoEncoder()): EncodedImage
 
