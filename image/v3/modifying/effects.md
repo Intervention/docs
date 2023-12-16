@@ -275,3 +275,37 @@ $image = $manager->read('images/example.png');
 // apply the pixelation effect
 $image = $image->pixelate(12);
 ```
+
+### Reduce Colors
+
+> public Image::reduceColors(int $limit, mixed $background = 'transparent'): ImageInterface
+
+Apply color quantization to the current image by reducing the numbers of
+distinct colors in the current image to the given limit. The number of colors
+is lowered in a way that the new image should be as visually similar as
+possible.
+
+With GD driver (semi-)transparent colors that lose their transparency as a
+result of the reduction process are blended against the given background color.
+
+#### Parameters
+
+| Name | Type | Description |
+| - | - | - |
+| limit | integer | Allowed number of distinct colors |
+| mixed | background | Color formerly semi-transparent colors are blended against |
+
+#### Examples
+
+```php
+use Intervention\Image\ImageManager;
+
+// create new manager instance with desired driver
+$manager = ImageManager::imagick();
+
+// reading an image
+$image = $manager->read('images/example.png');
+
+// quantize colors to a maximum of 16
+$image = $image->reduceColors(16);
+```
