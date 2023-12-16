@@ -10,11 +10,18 @@
 > public Image::encode(EncoderInterface $encoder = new AutoEncoder()): EncodedImage
 
 This method encodes the image with the given encoder. The following encoders
-are currently available, but they can also be controlled using their own
-methods (see below).
+are currently available.
 
-If no encoder has been passed, an attempt is made to select it automatically
-according to the original format of the image.
+- `Intervention\Image\Encoders\AutoEncoder::class`
+- `Intervention\Image\Encoders\JpegEncoder::class`
+- `Intervention\Image\Encoders\WebpEncoder::class`
+- `Intervention\Image\Encoders\PngEncoder::class`
+- `Intervention\Image\Encoders\GifEncoder::class`
+- `Intervention\Image\Encoders\AvifEncoder::class`
+- `Intervention\Image\Encoders\BmpEncoder::class`
+
+If no encoder is passed the `AutoEncoder` is used which will attempt to detect
+the output format automatically according to the original format of the image.
 
 #### Parameters
 
