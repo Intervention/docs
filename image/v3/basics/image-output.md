@@ -64,15 +64,11 @@ $encoded = $image->toWebp(60); // Intervention\Image\EncodedImage
 
 ### Encoding PNG Format
 
-> public Image::toPng(int $color_limit = 0): EncodedImage
+> public Image::toPng(): EncodedImage
 
-Encode the current image instance in PNG format. Optionally you can reduce the
-colors in the final result to the given limit. If the limit falls below
-256, the PNG is output with an indexed color palette.
+Encode the current image instance in PNG format.
 
-| Name | Type | Description |
-| - | - | - |
-| color_limit (optional) | integer | Maximal number of colors in encoded image |
+**Caution The signature has changed in version 3.1 by removing the parameter `color_limit`**
 
 ```php
 use Intervention\Image\ImageManager;
@@ -84,16 +80,17 @@ $manager = new ImageManager(Driver::class);
 // reading jpg image
 $image = $manager->read('images/example.jpg');
 
-// encoding png image with a maximal color count of 32
-$encoded = $image->toPng(32); // Intervention\Image\EncodedImage
+// encoding as png image
+$encoded = $image->toPng(); // Intervention\Image\EncodedImage
 ```
 
 ### Encoding GIF Format
 
-> public Image::toGif(int $color_limit = 0): EncodedImage
+> public Image::toGif(): EncodedImage
 
-Encode the current image instance in GIF format. Pass a color limit to reduce
-the colors in the final result.
+Encode the current image instance in GIF format.
+
+**Caution The signature has changed in version 3.1 by removing the parameter `color_limit`**
 
 ```php
 use Intervention\Image\ImageManager;
@@ -106,15 +103,16 @@ $manager = new ImageManager(new Driver());
 $image = $manager->read('images/example.jpg');
 
 // encoding gif data
-$encoded = $image->toGif(24); // Intervention\Image\EncodedImage
+$encoded = $image->toGif(); // Intervention\Image\EncodedImage
 ```
 
 ### Encoding Windows Bitmap Format
 
-> public Image::toBitmap(int $color_limit = 0): EncodedImage
+> public Image::toBitmap(): EncodedImage
 
-Encode the current image instance in Windows Bitmap format. Pass a color limit
-to reduce the colors in the final result.
+Encode the current image instance in Windows Bitmap format.
+
+**Caution The signature has changed in version 3.1 by removing the parameter `color_limit`**
 
 ```php
 use Intervention\Image\ImageManager;
