@@ -5,6 +5,43 @@
 
 ## Encoding Images
 
+### Encoding Images
+
+> public Image::encode(EncoderInterface $encoder = new AutoEncoder()): EncodedImage
+
+This method encodes the image with the given encoder. The following encoders
+are currently available, but they can also be controlled using their own
+methods (see below).
+
+If no encoder has been passed, an attempt is made to select it automatically
+according to the original format of the image.
+
+#### Parameters
+
+| Name | Type | Description |
+| - | - | - |
+| encoder (optional) | EncoderInterface | Image encoder with which the image is transformed |
+
+#### Example
+
+```php
+use Intervention\Image\ImageManager;
+use Intervention\Image\Drivers\Gd\Driver;
+use Intervention\Image\Encoders\WebpEncoder;
+
+// create new manager instance with desired driver
+$manager = new ImageManager(Driver::class);
+
+// reading jpeg image
+$image = $manager->read('images/example.jpg');
+
+// encode as the originally read image format
+$encoded = $image->encode(); // Intervention\Image\EncodedImage
+
+// encode jpeg as webp format
+$encoded = $image->encode(new WebpEncoder()); // Intervention\Image\EncodedImage
+```
+
 ### Encoding JPEG Format
 
 > public Image::toJpeg(int $quality = 75): EncodedImage
