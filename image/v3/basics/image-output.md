@@ -105,7 +105,7 @@ $encoded = $image->toWebp(60); // Intervention\Image\EncodedImage
 
 Encode the current image instance in PNG format.
 
-**Caution The signature has changed in version 3.1 by removing the parameter `color_limit`**
+**Caution: The signature has changed in version 3.1 by removing the parameter `color_limit`**
 
 ```php
 use Intervention\Image\ImageManager;
@@ -127,7 +127,7 @@ $encoded = $image->toPng(); // Intervention\Image\EncodedImage
 
 Encode the current image instance in GIF format.
 
-**Caution The signature has changed in version 3.1 by removing the parameter `color_limit`**
+**Caution: The signature has changed in version 3.1 by removing the parameter `color_limit`**
 
 ```php
 use Intervention\Image\ImageManager;
@@ -149,7 +149,7 @@ $encoded = $image->toGif(); // Intervention\Image\EncodedImage
 
 Encode the current image instance in Windows Bitmap format.
 
-**Caution The signature has changed in version 3.1 by removing the parameter `color_limit`**
+**Caution: The signature has changed in version 3.1 by removing the parameter `color_limit`**
 
 ```php
 use Intervention\Image\ImageManager;
