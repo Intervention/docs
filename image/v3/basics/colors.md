@@ -1,5 +1,5 @@
 # Colors
-## Handling of image color
+## Handling of image colors
 
 [TOC]
 
@@ -92,6 +92,76 @@ $color = $colors->first();
 
 // color for certain frame
 $color = $colors->get(6);
+```
+
+## Transforming Colors
+
+As soon as the pixel colors of an image have been read into an object, further
+options are available.
+
+### Transforming colors to string values
+
+> public ColorInterface::toString(): ColorInterface
+
+Each color object can also be output as a string. It is possible to use the
+`toString()` method or to cast the object directly. Of course, the output
+depends on the respective color space.
+
+```php
+use Intervention\Image\ImageManager;
+use Intervention\Image\Colors\Hsl\Colorspace as HslColorspace;
+
+// create new manager instance with desired driver
+$manager = ImageManager::gd();
+
+// read an image
+$image = $manager->read('images/example.png');
+
+// read pixel color
+$color = $image->pickColor(20, 10);
+
+// transform color to hsl format
+$result = $color->toString(); // "rgba(255, 255, 255, 1.0)"
+
+// same result
+$result = (string) $color;
+```
+
+
+### Transforming colors between colorspaces
+
+> public ColorInterface::convertTo(string|ColorspaceInterface $colorspace): ColorInterface
+
+Each color object has a method for converting into other color spaces. Here,
+the target space can be specified either as a string or as an object. This also
+works if the driver used does not support the target color space.
+
+The following color spaces are available.
+
+- `Intervention\Image\Colors\Rgb\Colorspace`
+- `Intervention\Image\Colors\Cmyk\Colorspace`
+- `Intervention\Image\Colors\Hsv\Colorspace`
+- `Intervention\Image\Colors\Hsl\Colorspace`
+
+```php
+use Intervention\Image\ImageManager;
+use Intervention\Image\Colors\Hsl\Colorspace as HslColorspace;
+
+// create new manager instance with desired driver
+$manager = ImageManager::imagick();
+
+// read an image
+$image = $manager->read('images/example.png');
+
+// read pixel color
+$color = $image->pickColor(20, 10);
+
+$result = $color->toString(); // "rgba(0, 255, 255, 1.0)"
+
+// transform color to hsl format
+$hslColor = $color->convertTo(HslColorspace::class);
+
+$result = $hslColor->toString(); // "hsl(180, 100, 50)"
 ```
 
 ## Colorspaces
