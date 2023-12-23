@@ -516,7 +516,7 @@ $mimetype = $image->toJpeg()->mediaType();
 
 ## Writing images directly
 
-### Save image directly in file system
+### Encoding & saving combined
 
 > public Image::save(?string $path = null, int $quality = 75): ImageInterface
 
