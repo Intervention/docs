@@ -205,6 +205,9 @@ $encoded = $image->encodeByExtension('png');
 
 ## Encoding with Shortcut Methods
 
+There is a corresponding shortcut method for each image format, which can be
+called up directly from the image object.
+
 ### Encoding JPEG Format
 
 > public Image::toJpeg(int $quality = 75): EncodedImage
