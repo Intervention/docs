@@ -9,66 +9,24 @@ The readable image formats depend on the used driver. While with Imagick it is
 possible to read all formats that the library itself supports, with GD only the
 formats JPG, WebP, GIF, PNG, BMP and AVIF are readable and writable.
 
-Both drivers of Intervention Image are able to decode & encode the following
-image formats. Read more about image encoding in the [output
-section](/v3/basics/image-output).
+| Format | GD | Imagick |
+| - | - | - |
+| JPEG | ✅ | ✅ |
+| WebP | ✅ | ✅ |
+| GIF | ✅ | ✅ |
+| PNG | ✅ | ✅ |
+| AVIF | ✅ | ✅ |
+| Bitmap | ✅ | ✅ |
+| TIFF | ❌ | ✅ |
+| JPEG 2000 | ❌ | ✅ |
 
-### JPEG
+**Please note that not all image formats are always included in the PHP image
+extensions. It is therefore possible, that the GD library is installed but is
+configured without Jpeg support or Imagick is available without Webp support
+for example.**
 
-JPEG is still the most used image format of the internet. GD and Imagick driver
-of Intervention Image support encoding & decoding.
+Read more about [image encoding](/v3/basics/image-output) in the output section.
 
-```php
-// encode and save an image instance in jpeg format
-$image->toJpeg()->save('images/example.jpg');
-```
-
-### WebP
-
-Encoding & decoding of the WebP graphic format is supported by GD and Imagick
-driver.
-
-```php
-// encode and save an image instance in webp format
-$image->toWebp()->save('images/example.webp');
-```
-
-### GIF
-
-Since version 3 of Intervention Image there is full support for encoding &
-decoding of (**animated**) GIF files with GD and Imagick driver.
-
-```php
-// encode and save an image instance in gif format
-$image->toGif()->save('images/example.gif');
-```
-
-### PNG
-
-Encoding & Decoding of PNG formated images is supported by all drivers.
-
-```php
-// encode and save an image instance in png format
-$image->toPng()->save('images/example.png');
-```
-
-### AV1 Image File Format (AVIF)
-
-Encoding & Decoding of AVIF formated images is supported by all drivers.
-
-```php
-// encode and save an image instance in ms windows bitmap format
-$image->toAvif()->save('images/example.avif');
-```
-
-### Windows Bitmap
-
-Encoding & Decoding of BMP formated images is supported by all drivers.
-
-```php
-// encode and save an image instance in ms windows bitmap format
-$image->toBitmap()->save('images/example.bmp');
-```
 
 ## Color Formats
 
