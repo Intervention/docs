@@ -7,7 +7,7 @@
 
 The readable image formats depend on the used driver. While with Imagick it is
 possible to read all formats that the library itself supports, with GD only the
-formats JPG, WebP, GIF, PNG, BMP and AVIF are readable and writable.
+following formats readable and writable.
 
 | Format | GD | Imagick |
 | - | - | - |
@@ -25,7 +25,7 @@ extensions. It is therefore possible, that the GD library is installed but is
 configured without Jpeg support or Imagick is available without Webp support
 for example.**
 
-Read more about [image encoding](/v3/basics/image-output) in the output section.
+Read more about [encoding different image formats](/v3/basics/image-output) in the output section.
 
 
 ## Color Formats
