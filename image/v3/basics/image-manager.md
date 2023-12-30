@@ -3,19 +3,19 @@
 
 [TOC]
 
-The image manager works as a starting point for all operations. With this
-class you determine the used driver by configuration and then call the
-methods necessary for instantiation.
+The image manager is the starting point for all operations. With this
+class you determine the driver to use and call the methods needed 
+for instantiation.
 
 ## Create a new image manager instance
 
 > public ImageManager::__construct(string|DriverInterface $driver): ImageInterface
 
-The instantiation of the image manager configures the entire setup and
-specifies the driver. This option is required. The possible values for the
-driver either an instance or a class name of driver.
+The image manager instantiation configures the entire setup and specifies the
+driver. The possible values for the driver are either an instance or a class
+name of driver.
 
-Intervention Image is currently supplied with two different drivers. Depending
+Intervention Image is currently shipped with two different drivers. Depending
 on your PHP installation, you can choose between GD or Imagick.
 
 - `Intervention\Image\Drivers\Gd\Driver`

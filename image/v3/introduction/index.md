@@ -1,28 +1,27 @@
 # Intervention Image
 
-## PHP Image Manipulation
+## PHP Image Processing
 
 ## Introduction
 
-Intervention Image is the most popular open source **PHP image manipulation
+Intervention Image is the most popular open source **PHP image processing
 library**. It provides an easy and expressive way to edit images and supports
-the two most common image processing libraries **GD Library** and **Imagick**.
+PHP's two most common image processing libraries **GD Library** and **Imagick**.
 
 ### Features
 
-- Support for GD & Imagick
-- Manipulation of animated images
+- Unified API for GD & Imagick
+- Processing of animated images
 - Support for Colorspaces and Profiles
 - Improved architecture
 - PSR-12 standardized
 
-The library is written to make PHP image manipulating easy and effortless. No
-matter if you want to create image thumbnails, set watermarks or format large
-image files Intervention Image helps you to manage every task with as little
-lines of code as possible.
+The library is written to make PHP image manipulation easy and effortless. No
+matter whether you want to create image thumbnails, set watermarks, or format
+large large image files, Intervention Image helps you accomplish each task with
+as few lines of code.
 
-With version 3, the solid features have been improved and unique new details
-have been added. 
+Version 3 improves on the solid features and adds unique new details.
 
 ### Code Example
 
@@ -48,6 +47,6 @@ $image->toPng()->save('images/foo.png');
 ```
 
 The library follows the FIG standard PSR-12 to ensure a high level of
-interoperability between shared PHP code and is fully unit-tested.
+interoperability among shared PHP code and is fully unit tested.
 
 Read how to [install Intervention Image](/v3/introduction/installation).

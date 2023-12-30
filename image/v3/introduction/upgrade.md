@@ -5,9 +5,9 @@
 
 ## New Features
 
-Intervention Image 3 has been rewritten from scratch with little code carried
-over from previous versions. This means a more modern and sophisticated
-architecture and API that takes advantage of modern features from PHP 8.0.
+Intervention Image 3 has been rewritten from the ground up with very little code carried
+over from the previous version. This means a more modern and sophisticated
+architecture and API that takes advantage of the modern features of PHP 8+.
 There are a few key features that further improve the library.
 
 - [Support of animated GIF with GD and Imagick drivers](/v3/basics/instantiation#creating-animations)
