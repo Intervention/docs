@@ -168,6 +168,36 @@ $image = $manager->read('images/example.png');
 $image = $image->flop();
 ```
 
+### Image rotation
+
+> public Image::rotate(float $angle, mixed $background = 'ffffff'): ImageInterface
+
+Rotates the current image counterclockwise by the specified angle. Optionally,
+specify a background color to fill the newly created uncovered areas after the
+rotation.
+
+#### Parameters
+
+| Name | Type | Description |
+| - | - | - |
+| angle | float | The rotation angle in degrees to rotate the image counterclockwise |
+| background | mixed | A color to fill the newly created areas after rotation |
+
+#### Examples
+
+```php
+use Intervention\Image\ImageManager;
+
+// create new manager instance with desired driver
+$manager = ImageManager::gd();
+
+// reading an image
+$image = $manager->read('images/example.png');
+
+// rotate image 45 degrees clockwise 
+$image = $image->rotate(-45);
+```
+
 ### Blur Effect
 
 > public Image::blur(int $amount = 5): ImageInterface
