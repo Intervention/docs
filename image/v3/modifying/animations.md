@@ -26,6 +26,39 @@ $result = $manager->read('images/animation.gif')->isAnimated();
 
 ## Editing animations
 
+### Changing the animation frames
+
+> public Image::sliceAnimation(int $offset, null|int $length = null): ImageInterface
+
+Extract animation frames based on given values and discard the rest. The offset
+parameter can be used to set the starting point of the new animation; all
+frames before the offset are discarded. The length parameter is optional. It
+specifies how many frames to read after the offset. By default, all frames up
+to the end of the animation are read.
+
+#### Parameters
+
+| Name | Type | Description |
+| - | - | - |
+| offset | integer | Starting point of the new animation |
+| length | null or integer | Frames to read after the offset (optional) |
+
+#### Examples
+
+```php
+use Intervention\Image\ImageManager;
+use Intervention\Image\Drivers\Gd\Driver;
+
+// create new manager instance with desired driver
+$manager = new ImageManager(new Driver());
+
+// reading an animated gif
+$image = $manager->read('images/animation.gif');
+
+// discard the first 20 frames and read the following 10 frames as new animation
+$image = $image->sliceAnimation(20, 10);
+```
+
 ### Reading the Animation Iteration Count
 
 > public Image::loops(): int
