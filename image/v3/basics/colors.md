@@ -307,3 +307,64 @@ $manager = new ImageManager(Driver::class);
 $image = $manager->read('images/example.jpg')->removeProfile();
 ```
 
+## Transparency
+
+Intervention Image supports image formats with alpha channels during decoding
+and output. Transparent areas are preserved as long as the destination format
+supports transparency.
+
+If the target format does not support transparency, no alpha channel can be
+preserved. In this case the transparent areas will be blended with a color. This
+color can be specified in advance.
+
+### Setting the blending color
+
+> public function setBlendingColor(mixed $color): ImageInterface
+
+Sets the blending color based on the specified color value. This can be
+specified in one of the supported [color formats](/v3/introduction/formats#color-formats).
+
+This color is only used if an output format is selected that does not support
+an alpha channel and the transparency must therefore be replaced. **In other
+cases, setting the color has no effect.** The default value is white.
+
+#### Examples
+
+```php
+use Intervention\Image\ImageManager;
+use Intervention\Image\Drivers\Gd\Driver;
+
+// create new manager instance with desired driver
+$manager = new ImageManager(Driver::class);
+
+// read a PNG file with transparency
+$image = $manager->read('images/example.png');
+
+// define the replacement color for transparent areas
+$image->setBlendingColor('#ff5500'); // orange
+
+// encode file as jpeg
+$image->toJpeg();
+```
+
+### Getting the blending color
+
+> public function blendingColor(): ColorInterface
+
+Reads out the current blending color of the image.
+
+#### Examples
+
+```php
+use Intervention\Image\ImageManager;
+use Intervention\Image\Drivers\Gd\Driver;
+
+// create new manager instance with desired driver
+$manager = new ImageManager(Driver::class);
+
+// read an image
+$image = $manager->read('images/example.png');
+
+// read the replacement color for transparent areas
+$color = $image->blendingColor(); // default white
+```
