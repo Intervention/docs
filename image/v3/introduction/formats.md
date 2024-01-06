@@ -6,8 +6,8 @@
 ## Image Formats
 
 The readable image formats depend on the used driver. While with Imagick it is
-possible to read all formats that the library itself supports, with GD only the
-following formats readable and writable.
+possible to read all formats that the library itself supports, with GD only
+some formats are readable and writable.
 
 | Format | GD | Imagick |
 | - | - | - |
@@ -32,16 +32,16 @@ Read more about [encoding different image formats](/v3/basics/image-output) in t
 
 The library supports several formats to define colors for its methods.
 
-The input values for colors can deviate from the actual color space of the
-image. It is therefore possible, to draw on an image in CMYK space with an HSV
+The input values for colors may differ from the actual color space of the
+image. Therefore, it is possible to draw on an image in CMYK space with an HSV
 color specification. The colors are automatically converted to the target color
 space.
 
 ### Hexadecimal Format
 
-You can pass colors as a RGB hex triplet used normally in HTML and CSS. It's
-possible to use the shorthand as well as the full format with or without alpha
-channel. The leading `#` is optional.
+You can pass colors as RGB hex triplets, which are commonly used in HTML and
+CSS. It's possible to use the shorthand as well as the full format with or
+without alpha channel. The leading `#` is optional.
 
 ```php
 // create new image with red background
@@ -110,16 +110,16 @@ $image->pad(300, 200, 'transparent');
 
 ## Colorspaces
 
-The available colorspaces are primarily determined by the driver in use. The
-Imagick driver is compatible with RGB and CMYK colorspaces, while the GD driver
-only supports the RGB colorspace. The default colorspace for newly created
-images is RGB.
+The available color spaces are primarily determined by the driver used. The
+Imagick driver is compatible with RGB and CMYK color spaces, while the GD
+driver only supports RGB. The default color space for newly created images is
+RGB.
 
 When using the GD driver in Intervention Image to read CMYK images, they will
-be automatically converted to the RGB colorspace, which can lead to color
+be automatically converted to the RGB color space, which may result in color
 deviations.
 
-Because the GD Driver does not support CMYK color space by default, it is not
+Since the GD driver does not support the CMYK color space by default, it is not
 recommended to use it with CMYK images.
 
 Read how to read an modify colorspace in the section about [Meta
@@ -127,8 +127,8 @@ Information](/v3/basics/meta-information).
 
 ### Converting Colors to other Colorspaces or formats
 
-Colors can always be converted to the supported color spaces. This is also
-possible if the driver does not support this color space.
+Colors can always be converted to the supported color spaces. This is possible
+even if the driver does not support that color space.
 
 Although the two drivers only support RGB and CMYK color spaces, color objects
 can also be converted into the following formats.

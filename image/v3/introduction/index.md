@@ -16,10 +16,10 @@ PHP's two most common image processing libraries **GD Library** and **Imagick**.
 - Improved architecture
 - PSR-12 standardized
 
-The library is written to make PHP image manipulation easy and effortless. No
-matter whether you want to create image thumbnails, set watermarks, or format
-large large image files, Intervention Image helps you accomplish each task with
-as few lines of code.
+The library is written to make PHP image manipulation easy and effortless.
+Whether you want to create image thumbnails, set watermarks, or format large
+large image files, Intervention Image helps you accomplish any task with just a
+few lines of code. 
 
 Version 3 improves on the solid features and adds unique new details.
 
@@ -46,7 +46,7 @@ $image->toPng()->save('images/foo.png');
 
 ```
 
-The library follows the FIG standard PSR-12 to ensure a high level of
-interoperability among shared PHP code and is fully unit tested.
+The library follows the FIG PSR-12 standard to ensure a high level of
+interoperability between shared PHP code and is fully unit tested.
 
 Read how to [install Intervention Image](/v3/introduction/installation).
