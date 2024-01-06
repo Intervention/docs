@@ -48,4 +48,4 @@ use Intervention\Image\Drivers\Imagick\Driver;
 $manager = new ImageManager(new Driver());
 ```
 
-After installation you are read to [use the image manager](/v3/basics/image-manager) and [read or create image instances](/v3/basics/instantiation).
+After installation you are ready to [use the image manager](/v3/basics/image-manager) and [read or create image instances](/v3/basics/instantiation).
