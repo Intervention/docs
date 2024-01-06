@@ -368,3 +368,38 @@ $image = $manager->read('images/example.png');
 // read the replacement color for transparent areas
 $color = $image->blendingColor(); // default white
 ```
+
+### Merging transparent areas with color
+
+> public function blendTransparency(mixed $color = null): ColorInterface
+
+When switching to a non-transparent image format, the transparency is
+automatically replaced with the set blending color, but this can also be done
+manually. This function call can also be applied to image formats that can
+actually contain transparency.
+
+The `color` parameter can optionally be used to specify a color in the common
+[color formats](/v3/introduction/formats#color-formats). By default, this is
+the current or previously set blending color.
+
+#### Parameters
+
+| Name | Type | Description |
+| - | - | - |
+| color | mixed | Color to replace transparent areas (optional) |
+
+#### Examples
+
+```php
+use Intervention\Image\ImageManager;
+use Intervention\Image\Drivers\Gd\Driver;
+
+// create new manager instance with desired driver
+$manager = new ImageManager(Driver::class);
+
+// read a transparent image
+$image = $manager->read('images/example.png');
+
+// merge the transparent areas with orange
+$image->blendTransparency('f50');
+```
