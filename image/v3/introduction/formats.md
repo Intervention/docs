@@ -14,6 +14,7 @@ some formats are readable and writable.
 | JPEG | ✅ | ✅ |
 | WebP | ✅ | ✅ |
 | GIF | ✅ | ✅ |
+| Animated GIF | ✅ | ✅ |
 | PNG | ✅ | ✅ |
 | AVIF | ✅ | ✅ |
 | Bitmap | ✅ | ✅ |
