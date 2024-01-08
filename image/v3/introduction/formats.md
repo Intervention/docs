@@ -45,11 +45,13 @@ CSS. It's possible to use the shorthand as well as the full format with or
 without alpha channel. The leading `#` is optional.
 
 ```php
+use Intervention\Image\Drivers\Imagick\Driver;
+
 // create new image with red background
-$image = (new ImageManager(['driver' => 'gd']))->create(300, 200)->fill('b53717');
+$image = (new ImageManager(Driver::class))->create(300, 200)->fill('b53717');
 
 // create new image with half transparent red background
-$image = (new ImageManager(['driver' => 'gd']))->create(300, 200)->fill('b5371766');
+$image = (new ImageManager(Driver::class))->create(300, 200)->fill('b5371766');
 ```
 ### String Format
 
@@ -59,11 +61,13 @@ RGB string values in functional notations are also supported. If you want to
 include an alpha value use the RGBA prefix like in the following example.
 
 ```php
+use Intervention\Image\Drivers\Gd\Driver;
+
 // create new image with half transparent background
-$image = (new ImageManager(['driver' => 'gd']))->create(300, 200)->fill('rgba(15, 20, 255, .5)');
+$image = (new ImageManager(Driver::class))->create(300, 200)->fill('rgba(15, 20, 255, .5)');
 
 // create new image with red background
-$image = (new ImageManager(['driver' => 'gd']))->create(300, 200)->fill('rgb(255, 0, 0)');
+$image = (new ImageManager(Driver::class))->create(300, 200)->fill('rgb(255, 0, 0)');
 ```
 
 #### CMYK strings
@@ -71,8 +75,10 @@ $image = (new ImageManager(['driver' => 'gd']))->create(300, 200)->fill('rgb(255
 CMYK string values in functional notations are also supported.
 
 ```php
+use Intervention\Image\Drivers\Imagick\Driver;
+
 // create new image with background
-$image = (new ImageManager(['driver' => 'gd']))->create(300, 200)->fill('cmyk(100, 100, 55, 60)');
+$image = (new ImageManager(Driver::class))->create(300, 200)->fill('cmyk(100, 100, 55, 60)');
 ```
 
 #### HSV/HSB strings
@@ -94,8 +100,10 @@ names](https://en.wikipedia.org/wiki/Web_colors#HTML_color_names) from the W3C
 specification.
 
 ```php
+use Intervention\Image\Drivers\Gd\Driver;
+
 // create new image with half transparent background
-$image = (new ImageManager(['driver' => 'gd']))->create(300, 200)->fill('steelblue');
+$image = (new ImageManager(Driver::class))->create(300, 200)->fill('steelblue');
 ```
 
 ### Transparency
