@@ -20,6 +20,7 @@ some formats are readable and writable.
 | Bitmap | ✅ | ✅ |
 | TIFF | ❌ | ✅ |
 | JPEG 2000 | ❌ | ✅ |
+| HEIC | ❌ | ✅ |
 
 **Please note that not all image formats are always included in the PHP image
 extensions. It is therefore possible, that the GD library is installed but is
