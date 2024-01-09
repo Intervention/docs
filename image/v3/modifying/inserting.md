@@ -5,10 +5,10 @@
 
 ## Inserting Images
 
-> public Image::place($element, string $position = 'top-left', int $offset_x = 0, int $offset_y = 0): ImageInterface
+> public Image::place(mixed $element, string $position = 'top-left', int $offset_x = 0, int $offset_y = 0): ImageInterface
 
 Inserts the image passed via `element` into the current image instance. The
-passed element can be one of the supported image sources. The image will be
+passed element can be one of the [supported image sources](/v3/basics/instantiation#reading-image-sources). The image will be
 inserted at the specified position and will be shifted relative to the position
 using the optional offset values.
 
@@ -45,7 +45,11 @@ $image = $manager->read('test.png');
 // paste another image
 $img->place('images/foo.png');
 
-// create a new Image instance and insert at bottom-right corner with 10px offset
-$watermark = Image::make('images/watermark.png');
-$img->place($watermark, 'bottom-right', 10, 10);
+// create a new resized watermark instance and insert at bottom-right corner with 10px offset
+$img->place(
+    Image::make('images/watermark.png')->scale(width: 128),
+    'bottom-right', 
+    10, 
+    10
+);
 ```
