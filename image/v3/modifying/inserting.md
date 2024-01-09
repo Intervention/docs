@@ -7,10 +7,9 @@
 
 > public Image::place(mixed $element, string $position = 'top-left', int $offset_x = 0, int $offset_y = 0): ImageInterface
 
-Inserts the image passed via `element` into the current image instance. The
-passed element can be one of the [supported image sources](/v3/basics/instantiation#reading-image-sources). The image will be
-inserted at the specified position and will be shifted relative to the position
-using the optional offset values.
+Inserts an image at the specified position. The image can be specified from any
+of the [supported image sources](/v3/basics/instantiation#reading-image-sources). Optionally, you can
+pass coordinates for an offset to move the image relative to the specified position.
 
 The possible position values are:
 
