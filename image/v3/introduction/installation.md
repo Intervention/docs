@@ -10,7 +10,11 @@ supports the following requirements.
 
 - PHP >= 8.1
 - Mbstring PHP Extension
-- A PHP image processing extension
+- Image Processing PHP Extension
+
+Although it is not a requirement, it is **highly recommended to have the Exif
+PHP extension installed** as well. This is used, among other things, to correctly
+display the orientation of images.
 
 ### Image Processing Extension
 
