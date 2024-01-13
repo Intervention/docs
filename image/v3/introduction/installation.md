@@ -21,11 +21,12 @@ display the orientation of images.
 Depending on your PHP installation Intervention Image lets you choose between
 two different image processing libraries.
 
-[GD Image](https://www.php.net/manual/en/book.image.php) or
-[ImageMagick](https://www.php.net/manual/en/book.imagick.php) are both
-supported. Your server environment must support at least one of them. GD is
-part of most PHP installations. However I recommend using ImageMagick because I
-think it is faster and more efficient especially for larger images.
+- [GD Image](https://www.php.net/manual/en/book.image.php)
+- [Imagick](https://www.php.net/manual/en/book.imagick.php)
+
+Your server environment must support at least one of them. GD is part of most
+PHP installations. However I recommend using Imagick because I think it is
+faster and more efficient especially for larger images.
 
 ## Installation
 
