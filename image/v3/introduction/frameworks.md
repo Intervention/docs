@@ -12,7 +12,7 @@ publishable configuration file.
 Although this integration is not mandatory, it has the advantage of integrating
 the configuration centrally in the application.
 
-### Installation
+### Integration
 
 Instead of installing the library directly, it is only necessary to integrate
 the bundle. The corresponding basic libraries are automatically installed as
