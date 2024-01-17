@@ -65,7 +65,7 @@ There are a few key features that further improve the library.
 
 - The service providers for the Laravel were removed to avoid a dependency to
   the framework and to highlight Intervention Image rather framework agnostic,
-  which it always was.
+  which it always was. However, there is an [official package for Laravel integration](https://github.com/Intervention/image-laravel)
 
 - It is no longer possible to create images from an URI directly. The data must
   first be loaded by a dedicated HTTP client and then passed to the image
