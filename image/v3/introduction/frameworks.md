@@ -6,7 +6,7 @@
 ## Laravel
 
 Intervention Image can be easily integrated into a Laravel application with the
-[official bundle](https://github.com/Intervention/image-laravel). This package
+[official integration package](https://github.com/Intervention/image-laravel). This package
 provides a Laravel service provider, facade and a publishable configuration
 file.
 
