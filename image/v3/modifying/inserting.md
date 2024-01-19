@@ -1,17 +1,19 @@
 # Inserting Images
-## Insert images into other images
+## Place images on other images
 
 [TOC]
 
 ## Inserting Images
 
-> public Image::place(mixed $element, string $position = 'top-left', int $offset_x = 0, int $offset_y = 0): ImageInterface
+> public Image::place(mixed $element, string $position = 'top-left', int $offset_x = 0, int $offset_y = 0, int $opacity = 100): ImageInterface
 
-Inserts an image at the specified position. The image can be specified from any
-of the [supported image sources](/v3/basics/instantiation#reading-image-sources). Optionally, you can
-pass coordinates for an offset to move the image relative to the specified position.
+Places an image at the specified position. The image to be inserted can be
+specified from any of the [supported image sources](/v3/basics/instantiation#reading-image-sources). 
+Optionally, you can pass coordinates for an offset to move the image relative to the specified
+position. It is also possible to control the opacity of the "watermark" with
+the `opacity` parameter.
 
-The possible position values are:
+The possible `position` values are:
 
 - `top-left` (default)
 - `top`
@@ -31,6 +33,7 @@ The possible position values are:
 | position | string | Position of the image to be placed |
 | offset_x | int | Optional relative offset of the new image on x-axis |
 | offset_y | int | Optional relative offset of the new image on y-axis |
+| opacity | int | Control over the opacity of the placed image ranging from 0 (fully transparent) to 100 (opaque) |
 
 #### Example
 
@@ -44,11 +47,13 @@ $image = $manager->read('test.png');
 // paste another image
 $img->place('images/foo.png');
 
-// create a new resized watermark instance and insert at bottom-right corner with 10px offset
+// create a new resized watermark instance and insert at bottom-right 
+// corner with 10px offset and an opacity of 25%
 $img->place(
-    Image::make('images/watermark.png')->scale(width: 128),
+    'images/watermark.png',
     'bottom-right', 
     10, 
-    10
+    10,
+    25
 );
 ```
