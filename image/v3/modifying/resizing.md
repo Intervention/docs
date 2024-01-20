@@ -302,11 +302,16 @@ $image->contain(500, 500, 'efefef');
 ## Crop Image
 ### Cut out a rectangular part
 
-> public Image::crop(int $width, int $height, int $offset_x = 0, int $offset_y = 0, string $position = 'top-left'): ImageInterface
+> public Image::crop(int $width, int $height, int $offset_x = 0, int $offset_y = 0, mixed $background = 'ffffff', string $position = 'top-left'): ImageInterface
 
-Cut out a rectangular part of the current image with given width and height.
-certain position. Define optional x,y offset coordinates to move the cutout by
-the given amount of pixels.
+Cuts a rectangular portion of the current image with a given width and
+height at a specified position. Pass optional x, y offset coordinates to
+move the crop by the specified number of pixels.
+
+You can also specify a background color. This color is used to fill any new
+areas that may be created, e.g. if the cropped area is larger than the original
+image format.
+
 
 #### Parameters
 
@@ -316,7 +321,10 @@ the given amount of pixels.
 | height | integer | Height of the rectangular cutout |
 | offset_x (optional) | int | Amount of pixels the cutout will be moved on the x-axis |
 | offset_y (optional) | int | Amount of pixels the cutout will be moved on the y-axis |
+| background (optional) | mixed | Color to fill any newly created areas |
 | position (optional) | string | Position at which the cutout will be aligned |
+
+**Caution: The signature has changed in version 3.3 by adding the parameter `background`**
 
 #### Examples
 
@@ -332,7 +340,7 @@ $image = $manager->read('images/example.jpg');
 $image->crop(200, 150, 45, 90);
 
 // crop a 40 x 40 pixel cutout from the bottom-right and move it 30 pixel down
-$image->crop(200, 150, 0 , 30, 'bottom-right');
+$image->crop(200, 150, 0 , 30, position: 'bottom-right');
 ```
 
 
