@@ -21,6 +21,7 @@ are currently available.
 - `Intervention\Image\Encoders\BmpEncoder::class`
 - `Intervention\Image\Encoders\TiffEncoder::class`
 - `Intervention\Image\Encoders\Jpeg2000Encoder::class`
+- `Intervention\Image\Encoders\HeicEncoder::class`
 
 If no encoder is passed the `AutoEncoder` is used which will attempt to detect
 the output format automatically according to the original format of the image.
@@ -403,6 +404,32 @@ $image = $manager->read('images/example.png');
 
 // encode jpeg 2000 format
 $encoded = $image->toJpeg2000(90); // Intervention\Image\EncodedImage
+```
+
+
+
+
+### Encoding Heic Format
+
+> public Image::toHeic(int $quality = 75): EncodedImage
+
+Encode the current image instance in HEIC format in the given **quality** ranging between 0 for low quality to 100 for best quality.
+
+| Name | Type | Description |
+| - | - | - |
+| quality (optional) | integer | Encoding quality  |
+
+```php
+use Intervention\Image\ImageManager;
+
+// create new manager instance with desired driver
+$manager = ImageManager::imagick();
+
+// reading png format
+$image = $manager->read('images/example.jpg');
+
+// encode heic image
+$encoded = $image->toHeic(60); // Intervention\Image\EncodedImage
 ```
 
 
