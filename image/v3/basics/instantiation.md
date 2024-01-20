@@ -7,7 +7,7 @@
 
 ### Reading image sources
 
-> public ImageManager::read(mixed $source): ImageInterface
+> public ImageManager::read(mixed $input, string|array|DecoderInterface $decoders = []): ImageInterface
 
 With Intervention Image you are able to read images from severeal different
 sources. The starting point is an instance of the
@@ -18,7 +18,8 @@ sources. The starting point is an instance of the
 
 | Name | Type | Description |
 | - | - | - |
-| source | mixed | Image source  |
+| input | mixed | Image source  |
+| decoders | string|array|DecoderInterface | Decoder(s) to process the input data |
 
 #### Supported image sources
 
@@ -32,7 +33,20 @@ This method not only supports filepaths as an argument. The following argument f
 - Data Uri
 - Intervention Image Instance
 
-If the given argument can not be decoded by the library an exception of type `Intervention\Image\Exceptions\DecoderException` is thrown.
+To decode the raw input data, you can optionally specify a decoding strategy
+with the second parameter. This can be an array of class names or objects of
+decoders to be processed in sequence. In this case, the input must be
+decodedable with one of the decoders passed. It is also possible to pass a
+single object or class name of a decoder.
+
+All decoders that implement the `DecoderInterface::class` can be passed.
+Usually a selection of classes of the namespace `Intervention\Image\Decoders`.
+
+If the second parameter is not set, an attempt to decode the input is made with
+all available decoders of the driver.
+
+If the given argument can not be decoded by the library an exception of type
+`Intervention\Image\Exceptions\DecoderException` is thrown.
 
 #### Examples
 
@@ -48,6 +62,29 @@ $image = $manager->read('images/example.jpg');
 
 // read image from binary data
 $image = $manager->read(file_get_contents('images/example.jpg'));
+```
+
+```php
+use Intervention\Image\ImageManager;
+use Intervention\Image\Drivers\Imagick\Driver;
+use Intervention\Image\Decoders\DataUriImageDecoder;
+use Intervention\Image\Decoders\Base64ImageDecoder;
+use Intervention\Image\Decoders\FilePathImageDecoder;
+
+// create new manager instance with desired driver
+$manager = new ImageManager(new Driver());
+
+// read image only from data uri or base64 encoded data
+$image = $manager->read($input, [
+    DataUriImageDecoder::class,
+    Base64ImageDecoder::class,
+]);
+
+// read image only from file path
+$image = $manager->read($input, FilePathImageDecoder::class);
+
+// same with object instead of class name
+$image = $manager->read($input, new FilePathImageDecoder());
 ```
 
 ## Creating Images
