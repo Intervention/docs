@@ -19,7 +19,7 @@ sources. The starting point is an instance of the
 | Name | Type | Description |
 | - | - | - |
 | input | mixed | Image source  |
-| decoders | string|array|DecoderInterface | Decoder(s) to process the input data |
+| decoders | string, array or DecoderInterface | Decoder(s) to process the input data |
 
 #### Supported image sources
 
