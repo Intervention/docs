@@ -1,4 +1,4 @@
-# Colors & Transparency
+# Colors + Transparency
 ## Handling of image colors
 
 [TOC]
