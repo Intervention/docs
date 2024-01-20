@@ -16,7 +16,7 @@ the configuration centrally in the application.
 ### Integration
 
 Instead of installing the library directly, it is only necessary to integrate
-the bundle. The corresponding basic libraries are automatically installed as
+the package. The corresponding basic libraries are automatically installed as
 well
 
 ```bash
