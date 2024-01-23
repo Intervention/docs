@@ -9,7 +9,7 @@ for instantiation.
 
 ## Create a new image manager instance
 
-> public ImageManager::__construct(string|DriverInterface $driver): ImageInterface
+> public ImageManager::__construct(string|DriverInterface $driver): ImageManager
 
 The image manager instantiation configures the entire setup and specifies the
 driver. The possible values for the driver are either an instance or a class
@@ -44,7 +44,7 @@ $manager = new ImageManager(Driver::class);
 
 ### Static Constructor
 
-> public static ImageManager::withDriver(string|DriverInterface $driver): ImageInterface
+> public static ImageManager::withDriver(string|DriverInterface $driver): ImageManager
 
 The static helper method acts the same way as the constructor and takes either
 a class name or an instance of the driver.
@@ -70,7 +70,7 @@ $manager = ImageManager::withDriver(Driver::class);
 
 ### Static GD Driver Constructor
 
-> public static ImageManager::gd(): ImageInterface
+> public static ImageManager::gd(): ImageManager
 
 This static helper methods for GD driver creates a new image manager instance
 directly without arguments.
@@ -86,7 +86,7 @@ $manager = ImageManager::gd();
 
 ### Static Imagick Driver Constructor
 
-> public static ImageManager::imagick(): ImageInterface
+> public static ImageManager::imagick(): ImageManager
 
 This static helper methods takes no arguments and creates a new image manager
 instance with Imagick driver directly.
