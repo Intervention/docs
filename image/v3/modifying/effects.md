@@ -126,7 +126,7 @@ $image = $image->gamma(blue: 15, green: 10);
 
 ### Mirror image horizontally
 
-> public Image::flip(): ImageInterface
+> public Image::flop(): ImageInterface
 
 Mirror the current image horizontally.
 
@@ -143,13 +143,13 @@ $manager = new ImageManager(new Driver());
 $image = $manager->read('images/example.png');
 
 // mirror image
-$image = $image->flip();
+$image = $image->flop();
 ```
 
 
 ### Mirror image vertically
 
-> public Image::flop(): ImageInterface
+> public Image::flip(): ImageInterface
 
 Mirror the current image vertically.
 
@@ -165,7 +165,7 @@ $manager = ImageManager::imagick();
 $image = $manager->read('images/example.png');
 
 // flood fill image with color
-$image = $image->flop();
+$image = $image->flip();
 ```
 
 ### Image rotation
