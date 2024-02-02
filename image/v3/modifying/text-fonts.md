@@ -37,7 +37,7 @@ $image->text('The quick brown fox', 120, 100);
 
 To define the overall appearance of the text and set more details you can pass
 a callback as an optional parameter. The callback places the calls on the
-FontInterface and listen to the following methods.
+FontInterface and listens for following methods.
 
 #### Example
 
