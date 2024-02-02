@@ -43,25 +43,26 @@ FontInterface and listens for following methods.
 
 ```php
 use Intervention\Image\ImageManager;
+use Intervention\Image\Typography\FontFactory;
 
 // create test image
 $image = ImageManager::imagick()->read('images/example.jpg');
 
 // write text to image
-$image->text('The quick brown fox', 120, 100, function ($font) {
-    $font->setFilename('./fonts/comic-sans.ttf');
-    $font->setColor('#b01735');
-    $font->setSize(70);
-    $font->setAlignment('center');
-    $font->setValignment('middle');
-    $font->setLineHeight(1.6);
-    $font->setAngle(10);
+$image->text('The quick brown fox', 120, 100, function (FontFactory $font) {
+    $font->filename('./fonts/comic-sans.ttf');
+    $font->color('#b01735');
+    $font->size(70);
+    $font->align('center');
+    $font->valign('middle');
+    $font->lineHeight(1.6);
+    $font->angle(10);
 });
 ```
 
 ### Font size
 
-> public FontInterface::setSize(float $size): FontInterface
+> public FontInterface::size(float $size): FontInterface
 
 Define a font size. By default, a value of `12` will be applied.
 
@@ -73,7 +74,7 @@ Define a font size. By default, a value of `12` will be applied.
 
 ### Font file
 
-> public FontInterface::setFilename(string $filename): FontInterface
+> public FontInterface::filename(string $filename): FontInterface
 
 Set a path to a font file in the file system for the text.
 
@@ -85,7 +86,7 @@ Set a path to a font file in the file system for the text.
 
 ### Color
 
-> public FontInterface::setColor(mixed $color): FontInterface
+> public FontInterface::color(mixed $color): FontInterface
 
 Define the text color in one of the valid [color formats](/v3/introduction/formats#color-formats).
 
@@ -97,7 +98,7 @@ Define the text color in one of the valid [color formats](/v3/introduction/forma
 
 ### Horizontal alignment
 
-> public FontInterface::setAlignment(string $align): FontInterface
+> public FontInterface::align(string $align): FontInterface
 
 Define the horizontal alignment of the text to be written starting from the
 base point. Possible values are left, right and center. Default: `left`
@@ -110,7 +111,7 @@ base point. Possible values are left, right and center. Default: `left`
 
 ### Vertical alignment
 
-> public FontInterface::setValignment(string $valign): FontInterface
+> public FontInterface::valign(string $valign): FontInterface
 
 Define the vertical alignment of the text to be written starting from the base
 point. Possible values are top, bottom and middle. Default: `bottom`
@@ -123,7 +124,7 @@ point. Possible values are top, bottom and middle. Default: `bottom`
 
 ### Rotation
 
-> public FontInterface::setAngle(float $angle): FontInterface
+> public FontInterface::angle(float $angle): FontInterface
 
 Rotate the text block clockwise with a desired angle.
 
@@ -135,7 +136,7 @@ Rotate the text block clockwise with a desired angle.
 
 ### Line height
 
-> public FontInterface::setLineHeight(float $height): FontInterface
+> public FontInterface::lineHeight(float $height): FontInterface
 
 Define the line height of the text block. Applies only to multi-line text.
 Default value is `1.25`.
