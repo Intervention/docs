@@ -18,7 +18,7 @@ a callback as the fourth parameter.
 | text | string | The text that will be written to the image. |
 | x | integer | Coordinate on x-axis defining the base point of the first character. |
 | y | integer | Coordinate on y-axis defining the base point of the first character. |
-| font | callable|FontInterface | Callback function to configure the font appearance or `Typography\Font` instance. |
+| font | callable or FontInterface | Callback function to configure the font appearance or `Typography\Font` instance. |
 
 
 #### Examples
