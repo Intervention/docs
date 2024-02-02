@@ -39,7 +39,7 @@ $image = $image->fill('#b53717', 10, 10);
 
 ## Drawing a pixel
 
-> public Image::drawPixel(int $x, int $y, $color = null): ImageInterface
+> public Image::drawPixel(int $x, int $y, mixed $color = null): ImageInterface
 
 Draw a single pixel at given position defined by the coordinates **x** and **y** in a given **color**.
 
@@ -94,9 +94,9 @@ $image = $manager->read('test.png');
 
 // draw an orange rectangle with a border
 $image->drawRectangle(10, 10, function ($rectangle) {
-    $rectangle->size(180, 125); // width & height of rectangle
-    $rectangle->background('orange'); // background color of rectangle
-    $rectangle->border('white', 2); // border color & size of rectangle
+    $rectangle->setSize(180, 125); // width & height of rectangle
+    $rectangle->setBackgroundColor('orange'); // background color of rectangle
+    $rectangle->setBorder('white', 2); // border color & size of rectangle
 });
 ```
 
@@ -126,9 +126,9 @@ $image = $manager->read('test.png');
 
 // draw a red ellipse with a blue border
 $image->drawEllipse(10, 10, function ($ellipse) {
-    $ellipse->size(180, 125); // width & height of ellipse
-    $ellipse->background('f00'); // background color
-    $ellipse->border('00f', 1); // border color & size
+    $ellipse->setSize(180, 125); // width & height of ellipse
+    $ellipse->setBackgroundColor('f00'); // background color
+    $ellipse->setBorder('00f', 1); // border color & size
 });
 ```
 
@@ -158,9 +158,9 @@ $image = $manager->read('test.png');
 
 // draw a green circle with a white border
 $image->drawCircle(10, 10, function ($circle) {
-    $circle->radius(150); // radius of circle in pixels
-    $circle->background('lightblue'); // background color
-    $circle->border('b53717', 1); // border color & size
+    $circle->setRadius(150); // radius of circle in pixels
+    $circle->setBackgroundColor('lightblue'); // background color
+    $circle->setBorder('b53717', 1); // border color & size
 });
 ```
 
@@ -190,8 +190,8 @@ $image = $manager->read('test.png');
 $image->drawLine(function ($line) {
     $line->from(10, 10); // starting point of line
     $line->to(300, 100); // ending point
-    $line->color('ff00ff'); // color of line
-    $line->width(5); // line width in pixels
+    $line->setBackgroundColor('ff00ff'); // color of line
+    $line->setWidth(5); // line width in pixels
 });
 ```
 
@@ -219,11 +219,11 @@ $image = $manager->read('test.png');
 
 // draw a polygon
 $image->drawPolygon(function ($polygon) {
-    $polygon->point(10, 10); // add point of polygon
-    $polygon->point(150, 150); // add point
-    $polygon->point(40, 180); // add point
-    $polygon->point(60, 100); // add point
-    $polygon->background('#b35187'); // background color
-    $polygon->border('#ff0', 6); // border color and border width
+    $polygon->addPoint(10, 10); // add point of polygon
+    $polygon->addPoint(150, 150); // add point
+    $polygon->addPoint(40, 180); // add point
+    $polygon->addPoint(60, 100); // add point
+    $polygon->setBackgroundColor('#b35187'); // background color
+    $polygon->setBorder('#ff0', 6); // border color and border width
 });
 ```
