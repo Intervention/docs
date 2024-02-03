@@ -194,7 +194,7 @@ $image = $manager->read('test.png');
 $image->drawLine(function (LineFactory $line) {
     $line->from(10, 10); // starting point of line
     $line->to(300, 100); // ending point
-    $line->background('ff00ff'); // color of line
+    $line->color('ff00ff'); // color of line
     $line->width(5); // line width in pixels
 });
 ```
