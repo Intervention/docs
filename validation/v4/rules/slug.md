@@ -1,5 +1,5 @@
 # Slug Rule
-## Validate a SEO-friendly short text
+## Validate a SEO-friendly Short Text
 
 > public Intervention\Validation\Rules\Slug::__construct()
 

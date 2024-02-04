@@ -1,5 +1,5 @@
 # Kebab Case Rule
-## Validate a string in kebab case
+## Validate a String in Kebab Case
 
 > public Intervention\Validation\Rules\Kebabcase::__construct()
 

@@ -1,5 +1,5 @@
 # Framework Integration
-## Use Intervention Image with your favorite framework
+## Use Intervention Image with Your Favorite Framework
 
 [TOC]
 

@@ -1,5 +1,5 @@
 # Data URI Rule
-## Validate Data URI scheme string
+## Validate Data URI Scheme String
 
 > public Intervention\Validation\Rules\DataUri::__construct()
 

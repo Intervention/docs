@@ -1,5 +1,5 @@
 # Supported formats
-## Readable image and color formats
+## Readable Image and Color Formats
 
 [TOC]
 
@@ -56,7 +56,7 @@ $image = (new ImageManager(Driver::class))->create(300, 200)->fill('b5371766');
 ```
 ### String Format
 
-#### RGB strings
+#### RGB Strings
 
 RGB string values in functional notations are also supported. If you want to
 include an alpha value use the RGBA prefix like in the following example.
@@ -71,7 +71,7 @@ $image = (new ImageManager(Driver::class))->create(300, 200)->fill('rgba(15, 20,
 $image = (new ImageManager(Driver::class))->create(300, 200)->fill('rgb(255, 0, 0)');
 ```
 
-#### CMYK strings
+#### CMYK Strings
 
 CMYK string values in functional notations are also supported.
 
@@ -82,7 +82,7 @@ use Intervention\Image\Drivers\Imagick\Driver;
 $image = (new ImageManager(Driver::class))->create(300, 200)->fill('cmyk(100, 100, 55, 60)');
 ```
 
-#### HSV/HSB strings
+#### HSV/HSB Strings
 
 It is also possible to pass color values strings in the RGB alternative HSV/HSB.
 
@@ -135,7 +135,7 @@ recommended to use it with CMYK images.
 Read how to read an modify colorspace in the section about [Meta
 Information](/v3/basics/meta-information).
 
-### Converting Colors to other Colorspaces or formats
+### Converting Colors to Other Colorspaces or Formats
 
 Colors can always be converted to the supported color spaces. This is possible
 even if the driver does not support that color space.

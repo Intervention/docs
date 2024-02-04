@@ -1,5 +1,5 @@
 # Lower Case Rule
-## Validate a string in lower case
+## Validate a String in Lower Case
 
 > public Intervention\Validation\Rules\Lowercase::__construct()
 

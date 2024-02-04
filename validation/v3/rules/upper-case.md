@@ -1,5 +1,5 @@
 # Upper Case Rule
-## Validate string formated in upper case
+## Validate String Formated in Upper Case
 
 > public Intervention\Validation\Rules\Uppercase::__construct()
 

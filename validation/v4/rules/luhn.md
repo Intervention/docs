@@ -1,5 +1,5 @@
 # Luhn Rule
-## Validate a string against Luhn algorithm
+## Validate a String Against Luhn Algorithm
 
 > public Intervention\Validation\Rules\Luhn::__construct()
 

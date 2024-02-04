@@ -1,5 +1,5 @@
 # HTML Clean Rule
-## Validate if text is free of any HTML tags
+## Validate if Text is Free of any HTML Tags
 
 > public Intervention\Validation\Rules\HtmlClean::__construct()
 

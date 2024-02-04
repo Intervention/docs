@@ -1,5 +1,5 @@
 # Inserting Images
-## Place images on other images
+## Place Images on Other Images
 
 [TOC]
 

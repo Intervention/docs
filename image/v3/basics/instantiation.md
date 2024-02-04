@@ -1,11 +1,11 @@
 # Instantiation
-## Reading & creating images
+## Reading & Creating Images
 
 [TOC]
 
 ## Reading Images
 
-### Reading image sources
+### Reading Image Sources
 
 > public ImageManager::read(mixed $input, string|array|DecoderInterface $decoders = []): ImageInterface
 
@@ -21,7 +21,7 @@ sources. The starting point is an instance of the
 | input | mixed | Image source  |
 | decoders | string, array or DecoderInterface | Decoder(s) to process the input data |
 
-#### Supported image sources
+#### Supported Image Sources
 
 This method not only supports filepaths as an argument. The following argument formats are accepted.
 
@@ -89,7 +89,7 @@ $image = $manager->read($input, new FilePathImageDecoder());
 
 ## Creating Images
 
-### Creating new images
+### Creating New Images
 
 > public ImageManager::create(int $width, int $height): ImageInterface
 
@@ -120,7 +120,7 @@ $image = $manager->create(640, 480);
 $image = $manager->create(512, 512)->fill('ccc');
 ```
 
-### Creating animations
+### Creating Animations
 
 > public ImageManager::animate(callable $callback): ImageInterface
 
