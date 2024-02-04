@@ -13,6 +13,7 @@ PHP's two most common image processing libraries **GD Library** and **Imagick**.
 - Unified API for GD & Imagick
 - Processing of animated images
 - Support for Colorspaces and Profiles
+- Support for text wrapping and line height in the font system
 - Improved architecture
 - PSR-12 standardized
 
