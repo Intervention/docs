@@ -148,7 +148,7 @@ Default value is `1.25`.
 | - | - | - |
 | height | float | Line height for multi-line text block |
 
-### Text wrapping
+### Text Wrapping
 
 > public FontInterface::wrap(int $width): FontInterface
 
