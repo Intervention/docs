@@ -1,4 +1,4 @@
-# Media (MIME) type Rule
+# Media (MIME) Type Rule
 ## Validate MIME Type Strings
 
 > public Intervention\Validation\Rules\MimeType::__construct()

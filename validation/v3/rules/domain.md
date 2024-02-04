@@ -1,4 +1,4 @@
-# Domain name Rule
+# Domain Name Rule
 ## Validate Domain Names
 
 > public Intervention\Validation\Rules\Domainname::__construct()

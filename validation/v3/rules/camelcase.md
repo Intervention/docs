@@ -1,4 +1,4 @@
-# Camel case Rule
+# Camel Case Rule
 ## Validate Camel Case String
 
 > public Intervention\Validation\Rules\Camelcase::__construct()

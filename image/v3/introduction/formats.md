@@ -1,4 +1,4 @@
-# Supported formats
+# Supported Formats
 ## Readable Image and Color Formats
 
 [TOC]
