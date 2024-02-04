@@ -5,7 +5,7 @@
 
 ## Encoding Images
 
-### Encode images with encoder objects
+### Encode Images with Encoder Objects
 
 > public Image::encode(EncoderInterface $encoder = new AutoEncoder()): EncodedImage
 
@@ -63,7 +63,7 @@ $encoded = $image->encode(new GifEncoder()); // Intervention\Image\EncodedImage
 
 
 
-### Encode image by media (MIME) type
+### Encode Images by Media (MIME) Type
 
 > public Image::encodeByMediaType(?string $type = null, int $quality = 75): EncodedImage
 
@@ -111,7 +111,7 @@ $encoded = $image->encodeByMediaType('image/gif');
 
 
 
-### Encode image by file path
+### Encode Images by File Path
 
 > public Image::encodeByPath(?string $path = null, int $quality = 75): EncodedImage
 
@@ -162,7 +162,7 @@ $encoded = $image->encodeByPath('images/example.gif');
 
 
 
-### Encode image by file extension
+### Encode Images by File Extension
 
 > public Image::encodeByExtension(?string $extension = null, int $quality = 75): EncodedImage
 
@@ -440,7 +440,7 @@ $encoded = $image->toHeic(60); // Intervention\Image\EncodedImage
 The mentioned encoding methods return an `Intervention\Image\EncodedImage`
 object. With this instance you can decide how to proceed with the encoded data.
 
-### Saving encoded image data in filesystem
+### Saving Encoded Image Data in Filesystem
 
 > public EncodedImage::save(string $filepath): void
 
@@ -492,7 +492,7 @@ $image = $manager->read('images/example.gif');
 $data_uri = $image->toGif()->toDataUri();
 ```
 
-### Transform encoded image to file pointer
+### Transform Encoded Image to File Pointer
 
 > public EncodedImage::toFilePointer()
 
@@ -514,7 +514,7 @@ $image = $manager->read('images/example.gif');
 $pointer = $image->toJpeg()->toFilePointer();
 ```
 
-### Retrieve Media (MIME) Type of an encoded image
+### Retrieve Media (MIME) Type of an Encoded Image
 
 > public EncodedImage::mediaType(): string
 
@@ -544,9 +544,9 @@ $mimetype = $image->toJpeg()->mediaType();
 
 
 
-## Writing images directly
+## Writing Images Directly
 
-### Encoding & saving combined
+### Encoding & Saving Combined
 
 > public Image::save(?string $path = null, int $quality = 75): ImageInterface
 

@@ -1,9 +1,9 @@
 # Drawing
-## Drawing geometric shapes on images
+## Drawing Geometric Shapes on Images
 
 [TOC]
 
-### Fill image with color
+### Fill Images with Color
 
 > public Image::fill(mixed $color, ?int $x = null, ?int $y = null): ImageInterface
 
@@ -37,7 +37,7 @@ $image = $manager->read('images/example.png');
 $image = $image->fill('#b53717', 10, 10);
 ```
 
-## Drawing a pixel
+## Drawing a Pixel
 
 > public Image::drawPixel(int $x, int $y, mixed $color = null): ImageInterface
 
@@ -68,7 +68,7 @@ $image->drawPixel(100, 1, 'rgb(255, 255, 0)');
 $image->drawPixel(200, 2, 'orange');
 ```
 
-## Drawing a rectangle
+## Drawing a Rectangle
 
 > public Image::drawRectangle(int $x, int $y, ?callable $init = null): ImageInterface
 
@@ -101,7 +101,7 @@ $image->drawRectangle(10, 10, function (RectangleFactory $rectangle) {
 });
 ```
 
-## Drawing ellipses
+## Drawing Ellipses
 
 > public Image::drawEllipse(int $x, int $y, ?callable $init = null): ImageInterface
 
@@ -134,7 +134,7 @@ $image->drawEllipse(10, 10, function (EllipseFactory $ellipse) {
 });
 ```
 
-## Drawing a circle
+## Drawing a Circle
 
 > public Image::drawCircle(int $x, int $y, ?callable $init = null): ImageInterface
 
@@ -167,7 +167,7 @@ $image->drawCircle(10, 10, function (CircleFactory $circle) {
 });
 ```
 
-## Drawing a line
+## Drawing a Line
 
 > public Image::drawLine(?callable $init = null): ImageInterface
 
@@ -199,7 +199,7 @@ $image->drawLine(function (LineFactory $line) {
 });
 ```
 
-## Drawing a polygon
+## Drawing a Polygon
 
 > public Image::drawPolygon(callable $init): ImageInterface
 

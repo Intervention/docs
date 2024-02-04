@@ -20,7 +20,7 @@ $validator = Validator::make($request->all(), [
 ]);
 ```
 
-### Customizing error messages
+### Customizing Error Messages
 
 Add the corresponding key to `/resources/lang/<language>/validation.php` like this:
 

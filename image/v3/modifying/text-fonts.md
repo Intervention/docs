@@ -1,9 +1,9 @@
 # Text + Fonts
-## Writing text to an image
+## Writing text to an Image
 
 [TOC]
 
-## Writing text
+## Writing Text
 
 > public Image::text(string $text, int $x, int $y, callable|FontInterface $font): ImageInterface
 
@@ -33,7 +33,7 @@ $image = ImageManager::gd()->read('images/example.jpg');
 $image->text('The quick brown fox', 120, 100);
 
 ```
-## Text & font settings
+## Text & Font Settings
 
 To define the overall appearance of the text and set more details you can pass
 a callback as an optional parameter. The callback places the calls on the
@@ -61,7 +61,7 @@ $image->text('The quick brown fox', 120, 100, function (FontFactory $font) {
 });
 ```
 
-### Font size
+### Font Size
 
 > public FontInterface::size(float $size): FontInterface
 
@@ -73,7 +73,7 @@ Define a font size. By default, a value of `12` will be applied.
 | - | - | - |
 | size | float | Font size to be applied |
 
-### Font file
+### Font File
 
 > public FontInterface::filename(string $filename): FontInterface
 
@@ -97,7 +97,7 @@ Define the text color in one of the valid [color formats](/v3/introduction/forma
 | - | - | - |
 | color | mixed | Desired color of text |
 
-### Horizontal alignment
+### Horizontal Alignment
 
 > public FontInterface::align(string $align): FontInterface
 
@@ -110,7 +110,7 @@ base point. Possible values are left, right and center. Default: `left`
 | - | - | - |
 | align | string | Horizontal text alignment |
 
-### Vertical alignment
+### Vertical Alignment
 
 > public FontInterface::valign(string $valign): FontInterface
 
@@ -135,7 +135,7 @@ Rotate the text block clockwise with a desired angle.
 | - | - | - |
 | angle | float | Rotation angle |
 
-### Line height
+### Line Height
 
 > public FontInterface::lineHeight(float $height): FontInterface
 

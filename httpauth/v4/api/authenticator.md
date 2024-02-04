@@ -1,15 +1,15 @@
 # Authenticator
-## Using the HTTP authenticator
+## Using the HTTP Authenticator
 
 [TOC]
 
-## Creating the authenticator
+## Creating the Authenticator
 
 The workflow is easy. Just create an authenticator in the first step and secure your resource by checking for credentials with a second step.
 
 I strongly recommend using a library like [PHP dotenv](https://github.com/vlucas/phpdotenv) to store the credentials and keep usernames and passwords out of version control.
 
-### Using class constructor
+### Using the Class Constructor
 
 ```php
 use Intervention\HttpAuth\Authenticator;
@@ -33,7 +33,7 @@ $auth->withRealm('Secure');
 $auth->withCredentials('admin', 'secret');
 ```
 
-### Using static factory methods
+### Using Static Factory Methods
 
 The package comes with several static factory methods to create the authenticator.
 
@@ -61,7 +61,7 @@ $auth = Authenticator::basic('Secured Realm')->withCredentials('admin', 'secret'
 $auth = Authenticator::digest('Secured Realm')->withCredentials('admin', 'secret');
 ```
 
-## Securing the resource
+## Securing the Resource
 
 After you created a HTTP authenticator instance, you have to call `secure()` to secure the resource by checking for credentials. Otherwise nothing will happen.
 
@@ -75,7 +75,7 @@ use Intervention\HttpAuth\Authenticator;
 Authenticator::make()->withCredentials('admin', 'secret')->secure();
 ```
 
-### Customizing notice
+### Customizing Notice
 
 Optionally you can provide a status message, which will be displayed to the user, when the credential check failed.
 

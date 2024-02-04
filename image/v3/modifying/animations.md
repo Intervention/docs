@@ -1,11 +1,11 @@
 # Animations
-## Changing details of animated images
+## Changing Details of Animated Images
 
 [TOC]
 
-## Detect animations
+## Detect Animations
 
-### Check the current image instance for animation
+### Check the Current Image Instance for Animation
 
 > public Image::isAnimated(): bool
 
@@ -24,9 +24,9 @@ $manager = new ImageManager(Driver::class);
 $result = $manager->read('images/animation.gif')->isAnimated();
 ```
 
-## Editing animations
+## Editing Animations
 
-### Changing the animation frames
+### Changing the Animation Frames
 
 > public Image::sliceAnimation(int $offset, null|int $length = null): ImageInterface
 
@@ -109,7 +109,7 @@ $image = $manager->read('images/animation.gif');
 $image = $image->setLoops(1);
 ```
 
-### Removing animation
+### Removing Animation
 
 > public Image::removeAnimation(int|string $position = 0): ImageInterface
 

@@ -7,7 +7,7 @@ The image manager is the starting point for all operations. With this
 class you determine the driver to use and call the methods needed 
 for instantiation.
 
-## Create a new image manager instance
+## Create a new Image Manager Instance
 
 > public ImageManager::__construct(string|DriverInterface $driver): ImageManager
 
@@ -40,7 +40,7 @@ $manager = new ImageManager(new Driver());
 $manager = new ImageManager(Driver::class);
 ```
 
-## Create a new image manager instance with static helper methods
+## Create a new Image Manager Instance with Static Helper Methods
 
 ### Static Constructor
 

@@ -1,11 +1,11 @@
 # Resizing Images
-## Setting new image sizes
+## Setting New Image Sizes
 
 [TOC]
 
 ## Simple Image Resizing
 
-### Resizing the image
+### Resizing the Image
 
 > public Image::resize(?int $width, ?int $height): ImageInterface
 
@@ -38,7 +38,7 @@ $image->resize(height: 200);
 ```
 
 
-### Resizing without exceeding the original size
+### Resizing Without Exceeding the Original Size
 
 > public Image::resizeDown(?int $width, ?int $height): ImageInterface
 
@@ -108,7 +108,7 @@ $image->scale(height: 300); // 400 x 300
 $image->scale(200, 100); // 200 x 150
 ```
 
-### Scaling images but do not exceed the original size
+### Scaling Images but do not Exceed the Original Size
 
 > public Image::scaleDown(?int $width, ?int $height): ImageInterface
 
@@ -188,7 +188,7 @@ $img->cover(200, 200);
 $image->cover(300, 300, 'left'); // 300 x 300 px
 ```
 
-### Fitted resizing without exceeding the original size
+### Fitted Resizing without Exceeding the Original Size
 
 > public Image::coverDown(int $width, int $height, string $position = 'center'): ImageInterface
 
@@ -265,7 +265,7 @@ $image->pad(300, 200, 'ccc');
 $image->pad(500, 500, position: 'top-left');
 ```
 
-### Padded resizing with upscaling
+### Padded Resizing with Upscaling
 
 > public Image::contain(int $width, int $height, $background = 'ffffff', string $position = 'center'): ImageInterface
 
@@ -300,7 +300,7 @@ $image->contain(500, 500, 'efefef');
 
 
 ## Crop Image
-### Cut out a rectangular part
+### Cut Out a Rectangular Part
 
 > public Image::crop(int $width, int $height, int $offset_x = 0, int $offset_y = 0, mixed $background = 'ffffff', string $position = 'top-left'): ImageInterface
 
@@ -345,7 +345,7 @@ $image->crop(200, 150, 0 , 30, position: 'bottom-right');
 
 
 ## Resize Image Canvas
-### Resize Image Boundaries without resampling the original image
+### Resize Image Boundaries without Resampling the Original Image
 
 > public Image::resizeCanvas(?int $width, ?int $height, mixed $background = 'ffffff', string $position = 'center'): ImageInterface
 
@@ -378,7 +378,7 @@ $image = $manager->read('images/example.jpg');
 $image->resizeCanvas(800, 600, 'ff0');
 ```
 
-### Resize Image Boundaries relative to the Original
+### Resize Image Boundaries Relative to the Original
 
 > public Image::resizeCanvasRelative(?int $width, ?int $height, mixed $background = 'ffffff', string $position = 'center'): ImageInterface
 

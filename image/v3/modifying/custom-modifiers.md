@@ -1,5 +1,5 @@
 # Custom Modifiers
-## Group image modifications in classes
+## Group Image Modifications in Classes
 
 All modifier calls can be stored as a combination in a custom image modifier
 class. This modifier defines which commands should be applied to an image
@@ -10,7 +10,7 @@ Intervention Image provides the simple `Intervention\Image\Interfaces\ModifierIn
 
 Once you have created your own modifier, you can apply them by using the `modify()` method.
 
-## Custom modifier implementation
+## Custom Modifier Implementation
 
 The following very simple example shows a custom modifier class that combines a grayscale and a pixelate effect.
 
@@ -37,7 +37,7 @@ class MyCustomModifier implements ModifierInterface
 }
 ```
 
-## Applying custom modifiers
+## Applying Custom Modifiers
 
 Once the custom modifier is implemented, you can easily apply it to an image instance.
 

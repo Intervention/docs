@@ -1,11 +1,11 @@
 # Colors + Transparency
-## Handling of image colors
+## Handling of Image Colors
 
 [TOC]
 
 ## Color Information
 
-### Reading colors of certain pixels
+### Reading Colors of Certain Pixels
 
 > public Image::pickColor(int $x, int $y, int $frame_key = 0): ColorInterface
 
@@ -55,7 +55,7 @@ $blue = $color->blue()->toInt();
 $alpha = $color->alpha()->toInt();
 ```
 
-### Reading all colors of certain pixels in animated images
+### Reading all Colors of Certain Pixels in Animated Images
 
 > public Image::pickColors(int $x, int $y): CollectionInterface
 
@@ -99,7 +99,7 @@ $color = $colors->get(6);
 As soon as the pixel colors of an image have been read into an object, further
 options are available.
 
-### Transforming colors to string values
+### Transforming Colors to String Values
 
 > public ColorInterface::toString(): ColorInterface
 
@@ -128,7 +128,7 @@ $result = (string) $color;
 ```
 
 
-### Transforming colors between colorspaces
+### Transforming Colors Between Colorspaces
 
 > public ColorInterface::convertTo(string|ColorspaceInterface $colorspace): ColorInterface
 
@@ -288,7 +288,7 @@ $image = $manager->read('images/example.jpg');
 $image->setProfile('profiles/profile.icc');
 ```
 
-### Remove Color Profile
+### Removing Color Profiles
 
 > public function removeProfile(): ImageInterface
 
@@ -317,7 +317,7 @@ If the target format does not support transparency, no alpha channel can be
 preserved. In this case the transparent areas will be blended with a color. This
 color can be specified in advance.
 
-### Setting the blending color
+### Setting the clending Color
 
 > public function setBlendingColor(mixed $color): ImageInterface
 
@@ -347,7 +347,7 @@ $image->setBlendingColor('#ff5500'); // orange
 $image->toJpeg();
 ```
 
-### Getting the blending color
+### Getting the Blending Color
 
 > public function blendingColor(): ColorInterface
 
@@ -369,7 +369,7 @@ $image = $manager->read('images/example.png');
 $color = $image->blendingColor(); // default white
 ```
 
-### Merging transparent areas with color
+### Merging Transparent Areas with Color
 
 > public function blendTransparency(mixed $color = null): ColorInterface
 

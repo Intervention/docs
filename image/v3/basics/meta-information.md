@@ -1,11 +1,11 @@
 # Meta Information
-## Reading meta data from images
+## Reading Meta Data from Images
 
 [TOC]
 
 ## Image Sizes
 
-### Reading the pixel width
+### Reading the Pixel Width
 
 > public Image::width(): integer
 
@@ -27,7 +27,7 @@ $image = $manager->read('images/example.png');
 $width = $image->width();
 ```
 
-### Reading the pixel height
+### Reading the Pixel Height
 
 > public Image::height(): integer
 
@@ -49,7 +49,7 @@ $image = $manager->read('images/example.png');
 $height = $image->height();
 ```
 
-### Reading the image size as an object
+### Reading the Image Size as an Object
 
 > public Image::size(): SizeInterface
 
@@ -83,7 +83,7 @@ $width = $size()->width();
 
 ## Image Resolution
 
-### Reading the image resolution
+### Reading the Image Resolution
 
 > public Image::resolution(): ResolutionInterface
 
@@ -112,7 +112,7 @@ $x = $resolution->x();
 $y = $resolution->y();
 ```
 
-### Set the image resolution
+### Set the Image Resolution
 
 > public Image::setResolution(float $x, float $y): ImageInterface
 
@@ -148,7 +148,7 @@ $image->setResolution(300, 300);
 Currently Intervention Image is only able to read Exif information. The
 possibility to change certain information blocks is not implemented.
 
-### Reading Exif information
+### Reading Exif Information
 
 > public Image::exif(?string $query = null): mixed
 

@@ -1,5 +1,5 @@
 # Image Effects
-## Applying image effects
+## Applying Image Effects
 
 [TOC]
 
@@ -124,7 +124,7 @@ $image = $image->gamma(blue: 15, green: 10);
 
 ## Various Effects
 
-### Mirror image horizontally
+### Mirror Image Horizontally
 
 > public Image::flop(): ImageInterface
 
@@ -147,7 +147,7 @@ $image = $image->flop();
 ```
 
 
-### Mirror image vertically
+### Mirror Image Vertically
 
 > public Image::flip(): ImageInterface
 
@@ -168,7 +168,7 @@ $image = $manager->read('images/example.png');
 $image = $image->flip();
 ```
 
-### Image rotation
+### Image Rotation
 
 > public Image::rotate(float $angle, mixed $background = 'ffffff'): ImageInterface
 
@@ -257,7 +257,7 @@ $image = $image->blur(3);
 ```
 
 
-### Invert colors
+### Invert Colors
 
 > public Image::invert(): ImageInterface
 

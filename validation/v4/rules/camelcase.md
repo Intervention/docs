@@ -1,5 +1,5 @@
 # Camel case Rule
-## Validate camel case string
+## Validate Camel Case String
 
 > public Intervention\Validation\Rules\Camelcase::__construct()
 

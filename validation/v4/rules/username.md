@@ -1,5 +1,5 @@
 # Username Rule
-## Validate a typical username
+## Validate a Typical Username
 
 > public Intervention\Validation\Rules\Username::__construct()
 

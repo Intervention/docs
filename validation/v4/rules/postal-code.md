@@ -1,5 +1,5 @@
 # Postal Code Rule
-## Validate costal code for individual countries
+## Validate Postal Codes for Individual Countries
 
 > public Intervention\Validation\Rules\Postalcode::__construct(array $countrycodes = [])
 
@@ -21,7 +21,7 @@ $validator = Validator::make($request->all(), [
 ]);
 ```
 
-### Validate by reference
+### Validate by Reference
 
 > public Intervention\Validation\Rules\Postalcode::reference(string $reference)
 
