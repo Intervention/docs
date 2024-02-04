@@ -22,7 +22,7 @@ The best way to install Intervention Image is quickly and easily with [Composer]
 To install the most recent version, run the following command.
 
 ```bash
-$ php composer.phar require intervention/image
+$ composer require intervention/image:^2
 ```
 
 Now your ```composer.json``` has been updated automatically and you're able to require the just created ```vendor/autoload.php``` file to PSR-4 autoload the library.

@@ -39,7 +39,7 @@ $image = $image->fill('#b53717', 10, 10);
 
 ## Drawing a pixel
 
-> public Image::drawPixel(int $x, int $y, $color = null): ImageInterface
+> public Image::drawPixel(int $x, int $y, mixed $color = null): ImageInterface
 
 Draw a single pixel at given position defined by the coordinates **x** and **y** in a given **color**.
 
@@ -87,13 +87,14 @@ Draw a colored rectangle on the current image with its top left position at the 
 ```php
 use Intervention\Image\ImageManager;
 use Intervention\Image\Drivers\Gd\Driver;
+use Intervention\Image\Geometry\Factories\RectangleFactory;
 
 // create an test image from a file
 $manager = new ImageManager(new Driver());
 $image = $manager->read('test.png');
 
 // draw an orange rectangle with a border
-$image->drawRectangle(10, 10, function ($rectangle) {
+$image->drawRectangle(10, 10, function (RectangleFactory $rectangle) {
     $rectangle->size(180, 125); // width & height of rectangle
     $rectangle->background('orange'); // background color of rectangle
     $rectangle->border('white', 2); // border color & size of rectangle
@@ -119,13 +120,14 @@ Draw a colored ellipse on the current image with its center position at the **x,
 ```php
 use Intervention\Image\ImageManager;
 use Intervention\Image\Drivers\Imagick\Driver;
+use Intervention\Image\Geometry\Factories\EllipseFactory;
 
 // create an test image from a file
 $manager = new ImageManager(Driver::class);
 $image = $manager->read('test.png');
 
 // draw a red ellipse with a blue border
-$image->drawEllipse(10, 10, function ($ellipse) {
+$image->drawEllipse(10, 10, function (EllipseFactory $ellipse) {
     $ellipse->size(180, 125); // width & height of ellipse
     $ellipse->background('f00'); // background color
     $ellipse->border('00f', 1); // border color & size
@@ -151,13 +153,14 @@ Draw a colored circle on the current image with its center position at the **x, 
 ```php
 use Intervention\Image\ImageManager;
 use Intervention\Image\Drivers\Gd\Driver;
+use Intervention\Image\Geometry\Factories\CircleFactory;
 
 // create an test image from a file
 $manager = new ImageManager(Driver::class);
 $image = $manager->read('test.png');
 
 // draw a green circle with a white border
-$image->drawCircle(10, 10, function ($circle) {
+$image->drawCircle(10, 10, function (CircleFactory $circle) {
     $circle->radius(150); // radius of circle in pixels
     $circle->background('lightblue'); // background color
     $circle->border('b53717', 1); // border color & size
@@ -181,13 +184,14 @@ Draw a line on the current image. Define the overall appearance of the shape by 
 ```php
 use Intervention\Image\ImageManager;
 use Intervention\Image\Drivers\Gd\Driver;
+use Intervention\Image\Geometry\Factories\LineFactory;
 
 // create an test image from a file
 $manager = new ImageManager(Driver::class);
 $image = $manager->read('test.png');
 
 // draw a half transparent white line
-$image->drawLine(function ($line) {
+$image->drawLine(function (LineFactory $line) {
     $line->from(10, 10); // starting point of line
     $line->to(300, 100); // ending point
     $line->color('ff00ff'); // color of line
@@ -212,13 +216,14 @@ Draw a polygon on the current image. Define the overall appearance of the shape 
 ```php
 use Intervention\Image\ImageManager;
 use Intervention\Image\Drivers\Imagick\Driver;
+use Intervention\Image\Geometry\Factories\PolygonFactory;
 
 // create an test image from a file
 $manager = new ImageManager(new Driver());
 $image = $manager->read('test.png');
 
 // draw a polygon
-$image->drawPolygon(function ($polygon) {
+$image->drawPolygon(function (PolygonFactory $polygon) {
     $polygon->point(10, 10); // add point of polygon
     $polygon->point(150, 150); // add point
     $polygon->point(40, 180); // add point
