@@ -150,7 +150,7 @@ Default value is `1.25`.
 
 ### Text Wrapping
 
-> public FontInterface::wrap(int $width): FontInterface
+> public FontFactory::wrap(int $width): FontFactory
 
 Specifies the maximum width of the text in pixels. The text to be rendered is
 parsed using the specified font options, and each line is automatically wrapped
