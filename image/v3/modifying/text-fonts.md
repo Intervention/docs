@@ -62,7 +62,7 @@ $image->text('The quick brown fox', 120, 100, function (FontFactory $font) {
 
 ### Font Size
 
-> public FontInterface::size(float $size): FontInterface
+> public FontFactory::size(float $size): FontFactory
 
 Define a font size. By default, a value of `12` will be applied.
 
@@ -74,7 +74,7 @@ Define a font size. By default, a value of `12` will be applied.
 
 ### Font File
 
-> public FontInterface::filename(string $filename): FontInterface
+> public FontFactory::filename(string $filename): FontFactory
 
 Set a path to a font file in the file system for the text.
 
@@ -86,7 +86,7 @@ Set a path to a font file in the file system for the text.
 
 ### Color
 
-> public FontInterface::color(mixed $color): FontInterface
+> public FontFactory::color(mixed $color): FontFactory
 
 Define the text color in one of the valid [color formats](/v3/introduction/formats#color-formats).
 
@@ -98,7 +98,7 @@ Define the text color in one of the valid [color formats](/v3/introduction/forma
 
 ### Horizontal Alignment
 
-> public FontInterface::align(string $align): FontInterface
+> public FontFactory::align(string $align): FontFactory
 
 Define the horizontal alignment of the text to be written starting from the
 base point. Possible values are left, right and center. Default: `left`
@@ -111,7 +111,7 @@ base point. Possible values are left, right and center. Default: `left`
 
 ### Vertical Alignment
 
-> public FontInterface::valign(string $valign): FontInterface
+> public FontFactory::valign(string $valign): FontFactory
 
 Define the vertical alignment of the text to be written starting from the base
 point. Possible values are top, bottom and middle. Default: `bottom`
@@ -124,7 +124,7 @@ point. Possible values are top, bottom and middle. Default: `bottom`
 
 ### Rotation
 
-> public FontInterface::angle(float $angle): FontInterface
+> public FontFactory::angle(float $angle): FontFactory
 
 Rotate the text block clockwise with a desired angle.
 
@@ -136,7 +136,7 @@ Rotate the text block clockwise with a desired angle.
 
 ### Line Height
 
-> public FontInterface::lineHeight(float $height): FontInterface
+> public FontFactory::lineHeight(float $height): FontFactory
 
 Define the line height of the text block. Applies only to multi-line text.
 Default value is `1.25`.
