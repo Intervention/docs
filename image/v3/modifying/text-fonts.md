@@ -57,6 +57,7 @@ $image->text('The quick brown fox', 120, 100, function (FontFactory $font) {
     $font->valign('middle');
     $font->lineHeight(1.6);
     $font->angle(10);
+    $font->wrap(250);
 });
 ```
 
@@ -146,3 +147,18 @@ Default value is `1.25`.
 | Name | Type | Description |
 | - | - | - |
 | height | float | Line height for multi-line text block |
+
+### Text Wrapping
+
+> public FontFactory::wrap(int $width): FontFactory
+
+Specifies the maximum width of the text in pixels. The text to be rendered is
+parsed using the specified font options, and each line is automatically wrapped
+to the maximum width. Hyphenation is not performed.
+
+#### Parameters
+
+| Name | Type | Description |
+| - | - | - |
+| width | int | Maximum width of the text block |
+
