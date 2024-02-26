@@ -103,14 +103,15 @@ Define the text color in one of the valid [color formats](/v3/introduction/forma
 > public FontFactory::stroke(mixed $color, int $width = 1): FontFactory
 
 Add an outline effect in the desired color to the text to be written. You can
-also change the width of strokes for text characters.
+also determine the width of the strokes for text characters and choose between
+values from `1` to `10`.
 
 #### Parameters
 
 | Name | Type | Description |
 | - | - | - |
 | color | mixed | Color of strokes in valid [color format(/v3/introduction/formats/#color-formats) |
-| width | int | Optional width of the stroke effect |
+| width | int | Optional width of the stroke effect in the range from `1` to `10` (default `0`) |
 
 ### Horizontal Alignment
 
