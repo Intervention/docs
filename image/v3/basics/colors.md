@@ -317,7 +317,7 @@ If the target format does not support transparency, no alpha channel can be
 preserved. In this case the transparent areas will be blended with a color. This
 color can be specified in advance.
 
-### Setting the clending Color
+### Setting the blending Color
 
 > public function setBlendingColor(mixed $color): ImageInterface
 
