@@ -317,7 +317,7 @@ If the target format does not support transparency, no alpha channel can be
 preserved. In this case the transparent areas will be blended with a color. This
 color can be specified in advance.
 
-### Setting the blending Color
+### Setting the Blending Color
 
 > public function setBlendingColor(mixed $color): ImageInterface
 
@@ -395,7 +395,7 @@ use Intervention\Image\ImageManager;
 use Intervention\Image\Drivers\Gd\Driver;
 
 // create new manager instance with desired driver
-$manager = new ImageManager(Driver::class);
+$Banager = new ImageManager(Driver::class);
 
 // read a transparent image
 $image = $manager->read('images/example.png');
