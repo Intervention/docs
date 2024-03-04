@@ -122,6 +122,31 @@ $image = $manager->read('images/example.jpg');
 $image = $image->gamma(blue: 15, green: 10);
 ```
 
+### Convert image to a grayscale version
+
+> public Image::greyscale(): ImageInterface
+
+Converts the current image into a grayscale version.
+
+#### Examples
+
+```php
+use Intervention\Image\ImageManager;
+
+// create new manager instance with desired driver
+$manager = ImageManager::imagick();
+
+// read a colored image
+$image = $manager->read('images/example.jpg');
+
+// turn image into a greyscale version
+$image = $image->greyscale();
+```
+
+
+
+
+
 ## Various Effects
 
 ### Mirror Image Horizontally
