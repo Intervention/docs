@@ -122,11 +122,11 @@ $image = $manager->read('images/example.jpg');
 $image = $image->gamma(blue: 15, green: 10);
 ```
 
-### Convert image to a grayscale version
+### Convert image to a greyscale version
 
 > public Image::greyscale(): ImageInterface
 
-Converts the current image into a grayscale version.
+Converts the current image into a greyscale version.
 
 #### Examples
 
