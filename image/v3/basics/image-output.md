@@ -440,6 +440,37 @@ $encoded = $image->toHeic(60); // Intervention\Image\EncodedImage
 The mentioned encoding methods return an `Intervention\Image\EncodedImage`
 object. With this instance you can decide how to proceed with the encoded data.
 
+### Cast Encoded Image Data to String
+
+> public EncodedImage::__toString(): string
+
+This method can be used to obtain the raw image data as type string. This is
+particularly useful if it is to be further processed with other libraries or
+transferred to remote data storage (such as S3).
+
+#### Example
+
+```php
+use Intervention\Image\ImageManager;
+use Just\An\Example\CloudStorage;
+
+// create new manager instance with desired driver
+$manager = ImageManager::imagick();
+
+// resize gif image
+$image = $manager
+    ->read('images/example.gif')
+    ->scale(height: 200);
+
+// encode in jpeg format and cast result as string
+$imagedata = (string) $image->toJpeg();
+
+// save to imaginary data service
+CloudStorage::put('example.jpg', $imagedata);
+```
+
+
+
 ### Saving Encoded Image Data in Filesystem
 
 > public EncodedImage::save(string $filepath): void
