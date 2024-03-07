@@ -475,7 +475,7 @@ CloudStorage::put('example.jpg', $imagedata);
 
 > public EncodedImage::save(string $filepath): void
 
-This method writes the object's data to the given path in the file system. The
+This method writes the object's data to the given path in the local file system. The
 respective folder structure must already exist and be writable.
 
 #### Parameters
@@ -589,7 +589,7 @@ The resulting image format is defined by the file extension of the given path.
 If no path is given the format of the originally read image will be used.
 Define the image quality by using the second parameter.
 
-The encoded image is saved at the given path in the file system. The respective
+The encoded image is saved at the given path in the local file system. The respective
 folder structure must already exist and be writable.
 
 In contrast to the other encoding methods, `save()` returns an `Image` object instead of an
