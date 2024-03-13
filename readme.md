@@ -22,4 +22,4 @@ Documentation in markdown for all projects on [intervention.io](https://interven
 - [Documentation Source](/httpauth)
 - [Documentation Website](https://httpauth.intervention.io/)
 
-Copyright 2024 [Oliver Vogel](https://intervention.io/)
+Copyright [Oliver Vogel](https://intervention.io/)
