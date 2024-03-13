@@ -28,4 +28,4 @@ Documentation in markdown for all projects on [intervention.io](https://interven
 
 This documentation is developed and maintained by [Oliver Vogel](https://intervention.io)
 
-Thanks to the community of [contributors](https://github.com/Intervention/validation/graphs/contributors) who have helped to improve this project.
+Thanks to the community of [contributors](https://github.com/Intervention/docs/graphs/contributors) who have helped to improve this project.
