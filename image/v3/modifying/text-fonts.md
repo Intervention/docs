@@ -51,8 +51,9 @@ $image = ImageManager::imagick()->read('images/example.jpg');
 // write text to image
 $image->text('The quick brown fox', 120, 100, function (FontFactory $font) {
     $font->filename('./fonts/comic-sans.ttf');
-    $font->color('#b01735');
     $font->size(70);
+    $font->color('fff');
+    $font->stroke('ff5500', 2);
     $font->align('center');
     $font->valign('middle');
     $font->lineHeight(1.6);
@@ -96,6 +97,23 @@ Define the text color in one of the valid [color formats](/v3/introduction/forma
 | Name | Type | Description |
 | - | - | - |
 | color | mixed | Desired color of text |
+
+### Text Stroke (Outline)
+
+> public FontFactory::stroke(mixed $color, int $width = 1): FontFactory
+
+Add an outline effect in the desired color to the text to be written. You can
+also determine the width of the strokes for text characters.
+
+**Please note that if the stroke function is used, for technical reasons it is
+only possible to use fully opaque colors for text and strokes.**
+
+#### Parameters
+
+| Name | Type | Description |
+| - | - | - |
+| color | mixed | Color of strokes in valid [color format(/v3/introduction/formats/#color-formats) |
+| width | int | Optional width of the stroke effect in the range from `0` to `10` (default `1`) |
 
 ### Horizontal Alignment
 
