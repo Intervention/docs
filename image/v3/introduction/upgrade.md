@@ -40,10 +40,10 @@ There are a few key features that further improve the library.
 - [resizeCanvas()](/v2/api/resize-canvas) still exists but has a new [signature](/v3/modifying/resizing)
 - [limitColors()](/v2/api/limit-colors) is handled by [reduceColors](/v3/modifying/effects)
 - [getCore()](/v2/api/get-core) is replaced with `core()` but behaves completely differently
+- [trim()](/v2/api/trim) still exists as of version `3.6`, but works differently and [automatically removes border areas](/v3/modifying/resizing#trim-image) of the image with similar colors.
 
 ## Removed Features
 
-- [trim()](/v2/api/trim) no longer exists
 - [colorize()](/v2/api/colorize) no longer exists
 - [interlace()](/v2/api/interlace) no longer exists
 - [backup()](/v2/api/backup) and [reset()](/v2/api/reset) no longer exist but the functionality can be achieved more easily with [native object cloning](https://www.php.net/manual/en/language.oop5.cloning.php)
