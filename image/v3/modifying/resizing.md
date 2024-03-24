@@ -410,3 +410,39 @@ $image->resizeCanvas(50, 50, 'green');
 // add 20 red pixels to the height at the bottom of the image
 $image->resizeCanvas(height: 20, background: 'ff0000', position: 'bottom');
 ```
+
+
+
+## Trim Image
+### Remove Border Areas in Similar Color
+
+> public Image::trim(int $tolerance = 0): ImageInterface
+
+Remove border areas of the image on all sides that have a similar color. The
+similarity of the color can be varied using the optional `tolerance` parameter.
+
+This means that with a tolerance value of `0`, only color areas that have exactly
+the same value are removed. As the tolerance increases, similar color areas are also
+included and cut off. Usually values up to `20` make sense.
+
+**Please note that the results can vary greatly depending on the driver and the
+image you are processing.**
+
+#### Parameters
+
+| Name | Type | Description |
+| - | - | - |
+| tolerance | integer | Tolerance value that determines how similar in color a border area may be in order to be removed. |
+
+#### Examples
+
+```php
+use Intervention\Image\ImageManager;
+
+// create new image instance
+$image = ImageManager::gd()->read('images/example.jpg');
+
+// trim with a tolerance of 5
+$image->trim(5);
+```
+
