@@ -65,7 +65,7 @@ $encoded = $image->encode(new GifEncoder()); // Intervention\Image\EncodedImage
 
 ### Encode Images by Media (MIME) Type
 
-> public Image::encodeByMediaType(?string $type = null, int $quality = 75): EncodedImage
+> public Image::encodeByMediaType(?string $type = null, mixed ...$options): EncodedImage
 
 Encode an image to given media (mime) type. 
 
@@ -76,8 +76,7 @@ originally read image's mime type.
 
 | Name | Type | Description |
 | - | - | - |
-| type (optional) | null or string | Target media (MIME) type into which the image is encoded. |
-| quality (optional) | int | Quality of the resulting image |
+| type (optional) | null or string | Target media (MIME) type into which the image is encoded. By default the original media type is used. |
 
 #### Example
 
@@ -95,8 +94,8 @@ $encoded = $image->encodeByMediaType();
 // encoded result will be the same as original but with low quality
 $encoded = $image->encodeByMediaType(quality: 10);
 
-// encoded result will be in jpeg format
-$encoded = $image->encodeByMediaType('image/jpeg');
+// encoded result will be in progressive jpeg format
+$encoded = $image->encodeByMediaType('image/jpeg', progressive: true, quality: 20);
 
 // result will be in gif format
 $encoded = $image->encodeByMediaType('image/gif');
@@ -113,7 +112,7 @@ $encoded = $image->encodeByMediaType('image/gif');
 
 ### Encode Images by File Path
 
-> public Image::encodeByPath(?string $path = null, int $quality = 75): EncodedImage
+> public Image::encodeByPath(?string $path = null, mixed ...$options): EncodedImage
 
 Encode the image into the format represented by the extension of the given file
 path. Add an optional second value to set the resulting image quality. If no
@@ -128,7 +127,6 @@ information to extract the target format.**
 | Name | Type | Description |
 | - | - | - |
 | path (optional) | null or string | File path from which the target format is extracted. |
-| quality (optional) | int | Quality of the resulting image |
 
 #### Example
 
@@ -148,7 +146,7 @@ $encoded = $image->encodeByPath();
 $encoded = $image->encodeByPath(quality: 10);
 
 // resulting format will jpeg because "jpg" represents jpeg format
-$encoded = $image->encodeByPath('images/example.jpg');
+$encoded = $image->encodeByPath('images/example.jpg', progressive: true, quality: 10);
 
 // result will be gif format
 $encoded = $image->encodeByPath('images/example.gif');
@@ -164,7 +162,7 @@ $encoded = $image->encodeByPath('images/example.gif');
 
 ### Encode Images by File Extension
 
-> public Image::encodeByExtension(?string $extension = null, int $quality = 75): EncodedImage
+> public Image::encodeByExtension(?string $extension = null, mixed ...$options): EncodedImage
 
 Encode the image into the format represented by the given file extension.
 Define the image quality with the optional second parameter. If no extension is
@@ -175,7 +173,6 @@ given the image will be encoded to the format of the originally read image.
 | Name | Type | Description |
 | - | - | - |
 | extension (optional) | null or string | File extension that determines the target format. |
-| quality (optional) | int | Quality of the resulting image |
 
 #### Example
 
@@ -191,8 +188,8 @@ $encoded = $image->encodeByExtension();
 // resulting format will be the same as original but with low quality
 $encoded = $image->encodeByExtension(quality: 10);
 
-// result will be GIF format
-$encoded = $image->encodeByExtension('gif');
+// result will be jpeg format
+$encoded = $image->encodeByExtension('jpg', progressive: true, quality: 10);
 
 // result will be PNG format
 $encoded = $image->encodeByExtension('png');
@@ -211,7 +208,7 @@ called up directly from the image object.
 
 ### Encoding JPEG Format
 
-> public Image::toJpeg(int $quality = 75): EncodedImage
+> public Image::toJpeg(int $quality = 75, bool $progressive = false): EncodedImage
 
 Encode the current image instance in JPEG format in the given **quality**
 ranging between 0 for low quality to 100 for best quality.
@@ -220,7 +217,8 @@ ranging between 0 for low quality to 100 for best quality.
 
 | Name | Type | Description |
 | - | - | - |
-| quality (optional) | integer | Encoding quality  |
+| quality (optional) | integer | Encoding quality ranging from `0` to `100` |
+| progressive (optional) | boolean | Option to encode the image in progressive Jpeg format. Disabled by default. |
 
 #### Example
 
@@ -473,7 +471,7 @@ CloudStorage::put('example.jpg', $imagedata);
 
 ### Saving Encoded Image Data in Filesystem
 
-> public EncodedImage::save(string $filepath): void
+> public EncodedImage::save(string $filepath, mixed ...$options): void
 
 This method writes the object's data to the given path in the local file system. The
 respective folder structure must already exist and be writable.
@@ -496,8 +494,8 @@ $manager = new ImageManager(Driver::class);
 // reading gif image
 $image = $manager->read('images/example.gif');
 
-// saving jpeg file
-$encoded = $image->toJpeg()->save('images/test.jpg');
+// save progressive jpeg file in low quality
+$encoded = $image->toJpeg()->save('images/test.jpg', progressive: true, quality: 10);
 ```
 
 
@@ -579,7 +577,7 @@ $mimetype = $image->toJpeg()->mediaType();
 
 ### Encoding & Saving Combined
 
-> public Image::save(?string $path = null, int $quality = 75): ImageInterface
+> public Image::save(?string $path = null, mixed ...$options): ImageInterface
 
 This method helps to initiate the saving process directly from the image object
 without having to go via an `EncodedImage` object and encodes & writes the
@@ -600,7 +598,6 @@ In contrast to the other encoding methods, `save()` returns an `Image` object in
 | Name | Type | Description |
 | - | - | - |
 | path (optional) | null or string | File path from which the target format is extracted. |
-| quality (optional) | int | Quality of the resulting image. |
 
 #### Example
 
@@ -620,5 +617,7 @@ $image->save(quality: 10);
 // encode jpeg as png and save in a new file
 $image->save('images/example.png');
 
+// encode & save progressive jpeg in low quality
+$image->save('images/example.png', quality: 10, progressive: true);
 ```
 
