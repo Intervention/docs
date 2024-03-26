@@ -288,11 +288,15 @@ $encoded = $image->toPng(); // Intervention\Image\EncodedImage
 
 ### Encoding GIF Format
 
-> public Image::toGif(): EncodedImage
+> public Image::toGif(bool $interlaced = false): EncodedImage
 
 Encode the current image instance in GIF format.
 
 **Caution: The signature has changed in version 3.1 by removing the parameter `color_limit`**
+
+| Name | Type | Description |
+| - | - | - |
+| interlaced (optional) | bool | Option to encode the image interlaced. |
 
 ```php
 use Intervention\Image\ImageManager;
