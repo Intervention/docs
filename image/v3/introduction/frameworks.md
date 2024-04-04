@@ -15,9 +15,9 @@ the configuration centrally in the application.
 
 ### Integration
 
-Instead of installing the library directly, it is only necessary to integrate
-the package. The corresponding basic libraries are automatically installed as
-well
+Instead of installing the Intervention Image directly, it is only necessary to integrate
+the `intervention/image-laravel` package. The corresponding base libraries are automatically
+installed as well.
 
 ```bash
 $ composer require intervention/image-laravel
@@ -29,14 +29,12 @@ Next, add the configuration files to your application using the `vendor:publish`
 php artisan vendor:publish --provider="Intervention\Image\Laravel\ServiceProvider"
 ```
 
-This command will publish the configuration file `image.php` for the image
-integration to your `app/config` directory. In this file you can set the desired
-driver for Intervention Image. By default the library is configured to use GD
-library for image processing.
+This command will publish the configuration file `image.php` to your `app/config` 
+directory. In this file you can set the desired driver for Intervention Image. 
+By default the library is configured to use GD library for image processing.
 
 The integration is now complete and it is possible to access the
-[ImageManager](/v3/basics/instantiation) via
-Laravel's facade.
+[ImageManager](/v3/basics/instantiation) via Laravel's facade.
 
 ```php
 use Intervention\Image\Laravel\Facades\Image;
@@ -56,7 +54,7 @@ offers a convenient way of central configuration in the Symfony framework.
 
 ### Integration
 
-Instead of installing the library directly, it is only necessary to require the
+Instead of installing the Intervention Image directly, it is only necessary to require the
 bundle package `intervention/image-symfony`. The corresponding dependencies 
 are automatically installed as well
 
@@ -64,9 +62,9 @@ are automatically installed as well
 $ composer require intervention/image-symfony
 ```
 
-After successful installation, you can activate the bundle in the file
-`config/bundes.php` of your application by inserting the following line into
-the array.
+After the successful installation, you can activate the bundle in the file
+`config/bundes.php` of your Symfony application by inserting the following 
+line into the array.
 
 ```php
 return [
@@ -75,7 +73,7 @@ return [
 ];
 ```
 
-Now we can configure the driver of Intervention Image. By default, the bundle
+Now you can configure the driver of Intervention Image. By default, the bundle
 is using the GD library with Intervention Image. This can be easily configured
 by creating a file `config/packages/intervention_image.yaml` and setting the
 driver class as follows. 
@@ -89,7 +87,7 @@ You can choose between the two supplied drivers `Intervention\Image\Drivers\Gd\D
 `Intervention\Image\Drivers\Imagick\Driver` for example.
 
 The integration is now complete and it is possible to access the
-[ImageManager](/v3/basics/instantiation) via dependency injection.
+[ImageManager](/v3/basics/instantiation) via dependency injection. For example:
 
 ```php
 namespace App\Controller;
