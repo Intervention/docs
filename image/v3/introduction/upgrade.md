@@ -39,7 +39,7 @@ There are a few key features that further improve the library.
 - [text()](/v2/api/text) still exists but has a new [signature](/v3/modifying/text-fonts)
 - [resizeCanvas()](/v2/api/resize-canvas) still exists but has a new [signature](/v3/modifying/resizing)
 - [limitColors()](/v2/api/limit-colors) is handled by [reduceColors](/v3/modifying/effects)
-- [getCore()](/v2/api/get-core) is replaced with `core()` but behaves completely differently
+- [getCore()](/v2/api/get-core) is replaced with [core()](/v3/modifying/advanced) but behaves completely differently
 
 ## Removed Features
 
