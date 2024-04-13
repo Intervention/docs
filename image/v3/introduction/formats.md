@@ -24,11 +24,53 @@ some formats are readable and writable.
 
 **Please note that not all image formats are always included in the PHP image
 extensions. It is therefore possible, that the GD library is installed but is
-configured without Jpeg support or Imagick is available without Webp support
+built without Jpeg support or Imagick is available without Webp support
 for example.**
 
 Read more about [encoding different image formats](/v3/basics/image-output) in the output section.
 
+### Check the Support for Image Formats
+
+> public DriverInterface::supports(string|Format|FileExtension|MediaType $identifier): bool
+
+This method can be used to find out during runtime whether a specific format
+is supported. It checks whether the desired format is supported by the
+respective driver and whether the underlying extension was built with the
+corresponding support and returns `true` if both conditions apply.
+
+#### Parameters
+
+| Name | Type | Description |
+| - | - | - |
+| identifier | string, Format, FileExtension or MediaType | Identifier of the image format, which can be passed either as a file extension string, media type string or enum member.  |
+
+
+#### Examples
+
+```php
+use Intervention\Image\Drivers\Imagick\Driver;
+use Intervention\Image\Format;
+use Intervention\Image\MediaType;
+use Intervention\Image\FileExtension;
+
+// create new driver object
+$driver = new Driver();
+
+// check if jpeg format is supported by file extension
+$result = $driver->supports('jpg');
+
+// check if gif format is supported by media type
+$result = $driver->supports('image/gif');
+
+// check if png format is supported by enum member
+$result = $driver->supports(Format::PNG);
+
+// check if avif format is supported by enum member
+$result = $driver->supports(MediaType::IMAGE_AVIF);
+
+// check if tiff format is supported by enum member
+$result = $driver->supports(FileExtension::TIFF);
+```
 
 ## Color Formats
 
