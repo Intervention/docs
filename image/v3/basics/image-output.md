@@ -65,7 +65,7 @@ $encoded = $image->encode(new GifEncoder()); // Intervention\Image\EncodedImage
 
 ### Encode Images by Media (MIME) Type
 
-> public Image::encodeByMediaType(?string $type = null, int $quality = 75): EncodedImage
+> public Image::encodeByMediaType(null|string|MediaType $type = null, int $quality = 75): EncodedImage
 
 Encode an image to given media (mime) type. 
 
@@ -76,7 +76,7 @@ originally read image's mime type.
 
 | Name | Type | Description |
 | - | - | - |
-| type (optional) | null or string | Target media (MIME) type into which the image is encoded. |
+| type (optional) | null, string or MediaType | Target media (MIME) type into which the image is encoded. |
 | quality (optional) | int | Quality of the resulting image |
 
 #### Example
@@ -84,6 +84,7 @@ originally read image's mime type.
 ```php
 use Intervention\Image\ImageManager;
 use Intervention\Image\Drivers\Gd\Driver;
+use Intervention\Image\MediaType;
 
 // create new manager instance and read webp image
 $image = new ImageManager(Driver::class)
@@ -100,6 +101,9 @@ $encoded = $image->encodeByMediaType('image/jpeg');
 
 // result will be in gif format
 $encoded = $image->encodeByMediaType('image/gif');
+
+// or use member of MediaType enum
+$encoded = $image->encodeByMediaType(MediaType::IMAGE_GIF);
 ```
 
 
@@ -164,7 +168,7 @@ $encoded = $image->encodeByPath('images/example.gif');
 
 ### Encode Images by File Extension
 
-> public Image::encodeByExtension(?string $extension = null, int $quality = 75): EncodedImage
+> public Image::encodeByExtension(null|string|FileExtension $extension = null, int $quality = 75): EncodedImage
 
 Encode the image into the format represented by the given file extension.
 Define the image quality with the optional second parameter. If no extension is
@@ -174,7 +178,7 @@ given the image will be encoded to the format of the originally read image.
 
 | Name | Type | Description |
 | - | - | - |
-| extension (optional) | null or string | File extension that determines the target format. |
+| extension (optional) | null, string, FileExtension | File extension that determines the target format. |
 | quality (optional) | int | Quality of the resulting image |
 
 #### Example
@@ -196,6 +200,9 @@ $encoded = $image->encodeByExtension('gif');
 
 // result will be PNG format
 $encoded = $image->encodeByExtension('png');
+
+// alternatively use member of FileExtension enum
+$encoded = $image->encodeByExtension(FileExtension::PNG);
 ```
 
 
