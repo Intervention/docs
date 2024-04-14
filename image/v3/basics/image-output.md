@@ -266,11 +266,15 @@ $encoded = $image->toWebp(60); // Intervention\Image\EncodedImage
 
 ### Encoding PNG Format
 
-> public Image::toPng(): EncodedImage
+> public Image::toPng(bool $interlaced = false): EncodedImage
 
 Encode the current image instance in PNG format.
 
 **Caution: The signature has changed in version 3.1 by removing the parameter `color_limit`**
+
+| Name | Type | Description |
+| - | - | - |
+| interlaced (optional) | bool | Option to encode the image interlaced. |
 
 ```php
 use Intervention\Image\ImageManager;
