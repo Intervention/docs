@@ -32,6 +32,7 @@ This method not only supports filepaths as an argument. The following argument f
 - Base64 encoded image data
 - Data Uri
 - Intervention Image Instance
+- Driver-specific image (instance of `GDImage` or `Imagick`)
 
 To decode the raw input data, you can optionally specify a decoding strategy
 with the second parameter. This can be an array of class names or objects of
