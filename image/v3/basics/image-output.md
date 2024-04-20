@@ -77,12 +77,14 @@ originally read image's mime type.
 | Name | Type | Description |
 | - | - | - |
 | type (optional) | null or string | Target media (MIME) type into which the image is encoded. By default the original media type is used. |
+| quality (optional) | int | Quality of the resulting image |
 
 #### Example
 
 ```php
 use Intervention\Image\ImageManager;
 use Intervention\Image\Drivers\Gd\Driver;
+use Intervention\Image\MediaType;
 
 // create new manager instance and read webp image
 $image = new ImageManager(Driver::class)
@@ -99,6 +101,9 @@ $encoded = $image->encodeByMediaType('image/jpeg', progressive: true, quality: 2
 
 // result will be in gif format
 $encoded = $image->encodeByMediaType('image/gif');
+
+// or use member of MediaType enum
+$encoded = $image->encodeByMediaType(MediaType::IMAGE_GIF);
 ```
 
 
@@ -158,8 +163,6 @@ $encoded = $image->encodeByPath('images/example.gif');
 
 
 
-
-
 ### Encode Images by File Extension
 
 > public Image::encodeByExtension(?string $extension = null, mixed ...$options): EncodedImage
@@ -172,7 +175,8 @@ given the image will be encoded to the format of the originally read image.
 
 | Name | Type | Description |
 | - | - | - |
-| extension (optional) | null or string | File extension that determines the target format. |
+| extension (optional) | null, string, FileExtension | File extension that determines the target format. |
+| quality (optional) | int | Quality of the resulting image |
 
 #### Example
 
@@ -193,6 +197,9 @@ $encoded = $image->encodeByExtension('jpg', progressive: true, quality: 10);
 
 // result will be PNG format
 $encoded = $image->encodeByExtension('png');
+
+// alternatively use member of FileExtension enum
+$encoded = $image->encodeByExtension(FileExtension::PNG);
 ```
 
 

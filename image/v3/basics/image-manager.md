@@ -100,5 +100,31 @@ use Intervention\Image\ImageManager;
 $manager = ImageManager::imagick();
 ```
 
+
+## Access Image Manager's Driver
+
+> public ImageManager::driver(): DriverInterface
+
+As already described, the Image Manger is created with a driver instance as a
+dependency. This function ensures that it can be accessed at a later point in
+time.
+
+#### Examples
+
+```php
+use Intervention\Image\ImageManager;
+use Intervention\Image\Drivers\Gd\Driver;
+
+// create image manager with driver
+$manager = new ImageManager(new Driver());
+
+// access driver from image manager
+$driver = $manager->driver();
+```
+
+
+
+
 Read more about the different methods of the image manager in the
 [instantiation section](/v3/basics/instantiation)
+
