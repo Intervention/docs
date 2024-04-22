@@ -633,6 +633,6 @@ $image->save(quality: 10);
 $image->save('images/example.png');
 
 // encode & save progressive jpeg in low quality
-$image->save('images/example.png', quality: 10, progressive: true);
+$image->save('images/example.jpg', quality: 10, progressive: true);
 ```
 
