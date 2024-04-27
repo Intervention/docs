@@ -63,7 +63,7 @@ There are a few key features that further improve the library.
 - The [caching library](https://packagist.org/packages/intervention/imagecache)
   of Intervention Image 2 is not supported by the new version. 
 
-- The service providers for the Laravel were removed to avoid a dependency to
+- The service providers for the Laravel framework were removed to avoid a dependency to
   the framework and to highlight Intervention Image rather framework agnostic,
   which it always was. However, there is an [official package for Laravel integration](https://github.com/Intervention/image-laravel)
 
