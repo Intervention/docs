@@ -12,7 +12,7 @@ supports the following requirements.
 
 ## Installation
 
-You can install this package quickly and easily with Composer.
+You can install this package quickly and easily with [Composer](https://getcomposer.org/).
 
 Require the package via Composer:
 
