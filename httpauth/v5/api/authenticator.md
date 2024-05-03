@@ -33,9 +33,9 @@ use Intervention\HttpAuth\Vaults\BasicVault
 
 // create vault first
 $vault = new BasicVault(
-    'myUsername', // username
-    'myPassword', // password
-    'Secured Area', // secured resource name
+    'myUsername',
+    'myPassword',
+    'Secured Area',
 );
 
 // create authenticator
@@ -59,13 +59,13 @@ method directly and passign the vault instance directly.
 
 ```php
 use Intervention\HttpAuth\Authenticator;
+use Intervention\HttpAuth\Vaults\DigestVault
 
-// create authenticator
-$auth = Authenticator::digest(
-    'myUsername',
-    'myPassword',
-    'Secured Area',
-);
+// create vault first
+$vault = new DigestVault('myUsername', 'myPassword');
+
+// create authenticator with vault
+$auth = Authenticator::withVault($vault);
 ```
 
 
