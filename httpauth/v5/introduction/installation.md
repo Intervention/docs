@@ -8,7 +8,7 @@
 Before you begin with the installation make sure that your server environment
 supports the following requirements.
 
-- PHP >= 8.1
+- PHP >= 8.2
 
 ## Installation
 
