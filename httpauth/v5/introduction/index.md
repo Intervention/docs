@@ -27,7 +27,6 @@ use Intervention\HttpAuth\Authenticator;
 $auth = Authenticator::basic(
     'myUsername',
     'myPassword',
-    'Secured Area',
 );
 ```
 
@@ -40,7 +39,6 @@ use Intervention\HttpAuth\Authenticator;
 $auth = Authenticator::digest(
     'myUsername',
     'myPassword',
-    'Secured Area',
 );
 ```
 
