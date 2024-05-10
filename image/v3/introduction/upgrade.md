@@ -39,8 +39,9 @@ There are a few key features that further improve the library.
 - [text()](/v2/api/text) still exists but has a new [signature](/v3/modifying/text-fonts)
 - [resizeCanvas()](/v2/api/resize-canvas) still exists but has a new [signature](/v3/modifying/resizing)
 - [limitColors()](/v2/api/limit-colors) is handled by [reduceColors](/v3/modifying/effects)
-- [trim()](/v2/api/trim) exists as of version `3.6`, but works differently and [automatically removes border areas](/v3/modifying/resizing#trim-image) of the image with similar colors.
+- [trim()](/v2/api/trim) exists as of version `3.6`, but works differently and [automatically removes border areas](/v3/modifying/resizing#trim-image) of the image with similar colors
 - [getCore()](/v2/api/get-core) is replaced with [core()](/v3/modifying/advanced) but behaves completely differently
+- [orientate()](/v2/api/orientate) is handled by [orient()](/v3/modifying/effects#image-orientation-according-to-exif-data) and is applied automatically by default ([configurable](/v3/basics/image-manager))
 
 ## Removed Features
 
@@ -53,7 +54,6 @@ There are a few key features that further improve the library.
 - [iptc()](/v2/api/iptc) no longer exists
 - [mask()](/v2/api/mask) no longer exists
 - [opacity()](/v2/api/opacity) no longer exists
-- [orientate()](/v2/api/orientate) no longer exists and is handled automatically
 - [psrResponse()](/v2/api/psr-response) no longer exists
 - [response()](/v2/api/response) no longer exists
 - [stream()](/v2/api/stream) no longer exists but you may use [toFilePointer()](/v3/basics/image-output#transform-encoded-image-to-file-pointer)
