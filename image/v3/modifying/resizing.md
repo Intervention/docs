@@ -112,7 +112,7 @@ $image->scale(200, 100); // 200 x 150
 
 > public Image::scaleDown(?int $width, ?int $height): ImageInterface
 
-The method `scale()` resize the image and maintain the aspect ratio. While
+The method `scale()` resizes the image and maintains the aspect ratio. While
 `scaleDown()` is similar to `scale()` the only difference is it doesn't exceed the original size of the
 image. The method support [named arguments](https://www.php.net/manual/en/functions.arguments.php#functions.named-arguments)
 to target just one axis for the modification. 
