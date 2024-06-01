@@ -33,6 +33,32 @@ $result = $manager->read('images/animation.gif')->isAnimated();
 
 ## Editing Animations
 
+### Reading the Animation Frame Count
+
+> public Image::count(): int
+
+Read the number of animation frames. `ImageInterface::class` extends
+`Countable::class`, so it is possible to use the image object with the
+[count()](https://www.php.net/manual/en/function.count.php) function.
+
+#### Examples
+
+```php
+use Intervention\Image\ImageManager;
+
+// create new manager instance with desired driver
+$manager = ImageManager::gd();
+
+// reading an animated gif
+$image = $manager->read('images/animation.gif');
+
+// read number if animation frames
+$count = $image->count();
+
+// same result with count() function
+$count = count($image);
+```
+
 ### Changing the Animation Frames
 
 > public Image::sliceAnimation(int $offset, null|int $length = null): ImageInterface

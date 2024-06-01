@@ -14,6 +14,7 @@ Optional array of allowed lengths (8 or 13) to check only for EAN-8 or EAN-13 or
 ### Example
 
 ```php
+use Illuminate\Support\Facades\Validator;
 use Intervention\Validation\Rules\Ean;
 
 $validator = Validator::make($request->all(), [
@@ -22,6 +23,7 @@ $validator = Validator::make($request->all(), [
 ```
 
 ```php
+use Illuminate\Support\Facades\Validator;
 use Intervention\Validation\Rules\Ean;
 
 $validator = Validator::make($request->all(), [

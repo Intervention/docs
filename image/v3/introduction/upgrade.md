@@ -45,8 +45,7 @@ There are a few key features that further improve the library.
 
 ## Removed Features
 
-- [colorize()](/v2/api/colorize) no longer exists
-- [interlace()](/v2/api/interlace) no longer exists
+- [interlace()](/v2/api/interlace) no longer exists and is handle by [encoder options](/v3/basics/image-output).
 - [backup()](/v2/api/backup) and [reset()](/v2/api/reset) no longer exist but the functionality can be achieved more easily with [native object cloning](https://www.php.net/manual/en/language.oop5.cloning.php)
 - [basepath()](/v2/api/base-path) no longer exists
 - [cache()](/v2/api/cache) no longer exists
