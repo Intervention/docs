@@ -125,17 +125,27 @@ return [
 ```
 
 Now you can configure the driver of Intervention Image. By default, the bundle
-is using the GD library with Intervention Image. This can be easily configured
-by creating a file `config/packages/intervention_image.yaml` and setting the
-driver class as follows. 
+is using the GD library with Intervention Image. This and others options can be
+easily configured by creating a file `config/packages/intervention_image.yaml`
+and setting the driver class and the default options as follows. 
 
 ```yaml
 intervention_image:
-  driver: Intervention\Image\Drivers\Imagick\Driver
+  driver: Intervention\Image\Drivers\Gd\Driver
+  options:
+    autoOrientation: true
+    decodeAnimation: true
+    blendingColor: 'ffffff'
 ```
 
-You can choose between the two supplied drivers `Intervention\Image\Drivers\Gd\Driver` and
+First choose between the two supplied drivers `Intervention\Image\Drivers\Gd\Driver` and
 `Intervention\Image\Drivers\Imagick\Driver` for example.
+
+Then you can then use the options to determine the behavior of the library. Read more about the different options for
+[driver selection](/v3/basics/image-manager#driver-selection), setting options for 
+[auto orientation](/v3/modifying/effects#image-orientation-according-to-exif-data), 
+[decoding animations](/v3/modifying/animations) and 
+[blending color](/v3/basics/colors#transparency).
 
 The integration is now complete and it is possible to access the
 [ImageManager](/v3/basics/instantiation) via dependency injection. For example:
