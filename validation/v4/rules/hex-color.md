@@ -14,6 +14,7 @@ Pass optionally allowed lengths as an array to check only for shorthand (3 or 4 
 ### Example
 
 ```php
+use Illuminate\Support\Facades\Validator;
 use Intervention\Validation\Rules\HexColor;
 
 $validator = Validator::make($request->all(), [

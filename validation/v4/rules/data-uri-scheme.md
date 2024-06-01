@@ -15,6 +15,7 @@ allow all valid media types or an array of allowed types.
 ### Example
 
 ```php
+use Illuminate\Support\Facades\Validator;
 use Intervention\Validation\Rules\DataUri;
 
 $validator = Validator::make($request->all(), [
@@ -23,6 +24,7 @@ $validator = Validator::make($request->all(), [
 ```
 
 ```php
+use Illuminate\Support\Facades\Validator;
 use Intervention\Validation\Rules\DataUri;
 
 $validator = Validator::make($request->all(), [

@@ -14,6 +14,7 @@ Array of allowed country code strings in [ISO-639-1](https://en.wikipedia.org/wi
 ### Example
 
 ```php
+use Illuminate\Support\Facades\Validator;
 use Intervention\Validation\Rules\Postalcode;
 
 $validator = Validator::make($request->all(), [
@@ -39,6 +40,7 @@ The key where the country code is stored in the validation data.
 ### Example
 
 ```php
+use Illuminate\Support\Facades\Validator;
 use Intervention\Validation\Rules\Postalcode;
 
 $validator = Validator::make($request->all(), [

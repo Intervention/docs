@@ -14,6 +14,7 @@ Optional array of allowed lengths to check only for ISBN-10 or ISBN-13.
 ### Example
 
 ```php
+use Illuminate\Support\Facades\Validator;
 use Intervention\Validation\Rules\Isbn;
 
 $validator = Validator::make($request->all(), [
@@ -22,6 +23,7 @@ $validator = Validator::make($request->all(), [
 ```
 
 ```php
+use Illuminate\Support\Facades\Validator;
 use Intervention\Validation\Rules\Isbn;
 
 $validator = Validator::make($request->all(), [

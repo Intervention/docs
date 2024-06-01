@@ -14,6 +14,7 @@ Optional array of allowed lengths to check only for certain types (GTIN-8, GTIN-
 ### Example
 
 ```php
+use Illuminate\Support\Facades\Validator;
 use Intervention\Validation\Rules\Gtin;
 
 // validate GTIN
@@ -23,6 +24,7 @@ $validator = Validator::make($request->all(), [
 ```
 
 ```php
+use Illuminate\Support\Facades\Validator;
 use Intervention\Validation\Rules\Gtin;
 
 // validate GTIN-8 or GTIN-12

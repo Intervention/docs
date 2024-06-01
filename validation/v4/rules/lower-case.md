@@ -12,6 +12,7 @@ none
 ### Example
 
 ```php
+use Illuminate\Support\Facades\Validator;
 use Intervention\Validation\Rules\Lowercase;
 
 $validator = Validator::make($request->all(), [
