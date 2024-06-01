@@ -1,13 +1,14 @@
-# Austrian Social Insurance Number Rule
+# Austrian Insurance Number Rule
 ## Validate the Austria Social Insurance Number
 
 > public Intervention\Validation\Rules\AustrianInsuranceNumber::__construct()
 
-Checks for a valid [austrian social insurance number](https://www.sozialversicherung.at/cdscontent/?contentid=10007.820902&viewmode=content).
+Checks for a valid [austrian social insurance number](https://de.wikipedia.org/wiki/Sozialversicherungsnummer#%C3%96sterreich).
 
 ### Example
 
 ```php
+use Illuminate\Support\Facades\Validator;
 use Intervention\Validation\Rules\AustrianInsuranceNumber;
 
 // validate GTIN
