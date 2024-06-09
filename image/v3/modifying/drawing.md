@@ -242,14 +242,14 @@ $image->drawPolygon(function (PolygonFactory $polygon) {
 
 > public Image::drawBezier(callable $init): ImageInterface
 
-This method draws [Bezier curves](https://en.wikipedia.org/wiki/B%C3%A9zier_curve)
-over the control points specified in the callback. The type of curve depends on 
-the number of control points, which must be either three or four. With three control
-points, the result is a **quadratic Bezier curve**, while four points result in a **cubic
-curve**. The first and last point defines the start and end point of the Bezier curve.
+This method draws [Bézier curves](https://en.wikipedia.org/wiki/B%C3%A9zier_curve), the 
+shape of which is defined by a set of control points specified in the callback.
+The type of curve drawn depends on the number of control points specified, 
+which must be either three or four. With three control points, the result is a 
+**quadratic Bézier curve**, while four points result in a **cubic Bézier curve**. The 
+first and last control points define the start and end points of the curve.
 
-The color, width and background color of the curve can also be set using the
-callback.
+The color, width and background color of the curve can also be set using the callback.
 
 #### Parameters
 
