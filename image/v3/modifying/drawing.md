@@ -1,7 +1,9 @@
 # Drawing
-## Drawing Geometric Shapes on Images
+## Draw Geometric Shapes on Images
 
 [TOC]
+
+## Colors & Pixels
 
 ### Fill Images with Color
 
@@ -37,7 +39,7 @@ $image = $manager->read('images/example.png');
 $image = $image->fill('#b53717', 10, 10);
 ```
 
-## Drawing a Pixel
+### Draw Pixels
 
 > public Image::drawPixel(int $x, int $y, mixed $color = null): ImageInterface
 
@@ -68,7 +70,10 @@ $image->drawPixel(100, 1, 'rgb(255, 255, 0)');
 $image->drawPixel(200, 2, 'orange');
 ```
 
-## Drawing a Rectangle
+
+## Geometric Shapes
+
+### Draw a Rectangle
 
 > public Image::drawRectangle(int $x, int $y, ?callable $init = null): ImageInterface
 
@@ -101,7 +106,7 @@ $image->drawRectangle(10, 10, function (RectangleFactory $rectangle) {
 });
 ```
 
-## Drawing Ellipses
+### Draw Ellipses
 
 > public Image::drawEllipse(int $x, int $y, ?callable $init = null): ImageInterface
 
@@ -134,7 +139,7 @@ $image->drawEllipse(10, 10, function (EllipseFactory $ellipse) {
 });
 ```
 
-## Drawing a Circle
+### Draw a Circle
 
 > public Image::drawCircle(int $x, int $y, ?callable $init = null): ImageInterface
 
@@ -167,7 +172,7 @@ $image->drawCircle(10, 10, function (CircleFactory $circle) {
 });
 ```
 
-## Drawing a Line
+### Draw a Line
 
 > public Image::drawLine(?callable $init = null): ImageInterface
 
@@ -199,7 +204,7 @@ $image->drawLine(function (LineFactory $line) {
 });
 ```
 
-## Drawing a Polygon
+### Draw a Polygon
 
 > public Image::drawPolygon(callable $init): ImageInterface
 
@@ -230,5 +235,54 @@ $image->drawPolygon(function (PolygonFactory $polygon) {
     $polygon->point(60, 100); // add point
     $polygon->background('#b35187'); // background color
     $polygon->border('#ff0', 6); // border color and border width
+});
+```
+
+### Draw Bezier Curves
+
+> public Image::drawBezier(callable $init): ImageInterface
+
+This method draws [Bezier curves](https://en.wikipedia.org/wiki/B%C3%A9zier_curve)
+over the control points specified in the callback. The type of curve depends on 
+the number of control points, which must be either three or four. With three control
+points, the result is a **quadratic Bezier curve**, while four points result in a **cubic
+curve**. The first and last point defines the start and end point of the Bezier curve.
+
+The color, width and background color of the curve can also be set using the
+callback.
+
+#### Parameters
+
+| Name | Type | Description |
+| - | - | - |
+| init | callable | Callback to define the appearance and position of the bezier curve. See example. |
+
+#### Example
+
+```php
+use Intervention\Image\ImageManager;
+use Intervention\Image\Geometry\Factories\BezierFactory;
+
+// create a new image
+$image = ImageManager::gd()
+    ->create(500, 500)
+    ->fill('666');
+
+// draw a yellow quadratic bezier curve with a filled red background
+$image->drawBezier(function (BezierFactory $bezier) {
+    $bezier->point(300, 260); // control point 1
+    $bezier->point(150, 335); // control point 2
+    $bezier->point(300, 410); // control point 3
+    $bezier->background('f00'); // background color
+    $bezier->border('ff0'); // border color
+});
+
+// draw a 4px red cubic bezier curve with four control points
+$image->drawBezier(function (BezierFactory $bezier) {
+    $bezier->point(50, 50); // control point 1
+    $bezier->point(200, 50); // control point 2
+    $bezier->point(150, 200); // control point 3
+    $bezier->point(300, 200); // control point 4
+    $bezier->border('ff0000', 4); // border color & size
 });
 ```
