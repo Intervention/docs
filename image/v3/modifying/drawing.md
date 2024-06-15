@@ -75,7 +75,7 @@ $image->drawPixel(200, 2, 'orange');
 
 ### Draw a Rectangle
 
-> public Image::drawRectangle(int $x, int $y, ?callable $init = null): ImageInterface
+> public Image::drawRectangle(int $x, int $y, Closure|Rectangle $init): ImageInterface
 
 Draw a colored rectangle on the current image with its top left position at the **x, y** coordinates. Define the overall appearance of the shape by passing a **init** callback as an optional parameter.
 
@@ -85,7 +85,7 @@ Draw a colored rectangle on the current image with its top left position at the 
 | - | - | - |
 | x | integer | Position of the top left corner of the rectangle on x-axis of the current image |
 | y | integer | Position of the top left corner of the rectangle on y-axis of the current image |
-| init | callable | Callback to define the appearance of the rectangle. See example. |
+| init | Closure or Intervention\Image\Geometry\Rectangle | Callback to define the appearance of the rectangle or Rectangle object. See example. |
 
 #### Example
 
@@ -108,7 +108,7 @@ $image->drawRectangle(10, 10, function (RectangleFactory $rectangle) {
 
 ### Draw Ellipses
 
-> public Image::drawEllipse(int $x, int $y, ?callable $init = null): ImageInterface
+> public Image::drawEllipse(int $x, int $y, Closure|Ellipse $init): ImageInterface
 
 Draw a colored ellipse on the current image with its center position at the **x, y** coordinates. Define the overall appearance of the shape by passing a **init** callback as an optional parameter.
 
@@ -118,7 +118,7 @@ Draw a colored ellipse on the current image with its center position at the **x,
 | - | - | - |
 | x | integer | Position of the center of the ellipse on x-axis of the current image |
 | y | integer | Position of the center of the ellipse on y-axis of the current image |
-| init | callable | Callback to define the appearance of the ellipse. See example. |
+| init | Closure or Intervention\Image\Geometry\Ellipse | Callback to define the appearance of the ellipse or Ellipse object. See example. |
 
 #### Example
 
@@ -141,7 +141,7 @@ $image->drawEllipse(10, 10, function (EllipseFactory $ellipse) {
 
 ### Draw a Circle
 
-> public Image::drawCircle(int $x, int $y, ?callable $init = null): ImageInterface
+> public Image::drawCircle(int $x, int $y, Closure|Circle $init): ImageInterface
 
 Draw a colored circle on the current image with its center position at the **x, y** coordinates. Define the overall appearance of the shape by passing a **init** callback as an optional parameter.
 
@@ -151,7 +151,7 @@ Draw a colored circle on the current image with its center position at the **x, 
 | - | - | - |
 | x | integer | Position of the center of the circle on x-axis of the current image |
 | y | integer | Position of the center of the circle on y-axis of the current image |
-| init | callable | Callback to define the appearance of the circle. See example. |
+| init | Closure or Intervention\Image\Geometry\Circle | Callback to define the appearance of the circle or object. See example. |
 
 #### Example
 
@@ -174,7 +174,7 @@ $image->drawCircle(10, 10, function (CircleFactory $circle) {
 
 ### Draw a Line
 
-> public Image::drawLine(?callable $init = null): ImageInterface
+> public Image::drawLine(Closure|Line $init): ImageInterface
 
 Draw a line on the current image. Define the overall appearance of the shape by passing a **init** callback as an optional parameter.
 
@@ -182,7 +182,7 @@ Draw a line on the current image. Define the overall appearance of the shape by 
 
 | Name | Type | Description |
 | - | - | - |
-| init | callable | Callback to define the appearance of the line. See example. |
+| init | Closure or Intervention\Image\Geometry\Line | Callback to define the appearance of the line or line object. See example. |
 
 #### Example
 
@@ -206,7 +206,7 @@ $image->drawLine(function (LineFactory $line) {
 
 ### Draw a Polygon
 
-> public Image::drawPolygon(callable $init): ImageInterface
+> public Image::drawPolygon(Closure|Polygon $init): ImageInterface
 
 Draw a polygon on the current image. Define the overall appearance of the shape by passing a **init** callback as an optional parameter.
 
@@ -214,7 +214,7 @@ Draw a polygon on the current image. Define the overall appearance of the shape 
 
 | Name | Type | Description |
 | - | - | - |
-| init | callable | Callback to define the appearance of the line. See example. |
+| init | Closure or Intervention\Image\Geometry\Polygon | Callback to define the appearance of the polygon or polygon object. See example. |
 
 #### Example
 
@@ -240,7 +240,7 @@ $image->drawPolygon(function (PolygonFactory $polygon) {
 
 ### Draw Bezier Curves
 
-> public Image::drawBezier(callable $init): ImageInterface
+> public Image::drawBezier(Closure|Bezier $init): ImageInterface
 
 This method draws [Bézier curves](https://en.wikipedia.org/wiki/B%C3%A9zier_curve), the 
 shape of which is defined by a set of control points specified in the callback.
@@ -255,7 +255,7 @@ The color, width and background color of the curve can also be set using the cal
 
 | Name | Type | Description |
 | - | - | - |
-| init | callable | Callback to define the appearance and position of the bezier curve. See example. |
+| init | Closure or Intervention\Image\Geometry\Bezier | Callback to define the appearance and position of the bezier curve or object. See example. |
 
 #### Example
 
