@@ -33,6 +33,57 @@ This command will publish the configuration file `image.php` to your `app/config
 directory. In this file you can set the desired driver for Intervention Image. 
 By default the library is configured to use GD library for image processing.
 
+The configuration files looks like this.
+
+```php
+return [
+
+    /*
+    |--------------------------------------------------------------------------
+    | Image Driver
+    |--------------------------------------------------------------------------
+    |
+    | Intervention Image supports “GD Library” and “Imagick” to process images
+    | internally. Depending on your PHP setup, you can choose one of them.
+    |
+    | Included options:
+    |   - \Intervention\Image\Drivers\Gd\Driver::class
+    |   - \Intervention\Image\Drivers\Imagick\Driver::class
+    |
+    */
+
+    'driver' => \Intervention\Image\Drivers\Gd\Driver::class,
+
+    /*
+    |--------------------------------------------------------------------------
+    | Configuration Options
+    |--------------------------------------------------------------------------
+    |
+    | These options control the behavior of Intervention Image.
+    |
+    | - "autoOrientation" controls whether an imported image should be
+    |    automatically rotated according to any existing Exif data.
+    |
+    | - "decodeAnimation" decides whether a possibly animated image is
+    |    decoded as such or whether the animation is discarded.
+    |
+    | - "blendingColor" Defines the default blending color.
+    */
+
+    'options' => [
+        'autoOrientation' => true,
+        'decodeAnimation' => true,
+        'blendingColor' => 'ffffff',
+    ]
+];
+```
+
+You can read more about the different options for
+[driver selection](/v3/basics/image-manager#driver-selection), setting options for 
+[auto orientation](/v3/modifying/effects#image-orientation-according-to-exif-data), 
+[decoding animations](/v3/modifying/animations) and 
+[blending color](/v3/basics/colors#transparency).
+
 The integration is now complete and it is possible to access the
 [ImageManager](/v3/basics/instantiation) via Laravel's facade.
 
@@ -74,17 +125,27 @@ return [
 ```
 
 Now you can configure the driver of Intervention Image. By default, the bundle
-is using the GD library with Intervention Image. This can be easily configured
-by creating a file `config/packages/intervention_image.yaml` and setting the
-driver class as follows. 
+is using the GD library with Intervention Image. This and others options can be
+easily configured by creating a file `config/packages/intervention_image.yaml`
+and setting the driver class and the default options as follows. 
 
 ```yaml
 intervention_image:
-  driver: Intervention\Image\Drivers\Imagick\Driver
+  driver: Intervention\Image\Drivers\Gd\Driver
+  options:
+    autoOrientation: true
+    decodeAnimation: true
+    blendingColor: 'ffffff'
 ```
 
-You can choose between the two supplied drivers `Intervention\Image\Drivers\Gd\Driver` and
+First choose between the two supplied drivers `Intervention\Image\Drivers\Gd\Driver` and
 `Intervention\Image\Drivers\Imagick\Driver` for example.
+
+Then you can then use the options to determine the behavior of the library. Read more about the different options for
+[driver selection](/v3/basics/image-manager#driver-selection), setting options for 
+[auto orientation](/v3/modifying/effects#image-orientation-according-to-exif-data), 
+[decoding animations](/v3/modifying/animations) and 
+[blending color](/v3/basics/colors#transparency).
 
 The integration is now complete and it is possible to access the
 [ImageManager](/v3/basics/instantiation) via dependency injection. For example:

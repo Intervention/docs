@@ -216,12 +216,45 @@ use Intervention\Image\ImageManager;
 // create new manager instance with desired driver
 $manager = ImageManager::gd();
 
-// reading an image
+// read an image
 $image = $manager->read('images/example.png');
 
 // rotate image 45 degrees clockwise 
 $image = $image->rotate(-45);
 ```
+
+
+
+### Image Orientation According to Exif Data
+
+> public Image::orient(): ImageInterface
+
+This method uses Exif data to automatically orient images correctly. **This
+rotation is performed automatically by default.** So you don't have to call this
+method unless you have [deactivated the auto orientation in the ImageManager
+configuration](/v3/basics/image-manager).
+
+#### Examples
+
+```php
+use Intervention\Image\ImageManager;
+
+// create new manager instance without auto exif orientation
+$manager = ImageManager::gd(autoOrientation: false);
+
+// read the image
+$image = $manager->read('images/example.jpg');
+
+// orient image according to exif data
+$image = $image->orient();
+```
+
+
+
+
+
+
+
 
 ### Blur Effect
 

@@ -3,8 +3,15 @@
 
 [TOC]
 
-## Detect Animations
+By default, both drivers included with Intervention Image support animations.
+However, the GD driver must use additional resources as it does not has
+animation support by default. 
 
+If you read images without the intention of processing the animation at all,
+this process can be [deactivated in advance in the image manager
+configuration](/v3/basics/image-manager) to save resources.
+
+## Detect Animations
 ### Check the Current Image Instance for Animation
 
 > public Image::isAnimated(): bool
