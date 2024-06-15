@@ -1,9 +1,7 @@
 # Drawing
-## Draw Colors & Shapes on Images
+## Drawing Geometric Shapes on Images
 
 [TOC]
-
-## Colors
 
 ### Fill Images with Color
 
@@ -39,9 +37,7 @@ $image = $manager->read('images/example.png');
 $image = $image->fill('#b53717', 10, 10);
 ```
 
-## Geometric Shapes
-
-### Draw a Pixel
+## Drawing a Pixel
 
 > public Image::drawPixel(int $x, int $y, mixed $color = null): ImageInterface
 
@@ -72,7 +68,7 @@ $image->drawPixel(100, 1, 'rgb(255, 255, 0)');
 $image->drawPixel(200, 2, 'orange');
 ```
 
-### Draw a Rectangle
+## Drawing a Rectangle
 
 > public Image::drawRectangle(int $x, int $y, ?callable $init = null): ImageInterface
 
@@ -105,7 +101,7 @@ $image->drawRectangle(10, 10, function (RectangleFactory $rectangle) {
 });
 ```
 
-### Draw Ellipses
+## Drawing Ellipses
 
 > public Image::drawEllipse(int $x, int $y, ?callable $init = null): ImageInterface
 
@@ -138,7 +134,7 @@ $image->drawEllipse(10, 10, function (EllipseFactory $ellipse) {
 });
 ```
 
-### Draw a Circle
+## Drawing a Circle
 
 > public Image::drawCircle(int $x, int $y, ?callable $init = null): ImageInterface
 
@@ -171,7 +167,7 @@ $image->drawCircle(10, 10, function (CircleFactory $circle) {
 });
 ```
 
-### Draw a Line
+## Drawing a Line
 
 > public Image::drawLine(?callable $init = null): ImageInterface
 
@@ -203,7 +199,7 @@ $image->drawLine(function (LineFactory $line) {
 });
 ```
 
-### Draw a Polygon
+## Drawing a Polygon
 
 > public Image::drawPolygon(callable $init): ImageInterface
 
@@ -235,50 +231,4 @@ $image->drawPolygon(function (PolygonFactory $polygon) {
     $polygon->background('#b35187'); // background color
     $polygon->border('#ff0', 6); // border color and border width
 });
-```
-
-### Universal Draw Method
-
-> public Image::draw(DrawableInteface $drawable): ImageInterface
-
-This universal method takes all objects that implement DrawableInterface::class and draws them on the current image instance.
-
-This can be useful if you want to draw a shape repeatedly in different sizes, but do not want to call the callback again and again.
-
-#### Parameters
-
-| Name | Type | Description |
-| - | - | - |
-| drawable | DrawableInteface | Geometric shape to be drawn on the image. |
-
-#### Example
-
-```php
-use Intervention\Image\ImageManager;
-use Intervention\Image\Geometry\Factories\Drawable;
-
-// create an test image from a file
-$manager = ImageManager::imagick();
-$image = $manager->read('test.png');
-
-// create circle
-$circle = Drawable::circle()
-    ->border('ff0055')
-    ->position(200, 200)
-    ->create();
-
-$rectangle = Drawable::rectangle()
-    ->border('ff0055')
-    ->position(100, 100)
-    ->size(200, 200)
-    ->create();
-
-// draw circle instance with 100px diameter
-$image->draw($circle->setDiameter(100));
-
-// draw same circle instance with different diameter
-$image->draw($circle->setDiameter(150));
-
-// draw rectangle
-$image->draw($rectangle);
 ```
