@@ -255,7 +255,7 @@ The color, width and background color of the curve can also be set using the cal
 
 | Name | Type | Description |
 | - | - | - |
-| init | Closure or Intervention\Image\Geometry\Bezier | Callback to define the appearance and position of the bezier curve or object. See example. |
+| init | Closure or Intervention\Image\Geometry\Bezier | Callback to define the appearance and position of the bézier curve or object. See example. |
 
 #### Example
 
