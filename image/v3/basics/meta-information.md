@@ -146,7 +146,7 @@ $image->setResolution(300, 300);
 ## Exif Information
 
 Currently Intervention Image is only able to read Exif information. The
-possibility to change certain information blocks is not implemented.
+possibility to write Exif data blocks is not implemented.
 
 ### Reading Exif Information
 
@@ -156,6 +156,8 @@ This function reads Exif information from the current image instance. You have
 the option to pass a parameter to read a specific block of information from the
 Exif data directly. If no parameter is passed, all data will be returned. If
 the specified block is not found, `null` is returned as result.
+
+**To use this function, the PHP Exif extension must be installed.**
 
 #### Parameters
 
