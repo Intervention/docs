@@ -12,12 +12,13 @@ some formats are readable and writable.
 | Format | GD | Imagick |
 | - | - | - |
 | JPEG | ✅ | ✅ |
-| WebP | ✅ | ✅ |
 | GIF | ✅ | ✅ |
 | Animated GIF | ✅ | ✅ |
 | PNG | ✅ | ✅ |
 | AVIF | ✅ | ✅ |
 | Bitmap | ✅ | ✅ |
+| WebP | ✅ | ✅ |
+| Animated WebP | ❌ | ✅ |
 | TIFF | ❌ | ✅ |
 | JPEG 2000 | ❌ | ✅ |
 | HEIC | ❌ | ✅ |
