@@ -41,7 +41,7 @@ color](/v3/basics/colors#transparency) is.
 | driver | string or DriverInterface | Image Manager driver instance or driver class name |
 | autoOrientation | bool | (optional) Decides whether the image should be automatically aligned based on the Exif data. Default: `true` |
 | decodeAnimation | bool | (optional) Whether a possibly animated image is decoded as such or whether the animation is discarded. Default: `true` |
-| blendingColor | bool | (optional) The default blending color. Default: `ffffff` |
+| blendingColor | mixed | (optional) The default blending color. Default: `ffffff` |
 
 #### Examples
 
