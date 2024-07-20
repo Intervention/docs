@@ -11,6 +11,7 @@ architecture and API that takes advantage of the modern features of PHP 8+.
 There are a few key features that further improve the library.
 
 - [Support of animated GIF with GD and Imagick drivers](/v3/basics/instantiation#creating-animations)
+- [Configurable Image Manager](/v3/basics/image-manager#create-a-new-image-manager-instance)
 - [Support for colorspaces](/v3/basics/meta-information)
 - [Support for text wrapping in font system](/v3/modifying/text-fonts)
 - [Support for line height in font system](/v3/modifying/text-fonts)
