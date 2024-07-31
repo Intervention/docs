@@ -57,6 +57,7 @@ There are a few key features that further improve the library.
 - [psrResponse()](/v2/api/psr-response) no longer exists
 - [response()](/v2/api/response) no longer exists
 - [stream()](/v2/api/stream) no longer exists but you may use [toFilePointer()](/v3/basics/image-output#transform-encoded-image-to-file-pointer)
+- [destroy()](/v2/api/destroy) no longer exists but you can use PHP's own functions, such as [unset](https://www.php.net/manual/en/function.unset), to free memory
 
 ## Other Changes
 
