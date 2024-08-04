@@ -9,10 +9,8 @@
 
 > public ImageManager::read(mixed $input, string|array|DecoderInterface $decoders = []): ImageInterface
 
-With Intervention Image you are able to read images from severeal different
-sources. The starting point is an instance of the
-`Intervention\Image\ImageManager` class. This class provides a universal method
-`read()` to read different types of image sources.
+Now that the [Image Manager is configured and instantiated](/v3/basics/image-manager), its methods can be
+used to read images from many different sources.
 
 #### Parameters
 

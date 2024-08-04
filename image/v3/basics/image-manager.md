@@ -3,17 +3,13 @@
 
 [TOC]
 
-The image manager is the starting point for all operations. With this class you
-determine the driver to use, the configuration options and call the methods
-needed for instantiation.
-
 ## Create a new Image Manager Instance
 
 > public ImageManager::__construct(string|DriverInterface $driver, mixed ...$options): ImageManager
 
-The image manager instantiation configures the entire setup and specifies the
-driver. The possible values for the driver are either an instance or a class
-name of driver.
+The image manager is the starting point for all operations. With this class you
+determine the driver to use, the configuration options and call the methods
+needed for [reading images from different sources](/v3/basics/instantiation#reading-image-sources).
 
 #### Driver Selection
 
