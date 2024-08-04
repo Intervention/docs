@@ -393,7 +393,7 @@ use Intervention\Image\ImageManager;
 use Intervention\Image\Drivers\Gd\Driver;
 
 // create new manager instance with desired driver and default blending color
-$Banager = new ImageManager(Driver::class);
+$manager = new ImageManager(Driver::class);
 
 // read a transparent image
 $image = $manager->read('images/example.png');
