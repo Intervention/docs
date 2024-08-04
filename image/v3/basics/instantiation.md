@@ -27,11 +27,12 @@ This method not only supports filepaths as an argument. The following argument f
 
 - Path in filesystem
 - File Pointer resource
-- SplFileInfo object
+- `SplFileInfo` object
 - Raw binary image data
 - Base64 encoded image data
 - Data Uri
-- Intervention Image Instance
+- Intervention Image Instance (instance of `Intervention\Image\Image`)
+- Encoded Intervention Image (instance of `Intervention\Image\EncodedImage`)
 - Driver-specific image (instance of `GDImage` or `Imagick`)
 
 To decode the raw input data, you can optionally specify a decoding strategy
