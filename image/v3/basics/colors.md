@@ -319,9 +319,56 @@ This color can be specified in advance in the initial [configuration of the
 image manager](/v3/basics/image-manager) or as an optional argument in the following
 method.
 
-### Merging Transparent Areas with Color
+It is also possible to set or read the blending color at runtime using the following methods.
 
-> public function blendTransparency(mixed $color = null): ColorInterface
+### Read the Blending Color
+
+> public function blendingColor(): ColorInterface
+
+Return the currently set blending color as an instance of
+`ColorInterface::class`. This corresponds either to the color originally
+configured via the ImageManager or the blending color that was last set.
+
+### Set the Blending Color
+
+> public function setBlendingColor(mixed $color): ImageInterface
+
+Set a new blending color in the configuration of the current image instance.
+This color will be used as the default for all subsequent operations which use
+blending color and will overwrite the originally defined value in the ImageManager
+configuration.
+
+#### Parameters
+
+| Name | Type | Description |
+| - | - | - |
+| color | mixed | New blending color in supported [color formats](/v3/introduction/formats#color-formats). |
+
+#### Examples
+
+```php
+use Intervention\Image\ImageManager;
+use Intervention\Image\Drivers\Gd\Driver;
+
+// create new manager instance with desired driver and red as blending color
+$manager = new ImageManager(Driver::class, blendingColor: 'ff0000');
+
+// read image
+$image = $manager->read('images/example.png');
+
+// read configured blending color
+$blendingColor = $image->blendingColor(); // 'ff0000'
+
+// set grey as blending color
+$image->setBlendingColor('cccccc');
+
+// read last set blending color
+$blendingColor = $image->blendingColor(); // 'cccccc'
+```
+
+### Merge Transparent Areas with Color
+
+> public function blendTransparency(mixed $color = null): ImageInterface
 
 When switching to a non-transparent image format, the transparency is
 automatically replaced with the [configured blending

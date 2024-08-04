@@ -273,15 +273,31 @@ $encoded = $image->toWebp(60); // Intervention\Image\EncodedImage
 
 ### Encoding PNG Format
 
-> public Image::toPng(bool $interlaced = false): EncodedImage
+> public Image::toPng(bool $interlaced = false, bool $indexed = false): EncodedImage
 
-Encode the current image instance in PNG format.
+This method encodes the current image instance in PNG format. Further details
+of the format can be defined via the parameters. It is possible to set the
+encoding method for the PNG image to `interlaced`, which means the image can be
+progressively rendered; sequential saving is used here by default.
+
+The second option `indexed` determines whether the image is saved with an
+indexed color palette and a limited number of colors. With this option, the
+colors are automatically reduced, which results in smaller file sizes, but can
+also lead to a loss of quality in the coloring. By default, the encoder always
+outputs truecolor format.
+
+Note that with indexed color palettes Intervention Image does not support
+semi-transparent pixels. These pixels are mixed against the currently
+configured [blending color](/v3/basics/colors#transparency). This has a particular effect on color areas whose
+borders are anti-aliased with transparency. Areas with 100% transparency are
+retained.
 
 **Caution: The signature has changed in version 3.1 by removing the parameter `color_limit`**
 
 | Name | Type | Description |
 | - | - | - |
 | interlaced (optional) | bool | Option to encode the image interlaced. |
+| indexed (optional) | bool | Option encoded PNG format with an indexed color palette. |
 
 ```php
 use Intervention\Image\ImageManager;
@@ -293,8 +309,11 @@ $manager = new ImageManager(Driver::class);
 // reading jpg image
 $image = $manager->read('images/example.jpg');
 
-// encoding as png image
+// encoding as truecolor png image
 $encoded = $image->toPng(); // Intervention\Image\EncodedImage
+
+// encoding png format with and indexed color palette
+$encoded = $image->toPng(indexed: true); // Intervention\Image\EncodedImage
 ```
 
 ### Encoding GIF Format
