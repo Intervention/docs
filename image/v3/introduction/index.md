@@ -19,8 +19,8 @@ PHP's two most common image processing libraries **GD Library** and **Imagick**.
 
 The library is written to make PHP image manipulation easy and effortless.
 Whether you want to create image thumbnails, set watermarks, or format large
-large image files, Intervention Image helps you accomplish any task with just a
-few lines of code. 
+image files, Intervention Image helps you accomplish any task with just a few
+lines of code. 
 
 Version 3 improves on the solid features and adds unique new details.
 
