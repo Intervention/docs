@@ -278,26 +278,22 @@ $encoded = $image->toWebp(60); // Intervention\Image\EncodedImage
 This method encodes the current image instance in PNG format. Further details
 of the format can be defined via the parameters. It is possible to set the
 encoding method for the PNG image to `interlaced`, which means the image can be
-progressively rendered; sequential saving is used here by default.
+progressively rendered; non-interlaced sequential saving is used here by
+default.
 
 The second option `indexed` determines whether the image is saved with an
-indexed color palette and a limited number of colors. With this option, the
-colors are automatically reduced, which results in smaller file sizes, but can
-also lead to a loss of quality in the coloring. By default, the encoder always
-outputs truecolor format.
+indexed (limited) color palette. With this option, the colors are automatically
+reduced, which results in smaller file sizes, but can also lead to a loss of
+quality in the coloring. By default, the encoder always outputs truecolor
+format.
 
-Note that with indexed color palettes Intervention Image does not support
-semi-transparent pixels. These pixels are mixed against the currently
-configured [blending color](/v3/basics/colors#transparency). This has a particular effect on color areas whose
-borders are anti-aliased with transparency. Areas with 100% transparency are
-retained.
-
-**Caution: The signature has changed in version 3.1 by removing the parameter `color_limit`**
+**Please note that the GD driver for PNG output with indexed color palette only
+supports binary transparency.**
 
 | Name | Type | Description |
 | - | - | - |
 | interlaced (optional) | bool | Option to encode the image interlaced. |
-| indexed (optional) | bool | Option encoded PNG format with an indexed color palette. |
+| indexed (optional) | bool | Option for encoding PNG format with an indexed color palette. |
 
 ```php
 use Intervention\Image\ImageManager;
