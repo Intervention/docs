@@ -77,7 +77,7 @@ originally read image's mime type.
 | Name | Type | Description |
 | - | - | - |
 | type (optional) | null or string | Target media (MIME) type into which the image is encoded. By default the original media type is used. |
-| quality (optional) | int | Quality of the resulting image |
+| options (optional) | mixed | Option parameters depending on the output format. |
 
 #### Example
 
@@ -131,7 +131,8 @@ information to extract the target format.**
 
 | Name | Type | Description |
 | - | - | - |
-| path (optional) | null or string | File path from which the target format is extracted. |
+| path (optional) | null or string | File path from which the target format is extracted. By default the original file path is used. |
+| options (optional) | mixed | Option parameters depending on the output format. |
 
 #### Example
 
@@ -175,8 +176,8 @@ given the image will be encoded to the format of the originally read image.
 
 | Name | Type | Description |
 | - | - | - |
-| extension (optional) | null, string, FileExtension | File extension that determines the target format. |
-| quality (optional) | int | Quality of the resulting image |
+| extension (optional) | null, string, FileExtension | File extension that determines the target format. By default the original file extension is used. |
+| options (optional) | mixed | Option parameters depending on the output format. |
 
 #### Example
 
@@ -224,7 +225,7 @@ ranging between 0 for low quality to 100 for best quality.
 
 | Name | Type | Description |
 | - | - | - |
-| quality (optional) | integer | Encoding quality ranging from `0` to `100` |
+| quality (optional) | integer | Encoding quality ranging from `0` to `100`. By default 75. |
 | progressive (optional) | boolean | Option to encode the image in progressive Jpeg format. Disabled by default. |
 
 #### Example
@@ -253,7 +254,7 @@ Encode the current image instance in the WebP graphic format in the given **qual
 
 | Name | Type | Description |
 | - | - | - |
-| quality (optional) | integer | Encoding quality |
+| quality (optional) | integer | Encoding quality. 75 by default. |
 
 #### Example
 
@@ -292,8 +293,8 @@ supports binary transparency.**
 
 | Name | Type | Description |
 | - | - | - |
-| interlaced (optional) | bool | Option to encode the image interlaced. |
-| indexed (optional) | bool | Option for encoding PNG format with an indexed color palette. |
+| interlaced (optional) | bool | Option to encode the image interlaced. Disabled by default. |
+| indexed (optional) | bool | Option for encoding PNG format with an indexed color palette. True color (non-indexed) by default. |
 
 ```php
 use Intervention\Image\ImageManager;
@@ -322,7 +323,7 @@ Encode the current image instance in GIF format.
 
 | Name | Type | Description |
 | - | - | - |
-| interlaced (optional) | bool | Option to encode the image interlaced. |
+| interlaced (optional) | bool | Option to encode the image interlaced. Disabled by default. |
 
 ```php
 use Intervention\Image\ImageManager;
@@ -369,7 +370,7 @@ ranging between 0 for low quality to 100 for best quality.
 
 | Name | Type | Description |
 | - | - | - |
-| quality (optional) | integer | Encoding quality  |
+| quality (optional) | integer | Encoding quality. 75 by default. |
 
 ```php
 use Intervention\Image\ImageManager;
@@ -394,7 +395,7 @@ ranging between 0 for low quality to 100 for best quality.
 
 | Name | Type | Description |
 | - | - | - |
-| quality (optional) | integer | Encoding quality  |
+| quality (optional) | integer | Encoding quality. 75 by default. |
 
 ```php
 use Intervention\Image\ImageManager;
@@ -419,7 +420,7 @@ ranging between 0 for low quality to 100 for best quality.
 
 | Name | Type | Description |
 | - | - | - |
-| quality (optional) | integer | Encoding quality  |
+| quality (optional) | integer | Encoding quality. 75 by default. |
 
 ```php
 use Intervention\Image\ImageManager;
@@ -445,7 +446,7 @@ Encode the current image instance in HEIC format in the given **quality** rangin
 
 | Name | Type | Description |
 | - | - | - |
-| quality (optional) | integer | Encoding quality  |
+| quality (optional) | integer | Encoding quality. 75 by default. |
 
 ```php
 use Intervention\Image\ImageManager;
@@ -510,7 +511,8 @@ respective folder structure must already exist and be writable.
 
 | Name | Type | Description |
 | - | - | - |
-| filepath | string | Path to file in filesystem |
+| filepath | string | Path to file in filesystem. |
+| options (optional) | mixed | Option parameters depending on the output format. |
 
 #### Example
 
@@ -627,7 +629,8 @@ In contrast to the other encoding methods, `save()` returns an `Image` object in
 
 | Name | Type | Description |
 | - | - | - |
-| path (optional) | null or string | File path from which the target format is extracted. |
+| path (optional) | null or string | File path from which the target format is extracted. By default the original path is used. |
+| options (optional) | mixed | Option parameters depending on the output format. |
 
 #### Example
 
