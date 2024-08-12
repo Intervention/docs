@@ -119,7 +119,7 @@ $manager = ImageManager::withDriver(Driver::class);
 $image = $manager->read('images/example.jpg');
 
 // change colors to a blue & green tone
-$image = $image->gamma(blue: 15, green: 10);
+$image = $image->colorize(blue: 15, green: 10);
 ```
 
 ### Convert image to a greyscale version
