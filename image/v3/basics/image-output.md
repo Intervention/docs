@@ -289,7 +289,8 @@ quality in the coloring. By default, the encoder always outputs truecolor
 format.
 
 **Please note that the GD driver for PNG output with indexed color palette only
-supports binary transparency.**
+supports binary transparency.** This means that colors can either be completely
+transparent or completely opaque. Semi-transparency is not possible with GD.
 
 | Name | Type | Description |
 | - | - | - |
