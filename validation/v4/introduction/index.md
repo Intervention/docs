@@ -15,7 +15,7 @@ You can install this package quick and easy with Composer.
 Require the package via Composer:
 
 ```bash
-$ composer require intervention/validation
+composer require intervention/validation
 ```
 
 The Validation library is built to work with the Laravel Framework (>=10). It

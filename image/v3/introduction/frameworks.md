@@ -20,7 +20,7 @@ the `intervention/image-laravel` package. The corresponding base libraries are a
 installed as well.
 
 ```bash
-$ composer require intervention/image-laravel
+composer require intervention/image-laravel
 ```
 
 Next, add the configuration files to your application using the `vendor:publish` command:
@@ -110,7 +110,7 @@ bundle package `intervention/image-symfony`. The corresponding dependencies
 are automatically installed as well
 
 ```bash
-$ composer require intervention/image-symfony
+composer require intervention/image-symfony
 ```
 
 After the successful installation, you can activate the bundle in the file

@@ -22,7 +22,7 @@ The best way to install Intervention Image is quickly and easily with [Composer]
 To install the most recent version, run the following command.
 
 ```bash
-$ composer require intervention/image:^2
+composer require intervention/image:^2
 ```
 
 Now your ```composer.json``` has been updated automatically and you're able to require the just created ```vendor/autoload.php``` file to PSR-4 autoload the library.
@@ -97,14 +97,14 @@ By default Intervention Image uses PHP's GD library extension to process all ima
 #### Publish configuration in Laravel
 
 ```bash
-$ php artisan vendor:publish --provider="Intervention\Image\ImageServiceProviderLaravelRecent"
+php artisan vendor:publish --provider="Intervention\Image\ImageServiceProviderLaravelRecent"
 ````
 
 
 #### Publish configuration in Laravel <= 4
 
 ```bash
-$ php artisan config:publish intervention/image
+php artisan config:publish intervention/image
 ```
 In recent Laravel applications the configuration file is copied to `config/image.php`, in older Laravel 4 applications you will find the file at ```app/config/packages/intervention/image/config.php```. With this copy you can alter the image driver settings for you application locally.
 
