@@ -87,6 +87,8 @@ You can read more about the different options for
 The integration is now complete and it is possible to access the
 [ImageManager](/v3/basics/instantiation) via Laravel's facade.
 
+### Code Examples
+
 ```php
 use Intervention\Image\Laravel\Facades\Image;
 
@@ -148,7 +150,9 @@ Then you can then use the options to determine the behavior of the library. Read
 [blending color](/v3/basics/colors#transparency).
 
 The integration is now complete and it is possible to access the
-[ImageManager](/v3/basics/instantiation) via dependency injection. For example:
+[ImageManager](/v3/basics/instantiation) via dependency injection.
+
+### Code Examples
 
 ```php
 namespace App\Controller;
