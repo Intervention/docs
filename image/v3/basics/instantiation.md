@@ -9,8 +9,13 @@
 
 > public ImageManager::read(mixed $input, string|array|DecoderInterface $decoders = []): ImageInterface
 
-Now that the [Image Manager is configured and instantiated](/v3/basics/image-manager), its methods can be
-used to read images from many different sources.
+With a [configured Image Manager](/v3/basics/image-manager) it is possible to
+read images from different sources.
+
+The method not only accepts paths from file systems, but also binary image
+data, Base64-encoded image data or images in Data Uri format. It is also
+possible to pass a range of objects and PHP resources as input. A complete list
+can be found below.
 
 #### Parameters
 
@@ -21,19 +26,19 @@ used to read images from many different sources.
 
 #### Supported Image Sources
 
-This method not only supports filepaths as an argument. The following argument formats are accepted.
+The following `input` argument formats are accepted.
 
 - Path in filesystem
-- File Pointer resource
-- `SplFileInfo` object
 - Raw binary image data
 - Base64 encoded image data
 - Data Uri
+- File Pointer resource
+- `SplFileInfo` object
 - Intervention Image Instance (instance of `Intervention\Image\Image`)
 - Encoded Intervention Image (instance of `Intervention\Image\EncodedImage`)
 - Driver-specific image (instance of `GDImage` or `Imagick`)
 
-To decode the raw input data, you can optionally specify a decoding strategy
+To decode the input data, you can optionally specify a decoding strategy
 with the second parameter. This can be an array of class names or objects of
 decoders to be processed in sequence. In this case, the input must be
 decodedable with one of the decoders passed. It is also possible to pass a
