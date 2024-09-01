@@ -10,12 +10,10 @@
 > public ImageManager::read(mixed $input, string|array|DecoderInterface $decoders = []): ImageInterface
 
 With a [configured Image Manager](/v3/basics/image-manager) it is possible to
-read images from different sources.
-
-The method not only accepts paths from file systems, but also binary image
-data, Base64-encoded image data or images in Data Uri format. It is also
-possible to pass a range of objects and PHP resources as input. A complete list
-can be found below.
+read images from different sources. The method not only accepts paths from file
+systems, but also binary image data, Base64-encoded image data or images in
+Data Uri format. It is also possible to pass a range of objects and PHP
+resources as input. A complete list can be found below.
 
 #### Parameters
 
