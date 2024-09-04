@@ -556,9 +556,9 @@ $data_uri = $image->toGif()->toDataUri();
 
 ### Transform Encoded Image to File Pointer
 
-> public EncodedImage::toFilePointer()
+> public EncodedImage::toFilePointer(): resource
 
-Create a file pointer to handle the encoded image data.
+Create a file pointer resource to handle the encoded image data.
 
 #### Example
 
