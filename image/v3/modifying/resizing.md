@@ -80,7 +80,7 @@ Often you want to resize an image but do not want to distort the original image
 aspect ratio. For this kind of modification you can simply use the methods
 `scale()` or `scaleDown()`.
 
-Keep in mind that the resulting size my differ from the given arguments,
+Keep in mind that the resulting size may differ from the given arguments,
 because the aspect ratio will be maintained preferably.
 
 #### Parameters
@@ -97,15 +97,16 @@ because the aspect ratio will be maintained preferably.
 use Intervention\Image\ImageManager;
 use Intervention\Image\Drivers\Imagick\Driver;
 
-// create new image instance (800 x 600)
 $manager = new ImageManager(new Driver());
+
+// create new image instance with 800 x 600 (4:3)
 $image = $manager->read('images/example.jpg');
 
 // scale to fixed height
-$image->scale(height: 300); // 400 x 300
+$image->scale(height: 300); // 400 x 300 (4:3)
 
-// scale to 200 x 100 pixel
-$image->scale(200, 100); // 200 x 150
+// scale to 120 x 100 pixel
+$image->scale(120, 100); // 120 x 90 (4:3)
 ```
 
 ### Scaling Images but do not Exceed the Original Size
