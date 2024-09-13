@@ -97,9 +97,8 @@ $image = (new ImageManager(Driver::class))->create(300, 200)->fill('b53717');
 // create new image with half transparent red background
 $image = (new ImageManager(Driver::class))->create(300, 200)->fill('b5371766');
 ```
-### String Format
 
-#### RGB Strings
+### RGB String Format
 
 RGB string values in functional notations are also supported. If you want to
 include an alpha value use the RGBA prefix like in the following example.
@@ -114,7 +113,7 @@ $image = (new ImageManager(Driver::class))->create(300, 200)->fill('rgba(15, 20,
 $image = (new ImageManager(Driver::class))->create(300, 200)->fill('rgb(255, 0, 0)');
 ```
 
-#### CMYK Strings
+### CMYK String Format
 
 CMYK string values in functional notations are also supported.
 
@@ -125,7 +124,7 @@ use Intervention\Image\Drivers\Imagick\Driver;
 $image = (new ImageManager(Driver::class))->create(300, 200)->fill('cmyk(100, 100, 55, 60)');
 ```
 
-#### HSV/HSB Strings
+### HSV/HSB String Format
 
 It is also possible to pass color values strings in the RGB alternative HSV/HSB.
 
@@ -137,7 +136,7 @@ $image = ImageManager::imagick()->read('example.jpg');
 $image->drawPixel(120, 200, 'hsv(230, 15, 75)');
 ```
 
-### HTML Color Names
+## HTML Color Names
 
 Intervention Image can read colors from the [extended 140 HTML color
 names](https://en.wikipedia.org/wiki/Web_colors#HTML_color_names) from the W3C
