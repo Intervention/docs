@@ -89,11 +89,24 @@ The integration is now complete and it is possible to access the
 
 ### Code Examples
 
+#### Reading images from filesystem
+
 ```php
 use Intervention\Image\Laravel\Facades\Image;
 
 Route::get('/', function () {
     $image = Image::read('images/example.jpg');
+});
+```
+
+#### Reading image file uploads
+
+```php
+use Illuminate\Http\Request;
+use Intervention\Image\Laravel\Facades\Image;
+
+Route::post('/upload', function (Request $request) {
+    $image = Image::read($request->file('image'));
 });
 ```
 
