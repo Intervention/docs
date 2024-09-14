@@ -98,7 +98,7 @@ $image = (new ImageManager(Driver::class))->create(300, 200)->fill('b53717');
 $image = (new ImageManager(Driver::class))->create(300, 200)->fill('b5371766');
 ```
 
-### RGB String Format
+### RGB Format
 
 RGB string values in functional notations are also supported. If you want to
 include an alpha value use the RGBA prefix like in the following example.
@@ -113,7 +113,7 @@ $image = (new ImageManager(Driver::class))->create(300, 200)->fill('rgba(15, 20,
 $image = (new ImageManager(Driver::class))->create(300, 200)->fill('rgb(255, 0, 0)');
 ```
 
-### CMYK String Format
+### CMYK Format
 
 CMYK string values in functional notations are also supported.
 
@@ -124,7 +124,7 @@ use Intervention\Image\Drivers\Imagick\Driver;
 $image = (new ImageManager(Driver::class))->create(300, 200)->fill('cmyk(100, 100, 55, 60)');
 ```
 
-### HSV/HSB String Format
+### HSV/HSB Format
 
 It is also possible to pass color values strings in the RGB alternative HSV/HSB.
 
