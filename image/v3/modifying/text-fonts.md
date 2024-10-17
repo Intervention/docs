@@ -1,4 +1,4 @@
-# Text + Fonts
+# Text & Fonts
 ## Writing text to an Image
 
 [TOC]
