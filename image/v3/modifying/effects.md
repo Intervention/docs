@@ -167,7 +167,7 @@ $manager = new ImageManager(new Driver());
 // reading an image
 $image = $manager->read('images/example.png');
 
-// mirror image
+// mirror image horizontally
 $image = $image->flop();
 ```
 
@@ -189,7 +189,7 @@ $manager = ImageManager::imagick();
 // reading an image
 $image = $manager->read('images/example.png');
 
-// flood fill image with color
+// mirror image vertically
 $image = $image->flip();
 ```
 
