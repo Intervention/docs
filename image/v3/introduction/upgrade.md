@@ -27,7 +27,7 @@ There are a few key features that further improve the library.
 - [pixel()](/v2/api/pixel) is handled by [drawPixel()](/v3/modifying/drawing#drawing-a-pixel)
 - [encode()](/v2/api/encode) still exists but has a new [signature](/v3/basics/image-output#encoding-images)
 - [exif()](/v2/api/exif) is now handled by [exif()](/v3/basics/meta-information#exif-information) with a different signature
-- [fill()](/v3/modifying/effects#fill-image-with-color) currently only supports color values
+- [fill()](/v3/modifying/drawing#fill-images-with-color) currently only supports color values
 - [filter()](/v2/api/filter) is now handled by [modify()](/v3/modifying/custom-modifiers)
 - The resizing methods [resize()](/v2/api/resize), [fit()](/v2/api/fit), [widen()](/v2/api/widen) and [heighten()](/v2/api/heighten) have been completely rebuild and are now handled by [resize()](/v3/modifying/resizing), [resizeDown](/v3/modifying/resizing), [scale()](/v3/modifying/resizing), [scaleDown()](/v3/modifying/resizing), [cover()](/v3/modifying/resizing), [coverDown()](/v3/modifying/resizing), [pad()](/v3/modifying/resizing) and [contain()](/v3/modifying/resizing)
 - [flip()](/v2/api/flip) still exists but has a new signature and is handled by [flip()](/v3/modifying/effects#mirror-image-horizontally) and [flop()](/v3/modifying/effects#mirror-image-vertically)
