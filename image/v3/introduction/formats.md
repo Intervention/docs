@@ -273,6 +273,7 @@ can also be converted into the following formats.
 - `Intervention\Image\Colors\Rgb\Colorspace`
 - `Intervention\Image\Colors\Cmyk\Colorspace`
 - `Intervention\Image\Colors\Hsv\Colorspace`
+- `Intervention\Image\Colors\Hsl\Colorspace`
 
 ```php
 use Intervention\Image\ImageManager;
