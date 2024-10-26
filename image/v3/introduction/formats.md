@@ -82,13 +82,16 @@ image. Therefore, it is possible to draw on an image in CMYK space with an HSV
 color specification. The colors are automatically converted to the target color
 space.
 
-### Hexadecimal Format
+### String Format
+
+#### Hexadecimal String Format
 
 You can pass colors as RGB hex triplets, which are commonly used in HTML and
 CSS. It's possible to use the shorthand as well as the full format with or
 without alpha channel. The leading `#` is optional.
 
 ```php
+use Intervention\Image\ImageManager;
 use Intervention\Image\Drivers\Imagick\Driver;
 
 // create new image with red background
@@ -98,12 +101,13 @@ $image = (new ImageManager(Driver::class))->create(300, 200)->fill('b53717');
 $image = (new ImageManager(Driver::class))->create(300, 200)->fill('b5371766');
 ```
 
-### RGB Format
+#### RGB String Format
 
 RGB string values in functional notations are also supported. If you want to
 include an alpha value use the RGBA prefix like in the following example.
 
 ```php
+use Intervention\Image\ImageManager;
 use Intervention\Image\Drivers\Gd\Driver;
 
 // create new image with half transparent background
@@ -113,22 +117,25 @@ $image = (new ImageManager(Driver::class))->create(300, 200)->fill('rgba(15, 20,
 $image = (new ImageManager(Driver::class))->create(300, 200)->fill('rgb(255, 0, 0)');
 ```
 
-### CMYK Format
+#### CMYK String Format
 
 CMYK string values in functional notations are also supported.
 
 ```php
+use Intervention\Image\ImageManager;
 use Intervention\Image\Drivers\Imagick\Driver;
 
 // create new image with background
 $image = (new ImageManager(Driver::class))->create(300, 200)->fill('cmyk(100, 100, 55, 60)');
 ```
 
-### HSV/HSB Format
+#### HSV/HSB String Format
 
 It is also possible to pass color values strings in the RGB alternative HSV/HSB.
 
 ```php
+use Intervention\Image\ImageManager;
+
 // create new image with half transparent background
 $image = ImageManager::imagick()->read('example.jpg');
 
@@ -136,29 +143,107 @@ $image = ImageManager::imagick()->read('example.jpg');
 $image->drawPixel(120, 200, 'hsv(230, 15, 75)');
 ```
 
-## HTML Color Names
+#### HSL String Format
+
+It is also possible to pass color values strings in the HSL color format.
+
+```php
+use Intervention\Image\ImageManager;
+
+// create new image with half transparent background
+$image = ImageManager::imagick()->read('example.jpg');
+
+// fill image with color
+$image->fill(120, 200, 'hsl(100, 15, 10)');
+```
+
+#### HTML Color Names
 
 Intervention Image can read colors from the [extended 140 HTML color
 names](https://en.wikipedia.org/wiki/Web_colors#HTML_color_names) from the W3C
 specification.
 
 ```php
+use Intervention\Image\ImageManager;
 use Intervention\Image\Drivers\Gd\Driver;
 
 // create new image with half transparent background
 $image = (new ImageManager(Driver::class))->create(300, 200)->fill('steelblue');
 ```
 
-### Transparency
+#### Transparency
 
 If it is necessary to specify transparency as a color, this can always be done
 with the keyword `transparent`.
 
 ```php
+use Intervention\Image\ImageManager;
+
 $manager = ImageManager::gd();
 $image = $manager->read('images/example.png');
 $image->pad(300, 200, 'transparent');
 ```
+
+### Color Objects
+
+Colors can also be defined in object form. There is currently a separate color
+class for each color space.
+
+#### RGB Color Object
+
+The RGB color object uses three parameters for the basic channels as well as an
+optional alpha channel parameter, which is defined as completely opaque by
+default.
+
+```php
+use Intervention\Image\ImageManager;
+use Intervention\Image\Drivers\Gd\Driver;
+use Intervention\Image\Colors\Rgb\Color;
+
+// create new image with half transparent background
+$image = (new ImageManager(Driver::class))->create(300, 200)->fill(new Color(45, 0, 10, .5));
+
+// create new image with red background
+$image = (new ImageManager(Driver::class))->create(300, 200)->fill(new Color(255, 0, 0));
+```
+
+#### CMYK Color Object
+
+The CMYK color object is constructed using four parameters that correspond to
+the four channels of the color space.
+
+```php
+use Intervention\Image\ImageManager;
+use Intervention\Image\Colors\Cmyk\Color;
+
+// create new image with half transparent background
+$image = ImageManager::imagick()->create(300, 200)->fill(new Color(100, 100, 55, 60));
+```
+
+#### HSV/HSB Color Object
+
+The HSV/HSB color object constructor takes three parameter for Hue, Saturation and Value/Brightness.
+
+```php
+use Intervention\Image\ImageManager;
+use Intervention\Image\Colors\Hsv\Color;
+
+// create new image with half transparent background
+$image = ImageManager::imagick()->create(300, 200)->fill(new Color(230, 15, 75));
+```
+
+#### HSL Color Object
+
+The HSL color object constructor takes three parameter for Hue, Saturation and Luminance.
+
+```php
+use Intervention\Image\ImageManager;
+use Intervention\Image\Colors\Hsl\Color;
+
+// create new image with half transparent background
+$image = ImageManager::imagick()->create(300, 200)->fill(new Color(230, 15, 75));
+```
+
 
 ## Colorspaces
 
