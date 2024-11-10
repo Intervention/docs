@@ -19,7 +19,7 @@ use Intervention\Zodiac\Zodiacs\Scorpio;
 $calculator = new Calculator();
 $sign = $calculator->zodiac('2000-10-27');
 
-if ($zodiac instanceof Scorpio) {
+if ($sign instanceof Scorpio) {
     // zodiac sign is scorpio ...
 }
 ```
