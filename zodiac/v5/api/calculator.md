@@ -9,9 +9,9 @@ dates into zodiac objects.
 ### Instantiate from Scalar Dates
 
 The calculator class can read dates from **integer types** (unix timestamp) as
-well as **text strings**, which can represent a relative time (last monday,
-tomorrow, last day of next month), an absolute time (first day of June 1983,
-2011-11-11) or an unix timestamp as string.
+well as **text strings**, which can represent a relative time (`last monday`,
+`tomorrow`, `last day of next month`), an absolute time (`first day of June 1983`,
+`2011-11-11`) or an unix timestamp as string.
 
 ```php
 use Intervention\Zodiac\Calculator;
