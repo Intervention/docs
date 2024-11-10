@@ -41,4 +41,4 @@ $localized = $zodiac->localized('fr'); // Gémeaux
 $compatibility = $zodiac->compatibility($zodiac); // 6
 ```
 
-Read how to [install the package](/v4/introduction/installation).
+Read how to [install the package](/v5/introduction/installation).

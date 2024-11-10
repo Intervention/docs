@@ -3,7 +3,7 @@
 
 [TOC]
 
-The zodiac objects returned from the [calculator](/v4/api/calculator) can be
+The zodiac objects returned from the [calculator](/v5/api/calculator) can be
 used in the following ways.
 
 ### Zodiac Name

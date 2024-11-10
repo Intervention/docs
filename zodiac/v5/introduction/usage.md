@@ -5,10 +5,10 @@
 
 ## Basic Usage
 
-Use the [calculator](/v4/api/calculator) class to calculate [zodiac
-signs](/v4/api/zodiac) from various date types. The method `zodiac()` acts
+Use the [calculator](/v5/api/calculator) class to calculate [zodiac
+signs](/v5/api/zodiac) from various date types. The method `zodiac()` acts
 as a central starting point. Read the documentation on the [calculator
-class](/v4/api/calculator) for more information. 
+class](/v5/api/calculator) for more information. 
 
 ### Example
 
