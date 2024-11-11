@@ -52,9 +52,10 @@ away.
 ```php
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
+use Intervention\Zodiac\Laravel\ZodiacFacade;
 
 Route::get('/', function (Request $request) {
-    $sign = Zodiac::make($request->input('birthday'));
+    $sign = ZodiacFacade::make($request->input('birthday'));
     return $sign->localized();
 });
 ```
