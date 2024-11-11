@@ -78,7 +78,7 @@ class User extends Model
     use \Intervention\Zodiac\Laravel\Traits\CanResolveZodiac;
     
     // optional: If you want overwrite attribute. By default `birthday`
-    protected $birthdayAttribute = 'date_of_birth';
+    protected string $birthdayAttribute = 'date_of_birth';
 }
 ```
 
