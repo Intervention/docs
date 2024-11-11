@@ -6,7 +6,9 @@
 The calculator class works as a starting point to transform different types of
 dates into zodiac objects.
 
-### Instantiate from Scalar Dates
+### Instantiation
+
+#### From Scalar Dates
 
 The calculator class can read dates from **integer types** (unix timestamp) as
 well as **text strings**, which can represent a relative time (`last monday`,
@@ -26,7 +28,7 @@ $zodiac = Calculator::zodiac('first day of June 2008');
 $zodiac = Calculator::zodiac(1641719287);
 ```
 
-### Instantiate from Objects
+#### From Objects
 
 You can also pass date objects (`DateTime` or `Carbon`) to instantiate new zodiac objects.
 
