@@ -1,5 +1,5 @@
 # Resizing Images
-## Setting New Image Sizes
+## Change the Image Size in Different Ways
 
 [TOC]
 

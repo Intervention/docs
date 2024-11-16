@@ -1,5 +1,4 @@
 # Intervention Image
-
 ## PHP Image Processing
 
 ## Introduction

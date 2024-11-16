@@ -1,5 +1,5 @@
 # Meta Information
-## Reading Meta Data from Images
+## Read Meta Data from Images
 
 [TOC]
 

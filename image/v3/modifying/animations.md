@@ -1,5 +1,5 @@
 # Animations
-## Changing Details of Animated Images
+## Change Details of Animated Images
 
 [TOC]
 

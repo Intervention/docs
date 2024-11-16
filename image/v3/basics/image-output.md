@@ -1,5 +1,5 @@
 # Image Output
-## Encoding images in different formats
+## Encode Images in Different Formats
 
 [TOC]
 

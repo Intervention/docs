@@ -1,5 +1,5 @@
 # Image Effects
-## Applying Image Effects
+## Apply Image Effects
 
 [TOC]
 
