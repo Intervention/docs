@@ -46,7 +46,6 @@ $validator = Validator::make($request->all(), [
 Add the corresponding key to `/resources/lang/<language>/validation.php` like this:
 
 ```php
-// example
 'iban' => 'Please enter IBAN number!',
 ```
 
