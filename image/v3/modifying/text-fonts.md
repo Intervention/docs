@@ -1,5 +1,5 @@
 # Text & Fonts
-## Write Text to an Image
+## Write Text on an Image
 
 [TOC]
 
