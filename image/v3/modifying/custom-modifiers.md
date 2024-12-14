@@ -1,5 +1,6 @@
 # Custom Modifiers
 ## Group Image Modifications in Classes
+Streamline image transformations architecture with custom modifiers in Intervention Image. Learn to group and reuse complex modifications using custom classes that implement the ModifierInterface.
 
 All modifier calls can be stored as a combination in a custom image modifier
 class. This modifier defines which commands should be applied to an image

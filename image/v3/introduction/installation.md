@@ -1,5 +1,6 @@
 # Installation
 ## Installing Intervention Image
+Learn how to install Intervention Image for PHP with Composer and discover what are requirements to run the library with your server environment seamlessly.
 
 [TOC]
 
