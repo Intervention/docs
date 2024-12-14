@@ -1,5 +1,6 @@
 # Supported Formats
 ## Readable Image and Color Formats
+Learn about supported formats in Intervention Image, including readable image formats and various color specifications. Discover how to check runtime format support, create transparent images, and handle color spaces across GD and Imagick drivers.
 
 [TOC]
 

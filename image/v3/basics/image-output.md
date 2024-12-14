@@ -1,5 +1,6 @@
 # Image Output
 ## Encode Images in Different Formats
+Learn how to encode images with Intervention Image, including support for various formats like JPEG, PNG, WebP, and AVIF. Discover versatile methods to encode by file path, media type, or file extension, with customization options.
 
 [TOC]
 
