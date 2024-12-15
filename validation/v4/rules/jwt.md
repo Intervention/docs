@@ -1,5 +1,6 @@
 # JWT Rule
 ## Validate a JSON Web Token
+Learn how to validate the JSON Web Token format with the additional validation rules of Intervention Validation for your Laravel application.
 
 > public Intervention\Validation\Rules\Jwt::__construct()
 

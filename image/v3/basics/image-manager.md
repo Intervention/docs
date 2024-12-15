@@ -1,5 +1,6 @@
 # Image Manager
 ## Configure Intervention Image
+Learn how to create and configure Intervention Image. Discover the image manager, driver options (GD or Imagick), and advanced settings like auto-orientation, animation decoding, and blending colors.
 
 [TOC]
 

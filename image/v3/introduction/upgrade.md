@@ -1,5 +1,6 @@
 # Upgrade Guide
 ## Upgrade from Intervention Image 2.x to 3.x
+Learn how to quickly migrate from Intervention Image version 2 to version 3. See what new features are available and what changes have been made in the update.
 
 [TOC]
 

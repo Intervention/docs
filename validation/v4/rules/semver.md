@@ -1,5 +1,6 @@
 # Semantic Versioning Rule
 ## Validate Semantic Version Numbers
+Learn how to validate Semantic Version Numbers (semver) with the additional validation rules of Intervention Validation for your Laravel application.
 
 > public Intervention\Validation\Rules\SemVer::__construct()
 

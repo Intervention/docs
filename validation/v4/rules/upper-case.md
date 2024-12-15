@@ -1,5 +1,6 @@
 # Upper Case Rule
 ## Validate String Formated in Upper Case
+Discover how to validate strings in upper case format with the additional validation rules of Intervention Validation for your Laravel application.
 
 > public Intervention\Validation\Rules\Uppercase::__construct()
 

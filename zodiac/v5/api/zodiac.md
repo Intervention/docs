@@ -1,10 +1,8 @@
 # Zodiac
 ## Working with Zodiac Objects
+Discover how to use the zodiac objects returned by the Intervention Image Zodiac Calculator. Generate localized contents and use a compatibility calculator based on astrological theory.
 
 [TOC]
-
-The zodiac objects returned from the [calculator](/v5/api/calculator) can be
-used in the following ways.
 
 ### Zodiac Name
 

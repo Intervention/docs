@@ -1,5 +1,6 @@
 # GRid Rule
 ## Validate Global Release Identifier (GRid)
+Learn how to validate the Global Release Identifier (GRid) format with the additional validation rules of Intervention Validation for your Laravel application.
 
 > public Intervention\Validation\Rules\Grid::__construct()
 

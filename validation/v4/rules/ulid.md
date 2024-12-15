@@ -1,5 +1,6 @@
 # ULID Rule
 ## Validate a Universally Unique Lexicographically Sortable Identifier
+Learn how to validate the Universally Unique Lexicographically Sortable Identifier (ULID) format with the additional validation rules of Intervention Validation for your Laravel application.
 
 > public Intervention\Validation\Rules\Ulid::__construct()
 

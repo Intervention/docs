@@ -1,5 +1,6 @@
 # Snake Case Rule
 ## Validate String Formated in Snake Case
+Discover how to validate strings formated in snake case with the additional validation rules of Intervention Validation for your Laravel application.
 
 > public Intervention\Validation\Rules\Snakecase::__construct()
 

@@ -1,10 +1,8 @@
 # Calculator
 ## Using the Zodiac Calculator Class
+Learn how to use the Zodiac Calculator Class to transform different date formats into zodiac sign objects including reading from scalar date types or date objects.
 
 [TOC]
-
-The calculator class works as a starting point to transform different types of
-dates into zodiac objects.
 
 ## Instantiation
 

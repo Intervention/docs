@@ -1,5 +1,6 @@
 # Animations
 ## Change Details of Animated Images
+Master image animation handling with Intervention Image. Learn to edit and customize animated images like GIF format, including frame slicing, iteration control, and converting animations to static images.
 
 [TOC]
 

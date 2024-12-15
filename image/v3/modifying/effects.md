@@ -1,5 +1,6 @@
 # Image Effects
 ## Apply Image Effects
+Learn how to apply various image effects using the Intervention Image library. Adjust brightness, contrast, and colors, convert to greyscale, add gamma correction, mirror, rotate, blur, sharpen, invert colors, pixelate, and reduce colors.
 
 [TOC]
 

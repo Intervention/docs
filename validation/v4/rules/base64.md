@@ -1,5 +1,6 @@
 # Base64 Rule
 ## Validate a Base64 Encoded String
+Discover how to validate Base64 encoded strings with the additional validation rules of Intervention Validation for your Laravel application.
 
 > public Intervention\Validation\Rules\Base64::__construct()
 

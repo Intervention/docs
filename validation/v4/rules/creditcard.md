@@ -1,5 +1,6 @@
 # Creditcard Rule
 ## Validate Creditcard Numbers
+Learn how to validate the creditcard numbers with the additional validation rules of Intervention Validation for your Laravel application.
 
 > public Intervention\Validation\Rules\Creditcard::__construct()
 

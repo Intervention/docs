@@ -1,5 +1,6 @@
 # ISSN Rule
 ## Validate International Standard Serial Number
+Explore how to validate International Standard Serial Numbers (ISSN) with the additional validation rules of Intervention Validation for your Laravel application.
 
 > public Intervention\Validation\Rules\Issn::__construct()
 
