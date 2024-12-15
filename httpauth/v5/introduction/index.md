@@ -1,12 +1,11 @@
 # Intervention HttpAuth
 ## HTTP Authentication Management
+Intervention HttpAuth is a PHP library for authenticating resources using HTTP Basic or Digest authentication. Learn how to install and configure the package correctly.
 
 ## Introduction
 
-Intervention HttpAuth is a library for the authentication of resources with
-HTTP Basic or Digest authentication. The package [can be easily
-installed](/v5/introduction/installation) and provides an API that makes these
-steps as simple as possible.
+The package [can be easily installed](/v5/introduction/installation) and
+provides an API that makes these steps as simple as possible.
 
 The workflow is divided into two steps. In the first, an instance of the
 `Authenticator::class` class is created descided which type of authentication
