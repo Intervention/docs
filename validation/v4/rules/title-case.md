@@ -1,5 +1,6 @@
 # Title Case Rule
 ## Validate String Formated in Title Case
+Explore how to validate strings formated in title case with the additional validation rules of Intervention Validation for your Laravel application.
 
 > public Intervention\Validation\Rules\Titlecase::__construct()
 

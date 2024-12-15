@@ -1,5 +1,6 @@
 # Kebab Case Rule
 ## Validate a String in Kebab Case
+Discover how to validate strings in Kebab Case with the additional validation rules of Intervention Validation for your Laravel application.
 
 > public Intervention\Validation\Rules\Kebabcase::__construct()
 

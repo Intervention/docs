@@ -1,5 +1,6 @@
 # Username Rule
 ## Validate a Typical Username
+Explore how to validate typical usernames with the additional validation rules of Intervention Validation for your Laravel application.
 
 > public Intervention\Validation\Rules\Username::__construct()
 
