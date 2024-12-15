@@ -1,6 +1,6 @@
 # Hexadecimal Color Rule
 ## Validate a Hexadecimal Color Code
-Explore how to validate hexadecimal color colors also known as web colors with the additional validation rules of Intervention Validation for your Laravel application.
+Explore how to validate hexadecimal color codes also known as web colors with the additional validation rules of Intervention Validation for your Laravel application.
 
 > public Intervention\Validation\Rules\HexColor::__construct(array $lengths = [3, 4, 6, 8])
 
