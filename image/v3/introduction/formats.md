@@ -1,12 +1,12 @@
 # Supported Formats
-## Readable Image and Color Formats
-Learn about supported formats in Intervention Image, including readable image formats and various color specifications. Discover how to check runtime format support, create transparent images, and handle color spaces across GD and Imagick drivers.
+## Image and Color Formats
+Learn about supported formats in Intervention Image, including image formats and various color specifications. Discover how to check runtime format support, create transparent images, and handle color spaces across GD and Imagick drivers.
 
 [TOC]
 
 ## Image Formats
 
-The readable image formats depend on the used driver. While with Imagick it is
+The supported image formats depend on the used driver. While with Imagick it is
 possible to read all formats that the library itself supports, with GD only
 some formats are readable and writable.
 
@@ -61,17 +61,17 @@ $driver = new Driver();
 // check if jpeg format is supported by file extension
 $result = $driver->supports('jpg');
 
-// check if gif format is supported by media type
-$result = $driver->supports('image/gif');
+// check if jpeg format is supported by media type
+$result = $driver->supports('image/jpeg');
 
-// check if png format is supported by enum member
-$result = $driver->supports(Format::PNG);
+// check if jpeg format is supported by enum member
+$result = $driver->supports(Format::JPEG);
 
-// check if avif format is supported by enum member
-$result = $driver->supports(MediaType::IMAGE_AVIF);
+// check if jpeg format is supported by enum member
+$result = $driver->supports(MediaType::IMAGE_JPEG);
 
-// check if tiff format is supported by enum member
-$result = $driver->supports(FileExtension::TIFF);
+// check if jpeg format is supported by enum member
+$result = $driver->supports(FileExtension::JPG);
 ```
 
 ## Color Formats
