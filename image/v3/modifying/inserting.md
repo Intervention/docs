@@ -1,5 +1,5 @@
 # Inserting Images
-## Place Images on Other Images
+## Place Images onto other Images
 Learn how to insert images onto other images using the Intervention Image library. Position images, adjust offsets, and control opacity for custom overlays or watermarks.
 
 [TOC]
