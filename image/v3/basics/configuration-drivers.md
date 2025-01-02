@@ -14,8 +14,10 @@ needed for [reading images from different sources](/v3/basics/instantiation#read
 
 #### Driver Selection
 
-Intervention Image is currently shipped with two different drivers. Depending
-on your PHP installation, you can choose between GD or Imagick.
+The driver determines which PHP image library is used under the hood.
+Intervention Image is a universal API for various low-level PHP image
+extensions and currently ships with two different drivers. Depending on your
+PHP installation, you can choose between GD or Imagick.
 
 - `Intervention\Image\Drivers\Gd\Driver`
 - `Intervention\Image\Drivers\Imagick\Driver`
