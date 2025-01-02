@@ -239,7 +239,7 @@ $colorspace = $image->setColorspace(new CmykColorspace());
 Currently Intervention Image is only able to handle color profiles with the
 `ìmagick` driver.
 
-### Reading Color Profiles
+### Read Color Profiles
 
 > public Image::profile(): ProfileInterface
 
@@ -265,19 +265,25 @@ $profile = $image->profile();
 $profile->save('my_profile.icc')
 ```
 
-### Writing Color Profiles
+### Set Color Profiles
 
-> public function setProfile(string|ProfileInterface $input): ImageInterface
+> public function setProfile(ProfileInterface $profile): ImageInterface
 
-This function set a given ICC color profile to the current image instance.
-Usually the function takes the pathname of the profile, but it can also process
-an object that implements the ProfileInterface.
+This function sets a given ICC color profile to the current image instance.
+The function takes an instance of `ProfileInterface::class` as the argument.
+
+#### Parameters
+
+| Name | Type | Description |
+| - | - | - |
+| profile | ProfileInterface | Target icc profile |
 
 #### Examples
 
 ```php
 use Intervention\Image\ImageManager;
 use Intervention\Image\Drivers\Imagick\Driver;
+use Intervention\Image\Colors\Profile;
 
 // create new manager instance with desired driver
 $manager = new ImageManager(Driver::class);
@@ -286,10 +292,10 @@ $manager = new ImageManager(Driver::class);
 $image = $manager->read('images/example.jpg');
 
 // set the new color profile
-$image->setProfile('profiles/profile.icc');
+$image->setProfile(Profile::fromPath('profiles/profile.icc'));
 ```
 
-### Removing Color Profiles
+### Remove Color Profiles
 
 > public function removeProfile(): ImageInterface
 
