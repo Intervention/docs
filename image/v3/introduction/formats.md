@@ -50,28 +50,27 @@ corresponding support and returns `true` if both conditions apply.
 #### Examples
 
 ```php
-use Intervention\Image\Drivers\Imagick\Driver;
+use Intervention\Image\Drivers\Imagick\Driver as ImagickDriver
 use Intervention\Image\Format;
 use Intervention\Image\MediaType;
 use Intervention\Image\FileExtension;
 
-// create new driver object
-$driver = new Driver();
+$manager = ImageManager::withDriver(ImagickDriver::class);
 
-// check if jpeg format is supported by file extension
-$result = $driver->supports('jpg');
+// check by file extension if driver supports jpeg format
+$result = $manager->driver()->supports('jpg');
 
-// check if jpeg format is supported by media type
-$result = $driver->supports('image/jpeg');
+// check by media type if driver supports jpeg format
+$result = $manager->driver()->supports('image/jpeg');
 
-// check if jpeg format is supported by enum member
-$result = $driver->supports(Format::JPEG);
+// check by enum member if driver supports jpeg format
+$result = $manager->driver()->supports(Format::JPEG);
 
-// check if jpeg format is supported by enum member
-$result = $driver->supports(MediaType::IMAGE_JPEG);
+// check by enum member if driver supports jpeg format
+$result = $manager->driver()->supports(MediaType::IMAGE_JPEG);
 
-// check if jpeg format is supported by enum member
-$result = $driver->supports(FileExtension::JPG);
+// check by enum member if driver supports jpeg format
+$result = $manager->driver()->supports(FileExtension::JPG);
 ```
 
 ## Color Formats
