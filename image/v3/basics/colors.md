@@ -385,7 +385,8 @@ transparency.
 
 The `color` parameter can optionally be used to specify a color in the common
 [color formats](/v3/introduction/formats#color-formats). By default, this is
-the current or previously configured blending color.
+the current or previously configured blending color. It should be noted that 
+possible transparency values in the blending color are ignored when applied.
 
 #### Parameters
 
