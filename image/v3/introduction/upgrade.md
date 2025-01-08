@@ -74,3 +74,10 @@ There are a few key features that further improve the library.
   library. Intervention Image is not responsible for HTTP client operations.
 
 - It is no longer possible to pass color values as array.
+
+- If you use the Laravel framework and a configuration file, it is necessary to
+  adjust the `driver` settings option. In version 2, the driver was configured via a
+  string such as `gd` or `imagick`. In version 3, this is done via the class
+  name of the driver like `Intervention\Image\Drivers\Imagick\Driver`  or
+  `Intervention\Image\Drivers\Gd\Driver`. Read [further details about
+  configuration](/v3/basics/configuration-drivers) and [Laravel Integration](/v3/introduction/frameworks#laravel)
