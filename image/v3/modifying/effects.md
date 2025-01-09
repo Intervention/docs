@@ -311,8 +311,8 @@ $manager = ImageManager::imagick();
 // reading an image
 $image = $manager->read('images/example.png');
 
-// apply blurring effect
-$image = $image->blur(3);
+// apply sharpening effect
+$image = $image->sharpen(3);
 ```
 
 
