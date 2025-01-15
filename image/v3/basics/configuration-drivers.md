@@ -4,6 +4,7 @@ Learn how to create and configure Intervention Image. Discover the image manager
 
 [TOC]
 
+
 ## Create a new Image Manager Instance
 
 > public ImageManager::__construct(string|DriverInterface $driver, mixed ...$options): ImageManager
@@ -12,18 +13,41 @@ The image manager is the starting point for all operations. With this class you
 determine the driver to use, the configuration options and call the methods
 needed for [reading images from different sources](/v3/basics/instantiation#reading-image-sources).
 
-#### Driver Selection
+### Driver Selection
 
 The driver determines which PHP image library is used under the hood.
 Intervention Image is a universal API for various low-level PHP image
 extensions and currently ships with two different drivers. Depending on your
-PHP installation, you can choose between GD, Imagick or libvips.
+PHP installation, you choose one of them.
 
-- `Intervention\Image\Drivers\Gd\Driver` (included)
-- `Intervention\Image\Drivers\Imagick\Driver` (included)
-- `Intervention\Image\Drivers\Vips\Driver` (via [intervention/image-driver-vips](https://github.com/Intervention/image-driver-vips))
+#### Driver for GD Library
 
-#### Configuration Options
+GD is bundled by default in many installations, but has the disadvantage of
+lacking advanced image processing capabilities like support for different color
+spaces. The driver for GD is included by default.
+
+- `Intervention\Image\Drivers\Gd\Driver`
+
+#### Driver for Imagick
+
+Imagick is a PHP extension that provides bindings to the ImageMagick library,
+which is a popular and powerful image processing tool. In my experience, this
+extension often delivers higher quality results than GD. The driver is included
+by default.
+
+- `Intervention\Image\Drivers\Imagick\Driver`
+
+#### Driver for libvips
+
+libvips is a fast, low-memory image processing library that outperforms the
+standard PHP image extensions GD and Imagick. Support for this processing
+library is available via Intervention Image's [official driver to use
+Intervention Image with libvips](https://github.com/Intervention/image-driver-vips) which can be
+installed additionally.
+
+- `Intervention\Image\Drivers\Vips\Driver`
+
+### Configuration Options
 
 Optionally, it is possible to pass further detailed configuration parameters to
 the constructor that determine the behavior of the library.
