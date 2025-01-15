@@ -17,10 +17,11 @@ needed for [reading images from different sources](/v3/basics/instantiation#read
 The driver determines which PHP image library is used under the hood.
 Intervention Image is a universal API for various low-level PHP image
 extensions and currently ships with two different drivers. Depending on your
-PHP installation, you can choose between GD or Imagick.
+PHP installation, you can choose between GD, Imagick or libvips.
 
-- `Intervention\Image\Drivers\Gd\Driver`
-- `Intervention\Image\Drivers\Imagick\Driver`
+- `Intervention\Image\Drivers\Gd\Driver` (included)
+- `Intervention\Image\Drivers\Imagick\Driver` (included)
+- `Intervention\Image\Drivers\Vips\Driver` (via [intervention/image-driver-vips](https://github.com/Intervention/image-driver-vips))
 
 #### Configuration Options
 
