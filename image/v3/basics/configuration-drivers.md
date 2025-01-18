@@ -24,7 +24,8 @@ PHP installation, you choose one of them.
 
 GD is bundled by default in many installations, but has the disadvantage of
 lacking advanced image processing capabilities like support for different color
-spaces. The driver for GD is included by default.
+spaces. **GD also discards any Exif data in the encoding process**. The driver for
+GD is included by default.
 
 - `Intervention\Image\Drivers\Gd\Driver`
 
