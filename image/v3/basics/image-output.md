@@ -217,7 +217,7 @@ called up directly from the image object.
 
 ### Encoding JPEG Format
 
-> public Image::toJpeg(int $quality = 75, bool $progressive = false): EncodedImage
+> public Image::toJpeg(int $quality = 75, bool $progressive = false, ?bool $strip = null): EncodedImage
 
 Encode the current image instance in JPEG format in the given **quality**
 ranging between 0 for low quality to 100 for best quality.
@@ -228,6 +228,7 @@ ranging between 0 for low quality to 100 for best quality.
 | - | - | - |
 | quality (optional) | integer | Encoding quality ranging from `0` to `100`. By default 75. |
 | progressive (optional) | boolean | Option to encode the image in progressive Jpeg format. Disabled by default. |
+| strip | bool | (optional) Decides whether image meta data should be removed in the encoding process. [Driver configuration](/v3/basics/configuration-drivers#configuration-options) value by default.  |
 
 #### Example
 
@@ -247,7 +248,7 @@ $encoded = $image->toJpeg(90); // Intervention\Image\EncodedImage
 
 ### Encoding WebP Format
 
-> public Image::toWebp(int $quality = 75): EncodedImage
+> public Image::toWebp(int $quality = 75, ?bool $strip = null): EncodedImage
 
 Encode the current image instance in the WebP graphic format in the given **quality** ranging between 0 for low quality to 100 for best quality.
 
@@ -256,6 +257,7 @@ Encode the current image instance in the WebP graphic format in the given **qual
 | Name | Type | Description |
 | - | - | - |
 | quality (optional) | integer | Encoding quality. 75 by default. |
+| strip | bool | (optional) Decides whether image meta data should be removed in the encoding process. [Driver configuration](/v3/basics/configuration-drivers#configuration-options) value by default.  |
 
 #### Example
 
@@ -373,6 +375,7 @@ ranging between 0 for low quality to 100 for best quality.
 | Name | Type | Description |
 | - | - | - |
 | quality (optional) | integer | Encoding quality. 75 by default. |
+| strip | bool | (optional) Decides whether image meta data should be removed in the encoding process. [Driver configuration](/v3/basics/configuration-drivers#configuration-options) value by default.  |
 
 ```php
 use Intervention\Image\ImageManager;
@@ -398,6 +401,7 @@ ranging between 0 for low quality to 100 for best quality.
 | Name | Type | Description |
 | - | - | - |
 | quality (optional) | integer | Encoding quality. 75 by default. |
+| strip | bool | (optional) Decides whether image meta data should be removed in the encoding process. [Driver configuration](/v3/basics/configuration-drivers#configuration-options) value by default.  |
 
 ```php
 use Intervention\Image\ImageManager;
@@ -423,6 +427,7 @@ ranging between 0 for low quality to 100 for best quality.
 | Name | Type | Description |
 | - | - | - |
 | quality (optional) | integer | Encoding quality. 75 by default. |
+| strip | bool | (optional) Decides whether image meta data should be removed in the encoding process. [Driver configuration](/v3/basics/configuration-drivers#configuration-options) value by default.  |
 
 ```php
 use Intervention\Image\ImageManager;
@@ -449,6 +454,7 @@ Encode the current image instance in HEIC format in the given **quality** rangin
 | Name | Type | Description |
 | - | - | - |
 | quality (optional) | integer | Encoding quality. 75 by default. |
+| strip | bool | (optional) Decides whether image meta data should be removed in the encoding process. [Driver configuration](/v3/basics/configuration-drivers#configuration-options) value by default.  |
 
 ```php
 use Intervention\Image\ImageManager;
