@@ -1,6 +1,6 @@
 # Supported Formats
 ## Image and Color Formats
-Learn about supported formats in Intervention Image, including image formats and various color specifications. Discover how to check runtime format support, create transparent images, and handle color spaces across GD and Imagick drivers.
+Learn about supported formats in Intervention Image, including image formats and various color specifications. Discover how to check runtime format support, create transparent images, and handle color spaces.
 
 [TOC]
 
@@ -10,19 +10,19 @@ The supported image formats depend on the used driver. While with Imagick it is
 possible to read all formats that the library itself supports, with GD only
 some formats are readable and writable.
 
-| Format | GD | Imagick |
-| - | - | - |
-| JPEG | ✅ | ✅ |
-| GIF | ✅ | ✅ |
-| Animated GIF | ✅ | ✅ |
-| PNG | ✅ | ✅ |
-| AVIF | ✅ | ✅ |
-| Bitmap | ✅ | ✅ |
-| WebP | ✅ | ✅ |
-| Animated WebP | ❌ | ✅ |
-| TIFF | ❌ | ✅ |
-| JPEG 2000 | ❌ | ✅ |
-| HEIC | ❌ | ✅ |
+| Format | GD | Imagick | libvips |
+| - | - | - | - |
+| JPEG | ✅ | ✅ | ✅ |
+| GIF | ✅ | ✅ | ✅ |
+| Animated GIF | ✅ | ✅ | ✅ |
+| PNG | ✅ | ✅ | ✅ |
+| AVIF | ✅ | ✅ | ✅ |
+| Bitmap | ✅ | ✅ | ✅ |
+| WebP | ✅ | ✅ | ✅ |
+| Animated WebP | ❌ | ✅ | ✅ |
+| TIFF | ❌ | ✅ | ✅ |
+| JPEG 2000 | ❌ | ✅ | ✅ |
+| HEIC | ❌ | ✅ | ✅ |
 
 **Please note that not all image formats are always included in the PHP image
 extensions. It is therefore possible, that the GD library is installed but is

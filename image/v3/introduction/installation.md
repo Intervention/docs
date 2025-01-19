@@ -29,7 +29,7 @@ different image processing libraries.
 Your server environment must support at least one of them. GD is part of most
 PHP installations. However I recommend using Imagick because I think it is
 faster and more efficient especially for larger images. Support for libvips is
-available via a driver that can be installed as an add-on package.
+available via a driver that can be installed as an [add-on package](https://github.com/Intervention/image-driver-vips).
 
 ## Installation
 

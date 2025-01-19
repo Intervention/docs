@@ -1,6 +1,6 @@
 # Configuration & Drivers
 ## Use the ImageManager to Configure Intervention Image
-Learn how to create and configure Intervention Image. Discover the image manager, driver options (GD or Imagick), and advanced settings like auto-orientation, animation decoding, and blending colors.
+Learn how to create and configure Intervention Image. Discover the image manager, driver options (GD, Imagick or libvips), and advanced settings like auto-orientation, animation decoding, and blending colors.
 
 [TOC]
 
@@ -40,8 +40,8 @@ by default.
 
 #### Driver for libvips
 
-libvips is a fast, low-memory image processing library that outperforms the
-standard PHP image extensions GD and Imagick. Support for this processing
+libvips is a fast, low-memory image processing library that outperforms all
+other PHP image extensions libraries. Support for this processing
 library is available via Intervention Image's [official driver to use
 Intervention Image with libvips](https://github.com/Intervention/image-driver-vips) which can be
 installed additionally.
