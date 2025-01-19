@@ -69,12 +69,17 @@ return [
     |    decoded as such or whether the animation is discarded.
     |
     | - "blendingColor" Defines the default blending color.
+    |
+    | - "strip" controls if meta data like exif tags should be removed when
+    |    encoding images.
+
     */
 
     'options' => [
         'autoOrientation' => true,
         'decodeAnimation' => true,
         'blendingColor' => 'ffffff',
+        'strip' => false,
     ]
 ];
 ```
@@ -152,6 +157,7 @@ intervention_image:
     autoOrientation: true
     decodeAnimation: true
     blendingColor: 'ffffff'
+    strip: false
 ```
 
 First choose between the two supplied drivers `Intervention\Image\Drivers\Gd\Driver` and
