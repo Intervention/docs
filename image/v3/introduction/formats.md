@@ -6,9 +6,12 @@ Learn about supported formats in Intervention Image, including image formats and
 
 ## Image Formats
 
-The supported image formats depend on the used driver. While with Imagick it is
-possible to read all formats that the library itself supports, with GD only
-some formats are readable and writable.
+The supported image formats depend on the used driver. While with Imagick and
+libvips it is possible to read all formats that the library itself supports and
+write the formats listed below with GD only the formats listed below are
+readable and writable.
+
+Read more about [encoding different image formats](/v3/basics/image-output) in the output section.
 
 | Format | GD | Imagick | libvips |
 | - | - | - | - |
@@ -28,8 +31,6 @@ some formats are readable and writable.
 extensions. It is therefore possible, that the GD library is installed but is
 built without Jpeg support or Imagick is available without Webp support
 for example.**
-
-Read more about [encoding different image formats](/v3/basics/image-output) in the output section.
 
 ### Check the Support for Image Formats
 
