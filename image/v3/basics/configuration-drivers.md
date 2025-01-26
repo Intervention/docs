@@ -68,7 +68,7 @@ color](/v3/basics/colors#transparency) is.
 | blendingColor | mixed | (optional) The default blending color. Default: `ffffff` |
 | strip | bool | (optional) Decides whether image meta data should be removed in the encoding process. Default: `false` |
 
-#### Examples
+#### Example
 
 ```php
 use Intervention\Image\ImageManager;
@@ -108,7 +108,7 @@ a class name or an instance of the driver and optionally configuration parameter
 | driver | string or DriverInterface | Image Manager driver instance or driver class name |
 | options | mixed | Optional configuration parameters |
 
-#### Examples
+#### Example
 
 ```php
 use Intervention\Image\ImageManager;
@@ -145,7 +145,7 @@ directly without arguments or optional configuration options.
 | - | - | - |
 | options | mixed | Optional configuration parameters |
 
-#### Examples
+#### Example
 
 ```php
 use Intervention\Image\ImageManager;
@@ -172,7 +172,7 @@ instance with Imagick driver directly.
 | - | - | - |
 | options | mixed | Optional configuration parameters |
 
-#### Examples
+#### Example
 
 ```php
 use Intervention\Image\ImageManager;
@@ -193,7 +193,7 @@ As already described, the Image Manger is created with a driver instance as a
 dependency. This function ensures that it can be accessed at a later point in
 time.
 
-#### Examples
+#### Example
 
 ```php
 use Intervention\Image\ImageManager;

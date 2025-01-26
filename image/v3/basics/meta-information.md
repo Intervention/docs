@@ -12,7 +12,7 @@ Discover how to manage meta information in images with Intervention Image. Learn
 
 Reading the width in pixels from an image instance.
 
-#### Examples
+#### Example
 
 ```php
 use Intervention\Image\ImageManager;
@@ -34,7 +34,7 @@ $width = $image->width();
 
 Reading the pixel height from an image instance.
 
-#### Examples
+#### Example
 
 ```php
 use Intervention\Image\ImageManager;
@@ -56,7 +56,7 @@ $height = $image->height();
 
 Reading the image size from an instance.
 
-#### Examples
+#### Example
 
 ```php
 use Intervention\Image\ImageManager;
@@ -90,7 +90,7 @@ $width = $size()->width();
 
 Reads out the image resolution of the current instance in DPI.
 
-#### Examples
+#### Example
 
 ```php
 use Intervention\Image\ImageManager;
@@ -127,7 +127,7 @@ is encoded only for image formats that support this feature.
 | x | float | Resolution on the x-axis |
 | y | float | Resolution on the y-axis |
 
-#### Examples
+#### Example
 
 ```php
 use Intervention\Image\ImageManager;
@@ -166,7 +166,7 @@ the specified block is not found, `null` is returned as result.
 | - | - | - |
 | query | string or null | Optionally query exif information block directly |
 
-#### Examples
+#### Example
 
 ```php
 use Intervention\Image\ImageManager;

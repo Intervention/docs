@@ -22,7 +22,7 @@ a callback as the fourth parameter.
 | font | callable or FontInterface | Callback function to configure the font appearance or `Typography\Font` instance. |
 
 
-#### Examples
+#### Example
 
 ```php
 use Intervention\Image\ImageManager;

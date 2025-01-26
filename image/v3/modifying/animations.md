@@ -19,7 +19,7 @@ configuration](/v3/basics/image-manager) to save resources.
 
 Returns `true` if the image is animated. Otherwise `false` is returned.
 
-#### Examples
+#### Example
 
 ```php
 use Intervention\Image\ImageManager;
@@ -42,7 +42,7 @@ Read the number of animation frames. `ImageInterface::class` extends
 `Countable::class`, so it is possible to use the image object with the
 [count()](https://www.php.net/manual/en/function.count.php) function.
 
-#### Examples
+#### Example
 
 ```php
 use Intervention\Image\ImageManager;
@@ -77,7 +77,7 @@ to the end of the animation are read.
 | offset | integer | Starting point of the new animation |
 | length | null or integer | Frames to read after the offset (optional) |
 
-#### Examples
+#### Example
 
 ```php
 use Intervention\Image\ImageManager;
@@ -99,7 +99,7 @@ $image = $image->sliceAnimation(20, 10);
 
 Read the count of iterations of the animated image. `0` means the image loops continuously.
 
-#### Examples
+#### Example
 
 ```php
 use Intervention\Image\ImageManager;
@@ -127,7 +127,7 @@ Change the number of iterations the animation should loop over. Set to `0` to lo
 | - | - | - |
 | count | integer | Number of animation iterations |
 
-#### Examples
+#### Example
 
 ```php
 use Intervention\Image\ImageManager;
@@ -165,7 +165,7 @@ frame can always be found here.
 | - | - | - |
 | position | integer or string | Position of the frame that will be left. |
 
-#### Examples
+#### Example
 
 ```php
 use Intervention\Image\ImageManager;

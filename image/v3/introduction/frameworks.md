@@ -93,7 +93,7 @@ You can read more about the different options for
 The integration is now complete and it is possible to access the
 [ImageManager](/v3/basics/instantiation) via Laravel's facade.
 
-### Code Examples
+### Laravel Code Examples
 
 #### Reading images from filesystem
 
@@ -172,7 +172,7 @@ Then you can then use the options to determine the behavior of the library. Read
 The integration is now complete and it is possible to access the
 [ImageManager](/v3/basics/instantiation) via dependency injection.
 
-### Code Examples
+### Symfony Code Example
 
 ```php
 namespace App\Controller;

@@ -23,7 +23,7 @@ to target just one axis for the modification.
 | height | integer | Desired image width. |
 
 
-#### Examples
+#### Example
 
 ```php
 use Intervention\Image\ImageManager;
@@ -57,7 +57,7 @@ to target just one axis for the modification.
 | height | integer | Desired image width. |
 
 
-#### Examples
+#### Example
 
 ```php
 use Intervention\Image\ImageManager;
@@ -92,7 +92,7 @@ because the aspect ratio will be maintained preferably.
 | height | integer | Desired image width. |
 
 
-#### Examples
+#### Example
 
 ```php
 use Intervention\Image\ImageManager;
@@ -129,7 +129,7 @@ Please note that the size of the result may differ from the given parameter valu
 | height | integer | Desired image width. |
 
 
-#### Examples
+#### Example
 
 ```php
 use Intervention\Image\ImageManager;
@@ -170,7 +170,7 @@ set a position to determine which part of the image should remain in focus.
 | position (optional) | string | Position |
 
 
-#### Examples
+#### Example
 
 ```php
 use Intervention\Image\ImageManager;
@@ -208,7 +208,7 @@ Please note that the size of the result may differ from the given parameter valu
 | height | integer | Desired image width. |
 | position (optional) | string | Position |
 
-#### Examples
+#### Example
 
 ```php
 use Intervention\Image\ImageManager;
@@ -250,7 +250,7 @@ with the specified background color.
 | position (optional) | string | Position where the original image is placed. |
 
 
-#### Examples
+#### Example
 
 ```php
 use Intervention\Image\ImageManager;
@@ -284,7 +284,7 @@ $image->pad(500, 500, position: 'top-left');
 | position (optional) | string | Position where the original image is placed. |
 
 
-#### Examples
+#### Example
 
 ```php
 use Intervention\Image\ImageManager;
@@ -328,7 +328,7 @@ image format.
 
 **Caution: The signature has changed in version 3.3 by adding the parameter `background`**
 
-#### Examples
+#### Example
 
 ```php
 use Intervention\Image\ImageManager;
@@ -366,7 +366,7 @@ determines where the original image is fixed.
 | background (optional) | mixed | Background color for the new areas of the image |
 | position (optional) | string | Position where the original image will be fixed |
 
-#### Examples
+#### Example
 
 ```php
 use Intervention\Image\ImageManager;
@@ -396,7 +396,7 @@ specified which are either added or subtracted from the original size.
 | background (optional) | mixed | Background color for the new areas of the image |
 | position (optional) | string | Position where the original image will be fixed |
 
-#### Examples
+#### Example
 
 ```php
 use Intervention\Image\ImageManager;
@@ -436,7 +436,7 @@ image you are processing.**
 | - | - | - |
 | tolerance | integer | Tolerance value that determines how similar in color a border area may be in order to be removed. |
 
-#### Examples
+#### Example
 
 ```php
 use Intervention\Image\ImageManager;

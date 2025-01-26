@@ -26,7 +26,7 @@ authorization vault in the class constructor.
 | - | - | - |
 | vault | VaultInterface | Instance of VaultInterface. Usually instance `BasicVault::class` or `DigestVault::class` |
 
-#### Examples
+#### Example
 
 ```php
 use Intervention\HttpAuth\Authenticator;
@@ -56,7 +56,7 @@ method directly and passign the vault instance directly.
 | - | - | - |
 | vault | VaultInterface | Instance of VaultInterface. Usually instance `BasicVault::class` or `DigestVault::class` |
 
-#### Examples
+#### Example
 
 ```php
 use Intervention\HttpAuth\Authenticator;
@@ -88,7 +88,7 @@ resource.
 | password | string | Password for securing the resource |
 | realm | string | Name of the secured resource |
 
-#### Examples
+#### Example
 
 ```php
 use Intervention\HttpAuth\Authenticator;
@@ -117,7 +117,7 @@ resource.
 | password | string | Password for securing the resource |
 | realm | string | Name of the secured resource |
 
-#### Examples
+#### Example
 
 ```php
 use Intervention\HttpAuth\Authenticator;
@@ -154,7 +154,7 @@ here or output from template engines can be used.
 | - | - | - |
 | message | string or null | Content that is displayed to the user if authentication fails. |
 
-#### Examples
+#### Example
 
 ```php
 use Intervention\HttpAuth\Authenticator;

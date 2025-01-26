@@ -18,7 +18,7 @@ Change the brightness of the current image by a given level. Use values between 
 | - | - | - |
 | level | integer | Level of brightness change  |
 
-#### Examples
+#### Example
 
 ```php
 use Intervention\Image\ImageManager;
@@ -47,7 +47,7 @@ Change the contrast of the current image by a given level. Use values between `-
 | - | - | - |
 | level | integer | Level of contrast change  |
 
-#### Examples
+#### Example
 
 ```php
 use Intervention\Image\ImageManager;
@@ -75,7 +75,7 @@ Apply a gamma correction operation on the current image.
 | - | - | - |
 | gamma | float | Gamma compensation value |
 
-#### Examples
+#### Example
 
 ```php
 use Intervention\Image\ImageManager;
@@ -107,7 +107,7 @@ color on the image.
 | green | int | Intesity correction of all green colors in image |
 | blue | int | Intesity correction of all blue colors in image |
 
-#### Examples
+#### Example
 
 ```php
 use Intervention\Image\ImageManager;
@@ -129,7 +129,7 @@ $image = $image->colorize(blue: 15, green: 10);
 
 Converts the current image into a greyscale version.
 
-#### Examples
+#### Example
 
 ```php
 use Intervention\Image\ImageManager;
@@ -156,7 +156,7 @@ $image = $image->greyscale();
 
 Mirror the current image horizontally.
 
-#### Examples
+#### Example
 
 ```php
 use Intervention\Image\ImageManager;
@@ -179,7 +179,7 @@ $image = $image->flop();
 
 Mirror the current image vertically.
 
-#### Examples
+#### Example
 
 ```php
 use Intervention\Image\ImageManager;
@@ -209,7 +209,7 @@ rotation.
 | angle | float | The rotation angle in degrees to rotate the image counterclockwise |
 | background | mixed | A color to fill the newly created areas after rotation |
 
-#### Examples
+#### Example
 
 ```php
 use Intervention\Image\ImageManager;
@@ -235,7 +235,7 @@ rotation is performed automatically by default.** So you don't have to call this
 method unless you have [deactivated the auto orientation in the ImageManager
 configuration](/v3/basics/image-manager).
 
-#### Examples
+#### Example
 
 ```php
 use Intervention\Image\ImageManager;
@@ -271,7 +271,7 @@ Apply a gaussian blur effect on the current image. Use the optional `amount` arg
 | - | - | - |
 | amount | integer | Effect strength value (0 - 100)  |
 
-#### Examples
+#### Example
 
 ```php
 use Intervention\Image\ImageManager;
@@ -300,7 +300,7 @@ Sharpen the current image instance with an optional `amount`.
 | - | - | - |
 | amount | integer | The amount of the sharpening strength. (0 - 100)  |
 
-#### Examples
+#### Example
 
 ```php
 use Intervention\Image\ImageManager;
@@ -322,7 +322,7 @@ $image = $image->sharpen(3);
 
 Invert all colors of the current image.
 
-#### Examples
+#### Example
 
 ```php
 use Intervention\Image\ImageManager;
@@ -350,7 +350,7 @@ Applies a pixelation effect on the current image with a given pixel size.
 | - | - | - |
 | size | integer | Size of the pixels. |
 
-#### Examples
+#### Example
 
 ```php
 use Intervention\Image\ImageManager;
@@ -384,7 +384,7 @@ result of the reduction process are blended against the given background color.
 | limit | integer | Allowed number of distinct colors |
 | mixed | background | Color formerly semi-transparent colors are blended against |
 
-#### Examples
+#### Example
 
 ```php
 use Intervention\Image\ImageManager;

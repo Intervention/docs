@@ -48,7 +48,7 @@ corresponding support and returns `true` if both conditions apply.
 | identifier | string, Format, FileExtension or MediaType | Identifier of the image format, which can be passed either as a file extension string, media type string or enum member.  |
 
 
-#### Examples
+#### Example
 
 ```php
 use Intervention\Image\Drivers\Imagick\Driver as ImagickDriver

@@ -52,7 +52,7 @@ all available decoders of the driver.
 If the given argument can not be decoded by the library an exception of type
 `Intervention\Image\Exceptions\DecoderException` is thrown.
 
-#### Examples
+#### Example
 
 ```php
 use Intervention\Image\ImageManager;
@@ -108,7 +108,7 @@ By default the image is created with a **transparent background**. If you want t
 | width | integer | Image width  |
 | height | integer | Image height  |
 
-#### Examples
+#### Example
 
 ```php
 use Intervention\Image\ImageManager;
@@ -142,7 +142,7 @@ Animations are possible in all supplied drivers. [Read more on how to modify ani
 | - | - | - |
 | callback | callable | Animation setup |
 
-#### Examples
+#### Example
 
 ```php
 use Intervention\Image\ImageManager;

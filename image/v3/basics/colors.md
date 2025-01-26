@@ -22,7 +22,7 @@ determined. However, this is only relevant for animated images.
 | y | int | Y-Coordinate of the pixel position |
 | frame_key | int | Optional key of the frame from which the color information is read |
 
-#### Examples
+#### Example
 
 ```php
 use Intervention\Image\ImageManager;
@@ -73,7 +73,7 @@ frame.
 | x | int | X-Coordinate of the pixel position |
 | y | int | Y-Coordinate of the pixel position |
 
-#### Examples
+#### Example
 
 ```php
 use Intervention\Image\ImageManager;
@@ -180,7 +180,7 @@ images are transformed to RGB colorspace automatically.
 
 This function reads the colorspace from the current image instance.
 
-#### Examples
+#### Example
 
 ```php
 use Intervention\Image\ImageManager;
@@ -210,7 +210,7 @@ name, or as an abbreviation for the colorspace.
 | - | - | - |
 | colorspace | string or ColorspaceInterface | Target colorspace |
 
-#### Examples
+#### Example
 
 ```php
 use Intervention\Image\ImageManager;
@@ -246,7 +246,7 @@ Currently Intervention Image is only able to handle color profiles with the
 This function reads the ICC color profile from the current image instance. If
 no profile is found an `ColorException` is thrown.
 
-#### Examples
+#### Example
 
 ```php
 use Intervention\Image\ImageManager;
@@ -278,7 +278,7 @@ The function takes an instance of `ProfileInterface::class` as the argument.
 | - | - | - |
 | profile | ProfileInterface | Target icc profile |
 
-#### Examples
+#### Example
 
 ```php
 use Intervention\Image\ImageManager;
@@ -301,7 +301,7 @@ $image->setProfile(Profile::fromPath('profiles/profile.icc'));
 
 Removes all color profiles from the current image.
 
-#### Examples
+#### Example
 
 ```php
 use Intervention\Image\ImageManager;
@@ -351,7 +351,7 @@ configuration.
 | - | - | - |
 | color | mixed | New blending color in supported [color formats](/v3/introduction/formats#color-formats). |
 
-#### Examples
+#### Example
 
 ```php
 use Intervention\Image\ImageManager;
@@ -394,7 +394,7 @@ possible transparency values in the blending color are ignored when applied.
 | - | - | - |
 | color | mixed | Color to replace transparent areas (optional). |
 
-#### Examples
+#### Example
 
 ```php
 use Intervention\Image\ImageManager;

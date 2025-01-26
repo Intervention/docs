@@ -24,7 +24,7 @@ passed, the whole image will be filled.
 | x | int | Optional x-coordinate of the filling position |
 | y | int | Optional y-coordinate of the filling position |
 
-#### Examples
+#### Example
 
 ```php
 use Intervention\Image\ImageManager;
