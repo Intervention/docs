@@ -4,7 +4,6 @@ Learn how to create and configure Intervention Image. Discover the image manager
 
 [TOC]
 
-
 ## Create a new Image Manager Instance
 
 > public ImageManager::__construct(string|DriverInterface $driver, mixed ...$options): ImageManager

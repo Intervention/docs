@@ -19,17 +19,19 @@ display the orientation of images.
 
 ### Image Processing Extension
 
-Depending on your PHP installation Intervention Image lets you choose between
-different image processing libraries.
+Your server environment must have at least one PHP image processing extension
+installed. Intervention Image currently supports the three most popular.
 
 - [GD Image](https://www.php.net/manual/en/book.image.php)
 - [Imagick](https://www.php.net/manual/en/book.imagick.php)
-- [libvips](https://www.libvips.org/)
+- [libvips](https://www.libvips.org)
 
-Your server environment must support at least one of them. GD is part of most
-PHP installations. However I recommend using Imagick because I think it is
-faster and more efficient especially for larger images. Support for libvips is
-available via a driver that can be installed as an [add-on package](https://github.com/Intervention/image-driver-vips).
+GD is part of most PHP installations. However I recommend using Imagick because
+I think it is faster and more efficient especially for larger images. Support
+for libvips is available via a driver that can be installed as an [add-on
+package](https://github.com/Intervention/image-driver-vips).
+
+Based on your environmen, the appropriate driver must be configured later.
 
 ## Installation
 
@@ -56,4 +58,4 @@ use Intervention\Image\Drivers\Imagick\Driver;
 $manager = new ImageManager(new Driver());
 ```
 
-After installation you are ready to [use the image manager](/v3/basics/configuration-drivers) and [read or create image instances](/v3/basics/instantiation).
+After installation you are ready to [configure the image manager](/v3/basics/configuration-drivers) and [read or create image instances](/v3/basics/instantiation).
