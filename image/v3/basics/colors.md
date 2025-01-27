@@ -323,9 +323,44 @@ If the target format does not support transparency, no alpha channel can be
 preserved. In this case the transparent areas will be blended with a opaque color.
 This color can be specified in advance in the initial [configuration of the
 image manager](/v3/basics/image-manager) or as an optional argument in the following
-method.
+method. It is also possible to set or read the blending color at runtime.
 
-It is also possible to set or read the blending color at runtime using the following methods.
+### Merge Transparent Areas with Color
+
+> public function blendTransparency(mixed $color = null): ImageInterface
+
+When switching to a non-transparent image format, the transparency is
+automatically replaced with the [configured blending
+color](/v3/basics/image-manager), but this can also be done manually. This
+function call can also be applied to image formats that can actually contain
+transparency.
+
+The `color` parameter can optionally be used to specify a color in the common
+[color formats](/v3/introduction/formats#color-formats). By default, this is
+the current or previously configured blending color. It should be noted that 
+possible transparency values in the blending color are ignored when applied.
+
+#### Parameters
+
+| Name | Type | Description |
+| - | - | - |
+| color | mixed | Color to replace transparent areas (optional). |
+
+#### Example
+
+```php
+use Intervention\Image\ImageManager;
+use Intervention\Image\Drivers\Gd\Driver;
+
+// create new manager instance with desired driver and default blending color
+$manager = new ImageManager(Driver::class);
+
+// read a transparent image
+$image = $manager->read('images/example.png');
+
+// merge the transparent areas with orange
+$image->blendTransparency('f50');
+```
 
 ### Read the Blending Color
 
@@ -370,41 +405,3 @@ $image->setBlendingColor('cccccc');
 
 // read last set blending color
 $blendingColor = $image->blendingColor(); // 'cccccc'
-```
-
-### Merge Transparent Areas with Color
-
-> public function blendTransparency(mixed $color = null): ImageInterface
-
-When switching to a non-transparent image format, the transparency is
-automatically replaced with the [configured blending
-color](/v3/basics/image-manager), but this can also be done manually. This
-function call can also be applied to image formats that can actually contain
-transparency.
-
-The `color` parameter can optionally be used to specify a color in the common
-[color formats](/v3/introduction/formats#color-formats). By default, this is
-the current or previously configured blending color. It should be noted that 
-possible transparency values in the blending color are ignored when applied.
-
-#### Parameters
-
-| Name | Type | Description |
-| - | - | - |
-| color | mixed | Color to replace transparent areas (optional). |
-
-#### Example
-
-```php
-use Intervention\Image\ImageManager;
-use Intervention\Image\Drivers\Gd\Driver;
-
-// create new manager instance with desired driver and default blending color
-$manager = new ImageManager(Driver::class);
-
-// read a transparent image
-$image = $manager->read('images/example.png');
-
-// merge the transparent areas with orange
-$image->blendTransparency('f50');
-```
