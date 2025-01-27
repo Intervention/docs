@@ -255,7 +255,7 @@ use Intervention\Image\Drivers\Imagick\Driver;
 // create new manager instance with desired driver
 $manager = new ImageManager(new Driver());
 
-// reading an image
+// read an image
 $image = $manager->read('images/example.jpg');
 
 // read the icc profile
