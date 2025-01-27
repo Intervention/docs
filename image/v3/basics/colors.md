@@ -316,12 +316,11 @@ $image = $manager->read('images/example.jpg')->removeProfile();
 
 ## Transparency
 
-Intervention Image supports image formats with alpha channels during decoding
-and output. Transparent areas are preserved as long as the destination format
-supports transparency.
+Intervention Image supports image formats with alpha channels. Transparent
+areas are preserved as long as the output format supports transparency.
 
 If the target format does not support transparency, no alpha channel can be
-preserved. In this case the transparent areas will be blended with a color.
+preserved. In this case the transparent areas will be blended with a opaque color.
 This color can be specified in advance in the initial [configuration of the
 image manager](/v3/basics/image-manager) or as an optional argument in the following
 method.
