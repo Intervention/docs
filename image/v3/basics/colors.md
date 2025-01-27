@@ -224,13 +224,13 @@ $manager = new ImageManager(new Driver());
 // reading an image
 $image = $manager->read('images/example.jpg');
 
-// transform image to CMYK
+// transform image to CMYK by abbreviation
 $colorspace = $image->setColorspace('cmyk');
 
-// transform image to rgb again
+// transform image to rgb again by class name
 $colorspace = $image->setColorspace(RgbColorspace::class);
 
-// and transform to cmyk again
+// and transform to cmyk again by object
 $colorspace = $image->setColorspace(new CmykColorspace());
 ```
 
