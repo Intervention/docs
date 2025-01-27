@@ -121,7 +121,7 @@ $image = $manager->read('images/example.png');
 // read pixel color
 $color = $image->pickColor(20, 10);
 
-// transform color to hsl format
+// transform color to string format
 $result = $color->toString(); // "rgba(255, 255, 255, 1.0)"
 
 // same result
