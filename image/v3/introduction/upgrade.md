@@ -12,7 +12,7 @@ architecture and API that takes advantage of the modern features of PHP 8+.
 There are a few key features that further improve the library.
 
 - [Support of animated GIF with GD and Imagick drivers](/v3/basics/instantiation#creating-animations)
-- [Configurable Image Manager](/v3/basics/image-manager#create-a-new-image-manager-instance)
+- [Configurable Image Manager](/v3/basics/configuration-drivers#create-a-new-image-manager-instance)
 - [Support for colorspaces](/v3/basics/meta-information)
 - [Support for text wrapping in font system](/v3/modifying/text-fonts)
 - [Support for line height in font system](/v3/modifying/text-fonts)
@@ -43,7 +43,7 @@ There are a few key features that further improve the library.
 - [limitColors()](/v2/api/limit-colors) is handled by [reduceColors](/v3/modifying/effects)
 - [trim()](/v2/api/trim) exists as of version `3.6`, but works differently and [automatically removes border areas](/v3/modifying/resizing#trim-image) of the image with similar colors
 - [getCore()](/v2/api/get-core) is replaced with [core()](/v3/modifying/advanced) but behaves completely differently
-- [orientate()](/v2/api/orientate) is handled by [orient()](/v3/modifying/effects#image-orientation-according-to-exif-data) and is applied automatically by default ([configurable](/v3/basics/image-manager))
+- [orientate()](/v2/api/orientate) is handled by [orient()](/v3/modifying/effects#image-orientation-according-to-exif-data) and is applied automatically by default ([configurable](/v3/basics/configuration-drivers))
 
 ## Removed Features
 

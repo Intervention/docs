@@ -85,7 +85,7 @@ return [
 ```
 
 You can read more about the different options for
-[driver selection](/v3/basics/image-manager#driver-selection), setting options for 
+[driver selection](/v3/basics/configuration-drivers#driver-selection), setting options for 
 [auto orientation](/v3/modifying/effects#image-orientation-according-to-exif-data), 
 [decoding animations](/v3/modifying/animations) and 
 [blending color](/v3/basics/colors#transparency).
@@ -164,7 +164,7 @@ First choose between the two supplied drivers `Intervention\Image\Drivers\Gd\Dri
 `Intervention\Image\Drivers\Imagick\Driver` for example.
 
 Then you can then use the options to determine the behavior of the library. Read more about the different options for
-[driver selection](/v3/basics/image-manager#driver-selection), setting options for 
+[driver selection](/v3/basics/configuration-drivers#driver-selection), setting options for 
 [auto orientation](/v3/modifying/effects#image-orientation-according-to-exif-data), 
 [decoding animations](/v3/modifying/animations) and 
 [blending color](/v3/basics/colors#transparency).

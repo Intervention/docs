@@ -233,7 +233,7 @@ $image = $image->rotate(-45);
 This method uses Exif data to automatically orient images correctly. **This
 rotation is performed automatically by default.** So you don't have to call this
 method unless you have [deactivated the auto orientation in the ImageManager
-configuration](/v3/basics/image-manager).
+configuration](/v3/basics/configuration-drivers).
 
 #### Example
 

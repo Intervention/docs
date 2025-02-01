@@ -322,7 +322,7 @@ areas are preserved as long as the output format supports transparency.
 If the target format does not support transparency, no alpha channel can be
 preserved. In this case the transparent areas will be blended with a opaque color.
 This color can be specified in advance in the initial [configuration of the
-image manager](/v3/basics/image-manager) or as an optional argument in the following
+image manager](/v3/basics/configuration-drivers) or as an optional argument in the following
 method. It is also possible to set or read the blending color at runtime.
 
 ### Merge Transparent Areas with Color
@@ -331,7 +331,7 @@ method. It is also possible to set or read the blending color at runtime.
 
 When switching to a non-transparent image format, the transparency is
 automatically replaced with the [configured blending
-color](/v3/basics/image-manager), but this can also be done manually. This
+color](/v3/basics/configuration-drivers), but this can also be done manually. This
 function call can also be applied to image formats that can actually contain
 transparency.
 

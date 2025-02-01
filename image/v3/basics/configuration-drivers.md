@@ -99,7 +99,7 @@ $manager = new ImageManager(
 The static helper method acts the same way as the constructor and takes either
 a class name or an instance of the driver and optionally configuration parameters.
 
-[See possible options for configuration.](/v3/basics/image-manager#create-a-new-image-manager-instance)
+[See possible options for configuration.](/v3/basics/configuration-drivers#create-a-new-image-manager-instance)
 
 #### Parameters
 
@@ -137,7 +137,7 @@ $manager = ImageManager::withDriver(
 This static helper methods for GD driver creates a new image manager instance
 directly without arguments or optional configuration options.
 
-[See possible options for configuration.](/v3/basics/image-manager#create-a-new-image-manager-instance)
+[See possible options for configuration.](/v3/basics/configuration-drivers#create-a-new-image-manager-instance)
 
 #### Parameters
 
@@ -164,7 +164,7 @@ $manager = ImageManager::gd(autoOrientation: false);
 This static helper methods takes no arguments and creates a new image manager
 instance with Imagick driver directly.
 
-[See possible options for configuration.](/v3/basics/image-manager#create-a-new-image-manager-instance)
+[See possible options for configuration.](/v3/basics/configuration-drivers#create-a-new-image-manager-instance)
 
 #### Parameters
 

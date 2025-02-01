@@ -10,7 +10,7 @@ animation support by default.
 
 If you read images without the intention of processing the animation at all,
 this process can be [deactivated in advance in the image manager
-configuration](/v3/basics/image-manager) to save resources.
+configuration](/v3/basics/configuration-drivers) to save resources.
 
 ## Detect Animations
 ### Check the Current Image Instance for Animation
