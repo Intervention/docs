@@ -115,6 +115,25 @@ Route::get('/', function () {
 });
 ```
 
+#### Image response macro
+
+use Intervention\Image\Format;
+
+The package includes a response macro that can be used to elegantly convert an image resource into an HTTP response.
+
+```php
+use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Storage;
+use Intervention\Image\Laravel\Facades\Image;
+
+Route::get('/', function () {
+    $image = Image::read(Storage::get('example.jpg'))
+        ->place(resource_path('images/watermark.png'));
+
+    return response()->image($image, Format::WEBP, quality: 65);
+});
+```
+
 #### Reading image file uploads
 
 This example shows how to read an image as file upload, apply crop
