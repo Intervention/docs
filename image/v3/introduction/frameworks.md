@@ -97,22 +97,46 @@ The integration is now complete and it is possible to access the
 
 #### Reading images from filesystem
 
+The following example shows how to read an image file from the file system and
+return it as an HTTP response.
+
 ```php
+use Illuminate\Support\Facades\Route;
 use Intervention\Image\Laravel\Facades\Image;
 
 Route::get('/', function () {
-    $image = Image::read('images/example.jpg');
+    $image = Image::read('images/example.jpg')
+        ->cover(400, 300)
+        ->toJpeg(quality: 65);
+
+    return response((string) $image)
+        ->header('Content-Type', $image->mediaType());
 });
 ```
 
 #### Reading image file uploads
 
+This example shows how to read an image as file upload, apply crop
+modifications by reading values of the HTTP request. Finally the image is
+encoded and stored with a random file name on disk.
+
 ```php
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 use Intervention\Image\Laravel\Facades\Image;
 
 Route::post('/upload', function (Request $request) {
-    $image = Image::read($request->file('image'));
+    $upload = $request->file('image');
+
+    $image = Image::read($upload)
+        ->crop(...$request->only('width', 'height', 'offset_x', 'offset_y'));
+
+    Storage::put(
+        Str::random() . '.' . $upload->getClientOriginalExtension(),
+        $image->encodeByExtension($upload->getClientOriginalExtension(), quality: 70)
+    );
 });
 ```
 
