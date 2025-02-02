@@ -97,15 +97,16 @@ The integration is now complete and it is possible to access the
 
 #### Reading images from filesystem
 
-The following example shows how to read an image file from the file system and
-return it as an HTTP response.
+The following example shows how to read an image file from the file system,
+encode it in Jpeg format and return it as an HTTP response.
 
 ```php
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Storage;
 use Intervention\Image\Laravel\Facades\Image;
 
 Route::get('/', function () {
-    $image = Image::read('images/example.jpg')
+    $image = Image::read(Storage::get('example.jpg'))
         ->cover(400, 300)
         ->toJpeg(quality: 65);
 
