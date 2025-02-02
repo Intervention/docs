@@ -120,6 +120,8 @@ This example shows how to read an image as file upload, apply crop
 modifications by reading values of the HTTP request. Finally the image is
 encoded and stored with a random file name on disk.
 
+**The example is for educational purposes only. Any external user input should be considered unsafe and must be validated.**
+
 ```php
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
