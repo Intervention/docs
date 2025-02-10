@@ -1,6 +1,6 @@
 # Intervention Validation
 ## Missing Laravel Validation Rules
-Enhance Laravel validation system seamlessly with Intervention Validation, offering 30+ additional validation rules like IBAN, ISBN, postal codes and credit card checks.
+Enhance Laravel's validation system seamlessly with Intervention Validation, offering 30+ additional validation rules like IBAN, ISBN, postal codes, credit card checks and more.
 
 - All rules implement the `Illuminate\Contracts\Validation\ValidationRule` interface
 - Use the additional rules in combination with Laravel's own rules
