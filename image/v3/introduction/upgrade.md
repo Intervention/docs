@@ -13,7 +13,7 @@ There are a few key features that further improve the library.
 
 - [Support of animated GIF with GD and Imagick drivers](/v3/basics/instantiation#creating-animations)
 - [Configurable Image Manager](/v3/basics/configuration-drivers#create-a-new-image-manager-instance)
-- [Support for colorspaces](/v3/basics/meta-information)
+- [Support for colorspaces](/v3/basics/colors#colorspaces)
 - [Support for text wrapping in font system](/v3/modifying/text-fonts)
 - [Support for line height in font system](/v3/modifying/text-fonts)
 - [Object for encoded images](/v3/basics/image-output#handling-of-encoded-image-data)
