@@ -152,11 +152,12 @@ $image->scaleDown(height: 300); //  400 x 300
 
 > public Image::cover(int $width, int $height, string $position = 'center'): ImageInterface
 
-The `cover()` method is a two step combination of trimming excess pixels and
-resizing to achieve a certain result size. This method takes the given
-dimensions and scales it to the largest possible size matching the original
-size. Then this size is positioned on the original and cut out before being
-resized to the desired size from the arguments.
+
+The `cover()` method is a two step combination of cropping and resizing to
+achieve a certain result size. This method takes the given dimensions and
+scales it to the largest possible size matching the original size. Then this
+size is positioned on the original and cut out before being resized to the
+desired size from the arguments
 
 For this method both width and height arguments are required. You can optional
 set a position to determine which part of the image should remain in focus.
