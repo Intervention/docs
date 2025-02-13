@@ -1,5 +1,5 @@
 # Framework Integration
-## Use with your Favorite Framework
+## Integration in your Favorite Framework
 Explore how to integrate Intervention Image with Laravel and Symfony frameworks using the official integration packages. Learn to set up configuration files, select drivers and leverage features like auto-orientation, decoding animations, and blending color.
 
 [TOC]
