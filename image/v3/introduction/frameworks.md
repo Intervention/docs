@@ -21,7 +21,7 @@ installed as well.
 composer require intervention/image-laravel
 ```
 
-### Application-wide configuration
+### Application-wide Configuration
 
 The extension comes with a global configuration file that is recognized by
 Laravel. It is therefore possible to store the settings for Intervention Image
