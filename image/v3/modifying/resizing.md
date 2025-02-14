@@ -8,7 +8,7 @@ Discover comprehensive image resizing techniques with the Intervention Image lib
 
 ### Resizing the Image
 
-> public Image::resize(?int $width, ?int $height): ImageInterface
+> public Image::resize(null|int $width = null, null|int $height = null): ImageInterface
 
 The method `resize()` simply stretches the image to the desired size. Use
 `resizeDown()` to change the size but do not exceed the original size of the
@@ -41,7 +41,7 @@ $image->resize(height: 200);
 
 ### Resizing Without Exceeding the Original Size
 
-> public Image::resizeDown(?int $width, ?int $height): ImageInterface
+> public Image::resizeDown(null|int $width = null, null|int $height = null): ImageInterface
 
 The method `resize()` simply stretches the image to the desired size. Use
 `resizeDown()` to change the size but do not exceed the original size of the
@@ -75,7 +75,7 @@ $image->resizeDown(width: 200);
 
 ### Resizing Images Proportionally
 
-> public Image::scale(?int $width, ?int $height): ImageInterface
+> public Image::scale(null|int $width = null, null|int $height = null): ImageInterface
 
 Often you want to resize an image but do not want to distort the original image
 aspect ratio. For this kind of modification you can simply use the methods
@@ -112,7 +112,7 @@ $image->scale(120, 100); // 120 x 90 (4:3)
 
 ### Scaling Images but do not Exceed the Original Size
 
-> public Image::scaleDown(?int $width, ?int $height): ImageInterface
+> public Image::scaleDown(null|int $width = null, null|int $height = null): ImageInterface
 
 The method `scale()` resizes the image and maintains the aspect ratio. While
 `scaleDown()` is similar to `scale()` the only difference is it doesn't exceed the original size of the
@@ -350,7 +350,7 @@ $image->crop(200, 150, 0 , 30, position: 'bottom-right');
 ## Resize Image Canvas
 ### Resize Image Boundaries without Resampling the Original Image
 
-> public Image::resizeCanvas(?int $width, ?int $height, mixed $background = 'ffffff', string $position = 'center'): ImageInterface
+> public Image::resizeCanvas(null|int $width = null, null|int $height = null, mixed $background = 'ffffff', string $position = 'center'): ImageInterface
 
 This function changes the size of the image borders without recalculating the
 actual image. If the specified sizes are larger than the original, the image
@@ -383,7 +383,7 @@ $image->resizeCanvas(800, 600, 'ff0');
 
 ### Resize Image Boundaries Relative to the Original
 
-> public Image::resizeCanvasRelative(?int $width, ?int $height, mixed $background = 'ffffff', string $position = 'center'): ImageInterface
+> public Image::resizeCanvasRelative(null|int $width = null, null|int $height = null, mixed $background = 'ffffff', string $position = 'center'): ImageInterface
 
 This function behaves in the same way as `resizeCanvas()`, but here relative values are
 specified which are either added or subtracted from the original size.

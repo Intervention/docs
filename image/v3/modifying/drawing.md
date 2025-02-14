@@ -8,7 +8,7 @@ Learn how to draw shapes and customize images with Intervention Image. Add color
 
 ### Fill Images with Color
 
-> public Image::fill(mixed $color, ?int $x = null, ?int $y = null): ImageInterface
+> public Image::fill(mixed $color, null|int $x = null, null|int $y = null): ImageInterface
 
 Fills the current image with the passed color specification. Optionally it is
 possible to pass a position where the color fill should start. If these X and Y

@@ -66,7 +66,7 @@ $encoded = $image->encode(new GifEncoder()); // Intervention\Image\EncodedImage
 
 ### Encode Images by Media (MIME) Type
 
-> public Image::encodeByMediaType(?string $type = null, mixed ...$options): EncodedImage
+> public Image::encodeByMediaType(null|string|MediaType $type = null, mixed ...$options): EncodedImage
 
 Encode an image to given media (mime) type. 
 
@@ -77,7 +77,7 @@ originally read image's mime type.
 
 | Name | Type | Description |
 | - | - | - |
-| type (optional) | null or string | Target media (MIME) type into which the image is encoded. By default the original media type is used. |
+| type (optional) | null, string or MediaType | Target media (MIME) type into which the image is encoded. By default the original media type is used. |
 | options (optional) | mixed | Option parameters depending on the output format. |
 
 #### Example
@@ -111,19 +111,13 @@ $encoded = $image->encodeByMediaType(MediaType::IMAGE_GIF);
 
 
 
-
-
-
-
-
 ### Encode Images by File Path
 
-> public Image::encodeByPath(?string $path = null, mixed ...$options): EncodedImage
+> public Image::encodeByPath(null|string $path = null, mixed ...$options): EncodedImage
 
 Encode the image into the format represented by the extension of the given file
-path. Add an optional second value to set the resulting image quality. If no
-path is given the image will be encoded to the format of the originally read
-image.
+path. Add an optional parameters to define encoder options. If no path is given
+the image will be encoded to the format of the originally read image.
 
 **Note that this method does not write the given path, but only uses this
 information to extract the target format.**
@@ -167,7 +161,7 @@ $encoded = $image->encodeByPath('images/example.gif');
 
 ### Encode Images by File Extension
 
-> public Image::encodeByExtension(?string $extension = null, mixed ...$options): EncodedImage
+> public Image::encodeByExtension(null|string|FileExtension $extension = null, mixed ...$options): EncodedImage
 
 Encode the image into the format represented by the given file extension.
 Define the image quality with the optional second parameter. If no extension is
@@ -177,7 +171,7 @@ given the image will be encoded to the format of the originally read image.
 
 | Name | Type | Description |
 | - | - | - |
-| extension (optional) | null, string, FileExtension | File extension that determines the target format. By default the original file extension is used. |
+| extension (optional) | null, string or FileExtension | File extension that determines the target format. By default the original file extension is used. |
 | options (optional) | mixed | Option parameters depending on the output format. |
 
 #### Example
@@ -217,7 +211,7 @@ called up directly from the image object.
 
 ### Encoding JPEG Format
 
-> public Image::toJpeg(int $quality = 75, bool $progressive = false, ?bool $strip = null): EncodedImage
+> public Image::toJpeg(int $quality = 75, bool $progressive = false, null|bool $strip = null): EncodedImage
 
 Encode the current image instance in JPEG format in the given **quality**
 ranging between 0 for low quality to 100 for best quality.
@@ -248,7 +242,7 @@ $encoded = $image->toJpeg(90); // Intervention\Image\EncodedImage
 
 ### Encoding WebP Format
 
-> public Image::toWebp(int $quality = 75, ?bool $strip = null): EncodedImage
+> public Image::toWebp(int $quality = 75, null|bool $strip = null): EncodedImage
 
 Encode the current image instance in the WebP graphic format in the given **quality** ranging between 0 for low quality to 100 for best quality.
 
@@ -617,7 +611,7 @@ $mimetype = $image->toJpeg()->mediaType();
 
 ### Encoding & Saving Combined
 
-> public Image::save(?string $path = null, mixed ...$options): ImageInterface
+> public Image::save(null|string $path = null, mixed ...$options): ImageInterface
 
 This method helps to initiate the saving process directly from the image object
 without having to go via an `EncodedImage` object and encodes & writes the

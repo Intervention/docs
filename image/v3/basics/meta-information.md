@@ -151,7 +151,7 @@ possibility to write Exif data blocks is not implemented.
 
 ### Reading Exif Information
 
-> public Image::exif(?string $query = null): mixed
+> public Image::exif(null|string $query = null): mixed
 
 This function reads Exif information from the current image instance. You have
 the option to pass a parameter to read a specific block of information from the
