@@ -202,7 +202,7 @@ Then you can then use the options to determine the behavior of the library. Read
 [decoding animations](/v3/modifying/animations) and 
 [blending color](/v3/basics/colors#transparency).
 
-### Dependency injection
+### Dependency Injection
 
 The integration is now complete and it is possible to access the
 [ImageManager](/v3/basics/instantiation) via dependency injection.
