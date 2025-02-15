@@ -8,13 +8,10 @@ Explore how to integrate Intervention Image with Laravel and Symfony frameworks 
 
 Intervention Image can be easily integrated into a Laravel application with the
 [official integration package](https://github.com/Intervention/image-laravel). This package
-provides a Laravel service provider, facade and a publishable configuration
-file.
+provides a Laravel service provider, facade, a publishable configuration
+file and more.
 
-Although this integration is not mandatory, it has the advantage of integrating
-the configuration centrally in the application.
-
-### Integration
+### Installation
 
 Instead of installing the Intervention Image directly, it is only necessary to integrate
 the `intervention/image-laravel` package. The corresponding base libraries are automatically
@@ -24,15 +21,23 @@ installed as well.
 composer require intervention/image-laravel
 ```
 
-Next, add the configuration files to your application using the `vendor:publish` command:
+### Application-wide Configuration
+
+The extension comes with a global configuration file that is recognized by
+Laravel. It is therefore possible to store the settings for Intervention Image
+once centrally and not have to define them individually each time you call the
+image manager.
+
+The configuration file can be copied to the application with the following command.
 
 ```bash
 php artisan vendor:publish --provider="Intervention\Image\Laravel\ServiceProvider"
 ```
 
-This command will publish the configuration file `image.php` to your `app/config` 
-directory. In this file you can set the desired driver for Intervention Image. 
-By default the library is configured to use GD library for image processing.
+This command will publish the configuration file `config/image.php`. Here you
+can set the desired driver and its configuration options for Intervention
+Image. By default the library is configured to use GD library for image
+processing.
 
 The configuration files looks like this.
 
@@ -72,7 +77,6 @@ return [
     |
     | - "strip" controls if meta data like exif tags should be removed when
     |    encoding images.
-
     */
 
     'options' => [
@@ -90,38 +94,15 @@ You can read more about the different options for
 [decoding animations](/v3/modifying/animations) and 
 [blending color](/v3/basics/colors#transparency).
 
-The integration is now complete and it is possible to access the
-[ImageManager](/v3/basics/instantiation) via Laravel's facade.
+### Static Facade Interface
 
-### Laravel Code Examples
+This package also integrates access to Intervention Image's central entry
+point, the `ImageManager::class`, via a static [facade](https://laravel.com/docs/11.x/facades). The call provides access to the
+centrally configured [image manager](/v3/basics/instantiation) via singleton pattern.
 
-#### Reading images from filesystem
-
-The following example shows how to read an image file from the file system,
-encode it in Jpeg format and return it as an HTTP response.
-
-```php
-use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\Storage;
-use Intervention\Image\Laravel\Facades\Image;
-
-Route::get('/', function () {
-    $image = Image::read(Storage::get('example.jpg'))
-        ->cover(400, 300)
-        ->toJpeg(quality: 65);
-
-    return response((string) $image)
-        ->header('Content-Type', $image->mediaType());
-});
-```
-
-#### Reading image file uploads
-
-This example shows how to read an image as file upload, apply crop
-modifications by reading values of the HTTP request. Finally the image is
-encoded and stored with a random file name on disk.
-
-**The example is for educational purposes only. Any external user input should be considered unsafe and must be validated.**
+The following code example shows how to read an image from an upload request
+the image facade in a Laravel route and save it on disk with a random file
+name.
 
 ```php
 use Illuminate\Http\Request;
@@ -130,16 +111,39 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use Intervention\Image\Laravel\Facades\Image;
 
-Route::post('/upload', function (Request $request) {
+Route::get('/', function (Request $request) {
     $upload = $request->file('image');
-
     $image = Image::read($upload)
-        ->crop(...$request->only('width', 'height', 'offset_x', 'offset_y'));
+        ->resize(300, 200);
 
     Storage::put(
         Str::random() . '.' . $upload->getClientOriginalExtension(),
         $image->encodeByExtension($upload->getClientOriginalExtension(), quality: 70)
     );
+});
+```
+
+### Image Response Macro
+
+Furthermore, the package includes a response macro that can be used to
+elegantly encode an image resource and convert it to an HTTP response in a
+single step.
+
+The following code example shows how to read an image from disk apply
+modifications and use the image response macro to encode it and send the image
+back to the user in one call. Only the first parameter is required.
+
+```php
+use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Storage;
+use Intervention\Image\Format;
+use Intervention\Image\Laravel\Facades\Image;
+
+Route::get('/', function () {
+    $image = Image::read(Storage::get('example.jpg'))
+        ->scale(300, 200);
+
+    return response()->image($image, Format::WEBP, quality: 65);
 });
 ```
 
