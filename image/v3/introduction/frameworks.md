@@ -155,7 +155,7 @@ use the [official integration bundle](https://github.com/Intervention/image-symf
 Although the use of this integration library is not absolutely mandatory, it
 offers a convenient way of central configuration in the Symfony framework.
 
-### Integration
+### Installation
 
 Instead of installing the Intervention Image directly, it is only necessary to require the
 bundle package `intervention/image-symfony`. The corresponding dependencies 
@@ -164,6 +164,8 @@ are automatically installed as well
 ```bash
 composer require intervention/image-symfony
 ```
+
+### Application-wide Configuration
 
 After the successful installation, you can activate the bundle in the file
 `config/bundes.php` of your Symfony application by inserting the following 
@@ -200,10 +202,10 @@ Then you can then use the options to determine the behavior of the library. Read
 [decoding animations](/v3/modifying/animations) and 
 [blending color](/v3/basics/colors#transparency).
 
+### Dependency injection
+
 The integration is now complete and it is possible to access the
 [ImageManager](/v3/basics/instantiation) via dependency injection.
-
-### Symfony Code Example
 
 ```php
 namespace App\Controller;
