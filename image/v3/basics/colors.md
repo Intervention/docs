@@ -201,7 +201,7 @@ $colorspace = $image->colorspace();
 > public Image::setColorspace(string|ColorspaceInterface $colorspace): ImageInterface
 
 This function transforms the current image into the given colorspace. The
-target colorspace can be specified either as a colorspace object, as a class
+target colorspace can be specified either as an object, as a class
 name, or as an abbreviation for the colorspace.
 
 #### Parameters
