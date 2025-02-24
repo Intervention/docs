@@ -33,7 +33,7 @@ use Intervention\Image\Drivers\Gd\Driver;
 // create new manager instance with desired driver
 $manager = new ImageManager(Driver::class);
 
-// reading an image
+// read an image
 $image = $manager->read('images/example.png');
 
 // flood fill image with color

@@ -4,7 +4,7 @@ Learn how to insert images onto other images using the Intervention Image librar
 
 [TOC]
 
-## Inserting Images
+## Insert Images
 
 > public Image::place(mixed $element, string $position = 'top-left', int $offset_x = 0, int $offset_y = 0, int $opacity = 100): ImageInterface
 

@@ -6,7 +6,7 @@ Explore advanced image color handling and transparency management with Intervent
 
 ## Color Information
 
-### Reading Colors of Certain Pixels
+### Read Colors of Certain Pixels
 
 > public Image::pickColor(int $x, int $y, int $frame_key = 0): ColorInterface
 
@@ -56,7 +56,7 @@ $blue = $color->blue()->toInt();
 $alpha = $color->alpha()->toInt();
 ```
 
-### Reading all Colors of Certain Pixels in Animated Images
+### Read all Colors of Certain Pixels in Animated Images
 
 > public Image::pickColors(int $x, int $y): CollectionInterface
 
@@ -100,7 +100,7 @@ $color = $colors->get(6);
 As soon as the pixel colors of an image have been read into an object, further
 options are available.
 
-### Transforming Colors to String Values
+### Transform Colors to String Values
 
 > public ColorInterface::toString(): ColorInterface
 
@@ -129,7 +129,7 @@ $result = (string) $color;
 ```
 
 
-### Transforming Colors Between Colorspaces
+### Transform Colors Between Colorspaces
 
 > public ColorInterface::convertTo(string|ColorspaceInterface $colorspace): ColorInterface
 
@@ -174,7 +174,7 @@ is limited to the RGB colorspace.
 If you are reading CMYK images with Intervention Image using the GD driver the
 images are transformed to RGB colorspace automatically.
 
-### Reading the Colorspace
+### Read the Image Colorspace
 
 > public Image::colorspace(): ColorspaceInterface
 
@@ -196,7 +196,7 @@ $image = $manager->read('images/example.jpg');
 $colorspace = $image->colorspace();
 ```
 
-### Changing the Colorspace
+### Change the Image Colorspace
 
 > public Image::setColorspace(string|ColorspaceInterface $colorspace): ImageInterface
 

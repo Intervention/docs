@@ -4,7 +4,7 @@ Learn how to encode images with Intervention Image, including support for variou
 
 [TOC]
 
-## Encoding Images
+## Encode Images
 
 ### Encode Images with Encoder Objects
 
@@ -45,7 +45,7 @@ use Intervention\Image\Encoders\GifEncoder;
 // create new manager instance with desired driver
 $manager = new ImageManager(Driver::class);
 
-// reading jpeg image
+// read jpeg image
 $image = $manager->read('images/example.jpg');
 
 // encode as the originally read image format
@@ -204,12 +204,12 @@ $encoded = $image->encodeByExtension(FileExtension::PNG);
 
 
 
-## Encoding with Shortcut Methods
+## Encode with Shortcut Methods
 
 There is a corresponding shortcut method for each image format, which can be
 called up directly from the image object.
 
-### Encoding JPEG Format
+### Encode JPEG Format
 
 > public Image::toJpeg(int $quality = 75, bool $progressive = false, null|bool $strip = null): EncodedImage
 
@@ -233,14 +233,14 @@ use Intervention\Image\Drivers\Gd\Driver;
 // create new manager instance with desired driver
 $manager = new ImageManager(Driver::class);
 
-// reading gif image
+// read gif image
 $image = $manager->read('images/example.gif');
 
-// encoding jpeg data
+// encod jpeg data
 $encoded = $image->toJpeg(90); // Intervention\Image\EncodedImage
 ```
 
-### Encoding WebP Format
+### Encode WebP Format
 
 > public Image::toWebp(int $quality = 75, null|bool $strip = null): EncodedImage
 
@@ -262,14 +262,14 @@ use Intervention\Image\Drivers\Imagick\Driver;
 // create new manager instance with desired driver
 $manager = new ImageManager(new Driver());
 
-// reading gif image
+// read gif image
 $image = $manager->read('images/example.gif');
 
-// encoding jpeg data
+// encod jpeg data
 $encoded = $image->toWebp(60); // Intervention\Image\EncodedImage
 ```
 
-### Encoding PNG Format
+### Encode PNG Format
 
 > public Image::toPng(bool $interlaced = false, bool $indexed = false): EncodedImage
 
@@ -301,17 +301,17 @@ use Intervention\Image\Drivers\Gd\Driver;
 // create new manager instance with desired driver
 $manager = new ImageManager(Driver::class);
 
-// reading jpg image
+// read jpg image
 $image = $manager->read('images/example.jpg');
 
-// encoding as truecolor png image
+// encode as truecolor png image
 $encoded = $image->toPng(); // Intervention\Image\EncodedImage
 
-// encoding png format with and indexed color palette
+// encode png format with and indexed color palette
 $encoded = $image->toPng(indexed: true); // Intervention\Image\EncodedImage
 ```
 
-### Encoding GIF Format
+### Encode GIF Format
 
 > public Image::toGif(bool $interlaced = false): EncodedImage
 
@@ -330,14 +330,14 @@ use Intervention\Image\Drivers\Gd\Driver;
 // create new manager instance with desired driver
 $manager = new ImageManager(new Driver());
 
-// reading jpg image
+// read jpg image
 $image = $manager->read('images/example.jpg');
 
-// encoding gif data
+// encode gif data
 $encoded = $image->toGif(); // Intervention\Image\EncodedImage
 ```
 
-### Encoding Windows Bitmap Format
+### Encode Windows Bitmap Format
 
 > public Image::toBitmap(): EncodedImage
 
@@ -352,14 +352,14 @@ use Intervention\Image\Drivers\Imagick\Driver;
 // create new manager instance with desired driver
 $manager = new ImageManager(Driver::class);
 
-// reading jpg image
+// read jpg image
 $image = $manager->read('images/example.jpg');
 
-// encoding bitmap data
+// encode bitmap data
 $encoded = $image->toBmp(); // Intervention\Image\EncodedImage
 ```
 
-### Encoding AV1 Image File Format (AVIF)
+### Encode AV1 Image File Format (AVIF)
 
 > public Image::toAvif(int $quality = 75): EncodedImage
 
@@ -378,14 +378,14 @@ use Intervention\Image\Drivers\Imagick\Driver;
 // create new manager instance with desired driver
 $manager = new ImageManager(new Driver());
 
-// reading jpg image
+// read jpg image
 $image = $manager->read('images/example.jpg');
 
 // encode avif image 
 $encoded = $image->toAvif(60); // Intervention\Image\EncodedImage
 ```
 
-### Encoding TIFF Format
+### Encode TIFF Format
 
 > public Image::toTiff(int $quality = 75): EncodedImage
 
@@ -404,14 +404,14 @@ use Intervention\Image\Drivers\Imagick\Driver;
 // create new manager instance with desired driver
 $manager = new ImageManager(new Driver());
 
-// reading jpg image
+// read jpg image
 $image = $manager->read('images/example.jpg');
 
 // encode tiff format
 $encoded = $image->toTiff(60); // Intervention\Image\EncodedImage
 ```
 
-### Encoding JPEG 2000 Format
+### Encode JPEG 2000 Format
 
 > public Image::toJpeg2000(int $quality = 75): EncodedImage
 
@@ -429,7 +429,7 @@ use Intervention\Image\ImageManager;
 // create new manager instance with desired driver
 $manager = ImageManager::imagick();
 
-// reading png format
+// read png format
 $image = $manager->read('images/example.png');
 
 // encode jpeg 2000 format
@@ -439,7 +439,7 @@ $encoded = $image->toJpeg2000(90); // Intervention\Image\EncodedImage
 
 
 
-### Encoding Heic Format
+### Encode Heic Format
 
 > public Image::toHeic(int $quality = 75): EncodedImage
 
@@ -456,7 +456,7 @@ use Intervention\Image\ImageManager;
 // create new manager instance with desired driver
 $manager = ImageManager::imagick();
 
-// reading png format
+// read png format
 $image = $manager->read('images/example.jpg');
 
 // encode heic image
@@ -502,7 +502,7 @@ CloudStorage::put('example.jpg', $imagedata);
 
 
 
-### Saving Encoded Image Data in Filesystem
+### Save Encoded Image Data in Filesystem
 
 > public EncodedImage::save(string $filepath, mixed ...$options): void
 
@@ -533,7 +533,7 @@ $encoded = $image->toJpeg()->save('images/test.jpg', progressive: true, quality:
 ```
 
 
-### Creating Data URI scheme
+### Create Data URI Scheme
 
 > public EncodedImage::toDataUri(): string
 
@@ -548,10 +548,10 @@ use Intervention\Image\Drivers\Gd\Driver;
 // create new manager instance with desired driver
 $manager = new ImageManager(new Driver());
 
-// reading gif image
+// read gif image
 $image = $manager->read('images/example.gif');
 
-// encoding to gif data uri
+// encode to gif data uri
 $data_uri = $image->toGif()->toDataUri();
 ```
 
@@ -570,7 +570,7 @@ use Intervention\Image\Drivers\Imagick\Driver;
 // create new manager instance with desired driver
 $manager = new ImageManager(Driver::class);
 
-// reading gif image
+// read gif image
 $image = $manager->read('images/example.gif');
 
 // create file pointer
@@ -592,7 +592,7 @@ use Intervention\Image\Drivers\Imagick\Driver;
 // create new manager instance with desired driver
 $manager = new ImageManager(new Driver());
 
-// reading gif image
+// read gif image
 $image = $manager->read('images/example.gif');
 
 // "image/jpeg"
@@ -607,9 +607,9 @@ $mimetype = $image->toJpeg()->mediaType();
 
 
 
-## Writing Images Directly
+## Write Images Directly
 
-### Encoding & Saving Combined
+### Encode & Save Combined
 
 > public Image::save(null|string $path = null, mixed ...$options): ImageInterface
 
@@ -643,7 +643,7 @@ use Intervention\Image\Drivers\Imagick\Driver;
 // create new manager instance with desired driver
 $manager = new ImageManager(Driver::class);
 
-// reading jpeg image
+// read jpeg image
 $image = $manager->read('images/example.jpg');
 
 // overwrite file at "images/example.jpg" with low quality

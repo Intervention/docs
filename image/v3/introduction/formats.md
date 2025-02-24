@@ -263,7 +263,7 @@ recommended to use it with CMYK images.
 Read how to read an modify colorspace in the section about [Meta
 Information](/v3/basics/meta-information).
 
-### Converting Colors to Other Colorspaces or Formats
+### Convert Colors to Other Colorspaces or Formats
 
 Colors can always be converted to the supported color spaces. This is possible
 even if the driver does not support that color space.

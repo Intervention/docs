@@ -6,11 +6,11 @@ Discover how to manage meta information in images with Intervention Image. Learn
 
 ## Image Sizes
 
-### Reading the Pixel Width
+### Read the Pixel Width
 
 > public Image::width(): integer
 
-Reading the width in pixels from an image instance.
+Read the pixel width in pixels from an instance.
 
 #### Example
 
@@ -21,18 +21,18 @@ use Intervention\Image\Drivers\Imagick\Driver;
 // create new manager instance with desired driver
 $manager = new ImageManager(new Driver());
 
-// reading an image
+// read an image
 $image = $manager->read('images/example.png');
 
-// reading the image width
+// read the image width
 $width = $image->width();
 ```
 
-### Reading the Pixel Height
+### Read the Pixel Height
 
 > public Image::height(): integer
 
-Reading the pixel height from an image instance.
+Read the pixel height from an image instance.
 
 #### Example
 
@@ -43,18 +43,18 @@ use Intervention\Image\Drivers\Gd\Driver;
 // create new manager instance with desired driver
 $manager = new ImageManager(new Driver());
 
-// reading an image
+// read an image
 $image = $manager->read('images/example.png');
 
-// reading the image height
+// read the image height
 $height = $image->height();
 ```
 
-### Reading the Image Size as an Object
+### Read the Image Size as an Object
 
 > public Image::size(): SizeInterface
 
-Reading the image size from an instance.
+Read the pixel size from an image instance.
 
 #### Example
 
@@ -65,7 +65,7 @@ use Intervention\Image\Drivers\Imagick\Driver;
 // create new manager instance with desired driver
 $manager = new ImageManager(Driver::class);
 
-// reading an image
+// read an image
 $image = $manager->read('images/example.png');
 
 // read image size
@@ -84,7 +84,7 @@ $width = $size()->width();
 
 ## Image Resolution
 
-### Reading the Image Resolution
+### Read the Image Resolution
 
 > public Image::resolution(): ResolutionInterface
 
@@ -99,7 +99,7 @@ use Intervention\Image\Drivers\Gd\Driver;
 // create new manager instance with desired driver
 $manager = new ImageManager(Driver::class);
 
-// reading an image
+// read an image
 $image = $manager->read('images/example.png');
 
 // read image resolution object
@@ -149,7 +149,7 @@ $image->setResolution(300, 300);
 Currently Intervention Image is only able to read Exif information. The
 possibility to write Exif data blocks is not implemented.
 
-### Reading Exif Information
+### Read Exif Information
 
 > public Image::exif(null|string $query = null): mixed
 
@@ -175,7 +175,7 @@ use Intervention\Image\Drivers\Imagick\Driver;
 // create new manager instance with desired driver
 $manager = new ImageManager(new Driver());
 
-// reading an image
+// read an image
 $image = $manager->read('images/example.jpg');
 
 // read the specific exif data

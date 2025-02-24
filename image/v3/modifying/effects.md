@@ -6,7 +6,7 @@ Learn how to apply various image effects using the Intervention Image library. A
 
 ## Brightness, Contrast & Colors
 
-### Changing the Brightness
+### Change the Image Brightness
 
 > public Image::brightness(int $level): ImageInterface
 
@@ -27,7 +27,7 @@ use Intervention\Image\Drivers\Imagick\Driver;
 // create new manager instance with desired driver
 $manager = new ImageManager(new Driver());
 
-// reading an image
+// read an image
 $image = $manager->read('images/example.png');
 
 // increase brightness
@@ -35,7 +35,7 @@ $image = $image->brightness(35);
 ```
 
 
-### Changing the Contrast
+### Change the Image Contrast
 
 > public Image::contrast(int $level): ImageInterface
 
@@ -56,10 +56,10 @@ use Intervention\Image\Drivers\Gd\Driver;
 // create new manager instance with desired driver
 $manager = new ImageManager(Driver::class);
 
-// reading an image
+// read an image
 $image = $manager->read('images/example.png');
 
-// decreasing the contrast
+// decrease the contrast
 $image = $image->contrast(-10);
 ```
 
@@ -83,7 +83,7 @@ use Intervention\Image\ImageManager;
 // create new manager instance with desired driver
 $manager = ImageManager::gd();
 
-// reading an image
+// read an image
 $image = $manager->read('images/example.jpg');
 
 // apply gamma correction
@@ -116,7 +116,7 @@ use Intervention\Image\Drivers\Gd\Driver;
 // create new manager instance with desired driver
 $manager = ImageManager::withDriver(Driver::class);
 
-// reading an image
+// read an image
 $image = $manager->read('images/example.jpg');
 
 // change colors to a blue & green tone
@@ -165,7 +165,7 @@ use Intervention\Image\Drivers\Imagick\Driver;
 // create new manager instance with desired driver
 $manager = new ImageManager(new Driver());
 
-// reading an image
+// read an image
 $image = $manager->read('images/example.png');
 
 // mirror image horizontally
@@ -187,7 +187,7 @@ use Intervention\Image\ImageManager;
 // create new manager instance with desired driver
 $manager = ImageManager::imagick();
 
-// reading an image
+// read an image
 $image = $manager->read('images/example.png');
 
 // mirror image vertically

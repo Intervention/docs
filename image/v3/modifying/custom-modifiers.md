@@ -38,7 +38,7 @@ class MyCustomModifier implements ModifierInterface
 }
 ```
 
-## Applying Custom Modifiers
+## Apply Custom Modifiers
 
 Once the custom modifier is implemented, you can easily apply it to an image instance.
 

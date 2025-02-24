@@ -32,9 +32,9 @@ $manager = new ImageManager(Driver::class);
 $result = $manager->read('images/animation.gif')->isAnimated();
 ```
 
-## Editing Animations
+## Edit Animations
 
-### Reading the Animation Frame Count
+### Read the Animation Frame Count
 
 > public Image::count(): int
 
@@ -50,7 +50,7 @@ use Intervention\Image\ImageManager;
 // create new manager instance with desired driver
 $manager = ImageManager::gd();
 
-// reading an animated gif
+// read an animated gif
 $image = $manager->read('images/animation.gif');
 
 // read number if animation frames
@@ -60,7 +60,7 @@ $count = $image->count();
 $count = count($image);
 ```
 
-### Changing the Animation Frames
+### Change the Animation Frames
 
 > public Image::sliceAnimation(int $offset, null|int $length = null): ImageInterface
 
@@ -86,14 +86,14 @@ use Intervention\Image\Drivers\Gd\Driver;
 // create new manager instance with desired driver
 $manager = new ImageManager(new Driver());
 
-// reading an animated gif
+// read an animated gif
 $image = $manager->read('images/animation.gif');
 
 // discard the first 20 frames and read the following 10 frames as new animation
 $image = $image->sliceAnimation(20, 10);
 ```
 
-### Reading the Animation Iteration Count
+### Read the Animation Iteration Count
 
 > public Image::loops(): int
 
@@ -108,14 +108,14 @@ use Intervention\Image\Drivers\Imagick\Driver;
 // create new manager instance with desired driver
 $manager = new ImageManager(new Driver());
 
-// reading an animated gif
+// read an animated gif
 $image = $manager->read('images/animation.gif');
 
 // return animation iteration count
 $count = $image->loops();
 ```
 
-### Changing the Animation Iteration Count
+### Change the Animation Iteration Count
 
 > public Image::setLoops(int $count): ImageInterface
 
@@ -136,14 +136,14 @@ use Intervention\Image\Drivers\Gd\Driver;
 // create new manager instance with desired driver
 $manager = new ImageManager(new Driver());
 
-// reading an animated gif
+// read an animated gif
 $image = $manager->read('images/animation.gif');
 
 // animation should only run once
 $image = $image->setLoops(1);
 ```
 
-### Removing Animation
+### Remove Animation
 
 > public Image::removeAnimation(int|string $position = 0): ImageInterface
 
@@ -174,7 +174,7 @@ use Intervention\Image\Drivers\Gd\Driver;
 // create new manager instance with desired driver
 $manager = new ImageManager(new Driver());
 
-// reading an animated gif
+// read an animated gif
 $image = $manager->read('images/animation.gif');
 
 // Turn the animation into a static image displaying the frame at position 5

@@ -6,7 +6,7 @@ Discover comprehensive image resizing techniques with the Intervention Image lib
 
 ## Simple Image Resizing
 
-### Resizing the Image
+### Resize an Image
 
 > public Image::resize(null|int $width = null, null|int $height = null): ImageInterface
 
@@ -39,7 +39,7 @@ $image->resize(height: 200);
 ```
 
 
-### Resizing Without Exceeding the Original Size
+### Resize Without Exceeding the Original Size
 
 > public Image::resizeDown(null|int $width = null, null|int $height = null): ImageInterface
 
@@ -71,9 +71,9 @@ $image = $image->resizeDown(2000, 100); // 800 x 100
 $image->resizeDown(width: 200);
 ```
 
-## Scaling Images
+## Scale Images
 
-### Resizing Images Proportionally
+### Resize Images Proportionally
 
 > public Image::scale(null|int $width = null, null|int $height = null): ImageInterface
 
@@ -110,7 +110,7 @@ $image->scale(height: 300); // 400 x 300 (4:3)
 $image->scale(120, 100); // 120 x 90 (4:3)
 ```
 
-### Scaling Images but do not Exceed the Original Size
+### Scale Images but do not Exceed the Original Size
 
 > public Image::scaleDown(null|int $width = null, null|int $height = null): ImageInterface
 

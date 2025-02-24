@@ -4,7 +4,7 @@ Learn how to add text and fonts on images with PHP and Intervention Image. Disco
 
 [TOC]
 
-## Writing Text
+## Write Text
 
 > public Image::text(string $text, int $x, int $y, callable|FontInterface $font): ImageInterface
 

@@ -4,9 +4,9 @@ Learn how to manage and process images with the Intervention Image Manager. Read
 
 [TOC]
 
-## Reading Images
+## Read Images
 
-### Reading Image Sources
+### Read Image Sources
 
 > public ImageManager::read(mixed $input, string|array|DecoderInterface $decoders = []): ImageInterface
 
@@ -91,9 +91,9 @@ $image = $manager->read($input, FilePathImageDecoder::class);
 $image = $manager->read($input, new FilePathImageDecoder());
 ```
 
-## Creating Images
+## Create Images
 
-### Creating New Images
+### Create New Images
 
 > public ImageManager::create(int $width, int $height): ImageInterface
 
@@ -124,7 +124,7 @@ $image = $manager->create(640, 480);
 $image = $manager->create(512, 512)->fill('ccc');
 ```
 
-### Creating Animations
+### Create Animations
 
 > public ImageManager::animate(callable $callback): ImageInterface
 
