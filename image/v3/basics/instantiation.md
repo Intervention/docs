@@ -21,7 +21,7 @@ resources as input. A complete list can be found below.
 | Name | Type | Description |
 | - | - | - |
 | input | mixed | Image source  |
-| decoders | string, array or DecoderInterface | Decoder(s) to process the input data |
+| decoders | string, array or DecoderInterface | Decoder(s) to process the input data, by default the decoder is found automatically |
 
 #### Supported Image Sources
 
