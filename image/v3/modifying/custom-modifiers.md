@@ -4,7 +4,7 @@ Streamline image transformations architecture with custom modifiers in Intervent
 
 All modifier calls can be stored as a combination in a custom image modifier
 class. This modifier defines which commands should be applied to an image
-instance, in which order, and with which arguments. This makes it easy to
+instance, in what order, and with what arguments. This makes it easy to
 combine complex transformations into a single reusable call.
 
 Intervention Image provides the simple `Intervention\Image\Interfaces\ModifierInterface`, which all modifiers need to implement.
@@ -13,7 +13,7 @@ Once you have created your own modifier, you can apply them by using the `modify
 
 ## Custom Modifier Implementation
 
-The following very simple example shows a custom modifier class that combines a grayscale and a pixelate effect.
+The following very simple example shows a custom modifier class that combines a greyscale and a pixellation effect.
 
 ```php
 use Intervention\Image\Interfaces\ModifierInterface;

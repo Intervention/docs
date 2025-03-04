@@ -3,15 +3,15 @@
 Discover the endless possibilities of Intervention Image by directly accessing the native image data and combining them with custom modifier classes.
 
 If the supplied options are not sufficient, it is possible to create your own
-solutions using your own [custom modifiers](/v3/modifying/custom-modifiers). Furthermore, 
-the native image object can be accessed and therefore all
-functions used by the actual image processing library (like GD or Imagick) can
-be used - even those not covered by Intervention Image.
+solutions using your own [custom modifiers](/v3/modifying/custom-modifiers).
+Furthermore, the native image object can be accessed, so that all functions
+used by the actual image processing libraries (such as GD or Imagick) can be used
+- even those not covered by Intervention Image.
 
 ## Access the Native Image Object
 
-Depending on the driver, each image object is mapped internally either by an
-instance of a GDImage or an Imagick object. The parent image object of
+Depending on the driver, each image object is mapped internally by either an
+instance of a `GDImage::class` or an `Imagick::class` object. The parent image object of
 Intervention Image provides access to this base object.
 
 The following example uses the native Imagick function
@@ -32,5 +32,6 @@ $imagick = $image->core()->native();
 $imagick->oilPaintImage(4.5);
 ```
 
-In combination with [custom modifiers](/v3/modifying/custom-modifiers), Intervention Image can therefore be
-expanded with your own modifier combinations and offers endless possibilities.
+Combined with [custom modifiers](/v3/modifying/custom-modifiers), Intervention
+Image can be extended with your own modifier combinations for endless
+possibilities.

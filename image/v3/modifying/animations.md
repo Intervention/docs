@@ -4,20 +4,20 @@ Master image animation handling with Intervention Image. Learn to edit and custo
 
 [TOC]
 
-By default, both drivers included with Intervention Image support animations.
-However, the GD driver must use additional resources as it does not has
-animation support by default. 
+Both drivers included with Intervention Image support animation by default.
+However, the GD driver must use additional resources as it does not support
+animation inherently.
 
-If you read images without the intention of processing the animation at all,
-this process can be [deactivated in advance in the image manager
-configuration](/v3/basics/configuration-drivers) to save resources.
+If you are loading images without the intention of processing the animation at
+all, this process can be [disabled beforehand in the Image
+Manager](/v3/basics/configuration-drivers) configuration to save resources.
 
 ## Detect Animations
 ### Check the Current Image Instance for Animation
 
 > public Image::isAnimated(): bool
 
-Returns `true` if the image is animated. Otherwise `false` is returned.
+Returns `true` if the image is animated. Otherwise `false`.
 
 #### Example
 
@@ -39,7 +39,7 @@ $result = $manager->read('images/animation.gif')->isAnimated();
 > public Image::count(): int
 
 Read the number of animation frames. `ImageInterface::class` extends
-`Countable::class`, so it is possible to use the image object with the
+`Countable::class`, so it is also possible to use the image object with the
 [count()](https://www.php.net/manual/en/function.count.php) function.
 
 #### Example
@@ -66,9 +66,9 @@ $count = count($image);
 
 Extract animation frames based on given values and discard the rest. The offset
 parameter can be used to set the starting point of the new animation; all
-frames before the offset are discarded. The length parameter is optional. It
-specifies how many frames to read after the offset. By default, all frames up
-to the end of the animation are read.
+frames before the offset will be discarded. The length parameter is optional.
+It specifies how many frames to read after the offset. The default is to read
+all frames up to the end of the animation.
 
 #### Parameters
 
@@ -150,14 +150,14 @@ $image = $image->setLoops(1);
 Turns an animated image into a non-animated one by discarding all animation
 frames of the current image instance except the one at the given position. 
 
-It is possible to specify the position as an integer or string value. With
-integer, the exact frame number starting at 0 is used as the remaining frame.
-While string values must represent a percentage value between `0%` and `100%`
-and the respective remaining frame number is only determined approximately.
+The position can be specified as an integer or string value. With
+integer, the exact frame number starting from 0 is used as the remaining frame.
+String values must be a percentage value between `0%` and `100%`
+and the remaining frame number is only determined approximately.
 
-If the position if specified with an integer, the method throws an exception if
+If the position is specified as an integer, the method throws an exception if
 the frame doesn't exist. This is not the case with percentage values, as a
-frame can always be found here.
+frame can always be found.
 
 #### Parameters
 
