@@ -5,7 +5,7 @@
 
 ## Basic Usage
 
-Use the [calculator](/v3/api/calculator) class to calculate [zodiac signs](/v3/api/zodiac) from various date types. The method `make` reads different date types. Reed the documentation on the [calculator class](/v2/api/calculator) for more information. 
+Use the [calculator](/v3/api/calculator) class to calculate [zodiac signs](/v3/api/zodiac) from various date types. The method `make` reads different date types. Reed the documentation on the [calculator class](/v3/api/calculator) for more information. 
 
 ### Example
 
