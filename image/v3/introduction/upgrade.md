@@ -30,7 +30,6 @@ There are a few key features that further improve the library.
 - [exif()](/v2/api/exif) is now handled by [exif()](/v3/basics/meta-information#exif-information) with a different signature
 - [fill()](/v3/modifying/drawing#fill-images-with-color) currently only supports color values
 - [filter()](/v2/api/filter) is now handled by [modify()](/v3/modifying/custom-modifiers)
-- The resizing methods [resize()](/v2/api/resize), [fit()](/v2/api/fit), [widen()](/v2/api/widen) and [heighten()](/v2/api/heighten) have been completely rebuild and are now handled by [resize()](/v3/modifying/resizing), [resizeDown](/v3/modifying/resizing), [scale()](/v3/modifying/resizing), [scaleDown()](/v3/modifying/resizing), [cover()](/v3/modifying/resizing), [coverDown()](/v3/modifying/resizing), [pad()](/v3/modifying/resizing) and [contain()](/v3/modifying/resizing)
 - [flip()](/v2/api/flip) still exists but has a new signature and is handled by [flip()](/v3/modifying/effects#mirror-image-horizontally) and [flop()](/v3/modifying/effects#mirror-image-vertically)
 - [insert()](/v2/api/insert) has been replaced by [place()](/v3/modifying/inserting)
 - [make()](/v2/api/make) has been replaced by [read()](/v3/basics/instantiation#reading-image-sources)
@@ -44,6 +43,9 @@ There are a few key features that further improve the library.
 - [trim()](/v2/api/trim) exists as of version `3.6`, but works differently and [automatically removes border areas](/v3/modifying/resizing#trim-image) of the image with similar colors
 - [getCore()](/v2/api/get-core) is replaced with [core()](/v3/modifying/advanced) but behaves completely differently
 - [orientate()](/v2/api/orientate) is handled by [orient()](/v3/modifying/effects#image-orientation-according-to-exif-data) and is applied automatically by default ([configurable](/v3/basics/configuration-drivers))
+- [resize()](/v2/api/resize) still exists but has a different signature without a callback. The constraint option combinations are handled in a different way by the following other methods [resizeDown()](/v3/modifying/resizing#resize-without-exceeding-the-original-size), [scale()](/v3/modifying/resizing#scale-images) and [scaleDown()](/v3/modifying/resizing#scale-images-but-do-not-exceed-the-original-size)
+- [widen()](/v2/api/widen) and [heighten()](/v2/api/heighten) are replaced by calling [scale()](/v3/modifying/resizing#scale-images) and [scaleDown()](/v3/modifying/resizing#scale-images-but-do-not-exceed-the-original-size) with named arguments
+- [fit()](/v2/api/fit) is replaced by [cover()](/v3/modifying/resizing#fitted-image-resizing) and [coverDown()](/v3/modifying/resizing#fitted-resizing-without-exceeding-the-original-size)
 
 ## Removed Features
 
