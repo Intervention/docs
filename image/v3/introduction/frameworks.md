@@ -97,7 +97,7 @@ You can read more about the different options for
 ### Static Facade Interface
 
 This package also integrates access to Intervention Image's central entry
-point, the `ImageManager::class`, via a static [facade](https://laravel.com/docs/11.x/facades). The call provides access to the
+point, the `ImageManager::class`, via a static [facade](https://laravel.com/docs/facades). The call provides access to the
 centrally configured [image manager](/v3/basics/instantiation) via singleton pattern.
 
 The following code example shows how to read an image from an upload request

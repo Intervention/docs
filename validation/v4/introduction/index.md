@@ -22,7 +22,7 @@ registers the validation rules into your installation.
 ### Usage with Laravel Framework
 
 The Validation library is built to work with [Laravel's
-Validation Framework](https://laravel.com/docs/11.x/validation) and provides over 30
+Validation Framework](https://laravel.com/docs/validation) and provides over 30
 additional validation rules including error messages. You can use this rules in
 combination with Laravel's rules by passing them to the validator.
 
@@ -81,4 +81,4 @@ Add the corresponding key to `/resources/lang/<language>/validation.php` like th
 ```
 
 Or add your custom messages directly to the validator like [described in the
-Laravel docs](https://laravel.com/docs/11.x/validation#customizing-the-error-messages).
+Laravel docs](https://laravel.com/docs/validation#customizing-the-error-messages).
