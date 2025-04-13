@@ -8,7 +8,7 @@ Learn how to insert images onto other images using the Intervention Image librar
 
 > public Image::place(mixed $element, string $position = 'top-left', int $offset_x = 0, int $offset_y = 0, int $opacity = 100): ImageInterface
 
-Places an image at the specified position. The image to insert can be specified
+Inserts an image at the specified position. The image to insert can be specified
 from any of the [supported image
 sources](/v3/basics/instantiation#reading-image-sources). Optionally you can
 pass coordinates for an offset to move the image relative to the specified
