@@ -10,10 +10,10 @@ Discover comprehensive image resizing techniques with the Intervention Image lib
 
 > public Image::resize(null|int $width = null, null|int $height = null): ImageInterface
 
-The method `resize()` simply stretches the image to the desired size. Use
+The method `resize()` simply stretches the image to the desired size regardless of the original aspect ratio. Use
 `resizeDown()` to change the size but do not exceed the original size of the
-image. The method support [named arguments](https://www.php.net/manual/en/functions.arguments.php#functions.named-arguments)
-to target just one axis for the modification. 
+image. The method supports [named arguments](https://www.php.net/manual/en/functions.arguments.php#functions.named-arguments)
+to target only one axis for the modification. 
 
 #### Parameters
 
@@ -38,16 +38,14 @@ $image->resize(300, 200);
 $image->resize(height: 200);
 ```
 
-
 ### Resize Without Exceeding the Original Size
 
 > public Image::resizeDown(null|int $width = null, null|int $height = null): ImageInterface
 
-The method `resize()` simply stretches the image to the desired size. Use
-`resizeDown()` to change the size but do not exceed the original size of the
-image. The method support [named arguments](https://www.php.net/manual/en/functions.arguments.php#functions.named-arguments)
-to target just one axis for the modification. 
-
+The `resizeDown()` method does the same as `resize()`. It simply stretches the
+image to the specified size, but does not exceeds the original size of the image. You can
+use [named arguments](https://www.php.net/manual/en/functions.arguments.php#functions.named-arguments)
+to resize just one axis for the modification. 
 
 #### Parameters
 
@@ -55,7 +53,6 @@ to target just one axis for the modification.
 | - | - | - |
 | width | integer | Desired image width. |
 | height | integer | Desired image width. |
-
 
 #### Example
 
@@ -67,7 +64,7 @@ $image = ImageManager::imagick()->read('images/example.jpg');
 
 $image = $image->resizeDown(2000, 100); // 800 x 100
 
-// resize only image width to 200 pixel and do not exceed the origial width
+// resize only image width to 200 pixel and do not exceed the original width
 $image->resizeDown(width: 200);
 ```
 
@@ -77,12 +74,12 @@ $image->resizeDown(width: 200);
 
 > public Image::scale(null|int $width = null, null|int $height = null): ImageInterface
 
-Often you want to resize an image but do not want to distort the original image
+Often you want to resize an image without distorting the original image
 aspect ratio. For this kind of modification you can simply use the methods
 `scale()` or `scaleDown()`.
 
-Keep in mind that the resulting size may differ from the given arguments,
-because the aspect ratio will be maintained preferably.
+Note that the resulting size may differ from the given arguments,
+as the aspect ratio is preferably preserved.
 
 #### Parameters
 
@@ -114,12 +111,12 @@ $image->scale(120, 100); // 120 x 90 (4:3)
 
 > public Image::scaleDown(null|int $width = null, null|int $height = null): ImageInterface
 
-The method `scale()` resizes the image and maintains the aspect ratio. While
-`scaleDown()` is similar to `scale()` the only difference is it doesn't exceed the original size of the
+The method `scale()` resizes the image while maintaining the original aspect ratio. While
+`scaleDown()` is similar to `scale()` the only difference is that it doesn't exceed the original size of the
 image. The method support [named arguments](https://www.php.net/manual/en/functions.arguments.php#functions.named-arguments)
-to target just one axis for the modification. 
+to target only one axis for the modification. 
 
-Please note that the size of the result may differ from the given parameter values.
+Note that the size of the result may differ from the given parameter values.
 
 #### Parameters
 
@@ -152,15 +149,14 @@ $image->scaleDown(height: 300); //  400 x 300
 
 > public Image::cover(int $width, int $height, string $position = 'center'): ImageInterface
 
+The `cover()` method is a two-step combination of cropping and resizing to
+achieve a given result size. This method takes the given dimensions and scales
+them to the largest possible size that matches the original size. This size is
+then positioned on the original and cropped before being resized to the desired
+size from the arguments.
 
-The `cover()` method is a two step combination of cropping and resizing to
-achieve a certain result size. This method takes the given dimensions and
-scales it to the largest possible size matching the original size. Then this
-size is positioned on the original and cut out before being resized to the
-desired size from the arguments
-
-For this method both width and height arguments are required. You can optional
-set a position to determine which part of the image should remain in focus.
+This method requires both width and height arguments. You can optional
+specify a position to determine which part of the image should remain in focus.
 
 #### Parameters
 
@@ -196,10 +192,10 @@ $image->cover(300, 300, 'left'); // 300 x 300 px
 > public Image::coverDown(int $width, int $height, string $position = 'center'): ImageInterface
 
 This method has the same purpose and the same signature as `cover()` but the
-end result pixel size will never be larger than the original image. Use this if
-you want to prevent up-sampling your image.
+final pixel size will never be larger than the original image. Use this if
+you want to avoid upsampling your image.
 
-Please note that the size of the result may differ from the given parameter values.
+Note that the size of the result may differ from the given parameter values.
 
 #### Parameters
 
@@ -233,13 +229,13 @@ $image->coverDown(900, 450, 'left'); // 800 x 400 px
 
 > public Image::pad(int $width, int $height, $background = 'ffffff', string $position = 'center'): ImageInterface
 
-Padded resizing means that the original image is scaled until it fits the
-defined target size with unchanged aspect ratio. The original image is not
+Padded resizing means that the original image is scaled to fit the
+defined target size without changing the aspect ratio. The original image is not
 scaled up but only down.
      
 Compared to the `cover()` method, this method does not create cropped areas, but
-possibly new empty areas on the sides of the result image. These are filled
-with the specified background color.
+possibly new empty areas on the sides of the resulting image. These will be filled
+with the given background color.
 
 #### Parameters
 
@@ -272,8 +268,8 @@ $image->pad(500, 500, position: 'top-left');
 
 > public Image::contain(int $width, int $height, $background = 'ffffff', string $position = 'center'): ImageInterface
 
- This method does the same as `pad()`, but the original image is also scaled
- up if the target size exceeds the original size.
+ This method does the same as `pad()`, but also scales up the original image if
+ the target size exceeds the original size.
 
 #### Parameters
 
@@ -307,14 +303,13 @@ $image->contain(500, 500, 'efefef');
 
 > public Image::crop(int $width, int $height, int $offset_x = 0, int $offset_y = 0, mixed $background = 'ffffff', string $position = 'top-left'): ImageInterface
 
-Cuts a rectangular portion of the current image with a given width and
-height at a specified position. Pass optional x, y offset coordinates to
+Crops a rectangular area of the current image with a given width and
+height at a given position. Pass optional x, y offset coordinates to
 move the crop by the specified number of pixels.
 
-You can also specify a background color. This color is used to fill any new
-areas that may be created, e.g. if the cropped area is larger than the original
-image format.
-
+You may also specify a background color. This color is used to fill any new
+areas that may be created, for example if the cropped area is larger than the
+original image format.
 
 #### Parameters
 
@@ -355,7 +350,7 @@ $image->crop(200, 150, 0 , 30, position: 'bottom-right');
 This function changes the size of the image borders without recalculating the
 actual image. If the specified sizes are larger than the original, the image
 area is added in the specified color. If the specified sizes are smaller, the
-original image area is cropped. The given position is taken into account and
+original image area is cropped. The specified position is taken into account and
 determines where the original image is fixed.
 
 #### Parameters
@@ -385,8 +380,8 @@ $image->resizeCanvas(800, 600, 'ff0');
 
 > public Image::resizeCanvasRelative(null|int $width = null, null|int $height = null, mixed $background = 'ffffff', string $position = 'center'): ImageInterface
 
-This function behaves in the same way as `resizeCanvas()`, but here relative values are
-specified which are either added or subtracted from the original size.
+This function behaves in the same way as `resizeCanvas()`, but here you specify
+relative values which are either added (positive) or subtracted (negative) from the original size.
 
 #### Parameters
 
@@ -421,14 +416,14 @@ $image->resizeCanvas(height: 20, background: 'ff0000', position: 'bottom');
 
 > public Image::trim(int $tolerance = 0): ImageInterface
 
-Remove border areas of the image on all sides that have a similar color. The
-similarity of the color can be varied using the optional `tolerance` parameter.
+Removes border areas of the image on all sides that have a similar color. The
+color similarity can be varied using the optional `tolerance` parameter.
 
-This means that with a tolerance value of `0`, only color areas that have exactly
-the same value are removed. As the tolerance increases, similar color areas are also
-included and cut off. Usually values up to `20` make sense.
+This means that with a tolerance value of `0`, only color areas with exactly
+the same value will be removed. The higher the tolerance, the more similar
+color areas are included. Usually values up to `20` make sense.
 
-**Please note that the results can vary greatly depending on the driver and the
+**Note that the results can vary greatly depending on the driver and the
 image you are processing.**
 
 #### Parameters
@@ -448,4 +443,3 @@ $image = ImageManager::gd()->read('images/example.jpg');
 // trim with a tolerance of 5
 $image->trim(5);
 ```
-
