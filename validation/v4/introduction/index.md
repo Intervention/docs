@@ -2,14 +2,14 @@
 ## Missing Laravel Validation Rules
 Enhance Laravel's validation system seamlessly with Intervention Validation, offering 30+ additional validation rules like IBAN, ISBN, postal codes, credit card checks and more.
 
+- Over 30 additional validations rules for Laravel's validator
+- Including error messages in 11 different languages
 - All rules implement the `Illuminate\Contracts\Validation\ValidationRule` interface
 - Use the additional rules in combination with Laravel's own rules
 
 ### Installation
 
-You can install this package quick and easy with Composer.
-
-Require the package via Composer:
+You can install this package quickly and easily with Composer.
 
 ```bash
 composer require intervention/validation
@@ -19,12 +19,13 @@ The Validation library is built to work with the Laravel Framework (>=10). It
 comes with a service provider, which will be discovered automatically and
 registers the validation rules into your installation.
 
-### Usage with Laravel Framework
+### Use with Laravel Framework
 
-The Validation library is built to work with [Laravel's
+Intervention Validation is built to work with [Laravel's
 Validation Framework](https://laravel.com/docs/validation) and provides over 30
-additional validation rules including error messages. You can use this rules in
-combination with Laravel's rules by passing them to the validator.
+additional validation rules including error messages in 11 different languages. 
+
+You can use these rules in combination with Laravel's own rules by passing them to the validator.
 
 #### Example with Controller
 
@@ -44,7 +45,6 @@ public function store(Request $request): RedirectResponse
 ```
 
 #### Example with Form Request Validation
-
 
 ```php
 use Intervention\Validation\Rules\Hexadecimalcolor;
