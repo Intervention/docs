@@ -10,9 +10,9 @@ Explore advanced image color handling and transparency management with Intervent
 
 > public Image::pickColor(int $x, int $y, int $frame_key = 0): ColorInterface
 
-Reads the color of the pixel specified via the X and Y coordinates.
-Furthermore, the key of the frame from which the color is taken can be
-determined. However, this is only relevant for animated images.
+Reads the color of the pixel specified by the X and Y coordinates. You can also
+get the key of the frame from which the color is taken. This is only relevant
+for animated images.
 
 #### Parameters
 
@@ -60,10 +60,10 @@ $alpha = $color->alpha()->toInt();
 
 > public Image::pickColors(int $x, int $y): CollectionInterface
 
-Reads all colors of the pixel specified via the X and Y coordinates and passes
+Reads all colors of the pixel specified via the X and Y coordinates and returns
 them in a collection. For animated images, this collection will contain all
 colors of the specified position for all frames. For non-animated images, the
-collection will contain only one color, since the image also contains only one
+collection will contain only one color, because the image also contains only one
 frame.
 
 #### Parameters
@@ -97,16 +97,15 @@ $color = $colors->get(6);
 
 ## Transforming Colors
 
-As soon as the pixel colors of an image have been read into an object, further
-options are available.
+Once the pixel colors of an image have been read into an object, more options are available.
 
 ### Transform Colors to String Values
 
 > public ColorInterface::toString(): ColorInterface
 
-Each color object can also be output as a string. It is possible to use the
-`toString()` method or to cast the object directly. Of course, the output
-depends on the respective color space.
+Each color object can also be output as a string. You can use the `toString()`
+method or to cast the object directly. Of course, the output depends on the
+respective color space.
 
 ```php
 use Intervention\Image\ImageManager;
@@ -133,9 +132,9 @@ $result = (string) $color;
 
 > public ColorInterface::convertTo(string|ColorspaceInterface $colorspace): ColorInterface
 
-Each color object has a method for converting into other color spaces. Here,
-the target space can be specified either as a string or as an object. This also
-works if the driver used does not support the target color space.
+Each color object has a method for converting into other color spaces. The
+target color space can be specified either as a string or as an object. This
+works even if the current driver does not support the target color space.
 
 The following color spaces are available.
 
@@ -167,18 +166,18 @@ $result = $hslColor->toString(); // "hsl(180, 100, 50)"
 
 ## Colorspaces
 
-The supported colorspaces primarily depend on the driver used. While the
-library supports with Imagick driver RGB and CMYK colorspaces, the GD driver
+The supported colorspaces depend mainly on the driver used. While the
+Imagick driver supports RGB and CMYK colorspace, the GD driver
 is limited to the RGB colorspace.
 
-If you are reading CMYK images with Intervention Image using the GD driver the
-images are transformed to RGB colorspace automatically.
+When reading CMYK images with Intervention Image using the GD driver the
+images are automatically converted to RGB colorspace.
 
 ### Read the Image Colorspace
 
 > public Image::colorspace(): ColorspaceInterface
 
-This function reads the colorspace from the current image instance.
+This function reads the colorspace of the current image instance.
 
 #### Example
 
@@ -200,9 +199,9 @@ $colorspace = $image->colorspace();
 
 > public Image::setColorspace(string|ColorspaceInterface $colorspace): ImageInterface
 
-This function transforms the current image into the given colorspace. The
+This function converts the current image to the specified colorspace. The
 target colorspace can be specified either as an object, as a class
-name, or as an abbreviation for the colorspace.
+name, or as an abbreviation of the colorspace.
 
 #### Parameters
 
@@ -236,8 +235,7 @@ $colorspace = $image->setColorspace(new CmykColorspace());
 
 ## Color Profiles
 
-Currently Intervention Image is only able to handle color profiles with the
-`ìmagick` driver.
+Currently Intervention Image can only handle color profiles with the `ìmagick` driver.
 
 ### Read Color Profiles
 
@@ -269,8 +267,8 @@ $profile->save('my_profile.icc')
 
 > public function setProfile(ProfileInterface $profile): ImageInterface
 
-This function sets a given ICC color profile to the current image instance.
-The function takes an instance of `ProfileInterface::class` as the argument.
+This function applies a given ICC color profile to the current image instance.
+The function takes an instance of `ProfileInterface::class` as an argument.
 
 #### Parameters
 
@@ -319,11 +317,11 @@ $image = $manager->read('images/example.jpg')->removeProfile();
 Intervention Image supports image formats with alpha channels. Transparent
 areas are preserved as long as the output format supports transparency.
 
-If the target format does not support transparency, no alpha channel can be
-preserved. In this case the transparent areas will be blended with a opaque color.
+If the output format does not support transparency, no alpha channel can be
+preserved. In this case the transparent areas will be blended with an opaque color.
 This color can be specified in advance in the initial [configuration of the
 image manager](/v3/basics/configuration-drivers) or as an optional argument in the following
-method. It is also possible to set or read the blending color at runtime.
+method. It is also possible to set or get the blending color at runtime.
 
 ### Merge Transparent Areas with Color
 
@@ -337,8 +335,8 @@ transparency.
 
 The `color` parameter can optionally be used to specify a color in the common
 [color formats](/v3/introduction/formats#color-formats). By default, this is
-the current or previously configured blending color. It should be noted that 
-possible transparency values in the blending color are ignored when applied.
+the current or previously configured blending color. Note that any transparency
+values in the blend color will be ignored.
 
 #### Parameters
 
@@ -368,15 +366,15 @@ $image->blendTransparency('f50');
 
 Return the currently set blending color as an instance of
 `ColorInterface::class`. This corresponds either to the color originally
-configured via the ImageManager or the blending color that was last set.
+configured through the ImageManager or the blending color that was last set.
 
 ### Set the Blending Color
 
 > public function setBlendingColor(mixed $color): ImageInterface
 
 Set a new blending color in the configuration of the current image instance.
-This color will be used as the default for all subsequent operations which use
-blending color and will overwrite the originally defined value in the ImageManager
+This color will be used as the default for all subsequent operations that use a
+blend color, overwriting the original value defined in the ImageManager
 configuration.
 
 #### Parameters
