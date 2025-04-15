@@ -10,7 +10,7 @@ Learn how to apply various image effects using the Intervention Image library. A
 
 > public Image::brightness(int $level): ImageInterface
 
-Change the brightness of the current image by a given level. Use values between `-100` for min. brightness `0` for no change and `+100` for max. brightness.
+Change the brightness of the current image by a given level. Use values between `-100` for minimum brightness `0` for no change and `+100` for maximum brightness.
 
 #### Parameters
 
@@ -39,7 +39,7 @@ $image = $image->brightness(35);
 
 > public Image::contrast(int $level): ImageInterface
 
-Change the contrast of the current image by a given level. Use values between `-100` for min. contrast `0` for no change and `+100` for max. contrast.
+Change the contrast of the current image by a given level. Use values between `-100` for minimum contrast `0` for no change and `+100` for maximum contrast.
 
 #### Parameters
 
@@ -67,7 +67,7 @@ $image = $image->contrast(-10);
 
 > public Image::gamma(float $gamma): ImageInterface
 
-Apply a gamma correction operation on the current image.
+Apply a gamma correction operation to the current image.
 
 #### Parameters
 
@@ -94,18 +94,18 @@ $image = $image->gamma(1.7);
 
 > public Image::colorize(int $red = 0, int $green = 0, int $blue = 0): ImageInterface
 
-Change the intensity level of the given color values of red, green and blue.
-The input values are normalized so you have to include parameters from 100 for
-maximum color intesity to 0 for no change and -100 to remove all the certain
-color on the image.
+Change the intensity level of the given red, green and blue color values.
+The input values are normalized so you need to include parameters from `100` for
+maximum color intensity to `0` for no change and `-100` to remove all the specific
+color from the image.
 
 #### Parameters
 
 | Name | Type | Description |
 | - | - | - |
-| red | int | Intesity correction of all red colors in image |
-| green | int | Intesity correction of all green colors in image |
-| blue | int | Intesity correction of all blue colors in image |
+| red | int | Intensity correction of all red colors in image |
+| green | int | Intensity correction of all green colors in image |
+| blue | int | Intensity correction of all blue colors in image |
 
 #### Example
 
@@ -127,7 +127,7 @@ $image = $image->colorize(blue: 15, green: 10);
 
 > public Image::greyscale(): ImageInterface
 
-Converts the current image into a greyscale version.
+Converts the current image to a greyscale version.
 
 #### Example
 
@@ -198,7 +198,7 @@ $image = $image->flip();
 
 > public Image::rotate(float $angle, mixed $background = 'ffffff'): ImageInterface
 
-Rotates the current image counterclockwise by the specified angle. Optionally,
+Rotate the current image counterclockwise by the specified angle. Optionally,
 specify a background color to fill the newly created uncovered areas after the
 rotation.
 
@@ -231,8 +231,8 @@ $image = $image->rotate(-45);
 > public Image::orient(): ImageInterface
 
 This method uses Exif data to automatically orient images correctly. **This
-rotation is performed automatically by default.** So you don't have to call this
-method unless you have [deactivated the auto orientation in the ImageManager
+rotation is done automatically by default.** So you don't need to call this
+method unless you have [disabled the auto orientation in the ImageManager
 configuration](/v3/basics/configuration-drivers).
 
 #### Example
@@ -261,9 +261,9 @@ $image = $image->orient();
 
 > public Image::blur(int $amount = 5): ImageInterface
 
-Apply a gaussian blur effect on the current image. Use the optional `amount` argument to define the effect strenght with values between `0` and `100`.
+Applies a gaussian blur effect to the current image. Use the optional `amount` argument to specify the strength of the effect with values between `0` and `100`.
 
-**With GD driver this method is performance intensive on larger amounts of blur. Use with care.**
+**With the GD driver this method is performance intensive for larger blur amounts. Use with caution.**
 
 #### Parameters
 
@@ -292,7 +292,7 @@ $image = $image->blur(3);
 
 > public Image::sharpen(int $amount = 10): ImageInterface
 
-Sharpen the current image instance with an optional `amount`.
+Sharpen the current image instance by an optional `amount`.
 
 #### Parameters
 
@@ -320,7 +320,7 @@ $image = $image->sharpen(3);
 
 > public Image::invert(): ImageInterface
 
-Invert all colors of the current image.
+Invert all colors in the current image.
 
 #### Example
 
@@ -342,7 +342,7 @@ $image = $image->invert();
 
 > public Image::pixelate(int $size): ImageInterface
 
-Applies a pixelation effect on the current image with a given pixel size.
+Applies a pixelation effect to the current image with a given pixel size.
 
 #### Parameters
 
@@ -369,12 +369,11 @@ $image = $image->pixelate(12);
 
 > public Image::reduceColors(int $limit, mixed $background = 'transparent'): ImageInterface
 
-Apply color quantization to the current image by reducing the numbers of
+Apply color quantization to the current image by reducing the number of
 distinct colors in the current image to the given limit. The number of colors
-is lowered in a way that the new image should be as visually similar as
-possible.
+is reduced in a way that the new image is as visually similar as possible.
 
-With GD driver (semi-)transparent colors that lose their transparency as a
+With the GD driver (semi-)transparent colors that lose their transparency as a
 result of the reduction process are blended against the given background color.
 
 #### Parameters
