@@ -1,5 +1,8 @@
-# Image::getCore
-## Read core instance of the current image
+---
+label: "getCore()"
+title: "Image::getCore"
+subtitle: "Read core instance of the current image"
+---
 
 > public Intervention\Image\Image getCore()
 

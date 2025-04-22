@@ -1,5 +1,8 @@
-# Installation
-## Installation with Composer
+---
+title: "Installation"
+subtitle: "Installation with Composer"
+sort: 1
+---
 
 You can install this package quick and easy with Composer.
 

@@ -1,5 +1,7 @@
-# ISSN Rule
-## Validate International Standard Serial Number
+---
+title: "ISSN Rule"
+subtitle: "Validate International Standard Serial Number"
+---
 
 > public Intervention\Validation\Rules\Issn::__construct()
 

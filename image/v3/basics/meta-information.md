@@ -1,6 +1,10 @@
-# Meta Information
-## Read Meta Data from Images
-Discover how to manage meta information in images with Intervention Image. Learn to read image dimensions, resolution, and Exif data, including pixel sizes, DPI settings, and camera metadata.
+---
+label: "Meta Information"
+title: "Meta Information"
+subtitle: "Read Meta Data from Images"
+lead: "Discover how to manage meta information in images with Intervention Image. Learn to read image dimensions, resolution, and Exif data, including pixel sizes, DPI settings, and camera metadata."
+sort: 2
+---
 
 [TOC]
 

@@ -1,5 +1,8 @@
-# Intervention Zodiac
-## PHP Zodiac Sign Calculator
+---
+title: "Intervention Zodiac"
+subtitle: "PHP Zodiac Sign Calculator"
+sort: 0
+---
 
 Intervention Zodiac is a calculator for zodiac signs to resolve the respective zodiac sign from various data types.
 

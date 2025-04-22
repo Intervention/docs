@@ -1,5 +1,8 @@
-# Usage
-## Basic usage of Intervention Validation
+---
+title: "Usage"
+subtitle: "Basic usage of Intervention Validation"
+sort: 2
+---
 
 [TOC]
 

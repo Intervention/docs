@@ -1,6 +1,9 @@
-# Resize Images
-## Change the Image Size in Different Ways
-Discover comprehensive image resizing techniques with the Intervention Image library. Learn methods for scaling, cropping, padding, and adjusting image canvas sizes, all while maintaining aspect ratios.
+---
+title: "Resize Images"
+subtitle: "Change the Image Size in Different Ways"
+lead: "Discover comprehensive image resizing techniques with the Intervention Image library. Learn methods for scaling, cropping, padding, and adjusting image canvas sizes, all while maintaining aspect ratios."
+sort: 0
+---
 
 [TOC]
 

@@ -1,5 +1,8 @@
-# Image::response
-## Sends HTTP response with current image attached
+---
+label: "response()"
+title: "Image::response"
+subtitle: "Sends HTTP response with current image attached"
+---
 
 > public Intervention\Image\Image response([string $format, [integer $quality]])
 

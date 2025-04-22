@@ -1,5 +1,7 @@
-# Creditcard Rule
-## Validate Creditcard Numbers
+---
+title: "Creditcard Rule"
+subtitle: "Validate Creditcard Numbers"
+---
 
 > public Intervention\Validation\Rules\Creditcard::__construct()
 

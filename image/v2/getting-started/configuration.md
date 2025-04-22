@@ -1,5 +1,8 @@
-# Configuration
-## Set up Intervention Image
+---
+title: "Configuration"
+subtitle: "Set up Intervention Image"
+sort: 2
+---
 
 [TOC]
 

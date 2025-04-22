@@ -1,6 +1,9 @@
-# Advanced
-## Advanced Image Modification
-Discover the endless possibilities of Intervention Image by directly accessing the native image data and combining them with custom modifier classes.
+---
+title: "Advanced"
+subtitle: "Advanced Image Modification"
+lead: "Discover the endless possibilities of Intervention Image by directly accessing the native image data and combining them with custom modifier classes."
+sort: 7
+---
 
 If the supplied options are not sufficient, it is possible to create your own
 solutions using your own [custom modifiers](/v3/modifying/custom-modifiers).

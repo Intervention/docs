@@ -1,5 +1,8 @@
-# Intervention HttpAuth
-## HTTP Authentication Management
+---
+title: "Intervention HttpAuth"
+subtitle: "HTTP Authentication Management"
+sort: 0
+---
 
 Intervention HttpAuth is a library to manage HTTP basic & digest authentication.
 

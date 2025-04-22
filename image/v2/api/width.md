@@ -1,5 +1,8 @@
-# Image::width
-## Get width of current image
+---
+label: "width()"
+title: "Image::width"
+subtitle: "Get width of current image"
+---
 
 > public Intervention\Image\Image width()
 

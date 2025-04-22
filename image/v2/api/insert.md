@@ -1,5 +1,8 @@
-# Image::insert
-## Place another image on current image
+---
+label: "insert()"
+title: "Image::insert"
+subtitle: "Place another image on current image"
+---
 
 > public Intervention\Image\Image insert(mixed $source, [string $position, [integer $x, integer $y]])
 

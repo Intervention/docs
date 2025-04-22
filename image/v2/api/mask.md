@@ -1,5 +1,8 @@
-# Image::mask
-## Apply alpha masking to the current image
+---
+label: "mask()"
+title: "Image::mask"
+subtitle: "Apply alpha masking to the current image"
+---
 
 > public Intervention\Image\Image mask(mixed $source, [bool $mask_with_alpha])
 

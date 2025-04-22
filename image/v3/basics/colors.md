@@ -1,6 +1,10 @@
-# Colors & Transparency
-## Handling of Image Colors
-Explore advanced image color handling and transparency management with Intervention Image. Learn how to read and transform pixel colors, manage colorspaces, work with ICC profiles, and blend transparency for dynamic image processing.
+---
+label: "Colors & Transparency"
+title: "Colors & Transparency"
+subtitle: "Handling of Image Colors"
+lead: "Explore advanced image color handling and transparency management with Intervention Image. Learn how to read and transform pixel colors, manage colorspaces, work with ICC profiles, and blend transparency for dynamic image processing."
+sort: 3
+---
 
 [TOC]
 

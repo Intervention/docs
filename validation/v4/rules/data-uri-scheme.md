@@ -1,6 +1,8 @@
-# Data URI Rule
-## Validate Data URI scheme string
-Explore how to validate Data URI scheme strings with the additional validation rules of Intervention Validation for your Laravel application.
+---
+title: "Data URI Rule"
+subtitle: "Validate Data URI scheme string"
+lead: "Explore how to validate Data URI scheme strings with the additional validation rules of Intervention Validation for your Laravel application."
+---
 
 > public Intervention\Validation\Rules\DataUri::__construct(?array $media_types = null)
 

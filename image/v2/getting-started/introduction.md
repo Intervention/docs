@@ -1,5 +1,9 @@
-# Intervention Image
-## PHP Image Manipulation
+---
+label: "Introduction"
+title: "Intervention Image"
+subtitle: "PHP Image Manipulation"
+sort: 0
+---
 
 Intervention Image is an open source **PHP image handling and manipulation** library. It provides an easier and expressive way to create, edit, and compose images and supports currently the two most common image processing libraries **GD Library** and **Imagick**.
 

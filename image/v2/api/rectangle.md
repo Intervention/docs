@@ -1,5 +1,8 @@
-# Image::rectangle
-## Draw a rectangle to the current image
+---
+label: "rectangle()"
+title: "Image::rectangle"
+subtitle: "Draw a rectangle to the current image"
+---
 
 > public Intervention\Image\Image rectangle(int $x1, int $y1, int $x2, int $y2, [Closure $callback])
 

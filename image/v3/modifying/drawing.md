@@ -1,6 +1,9 @@
-# Drawing
-## Draw Geometric Shapes on Images
-Learn how to draw shapes and customize images with Intervention Image. Add colors, pixels, rectangles, circles, polygons, and bézier curves using a simple interface for precise and intuitive control.
+---
+title: "Drawing"
+subtitle: "Draw Geometric Shapes on Images"
+lead: "Learn how to draw shapes and customize images with Intervention Image. Add colors, pixels, rectangles, circles, polygons, and bézier curves using a simple interface for precise and intuitive control."
+sort: 4
+---
 
 [TOC]
 

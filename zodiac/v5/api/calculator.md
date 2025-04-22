@@ -1,6 +1,9 @@
-# Calculator
-## Using the Zodiac Calculator Class
-Learn how to use the Zodiac Calculator Class to transform different date formats into zodiac sign objects including reading from scalar date types or date objects.
+---
+title: "Calculator"
+subtitle: "Using the Zodiac Calculator Class"
+lead: "Learn how to use the Zodiac Calculator Class to transform different date formats into zodiac sign objects including reading from scalar date types or date objects."
+sort: 0
+---
 
 [TOC]
 

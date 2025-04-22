@@ -1,5 +1,8 @@
-# Image::filter
-## Apply a predefined filter to the current image
+---
+label: "filter()"
+title: "Image::filter"
+subtitle: "Apply a predefined filter to the current image"
+---
 
 > public Intervention\Image\Image filter(Intervention\Image\Filters\FilterInterface $filter)
 

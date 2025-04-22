@@ -1,6 +1,8 @@
-# EAN Rule
-## Validate European Article Numbers
-Explore how to validate European Article Numbers with the additional validation rules of Intervention Validation for your Laravel application.
+---
+title: "EAN Rule"
+subtitle: "Validate European Article Numbers"
+lead: "Explore how to validate European Article Numbers with the additional validation rules of Intervention Validation for your Laravel application."
+---
 
 > public Intervention\Validation\Rules\Ean::__construct(array $lengths = [8, 13])
 

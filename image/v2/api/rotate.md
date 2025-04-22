@@ -1,5 +1,8 @@
-# Image::rotate
-## Rotate the current image
+---
+label: "rotate()"
+title: "Image::rotate"
+subtitle: "Rotate the current image"
+---
 
 > public Intervention\Image\Image rotate(float $angle, [string $bgcolor])
 

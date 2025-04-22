@@ -1,6 +1,9 @@
-# Text & Fonts
-## Write Text on an Image
-Learn how to add text and fonts on images with PHP and Intervention Image. Discover methods for setting font size, font color, alignment, rotation, line height, and text wrapping.
+---
+title: "Text & Fonts"
+subtitle: "Write Text on an Image"
+lead: "Learn how to add text and fonts on images with PHP and Intervention Image. Discover methods for setting font size, font color, alignment, rotation, line height, and text wrapping."
+sort: 3
+---
 
 [TOC]
 

@@ -1,5 +1,8 @@
-# Usage
-## How to Use Intervention Zodiac
+---
+title: "Usage"
+subtitle: "How to Use Intervention Zodiac"
+sort: 2
+---
 
 [TOC]
 

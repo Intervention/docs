@@ -1,6 +1,8 @@
-# Media (MIME) Type Rule
-## Validate MIME Type Strings
-Explore how to validate mime type strings with the additional validation rules of Intervention Validation for your Laravel application.
+---
+title: "Media (MIME) Type Rule"
+subtitle: "Validate MIME Type Strings"
+lead: "Explore how to validate mime type strings with the additional validation rules of Intervention Validation for your Laravel application."
+---
 
 > public Intervention\Validation\Rules\MimeType::__construct()
 

@@ -1,5 +1,7 @@
-# JWT Rule
-## Validate a JSON Web Token
+---
+title: "JWT Rule"
+subtitle: "Validate a JSON Web Token"
+---
 
 > public Intervention\Validation\Rules\Jwt::__construct()
 

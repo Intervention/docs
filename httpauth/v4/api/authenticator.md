@@ -1,3 +1,7 @@
+---
+title: "Authenticator"
+---
+
 # Authenticator
 ## Using the HTTP Authenticator
 

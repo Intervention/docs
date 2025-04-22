@@ -1,5 +1,8 @@
-# Release notes
-## List of major changes for every release
+---
+title: "Release notes"
+subtitle: "List of major changes for every release"
+sort: 5
+---
 
 These notes cover the major enhancements and changes for every release. For a full change list view the [Commits on Github](https://github.com/Intervention/image/commits/master).
 

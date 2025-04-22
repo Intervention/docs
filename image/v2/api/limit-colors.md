@@ -1,5 +1,8 @@
-# Image::limitColors
-## Reduce number of colors for the current image
+---
+label: "limitColors()"
+title: "Image::limitColors"
+subtitle: "Reduce number of colors for the current image"
+---
 
 > public Intervention\Image\Image limitColors(integer $count, [mixed $matte])
 

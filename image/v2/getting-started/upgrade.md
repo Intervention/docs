@@ -1,5 +1,9 @@
-# Upgrade Guide
-## Upgrade from Intervention Image 1.x to 2.x
+---
+label: "Upgrade from 1.x"
+title: "Upgrade Guide"
+subtitle: "Upgrade from Intervention Image 1.x to 2.x"
+sort: 3
+---
 
 [TOC]
 

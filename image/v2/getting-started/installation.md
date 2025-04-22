@@ -1,5 +1,8 @@
-# Installation
-## Easy installation via Composer
+---
+title: "Installation"
+subtitle: "Easy installation via Composer"
+sort: 1
+---
 
 [TOC]
 

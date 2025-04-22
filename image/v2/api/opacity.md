@@ -1,5 +1,8 @@
-# Image::opacity
-## Set opacity of the current image
+---
+label: "opacity()"
+title: "Image::opacity"
+subtitle: "Set opacity of the current image"
+---
 
 > public Intervention\Image\Image opacity(integer $transparency)
 

@@ -1,5 +1,8 @@
-# Image::height
-## Get the height in pixels of the current image
+---
+label: "height()"
+title: "Image::height"
+subtitle: "Get the height in pixels of the current image"
+---
 
 > public Intervention\Image\Image height()
 

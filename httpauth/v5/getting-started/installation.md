@@ -1,6 +1,9 @@
-# Installation
-## Installation with Composer
-Learn how to install Intervention HttpAuth for PHP with Composer and discover how to configure your web server to make the library work perfectly.
+---
+title: "Installation"
+subtitle: "Installation with Composer"
+lead: "Learn how to install Intervention HttpAuth for PHP with Composer and discover how to configure your web server to make the library work perfectly."
+sort: 1
+---
 
 [TOC]
 

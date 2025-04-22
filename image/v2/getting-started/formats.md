@@ -1,5 +1,8 @@
-# Supported Formats
-## Image & color formats
+---
+title: "Supported Formats"
+subtitle: "Image & color formats"
+sort: 4
+---
 
 [TOC]
 

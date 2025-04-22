@@ -1,5 +1,8 @@
-# Image::filesize
-## Gets file size of the current image
+---
+label: "filesize()"
+title: "Image::filesize"
+subtitle: "Gets file size of the current image"
+---
 
 > public Intervention\Image\Image filesize()
 

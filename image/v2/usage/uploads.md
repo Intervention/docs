@@ -1,5 +1,8 @@
-# Image Uploads
-## Handle uploaded images
+---
+title: "Image Uploads"
+subtitle: "Handle Image Uploads"
+sort: 5
+---
 
 PHP lets people upload files and with Intervention Image you can easily pass an uploaded image to the [make()](/v2/api/make) method. The standard way is to get the temp. file information from the ```$_FILES``` array.
 
