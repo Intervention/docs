@@ -1,9 +1,7 @@
 ---
 title: "Authenticator"
+subtitle: "Using the HTTP Authenticator"
 ---
-
-# Authenticator
-## Using the HTTP Authenticator
 
 [TOC]
 
