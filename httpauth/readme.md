@@ -1,4 +1,5 @@
 ---
+sort: 3
 label: "HttpAuth"
 title: "Intervention HttpAuth"
 subtitle: "HTTP Authentication Management"

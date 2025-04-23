@@ -1,4 +1,5 @@
 ---
+sort: 0
 label: "Image"
 title: "Intervention Image"
 subtitle: "PHP Image Processing"

@@ -1,4 +1,5 @@
 ---
+sort: 2
 label: "Zodiac"
 title: "Intervention Zodiac"
 subtitle: "PHP Zodiac Sign Calculator"
