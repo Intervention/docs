@@ -1,5 +1,6 @@
 ---
 title: "Intervention HttpAuth"
+label: "Introduction"
 subtitle: "HTTP Authentication Management"
 sort: 0
 ---

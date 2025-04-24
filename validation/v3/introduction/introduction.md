@@ -1,5 +1,6 @@
 ---
 title: "Intervention Validation"
+label: "Introduction"
 subtitle: "Missing Laravel Validation Rules"
 sort: 0
 ---
