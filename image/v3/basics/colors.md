@@ -338,7 +338,7 @@ function call can also be applied to image formats that can actually contain
 transparency.
 
 The `color` parameter can optionally be used to specify a color in the common
-[color formats](/v3/introduction/formats#color-formats). By default, this is
+[color formats](/v3/getting-started/formats#color-formats). By default, this is
 the current or previously configured blending color. Note that any transparency
 values in the blend color will be ignored.
 
@@ -385,7 +385,7 @@ configuration.
 
 | Name | Type | Description |
 | - | - | - |
-| color | mixed | New blending color in supported [color formats](/v3/introduction/formats#color-formats). |
+| color | mixed | New blending color in supported [color formats](/v3/getting-started/formats#color-formats). |
 
 #### Example
 

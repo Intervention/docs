@@ -23,7 +23,7 @@ passed, the whole image will be filled.
 
 | Name | Type | Description |
 | - | - | - |
-| color | mixed | Fill color in one of the different [color formats](/v3/introduction/formats#color-formats) |
+| color | mixed | Fill color in one of the different [color formats](/v3/getting-started/formats#color-formats) |
 | x | int | Optional x-coordinate of the filling position |
 | y | int | Optional y-coordinate of the filling position |
 
@@ -55,7 +55,7 @@ Draw a single pixel at given position defined by the coordinates **x** and **y**
 | - | - | - |
 | x | integer | Position of pixel on x-axis of the current image |
 | y | integer | Position of pixel on y-axis of the current image |
-| color | mixed | Color of the pixel in a [valid format](/v3/introduction/formats#color-formats) |
+| color | mixed | Color of the pixel in a [valid format](/v3/getting-started/formats#color-formats) |
 
 
 #### Example
