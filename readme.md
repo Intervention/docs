@@ -4,25 +4,25 @@ Documentation in markdown for all projects on [intervention.io](https://interven
 
 ## Projects
 
-### [Intervention Image](https://github.com/Intervention/image)
+### Intervention Image
 
 - [Documentation Source](/image)
-- [Documentation Website](https://image.intervention.io/)
+- [Website](https://image.intervention.io)
 
-### [Intervention Validation](https://github.com/Intervention/validation)
+### Intervention Validation
 
 - [Documentation Source](/validation)
-- [Documentation Website](https://validation.intervention.io/)
+- [Website](https://validation.intervention.io)
 
-### [Intervention Zodiac](https://github.com/Intervention/zodiac)
+### Intervention Zodiac
 
 - [Documentation Source](/zodiac)
-- [Documentation Website](https://zodiac.intervention.io/)
+- [Website](https://zodiac.intervention.io)
 
-### [Intervention HttpAuth](https://github.com/Intervention/httpauth)
+### Intervention HttpAuth
 
 - [Documentation Source](/httpauth)
-- [Documentation Website](https://httpauth.intervention.io/)
+- [Website](https://httpauth.intervention.io)
 
 ## Authors
 
