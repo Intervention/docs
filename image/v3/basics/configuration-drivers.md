@@ -58,8 +58,8 @@ the constructor that determine the behavior of the library.
 
 These parameters affect how the library handles the [orientation of the image
 according to Exif
-data](/v3/modifying/effects#image-orientation-according-to-exif-data), whether
-[animations are decoded or discarded](/v3/modifying/animations), and what the [default blending
+data](/v3/modifying-images/effects#image-orientation-according-to-exif-data), whether
+[animations are decoded or discarded](/v3/modifying-images/animations), and what the [default blending
 color](/v3/basics/colors#transparency) is.
 
 #### Parameters

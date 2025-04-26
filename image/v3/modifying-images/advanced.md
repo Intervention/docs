@@ -6,7 +6,7 @@ sort: 7
 ---
 
 If the supplied options are not sufficient, it is possible to create your own
-solutions using your own [custom modifiers](/v3/modifying/custom-modifiers).
+solutions using your own [custom modifiers](/v3/modifying-images/custom-modifiers).
 Furthermore, the native image object can be accessed, so that all functions
 used by the actual image processing libraries (such as GD or Imagick) can be used
 - even those not covered by Intervention Image.
@@ -35,6 +35,6 @@ $imagick = $image->core()->native();
 $imagick->oilPaintImage(4.5);
 ```
 
-Combined with [custom modifiers](/v3/modifying/custom-modifiers), Intervention
+Combined with [custom modifiers](/v3/modifying-images/custom-modifiers), Intervention
 Image can be extended with your own modifier combinations for endless
 possibilities.

@@ -93,8 +93,8 @@ return [
 
 You can read more about the different options for
 [driver selection](/v3/basics/configuration-drivers#driver-selection), setting options for 
-[auto orientation](/v3/modifying/effects#image-orientation-according-to-exif-data), 
-[decoding animations](/v3/modifying/animations) and 
+[auto orientation](/v3/modifying-images/effects#image-orientation-according-to-exif-data), 
+[decoding animations](/v3/modifying-images/animations) and 
 [blending color](/v3/basics/colors#transparency).
 
 ### Static Facade Interface
@@ -201,8 +201,8 @@ First choose between the two supplied drivers `Intervention\Image\Drivers\Gd\Dri
 
 Then you can then use the options to determine the behavior of the library. Read more about the different options for
 [driver selection](/v3/basics/configuration-drivers#driver-selection), setting options for 
-[auto orientation](/v3/modifying/effects#image-orientation-according-to-exif-data), 
-[decoding animations](/v3/modifying/animations) and 
+[auto orientation](/v3/modifying-images/effects#image-orientation-according-to-exif-data), 
+[decoding animations](/v3/modifying-images/animations) and 
 [blending color](/v3/basics/colors#transparency).
 
 ### Dependency Injection
