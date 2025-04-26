@@ -1,6 +1,8 @@
-# Postal Code Rule
-## Validate Postal Codes for Individual Countries
-Explore how to validate international postal codes with the additional validation rules of Intervention Validation for your Laravel application.
+---
+title: "Postal Code Rule"
+subtitle: "Validate Postal Codes for Individual Countries"
+lead: "Explore how to validate international postal codes with the additional validation rules of Intervention Validation for your Laravel application."
+---
 
 > public Intervention\Validation\Rules\Postalcode::__construct(array $countrycodes = [])
 

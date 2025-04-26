@@ -1,5 +1,8 @@
-# Image::fit
-## Cut out and resize a rectangular part of the current image
+---
+label: "fit()"
+title: "Image::fit"
+subtitle: "Cut out and resize a rectangular part of the current image"
+---
 
 > public Intervention\Image\Image fit(int $width, [[int $height], [Closure $callback, [string $position]]])
 

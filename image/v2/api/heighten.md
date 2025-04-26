@@ -1,5 +1,8 @@
-# Image::heighten
-## Resize image proportionally to given height
+---
+label: "heighten()"
+title: "Image::heighten"
+subtitle: "Resize image proportionally to given height"
+---
 
 > public Intervention\Image\Image heighten(integer $height, [Closure $callback])
 

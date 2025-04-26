@@ -1,6 +1,9 @@
-# Installation
-## Installation with Composer
-Learn how to install Intervention Zodiac for PHP with Composer and discover how to use the library with the Laravel framework.
+---
+title: "Installation"
+subtitle: "Installation with Composer"
+lead: "Learn how to install Intervention Zodiac for PHP with Composer and discover how to use the library with the Laravel framework."
+sort: 1
+---
 
 Use [Composer](https://getcomposer.org) for installation by running the following command.
 

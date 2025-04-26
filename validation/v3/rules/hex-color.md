@@ -1,5 +1,7 @@
-# Hexadecimal Color Rule
-## Validate a Hexadecimal Color Code
+---
+title: "Hexadecimal Color Rule"
+subtitle: "Validate a Hexadecimal Color Code"
+---
 
 > public Intervention\Validation\Rules\HexColor::__construct(?int $length = null)
 

@@ -1,5 +1,7 @@
-# EAN Rule
-## Validate European Article Numbers
+---
+title: "EAN Rule"
+subtitle: "Validate European Article Numbers"
+---
 
 > public Intervention\Validation\Rules\Ean::__construct(?int $length = null)
 

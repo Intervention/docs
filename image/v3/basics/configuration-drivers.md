@@ -1,6 +1,10 @@
-# Configuration & Drivers
-## Use the ImageManager to Configure Intervention Image
-Learn how to create and configure Intervention Image. Discover the image manager, driver options (GD, Imagick or libvips), and advanced settings like auto-orientation, animation decoding, and blending colors.
+---
+label: "Configuration & Drivers"
+title: "Configuration & Drivers"
+subtitle: "Use the ImageManager to Configure Intervention Image"
+lead: "Learn how to create and configure Intervention Image. Discover the image manager, driver options (GD, Imagick or libvips), and advanced settings like auto-orientation, animation decoding, and blending colors."
+sort: 0
+---
 
 [TOC]
 
@@ -54,8 +58,8 @@ the constructor that determine the behavior of the library.
 
 These parameters affect how the library handles the [orientation of the image
 according to Exif
-data](/v3/modifying/effects#image-orientation-according-to-exif-data), whether
-[animations are decoded or discarded](/v3/modifying/animations), and what the [default blending
+data](/v3/modifying-images/effects#image-orientation-according-to-exif-data), whether
+[animations are decoded or discarded](/v3/modifying-images/animations), and what the [default blending
 color](/v3/basics/colors#transparency) is.
 
 #### Parameters

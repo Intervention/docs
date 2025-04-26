@@ -1,6 +1,8 @@
-# Lower Case Rule
-## Validate a String in Lower Case
-Discover how to validate lower case strings with the additional validation rules of Intervention Validation for your Laravel application.
+---
+title: "Lower Case Rule"
+subtitle: "Validate a String in Lower Case"
+lead: "Discover how to validate lower case strings with the additional validation rules of Intervention Validation for your Laravel application."
+---
 
 > public Intervention\Validation\Rules\Lowercase::__construct()
 

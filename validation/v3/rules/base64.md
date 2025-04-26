@@ -1,5 +1,7 @@
-# Base64 Rule
-## Validate a Base64 Encoded String
+---
+title: "Base64 Rule"
+subtitle: "Validate a Base64 Encoded String"
+---
 
 > public Intervention\Validation\Rules\Base64::__construct()
 

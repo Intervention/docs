@@ -1,5 +1,7 @@
-# BIC Rule
-## Validate a Business Identifier Code
+---
+title: "BIC Rule"
+subtitle: "Validate a Business Identifier Code"
+---
 
 > public Intervention\Validation\Rules\Bic::__construct()
 

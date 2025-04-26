@@ -1,5 +1,7 @@
-# ISIN Rule
-## Validate International Securities Identification Number
+---
+title: "ISIN Rule"
+subtitle: "Validate International Securities Identification Number"
+---
 
 > public Intervention\Validation\Rules\Isin::__construct()
 

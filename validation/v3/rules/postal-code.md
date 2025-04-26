@@ -1,5 +1,7 @@
-# Postal Code Rule
-## Validate Postal Codes for Individual Countries
+---
+title: "Postal Code Rule"
+subtitle: "Validate Postal Codes for Individual Countries"
+---
 
 > public Intervention\Validation\Rules\Postalcode::__construct(string $countrycode)
 

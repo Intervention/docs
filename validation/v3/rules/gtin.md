@@ -1,5 +1,7 @@
-# GTIN Rule
-## Validate a Global Trade Item Number
+---
+title: "GTIN Rule"
+subtitle: "Validate a Global Trade Item Number"
+---
 
 > public Intervention\Validation\Rules\Gtin::__construct(?int $length = null)
 

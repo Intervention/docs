@@ -1,6 +1,9 @@
-# Zodiac
-## Working with Zodiac Objects
-Discover how to use the zodiac objects returned by the Intervention Image Zodiac Calculator. Generate localized contents and use a compatibility calculator based on astrological theory.
+---
+title: "Zodiac"
+subtitle: "Working with Zodiac Objects"
+lead: "Discover how to use the zodiac objects returned by the Intervention Image Zodiac Calculator. Generate localized contents and use a compatibility calculator based on astrological theory."
+sort: 1
+---
 
 [TOC]
 

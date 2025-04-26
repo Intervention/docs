@@ -1,5 +1,8 @@
-# Image::reset
-## Reset current image to a previously saved state
+---
+label: "reset()"
+title: "Image::reset"
+subtitle: "Reset current image to a previously saved state"
+---
 
 > public Intervention\Image\Image reset([string $name])
 

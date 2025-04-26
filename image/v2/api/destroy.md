@@ -1,5 +1,8 @@
-# Image::destroy
-## Free up memory
+---
+label: "destroy()"
+title: "Image::destroy"
+subtitle: "Free up memory"
+---
 
 > public Intervention\Image\Image destroy()
 

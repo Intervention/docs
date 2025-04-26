@@ -1,5 +1,8 @@
-# Calculator
-## Using the Zodiac Calculator Class
+---
+title: "Calculator"
+subtitle: "Using the Zodiac Calculator Class"
+sort: 0
+---
 
 [TOC]
 

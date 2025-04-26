@@ -1,5 +1,8 @@
-# Image::sharpen
-## Sharpen the current image
+---
+label: "sharpen()"
+title: "Image::sharpen"
+subtitle: "Sharpen the current image"
+---
 
 > public Intervention\Image\Image sharpen([integer $amount])
 

@@ -1,5 +1,7 @@
-# Domain Name Rule
-## Validate Domain Names
+---
+title: "Domain Name Rule"
+subtitle: "Validate Domain Names"
+---
 
 > public Intervention\Validation\Rules\Domainname::__construct()
 

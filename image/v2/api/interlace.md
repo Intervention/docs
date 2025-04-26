@@ -1,5 +1,8 @@
-# Image::interlace
-## Enable or disabled interlaced mode of the current image
+---
+label: "interlace()"
+title: "Image::interlace"
+subtitle: "Enable or disabled interlaced mode of the current image"
+---
 
 > public Intervention\Image\Image interlace([boolean $interlace])
 

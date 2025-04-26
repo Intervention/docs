@@ -1,5 +1,8 @@
-# Image::resize
-## Resize the current image
+---
+label: "resize()"
+title: "Image::resize"
+subtitle: "Resize the current image"
+---
 
 > public Intervention\Image\Image resize (integer $width, integer $height, Closure $callback)
 

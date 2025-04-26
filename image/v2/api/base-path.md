@@ -1,5 +1,8 @@
-# Image::basePath
-## Get fully qualified path
+---
+label: "basePath()"
+title: "Image::basePath"
+subtitle: "Get fully qualified path"
+---
 
 > public Intervention\Image\Image basePath()
 

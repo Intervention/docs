@@ -1,5 +1,7 @@
-# Snake Case Rule
-## Validate String Formated in Snake Case
+---
+title: "Snake Case Rule"
+subtitle: "Validate String Formated in Snake Case"
+---
 
 > public Intervention\Validation\Rules\Snakecase::__construct()
 

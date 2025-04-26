@@ -1,5 +1,7 @@
-# ISBN Rule
-## Validate International Standard Book Number
+---
+title: "ISBN Rule"
+subtitle: "Validate International Standard Book Number"
+---
 
 > public Intervention\Validation\Rules\Isbn::__construct(?int $length = null)
 

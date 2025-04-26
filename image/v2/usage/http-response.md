@@ -1,5 +1,8 @@
-# HTTP Responses
-## Transform an image into a HTTP response
+---
+title: "HTTP Responses"
+subtitle: "Transform an image into a HTTP response"
+sort: 1
+---
 
 The easiest way to return an image directly to the users browser, is to output the [response()](/v2/api/response) method. It will automatically send HTTP headers according to the currently image and output encoded image data.
 

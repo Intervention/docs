@@ -1,5 +1,7 @@
-# Kebab Case Rule
-## Validate a String in Kebab Case
+---
+title: "Kebab Case Rule"
+subtitle: "Validate a String in Kebab Case"
+---
 
 > public Intervention\Validation\Rules\Kebabcase::__construct()
 

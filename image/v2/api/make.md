@@ -1,5 +1,8 @@
-# Image::make
-## Create a new image resource
+---
+label: "make()"
+title: "Image::make"
+subtitle: "Create a new image resource"
+---
 
 > public static Intervention\Image\ImageManager make(mixed $source)
 

@@ -1,5 +1,8 @@
-# Image::backup
-## Save a backup of the current image state
+---
+label: "backup()"
+title: "Image::backup"
+subtitle: "Save a backup of the current image state"
+---
 
 > public Intervention\Image\Image backup([string $name])
 

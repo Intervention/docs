@@ -1,5 +1,7 @@
-# IBAN Rule
-## Validate International Bank Account Numbers
+---
+title: "IBAN Rule"
+subtitle: "Validate International Bank Account Numbers"
+---
 
 > public Intervention\Validation\Rules\Iban::__construct()
 

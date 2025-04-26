@@ -1,6 +1,8 @@
-# Camel Case Rule
-## Validate Camel Case String
-Explore how to validate camel case strings with the additional validation rules of Intervention Validation for your Laravel application.
+---
+title: "Camel Case Rule"
+subtitle: "Validate Camel Case String"
+lead: "Explore how to validate camel case strings with the additional validation rules of Intervention Validation for your Laravel application."
+---
 
 > public Intervention\Validation\Rules\Camelcase::__construct()
 

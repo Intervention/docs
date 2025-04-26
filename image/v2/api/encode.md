@@ -1,5 +1,8 @@
-# Image::encode
-## Encode image
+---
+label: "encode()"
+title: "Image::encode"
+subtitle: "Encode image"
+---
 
 > public Intervention\Image\Image encode([mixed $format, [int $quality]])
 

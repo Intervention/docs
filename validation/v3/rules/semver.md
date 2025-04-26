@@ -1,5 +1,7 @@
-# Semantic Versioning Rule
-## Validate Semantic Version Numbers
+---
+title: "Semantic Versioning Rule"
+subtitle: "Validate Semantic Version Numbers"
+---
 
 > public Intervention\Validation\Rules\SemVer::__construct()
 

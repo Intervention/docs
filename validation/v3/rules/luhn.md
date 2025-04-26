@@ -1,5 +1,7 @@
-# Luhn Rule
-## Validate a String Against Luhn Algorithm
+---
+title: "Luhn Rule"
+subtitle: "Validate a String Against Luhn Algorithm"
+---
 
 > public Intervention\Validation\Rules\Luhn::__construct()
 

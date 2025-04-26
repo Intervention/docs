@@ -1,6 +1,10 @@
-# Instantiation
-## Read & Create Images
-Learn how to manage and process images with the Intervention Image Manager. Read and decode images from multiple sources like file paths, Base64, and Data Uri, or create custom images and animations using PHP.
+---
+label: "Read & Create Images"
+title: "Instantiation"
+subtitle: "Read & Create Images"
+lead: "Learn how to manage and process images with the Intervention Image Manager. Read and decode images from multiple sources like file paths, Base64, and Data Uri, or create custom images and animations using PHP."
+sort: 1
+---
 
 [TOC]
 
@@ -134,7 +138,7 @@ source and the delay time of the individual animation images. It should be
 noted that the animation created in this way is output in a format that
 supports animations at all.
 
-Animations are possible in all supplied drivers. [Read more on how to modify animated images.](/v3/modifying/animations)
+Animations are possible in all supplied drivers. [Read more on how to modify animated images.](/v3/modifying-images/animations)
 
 #### Parameters
 

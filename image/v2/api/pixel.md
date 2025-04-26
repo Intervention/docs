@@ -1,5 +1,8 @@
-# Image::pixel
-## Draw a single pixel to the current image
+---
+label: "pixel()"
+title: "Image::pixel"
+subtitle: "Draw a single pixel to the current image"
+---
 
 > public Intervention\Image\Image pixel(mixed $color, integer $x, integer $y)
 

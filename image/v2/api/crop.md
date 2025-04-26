@@ -1,5 +1,8 @@
-# Image::crop
-## Cut out a rectangular part of the current image
+---
+label: "crop()"
+title: "Image::crop"
+subtitle: "Cut out a rectangular part of the current image"
+---
 
 > public Intervention\Image\Image crop(int $width, int $height, [int $x, int $y])
 

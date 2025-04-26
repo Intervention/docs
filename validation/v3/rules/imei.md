@@ -1,5 +1,7 @@
-# IMEI Rule
-## Validate International Mobile Equipment Identity 
+---
+title: "IMEI Rule"
+subtitle: "Validate International Mobile Equipment Identity "
+---
 
 > public Intervention\Validation\Rules\Imei::__construct()
 

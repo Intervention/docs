@@ -1,5 +1,8 @@
-# Image Caching
-## Caching of image operations
+---
+title: "Image Caching"
+subtitle: "Caching of image operations"
+sort: 3
+---
 
 The optional package [Intervention Image Cache](https://packagist.org/packages/intervention/imagecache) extends the package to be capable of image caching.
 

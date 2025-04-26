@@ -1,5 +1,8 @@
-# Image::orientate
-## Adjusts the current image orientation automatically
+---
+label: "orientate()"
+title: "Image::orientate"
+subtitle: "Adjusts the current image orientation automatically"
+---
 
 > public Intervention\Image\Image orientate()
 

@@ -1,5 +1,8 @@
-# Image::invert
-## Invert the colors of the current image
+---
+label: "invert()"
+title: "Image::invert"
+subtitle: "Invert the colors of the current image"
+---
 
 > public Intervention\Image\Image invert()
 

@@ -1,5 +1,8 @@
-# Image::contrast
-## Change the color contrast of the current image
+---
+label: "contrast()"
+title: "Image::contrast"
+subtitle: "Change the color contrast of the current image"
+---
 
 > public Intervention\Image\Image contrast(integer $level)
 

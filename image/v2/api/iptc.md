@@ -1,5 +1,8 @@
-# Image::iptc
-## Reads IPTC meta data from the current image
+---
+label: "iptc()"
+title: "Image::iptc"
+subtitle: "Reads IPTC meta data from the current image"
+---
 
 > public Intervention\Image\Image iptc([string $key])
 

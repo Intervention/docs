@@ -1,5 +1,8 @@
-# Image::mime
-## Get MIME Type of the current image
+---
+label: "mime()"
+title: "Image::mime"
+subtitle: "Get MIME Type of the current image"
+---
 
 > public Intervention\Image\Image mime()
 

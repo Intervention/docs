@@ -1,5 +1,8 @@
-# Zodiac
-## Working with Zodiac Objects
+---
+title: "Zodiac"
+subtitle: "Working with Zodiac Objects"
+sort: 1
+---
 
 [TOC]
 
