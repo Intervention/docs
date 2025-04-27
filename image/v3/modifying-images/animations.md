@@ -9,7 +9,7 @@ sort: 5
 
 Both drivers included with Intervention Image support animation by default.
 However, the GD driver must use additional resources as it does not support
-animation inherently.
+animation out of the box.
 
 If you are loading images without the intention of processing the animation at
 all, this process can be [disabled beforehand in the Image
