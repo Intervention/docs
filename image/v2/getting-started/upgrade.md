@@ -56,4 +56,4 @@ In order to keep your application compatible, you need to keep in mind the follo
 ### Other
 
 - To keep naming consistent the filename of the configuration file for *intervention/imagecache* was renamed from `config/imagecache.php` to `config/config.php`.
-- For standalone use instantiate objects from `Intervention\Image\ImageManagerStatic` instead of `Intervention\Image\Image`. ([See example](/v2/introduction/installation))
+- For standalone use instantiate objects from `Intervention\Image\ImageManagerStatic` instead of `Intervention\Image\Image`. ([See example](/v2/getting-started/installation))

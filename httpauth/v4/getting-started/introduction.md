@@ -38,4 +38,4 @@ $auth = Authenticator::make([
 ]);
 ```
 
-Read more on how to [install](/v4/introduction/installation) or [use the package](/v4/api/authenticator)
+Read more on how to [install](/v4/getting-started/installation) or [use the package](/v4/api/authenticator)

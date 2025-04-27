@@ -42,7 +42,7 @@ Image::configure(['driver' => 'imagick']);
 $image = Image::make('public/foo.jpg')->resize(300, 200);
 ```
 
-You can read more detailed information about [installation](/v2/introduction/installation) and [configuration](/v2/introduction/configuration).
+You can read more detailed information about [installation](/v2/getting-started/installation) and [configuration](/v2/getting-started/configuration).
 
 ## Reading Images
 

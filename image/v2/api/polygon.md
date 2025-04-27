@@ -18,11 +18,11 @@ Define appearance of polygon. Use the following methods to pass details.
 
 > public Intervention\Image\AbstractShape background(string $color)
 
-Define the background-color of the polygon in one of the available [color formats](/v2/introduction/formats).
+Define the background-color of the polygon in one of the available [color formats](/v2/getting-started/formats).
 
 > public Intervention\Image\AbstractShape border(integer $width, string $color)
 
-Define the border of the polygon. Set width as pixels in the first and the border-color in one of the available [color formats](/v2/introduction/formats) as second parameter.
+Define the border of the polygon. Set width as pixels in the first and the border-color in one of the available [color formats](/v2/getting-started/formats) as second parameter.
 
 ### Return Values
 Instance of `Intervention\Image\Image`

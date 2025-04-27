@@ -11,7 +11,7 @@ Draw a single pixel in given **color** on **x, y position**.
 ### Parameters
 
 #### color
-The color of the pixel. Pass a color in one of the different [color formats](/v2/introduction/formats).
+The color of the pixel. Pass a color in one of the different [color formats](/v2/getting-started/formats).
 
 #### x
 x-coordinate of the pixel.

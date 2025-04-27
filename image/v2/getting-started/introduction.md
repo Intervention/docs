@@ -15,8 +15,8 @@ The library follows the FIG standard **PSR-2** to ensure a high level of interop
 
 The library requires at least **PHP version 5.4** and comes with **Laravel Facades and Service Providers** to simplify the optional framework integration.
 
-- [Read the installation guide](/v2/introduction/installation)
-- [Read about Laravel integration](/v2/introduction/installation#integration-in-laravel)
+- [Read the installation guide](/v2/getting-started/installation)
+- [Read about Laravel integration](/v2/getting-started/installation#integration-in-laravel)
 
 ### Basic Examples
 

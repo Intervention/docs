@@ -6,7 +6,7 @@ lead: "Intervention HttpAuth is a PHP library for authenticating resources using
 sort: 0
 ---
 
-The package [can be easily installed](/v5/introduction/installation) and
+The package [can be easily installed](/v5/getting-started/installation) and
 provides an API that makes these steps as simple as possible.
 
 The workflow is divided into two steps. In the first, an instance of the
@@ -61,4 +61,4 @@ authentication fails. Output from template engines can also be used here.
 $auth->secure('Sorry, you can not access this resource!');
 ```
 
-Read more on how to [install](/v5/introduction/installation) or [use the package](/v5/api/authenticator).
+Read more on how to [install](/v5/getting-started/installation) or [use the package](/v5/api/authenticator).
