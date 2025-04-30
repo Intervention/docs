@@ -13,11 +13,11 @@ sort: 4
 
 > public Image::fill(mixed $color, null|int $x = null, null|int $y = null): ImageInterface
 
-Fills the current image with the passed color specification. Optionally it is
-possible to pass a position where the color fill should start. If these X and Y
-values are set the color will be applied with Flood Fill. This means that only
+Fills the current image with the specified color. Optionally, it is possible to
+pass a position where the color fill should start. If these X and Y values are
+specified, the color will be applied with flood fill. This means that only
 colors that are at the specified position will be filled. If no position is
-passed, the whole image will be filled.
+passed, the entire image will be filled.
 
 #### Parameters
 
@@ -45,9 +45,9 @@ $image = $image->fill('#b53717', 10, 10);
 
 ### Draw Pixels
 
-> public Image::drawPixel(int $x, int $y, mixed $color = null): ImageInterface
+> public Image::drawPixel(int $x, int $y, mixed $color): ImageInterface
 
-Draw a single pixel at given position defined by the coordinates **x** and **y** in a given **color**.
+Draw a single pixel at the specified position defined by the coordinates **x** and **y** in a given **color**.
 
 #### Parameters
 
@@ -81,7 +81,9 @@ $image->drawPixel(200, 2, 'orange');
 
 > public Image::drawRectangle(int $x, int $y, Closure|Rectangle $init): ImageInterface
 
-Draw a colored rectangle on the current image with its top left position at the **x, y** coordinates. Define the overall appearance of the shape by passing a **init** callback as an optional parameter.
+Draw a colored rectangle on the current image with its top left position at the
+**x, y** coordinates. Define the overall appearance of the shape by passing an
+**init** callback or a rectangle object as a third parameter.
 
 #### Parameters
 
@@ -114,7 +116,9 @@ $image->drawRectangle(10, 10, function (RectangleFactory $rectangle) {
 
 > public Image::drawEllipse(int $x, int $y, Closure|Ellipse $init): ImageInterface
 
-Draw a colored ellipse on the current image with its center position at the **x, y** coordinates. Define the overall appearance of the shape by passing a **init** callback as an optional parameter.
+Draw a colored ellipse on the current image with its center position at the
+**x, y** coordinates. Define the overall appearance of the shape by passing a
+**init** callback or a ellipse objeect as a third parameter.
 
 #### Parameters
 
@@ -147,7 +151,9 @@ $image->drawEllipse(10, 10, function (EllipseFactory $ellipse) {
 
 > public Image::drawCircle(int $x, int $y, Closure|Circle $init): ImageInterface
 
-Draw a colored circle on the current image with its center position at the **x, y** coordinates. Define the overall appearance of the shape by passing a **init** callback as an optional parameter.
+Draw a colored circle on the current image with its center position at the **x,
+y** coordinates. Define the overall appearance of the shape by passing a
+**init** callback or a circle object as a third parameter.
 
 #### Parameters
 
@@ -180,7 +186,8 @@ $image->drawCircle(10, 10, function (CircleFactory $circle) {
 
 > public Image::drawLine(Closure|Line $init): ImageInterface
 
-Draw a line on the current image. Define the overall appearance of the shape by passing a **init** callback as an optional parameter.
+Draw a line on the current image. Define the overall appearance of the shape by
+passing a **init** callback or a line object.
 
 #### Parameters
 
@@ -212,7 +219,8 @@ $image->drawLine(function (LineFactory $line) {
 
 > public Image::drawPolygon(Closure|Polygon $init): ImageInterface
 
-Draw a polygon on the current image. Define the overall appearance of the shape by passing a **init** callback as an optional parameter.
+Draw a polygon on the current image. Define the overall appearance of the shape
+by passing a **init** callback or a polygon object.
 
 #### Parameters
 
