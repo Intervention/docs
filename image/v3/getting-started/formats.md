@@ -30,6 +30,18 @@ Read more about [encoding different image formats](/v3/basics/image-output) in t
 | JPEG 2000 | ❌ | ✅ | ✅ |
 | HEIC | ❌ | ✅ | ✅ |
 
+All these image formats can be read from various sources. These are in detail:
+
+- Path in filesystem
+- Raw binary image data
+- Base64 encoded image data
+- Data Uri Scheme
+- File Pointer resource
+- `SplFileInfo` from which `Illuminate\Http\UploadedFile` and `Symfony\Component\HttpFoundation\File\UploadedFile` are derived
+- Intervention Idde Instance (instance of `Intervention\Image\Image`)
+- Encoded Intervention Image (instance of `Intervention\Image\EncodedImage`)
+- Driver-specific image (instance of `GDImage` or `Imagick`)
+
 **Please note that not all image formats are always included in the PHP image
 extensions. It is therefore possible, that the GD library is installed but is
 built without Jpeg support or Imagick is available without Webp support
