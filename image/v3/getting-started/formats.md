@@ -38,8 +38,8 @@ All these image formats can be read from various sources. These are in detail:
 - Data Uri Scheme
 - File Pointer resource
 - `SplFileInfo` from which `Illuminate\Http\UploadedFile` and `Symfony\Component\HttpFoundation\File\UploadedFile` are derived
-- Intervention Idde Instance (instance of `Intervention\Image\Image`)
-- Encoded Intervention Image (instance of `Intervention\Image\EncodedImage`)
+- Intervention Image Instance (`Intervention\Image\Image`)
+- Encoded Intervention Image (`Intervention\Image\EncodedImage`)
 - Driver-specific image (instance of `GDImage` or `Imagick`)
 
 **Please note that not all image formats are always included in the PHP image

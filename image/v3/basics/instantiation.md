@@ -37,8 +37,8 @@ The following `input` argument formats are accepted.
 - Data Uri
 - File Pointer resource
 - `SplFileInfo` from which `Illuminate\Http\UploadedFile` and `Symfony\Component\HttpFoundation\File\UploadedFile` are derived
-- Intervention Image Instance (instance of `Intervention\Image\Image`)
-- Encoded Intervention Image (instance of `Intervention\Image\EncodedImage`)
+- Intervention Image Instance (`Intervention\Image\Image`)
+- Encoded Intervention Image (`Intervention\Image\EncodedImage`)
 - Driver-specific image (instance of `GDImage` or `Imagick`)
 
 To decode the input data, you can optionally specify a decoding strategy
