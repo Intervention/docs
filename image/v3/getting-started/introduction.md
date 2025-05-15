@@ -2,7 +2,7 @@
 title: "Intervention Image"
 label: "Introduction"
 subtitle: "PHP Image Processing"
-lead: "Intervention Image is the most popular open source PHP image processing library. It provides an easy and expressive way to edit images and supports PHP's two most common image processing libraries GD Library, Imagick or libvips."
+lead: "Intervention Image is the most popular open source PHP image processing library. It provides an easy and expressive way to edit images and supports PHP's three most common image processing libraries GD Library, Imagick or libvips."
 sort: 0
 ---
 
