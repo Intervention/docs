@@ -50,11 +50,9 @@ single object or class name of a decoder.
 All decoders that implement the `DecoderInterface::class` can be passed.
 Usually a selection of classes of the namespace `Intervention\Image\Decoders`.
 
-If the second parameter is not set, an attempt to decode the input is made with
-all available decoders of the driver.
-
-If the given argument can not be decoded by the library an exception of type
-`Intervention\Image\Exceptions\DecoderException` is thrown.
+If the second parameter is omitted, the driver will attempt decoding using all
+available decoders. If the given argument can not be decoded by the library an
+exception of type `Intervention\Image\Exceptions\DecoderException` is thrown.
 
 #### Example
 
