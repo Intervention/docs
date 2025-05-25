@@ -15,6 +15,10 @@ If you are loading images without the intention of processing the animation at
 all, this process can be [disabled beforehand in the Image
 Manager](/v3/basics/configuration-drivers) configuration to save resources.
 
+## Create Animations
+
+More information about the animation creation process can be found in the chapter about [instantiation](/v3/basics/instantiation#create-animations).
+
 ## Detect Animations
 ### Check the Current Image Instance for Animation
 
