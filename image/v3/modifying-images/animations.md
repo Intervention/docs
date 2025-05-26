@@ -16,6 +16,7 @@ all, this process can be [disabled beforehand in the Image
 Manager](/v3/basics/configuration-drivers) configuration to save resources.
 
 ## Create Animations
+### Create an Animation from Different Sources
 
 More information about the animation creation process can be found in the chapter about [instantiation](/v3/basics/instantiation#create-animations).
 
@@ -40,7 +41,6 @@ $result = $manager->read('images/animation.gif')->isAnimated();
 ```
 
 ## Edit Animations
-
 ### Read the Animation Frame Count
 
 > public Image::count(): int
