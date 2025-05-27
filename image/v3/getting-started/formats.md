@@ -30,6 +30,11 @@ Read more about [encoding different image formats](/v3/basics/image-output) in t
 | JPEG 2000 | ❌ | ✅ | ✅ |
 | HEIC | ❌ | ✅ | ✅ |
 
+**Please note that not all image formats are always included in the PHP image
+extensions. It is therefore possible, that the GD library is installed but is
+built without Jpeg support or Imagick is available without Webp support
+for example.**
+
 All these image formats can be read from various sources. These are in detail:
 
 - Path in filesystem
@@ -42,19 +47,14 @@ All these image formats can be read from various sources. These are in detail:
 - Encoded Intervention Image (`Intervention\Image\EncodedImage`)
 - Driver-specific image (instance of `GDImage` or `Imagick`)
 
-**Please note that not all image formats are always included in the PHP image
-extensions. It is therefore possible, that the GD library is installed but is
-built without Jpeg support or Imagick is available without Webp support
-for example.**
-
 ### Check the Support for Image Formats
 
 > public DriverInterface::supports(string|Format|FileExtension|MediaType $identifier): bool
 
-This method can be used to find out during runtime whether a specific format
-is supported. It checks whether the desired format is supported by the
-respective driver and whether the underlying extension was built with the
-corresponding support and returns `true` if both conditions apply.
+This method can be used during runtime to find out whether a specific format
+is supported. It checks if the desired format is supported by the
+current driver and if the underlying extension has been built with the
+necessary support, returning `true` if both conditions are met.
 
 #### Parameters
 
@@ -94,8 +94,8 @@ $result = $manager->driver()->supports(FileExtension::JPG);
 The library supports several formats to define colors for its methods.
 
 The input values for colors may differ from the actual color space of the
-image. Therefore, it is possible to draw on an image in CMYK space with an HSV
-color specification. The colors are automatically converted to the target color
+image. Therefore, it is possible to draw on a CMYK image using an HSV
+color specification. The colors will be automatically converted to the target color
 space.
 
 ### String Format
@@ -104,7 +104,7 @@ space.
 
 You can pass colors as RGB hex triplets, which are commonly used in HTML and
 CSS. It's possible to use the shorthand as well as the full format with or
-without alpha channel. The leading `#` is optional.
+without an alpha channel. The leading `#` is optional.
 
 ```php
 use Intervention\Image\ImageManager;
@@ -119,8 +119,8 @@ $image = (new ImageManager(Driver::class))->create(300, 200)->fill('b5371766');
 
 #### RGB String Format
 
-RGB string values in functional notations are also supported. If you want to
-include an alpha value use the RGBA prefix like in the following example.
+RGB string values in functional notation are also supported. To include an
+alpha value use the RGBA prefix, as shown in the following example.
 
 ```php
 use Intervention\Image\ImageManager;
@@ -135,7 +135,7 @@ $image = (new ImageManager(Driver::class))->create(300, 200)->fill('rgb(255, 0, 
 
 #### CMYK String Format
 
-CMYK string values in functional notations are also supported.
+CMYK string values in functional notation are also supported.
 
 ```php
 use Intervention\Image\ImageManager;
@@ -264,16 +264,16 @@ $image = ImageManager::imagick()->create(300, 200)->fill(new Color(230, 15, 75))
 ## Colorspaces
 
 The available color spaces are primarily determined by the driver used. The
-Imagick driver is compatible with RGB and CMYK color spaces, while the GD
+Imagick driver supports both RGB and CMYK color spaces, whereas the GD
 driver only supports RGB. The default color space for newly created images is
 RGB.
 
-When using the GD driver in Intervention Image to read CMYK images, they will
-be automatically converted to the RGB color space, which may result in color
+Using the GD driver in Intervention Image to read CMYK images will
+automatically convert them to the RGB color space, which may result in color
 deviations.
 
-Since the GD driver does not support the CMYK color space by default, it is not
-recommended to use it with CMYK images.
+Because the GD driver does not support CMYK, it is not recommended for use with
+CMYK images.
 
 Read how to read an modify colorspace in the section about [Meta
 Information](/v3/basics/meta-information).
@@ -281,10 +281,9 @@ Information](/v3/basics/meta-information).
 ### Convert Colors to Other Colorspaces or Formats
 
 Colors can always be converted to the supported color spaces. This is possible
-even if the driver does not support that color space.
+even if the driver does not support the desired color space.
 
-Although the two drivers only support RGB and CMYK color spaces, color objects
-can also be converted into the following formats.
+Color objects can also be converted into the following formats.
 
 - `Intervention\Image\Colors\Rgb\Colorspace`
 - `Intervention\Image\Colors\Cmyk\Colorspace`
