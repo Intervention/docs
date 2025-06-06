@@ -1,5 +1,5 @@
 ---
-title: "ISRC"
+title: "ISRC Rule"
 subtitle: "Validate International Standard Recording Codes"
 lead: "Explore how to validate International Standard Recording Codes with the validation rules of Intervention Validation for your Laravel app."
 ---
