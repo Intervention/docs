@@ -14,7 +14,7 @@ over from the previous version. This means a more modern and sophisticated
 architecture and API that takes advantage of the modern features of PHP 8+.
 There are a few key features that further improve the library.
 
-- [Support of animated GIF with GD and Imagick drivers](/v3/basics/instantiation#creating-animations)
+- [Support of animated GIF with GD and Imagick drivers](/v3/basics/instantiation#create-animations)
 - [Configurable Image Manager](/v3/basics/configuration-drivers#create-a-new-image-manager-instance)
 - [Support for colorspaces](/v3/basics/colors#colorspaces)
 - [Support for text wrapping in font system](/v3/modifying-images/text-fonts)
