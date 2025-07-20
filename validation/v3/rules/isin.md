@@ -1,6 +1,7 @@
 ---
 title: "ISIN Rule"
 subtitle: "Validate International Securities Identification Number"
+sort: 14
 ---
 
 > public Intervention\Validation\Rules\Isin::__construct()

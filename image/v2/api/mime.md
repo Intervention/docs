@@ -2,6 +2,7 @@
 label: "mime()"
 title: "Image::mime"
 subtitle: "Get MIME Type of the current image"
+sort: 32
 ---
 
 > public Intervention\Image\Image mime()

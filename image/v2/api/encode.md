@@ -2,6 +2,7 @@
 label: "encode()"
 title: "Image::encode"
 subtitle: "Encode image"
+sort: 12
 ---
 
 > public Intervention\Image\Image encode([mixed $format, [int $quality]])

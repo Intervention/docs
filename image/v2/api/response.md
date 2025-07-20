@@ -2,6 +2,7 @@
 label: "response()"
 title: "Image::response"
 subtitle: "Sends HTTP response with current image attached"
+sort: 44
 ---
 
 > public Intervention\Image\Image response([string $format, [integer $quality]])

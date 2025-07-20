@@ -1,6 +1,7 @@
 ---
 title: "Creditcard Rule"
 subtitle: "Validate Creditcard Numbers"
+sort: 4
 ---
 
 > public Intervention\Validation\Rules\Creditcard::__construct()

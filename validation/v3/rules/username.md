@@ -1,6 +1,7 @@
 ---
 title: "Username Rule"
 subtitle: "Validate a Typical Username"
+sort: 28
 ---
 
 > public Intervention\Validation\Rules\Username::__construct()

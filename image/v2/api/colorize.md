@@ -2,6 +2,7 @@
 label: "colorize()"
 title: "Image::colorize"
 subtitle: "Change the color balance of the current image"
+sort: 7
 ---
 
 > public Intervention\Image\Image colorize(integer $red, integer $green, integer $blue)

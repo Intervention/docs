@@ -2,6 +2,7 @@
 title: "Authenticator"
 subtitle: "Using the HTTP Authenticator"
 lead: "Learn how to use the HTTP Authenticator library for securing resources with Basic or Digest authentication in PHP. Leveraging secure vaults and configuring custom failure messages. Includes code examples for effortless integration."
+sort: 0
 ---
 
 [TOC]

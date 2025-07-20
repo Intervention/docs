@@ -1,6 +1,7 @@
 ---
 title: "Semantic Versioning Rule"
 subtitle: "Validate Semantic Version Numbers"
+sort: 22
 ---
 
 > public Intervention\Validation\Rules\SemVer::__construct()

@@ -2,6 +2,7 @@
 label: "flip()"
 title: "Image::flip"
 subtitle: "Mirror the current image vertically or horizontally"
+sort: 18
 ---
 
 > public Intervention\Image\Image flip([string $mode])

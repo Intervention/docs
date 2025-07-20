@@ -2,6 +2,7 @@
 label: "basePath()"
 title: "Image::basePath"
 subtitle: "Get fully qualified path"
+sort: 1
 ---
 
 > public Intervention\Image\Image basePath()

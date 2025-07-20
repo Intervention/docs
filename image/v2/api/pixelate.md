@@ -2,6 +2,7 @@
 label: "pixelate()"
 title: "Image::pixelate"
 subtitle: "Apply pixelation filter to the current image"
+sort: 37
 ---
 
 > public Intervention\Image\Image pixelate(integer $size)

@@ -2,6 +2,7 @@
 label: "destroy()"
 title: "Image::destroy"
 subtitle: "Free up memory"
+sort: 10
 ---
 
 > public Intervention\Image\Image destroy()

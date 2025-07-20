@@ -1,7 +1,7 @@
 ---
 title: "Installation"
 subtitle: "Installation with Composer"
-sort: 0
+sort: 1
 ---
 
 You can install this package quickly and easily with Composer.

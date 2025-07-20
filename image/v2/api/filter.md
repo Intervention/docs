@@ -2,6 +2,7 @@
 label: "filter()"
 title: "Image::filter"
 subtitle: "Apply a predefined filter to the current image"
+sort: 16
 ---
 
 > public Intervention\Image\Image filter(Intervention\Image\Filters\FilterInterface $filter)

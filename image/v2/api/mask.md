@@ -2,6 +2,7 @@
 label: "mask()"
 title: "Image::mask"
 subtitle: "Apply alpha masking to the current image"
+sort: 31
 ---
 
 > public Intervention\Image\Image mask(mixed $source, [bool $mask_with_alpha])

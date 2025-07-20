@@ -1,6 +1,7 @@
 ---
 title: "Domain Name Rule"
 subtitle: "Validate Domain Names"
+sort: 6
 ---
 
 > public Intervention\Validation\Rules\Domainname::__construct()

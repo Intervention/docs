@@ -1,6 +1,7 @@
 ---
 title: "EAN Rule"
 subtitle: "Validate European Article Numbers"
+sort: 7
 ---
 
 > public Intervention\Validation\Rules\Ean::__construct(?int $length = null)

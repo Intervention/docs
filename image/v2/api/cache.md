@@ -2,6 +2,7 @@
 label: "cache()"
 title: "Image::cache"
 subtitle: "Cached image processing"
+sort: 4
 ---
 
 > public Intervention\Image\ImageManager cache(Closure $callback, [int $lifetime, [bool $returnObj]])

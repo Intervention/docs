@@ -2,6 +2,7 @@
 label: "fill()"
 title: "Image::fill"
 subtitle: "Fill the current image with a color or pattern"
+sort: 15
 ---
 
 > public Intervention\Image\Image fill(mixed $filling, [integer $x, integer $y])

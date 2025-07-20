@@ -2,6 +2,7 @@
 label: "stream()"
 title: "Image::stream"
 subtitle: "Encoded current image and return PSR-7 stream"
+sort: 48
 ---
 
 > public Intervention\Image\Image stream([mixed $format, [int $quality]])

@@ -2,6 +2,7 @@
 label: "polygon()"
 title: "Image::polygon"
 subtitle: "Draw a polygon to the current image"
+sort: 38
 ---
 
 > public Intervention\Image\Image polygon(array $points, [Closure $callback])

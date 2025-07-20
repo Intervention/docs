@@ -1,6 +1,7 @@
 ---
 title: "Base64 Rule"
 subtitle: "Validate a Base64 Encoded String"
+sort: 0
 ---
 
 > public Intervention\Validation\Rules\Base64::__construct()

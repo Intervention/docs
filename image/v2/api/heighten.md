@@ -2,6 +2,7 @@
 label: "heighten()"
 title: "Image::heighten"
 subtitle: "Resize image proportionally to given height"
+sort: 23
 ---
 
 > public Intervention\Image\Image heighten(integer $height, [Closure $callback])

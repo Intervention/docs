@@ -1,6 +1,7 @@
 ---
 title: "GTIN Rule"
 subtitle: "Validate a Global Trade Item Number"
+sort: 8
 ---
 
 > public Intervention\Validation\Rules\Gtin::__construct(?int $length = null)

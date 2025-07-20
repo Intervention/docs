@@ -1,6 +1,7 @@
 ---
 title: "IMEI Rule"
 subtitle: "Validate International Mobile Equipment Identity "
+sort: 12
 ---
 
 > public Intervention\Validation\Rules\Imei::__construct()

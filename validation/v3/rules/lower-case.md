@@ -1,6 +1,7 @@
 ---
 title: "Lower Case Rule"
 subtitle: "Validate a String in Lower Case"
+sort: 18
 ---
 
 > public Intervention\Validation\Rules\Lowercase::__construct()

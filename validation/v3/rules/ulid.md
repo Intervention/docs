@@ -1,7 +1,7 @@
 ---
 title: "ULID Rule"
 subtitle: "Validate a Universally Unique Lexicographically Sortable Identifier"
-sort: 0
+sort: 26
 ---
 
 > public Intervention\Validation\Rules\Ulid::__construct()

@@ -1,6 +1,7 @@
 ---
 title: "Hexadecimal Color Rule"
 subtitle: "Validate a Hexadecimal Color Code"
+sort: 9
 ---
 
 > public Intervention\Validation\Rules\HexColor::__construct(?int $length = null)

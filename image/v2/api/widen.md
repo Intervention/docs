@@ -2,6 +2,7 @@
 label: "widen()"
 title: "Image::widen"
 subtitle: "Resize current image proportionally to given width"
+sort: 51
 ---
 
 > public Intervention\Image\Image widen(integer $width, [Closure $callback])

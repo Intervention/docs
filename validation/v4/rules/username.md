@@ -2,6 +2,7 @@
 title: "Username Rule"
 subtitle: "Validate a Typical Username"
 lead: "Explore how to validate typical usernames with the additional validation rules of Intervention Validation for your Laravel application."
+sort: 31
 ---
 
 > public Intervention\Validation\Rules\Username::__construct()

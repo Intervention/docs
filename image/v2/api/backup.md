@@ -2,6 +2,7 @@
 label: "backup()"
 title: "Image::backup"
 subtitle: "Save a backup of the current image state"
+sort: 0
 ---
 
 > public Intervention\Image\Image backup([string $name])

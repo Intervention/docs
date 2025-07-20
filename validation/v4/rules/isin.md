@@ -2,6 +2,7 @@
 title: "ISIN Rule"
 subtitle: "Validate International Securities Identification Number"
 lead: "Discover how to validate International Securities Identification Numbers (ISIN) with the additional validation rules of Intervention Validation for your Laravel application."
+sort: 16
 ---
 
 > public Intervention\Validation\Rules\Isin::__construct()

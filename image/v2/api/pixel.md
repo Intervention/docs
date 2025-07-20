@@ -2,6 +2,7 @@
 label: "pixel()"
 title: "Image::pixel"
 subtitle: "Draw a single pixel to the current image"
+sort: 36
 ---
 
 > public Intervention\Image\Image pixel(mixed $color, integer $x, integer $y)

@@ -2,6 +2,7 @@
 label: "height()"
 title: "Image::height"
 subtitle: "Get the height in pixels of the current image"
+sort: 22
 ---
 
 > public Intervention\Image\Image height()

@@ -2,6 +2,7 @@
 label: "iptc()"
 title: "Image::iptc"
 subtitle: "Reads IPTC meta data from the current image"
+sort: 27
 ---
 
 > public Intervention\Image\Image iptc([string $key])

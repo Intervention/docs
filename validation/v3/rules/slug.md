@@ -1,6 +1,7 @@
 ---
 title: "Slug Rule"
 subtitle: "Validate a SEO-friendly Short Text"
+sort: 23
 ---
 
 > public Intervention\Validation\Rules\Slug::__construct()

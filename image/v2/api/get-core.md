@@ -2,6 +2,7 @@
 label: "getCore()"
 title: "Image::getCore"
 subtitle: "Read core instance of the current image"
+sort: 20
 ---
 
 > public Intervention\Image\Image getCore()

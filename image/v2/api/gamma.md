@@ -2,6 +2,7 @@
 label: "gamma()"
 title: "Image::gamma"
 subtitle: "Apply gamma correction to the current image"
+sort: 19
 ---
 
 > public Intervention\Image\Image gamma(float $correction)

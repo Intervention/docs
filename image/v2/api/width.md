@@ -2,6 +2,7 @@
 label: "width()"
 title: "Image::width"
 subtitle: "Get width of current image"
+sort: 52
 ---
 
 > public Intervention\Image\Image width()

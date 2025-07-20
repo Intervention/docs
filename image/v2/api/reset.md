@@ -2,6 +2,7 @@
 label: "reset()"
 title: "Image::reset"
 subtitle: "Reset current image to a previously saved state"
+sort: 41
 ---
 
 > public Intervention\Image\Image reset([string $name])

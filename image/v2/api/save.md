@@ -2,6 +2,7 @@
 label: "save()"
 title: "Image::save"
 subtitle: "Encode and save the current image to a filesystem"
+sort: 46
 ---
 
 > public Intervention\Image\Image save([string $path, [int $quality], [string $format]])

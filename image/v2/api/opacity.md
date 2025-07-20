@@ -2,6 +2,7 @@
 label: "opacity()"
 title: "Image::opacity"
 subtitle: "Set opacity of the current image"
+sort: 33
 ---
 
 > public Intervention\Image\Image opacity(integer $transparency)

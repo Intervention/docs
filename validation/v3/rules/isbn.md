@@ -1,6 +1,7 @@
 ---
 title: "ISBN Rule"
 subtitle: "Validate International Standard Book Number"
+sort: 13
 ---
 
 > public Intervention\Validation\Rules\Isbn::__construct(?int $length = null)

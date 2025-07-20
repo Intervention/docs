@@ -2,6 +2,7 @@
 label: "line()"
 title: "Image::line"
 subtitle: "Draw a line to the current image"
+sort: 29
 ---
 
 > public Intervention\Image\Image line(int $x1, int $y1, int $x2, int $y2, [Closure $callback])

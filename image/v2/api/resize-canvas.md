@@ -2,6 +2,7 @@
 label: "resizeCanvas()"
 title: "Image::resizeCanvas"
 subtitle: "Resize the current image boundaries"
+sort: 42
 ---
 
 > public Intervention\Image\Image resizeCanvas (int $width, int $height, [string $anchor, [boolean $relative, [mixed $bgcolor]]])

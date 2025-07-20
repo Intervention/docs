@@ -1,6 +1,7 @@
 ---
 title: "Title Case Rule"
 subtitle: "Validate String Formated in Title Case"
+sort: 25
 ---
 
 > public Intervention\Validation\Rules\Titlecase::__construct()

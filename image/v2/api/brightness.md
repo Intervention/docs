@@ -2,6 +2,7 @@
 label: "brightness()"
 title: "Image::brightness"
 subtitle: "Change the brightness of an image"
+sort: 3
 ---
 
 > public Intervention\Image\Image brightness(integer $level)

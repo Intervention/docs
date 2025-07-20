@@ -2,6 +2,7 @@
 label: "circle()"
 title: "Image::circle"
 subtitle: "Draw a circle to the current image"
+sort: 6
 ---
 
 > public Intervention\Image\Image circle(integer $diameter, integer $x, integer $y, [Closure $callback])

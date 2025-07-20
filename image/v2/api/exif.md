@@ -2,6 +2,7 @@
 label: "exif()"
 title: "Image::exif"
 subtitle: "Read Exif meta data from the current image"
+sort: 13
 ---
 
 > public Intervention\Image\Image exif([string $key])

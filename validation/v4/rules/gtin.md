@@ -2,6 +2,7 @@
 title: "GTIN Rule"
 subtitle: "Validate a Global Trade Item Number"
 lead: "Learn how to validate the Global Trait Item Numbers (GTIN) with the additional validation rules of Intervention Validation for your Laravel application."
+sort: 10
 ---
 
 > public Intervention\Validation\Rules\Gtin::__construct(array $lengths = [8, 12, 13, 14])

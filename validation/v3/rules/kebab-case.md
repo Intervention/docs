@@ -1,6 +1,7 @@
 ---
 title: "Kebab Case Rule"
 subtitle: "Validate a String in Kebab Case"
+sort: 17
 ---
 
 > public Intervention\Validation\Rules\Kebabcase::__construct()

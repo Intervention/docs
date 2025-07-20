@@ -2,6 +2,7 @@
 label: "filesize()"
 title: "Image::filesize"
 subtitle: "Gets file size of the current image"
+sort: 14
 ---
 
 > public Intervention\Image\Image filesize()

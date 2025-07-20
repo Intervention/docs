@@ -2,6 +2,7 @@
 label: "trim()"
 title: "Image::trim"
 subtitle: "Trim away parts by color "
+sort: 50
 ---
 
 > public Intervention\Image\Image trim( [string $base, [array $away, [int $tolerance, [int $feather]]]] )

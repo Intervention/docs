@@ -2,6 +2,7 @@
 title: "IBAN Rule"
 subtitle: "Validate International Bank Account Numbers"
 lead: "Explore how to validate International Bank Account Numbers (IBAN) with the additional validation rules of Intervention Validation for your Laravel application."
+sort: 13
 ---
 
 > public Intervention\Validation\Rules\Iban::__construct()

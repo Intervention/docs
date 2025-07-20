@@ -1,6 +1,7 @@
 ---
 title: "CIDR Rule"
 subtitle: "Validate Classless Inter-Domain Routing string"
+sort: 3
 ---
 
 > public Intervention\Validation\Rules\Cidr::__construct()

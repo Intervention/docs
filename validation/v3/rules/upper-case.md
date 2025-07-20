@@ -1,6 +1,7 @@
 ---
 title: "Upper Case Rule"
 subtitle: "Validate String Formated in Upper Case"
+sort: 27
 ---
 
 > public Intervention\Validation\Rules\Uppercase::__construct()

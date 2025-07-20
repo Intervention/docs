@@ -2,6 +2,7 @@
 label: "insert()"
 title: "Image::insert"
 subtitle: "Place another image on current image"
+sort: 24
 ---
 
 > public Intervention\Image\Image insert(mixed $source, [string $position, [integer $x, integer $y]])

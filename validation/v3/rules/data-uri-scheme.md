@@ -1,6 +1,7 @@
 ---
 title: "Data URI Rule"
 subtitle: "Validate Data URI Scheme String"
+sort: 5
 ---
 
 > public Intervention\Validation\Rules\DataUri::__construct()

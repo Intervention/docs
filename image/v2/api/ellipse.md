@@ -2,6 +2,7 @@
 label: "ellipse()"
 title: "Image::ellipse"
 subtitle: "Draw an ellipse to the current image"
+sort: 11
 ---
 
 > public Intervention\Image\Image ellipse(int $width, int $height, int $x, int $y, [Closure $callback])

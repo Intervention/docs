@@ -2,6 +2,7 @@
 label: "crop()"
 title: "Image::crop"
 subtitle: "Cut out a rectangular part of the current image"
+sort: 9
 ---
 
 > public Intervention\Image\Image crop(int $width, int $height, [int $x, int $y])

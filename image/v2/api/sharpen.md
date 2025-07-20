@@ -2,6 +2,7 @@
 label: "sharpen()"
 title: "Image::sharpen"
 subtitle: "Sharpen the current image"
+sort: 47
 ---
 
 > public Intervention\Image\Image sharpen([integer $amount])

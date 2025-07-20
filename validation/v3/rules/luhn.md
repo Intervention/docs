@@ -1,6 +1,7 @@
 ---
 title: "Luhn Rule"
 subtitle: "Validate a String Against Luhn Algorithm"
+sort: 19
 ---
 
 > public Intervention\Validation\Rules\Luhn::__construct()

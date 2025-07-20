@@ -1,6 +1,7 @@
 ---
 title: "JWT Rule"
 subtitle: "Validate a JSON Web Token"
+sort: 16
 ---
 
 > public Intervention\Validation\Rules\Jwt::__construct()

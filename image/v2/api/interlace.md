@@ -2,6 +2,7 @@
 label: "interlace()"
 title: "Image::interlace"
 subtitle: "Enable or disabled interlaced mode of the current image"
+sort: 25
 ---
 
 > public Intervention\Image\Image interlace([boolean $interlace])

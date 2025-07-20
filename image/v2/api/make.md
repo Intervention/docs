@@ -2,6 +2,7 @@
 label: "make()"
 title: "Image::make"
 subtitle: "Create a new image resource"
+sort: 30
 ---
 
 > public static Intervention\Image\ImageManager make(mixed $source)

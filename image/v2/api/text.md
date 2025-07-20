@@ -2,6 +2,7 @@
 label: "text()"
 title: "Image::text"
 subtitle: "Write text to the current image"
+sort: 49
 ---
 
 > public Intervention\Image\Image text(string $text, [integer $x, [integer $y, [Closure $callback]]])

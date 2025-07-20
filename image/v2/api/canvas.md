@@ -2,6 +2,7 @@
 label: "canvas()"
 title: "Image::canvas"
 subtitle: "Create a new empty image resource"
+sort: 5
 ---
 
 > public Intervention\Image\ImageManager canvas(integer $width, integer $height, [mixed $bgcolor])

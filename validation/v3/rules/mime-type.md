@@ -1,6 +1,7 @@
 ---
 title: "Media (MIME) Type Rule"
 subtitle: "Validate MIME Type Strings"
+sort: 20
 ---
 
 > public Intervention\Validation\Rules\MimeType::__construct()

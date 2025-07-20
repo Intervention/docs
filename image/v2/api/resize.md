@@ -2,6 +2,7 @@
 label: "resize()"
 title: "Image::resize"
 subtitle: "Resize the current image"
+sort: 43
 ---
 
 > public Intervention\Image\Image resize (integer $width, integer $height, Closure $callback)

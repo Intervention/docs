@@ -2,6 +2,7 @@
 label: "greyscale()"
 title: "Image::greyscale"
 subtitle: "Turn the current image into a greyscale version"
+sort: 21
 ---
 
 > public Intervention\Image\Image greyscale()

@@ -1,6 +1,7 @@
 ---
 title: "Camel Case Rule"
 subtitle: "Validate Camel Case String"
+sort: 2
 ---
 
 > public Intervention\Validation\Rules\Camelcase::__construct()

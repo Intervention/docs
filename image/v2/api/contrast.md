@@ -2,6 +2,7 @@
 label: "contrast()"
 title: "Image::contrast"
 subtitle: "Change the color contrast of the current image"
+sort: 8
 ---
 
 > public Intervention\Image\Image contrast(integer $level)

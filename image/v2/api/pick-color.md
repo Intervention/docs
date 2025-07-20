@@ -2,6 +2,7 @@
 label: "pickColor()"
 title: "Image::pickColor"
 subtitle: "Pick a color out of the current image"
+sort: 35
 ---
 
 > public Intervention\Image\Image pickColor(int $x, int $y, [string $format])

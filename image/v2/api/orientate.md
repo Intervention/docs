@@ -2,6 +2,7 @@
 label: "orientate()"
 title: "Image::orientate"
 subtitle: "Adjusts the current image orientation automatically"
+sort: 34
 ---
 
 > public Intervention\Image\Image orientate()

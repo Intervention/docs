@@ -2,6 +2,7 @@
 title: "BIC Rule"
 subtitle: "Validate a Business Identifier Code"
 lead: "Learn how to validate Business Identifier codes with the additional validation rules of Intervention Validation for your Laravel application."
+sort: 2
 ---
 
 > public Intervention\Validation\Rules\Bic::__construct()

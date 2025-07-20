@@ -2,6 +2,7 @@
 title: "CIDR Rule"
 subtitle: "Validate Classless Inter-Domain Routing string"
 lead: "Discover how to validate Classless Inter-Domain Routing notations (CIDR) with the additional validation rules of Intervention Validation for your Laravel application."
+sort: 4
 ---
 
 > public Intervention\Validation\Rules\Cidr::__construct()

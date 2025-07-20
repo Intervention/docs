@@ -2,6 +2,7 @@
 label: "rectangle()"
 title: "Image::rectangle"
 subtitle: "Draw a rectangle to the current image"
+sort: 40
 ---
 
 > public Intervention\Image\Image rectangle(int $x1, int $y1, int $x2, int $y2, [Closure $callback])

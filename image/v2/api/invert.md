@@ -2,6 +2,7 @@
 label: "invert()"
 title: "Image::invert"
 subtitle: "Invert the colors of the current image"
+sort: 26
 ---
 
 > public Intervention\Image\Image invert()
