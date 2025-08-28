@@ -13,7 +13,7 @@ sort: 1
 
 Inserts an image at the specified position. The image to insert can be specified
 from any of the [supported image
-sources](/v3/basics/instantiation#reading-image-sources). Optionally you can
+sources](/v3/basics/instantiation#supported-image-sources). Optionally you can
 pass coordinates for an offset to move the image relative to the specified
 position. It is also possible to control the opacity of the watermark using the
 `opacity` parameter.
