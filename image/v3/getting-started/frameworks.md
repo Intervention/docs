@@ -187,8 +187,8 @@ return [
 
 Now you can configure the driver of Intervention Image. By default, the bundle
 is using the GD library with Intervention Image. This and others options can be
-easily configured by creating a file `config/packages/intervention_image.yaml`
-and setting the driver class and the default options as follows. 
+configured by creating a file `config/packages/intervention_image.yaml` and
+setting the driver class and the default options as follows. 
 
 ```yaml
 intervention_image:

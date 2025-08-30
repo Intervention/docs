@@ -8,7 +8,7 @@ sort: 0
 
 ### Features
 
-- Unified API for GD, Imagick or [libvips](https://github.com/Intervention/image-driver-vips)
+- Fluent & unified API for GD, Imagick or [libvips](https://github.com/Intervention/image-driver-vips)
 - Processing of animated Images
 - Support for colorspaces and profiles
 - Support for text wrapping and line height in the font system

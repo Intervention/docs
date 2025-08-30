@@ -6,13 +6,15 @@ lead: "Intervention HttpAuth is a PHP library for authenticating resources using
 sort: 0
 ---
 
-The package [can be easily installed](/v5/getting-started/installation) and
-provides an API that makes these steps as simple as possible.
+The package provides an API that makes these steps as simple as possible.
 
 The workflow is divided into two steps. In the first, an instance of the
 `Authenticator::class` class is created descided which type of authentication
 should be used. In the second step, the respective resource is secured by a
 single call.
+
+First, the library must be [installed](/v5/getting-started/installation) in the
+application. It can then be integrated as follows.
 
 ### 1. Create Authenticator Instance
 

@@ -4,9 +4,7 @@ subtitle: "Installation with Composer"
 sort: 1
 ---
 
-You can install this package quickly and easily with Composer.
-
-Require the package via Composer:
+Install this package with [Composer](https://getcomposer.org).
 
 ```bash
 composer require intervention/zodiac

@@ -13,7 +13,7 @@ sort: 0
 
 ### Installation
 
-You can install this package quickly and easily with Composer.
+Install this package with [Composer](https://getcomposer.org).
 
 ```bash
 composer require intervention/validation

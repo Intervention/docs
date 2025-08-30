@@ -20,9 +20,9 @@ And **one of** the following image libraries.
 
 ## Installation
 
-The best way to install Intervention Image is quickly and easily with [Composer](https://getcomposer.org/).
+The best way to install Intervention Image is with [Composer](https://getcomposer.org).
 
-To install the most recent version, run the following command.
+To install the legacy version 2, run the following command.
 
 ```bash
 composer require intervention/image:^2
