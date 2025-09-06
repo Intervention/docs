@@ -1,7 +1,7 @@
 ---
 label: "Introduction"
 title: "Intervention Image"
-subtitle: "PHP Image Manipulation"
+subtitle: "PHP Image Processing"
 sort: 0
 ---
 
