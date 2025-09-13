@@ -32,7 +32,7 @@ resources as input. A complete list can be found below.
 The following `input` argument formats are accepted.
 
 - Path in filesystem
-- Raw binary image data
+- Raw (binary) image data
 - Base64 encoded image data
 - Data Uri
 - File Pointer resource
