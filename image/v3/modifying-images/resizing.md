@@ -25,6 +25,7 @@ to target only one axis for the modification.
 | width | integer | Desired image width. |
 | height | integer | Desired image width. |
 
+<a href="/v3/playground#resize" target="playground" class="demoButton">Try it out in the live demo</a>
 
 #### Example
 
@@ -56,6 +57,8 @@ to resize just one axis for the modification.
 | - | - | - |
 | width | integer | Desired image width. |
 | height | integer | Desired image width. |
+
+<a href="/v3/playground#resizeDown" target="playground" class="demoButton">Try it out in the live demo</a>
 
 #### Example
 
@@ -91,6 +94,7 @@ as the aspect ratio is preferably preserved.
 | width | integer | Desired image width. |
 | height | integer | Desired image width. |
 
+<a href="/v3/playground#scale" target="playground" class="demoButton">Try it out in the live demo</a>
 
 #### Example
 
@@ -128,6 +132,7 @@ Note that the size of the result may differ from the given parameter values.
 | width | integer | Desired image width. |
 | height | integer | Desired image width. |
 
+<a href="/v3/playground#scaleDown" target="playground" class="demoButton">Try it out in the live demo</a>
 
 #### Example
 
@@ -169,6 +174,7 @@ specify a position to determine which part of the image should remain in focus.
 | height | integer | Desired image width. |
 | position (optional) | string | Position |
 
+<a href="/v3/playground#cover" target="playground" class="demoButton">Try it out in the live demo</a>
 
 #### Example
 
@@ -207,6 +213,8 @@ Note that the size of the result may differ from the given parameter values.
 | width | integer | Desired image width. |
 | height | integer | Desired image width. |
 | position (optional) | string | Position |
+
+<a href="/v3/playground#coverDown" target="playground" class="demoButton">Try it out in the live demo</a>
 
 #### Example
 
@@ -249,6 +257,7 @@ with the given background color.
 | background (optional) | mixed | Background color for the new areas of the image. |
 | position (optional) | string | Position where the original image is placed. |
 
+<a href="/v3/playground#pad" target="playground" class="demoButton">Try it out in the live demo</a>
 
 #### Example
 
@@ -283,6 +292,7 @@ $image->pad(500, 500, position: 'top-left');
 | background (optional) | mixed | Background color for the new areas of the image. |
 | position (optional) | string | Position where the original image is placed. |
 
+<a href="/v3/playground#contain" target="playground" class="demoButton">Try it out in the live demo</a>
 
 #### Example
 
@@ -325,7 +335,9 @@ original image format.
 | background (optional) | mixed | Color to fill any newly created areas |
 | position (optional) | string | Position at which the cutout will be aligned |
 
-**Caution: The signature has changed in version 3.3 by adding the parameter `background`**
+**Caution: The signature has changed in version 3.3 by the additional parameter `background`**
+
+<a href="/v3/playground#crop" target="playground" class="demoButton">Try it out in the live demo</a>
 
 #### Example
 
@@ -365,6 +377,8 @@ determines where the original image is fixed.
 | background (optional) | mixed | Background color for the new areas of the image |
 | position (optional) | string | Position where the original image will be fixed |
 
+<a href="/v3/playground#resizeCanvas" target="playground" class="demoButton">Try it out in the live demo</a>
+
 #### Example
 
 ```php
@@ -394,6 +408,8 @@ relative values which are either added (positive) or subtracted (negative) from 
 | height | null or integer | Amount which will be added or subtracted to the original height |
 | background (optional) | mixed | Background color for the new areas of the image |
 | position (optional) | string | Position where the original image will be fixed |
+
+<a href="/v3/playground#resizeCanvasRelative" target="playground" class="demoButton">Try it out in the live demo</a>
 
 #### Example
 
