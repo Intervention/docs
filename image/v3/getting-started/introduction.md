@@ -48,4 +48,4 @@ $image->toPng()->save('images/foo.png');
 The library follows the FIG PSR-12 standard to ensure a high level of
 interoperability between shared PHP code and is fully unit tested.
 
-Read how to [install Intervention Image](/v3/getting-started/installation).
+Read how to [install Intervention Image](/v3/getting-started/installation) or try the [live demo](/v3/playground) to try the results of resizing functions directly.
