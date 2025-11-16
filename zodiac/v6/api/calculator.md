@@ -166,4 +166,41 @@ $sign = $calculator->fromUnix('228268800');
 $sign = $calculator->fromUnix(209262190, Calendar::CHINESE);
 ```
 
-Continue reading to learn what you can do with the [zodiac objects](/v5/api/zodiac).
+## Compatibility
+
+### Compare Zodiac Signs
+
+> public Calculator::compare(SignInterface $sign, SignInterface $with): float
+
+It is said that zodiac signs have a certain type of relationship with each
+other. While some combinations are said to be compatible, others tend to cause
+problems (if you believe in it).
+
+Intervention Zodiac lets you explore this astrological compatibility by
+comparing two signs with each other and calculating a compatibility which
+ranges from `0` (bad) to `1` (very good).
+
+#### Parameters
+
+| Name | Type | Description |
+| - | - | - |
+| sign | SignInterface | Sign for comparision |
+| with | SignInterface | Zodiac sign to compare with first sign |
+
+#### Example
+
+```php
+use Intervention\Zodiac\Calculator;
+use Intervention\Zodiac\Calendar;
+
+$calculator = new Calculator();
+
+// create calculator (western by default)
+$joe = $calculator->fromString('1994-08-03');
+$jane = $calculator->fromString('1997-03-01');
+
+// create sign from unix timestamp integer
+$compatibility = $calculator->compare($joe, $jane); // .3
+```
+
+Continue reading to learn what you can do with the [zodiac objects](/v6/api/sign).
