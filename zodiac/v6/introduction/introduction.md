@@ -6,31 +6,46 @@ lead: "Intervention Zodiac is a calculator for zodiac signs to resolve the respe
 sort: 0
 ---
 
+## Zodiac Calculator
+
+Intervention Zodiac is a powerful, developer-friendly tool for effortless
+zodiac sign calculation. This versatile PHP library lets you generate zodiac
+signs from nearly any date format, including natural language strings, Unix
+timestamps, standard `DateTime` objects, and Carbon instances. 
+
+Whether you're building horoscope features or astrology apps the Zodiac
+Calculator effortless delivers results for western as well as traditional
+chinese zodiac signs.
+
 ### Code Examples
 
 ```php
 use Intervention\Zodiac\Calculator;
+use Intervention\Zodiac\Calendar;
 use DateTime;
-use Carbon\Carbon;
 
 // get zodiac object from a date
 $sign = Calculator::fromString('1980-09-15');
 
-// method takes mixed string formats
-$sign = Calculator::fromString('first day of June 2008');
-
-// Create zodiac sign from DateTime objects
+// create zodiac sign from DateTime objects
 $sign = Calculator::fromDate(new DateTime('1977-03-15'));
 
-// since Carbon dates extend from DateTime they can also be read
-$sign = Calculator::fromDate(Carbon::yesterday());
+// create zodiac sign from DateTime objects
+$sign = Calculator::fromDate(new DateTime('1977-03-15'));
 
-// or use the dedicated method to create from carbon dates
-$sign = Calculator::fromCarbon(Carbon::yesterday());
-
-// get zodiac from unix timestamp
-$sign = Calculator::fromUnix(228268800);
+// calculate chinese zodiac signs
+$sign = Calculator::fromString('1977-06-17', Calendar::CHINESE);
 ```
+
+Read more about the [calculator](/v6/api/calculator).
+
+## Zodiac Signs
+
+Unlock insights by accessing the countless data properties of zodiac sign
+objects. Designed for flexible data handling, the sign instances come with
+built-in language translation and even compatibility scores.
+
+### Code Examples
 
 ```php
 use Intervention\Zodiac\Calculator;
@@ -42,8 +57,8 @@ $sign = Calculator::fromString('1977-06-17');
 
 $name = $zodiac->name(); // 'gemini'
 $html = $zodiac->html(); // '♊︎'
-$localized = $zodiac->localized('fr'); // Gémeaux
+$localized = $zodiac->localized('fr'); // 'Gémeaux'
 $compatibility = $zodiac->compatibility($zodiac); // 6
 ```
 
-Read how to [install the package](/v6/introduction/installation).
+Read more about [zodiac signs](/v6/api/sign) or how to [install the package](/v6/introduction/installation).
