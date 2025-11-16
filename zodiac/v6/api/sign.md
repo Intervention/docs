@@ -33,6 +33,8 @@ $name = (string) $zodiac; // "gemini"
 Return the localized version of the zodiac sign in the given locale. The
 locale parameter is optional, by default the english language is returned.
 
+#### Example
+
 ```php
 use Intervention\Zodiac\Calculator;
 
@@ -69,6 +71,8 @@ comparing the current instance to another sign.
 
 The compatibility factor is returned as a float value of `0-1`, with a higher
 value representing more compatibility.
+
+#### Example
 
 ```php
 use Intervention\Zodiac\Calculator;
