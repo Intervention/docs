@@ -193,13 +193,14 @@ ranges from `0` (bad) to `1` (very good).
 use Intervention\Zodiac\Calculator;
 use Intervention\Zodiac\Calendar;
 
+// create calculator
 $calculator = new Calculator();
 
-// create calculator (western by default)
+// calculate two different birthdays
 $joe = $calculator->fromString('1994-08-03');
 $jane = $calculator->fromString('1997-03-01');
 
-// create sign from unix timestamp integer
+// calculate compatibility
 $compatibility = $calculator->compare($joe, $jane); // .3
 ```
 
