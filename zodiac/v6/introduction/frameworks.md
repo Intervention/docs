@@ -19,9 +19,6 @@ The following code example shows how to calculate a zodiac sign via the zodiac f
 
 ```php
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\Storage;
-use Illuminate\Support\Str;
 use Intervention\Zodiac\Laravel\Facades\Zodiac;
 
 Route::get('/', function (Request $request) {
