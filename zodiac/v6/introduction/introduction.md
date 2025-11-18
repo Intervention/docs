@@ -21,20 +21,40 @@ chinese zodiac signs.
 
 ```php
 use Intervention\Zodiac\Calculator;
-use Intervention\Zodiac\Calendar;
+use Intervention\Zodiac\Astrology;
+use Carbon\Carbon;
 use DateTime;
 
-// get zodiac object from a date
-$sign = Calculator::fromString('1980-09-15');
+$sign = Calculator::fromString('2001-01-01');
+$sign = Calculator::fromString('2001-01-01', Astrology::CHINESE);
 
-// create zodiac sign from DateTime objects
-$sign = Calculator::fromDate(new DateTime('1977-03-15'));
+// create western calculator
+$sign = Calculator::western()
+    ->fromString('2001-01-01'); 
 
-// create zodiac sign from DateTime objects
-$sign = Calculator::fromDate(new DateTime('1977-03-15'));
+// create chinese calculator
+$sign = Calculator::chinese()
+    ->fromString('2001-01-01'); 
 
-// calculate chinese zodiac signs
-$sign = Calculator::fromString('1977-06-17', Calendar::CHINESE);
+// override default
+$sign = Calculator::western()
+    ->fromString('2001-01-01', Astrology::CHINESE);
+
+// pass astrology as a parameter
+$sign = Calculator::withAstrology(Astrology::CHINESE)
+    ->fromString('2001-01-01');
+
+// override default
+$sign = Calculator::withAstrology(Astrology::CHINESE)
+    ->fromString('2001-01-01', Astrology::WESTERN);
+
+// parse various date formats
+$sign = Calculator::fromString('first day of june 2014');
+$sign = Calculator::fromString('2018-06-15 12:34:00');
+$sign = Calculator::fromDate(new DateTime('2001-01-01'));
+$sign = Calculator::fromDate(Carbon::yesterday());
+$sign = Calculator::fromUnix(228268800);
+$sign = Calculator::fromUnix('228268800');
 ```
 
 Read more about the [calculator](/v6/api/calculator).
@@ -52,13 +72,13 @@ use Intervention\Zodiac\Calculator;
 use DateTime;
 use Carbon\Carbon;
 
-// calculate zodiac sign
-$sign = Calculator::fromString('1977-06-17');
+// calculate zodiac sing
+$sign = Calculator::fromDate($date);
 
 $name = $sign->name(); // 'gemini'
 $html = $sign->html(); // '♊︎'
-$localized = $sign->localized('fr'); // 'Gémeaux'
-$compatibility = $sign->compatibility($sign); // 6
+$localized = $sign->localize('fr')->name(); // Gémeaux
+$compatibility = $sign->compatibility($sign); // .6
 ```
 
 Read more about [zodiac signs](/v6/api/sign) or how to [install the package](/v6/introduction/installation).
