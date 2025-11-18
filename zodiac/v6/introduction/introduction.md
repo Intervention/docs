@@ -55,10 +55,10 @@ use Carbon\Carbon;
 // calculate zodiac sign
 $sign = Calculator::fromString('1977-06-17');
 
-$name = $zodiac->name(); // 'gemini'
-$html = $zodiac->html(); // '♊︎'
-$localized = $zodiac->localized('fr'); // 'Gémeaux'
-$compatibility = $zodiac->compatibility($zodiac); // 6
+$name = $sign->name(); // 'gemini'
+$html = $sign->html(); // '♊︎'
+$localized = $sign->localized('fr'); // 'Gémeaux'
+$compatibility = $sign->compatibility($sign); // 6
 ```
 
 Read more about [zodiac signs](/v6/api/sign) or how to [install the package](/v6/introduction/installation).
