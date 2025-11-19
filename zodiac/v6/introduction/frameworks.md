@@ -11,6 +11,22 @@ sort: 2
 
 Intervention Zodiac comes with Laravel facades ...
 
+### Application-wide Configuration
+
+A global configuration file that is recognized by Laravel is included. It is
+therefore possible to configure a default setting for the astrology to be used
+by the calculator facade.
+
+The configuration file can be copied to the application with the following command.
+
+```bash
+php artisan vendor:publish --provider="Intervention\Zodiac\Laravel\ServiceProvider"
+```
+
+This command will publish the configuration file `config/zodiac.php` to your local 
+applications config folder. Here you can set the default astrology type to be used for
+calculations.
+
 ### Static Facade Interface
 
 This package also integrates access to the central entry point `Intervention\Zodiac\Calculator::class`, via a static [facade](https://laravel.com/docs/facades). 
@@ -22,6 +38,6 @@ use Illuminate\Http\Request;
 use Intervention\Zodiac\Laravel\Facades\Zodiac;
 
 Route::get('/', function (Request $request) {
-    $sign = Image::western()->fromString($request->input('date'));
+    $sign = Zodiac::fromString($request->input('date'));
 });
 ```
