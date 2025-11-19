@@ -157,7 +157,7 @@ $image = $image->greyscale();
 
 > public Image::flop(): ImageInterface
 
-Mirror the current image horizontally.
+Mirror the current image horizontally by swapping left and right.
 
 #### Example
 
@@ -175,12 +175,11 @@ $image = $manager->read('images/example.png');
 $image = $image->flop();
 ```
 
-
 ### Mirror Image Vertically
 
 > public Image::flip(): ImageInterface
 
-Mirror the current image vertically.
+Mirror the current image vertically by swapping top and bottom.
 
 #### Example
 
