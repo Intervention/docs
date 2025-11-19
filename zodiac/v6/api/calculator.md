@@ -63,6 +63,36 @@ use Intervention\Zodiac\Astrology;
 $calculator = Calculator::withAstrology(Astrology::CHINESE);
 ```
 
+### Factory Method for Western Calculator
+
+> public Calculator::western(): CalculatorInterface
+
+Create a calculator using the static factory method for western astrology directly.
+
+#### Example
+
+```php
+use Intervention\Zodiac\Calculator;
+
+// create calculator for chinese signs
+$calculator = Calculator::western();
+```
+
+### Factory Method for Chinese Calculator
+
+> public Calculator::chinese(): CalculatorInterface
+
+Create a calculator using the static factory method for chinese astrology directly.
+
+#### Example
+
+```php
+use Intervention\Zodiac\Calculator;
+
+// create calculator for chinese signs
+$calculator = Calculator::chinese();
+```
+
 ## Calculation
 
 The calculator class can read dates from **integer types** (unix timestamp) as
