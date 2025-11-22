@@ -1,7 +1,7 @@
 ---
 title: "Framework Integration"
 subtitle: "Integration in Laravel"
-lead: "Explore how to integrate Intervention Zodiac with the Laravel framework. Learn to set up configuration files, select drivers and leverage features like auto-orientation, decoding animations, and blending color."
+lead: "Explore how to integrate Intervention Zodiac with the Laravel framework. Learn to set up configuration files and use the calculator via static facades."
 sort: 2
 ---
 
