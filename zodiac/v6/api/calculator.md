@@ -84,6 +84,8 @@ $calculator = Calculator::western();
 
 Create a calculator using the static factory method for chinese astrology directly.
 
+**Please note that calculations for Chinese zodiac signs are currently only implemented for years between 1900 and 2100.**
+
 #### Example
 
 ```php
