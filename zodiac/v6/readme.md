@@ -1,4 +1,4 @@
 ---
 title: "Version 6"
-status: "beta"
+status: "stable"
 ---

@@ -1,9 +1,17 @@
 ---
 title: "Installation"
 subtitle: "Installation with Composer"
-lead: "Learn how to install Intervention Zodiac for PHP with Composer and discover how to use the library with the Laravel framework."
+lead: "Learn how to install Intervention Zodiac for PHP with Composer
 sort: 1
 ---
+
+## Server Requirements
+
+Before you begin with the installation make sure that your server environment supports the following requirements.
+
+PHP >= 8.2
+
+## Installation
 
 Use [Composer](https://getcomposer.org) for the installation by running the following command.
 
