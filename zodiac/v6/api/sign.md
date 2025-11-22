@@ -28,7 +28,7 @@ $name = (string) $zodiac; // "gemini"
 
 ### Localized Title
 
-> public SignInterface::localized(?string $locale = null): SignInterface
+> public SignInterface::localize(?string $locale = null): SignInterface
 
 Return the localized version of the zodiac sign in the given locale. The
 locale parameter is optional, by default the english language is returned.
