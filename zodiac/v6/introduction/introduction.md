@@ -2,7 +2,7 @@
 title: "Intervention Zodiac"
 label: "Introduction"
 subtitle: "PHP Zodiac Sign Calculator"
-lead: "Intervention Zodiac is a calculator for zodiac signs to resolve the respective star sign from various data types."
+lead: "Intervention Zodiac is a astrological calculator that resolves Western and Chinese zodiac signs from various data types."
 sort: 0
 ---
 
