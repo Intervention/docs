@@ -223,7 +223,6 @@ ranges from `0` (bad) to `1` (very good).
 
 ```php
 use Intervention\Zodiac\Calculator;
-use Intervention\Zodiac\Astrology;
 
 // create calculator
 $calculator = new Calculator();
