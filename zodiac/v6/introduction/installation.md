@@ -1,7 +1,7 @@
 ---
 title: "Installation"
 subtitle: "Installation with Composer"
-lead: "Learn how to install Intervention Zodiac for PHP with Composer
+lead: "Learn how to install Intervention Zodiac for PHP with Composer"
 sort: 1
 ---
 
