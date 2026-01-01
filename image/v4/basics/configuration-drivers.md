@@ -2,7 +2,7 @@
 label: "Configuration & Drivers"
 title: "Configuration & Drivers"
 subtitle: "Use the ImageManager to Configure Intervention Image"
-lead: "Learn how to create and configure Intervention Image. Discover the image manager, driver options (GD, Imagick or libvips), and advanced settings like auto-orientation, animation decoding, and blending colors."
+lead: "Learn how to create and configure Intervention Image. Discover the image manager, driver options (GD, Imagick or libvips), and advanced settings like auto-orientation, animation decoding, and replacing background colors."
 sort: 0
 ---
 
@@ -14,7 +14,7 @@ sort: 0
 
 The image manager is the starting point for all operations. With this class you
 determine the driver to use, the configuration options and call the methods
-needed for [reading images from different sources](/v3/basics/instantiation#reading-image-sources).
+needed for [reading images from different sources](/v4/basics/instantiation#reading-image-sources).
 
 ### Driver Selection
 
@@ -58,9 +58,9 @@ the constructor that determine the behavior of the library.
 
 These parameters affect how the library handles the [orientation of the image
 according to Exif
-data](/v3/modifying-images/effects#image-orientation-according-to-exif-data), whether
-[animations are decoded or discarded](/v3/modifying-images/animations), and what the [default blending
-color](/v3/basics/colors#transparency) is.
+data](/v4/modifying-images/effects#image-orientation-according-to-exif-data), whether
+[animations are decoded or discarded](/v4/modifying-images/animations), and what the [default blending
+color](/v4/basics/colors#transparency) is.
 
 #### Parameters
 
@@ -69,7 +69,7 @@ color](/v3/basics/colors#transparency) is.
 | driver | string or DriverInterface | Image Manager driver instance or driver class name |
 | autoOrientation | bool | (optional) Decides whether the image should be automatically aligned based on the Exif data. Default: `true` |
 | decodeAnimation | bool | (optional) Whether a possibly animated image is decoded as such or whether the animation is discarded. Default: `true` |
-| blendingColor | mixed | (optional) The default blending color. Default: `ffffff` |
+| backgroundColor | mixed | (optional) The standard background color. Default: `ffffff` |
 | strip | bool | (optional) Decides whether image meta data should be removed in the encoding process. Default: `false` |
 
 #### Example
@@ -89,7 +89,7 @@ $manager = new ImageManager(
     Driver::class,
     autoOrientation: false,
     decodeAnimation: true,
-    blendingColor: 'ff5500',
+    backgroundColor: 'ff5500',
     strip: false
 );
 ```
@@ -103,7 +103,7 @@ $manager = new ImageManager(
 The static helper method acts the same way as the constructor and takes either
 a class name or an instance of the driver and optionally configuration parameters.
 
-[See possible options for configuration.](/v3/basics/configuration-drivers#create-a-new-image-manager-instance)
+[See possible options for configuration.](/v4/basics/configuration-drivers#create-a-new-image-manager-instance)
 
 #### Parameters
 
@@ -129,7 +129,7 @@ $manager = ImageManager::withDriver(
     Driver::class,
     autoOrientation: true,
     decodeAnimation: true,
-    blendingColor: 'ff5500',
+    backgroundColor: 'ff5500',
     strip: true
 );
 ```
@@ -141,7 +141,7 @@ $manager = ImageManager::withDriver(
 This static helper methods for GD driver creates a new image manager instance
 directly without arguments or optional configuration options.
 
-[See possible options for configuration.](/v3/basics/configuration-drivers#create-a-new-image-manager-instance)
+[See possible options for configuration.](/v4/basics/configuration-drivers#create-a-new-image-manager-instance)
 
 #### Parameters
 
@@ -168,7 +168,7 @@ $manager = ImageManager::gd(autoOrientation: false);
 This static helper methods takes no arguments and creates a new image manager
 instance with Imagick driver directly.
 
-[See possible options for configuration.](/v3/basics/configuration-drivers#create-a-new-image-manager-instance)
+[See possible options for configuration.](/v4/basics/configuration-drivers#create-a-new-image-manager-instance)
 
 #### Parameters
 
