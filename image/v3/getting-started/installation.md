@@ -34,7 +34,7 @@ I think it is faster and more efficient especially for larger images. Support
 for libvips is available via a driver that can be installed as an [add-on
 package](https://github.com/Intervention/image-driver-vips).
 
-Based on your environmen, the appropriate driver must be configured later.
+Based on your environment, the appropriate driver must be configured later.
 
 ## Installation
 

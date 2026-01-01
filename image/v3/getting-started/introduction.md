@@ -42,7 +42,6 @@ $image->place('images/watermark.png');
 
 // save modified image in new format 
 $image->toPng()->save('images/foo.png');
-
 ```
 
 The library follows the FIG PSR-12 standard to ensure a high level of
