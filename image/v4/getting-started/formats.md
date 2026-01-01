@@ -14,7 +14,7 @@ libvips it is possible to read all formats that the library itself supports and
 write the formats listed below with GD only the formats listed below are
 readable and writable.
 
-Read more about [encoding different image formats](/v3/basics/image-output) in the output section.
+Read more about [encoding different image formats](/v4/basics/image-output) in the output section.
 
 | Format | GD | Imagick | libvips |
 | - | - | - | - |
@@ -29,6 +29,7 @@ Read more about [encoding different image formats](/v3/basics/image-output) in t
 | TIFF | ❌ | ✅ | ✅ |
 | JPEG 2000 | ❌ | ✅ | ✅ |
 | HEIC | ❌ | ✅ | ✅ |
+| ICO | ❌ | ✅ | ✅ |
 
 **Please note that not all image formats are always included in the PHP image
 extensions. It is therefore possible, that the GD library is installed but is
@@ -49,19 +50,17 @@ All these image formats can be read from various sources. These are in detail:
 
 ### Check the Support for Image Formats
 
-> public DriverInterface::supports(string|Format|FileExtension|MediaType $identifier): bool
+> public DriverInterface::supports(string|Format|FileExtension|MediaType $identifier): bool;
 
 This method can be used during runtime to find out whether a specific format
-is supported. It checks if the desired format is supported by the
-current driver and if the underlying extension has been built with the
-necessary support, returning `true` if both conditions are met.
+is supported. It checks if the desired format is supported by the current driver and if the underlying extension has been built with the
+necessary support, returning `true` if both conditions are met or `false` if the driver has no support.
 
 #### Parameters
 
 | Name | Type | Description |
 | - | - | - |
 | identifier | string, Format, FileExtension or MediaType | Identifier of the image format, which can be passed either as a file extension string, media type string or enum member.  |
-
 
 #### Example
 
