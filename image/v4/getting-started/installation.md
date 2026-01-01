@@ -12,7 +12,7 @@ sort: 1
 Before you begin with the installation make sure that your server environment
 supports the following requirements.
 
-- PHP >= 8.1
+- PHP >= 8.3
 - Mbstring PHP Extension
 - Image Processing PHP Extension
 
@@ -34,15 +34,14 @@ I think it is faster and more efficient especially for larger images. Support
 for libvips is available via a driver that can be installed as an [add-on
 package](https://github.com/Intervention/image-driver-vips).
 
-Based on your environmen, the appropriate driver must be configured later.
+Based on your environment, the appropriate driver must be configured later.
 
 ## Installation
 
-Install Intervention Image with [Composer](https://getcomposer.org/) by running
-the following command.
+Install Intervention Image with [Composer](https://getcomposer.org/) by running the following command.
 
 ```bash
-composer require intervention/image
+composer require intervention/image:^4
 ```
 
 This will install Intervention Image with the most recent version, your
@@ -61,4 +60,4 @@ use Intervention\Image\Drivers\Imagick\Driver;
 $manager = new ImageManager(new Driver());
 ```
 
-After installation you are ready to [configure the image manager](/v3/basics/configuration-drivers) and [read or create image instances](/v3/basics/instantiation).
+After installation you are ready to [configure the image manager](/v4/basics/configuration-drivers) and [read or create image instances](/v4/basics/instantiation).
