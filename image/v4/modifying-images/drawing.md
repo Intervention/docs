@@ -11,7 +11,7 @@ sort: 4
 
 ### Fill Images with Color
 
-> public Image::fill(mixed $color, null|int $x = null, null|int $y = null): ImageInterface
+> public Image::fill(string|ColorInterface $color, null|int $x = null, null|int $y = null): ImageInterface
 
 Fills the current image with the specified color. Optionally, it is possible to
 pass a position where the color fill should start. If these X and Y values are
@@ -23,7 +23,7 @@ passed, the entire image will be filled.
 
 | Name | Type | Description |
 | - | - | - |
-| color | mixed | Fill color in one of the different [color formats](/v3/getting-started/formats#color-formats) |
+| color | string or ColorInterface | Fill color in one of the different [color formats](/v4/getting-started/formats#color-formats) |
 | x | int | Optional x-coordinate of the filling position |
 | y | int | Optional y-coordinate of the filling position |
 
@@ -34,7 +34,7 @@ use Intervention\Image\ImageManager;
 use Intervention\Image\Drivers\Gd\Driver;
 
 // create new manager instance with desired driver
-$manager = new ImageManager(Driver::class);
+$manager = ImageManager::usingDriver(Driver::class);
 
 // read an image
 $image = $manager->read('images/example.png');
@@ -45,7 +45,7 @@ $image = $image->fill('#b53717', 10, 10);
 
 ### Draw Pixels
 
-> public Image::drawPixel(int $x, int $y, mixed $color): ImageInterface
+> public Image::drawPixel(int $x, int $y, string|ColorInterface $color): ImageInterface
 
 Draw a single pixel at the specified position defined by the coordinates **x** and **y** in a given **color**.
 
@@ -55,7 +55,7 @@ Draw a single pixel at the specified position defined by the coordinates **x** a
 | - | - | - |
 | x | integer | Position of pixel on x-axis of the current image |
 | y | integer | Position of pixel on y-axis of the current image |
-| color | mixed | Color of the pixel in a [valid format](/v3/getting-started/formats#color-formats) |
+| color | string or ColorInterface | Color of the pixel in a [valid format](/v4/getting-started/formats#color-formats) |
 
 
 #### Example
@@ -63,15 +63,18 @@ Draw a single pixel at the specified position defined by the coordinates **x** a
 ```php
 use Intervention\Image\ImageManager;
 use Intervention\Image\Drivers\Imagick\Driver;
+use Intervention\Image\Color;
+use Intervention\Image\Colors\NamedColor;
 
 // create an test image from a file
-$manager = new ImageManager(new Driver());
-$image = $manager->read('test.png');
+$image = ImageManager::usingDriver(Driver::class)->read('test.png');
 
-// draw three pixels at different positions
+// draw pixels at different positions
+$image->drawPixel(200, 2, Color::rgb(255, 55, 0, .2));
 $image->drawPixel(12, 30, 'ff00ff');
 $image->drawPixel(100, 1, 'rgb(255, 255, 0)');
 $image->drawPixel(200, 2, 'orange');
+$image->drawPixel(200, 2, NamedColor::STEELBLUE);
 ```
 
 
@@ -79,19 +82,18 @@ $image->drawPixel(200, 2, 'orange');
 
 ### Draw a Rectangle
 
-> public Image::drawRectangle(int $x, int $y, Closure|Rectangle $init): ImageInterface
+> public Image::drawRectangle(callable|Rectangle $rectangle, null|callable $adjustments = null): ImageInterface
 
-Draw a colored rectangle on the current image with its top left position at the
-**x, y** coordinates. Define the overall appearance of the shape by passing an
-**init** callback or a rectangle object as a third parameter.
+Draw a rectangle on the current image. Define the overall appearance of the
+shape by passing an callback or a rectangle object. Optionally you can pass an
+adjustment callback to modify the given rectangle for this single call.
 
 #### Parameters
 
 | Name | Type | Description |
 | - | - | - |
-| x | integer | Position of the top left corner of the rectangle on x-axis of the current image |
-| y | integer | Position of the top left corner of the rectangle on y-axis of the current image |
-| init | Closure or Intervention\Image\Geometry\Rectangle | Callback to define the appearance of the rectangle or Rectangle object. See example. |
+| rectangle | callable or Intervention\Image\Geometry\Rectangle | The rectangle or a callback on a rectangle factory. See example. |
+| adjustments | null or callable | A callable to adjust the appearance of the given rectangle for this drawing operation. |
 
 #### Example
 
@@ -101,67 +103,121 @@ use Intervention\Image\Drivers\Gd\Driver;
 use Intervention\Image\Geometry\Factories\RectangleFactory;
 
 // create an test image from a file
-$manager = new ImageManager(new Driver());
-$image = $manager->read('test.png');
+$image = ImageManager::usingDriver(Driver::class)->read('test.png');
 
 // draw an orange rectangle with a border
-$image->drawRectangle(10, 10, function (RectangleFactory $rectangle) {
+$image->drawRectangle(function (RectangleFactory $rectangle): void {
+    $rectangle->at(10, 10); // position of the rectangle on the image
     $rectangle->size(180, 125); // width & height of rectangle
-    $rectangle->background('orange'); // background color of rectangle
+    $rectangle->background('ff5500'); // background color of rectangle
     $rectangle->border('white', 2); // border color & size of rectangle
 });
 ```
 
+```php
+use Intervention\Image\ImageManager;
+use Intervention\Image\Drivers\Gd\Driver;
+use Intervention\Image\Geometry\Factories\RectangleFactory;
+use Intervention\Image\Geometry\Factories\Drawable;
+
+// create an test image from a file
+$image = ImageManager::usingDriver(Driver::class)->read('test.png');
+
+$background = Color::rgb(255, 55, 0);
+
+// create rectangle object to reuse in following calls
+$rectangle = Drawable::rectangle(function (RectangleFactory $rectangle) use ($background): void {
+     $rectangle->size(32, 32);
+     $rectangle->background($background->withTransparency(.7));
+ });
+
+// draw rectangle object at position
+$image->drawRectangle($rectangle, fn($rectangle) => $rectangle->at(10, 10));
+
+// draw rectangle object at new position
+$image->drawRectangle($rectangle, fn($rectangle) => $rectangle->at(100, 100));
+
+// draw rectangle object at another position
+$image->drawRectangle($rectangle, fn($rectangle) => $rectangle->at(200, 200));
+```
+
 ### Draw Ellipses
 
-> public Image::drawEllipse(int $x, int $y, Closure|Ellipse $init): ImageInterface
+> public Image::drawEllipse(callable|Ellipse $ellipse, null|callable $adjustments = null): ImageInterface
 
-Draw a colored ellipse on the current image with its center position at the
-**x, y** coordinates. Define the overall appearance of the shape by passing a
-**init** callback or a ellipse objeect as a third parameter.
+Draw a ellipse on the current image. Define the overall appearance of the
+shape by passing an callback or a ellipse object. Optionally you can pass an
+adjustment callback to modify the given geometric object for this single call.
 
 #### Parameters
 
 | Name | Type | Description |
 | - | - | - |
-| x | integer | Position of the center of the ellipse on x-axis of the current image |
-| y | integer | Position of the center of the ellipse on y-axis of the current image |
-| init | Closure or Intervention\Image\Geometry\Ellipse | Callback to define the appearance of the ellipse or Ellipse object. See example. |
+| ellipse | callable or Intervention\Image\Geometry\Ellipse | The ellipse or a callback on a ellipse factory. See example. |
+| adjustments | null or callable | A callable to adjust the appearance of the given ellipse for this drawing operation. |
 
 #### Example
 
 ```php
 use Intervention\Image\ImageManager;
-use Intervention\Image\Drivers\Imagick\Driver;
+use Intervention\Image\Drivers\Gd\Driver;
 use Intervention\Image\Geometry\Factories\EllipseFactory;
 
 // create an test image from a file
-$manager = new ImageManager(Driver::class);
-$image = $manager->read('test.png');
+$image = ImageManager::usingDriver(Driver::class)->read('test.png');
 
-// draw a red ellipse with a blue border
-$image->drawEllipse(10, 10, function (EllipseFactory $ellipse) {
+// draw an ellipse with a border
+$image->drawEllipse(function (EllipseFactory $ellipse): void {
+    $ellipse->at(10, 10); // position of the ellipse on the image
     $ellipse->size(180, 125); // width & height of ellipse
-    $ellipse->background('f00'); // background color
-    $ellipse->border('00f', 1); // border color & size
+    $ellipse->background('ff5500'); // background color of ellipse
+    $ellipse->border('white', 2); // border color & size of ellipse
 });
+```
+
+```php
+use Intervention\Image\ImageManager;
+use Intervention\Image\Drivers\Gd\Driver;
+use Intervention\Image\Geometry\Factories\EllipseFactory;
+use Intervention\Image\Geometry\Factories\Drawable;
+
+// create an test image from a file
+$image = ImageManager::usingDriver(Driver::class)->read('test.png');
+
+// create background color for the ellipse
+$background = Color::rgb(255, 55, 0);
+
+// create ellipse object to reuse in following calls
+$ellipse = Drawable::ellipse(function (EllipseFactory $ellipse) use ($background): void {
+     $ellipse->width(100);
+     $ellipse->height(200);
+     $ellipse->background($background->withTransparency(.7));
+ });
+
+// draw ellipse object at position
+$image->drawEllipse($ellipse, fn($ellipse) => $ellipse->at(10, 10));
+
+// draw ellipse object at new position
+$image->drawEllipse($ellipse, fn($ellipse) => $ellipse->at(100, 100));
+
+// draw ellipse object at another position
+$image->drawEllipse($ellipse, fn($ellipse) => $ellipse->at(200, 200));
 ```
 
 ### Draw a Circle
 
-> public Image::drawCircle(int $x, int $y, Closure|Circle $init): ImageInterface
+> public Image::drawCircle(callable|Circle $circle, null|callable $adjustments = null): ImageInterface
 
-Draw a colored circle on the current image with its center position at the **x,
-y** coordinates. Define the overall appearance of the shape by passing a
-**init** callback or a circle object as a third parameter.
+Draw a circle on the current image. Define the overall appearance of the
+shape by passing an callback or a circle object. Optionally you can pass an
+adjustment callback to modify the given geometric object for this single call.
 
 #### Parameters
 
 | Name | Type | Description |
 | - | - | - |
-| x | integer | Position of the center of the circle on x-axis of the current image |
-| y | integer | Position of the center of the circle on y-axis of the current image |
-| init | Closure or Intervention\Image\Geometry\Circle | Callback to define the appearance of the circle or object. See example. |
+| circle | callable or Intervention\Image\Geometry\Circle | The circle or a callback on a circle factory. See example. |
+| adjustments | null or callable | A callable to adjust the appearance of the given circle for this drawing operation. |
 
 #### Example
 
@@ -171,29 +227,59 @@ use Intervention\Image\Drivers\Gd\Driver;
 use Intervention\Image\Geometry\Factories\CircleFactory;
 
 // create an test image from a file
-$manager = new ImageManager(Driver::class);
-$image = $manager->read('test.png');
+$image = ImageManager::usingDriver(Driver::class)->read('test.png');
 
-// draw a green circle with a white border
-$image->drawCircle(10, 10, function (CircleFactory $circle) {
-    $circle->radius(150); // radius of circle in pixels
-    $circle->background('lightblue'); // background color
-    $circle->border('b53717', 1); // border color & size
+// draw an circle with a border
+$image->drawCircle(function (CircleFactory $circle): void {
+    $circle->at(10, 10); // position of the circle on the image
+    $circle->diameter(180); // diameter of circle
+    $circle->background('ff5500'); // background color of circle
+    $circle->border('white', 2); // border color & size of circle
 });
+```
+
+```php
+use Intervention\Image\ImageManager;
+use Intervention\Image\Drivers\Gd\Driver;
+use Intervention\Image\Geometry\Factories\CircleFactory;
+use Intervention\Image\Geometry\Factories\Drawable;
+
+// create an test image from a file
+$image = ImageManager::usingDriver(Driver::class)->read('test.png');
+
+// create background color for the circle
+$background = Color::rgb(255, 55, 0);
+
+// create circle object to reuse in following calls
+$circle = Drawable::circle(function (CircleFactory $circle) use ($background): void {
+     $circle->diameter(100);
+     $circle->background($background->withTransparency(.7));
+ });
+
+// draw circle object at position
+$image->drawCircle($circle, fn($circle) => $circle->at(10, 10));
+
+// draw circle object at new position
+$image->drawCircle($circle, fn($circle) => $circle->at(100, 100));
+
+// draw circle object at another position
+$image->drawCircle($circle, fn($circle) => $circle->at(200, 200));
 ```
 
 ### Draw a Line
 
-> public Image::drawLine(Closure|Line $init): ImageInterface
+> public Image::drawLine(callable|Line $line, null|callable $adjustments = null): ImageInterface
 
-Draw a line on the current image. Define the overall appearance of the shape by
-passing a **init** callback or a line object.
+Draw a line on the current image. Define the overall appearance of the
+shape by passing an callback or a line object. Optionally you can pass an
+adjustment callback to modify the given geometric object for this single call.
 
 #### Parameters
 
 | Name | Type | Description |
 | - | - | - |
-| init | Closure or Intervention\Image\Geometry\Line | Callback to define the appearance of the line or line object. See example. |
+| line | callable or Intervention\Image\Geometry\line | The line or a callback on a line factory. See example. |
+| adjustments | null or callable | A callable to adjust the appearance of the given line for this drawing operation. |
 
 #### Example
 
@@ -203,56 +289,111 @@ use Intervention\Image\Drivers\Gd\Driver;
 use Intervention\Image\Geometry\Factories\LineFactory;
 
 // create an test image from a file
-$manager = new ImageManager(Driver::class);
-$image = $manager->read('test.png');
+$image = ImageManager::usingDriver(Driver::class)->read('test.png');
 
-// draw a half transparent white line
-$image->drawLine(function (LineFactory $line) {
-    $line->from(10, 10); // starting point of line
-    $line->to(300, 100); // ending point
-    $line->color('ff00ff'); // color of line
-    $line->width(5); // line width in pixels
+// draw a line
+$image->drawline(function (LineFactory $line): void {
+    $line->from(10, 10);
+    $line->to(180, 25);
+    $line->color('ff5500'); // color of line
 });
+```
+
+```php
+use Intervention\Image\ImageManager;
+use Intervention\Image\Drivers\Gd\Driver;
+use Intervention\Image\Geometry\Factories\LineFactory;
+use Intervention\Image\Geometry\Factories\Drawable;
+
+// create an test image from a file
+$image = ImageManager::usingDriver(Driver::class)->read('test.png');
+
+// create color for the line
+$color = Color::rgb(255, 55, 0);
+
+// create line object to reuse in following calls
+$line = Drawable::line(function (LineFactory $line) use ($color): void {
+     $line->color($color->withTransparency(.7));
+ });
+
+// draw line object at position
+$image->drawLine($line, fn($line) => $line->from(10, 10)->to(25, 25));
+
+// draw line object at new position
+$image->drawLine($line, fn($line) => $line->from(40, 40)->to(85, 85));
+
+// draw line object at another position
+$image->drawLine($line, fn($line) => $line->from(7, 0)->to(20, 10));
 ```
 
 ### Draw a Polygon
 
-> public Image::drawPolygon(Closure|Polygon $init): ImageInterface
+> public Image::drawPolygon(callable|Polygon $polygon, null|callable $adjustments = null): ImageInterface
 
-Draw a polygon on the current image. Define the overall appearance of the shape
-by passing a **init** callback or a polygon object.
+Draw a polygon on the current image. Define the overall appearance of the
+shape by passing an callback or a polygon object. Optionally you can pass an
+adjustment callback to modify the given geometric object for this single call.
 
 #### Parameters
 
 | Name | Type | Description |
 | - | - | - |
-| init | Closure or Intervention\Image\Geometry\Polygon | Callback to define the appearance of the polygon or polygon object. See example. |
+| polygon | callable or Intervention\Image\Geometry\Polygon | The polygon or a callback on a polygon factory. See example. |
+| adjustments | null or callable | A callable to adjust the appearance of the given polygon for this drawing operation. |
 
 #### Example
 
 ```php
 use Intervention\Image\ImageManager;
-use Intervention\Image\Drivers\Imagick\Driver;
+use Intervention\Image\Drivers\Gd\Driver;
 use Intervention\Image\Geometry\Factories\PolygonFactory;
 
 // create an test image from a file
-$manager = new ImageManager(new Driver());
-$image = $manager->read('test.png');
+$image = ImageManager::usingDriver(Driver::class)->read('test.png');
 
 // draw a polygon
-$image->drawPolygon(function (PolygonFactory $polygon) {
-    $polygon->point(10, 10); // add point of polygon
-    $polygon->point(150, 150); // add point
-    $polygon->point(40, 180); // add point
-    $polygon->point(60, 100); // add point
-    $polygon->background('#b35187'); // background color
-    $polygon->border('#ff0', 6); // border color and border width
+$image->drawpolygon(function (PolygonFactory $polygon): void {
+    $polygon->background('ff5500'); // background color of polygon
+    $polygon->point(100, 100);
+    $polygon->point(10, 10);
+    $polygon->point(20, 10);
+    $polygon->point(90, 110);
+    $polygon->point(130, 10);
 });
+```
+
+```php
+use Intervention\Image\ImageManager;
+use Intervention\Image\Drivers\Gd\Driver;
+use Intervention\Image\Geometry\Factories\PolygonFactory;
+use Intervention\Image\Geometry\Factories\Drawable;
+
+// create an test image from a file
+$image = ImageManager::usingDriver(Driver::class)->read('test.png');
+
+// create background colors for the polygon
+$orange = Color::rgb(255, 55, 0);
+$blue = Color::rgb(0, 0, 200, .2);
+
+// create polygon object to reuse in following calls
+$polygon = Drawable::polygon(function (PolygonFactory $polygon): void {
+    $polygon->point(100, 100);
+    $polygon->point(10, 10);
+    $polygon->point(20, 10);
+    $polygon->point(90, 110);
+    $polygon->point(130, 10);
+ });
+
+// draw orange polygon object
+$image->drawPolygon($polygon, fn($polygon) => $polygon->background($orange));
+
+// draw blue polygon object
+$image->drawPolygon($polygon, fn($polygon) => $polygon->background($blue));
 ```
 
 ### Draw Bezier Curves
 
-> public Image::drawBezier(Closure|Bezier $init): ImageInterface
+> public Image::drawBezier(callable|Bezier $bezier, null|callable $adjustments = null): ImageInterface
 
 This method draws [Bézier curves](https://en.wikipedia.org/wiki/B%C3%A9zier_curve), the 
 shape of which is defined by a set of control points specified in the callback.
@@ -261,22 +402,24 @@ which must be either three or four. With three control points, the result is a
 **quadratic Bézier curve**, while four points result in a **cubic Bézier curve**. The 
 first and last control points define the start and end points of the curve.
 
-The color, width and background color of the curve can also be set using the callback.
+The color, width and background color of the curve can also be set.
 
 #### Parameters
 
 | Name | Type | Description |
 | - | - | - |
 | init | Closure or Intervention\Image\Geometry\Bezier | Callback to define the appearance and position of the bézier curve or object. See example. |
+| adjustments | null or callable | A callable to adjust the appearance of the given curve for this drawing operation. |
 
 #### Example
 
 ```php
 use Intervention\Image\ImageManager;
+use Intervention\Image\Drivers\Gd\Driver;
 use Intervention\Image\Geometry\Factories\BezierFactory;
 
 // create a new image
-$image = ImageManager::gd()
+$image = ImageManager::usingDriver(Driver::class)
     ->createImage(500, 500)
     ->fill('666');
 

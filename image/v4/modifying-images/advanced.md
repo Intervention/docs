@@ -6,7 +6,7 @@ sort: 7
 ---
 
 If the supplied options are not sufficient, it is possible to create your own
-solutions using your own [custom modifiers](/v3/modifying-images/custom-modifiers).
+solutions using your own [custom modifiers](/v4/modifying-images/custom-modifiers).
 Furthermore, the native image object can be accessed, so that all functions
 used by the actual image processing libraries (such as GD or Imagick) can
 be used — even those not covered by Intervention Image.
@@ -23,18 +23,18 @@ which is not included in this library.
 
 ```php
 use Intervention\Image\ImageManager;
+use Intervention\Image\Drivers\Imagick\Driver;
 
 // read test image from a file
-$manager = ImageManager::imagick();
-$image = $manager->read('test.png');
+$image = ImageManager::usingDriver(Driver::class)->decode('test.png');
 
 // access Imagick instance directly
 $imagick = $image->core()->native();
 
-// use external Imagick function
+// use Imagick method
 $imagick->oilPaintImage(4.5);
 ```
 
-Combined with [custom modifiers](/v3/modifying-images/custom-modifiers), Intervention
+Combined with [custom modifiers](/v4/modifying-images/custom-modifiers), Intervention
 Image can be extended with your own modifier combinations for endless
 possibilities.

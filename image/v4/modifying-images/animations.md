@@ -8,17 +8,17 @@ sort: 5
 [TOC]
 
 Both drivers included with Intervention Image support animation by default.
-However, the GD driver must use additional resources as it does not support
+However, the GD driver uses additional resources as it does not support
 animation out of the box.
 
 If you are loading images without the intention of processing the animation at
-all, this process can be [disabled beforehand in the Image
-Manager](/v3/basics/configuration-drivers) configuration to save resources.
+all, this step can be [disabled beforehand in the Image
+Manager](/v4/basics/configuration-drivers) configuration to save resources.
 
 ## Create Animations
-### Create an Animation from Different Sources
+### Create Animated Images from Different Sources
 
-More information about the animation creation process can be found in the chapter about [instantiation](/v3/basics/instantiation#create-animations).
+More information about the animation creation process can be found in the chapter about [instantiation](/v4/basics/instantiation#create-animations).
 
 ## Detect Animations
 ### Check the Current Image Instance for Animation
@@ -34,7 +34,7 @@ use Intervention\Image\ImageManager;
 use Intervention\Image\Drivers\Gd\Driver;
 
 // create new manager instance with desired driver
-$manager = new ImageManager(Driver::class);
+$manager = ImageManager::usingDriver(Driver::class);
 
 // true
 $result = $manager->read('images/animation.gif')->isAnimated();
@@ -53,9 +53,10 @@ Read the number of animation frames. `ImageInterface::class` extends
 
 ```php
 use Intervention\Image\ImageManager;
+use Intervention\Image\Drivers\Gd\Driver;
 
 // create new manager instance with desired driver
-$manager = ImageManager::gd();
+$manager = ImageManager::usingDriver(Driver::class);
 
 // read an animated gif
 $image = $manager->read('images/animation.gif');
@@ -91,7 +92,7 @@ use Intervention\Image\ImageManager;
 use Intervention\Image\Drivers\Gd\Driver;
 
 // create new manager instance with desired driver
-$manager = new ImageManager(new Driver());
+$manager = ImageManager::usingDriver(Driver::class);
 
 // read an animated gif
 $image = $manager->read('images/animation.gif');
@@ -113,7 +114,7 @@ use Intervention\Image\ImageManager;
 use Intervention\Image\Drivers\Imagick\Driver;
 
 // create new manager instance with desired driver
-$manager = new ImageManager(new Driver());
+$manager = ImageManager::usingDriver(Driver::class);
 
 // read an animated gif
 $image = $manager->read('images/animation.gif');
@@ -141,7 +142,7 @@ use Intervention\Image\ImageManager;
 use Intervention\Image\Drivers\Gd\Driver;
 
 // create new manager instance with desired driver
-$manager = new ImageManager(new Driver());
+$manager = ImageManager::usingDriver(Driver::class);
 
 // read an animated gif
 $image = $manager->read('images/animation.gif');
@@ -179,7 +180,7 @@ use Intervention\Image\ImageManager;
 use Intervention\Image\Drivers\Gd\Driver;
 
 // create new manager instance with desired driver
-$manager = new ImageManager(new Driver());
+$manager = ImageManager::usingDriver(Driver::class);
 
 // read an animated gif
 $image = $manager->read('images/animation.gif');
@@ -189,5 +190,4 @@ $image = $image->removeAnimation(5);
 
 // do the same by choosing animation frame at 25% of the whole animation
 $image = $image->removeAnimation('25%');
-
 ```
