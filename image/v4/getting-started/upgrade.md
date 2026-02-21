@@ -108,6 +108,7 @@ exceptions easier.
 - Alpha channel values in `__construct()` or `create()` methods of colors are now defined as float values between `0` and `1`
 - `FrameInterface::dispose()` was rename to `FrameInterface::disposalMethod()`
 - `FrameInterface::setDispose()` was renamed to `FrameInterface::setDisposalMethod()`
+- `ImageManagerInterface::driver()` was removed but you can use the public `$driver` property.
 
 ### Low Impact Changes
 

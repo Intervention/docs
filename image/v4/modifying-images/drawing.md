@@ -37,7 +37,7 @@ use Intervention\Image\Drivers\Gd\Driver;
 $manager = ImageManager::usingDriver(Driver::class);
 
 // read an image
-$image = $manager->read('images/example.png');
+$image = $manager->decode('images/example.png');
 
 // flood fill image with color
 $image = $image->fill('#b53717', 10, 10);
@@ -67,7 +67,7 @@ use Intervention\Image\Color;
 use Intervention\Image\Colors\NamedColor;
 
 // create an test image from a file
-$image = ImageManager::usingDriver(Driver::class)->read('test.png');
+$image = ImageManager::usingDriver(Driver::class)->decode('test.png');
 
 // draw pixels at different positions
 $image->drawPixel(200, 2, Color::rgb(255, 55, 0, .2));
@@ -103,7 +103,7 @@ use Intervention\Image\Drivers\Gd\Driver;
 use Intervention\Image\Geometry\Factories\RectangleFactory;
 
 // create an test image from a file
-$image = ImageManager::usingDriver(Driver::class)->read('test.png');
+$image = ImageManager::usingDriver(Driver::class)->decode('test.png');
 
 // draw an orange rectangle with a border
 $image->drawRectangle(function (RectangleFactory $rectangle): void {
@@ -121,7 +121,7 @@ use Intervention\Image\Geometry\Factories\RectangleFactory;
 use Intervention\Image\Geometry\Factories\Drawable;
 
 // create an test image from a file
-$image = ImageManager::usingDriver(Driver::class)->read('test.png');
+$image = ImageManager::usingDriver(Driver::class)->decode('test.png');
 
 $background = Color::rgb(255, 55, 0);
 
@@ -164,7 +164,7 @@ use Intervention\Image\Drivers\Gd\Driver;
 use Intervention\Image\Geometry\Factories\EllipseFactory;
 
 // create an test image from a file
-$image = ImageManager::usingDriver(Driver::class)->read('test.png');
+$image = ImageManager::usingDriver(Driver::class)->decode('test.png');
 
 // draw an ellipse with a border
 $image->drawEllipse(function (EllipseFactory $ellipse): void {
@@ -182,7 +182,7 @@ use Intervention\Image\Geometry\Factories\EllipseFactory;
 use Intervention\Image\Geometry\Factories\Drawable;
 
 // create an test image from a file
-$image = ImageManager::usingDriver(Driver::class)->read('test.png');
+$image = ImageManager::usingDriver(Driver::class)->decode('test.png');
 
 // create background color for the ellipse
 $background = Color::rgb(255, 55, 0);
@@ -227,7 +227,7 @@ use Intervention\Image\Drivers\Gd\Driver;
 use Intervention\Image\Geometry\Factories\CircleFactory;
 
 // create an test image from a file
-$image = ImageManager::usingDriver(Driver::class)->read('test.png');
+$image = ImageManager::usingDriver(Driver::class)->decode('test.png');
 
 // draw an circle with a border
 $image->drawCircle(function (CircleFactory $circle): void {
@@ -245,7 +245,7 @@ use Intervention\Image\Geometry\Factories\CircleFactory;
 use Intervention\Image\Geometry\Factories\Drawable;
 
 // create an test image from a file
-$image = ImageManager::usingDriver(Driver::class)->read('test.png');
+$image = ImageManager::usingDriver(Driver::class)->decode('test.png');
 
 // create background color for the circle
 $background = Color::rgb(255, 55, 0);
@@ -289,7 +289,7 @@ use Intervention\Image\Drivers\Gd\Driver;
 use Intervention\Image\Geometry\Factories\LineFactory;
 
 // create an test image from a file
-$image = ImageManager::usingDriver(Driver::class)->read('test.png');
+$image = ImageManager::usingDriver(Driver::class)->decode('test.png');
 
 // draw a line
 $image->drawline(function (LineFactory $line): void {
@@ -306,7 +306,7 @@ use Intervention\Image\Geometry\Factories\LineFactory;
 use Intervention\Image\Geometry\Factories\Drawable;
 
 // create an test image from a file
-$image = ImageManager::usingDriver(Driver::class)->read('test.png');
+$image = ImageManager::usingDriver(Driver::class)->decode('test.png');
 
 // create color for the line
 $color = Color::rgb(255, 55, 0);
@@ -349,7 +349,7 @@ use Intervention\Image\Drivers\Gd\Driver;
 use Intervention\Image\Geometry\Factories\PolygonFactory;
 
 // create an test image from a file
-$image = ImageManager::usingDriver(Driver::class)->read('test.png');
+$image = ImageManager::usingDriver(Driver::class)->decode('test.png');
 
 // draw a polygon
 $image->drawpolygon(function (PolygonFactory $polygon): void {
@@ -369,7 +369,7 @@ use Intervention\Image\Geometry\Factories\PolygonFactory;
 use Intervention\Image\Geometry\Factories\Drawable;
 
 // create an test image from a file
-$image = ImageManager::usingDriver(Driver::class)->read('test.png');
+$image = ImageManager::usingDriver(Driver::class)->decode('test.png');
 
 // create background colors for the polygon
 $orange = Color::rgb(255, 55, 0);

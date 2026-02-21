@@ -10,13 +10,12 @@ sort: 3
 
 ## Color Information
 
-### Read Colors of Certain Pixels
+### Read Color of a Pixel
 
-> public Image::pickColor(int $x, int $y, int $frame_key = 0): ColorInterface
+> public Image::colorAt(int $x, int $y, int $frame = 0): ColorInterface
 
 Reads the color of the pixel specified by the X and Y coordinates. You can also
-get the key of the frame from which the color is taken. This is only relevant
-for animated images.
+pass the key of the frame from which the color is taken in an animated image.
 
 #### Parameters
 
@@ -24,7 +23,7 @@ for animated images.
 | - | - | - |
 | x | int | X-Coordinate of the pixel position |
 | y | int | Y-Coordinate of the pixel position |
-| frame_key | int | Optional key of the frame from which the color information is read |
+| frame | int | Optional key of the frame from which the color information is read |
 
 #### Example
 
@@ -33,18 +32,18 @@ use Intervention\Image\ImageManager;
 use Intervention\Image\Drivers\Gd\Driver;
 
 // create new manager instance with desired driver
-$manager = new ImageManager(Driver::class);
+$manager = ImageManager::usingDriver(Driver::class);
 
 // read an image
-$image = $manager->read('images/animation.gif');
+$image = $manager->decode('images/animation.gif');
 
 // read color information for frame 10 at position 23/9
-$color = $image->pickColor(23, 9, 10);
+$color = $image->colorAt(23, 9, 10);
 
 // 'f3fbe6'
 $hex = $color->toHex();
 
-// 'rgb(243, 251, 230)'
+// 'rgb(243 251 230)'
 $string = $color->toString();
 
 // (int) 243
@@ -62,7 +61,7 @@ $alpha = $color->alpha()->toInt();
 
 ### Read all Colors of Certain Pixels in Animated Images
 
-> public Image::pickColors(int $x, int $y): CollectionInterface
+> public Image::colorsAt(int $x, int $y): CollectionInterface
 
 Reads all colors of the pixel specified via the X and Y coordinates and returns
 them in a collection. For animated images, this collection will contain all
@@ -84,13 +83,13 @@ use Intervention\Image\ImageManager;
 use Intervention\Image\Drivers\Imagick\Driver;
 
 // create new manager instance with desired driver
-$manager = new ImageManager(new Driver());
+$manager = ImageManager::usingDriver(Driver::class);
 
 // read an image
-$image = $manager->read('images/animation.gif');
+$image = $manager->decode('images/animation.gif');
 
 // read color information at position
-$colors = $image->pickColors(10, 10);
+$colors = $image->colorsAt(10, 10);
 
 // first color
 $color = $colors->first();
@@ -101,7 +100,7 @@ $color = $colors->get(6);
 
 ## Transforming Colors
 
-Once the pixel colors of an image have been read into an object, more options are available.
+Once a color of an image has been read into an object, more options are available.
 
 ### Transform Colors to String Values
 
@@ -114,18 +113,19 @@ respective color space.
 ```php
 use Intervention\Image\ImageManager;
 use Intervention\Image\Colors\Hsl\Colorspace as HslColorspace;
+use Intervention\Image\Drivers\Gd\Driver;
 
 // create new manager instance with desired driver
-$manager = ImageManager::gd();
+$manager = ImageManager::usingDriver(Driver::class);
 
 // read an image
-$image = $manager->read('images/example.png');
+$image = $manager->decode('images/example.png');
 
 // read pixel color
-$color = $image->pickColor(20, 10);
+$color = $image->colorAt(20, 10);
 
 // transform color to string format
-$result = $color->toString(); // "rgba(255, 255, 255, 1.0)"
+$result = $color->toString(); // "rgb(255 55 0)"
 
 // same result
 $result = (string) $color;
@@ -134,7 +134,7 @@ $result = (string) $color;
 
 ### Transform Colors Between Colorspaces
 
-> public ColorInterface::convertTo(string|ColorspaceInterface $colorspace): ColorInterface
+> public ColorInterface::toColorspace(string|ColorspaceInterface $colorspace): ColorInterface
 
 Each color object has a method for converting into other color spaces. The
 target color space can be specified either as a string or as an object. This
@@ -146,33 +146,36 @@ The following color spaces are available.
 - `Intervention\Image\Colors\Cmyk\Colorspace`
 - `Intervention\Image\Colors\Hsv\Colorspace`
 - `Intervention\Image\Colors\Hsl\Colorspace`
+- `Intervention\Image\Colors\Oklab\Colorspace`
+- `Intervention\Image\Colors\Oklch\Colorspace`
 
 ```php
 use Intervention\Image\ImageManager;
-use Intervention\Image\Colors\Hsl\Colorspace as HslColorspace;
+use Intervention\Image\Colors\Hsl\Colorspace as Hsl;
+use Intervention\Image\Drivers\Imagick\Driver;
 
 // create new manager instance with desired driver
-$manager = ImageManager::imagick();
+$manager = ImageManager::usingDriver(Driver::class);
 
 // read an image
-$image = $manager->read('images/example.png');
+$image = $manager->decode('images/example.png');
 
 // read pixel color
-$color = $image->pickColor(20, 10);
+$color = $image->colorAt(20, 10);
 
-$result = $color->toString(); // "rgba(0, 255, 255, 1.0)"
+$result = $color->toString(); // "rgb(0 255 255)"
 
 // transform color to hsl format
-$hslColor = $color->convertTo(HslColorspace::class);
+$hslColor = $color->toColorspace(Hsl::class);
 
-$result = $hslColor->toString(); // "hsl(180, 100, 50)"
+$result = $hslColor->toString(); // "hsl(180 100 50)"
 ```
 
 ## Colorspaces
 
-The supported colorspaces depend mainly on the driver used. While the
-Imagick driver supports RGB and CMYK colorspace, the GD driver
-is limited to the RGB colorspace.
+The supported colorspaces depend mainly on the driver used. While 
+the Imagick and Vips driver support multiple colorspaces, the GD driver
+is limited to the RGB.
 
 When reading CMYK images with Intervention Image using the GD driver the
 images are automatically converted to RGB colorspace.
@@ -190,10 +193,10 @@ use Intervention\Image\ImageManager;
 use Intervention\Image\Drivers\Gd\Driver;
 
 // create new manager instance with desired driver
-$manager = new ImageManager(Driver::class);
+$manager = ImageManager::usingDriver(Driver::class);
 
 // reading an image
-$image = $manager->read('images/example.jpg');
+$image = $manager->decode('images/example.jpg');
 
 // read the colorspace object
 $colorspace = $image->colorspace();
@@ -218,35 +221,29 @@ name, or as an abbreviation of the colorspace.
 ```php
 use Intervention\Image\ImageManager;
 use Intervention\Image\Drivers\Imagick\Driver;
-use Intervention\Image\Colors\Rgb\Colorspace as RgbColorspace;
-use Intervention\Image\Colors\Cmyk\Colorspace as CmykColorspace;
+use Intervention\Image\Colors\Rgb\Colorspace as Rgb;
+use Intervention\Image\Colors\Cmyk\Colorspace as Cmyk;
 
 // create new manager instance with desired driver
-$manager = new ImageManager(new Driver());
+$manager = ImageManager::usingDriver(Driver::class);
 
 // reading an image
-$image = $manager->read('images/example.jpg');
+$image = $manager->decode('images/example.jpg');
 
-// transform image to CMYK by abbreviation
-$colorspace = $image->setColorspace('cmyk');
-
-// transform image to rgb again by class name
-$colorspace = $image->setColorspace(RgbColorspace::class);
-
-// and transform to cmyk again by object
-$colorspace = $image->setColorspace(new CmykColorspace());
+// transform image to CMYK
+$colorspace = $image->setColorspace(Cmyk::class);
 ```
 
 ## Color Profiles
 
-Currently Intervention Image can only handle color profiles with the `ìmagick` driver.
+Currently Intervention Image can only handle color profiles with the `ìmagick` and `vips` driver.
 
 ### Read Color Profiles
 
 > public Image::profile(): ProfileInterface
 
 This function reads the ICC color profile from the current image instance. If
-no profile is found an `ColorException` is thrown.
+no profile is found an `AnalyzerException` is thrown.
 
 #### Example
 
@@ -255,16 +252,16 @@ use Intervention\Image\ImageManager;
 use Intervention\Image\Drivers\Imagick\Driver;
 
 // create new manager instance with desired driver
-$manager = new ImageManager(new Driver());
+$manager = ImageManager::usingDriver(Driver::class);
 
 // read an image
-$image = $manager->read('images/example.jpg');
+$image = $manager->decode('images/example.jpg');
 
 // read the icc profile
 $profile = $image->profile();
 
 // save profile in file system
-$profile->save('my_profile.icc')
+$profile->save('myProfile.icc')
 ```
 
 ### Set Color Profiles
@@ -288,10 +285,10 @@ use Intervention\Image\Drivers\Imagick\Driver;
 use Intervention\Image\Colors\Profile;
 
 // create new manager instance with desired driver
-$manager = new ImageManager(Driver::class);
+$manager = ImageManager::usingDriver(Driver::class);
 
 // reading an image
-$image = $manager->read('images/example.jpg');
+$image = $manager->decode('images/example.jpg');
 
 // set the new color profile
 $image->setProfile(Profile::fromPath('profiles/profile.icc'));
@@ -301,7 +298,7 @@ $image->setProfile(Profile::fromPath('profiles/profile.icc'));
 
 > public function removeProfile(): ImageInterface
 
-Removes all color profiles from the current image.
+Removes all color profile information from the current image.
 
 #### Example
 
@@ -309,11 +306,12 @@ Removes all color profiles from the current image.
 use Intervention\Image\ImageManager;
 use Intervention\Image\Drivers\Imagick\Driver;
 
-// create new manager instance with desired driver
-$manager = new ImageManager(Driver::class);
+// create new manager instance with desired driver and read image
+$image = ImageManager::usingDriver(Driver::class)
+    ->decode('images/example.jpg')
 
-// read image and remove profile
-$image = $manager->read('images/example.jpg')->removeProfile();
+// remove profile
+$image = $image->removeProfile();
 ```
 
 ## Transparency
@@ -323,30 +321,28 @@ areas are preserved as long as the output format supports transparency.
 
 If the output format does not support transparency, no alpha channel can be
 preserved. In this case the transparent areas will be blended with an opaque color.
-This color can be specified in advance in the initial [configuration of the
-image manager](/v3/basics/configuration-drivers) or as an optional argument in the following
-method. It is also possible to set or get the blending color at runtime.
+
+This background color can be specified in advance in the initial [configuration of the
+image manager](/v4/basics/configuration-drivers) or as an optional argument in the following
+method. It is also possible to set or get the background color at runtime.
 
 ### Merge Transparent Areas with Color
 
-> public function blendTransparency(mixed $color = null): ImageInterface
+> public function fillTransparentAreas(null|string|ColorInterface $color = null): ImageInterface
 
-When switching to a non-transparent image format, the transparency is
-automatically replaced with the [configured blending
-color](/v3/basics/configuration-drivers), but this can also be done manually. This
-function call can also be applied to image formats that can actually contain
-transparency.
+Replace all transparent areas with the configured background color or the given
+color. If the image has no transparent areas the effect is not visible.
 
-The `color` parameter can optionally be used to specify a color in the common
-[color formats](/v3/getting-started/formats#color-formats). By default, this is
-the current or previously configured blending color. Note that any transparency
-values in the blend color will be ignored.
+By default, the current or previously configured background color is used by
+this method. Optionally you can pass a custom color in the common [color
+formats](/v4/getting-started/formats#color-formats). Note that any transparency
+values in the background color will be ignored.
 
 #### Parameters
 
 | Name | Type | Description |
 | - | - | - |
-| color | mixed | Color to replace transparent areas (optional). |
+| color | null, string or ColorInterface | Color to replace transparent areas (optional). |
 
 #### Example
 
@@ -355,18 +351,18 @@ use Intervention\Image\ImageManager;
 use Intervention\Image\Drivers\Gd\Driver;
 
 // create new manager instance with desired driver and default blending color
-$manager = new ImageManager(Driver::class);
+$manager = ImageManager::usingDriver(Driver::class);
 
 // read a transparent image
-$image = $manager->read('images/example.png');
+$image = $manager->decode('images/example.png');
 
-// merge the transparent areas with orange
-$image->blendTransparency('f50');
+// fill the transparent areas with orange
+$image->fillTransparentAreas('f50');
 ```
 
-### Read the Blending Color
+### Read the Background Color
 
-> public function blendingColor(): ColorInterface
+> public function backgroundColor(): ColorInterface
 
 Return the currently set blending color as an instance of
 `ColorInterface::class`. This corresponds either to the color originally
@@ -374,18 +370,18 @@ configured through the ImageManager or the blending color that was last set.
 
 ### Set the Blending Color
 
-> public function setBlendingColor(mixed $color): ImageInterface
+> public function setBackgroundColor(string|ColorInterface $color): ImageInterface
 
-Set a new blending color in the configuration of the current image instance.
-This color will be used as the default for all subsequent operations that use a
-blend color, overwriting the original value defined in the ImageManager
-configuration.
+Set a new background color in the configuration of the current image instance.
+This color will be used as the default for all subsequent blending operations
+that use a background color to replace transparency, overwriting the original
+value defined in the ImageManager configuration.
 
 #### Parameters
 
 | Name | Type | Description |
 | - | - | - |
-| color | mixed | New blending color in supported [color formats](/v3/getting-started/formats#color-formats). |
+| color | string or ColorInterface | New blending color in supported [color formats](/v4/getting-started/formats#color-formats). |
 
 #### Example
 
@@ -393,17 +389,18 @@ configuration.
 use Intervention\Image\ImageManager;
 use Intervention\Image\Drivers\Gd\Driver;
 
-// create new manager instance with desired driver and red as blending color
-$manager = new ImageManager(Driver::class, blendingColor: 'ff0000');
+// create new manager instance with desired driver and red as background color
+$manager = ImageManager::usingDriver(Driver::class, backgroundColor: 'ff0000');
 
 // read image
-$image = $manager->read('images/example.png');
+$image = $manager->decode('images/example.png');
 
 // read configured blending color
-$blendingColor = $image->blendingColor(); // 'ff0000'
+$blendingColor = $image->backgroundColor(); // 'ff0000'
 
-// set gray as blending color
-$image->setBlendingColor('cccccc');
+// set gray as background color
+$image->setBackgroundColor('cccccc');
 
-// read last set blending color
-$blendingColor = $image->blendingColor(); // 'cccccc'
+// read last set background color
+$blendingColor = $image->backgroundColor(); // 'cccccc'
+```

@@ -23,10 +23,10 @@ use Intervention\Image\ImageManager;
 use Intervention\Image\Drivers\Imagick\Driver;
 
 // create new manager instance with desired driver
-$manager = new ImageManager(new Driver());
+$manager = ImageManager::usingDriver(Driver::class);
 
 // read an image
-$image = $manager->read('images/example.png');
+$image = $manager->decode('images/example.png');
 
 // read the image width
 $width = $image->width();
@@ -45,10 +45,10 @@ use Intervention\Image\ImageManager;
 use Intervention\Image\Drivers\Gd\Driver;
 
 // create new manager instance with desired driver
-$manager = new ImageManager(new Driver());
+$manager = ImageManager::usingDriver(Driver::class);
 
 // read an image
-$image = $manager->read('images/example.png');
+$image = $manager->decode('images/example.png');
 
 // read the image height
 $height = $image->height();
@@ -67,10 +67,10 @@ use Intervention\Image\ImageManager;
 use Intervention\Image\Drivers\Imagick\Driver;
 
 // create new manager instance with desired driver
-$manager = new ImageManager(Driver::class);
+$manager = ImageManager::usingDriver(Driver::class);
 
 // read an image
-$image = $manager->read('images/example.png');
+$image = $manager->decode('images/example.png');
 
 // read image size
 $size = $image->size();
@@ -101,10 +101,10 @@ use Intervention\Image\ImageManager;
 use Intervention\Image\Drivers\Gd\Driver;
 
 // create new manager instance with desired driver
-$manager = new ImageManager(Driver::class);
+$manager = ImageManager::usingDriver(Driver::class);
 
 // read an image
-$image = $manager->read('images/example.png');
+$image = $manager->decode('images/example.png');
 
 // read image resolution object
 $resolution = $image->resolution();
@@ -138,15 +138,14 @@ use Intervention\Image\ImageManager;
 use Intervention\Image\Drivers\Gd\Driver;
 
 // create new manager instance with desired driver
-$manager = new ImageManager(new Driver());
+$manager = ImageManager::usingDriver(Driver::class);
 
 // read an image
-$image = $manager->read('images/example.jpg');
+$image = $manager->decode('images/example.jpg');
 
 // set image resolution to 300 DPI 
 $image->setResolution(300, 300);
 ```
-
 
 ## Exif Information
 
@@ -177,10 +176,10 @@ use Intervention\Image\ImageManager;
 use Intervention\Image\Drivers\Imagick\Driver;
 
 // create new manager instance with desired driver
-$manager = new ImageManager(new Driver());
+$manager = ImageManager::usingDriver(Driver::class);
 
 // read an image
-$image = $manager->read('images/example.jpg');
+$image = $manager->decode('images/example.jpg');
 
 // read the specific exif data
 $camera = $image->exif('IFD0.Model');

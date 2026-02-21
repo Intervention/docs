@@ -31,9 +31,10 @@ to target only one axis for the modification.
 
 ```php
 use Intervention\Image\ImageManager;
+use Intervention\Image\Drivers\Imagick\Driver;
 
 // create new image instance
-$image = ImageManager::imagick()->read('images/example.jpg');
+$image = ImageManager::usingDriver(Driver::class)->decode('images/example.jpg');
 
 // resize to 300 x 200 pixel
 $image->resize(300, 200);
@@ -64,9 +65,10 @@ to resize just one axis for the modification.
 
 ```php
 use Intervention\Image\ImageManager;
+use Intervention\Image\Drivers\Imagick\Driver;
 
 // create new image instance (800 x 600)
-$image = ImageManager::imagick()->read('images/example.jpg');
+$image = ImageManager::usingDriver(Driver::class)->decode('images/example.jpg');
 
 $image = $image->resizeDown(2000, 100); // 800 x 100
 
@@ -102,10 +104,10 @@ as the aspect ratio is preferably preserved.
 use Intervention\Image\ImageManager;
 use Intervention\Image\Drivers\Imagick\Driver;
 
-$manager = new ImageManager(new Driver());
+$manager = ImageManager::usingDriver(Driver::class);
 
 // create new image instance with 800 x 600 (4:3)
-$image = $manager->read('images/example.jpg');
+$image = $manager->decode('images/example.jpg');
 
 // scale to fixed height
 $image->scale(height: 300); // 400 x 300 (4:3)
@@ -141,8 +143,8 @@ use Intervention\Image\ImageManager;
 use Intervention\Image\Drivers\Gd\Driver;
 
 // create new image instance
-$manager = new ImageManager(Driver::class);
-$image = $manager->read('images/example.jpg'); // 800 x 600
+$manager = ImageManager::usingDriver(Driver::class);
+$image = $manager->decode('images/example.jpg'); // 800 x 600
 
 // scale down to fixed width
 $image->scaleDown(width: 200); // 200 x 150
@@ -183,8 +185,8 @@ use Intervention\Image\ImageManager;
 use Intervention\Image\Drivers\Gd\Driver;
 
 // create new image instance (800 x 600)
-$manager = new ImageManager(Driver::class);
-$image = $manager->read('images/example.jpg');
+$manager = ImageManager::usingDriver(Driver::class);
+$image = $manager->decode('images/example.jpg');
 
 // crop the best fitting 5:3 (600x360) ratio and resize to 600x360 pixel
 $img->cover(600, 360);
@@ -220,9 +222,10 @@ Note that the size of the result may differ from the given parameter values.
 
 ```php
 use Intervention\Image\ImageManager;
+use Intervention\Image\Drivers\Imagick\Driver;
 
 // create new image instance
-$image = ImageManager::imagick()->read('images/example.jpg'); // 800 x 600
+$image = ImageManager::usingDriver(Driver::class)->decode('images/example.jpg'); // 800 x 600
 
 // resize down to 1200x720 (5:3)
 $img->coverDown(1200, 720); // 800 x 480 (5:3)
@@ -267,7 +270,7 @@ use Intervention\Image\Drivers\Imagick\Driver;
 
 // create new image instance
 $manager = ImageManager::usingDriver(new Driver());
-$image = $manager->read('images/example.jpg');
+$image = $manager->decode('images/example.jpg');
 
 // resize padded to 300 x 200
 $image->pad(300, 200, 'ccc');
@@ -301,7 +304,7 @@ use Intervention\Image\ImageManager;
 use Intervention\Image\Drivers\Gd\Driver;
 
 // create new image instance (800 x 600)
-$image = ImageManager::usingDriver(Driver::class)->read('images/example.jpg');
+$image = ImageManager::usingDriver(Driver::class)->decode('images/example.jpg');
 
 // resize padded without upsizing
 $image->contain(900, 600);
@@ -347,8 +350,8 @@ use Intervention\Image\ImageManager;
 use Intervention\Image\Drivers\Imagick\Driver;
 
 // create new image instance
-$manager = new ImageManager(new Driver())
-$image = $manager->read('images/example.jpg');
+$manager = ImageManager::usingDriver(Driver::class)
+$image = $manager->decode('images/example.jpg');
 
 // cut out a 200 x 150 pixel cutout at position 45,90
 $image->crop(200, 150, 45, 90);
@@ -387,8 +390,8 @@ use Intervention\Image\ImageManager;
 use Intervention\Image\Drivers\Imagick\Driver;
 
 // create new image instance
-$manager = new ImageManager(new Driver())
-$image = $manager->read('images/example.jpg');
+$manager = ImageManager::usingDriver(Driver::class)
+$image = $manager->decode('images/example.jpg');
 
 // resize image area to 800 x 600 and fill new area with yellow
 $image->resizeCanvas(800, 600, 'ff0');
@@ -419,8 +422,8 @@ use Intervention\Image\ImageManager;
 use Intervention\Image\Drivers\Imagick\Driver;
 
 // create new image instance
-$manager = new ImageManager(new Driver())
-$image = $manager->read('images/example.jpg');
+$manager = ImageManager::usingDriver(Driver::class)
+$image = $manager->decode('images/example.jpg');
 
 // add 50 pixels in green at each side of the image
 $image->resizeCanvas(50, 50, 'green');
@@ -456,9 +459,10 @@ image you are processing.**
 
 ```php
 use Intervention\Image\ImageManager;
+use Intervention\Image\Drivers\Gd\Driver;
 
 // create new image instance
-$image = ImageManager::gd()->read('images/example.jpg');
+$image = ImageManager::usingDriver(Driver::class)->decode('images/example.jpg');
 
 // trim with a tolerance of 5
 $image->trim(5);

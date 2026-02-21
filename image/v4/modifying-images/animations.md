@@ -37,7 +37,7 @@ use Intervention\Image\Drivers\Gd\Driver;
 $manager = ImageManager::usingDriver(Driver::class);
 
 // true
-$result = $manager->read('images/animation.gif')->isAnimated();
+$result = $manager->decode('images/animation.gif')->isAnimated();
 ```
 
 ## Edit Animations
@@ -59,7 +59,7 @@ use Intervention\Image\Drivers\Gd\Driver;
 $manager = ImageManager::usingDriver(Driver::class);
 
 // read an animated gif
-$image = $manager->read('images/animation.gif');
+$image = $manager->decode('images/animation.gif');
 
 // read number if animation frames
 $count = $image->count();
@@ -95,7 +95,7 @@ use Intervention\Image\Drivers\Gd\Driver;
 $manager = ImageManager::usingDriver(Driver::class);
 
 // read an animated gif
-$image = $manager->read('images/animation.gif');
+$image = $manager->decode('images/animation.gif');
 
 // discard the first 20 frames and read the following 10 frames as new animation
 $image = $image->sliceAnimation(20, 10);
@@ -117,7 +117,7 @@ use Intervention\Image\Drivers\Imagick\Driver;
 $manager = ImageManager::usingDriver(Driver::class);
 
 // read an animated gif
-$image = $manager->read('images/animation.gif');
+$image = $manager->decode('images/animation.gif');
 
 // return animation iteration count
 $count = $image->loops();
@@ -145,7 +145,7 @@ use Intervention\Image\Drivers\Gd\Driver;
 $manager = ImageManager::usingDriver(Driver::class);
 
 // read an animated gif
-$image = $manager->read('images/animation.gif');
+$image = $manager->decode('images/animation.gif');
 
 // animation should only run once
 $image = $image->setLoops(1);
@@ -183,7 +183,7 @@ use Intervention\Image\Drivers\Gd\Driver;
 $manager = ImageManager::usingDriver(Driver::class);
 
 // read an animated gif
-$image = $manager->read('images/animation.gif');
+$image = $manager->decode('images/animation.gif');
 
 // Turn the animation into a static image displaying the frame at position 5
 $image = $image->removeAnimation(5);

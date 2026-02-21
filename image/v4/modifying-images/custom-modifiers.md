@@ -60,7 +60,7 @@ use Intervention\Image\ImageManager;
 use Intervention\Image\Drivers\Imagick\Driver;
 
 // create new image instance
-$image = ImageManager::usingDriver(Driver::class)->read('images/example.jpg');
+$image = ImageManager::usingDriver(Driver::class)->decode('images/example.jpg');
 
 // apply modifier
 $image->modify(new MyCustomModifier(25));

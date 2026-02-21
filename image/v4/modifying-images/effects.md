@@ -28,10 +28,10 @@ use Intervention\Image\ImageManager;
 use Intervention\Image\Drivers\Imagick\Driver;
 
 // create new manager instance with desired driver
-$manager = new ImageManager(new Driver());
+$manager = ImageManager::usingDriver(Driver::class);
 
 // read an image
-$image = $manager->read('images/example.png');
+$image = $manager->decode('images/example.png');
 
 // increase brightness
 $image = $image->brightness(35);
@@ -57,10 +57,10 @@ use Intervention\Image\ImageManager;
 use Intervention\Image\Drivers\Gd\Driver;
 
 // create new manager instance with desired driver
-$manager = new ImageManager(Driver::class);
+$manager = ImageManager::usingDriver(Driver::class);
 
 // read an image
-$image = $manager->read('images/example.png');
+$image = $manager->decode('images/example.png');
 
 // decrease the contrast
 $image = $image->contrast(-10);
@@ -82,12 +82,13 @@ Apply a gamma correction operation to the current image.
 
 ```php
 use Intervention\Image\ImageManager;
+use Intervention\Image\Drivers\Gd\Driver;
 
 // create new manager instance with desired driver
-$manager = ImageManager::gd();
+$manager = ImageManager::usingDriver(Driver::class);
 
 // read an image
-$image = $manager->read('images/example.jpg');
+$image = $manager->decode('images/example.jpg');
 
 // apply gamma correction
 $image = $image->gamma(1.7);
@@ -120,7 +121,7 @@ use Intervention\Image\Drivers\Gd\Driver;
 $manager = ImageManager::usingDriver(Driver::class);
 
 // read an image
-$image = $manager->read('images/example.jpg');
+$image = $manager->decode('images/example.jpg');
 
 // change colors to a blue & green tone
 $image = $image->colorize(blue: 15, green: 10);
@@ -136,12 +137,13 @@ Converts the current image to a grayscale version.
 
 ```php
 use Intervention\Image\ImageManager;
+use Intervention\Image\Drivers\Imagick\Driver;
 
 // create new manager instance with desired driver
-$manager = ImageManager::imagick();
+$manager = ImageManager::usingDriver(Driver::class);
 
 // read a colored image
-$image = $manager->read('images/example.jpg');
+$image = $manager->decode('images/example.jpg');
 
 // turn image into a grayscale version
 $image = $image->grayscale();
@@ -166,10 +168,10 @@ use Intervention\Image\ImageManager;
 use Intervention\Image\Drivers\Imagick\Driver;
 
 // create new manager instance with desired driver
-$manager = new ImageManager(new Driver());
+$manager = ImageManager::usingDriver(Driver::class);
 
 // read an image
-$image = $manager->read('images/example.png');
+$image = $manager->decode('images/example.png');
 
 // mirror image horizontally
 $image = $image->flop();
@@ -185,12 +187,13 @@ Mirror the current image vertically by swapping top and bottom.
 
 ```php
 use Intervention\Image\ImageManager;
+use Intervention\Image\Drivers\Imagick\Driver;
 
 // create new manager instance with desired driver
-$manager = ImageManager::imagick();
+$manager = ImageManager::usingDriver(Driver::class);
 
 // read an image
-$image = $manager->read('images/example.png');
+$image = $manager->decode('images/example.png');
 
 // mirror image vertically
 $image = $image->flip();
@@ -215,12 +218,13 @@ rotation.
 
 ```php
 use Intervention\Image\ImageManager;
+use Intervention\Image\Drivers\Gd\Driver;
 
 // create new manager instance with desired driver
-$manager = ImageManager::gd();
+$manager = ImageManager::usingDriver(Driver::class);
 
 // read an image
-$image = $manager->read('images/example.png');
+$image = $manager->decode('images/example.png');
 
 // rotate image 45 degrees clockwise 
 $image = $image->rotate(-45);
@@ -241,12 +245,13 @@ configuration](/v3/basics/configuration-drivers).
 
 ```php
 use Intervention\Image\ImageManager;
+use Intervention\Image\Drivers\Gd\Driver;
 
 // create new manager instance without auto exif orientation
-$manager = ImageManager::gd(autoOrientation: false);
+$manager = ImageManager::usingDriver(Driver::class, autoOrientation: false);
 
 // read the image
-$image = $manager->read('images/example.jpg');
+$image = $manager->decode('images/example.jpg');
 
 // orient image according to exif data
 $image = $image->orient();
@@ -280,10 +285,10 @@ use Intervention\Image\ImageManager;
 use Intervention\Image\Drivers\Gd\Driver;
 
 // create new manager instance with desired driver
-$manager = new ImageManager(Driver::class);
+$manager = ImageManager::usingDriver(Driver::class);
 
 // reading an image
-$image = $manager->read('images/example.png');
+$image = $manager->decode('images/example.png');
 
 // apply blurring effect
 $image = $image->blur(3);
@@ -306,12 +311,13 @@ Sharpen the current image instance by an optional `amount`.
 
 ```php
 use Intervention\Image\ImageManager;
+use Intervention\Image\Drivers\Imagick\Driver;
 
 // create new manager instance with desired driver
-$manager = ImageManager::imagick();
+$manager = ImageManager::usingDriver(Driver::class);
 
 // reading an image
-$image = $manager->read('images/example.png');
+$image = $manager->decode('images/example.png');
 
 // apply sharpening effect
 $image = $image->sharpen(3);
@@ -328,12 +334,13 @@ Invert all colors in the current image.
 
 ```php
 use Intervention\Image\ImageManager;
+use Intervention\Image\Drivers\Gd\Driver;
 
 // create new manager instance with desired driver
-$manager = ImageManager::gd();
+$manager = ImageManager::usingDriver(Driver::class);
 
 // reading an image
-$image = $manager->read('images/example.png');
+$image = $manager->decode('images/example.png');
 
 // invert colors
 $image = $image->invert();
@@ -361,7 +368,7 @@ use Intervention\Image\ImageManager;
 $manager = ImageManager::usingDriver(new Driver());
 
 // reading an image
-$image = $manager->read('images/example.png');
+$image = $manager->decode('images/example.png');
 
 // apply the pixelation effect
 $image = $image->pixelate(12);
@@ -389,12 +396,13 @@ result of the reduction process are blended against the given background color.
 
 ```php
 use Intervention\Image\ImageManager;
+use Intervention\Image\Drivers\Imagick\Driver;
 
 // create new manager instance with desired driver
-$manager = ImageManager::imagick();
+$manager = ImageManager::usingDriver(Driver::class);
 
 // reading an image
-$image = $manager->read('images/example.png');
+$image = $manager->decode('images/example.png');
 
 // quantize colors to a maximum of 16
 $image = $image->reduceColors(16);

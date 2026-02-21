@@ -44,10 +44,11 @@ The possible `position` values are:
 
 ```php
 use Intervention\Image\ImageManager;
+use Intervention\Image\Drivers\Gd\Driver;
 
 // create an test image from a file
-$manager = ImageManager::gd();
-$image = $manager->read('test.png');
+$manager = ImageManager::usingDriver(Driver::class);
+$image = $manager->decode('test.png');
 
 // paste another image
 $img->place('images/foo.png');

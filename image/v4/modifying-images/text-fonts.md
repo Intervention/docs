@@ -29,9 +29,10 @@ a callback as the fourth parameter.
 
 ```php
 use Intervention\Image\ImageManager;
+use Intervention\Image\Drivers\Gd\Driver;
 
 // create new image instance
-$image = ImageManager::gd()->read('images/example.jpg');
+$image = ImageManager::usingDriver(Driver::class)->decode('images/example.jpg');
 
 // write text at a certain position
 $image->text('The quick brown fox', 120, 100);
@@ -48,9 +49,10 @@ FontInterface and listens for following methods.
 ```php
 use Intervention\Image\ImageManager;
 use Intervention\Image\Typography\FontFactory;
+use Intervention\Image\Drivers\Imagick\Driver;
 
 // create test image
-$image = ImageManager::imagick()->read('images/example.jpg');
+$image = ImageManager::usingDriver(Driver::class)->decode('images/example.jpg');
 
 // write text to image
 $image->text('The quick brown fox', 120, 100, function (FontFactory $font) {
