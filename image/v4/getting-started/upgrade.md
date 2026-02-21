@@ -7,44 +7,30 @@ sort: 3
 
 [TOC]
 
-More than two years after its release, Intervention Image Version 3 is still
-going strong. Built on a modern, expandable architecture, it proved to be a
-solid foundation that required only minor refinements rather than a complete
-overhaul. Over time, a few small issues were identified and carefully resolved,
-leading to a series of thoughtful improvements and optimisations. 
-
-Version 4 is therefore less a radical relaunch and more a focused step
-forward—making the library more robust, efficient, and user-friendly. That
-said, it also introduces some completely new and exciting features that push
-Intervention Image even further.
-
 ## New Features
 
 ### New Decoding Methods
 
-The revised image decoding system introduces a more flexible and transparent
-approach to handling image sources. Several decoding methods have been added,
-allowing image sources to be addressed directly instead of relying on a single
-universal method. 
+The revised image decoding interace introduces a more transparent approach to
+handling image sources. Allowing image sources to be addressed directly instead
+of relying on a single universal method. 
 
-- ImageManagerInterface::decodeFrom()
-- ImageManagerInterface::decodeFromPath()
-- ImageManagerInterface::decodeFromBinary()
-- ImageManagerInterface::decodeFromBas64()
-- ImageManagerInterface::decodeFromDataUri()
-- ImageManagerInterface::decodeFromSplFileInfo()
-- ImageManagerInterface::decodeFromStream()
+- ImageManagerInterface::decode()
+- ImageManagerInterface::decodePath()
+- ImageManagerInterface::decodeBinary()
+- ImageManagerInterface::decodeBas64()
+- ImageManagerInterface::decodeDataUri()
+- ImageManagerInterface::decodeSplFileInfo()
+- ImageManagerInterface::decodeStream()
 
-[Read more about decoding methods](/)
+[Read more about decoding methods](/v4/basics/instantiation)
 
-### Detailed Error Messages
+### Exceptions and more detailed Error Messages
 
-At the same time, error and exception messages have been carefully refined to
-provide clear, immediate insight into what went wrong.
-
-These improvements are supported by a completely restructured exception system,
-offering a clean, well-defined hierarchy that makes debugging easier and more
-intuitive than ever.
+At the same time, error and exception messages have been refined to provide
+clear, immediate insight into what went wrong. These improvements include a
+restructured exception system with a well-defined hierarchy that makes handling
+exceptions easier.
 
 [Read more about exceptions](/)
 
