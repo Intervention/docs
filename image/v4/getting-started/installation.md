@@ -57,7 +57,7 @@ use Intervention\Image\ImageManager;
 use Intervention\Image\Drivers\Imagick\Driver;
 
 // create new manager instance with desired driver
-$manager = new ImageManager(new Driver());
+$manager = ImageManager::usingDriver(Driver::class);
 ```
 
 After installation you are ready to [configure the image manager](/v4/basics/configuration-drivers) and [read or create image instances](/v4/basics/instantiation).

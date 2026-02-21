@@ -98,7 +98,7 @@ $manager = new ImageManager(
 
 ### Static Constructor
 
-> public static ImageManager::withDriver(string|DriverInterface $driver, mixed ...$options): ImageManager
+> public static ImageManager::usingDriver(string|DriverInterface $driver, mixed ...$options): ImageManager
 
 The static helper method acts the same way as the constructor and takes either
 a class name or an instance of the driver and optionally configuration parameters.
@@ -119,13 +119,13 @@ use Intervention\Image\ImageManager;
 use Intervention\Image\Drivers\Imagick\Driver;
 
 // create new manager instance with desired driver
-$manager = ImageManager::withDriver(new Driver());
+$manager = ImageManager::usingDriver(new Driver());
 
 // or create new manager by class name
-$manager = ImageManager::withDriver(Driver::class);
+$manager = ImageManager::usingDriver(Driver::class);
 
 // same call with configuration options
-$manager = ImageManager::withDriver(
+$manager = ImageManager::usingDriver(
     Driver::class,
     autoOrientation: true,
     decodeAnimation: true,

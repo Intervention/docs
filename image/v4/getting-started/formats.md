@@ -36,14 +36,14 @@ extensions. It is therefore possible, that the GD library is installed but is
 built without Jpeg support or Imagick is available without Webp support
 for example.**
 
-All these image formats can be read from various sources. These are in detail:
+All image formats can be read from various sources. These are in detail:
 
 - Path in filesystem
 - Raw binary image data
 - Base64 encoded image data
 - Data Uri Scheme
 - File Pointer resource
-- `SplFileInfo` from which `Illuminate\Http\UploadedFile` and `Symfony\Component\HttpFoundation\File\UploadedFile` are derived
+- `SplFileInfo` from which `Illuminate\Http\UploadedFile` and `Symfony\Component\HttpFoundation\File\UploadedFile` extend
 - Intervention Image Instance (`Intervention\Image\Image`)
 - Encoded Intervention Image (`Intervention\Image\EncodedImage`)
 - Driver-specific image (instance of `GDImage` or `Imagick`)
@@ -65,12 +65,12 @@ necessary support, returning `true` if both conditions are met or `false` if the
 #### Example
 
 ```php
-use Intervention\Image\Drivers\Imagick\Driver as ImagickDriver
+use Intervention\Image\Drivers\Imagick\Driver;
 use Intervention\Image\Format;
 use Intervention\Image\MediaType;
 use Intervention\Image\FileExtension;
 
-$manager = ImageManager::withDriver(ImagickDriver::class);
+$manager = ImageManager::usingDriver(Driver::class);
 
 // check by file extension if driver supports jpeg format
 $result = $manager->driver()->supports('jpg');
@@ -97,93 +97,133 @@ image. Therefore, it is possible to draw on a CMYK image using an HSV
 color specification. The colors will be automatically converted to the target color
 space.
 
+### Color Objects
+
+Colors are defined in object form implementing `ColorInterface::class` building a
+separate color class for each color space.
+
+Each color object takes constructor parameters for the color channel values as well as an
+optional alpha channel parameter, which is defined as completely opaque by
+default.
+
+#### Create Color Objects
+
+```php
+use Intervention\Image\Color;
+
+// define colors in different color spaces
+$rgb = Color::rgb(255, 55, 0, .5);
+$hsl = Color::hsl(340, 55, 90);
+$hsv = Color::hsv(240, 35, 10);
+$oklab = Color::oklab(0.7, 0.04, -0.09);
+$oklab = Color::oklch(0.7, 0.1, 232);
+$cmyk = Color::cmyk(100, 50, 70, 0, .75);
+```
+
+#### Create Color Objects with Constructor
+
+Of course you can use the object constructor to create colors as well.
+
+```php
+use Intervention\Image\Colors\Rgb\Color as RgbColor;
+use Intervention\Image\Colors\Hsl\Color as HslColor;
+use Intervention\Image\Colors\Hsv\Color as HsvColor;
+use Intervention\Image\Colors\Oklab\Color as OklabColor;
+use Intervention\Image\Colors\Oklch\Color as OklchColor;
+use Intervention\Image\Colors\Cmyk\Color as CmykColor;
+
+$rgb = new RgbColor(255, 55, 0, .5);
+$hsl = new HslColor(340, 55, 90);
+$hsv = new HsvColor(240, 35, 10);
+$oklab = new OklabColor(0.7, 0.04, -0.09);
+$oklab = new OklchColor(0.7, 0.1, 232);
+$cmyk = new CmykColor(100, 50, 70, 0, .75);
+```
+
 ### String Format
 
-#### Hexadecimal String Format
+#### Functional String Format
+
+Color formats in the functional notation are also supported as shown in the following example.
+
+```php
+use Intervention\Image\Color;
+
+// rgb string format
+$rgb = Color::rgb('rgb(34, 12, 64)');
+$rgb = Color::rgb('rgb(34, 12, 64, 0.6)');
+$rgb = Color::rgb('rgba(34, 12, 64, 0.6)');
+$rgb = Color::rgb('rgb(34 12 64 / 0.6)');
+$rgb = Color::rgb('rgba(34 12 64 / 0.6)');
+$rgb = Color::rgb('rgb(34.6 12 64 / 60%)');
+$rgb = Color::rgb('rgba(34.6 12 64 / 60%)');
+
+// hsl string format
+$hsl = Color::hsl('hsl(30, 100%, 50%)');
+$hsl = Color::hsl('hsl(30, 100%, 50%, 0.6)');
+$hsl = Color::hsl('hsla(30, 100%, 50%, 0.6)');
+$hsl = Color::hsl('hsl(30 100% 50% / 0.6)');
+$hsl = Color::hsl('hsla(30 100% 50% / 0.6)');
+$hsl = Color::hsl('hsl(30.2 100% 50% / 60%)');
+$hsl = Color::hsl('hsla(30.2 100% 50% / 60%)');
+
+// hsv string format
+$hsv = Color::hsv('hsv(30, 100%, 50%)');
+$hsv = Color::hsv('hsv(30 100% 50% / 0.6)');
+$hsv = Color::hsv('hsva(30 100% 50% / 0.6)');
+$hsv = Color::hsv('hsv(30.2 100% 50% / 60%)');
+
+// cmyk string format
+$cmyk = Color::cmyk('cmyk(100, 40, 50, 0)');
+$cmyk = Color::cmyk('cmyk(100 40 50 0)');
+
+// oklab string format
+$oklab = Color::oklab('oklab(40.1% 0.1143 0.045)');
+$oklab = Color::oklab('oklab(59.69% 0.1007 0.1191)');
+$oklab = Color::oklab('oklab(59.69% 0.1007 0.1191 / 0.5)');
+
+// oklch string format
+$oklch = Color::oklch('oklch(40.1% 0.123 21.57)');
+$oklch = Color::oklch('oklch(59.69% 0.156 49.77');
+$oklch = Color::oklch('oklch(59.69% 0.156 49.77 / .5');
+```
+
+#### Hexadecimal RGB Format
 
 You can pass colors as RGB hex triplets, which are commonly used in HTML and
 CSS. It's possible to use the shorthand as well as the full format with or
 without an alpha channel. The leading `#` is optional.
 
 ```php
-use Intervention\Image\ImageManager;
-use Intervention\Image\Drivers\Imagick\Driver;
+use Intervention\Image\Color;
 
-// create new image with red background
-$image = (new ImageManager(Driver::class))->create(300, 200)->fill('b53717');
-
-// create new image with half transparent red background
-$image = (new ImageManager(Driver::class))->create(300, 200)->fill('b5371766');
+// create color objects from hexadecimal rgb format
+$rgb = Color::rgb('b53717');
+$rgb = Color::rgb('b5371766');
+$rgb = Color::rgb('#ccc');
+$rgb = Color::rgb('#ccca');
 ```
 
-#### RGB String Format
+#### Named CSS Colors
 
-RGB string values in functional notation are also supported. To include an
-alpha value use the RGBA prefix, as shown in the following example.
-
-```php
-use Intervention\Image\ImageManager;
-use Intervention\Image\Drivers\Gd\Driver;
-
-// create new image with half transparent background
-$image = (new ImageManager(Driver::class))->create(300, 200)->fill('rgba(15, 20, 255, .5)');
-
-// create new image with red background
-$image = (new ImageManager(Driver::class))->create(300, 200)->fill('rgb(255, 0, 0)');
-```
-
-#### CMYK String Format
-
-CMYK string values in functional notation are also supported.
-
-```php
-use Intervention\Image\ImageManager;
-use Intervention\Image\Drivers\Imagick\Driver;
-
-// create new image with background
-$image = (new ImageManager(Driver::class))->create(300, 200)->fill('cmyk(100, 100, 55, 60)');
-```
-
-#### HSV/HSB String Format
-
-It is also possible to pass color values strings in the RGB alternative HSV/HSB.
-
-```php
-use Intervention\Image\ImageManager;
-
-// create new image with half transparent background
-$image = ImageManager::imagick()->read('example.jpg');
-
-// draw colored pixel
-$image->drawPixel(120, 200, 'hsv(230, 15, 75)');
-```
-
-#### HSL String Format
-
-It is also possible to pass color values strings in the HSL color format.
-
-```php
-use Intervention\Image\ImageManager;
-
-// create new image with half transparent background
-$image = ImageManager::imagick()->read('example.jpg');
-
-// fill image with color
-$image->fill(120, 200, 'hsl(100, 15, 10)');
-```
-
-#### HTML Color Names
-
-Intervention Image can read colors from the [extended 140 HTML color
+Intervention Image can read named colors from the [extended 140 HTML color
 names](https://en.wikipedia.org/wiki/Web_colors#HTML_color_names) from the W3C
-specification.
+specification. You can pass the color names either as a string or enum value.
 
 ```php
 use Intervention\Image\ImageManager;
-use Intervention\Image\Drivers\Gd\Driver;
+use Intervention\Image\Drivers\Imagick\Driver;
+use Intervention\Image\Colors\Rgb\NamedColor;
 
-// create new image with half transparent background
-$image = (new ImageManager(Driver::class))->create(300, 200)->fill('steelblue');
+// use enum to define named color
+$image = ImageManager::usingDriver(Driver::class)
+    ->createImage(300, 200)
+    ->fill(NamedColor::STEELBLUE);
+
+// use string value to define named color
+$image = ImageManager::usingDriver(Driver::class)
+    ->createImage(300, 200)
+    ->fill('steelblue');
 ```
 
 #### Transparency
@@ -193,76 +233,17 @@ with the keyword `transparent`.
 
 ```php
 use Intervention\Image\ImageManager;
+use Intervention\Image\Drivers\Imagick\Driver;
 
-$manager = ImageManager::gd();
-$image = $manager->read('images/example.png');
-$image->pad(300, 200, 'transparent');
-```
-
-### Color Objects
-
-Colors can also be defined in object form. There is currently a separate color
-class for each color space.
-
-#### RGB Color Object
-
-The RGB color object uses three parameters for the basic channels as well as an
-optional alpha channel parameter, which is defined as completely opaque by
-default.
-
-```php
-use Intervention\Image\ImageManager;
-use Intervention\Image\Drivers\Gd\Driver;
-use Intervention\Image\Colors\Rgb\Color;
-
-// create new image with half transparent background
-$image = (new ImageManager(Driver::class))->create(300, 200)->fill(new Color(45, 0, 10, .5));
-
-// create new image with red background
-$image = (new ImageManager(Driver::class))->create(300, 200)->fill(new Color(255, 0, 0));
-```
-
-#### CMYK Color Object
-
-The CMYK color object is constructed using four parameters that correspond to
-the four channels of the color space.
-
-```php
-use Intervention\Image\ImageManager;
-use Intervention\Image\Colors\Cmyk\Color;
-
-// create new image with half transparent background
-$image = ImageManager::imagick()->create(300, 200)->fill(new Color(100, 100, 55, 60));
-```
-
-#### HSV/HSB Color Object
-
-The HSV/HSB color object constructor takes three parameter for Hue, Saturation and Value/Brightness.
-
-```php
-use Intervention\Image\ImageManager;
-use Intervention\Image\Colors\Hsv\Color;
-
-// create new image with half transparent background
-$image = ImageManager::imagick()->create(300, 200)->fill(new Color(230, 15, 75));
-```
-
-#### HSL Color Object
-
-The HSL color object constructor takes three parameter for Hue, Saturation and Luminance.
-
-```php
-use Intervention\Image\ImageManager;
-use Intervention\Image\Colors\Hsl\Color;
-
-// create new image with half transparent background
-$image = ImageManager::imagick()->create(300, 200)->fill(new Color(230, 15, 75));
+$image = ImageManager::usingDriver(Driver::class)
+    ->decodePath('images/example.png')
+    ->pad(300, 200, 'transparent');
 ```
 
 
 ## Colorspaces
 
-The available color spaces are primarily determined by the driver used. The
+The available color spaces are primarily determined by the used driver. The
 Imagick driver supports both RGB and CMYK color spaces, whereas the GD
 driver only supports RGB. The default color space for newly created images is
 RGB.
@@ -275,32 +256,33 @@ Because the GD driver does not support CMYK, it is not recommended for use with
 CMYK images.
 
 Read how to read an modify colorspace in the section about [Meta
-Information](/v3/basics/meta-information).
+Information](/v4/basics/meta-information).
 
 ### Convert Colors to Other Colorspaces or Formats
 
 Colors can always be converted to the supported color spaces. This is possible
 even if the driver does not support the desired color space.
 
-Color objects can also be converted into the following formats.
+Color objects can also be converted between the following color spaces.
 
 - `Intervention\Image\Colors\Rgb\Colorspace`
 - `Intervention\Image\Colors\Cmyk\Colorspace`
 - `Intervention\Image\Colors\Hsv\Colorspace`
 - `Intervention\Image\Colors\Hsl\Colorspace`
+- `Intervention\Image\Colors\Oklab\Colorspace`
+- `Intervention\Image\Colors\Oklch\Colorspace`
 
 ```php
 use Intervention\Image\ImageManager;
 use Intervention\Image\Drivers\Imagick\Driver;
-use Intervention\Image\Colors\Hsv\Colorspace as HsvColorspace;
+use Intervention\Image\Colors\Cmyk\Colorspace as Cmyk;
 
 // read RGB image from filesystem
-$manager = new ImageManager(new Driver());
-$image = $manager->read('example.jpg');
+$image = ImageManager::usingDriver(Driver::class)->decode('rgb_image.jpg');
 
 // retrieve color of pixel at given position
-$color = $image->pickColor(100, 100);
+$color = $image->colorAt(100, 100);
 
-// convert color to HSV format
-$color = (string) $color->convertTo(HsvColorspace::class); // 'hsv(220, 10, 65)'
+// convert color to cmyk format
+$color = (string) $color->toColorspace(Cmyk::class); // 'cmyk(220 10 65)'
 ```

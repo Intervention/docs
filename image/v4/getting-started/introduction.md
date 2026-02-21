@@ -20,35 +20,33 @@ Whether you want to create image thumbnails, set watermarks, or format large
 image files, Intervention Image helps you accomplish any task with just a few
 lines of code. 
 
-Version 4 improves the solid library even further and adds unique new features.
-
 ### Code Example
 
 ```php
 use Intervention\Image\ImageManager;
-use Intervention\Image\Drivers\Gd\Driver as GdDriver;
+use Intervention\Image\Drivers\Gd\Driver;
 use Intervention\Image\Alignment;
 use Intervention\Image\Color;
 use Intervention\Image\Format;
 use Intervention\Image\Fraction;
 
-// create image manager with desired driver
-$manager = ImageManager::withDriver(GdDriver::class);
+// create image manager instance using the desired driver
+$manager = ImageManager::usingDriver(Driver::class);
 
-// decode an image file
-$image = $manager->decodeFromPath('images/example.webp');
+// read image data from path
+$image = $manager->decodePath('images/example.webp');
 
-// resize image width
-$image->resize(width: 300);
+// scale image by height
+$image->scale(height: 300);
 
-// resize the image canvas
+// resize image canvas
 $image->resizeCanvas(height: Fraction::THIRD, background: Color::rgb(255, 55, 0));
 
 // insert a watermark
-$image->place('images/watermark.png', alignment: Alignment::CENTER);
+$image->insert('images/watermark.png', alignment: Alignment::BOTTOM_RIGHT);
 
 // encode edited image
-$encoded = $image->encodeUsing(format: Format::JPEG, quality: 65);
+$encoded = $image->encodeUsingFormat(Format::JPEG, quality: 65);
 
 // save encoded image
 $encoded->save('images/example.jpg');

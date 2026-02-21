@@ -277,7 +277,7 @@ use Intervention\Image\Geometry\Factories\BezierFactory;
 
 // create a new image
 $image = ImageManager::gd()
-    ->create(500, 500)
+    ->createImage(500, 500)
     ->fill('666');
 
 // draw a yellow quadratic bezier curve with a filled red background

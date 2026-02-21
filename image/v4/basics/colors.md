@@ -402,7 +402,7 @@ $image = $manager->read('images/example.png');
 // read configured blending color
 $blendingColor = $image->blendingColor(); // 'ff0000'
 
-// set grey as blending color
+// set gray as blending color
 $image->setBlendingColor('cccccc');
 
 // read last set blending color

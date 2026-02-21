@@ -16,7 +16,7 @@ Once you have created your own modifier, you can apply them by using the `modify
 
 ## Custom Modifier Implementation
 
-The following very simple example shows a custom modifier class that combines a greyscale and a pixellation effect.
+The following very simple example shows a custom modifier class that combines a grayscale and a pixellation effect.
 
 ```php
 use Intervention\Image\Interfaces\ModifierInterface;
@@ -34,7 +34,7 @@ class MyCustomModifier implements ModifierInterface
     public function apply(ImageInterface $image): ImageInterface
     {
         $image->pixelate($this->size);
-        $image->greyscale();
+        $image->grayscale();
 
         return $image;
     }

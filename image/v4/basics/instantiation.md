@@ -97,9 +97,9 @@ $image = $manager->read($input, new FilePathImageDecoder());
 
 ### Create New Images
 
-> public ImageManager::create(int $width, int $height): ImageInterface
+> public ImageManager::createImage(int $width, int $height): ImageInterface
 
-Reading existing image sources is one thing, but what if you want to create your own images? Intervention Images can help you with that. You start with an instance of the `Intervention\Image\ImageManager` class and call the `create()` method with the desired image size as arguments. See the following example:
+Reading existing image sources is one thing, but what if you want to create your own images? Intervention Images can help you with that. You start with an instance of the `Intervention\Image\ImageManager` class and call the `createImage()` method with the desired image size as arguments. See the following example:
 
 By default the image is created with a **transparent background**. If you want to define a background color instead use the `fill()` method after creation.
 
@@ -120,10 +120,10 @@ use Intervention\Image\Drivers\Imagick\Driver;
 $manager = new ImageManager(Driver::class);
 
 // create new image 640x480
-$image = $manager->create(640, 480);
+$image = $manager->createImage(640, 480);
 
-// create new image 512x512 with grey background
-$image = $manager->create(512, 512)->fill('ccc');
+// create new image 512x512 with gray background
+$image = $manager->createImage(512, 512)->fill('ccc');
 ```
 
 ### Create Animations
@@ -173,7 +173,7 @@ $manager = new ImageManager(Driver::Class);
 $animation = $manager->animate(function ($animation) use ($manager) {
     for ($i = 1; $i <= 5; $i++) {
         $animation->add(
-            $manager->create(300, 300) // frame size
+            $manager->createImage(300, 300) // frame size
                 ->fill('b53717') // frame background color
                 ->drawCircle(150, 150, function ($circle) use ($i) {
                     $circle->radius(40 * $i); // radius of circle in pixels

@@ -1,7 +1,7 @@
 ---
 title: "Image Effects"
 subtitle: "Apply Image Effects"
-lead: "Learn how to apply various image effects using the Intervention Image library. Adjust brightness, contrast, and colors, convert to greyscale, add gamma correction, mirror, rotate, blur, sharpen, invert colors, pixelate, and reduce colors."
+lead: "Learn how to apply various image effects using the Intervention Image library. Adjust brightness, contrast, and colors, convert to grayscale, add gamma correction, mirror, rotate, blur, sharpen, invert colors, pixelate, and reduce colors."
 sort: 2
 ---
 
@@ -117,7 +117,7 @@ use Intervention\Image\ImageManager;
 use Intervention\Image\Drivers\Gd\Driver;
 
 // create new manager instance with desired driver
-$manager = ImageManager::withDriver(Driver::class);
+$manager = ImageManager::usingDriver(Driver::class);
 
 // read an image
 $image = $manager->read('images/example.jpg');
@@ -126,11 +126,11 @@ $image = $manager->read('images/example.jpg');
 $image = $image->colorize(blue: 15, green: 10);
 ```
 
-### Convert image to a greyscale version
+### Convert image to a grayscale version
 
-> public Image::greyscale(): ImageInterface
+> public Image::grayscale(): ImageInterface
 
-Converts the current image to a greyscale version.
+Converts the current image to a grayscale version.
 
 #### Example
 
@@ -143,8 +143,8 @@ $manager = ImageManager::imagick();
 // read a colored image
 $image = $manager->read('images/example.jpg');
 
-// turn image into a greyscale version
-$image = $image->greyscale();
+// turn image into a grayscale version
+$image = $image->grayscale();
 ```
 
 
@@ -358,7 +358,7 @@ Applies a pixelation effect to the current image with a given pixel size.
 use Intervention\Image\ImageManager;
 
 // create new manager instance with desired driver
-$manager = ImageManager::withDriver(new Driver());
+$manager = ImageManager::usingDriver(new Driver());
 
 // reading an image
 $image = $manager->read('images/example.png');

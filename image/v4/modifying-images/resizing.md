@@ -266,7 +266,7 @@ use Intervention\Image\ImageManager;
 use Intervention\Image\Drivers\Imagick\Driver;
 
 // create new image instance
-$manager = ImageManager::withDriver(new Driver());
+$manager = ImageManager::usingDriver(new Driver());
 $image = $manager->read('images/example.jpg');
 
 // resize padded to 300 x 200
@@ -301,12 +301,12 @@ use Intervention\Image\ImageManager;
 use Intervention\Image\Drivers\Gd\Driver;
 
 // create new image instance (800 x 600)
-$image = ImageManager::withDriver(Driver::class)->read('images/example.jpg');
+$image = ImageManager::usingDriver(Driver::class)->read('images/example.jpg');
 
 // resize padded without upsizing
 $image->contain(900, 600);
 
-// padded resizing with grey background color
+// padded resizing with gray background color
 $image->contain(500, 500, 'efefef');
 ```
 

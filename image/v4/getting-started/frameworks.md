@@ -1,7 +1,7 @@
 ---
 title: "Framework Integration"
 subtitle: "Integration in your Favorite Framework"
-lead: "Explore how to integrate Intervention Image with Laravel and Symfony frameworks using the official integration packages. Learn to set up configuration files, select drivers and leverage features like auto-orientation, decoding animations, and blending color."
+lead: "Explore how to integrate Intervention Image with Laravel and Symfony frameworks using the official integration packages. Learn to set up configuration files, select drivers and leverage features like auto-orientation, decoding animations, and background color."
 sort: 2
 ---
 
@@ -61,7 +61,7 @@ return [
     |
     */
 
-    'driver' => \Intervention\Image\Drivers\Gd\Driver::class,
+    'driver' => env('IMAGE_DRIVER', \Intervention\Image\Drivers\Gd\Driver::class),
 
     /*
     |--------------------------------------------------------------------------
@@ -76,7 +76,7 @@ return [
     | - "decodeAnimation" decides whether a possibly animated image is
     |    decoded as such or whether the animation is discarded.
     |
-    | - "blendingColor" Defines the default blending color.
+    | - "backgroundColor" Defines the default background & blending color.
     |
     | - "strip" controls if meta data like exif tags should be removed when
     |    encoding images.
@@ -85,23 +85,23 @@ return [
     'options' => [
         'autoOrientation' => true,
         'decodeAnimation' => true,
-        'blendingColor' => 'ffffff',
+        'backgroundColor' => 'ffffff',
         'strip' => false,
     ]
 ];
 ```
 
 You can read more about the different options for
-[driver selection](/v3/basics/configuration-drivers#driver-selection), setting options for 
-[auto orientation](/v3/modifying-images/effects#image-orientation-according-to-exif-data), 
-[decoding animations](/v3/modifying-images/animations) and 
-[blending color](/v3/basics/colors#transparency).
+[driver selection](/v4/basics/configuration-drivers#driver-selection), setting options for 
+[auto orientation](/v4/modifying-images/effects#image-orientation-according-to-exif-data), 
+[decoding animations](/v4/modifying-images/animations) and 
+[background color](/v4/basics/colors).
 
 ### Static Facade Interface
 
 This package also integrates access to Intervention Image's central entry
 point, the `ImageManager::class`, via a static [facade](https://laravel.com/docs/facades). The call provides access to the
-centrally configured [image manager](/v3/basics/instantiation) via singleton pattern.
+centrally configured [image manager](/v4/basics/instantiation) via singleton pattern.
 
 The following code example shows how to read an image from an upload request
 the image facade in a Laravel route and save it on disk with a random file
@@ -116,12 +116,12 @@ use Intervention\Image\Laravel\Facades\Image;
 
 Route::get('/', function (Request $request) {
     $upload = $request->file('image');
-    $image = Image::read($upload)
+    $image = Image::decode($upload)
         ->resize(300, 200);
 
     Storage::put(
         Str::random() . '.' . $upload->getClientOriginalExtension(),
-        $image->encodeByExtension($upload->getClientOriginalExtension(), quality: 70)
+        $image->encodeUsingFileExtension($upload->getClientOriginalExtension(), quality: 70)
     );
 });
 ```
@@ -147,7 +147,7 @@ use Intervention\Image\Format;
 use Intervention\Image\Laravel\Facades\Image;
 
 Route::get('/', function () {
-    $image = Image::read(Storage::get('example.jpg'))
+    $image = Image::decodeBinary(Storage::get('example.jpg'))
         ->scale(300, 200);
 
     return response()->image($image, Format::WEBP, quality: 65);
@@ -196,7 +196,7 @@ intervention_image:
   options:
     autoOrientation: true
     decodeAnimation: true
-    blendingColor: 'ffffff'
+    backgroundColor: 'ffffff'
     strip: false
 ```
 
@@ -204,15 +204,15 @@ First choose between the two supplied drivers `Intervention\Image\Drivers\Gd\Dri
 `Intervention\Image\Drivers\Imagick\Driver` for example.
 
 Then you can then use the options to determine the behavior of the library. Read more about the different options for
-[driver selection](/v3/basics/configuration-drivers#driver-selection), setting options for 
-[auto orientation](/v3/modifying-images/effects#image-orientation-according-to-exif-data), 
-[decoding animations](/v3/modifying-images/animations) and 
-[blending color](/v3/basics/colors#transparency).
+[driver selection](/v4/basics/configuration-drivers#driver-selection), setting options for 
+[auto orientation](/v4/modifying-images/effects#image-orientation-according-to-exif-data), 
+[decoding animations](/v4/modifying-images/animations) and 
+[background color](/v4/basics/colors).
 
 ### Dependency Injection
 
 The integration is now complete and it is possible to access the
-[ImageManager](/v3/basics/instantiation) via dependency injection.
+[ImageManager](/v4/basics/instantiation) via dependency injection.
 
 ```php
 namespace App\Controller;
@@ -227,7 +227,7 @@ class ExampleController extends AbstractController
     #[Route('/')]
     public function example(ImageManager $manager): Response
     {
-        $image = $manager->read('images/example.jpg');
+        $image = $manager->decode('images/example.jpg');
     }
 }
 ```
