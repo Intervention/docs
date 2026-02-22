@@ -78,6 +78,7 @@ exceptions easier.
 - Method `FontInterface::setFilename()` is replaced by `FontInterface::setFilepath()`
 - Method `ColorInterface::convertTo()` was renamed to `ColorInterface::toColorspace()`
 - `Config::class` option `blendingColor` was renamed to `backgroundColor`
+- Method `ImageInterface::rotate()` rotates clockwise by default.
 
 ### Medium Impact Changes
 

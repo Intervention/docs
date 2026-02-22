@@ -9,35 +9,23 @@ sort: 1
 
 ## Insert Images
 
-> public Image::place(mixed $element, string $position = 'top-left', int $offset_x = 0, int $offset_y = 0, int $opacity = 100): ImageInterface
+> public Image::insert(mixed $image, int $x = 0, int $y = 0, string|Alignment $alignment = Alignment::TOP_LEFT, int $opacity = 100): ImageInterface
 
-Inserts an image at the specified position. The image to insert can be specified
+Inserts a new image on top of the current image. The image to be inserted can be specified
 from any of the [supported image
-sources](/v3/basics/instantiation#supported-image-sources). Optionally you can
+sources](/v4/basics/instantiation#supported-image-sources). Optionally you can
 pass coordinates for an offset to move the image relative to the specified
-position. It is also possible to control the opacity of the watermark using the
+alignment position. It is also possible to control the opacity of the insertion using the
 `opacity` parameter.
-
-The possible `position` values are:
-
-- `top-left` (default)
-- `top`
-- `top-right`
-- `left`
-- `center`
-- `right`
-- `bottom-left`
-- `bottom`
-- `bottom-right`
 
 #### Parameters
 
 | Name | Type | Description |
 | - | - | - |
-| element | mixed | Source of the image to be placed |
-| position | string | Position of the image to be placed |
-| offset_x | int | Optional relative offset of the new image on x-axis |
-| offset_y | int | Optional relative offset of the new image on y-axis |
+| image | mixed | Source of the image to be placed |
+| x | int | Optional relative offset of the new image on x-axis |
+| y | int | Optional relative offset of the new image on y-axis |
+| alignment | string or `Alignment` | Alignment position of the image to be placed |
 | opacity | int | Control over the opacity of the placed image ranging from 0 (fully transparent) to 100 (opaque) |
 
 #### Example
@@ -45,21 +33,23 @@ The possible `position` values are:
 ```php
 use Intervention\Image\ImageManager;
 use Intervention\Image\Drivers\Gd\Driver;
+use Intervention\Image\Alignment;
 
 // create an test image from a file
 $manager = ImageManager::usingDriver(Driver::class);
 $image = $manager->decode('test.png');
 
-// paste another image
-$img->place('images/foo.png');
+// place another image
+$image->insert('images/foo.png');
 
 // create a new resized watermark instance and insert at bottom-right 
 // corner with 10px offset and an opacity of 25%
-$img->place(
-    'images/watermark.png',
-    'bottom-right', 
+$watermark = $manager->decode('watermark.png');
+$image->insert(
+    $watermark,
     10, 
     10,
+    Alignment::BOTTOM_RIGHT, 
     25
 );
 ```

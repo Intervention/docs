@@ -48,7 +48,7 @@ Change the contrast of the current image by a given level. Use values between `-
 
 | Name | Type | Description |
 | - | - | - |
-| level | integer | Level of contrast change  |
+| level | integer | Level of contrast change |
 
 #### Example
 
@@ -76,7 +76,7 @@ Apply a gamma correction operation to the current image.
 
 | Name | Type | Description |
 | - | - | - |
-| gamma | float | Gamma compensation value |
+| gamma | float | Gamma correction value |
 
 #### Example
 
@@ -151,37 +151,23 @@ $image = $image->grayscale();
 
 
 
-
-
 ## Various Effects
 
-### Mirror Image Horizontally
+### Mirror Images
 
-> public Image::flop(): ImageInterface
+> public Image::flip(Direction $direction = Direction::HORIZONTAL): ImageInterface
 
-Mirror the current image horizontally by swapping left and right.
+Mirror the current image either horizontally or vertically by passing the
+direction. In the horizontal direction the left and right of the image is
+swapped, for vertical mirror direction the top and bottom is swapped.
 
-#### Example
+By default the methods mirrors horizontally.
 
-```php
-use Intervention\Image\ImageManager;
-use Intervention\Image\Drivers\Imagick\Driver;
+#### Parameters
 
-// create new manager instance with desired driver
-$manager = ImageManager::usingDriver(Driver::class);
-
-// read an image
-$image = $manager->decode('images/example.png');
-
-// mirror image horizontally
-$image = $image->flop();
-```
-
-### Mirror Image Vertically
-
-> public Image::flip(): ImageInterface
-
-Mirror the current image vertically by swapping top and bottom.
+| Name | Type | Description |
+| - | - | - |
+| direction | Direction | The direction the image will be mirrored. |
 
 #### Example
 
@@ -196,23 +182,23 @@ $manager = ImageManager::usingDriver(Driver::class);
 $image = $manager->decode('images/example.png');
 
 // mirror image vertically
-$image = $image->flip();
+$image = $image->flip(Direction::VERTICAL);
 ```
 
 ### Image Rotation
 
-> public Image::rotate(float $angle, mixed $background = 'ffffff'): ImageInterface
+> public Image::rotate(float $angle, null|string|ColorInterface $background = null): ImageInterface
 
-Rotate the current image counterclockwise by the specified angle. Optionally,
+Rotate the current image clockwise by the specified angle. Optionally,
 specify a background color to fill the newly created uncovered areas after the
-rotation.
+rotation. By default the currently configured background color is used.
 
 #### Parameters
 
 | Name | Type | Description |
 | - | - | - |
-| angle | float | The rotation angle in degrees to rotate the image counterclockwise |
-| background | mixed | A color to fill the newly created areas after rotation |
+| angle | float | The rotation angle in degrees to rotate the image clockwise |
+| background | null, string or ColorInterface | A color to fill the newly created areas after rotation |
 
 #### Example
 
@@ -226,10 +212,9 @@ $manager = ImageManager::usingDriver(Driver::class);
 // read an image
 $image = $manager->decode('images/example.png');
 
-// rotate image 45 degrees clockwise 
+// rotate image 45 degrees counter-clockwise 
 $image = $image->rotate(-45);
 ```
-
 
 
 ### Image Orientation According to Exif Data
@@ -239,7 +224,7 @@ $image = $image->rotate(-45);
 This method uses Exif data to automatically orient images correctly. **This
 rotation is done automatically by default.** So you don't need to call this
 method unless you have [disabled the auto orientation in the ImageManager
-configuration](/v3/basics/configuration-drivers).
+configuration](/v4/basics/configuration-drivers).
 
 #### Example
 
@@ -256,7 +241,6 @@ $image = $manager->decode('images/example.jpg');
 // orient image according to exif data
 $image = $image->orient();
 ```
-
 
 
 
@@ -290,7 +274,7 @@ $manager = ImageManager::usingDriver(Driver::class);
 // reading an image
 $image = $manager->decode('images/example.png');
 
-// apply blurring effect
+// apply blur effect
 $image = $image->blur(3);
 ```
 
@@ -376,7 +360,7 @@ $image = $image->pixelate(12);
 
 ### Reduce Colors
 
-> public Image::reduceColors(int $limit, mixed $background = 'transparent'): ImageInterface
+> public Image::reduceColors(int $limit, string|ColorInterface $background = 'transparent'): ImageInterface
 
 Apply color quantization to the current image by reducing the number of
 distinct colors in the current image to the given limit. The number of colors
@@ -390,7 +374,7 @@ result of the reduction process are blended against the given background color.
 | Name | Type | Description |
 | - | - | - |
 | limit | integer | Allowed number of distinct colors |
-| mixed | background | Color formerly semi-transparent colors are blended against |
+| background | string or ColorInterface | Color formerly semi-transparent colors are blended against. |
 
 #### Example
 

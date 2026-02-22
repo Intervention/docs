@@ -73,19 +73,19 @@ use Intervention\Image\FileExtension;
 $manager = ImageManager::usingDriver(Driver::class);
 
 // check by file extension if driver supports jpeg format
-$result = $manager->driver()->supports('jpg');
+$result = $manager->driver->supports('jpg');
 
 // check by media type if driver supports jpeg format
-$result = $manager->driver()->supports('image/jpeg');
+$result = $manager->driver->supports('image/jpeg');
 
 // check by enum member if driver supports jpeg format
-$result = $manager->driver()->supports(Format::JPEG);
+$result = $manager->driver->supports(Format::JPEG);
 
 // check by enum member if driver supports jpeg format
-$result = $manager->driver()->supports(MediaType::IMAGE_JPEG);
+$result = $manager->driver->supports(MediaType::IMAGE_JPEG);
 
 // check by enum member if driver supports jpeg format
-$result = $manager->driver()->supports(FileExtension::JPG);
+$result = $manager->driver->supports(FileExtension::JPG);
 ```
 
 ## Color Formats

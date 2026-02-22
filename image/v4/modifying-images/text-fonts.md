@@ -50,6 +50,7 @@ FontInterface and listens for following methods.
 use Intervention\Image\ImageManager;
 use Intervention\Image\Typography\FontFactory;
 use Intervention\Image\Drivers\Imagick\Driver;
+use Intervention\Image\Alignment;
 
 // create test image
 $image = ImageManager::usingDriver(Driver::class)->decode('images/example.jpg');
@@ -60,8 +61,7 @@ $image->text('The quick brown fox', 120, 100, function (FontFactory $font) {
     $font->size(70);
     $font->color('fff');
     $font->stroke('ff5500', 2);
-    $font->align('center');
-    $font->valign('middle');
+    $font->align(Alignment::CENTER, Alignment::TOP);
     $font->lineHeight(1.6);
     $font->angle(10);
     $font->wrap(250);
@@ -94,7 +94,7 @@ Set a path to a font file in the file system for the text.
 
 ### Color
 
-> public FontFactory::color(mixed $color): FontFactory
+> public FontFactory::color(string|ColorInterface $color): FontFactory
 
 Define the text color in one of the valid [color formats](/v3/getting-started/formats#color-formats).
 
@@ -102,11 +102,11 @@ Define the text color in one of the valid [color formats](/v3/getting-started/fo
 
 | Name | Type | Description |
 | - | - | - |
-| color | mixed | Desired color of text |
+| color | string or ColorInterface | Desired color of text |
 
 ### Text Stroke (Outline)
 
-> public FontFactory::stroke(mixed $color, int $width = 1): FontFactory
+> public FontFactory::stroke(string|ColorInterface $color, int $width = 1): FontFactory
 
 Add an outline effect in the desired color to the text to be written. You can
 also determine the width of the strokes for text characters.
@@ -118,34 +118,22 @@ only possible to use fully opaque colors for text and strokes.**
 
 | Name | Type | Description |
 | - | - | - |
-| color | mixed | Color of strokes in valid [color format](/v3/getting-started/formats/#color-formats) |
+| color | string or ColorInterface | Color of strokes in valid [color format](/v3/getting-started/formats/#color-formats) |
 | width | int | Optional width of the stroke effect in the range from `0` to `10` (default `1`) |
 
 ### Horizontal Alignment
 
-> public FontFactory::align(string $align): FontFactory
+> public FontFactory::align(null|string|Alignment $horizontal = null, null|string|Alignment $vertical = null): FontFactory
 
-Define the horizontal alignment of the text to be written starting from the
-base point. Possible values are left, right and center. Default: `left`
-
-#### Parameters
-
-| Name | Type | Description |
-| - | - | - |
-| align | string | Horizontal text alignment |
-
-### Vertical Alignment
-
-> public FontFactory::valign(string $valign): FontFactory
-
-Define the vertical alignment of the text to be written starting from the base
-point. Possible values are top, bottom and middle. Default: `bottom`
+Define the horizontal and vertical alignment of the text starting from the
+base point. By default the text is alignment left horizontally and at the bottom vertically.
 
 #### Parameters
 
 | Name | Type | Description |
 | - | - | - |
-| valign | string | Vertical text alignment |
+| horizontal | null, string or Alignment | Horizontal text alignment |
+| vertical | null, string or Alignment | Vertical text alignment |
 
 ### Rotation
 
@@ -185,4 +173,3 @@ to the maximum width. Hyphenation is not performed.
 | Name | Type | Description |
 | - | - | - |
 | width | int | Maximum width of the text block |
-
