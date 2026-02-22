@@ -10,27 +10,24 @@ sort: 3
 
 ## Image Exceptions
 
-```
-ImageException
-├── LogicException
-│   ├── ArgumentException
-│   │   └── InvalidArgumentException
-│   ├── NotSupportedException
-│   └── StateException
-│
-└── RuntimeException
-    ├── MissingDependencyException
-    ├── FilesystemException
-    │   ├── DirectoryNotFoundException
-    │   ├── FilePointerException
-    │   ├── FileNotFoundException
-    │   ├── FileNotReadableException
-    │   └── FileNotWritableException
-    └── DriverException
-        ├── AnalyzerException
-        ├── ModifierException
-        ├── DecoderException
-        │   ├── ImageDecoderException
-        │   └── ColorDecoderException
-        └── EncoderException
-```
+- ImageException
+    - LogicException
+        - ArgumentException
+            - InvalidArgumentException
+        - NotSupportedException
+        - StateException
+    - RuntimeException
+        - MissingDependencyException
+        - FilesystemException
+            - DirectoryNotFoundException
+            - FilePointerException
+            - FileNotFoundException
+            - FileNotReadableException
+            - FileNotWritableException
+        - DriverException
+            - AnalyzerException
+            - ModifierException
+            - DecoderException
+                - ImageDecoderException
+                - ColorDecoderException
+            - EncoderException
