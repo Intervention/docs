@@ -9,11 +9,11 @@ sort: 0
 
 ## Simple Image Resizing
 
-<a href="/v3/playground#resize" target="playground" class="demoButton">Try it out in the live demo</a>
+<a href="/v4/playground#resize" target="playground" class="demoButton">Try it out in the live demo</a>
 
 ### Resize an Image
 
-> public Image::resize(null|int $width = null, null|int $height = null): ImageInterface
+> public Image::resize(null|int|Fraction $width = null, null|int|Fraction $height = null): ImageInterface
 
 The method `resize()` simply stretches the image to the desired size regardless of the original aspect ratio. Use
 `resizeDown()` to change the size but do not exceed the original size of the
@@ -24,8 +24,8 @@ to target only one axis for the modification.
 
 | Name | Type | Description |
 | - | - | - |
-| width | integer | Desired image width. |
-| height | integer | Desired image width. |
+| width | null, integer or `Fraction` | Desired image width. |
+| height | null, integer or `Fraction` | Desired image height. |
 
 #### Example
 
@@ -34,7 +34,8 @@ use Intervention\Image\ImageManager;
 use Intervention\Image\Drivers\Imagick\Driver;
 
 // create new image instance
-$image = ImageManager::usingDriver(Driver::class)->decode('images/example.jpg');
+$image = ImageManager::usingDriver(Driver::class)
+    ->decode('images/example.jpg');
 
 // resize to 300 x 200 pixel
 $image->resize(300, 200);
@@ -43,11 +44,11 @@ $image->resize(300, 200);
 $image->resize(height: 200);
 ```
 
-<a href="/v3/playground#resizeDown" target="playground" class="demoButton">Try it out in the live demo</a>
+<a href="/v4/playground#resizeDown" target="playground" class="demoButton">Try it out in the live demo</a>
 
 ### Resize Without Exceeding the Original Size
 
-> public Image::resizeDown(null|int $width = null, null|int $height = null): ImageInterface
+> public Image::resizeDown(null|int|Fraction $width = null, null|int|Fraction $height = null): ImageInterface
 
 The `resizeDown()` method does the same as `resize()`. It simply stretches the
 image to the specified size, but does not exceeds the original size of the image. You can
@@ -58,8 +59,8 @@ to resize just one axis for the modification.
 
 | Name | Type | Description |
 | - | - | - |
-| width | integer | Desired image width. |
-| height | integer | Desired image width. |
+| width | null, integer or `Fraction` | Desired image width. |
+| height | null, integer or `Fraction` | Desired image height. |
 
 #### Example
 
@@ -78,11 +79,11 @@ $image->resizeDown(width: 200);
 
 ## Scale Images
 
-<a href="/v3/playground#scale" target="playground" class="demoButton">Try it out in the live demo</a>
+<a href="/v4/playground#scale" target="playground" class="demoButton">Try it out in the live demo</a>
 
 ### Resize Images Proportionally
 
-> public Image::scale(null|int $width = null, null|int $height = null): ImageInterface
+> public Image::scale(null|int|Fraction $width = null, null|int|Fraction $height = null): ImageInterface
 
 Often you want to resize an image without distorting the original image
 aspect ratio. For this kind of modification you can simply use the methods
@@ -95,8 +96,8 @@ as the aspect ratio is preferably preserved.
 
 | Name | Type | Description |
 | - | - | - |
-| width | integer | Desired image width. |
-| height | integer | Desired image width. |
+| width | null, integer or `Fraction` | Desired image width. |
+| height | null, integer or `Fraction` | Desired image height. |
 
 #### Example
 
@@ -116,11 +117,11 @@ $image->scale(height: 300); // 400 x 300 (4:3)
 $image->scale(120, 100); // 120 x 90 (4:3)
 ```
 
-<a href="/v3/playground#scaleDown" target="playground" class="demoButton">Try it out in the live demo</a>
+<a href="/v4/playground#scaleDown" target="playground" class="demoButton">Try it out in the live demo</a>
 
 ### Scale Images but do not Exceed the Original Size
 
-> public Image::scaleDown(null|int $width = null, null|int $height = null): ImageInterface
+> public Image::scaleDown(null|int|Fraction $width = null, null|int|Fraction $height = null): ImageInterface
 
 The method `scale()` resizes the image while maintaining the original aspect ratio. While
 `scaleDown()` is similar to `scale()` the only difference is that it doesn't exceed the original size of the
@@ -133,8 +134,9 @@ Note that the size of the result may differ from the given parameter values.
 
 | Name | Type | Description |
 | - | - | - |
-| width | integer | Desired image width. |
-| height | integer | Desired image width. |
+| width | null, integer or `Fraction` | Desired image width. |
+| height | null, integer or `Fraction` | Desired image height. |
+
 #### Example
 
 
@@ -155,11 +157,11 @@ $image->scaleDown(height: 300); //  400 x 300
 
 ## Fitted Image Resizing
 
-<a href="/v3/playground#cover" target="playground" class="demoButton">Try it out in the live demo</a>
+<a href="/v4/playground#cover" target="playground" class="demoButton">Try it out in the live demo</a>
 
 ### Cropping & Resizing Combined
 
-> public Image::cover(int $width, int $height, string $position = 'center'): ImageInterface
+> public Image::cover(int|Fraction $width, int|Fraction $height, string|Alignment $alignment = Alignment::CENTER): ImageInterface
 
 The `cover()` method is a two-step combination of cropping and resizing to
 achieve a given result size. This method takes the given dimensions and scales
@@ -168,21 +170,22 @@ then positioned on the original and cropped before being resized to the desired
 size from the arguments.
 
 This method requires both width and height arguments. You can optional
-specify a position to determine which part of the image should remain in focus.
+specify a alignment position to determine which part of the image should remain in focus.
 
 #### Parameters
 
 | Name | Type | Description |
 | - | - | - |
-| width | integer | Desired image width. |
-| height | integer | Desired image width. |
-| position (optional) | string | Position |
+| width | integer or `Fraction` | Desired image width. |
+| height | integer or `Fraction` | Desired image height. |
+| alignment (optional) | string or `Alignment` | Crop alignment. |
 
 #### Example
 
 ```php
 use Intervention\Image\ImageManager;
 use Intervention\Image\Drivers\Gd\Driver;
+use Intervention\Image\Alignment;
 
 // create new image instance (800 x 600)
 $manager = ImageManager::usingDriver(Driver::class);
@@ -195,14 +198,14 @@ $img->cover(600, 360);
 $img->cover(200, 200);
 
 // cover a size of 300x300 and position crop on the left
-$image->cover(300, 300, 'left'); // 300 x 300 px
+$image->cover(300, 300, Alignment::LEFT); // 300 x 300 px
 ```
 
-<a href="/v3/playground#coverDown" target="playground" class="demoButton">Try it out in the live demo</a>
+<a href="/v4/playground#coverDown" target="playground" class="demoButton">Try it out in the live demo</a>
 
 ### Fitted Resizing without Exceeding the Original Size
 
-> public Image::coverDown(int $width, int $height, string $position = 'center'): ImageInterface
+> public Image::coverDown(int|Fraction $width, int|Fraction $height, string|Alignment $alignment = Alignment::CENTER): ImageInterface
 
 This method has the same purpose and the same signature as `cover()` but the
 final pixel size will never be larger than the original image. Use this if
@@ -214,15 +217,16 @@ Note that the size of the result may differ from the given parameter values.
 
 | Name | Type | Description |
 | - | - | - |
-| width | integer | Desired image width. |
-| height | integer | Desired image width. |
-| position (optional) | string | Position |
+| width | integer or `Fraction` | Desired image width. |
+| height | integer or `Fraction` | Desired image height. |
+| alignment (optional) | string or `Alignment` | Position |
 
 #### Example
 
 ```php
 use Intervention\Image\ImageManager;
 use Intervention\Image\Drivers\Imagick\Driver;
+use Intervention\Image\Alignment;
 
 // create new image instance
 $image = ImageManager::usingDriver(Driver::class)->decode('images/example.jpg'); // 800 x 600
@@ -234,16 +238,16 @@ $img->coverDown(1200, 720); // 800 x 480 (5:3)
 $img->coverDown(900, 900); // 600 x 600
 
 // resize down to 900x450 (2:1) and position left
-$image->coverDown(900, 450, 'left'); // 800 x 400 px
+$image->coverDown(900, 450, Alignment::LEFT); // 800 x 400 px
 ```
 
 ## Padded Image Resizing
 
-<a href="/v3/playground#pad" target="playground" class="demoButton">Try it out in the live demo</a>
+<a href="/v4/playground#pad" target="playground" class="demoButton">Try it out in the live demo</a>
 
 ### Resizing & Padding Combined
 
-> public Image::pad(int $width, int $height, $background = 'ffffff', string $position = 'center'): ImageInterface
+> public Image::pad(int|Fraction $width, int|Fraction $height, null|string|ColorInterface $background = null, string|Alignment $alignment = Alignment::CENTER): ImageInterface
 
 Padded resizing means that the original image is scaled to fit the
 defined target size without changing the aspect ratio. The original image is not
@@ -257,16 +261,17 @@ with the given background color.
 
 | Name | Type | Description |
 | - | - | - |
-| width | integer | Image width. |
-| height | integer | Image width. |
-| background (optional) | mixed | Background color for the new areas of the image. |
-| position (optional) | string | Position where the original image is placed. |
+| width | integer or `Fraction` | Image width. |
+| height | integer or `Fraction` | Image height. |
+| background (optional) | null, string or ColorInterface | Background color for the new areas of the image. By default the background color from the configuration is used. |
+| alignment (optional) | string | Alignment position where the original image is placed. |
 
 #### Example
 
 ```php
 use Intervention\Image\ImageManager;
 use Intervention\Image\Drivers\Imagick\Driver;
+use Intervention\Image\Alignment;
 
 // create new image instance
 $manager = ImageManager::usingDriver(new Driver());
@@ -275,15 +280,15 @@ $image = $manager->decode('images/example.jpg');
 // resize padded to 300 x 200
 $image->pad(300, 200, 'ccc');
 
-// resize padded with positioning
-$image->pad(500, 500, position: 'top-left');
+// resize padded with alignment position
+$image->pad(500, 500, alignment: Alignment::TOP_LEFT);
 ```
 
-<a href="/v3/playground#contain" target="playground" class="demoButton">Try it out in the live demo</a>
+<a href="/v4/playground#contain" target="playground" class="demoButton">Try it out in the live demo</a>
 
 ### Padded Resizing with Upscaling
 
-> public Image::contain(int $width, int $height, $background = 'ffffff', string $position = 'center'): ImageInterface
+> public Image::contain(int|Fraction $width, int|Fraction $height, null|string|ColorInterface $background = null, string|Alignment $alignment = Alignment::CENTER): ImageInterface
 
  This method does the same as `pad()`, but also scales up the original image if
  the target size exceeds the original size.
@@ -292,10 +297,10 @@ $image->pad(500, 500, position: 'top-left');
 
 | Name | Type | Description |
 | - | - | - |
-| width | integer | Image width. |
-| height | integer | Image width. |
-| background (optional) | mixed | Background color for the new areas of the image. |
-| position (optional) | string | Position where the original image is placed. |
+| width | integer or `Fraction` | Image width. |
+| height | integer or `Fraction` | Image height. |
+| background (optional) | null, string or ColorInterface | Background color for the new areas of the image. By default the background color from the configuration is used. |
+| alignment (optional) | string | Alignment position where the original image is placed. |
 
 #### Example
 
@@ -316,11 +321,11 @@ $image->contain(500, 500, 'efefef');
 
 ## Crop Image
 
-<a href="/v3/playground#crop" target="playground" class="demoButton">Try it out in the live demo</a>
+<a href="/v4/playground#crop" target="playground" class="demoButton">Try it out in the live demo</a>
 
 ### Cut Out a Rectangular Part
 
-> public Image::crop(int $width, int $height, int $offset_x = 0, int $offset_y = 0, mixed $background = 'ffffff', string $position = 'top-left'): ImageInterface
+> public Image::crop(int|Fraction $width, int|Fraction $height, int $x = 0, int $y = 0, null|string|ColorInterface $background = null, string|Alignment $position = Alignment::TOP_LEFT): ImageInterface
 
 Crops a rectangular area of the current image with a given width and
 height at a given position. Pass optional x, y offset coordinates to
@@ -334,12 +339,12 @@ original image format.
 
 | Name | Type | Description |
 | - | - | - |
-| width | integer | Width of the rectangular cutout |
-| height | integer | Height of the rectangular cutout |
-| offset_x (optional) | int | Amount of pixels the cutout will be moved on the x-axis |
-| offset_y (optional) | int | Amount of pixels the cutout will be moved on the y-axis |
-| background (optional) | mixed | Color to fill any newly created areas |
-| position (optional) | string | Position at which the cutout will be aligned |
+| width | integer or `Fraction` | Width of the rectangular cutout |
+| height | integer or `Fraction` | Height of the rectangular cutout |
+| x (optional) | int | Amount of pixels the cutout will be moved on the x-axis |
+| y (optional) | int | Amount of pixels the cutout will be moved on the y-axis |
+| background (optional) | null, string or ColorInterface | Color to fill any newly created areas. By default the globally configured background color is used. |
+| alignment (optional) | string or `Alignment` | Alignment position at which the cutout will be aligned |
 
 **Caution: The signature has changed in version 3.3 by the additional parameter `background`**
 
@@ -357,16 +362,16 @@ $image = $manager->decode('images/example.jpg');
 $image->crop(200, 150, 45, 90);
 
 // crop a 40 x 40 pixel cutout from the bottom-right and move it 30 pixel down
-$image->crop(200, 150, 0 , 30, position: 'bottom-right');
+$image->crop(200, 150, 0, 30, position: Alignment::BOTTOM_RIGHT);
 ```
 
 ## Resize Image Canvas
 
-<a href="/v3/playground#resizeCanvas" target="playground" class="demoButton">Try it out in the live demo</a>
+<a href="/v4/playground#resizeCanvas" target="playground" class="demoButton">Try it out in the live demo</a>
 
 ### Resize Image Boundaries without Resampling the Original Image
 
-> public Image::resizeCanvas(null|int $width = null, null|int $height = null, mixed $background = 'ffffff', string $position = 'center'): ImageInterface
+> public Image::resizeCanvas(null|int|Fraction $width = null, null|int|Fraction $height = null, null|string|ColorInterface $background = null, string|Alignment $alignment = Alignment::CENTER): ImageInterface
 
 This function changes the size of the image borders without recalculating the
 actual image. If the specified sizes are larger than the original, the image
@@ -378,10 +383,10 @@ determines where the original image is fixed.
 
 | Name | Type | Description |
 | - | - | - |
-| width | null or integer | Width of the new image area |
-| height | null or integer | Height of the new image area |
-| background (optional) | mixed | Background color for the new areas of the image |
-| position (optional) | string | Position where the original image will be fixed |
+| width | null, integer or `Fraction` | Width of the new image area |
+| height | null, integer or `Fraction` | Height of the new image area |
+| background (optional) | null, string or `ColorInterface` | Background color for the new areas of the image. By default the globally configured background color is used. |
+| alignment (optional) | string or `Alignment` | Alignment position where the original image will be fixed |
 
 #### Example
 
@@ -397,11 +402,11 @@ $image = $manager->decode('images/example.jpg');
 $image->resizeCanvas(800, 600, 'ff0');
 ```
 
-<a href="/v3/playground#resizeCanvasRelative" target="playground" class="demoButton">Try it out in the live demo</a>
+<a href="/v4/playground#resizeCanvasRelative" target="playground" class="demoButton">Try it out in the live demo</a>
 
 ### Resize Image Boundaries Relative to the Original
 
-> public Image::resizeCanvasRelative(null|int $width = null, null|int $height = null, mixed $background = 'ffffff', string $position = 'center'): ImageInterface
+> public Image::resizeCanvasRelative(null|int|Fraction $width = null, null|int|Fraction $height = null, null|string|ColorInterface $background = null, string|Alignment $alignment = Alignment::CENTER): ImageInterface
 
 This function behaves in the same way as `resizeCanvas()`, but here you specify
 relative values which are either added (positive) or subtracted (negative) from the original size.
@@ -410,26 +415,56 @@ relative values which are either added (positive) or subtracted (negative) from 
 
 | Name | Type | Description |
 | - | - | - |
-| width | null or integer | Amount which will be added or subtracted to the original width |
-| height | null or integer | Amount which will be added or subtracted to the original height |
-| background (optional) | mixed | Background color for the new areas of the image |
-| position (optional) | string | Position where the original image will be fixed |
+| width | null, integer or `Fraction` | Amount which will be added or subtracted to the original width |
+| height | null, integer or `Fraction` | Amount which will be added or subtracted to the original height |
+| background (optional) | null, string or `ColorInterface` | Background color for the new areas of the image. By default the globally configured background color is used. |
+| alignment (optional) | string or `Alignment` | Alignment position where the original image will be fixed |
 
 #### Example
 
 ```php
 use Intervention\Image\ImageManager;
 use Intervention\Image\Drivers\Imagick\Driver;
+use Intervention\Image\Color;
 
 // create new image instance
 $manager = ImageManager::usingDriver(Driver::class)
 $image = $manager->decode('images/example.jpg');
 
 // add 50 pixels in green at each side of the image
-$image->resizeCanvas(50, 50, 'green');
+$image->resizeCanvas(50, 50, Color::rgb(0, 255, 0));
 
 // add 20 red pixels to the height at the bottom of the image
-$image->resizeCanvas(height: 20, background: 'ff0000', position: 'bottom');
+$image->resizeCanvas(height: 20, background: 'ff0000', alignment: Alignment::BOTTOM);
+```
+
+## Resize with Fractions
+### Use relative target sizes for resizing
+
+All resizing methods are capable of processing relative values in addition to
+absolute pixel values. These can be passed as enum values from Fraction.
+
+This makes it possible to refer to the width or height of the original image
+without having to calculate it yourself.
+
+#### Example
+
+```php
+use Intervention\Image\ImageManager;
+use Intervention\Image\Drivers\Gd\Driver;
+use Intervention\Image\Fraction;
+
+// create new image instance
+$image = ImageManager::usingDriver(Driver::class)->decode('example.jpg');
+
+// resize image to half width and quarter height
+$image->resize(Fraction::HALF, Fraction::QUARTER);
+
+// scale image to double height
+$image->scale(height: Fraction::DOUBLE);
+
+// cover resize with quarter image size
+$image->cover(Fraction::QUARTER, Fraction::QUARTER);
 ```
 
 
