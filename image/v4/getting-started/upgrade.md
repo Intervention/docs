@@ -42,6 +42,7 @@ exceptions easier.
 - Support for OkLab color space
 - Color::class
 - NamedColor::class
+- Color modifier methods `ColorInterface::withTransparency()`, `ColorInterface::withBrightness()`, `ColorInterface::withSaturation` and `ColorInterface::withInversion()`
 
 ### More New Features
 
@@ -69,6 +70,7 @@ exceptions easier.
 - `ImageInterface::toTiff()` and `ImageInterface::toTif()` are replaced by `ImageInterface::encodeUsingFormat()`
 - `ImageInterface::pickColor()` was renamed to `ImageInterface::colorAt()` and signature has changed, argument `$frame_key` is know `$frame`
 - `ImageInterface::pickColors()` was renamed to `ImageInterface::colorsAt()`
+- `ImageInterface::pad()` was renamed to `ImageInterface::containDown()` with different signature
 - `ImageInterface::place()` was renamed to `ImageInterface::insert()` with a different signature. `offset_x` was renamed to `x` and `offset_y` was renamed to `y` and updated argument order
 - Signatures of `ImageInterface::drawRectangle()`, `ImageInterface::drawLine()`, `ImageInterface::drawEllipse()`, `ImageInterface::drawCircle()`, `ImageInterface::drawPolygon()` and `ImageInterface::drawBezier()` have changed
 - Method `ImageInterface::save()` only processes known image file extensions
@@ -91,7 +93,7 @@ exceptions easier.
 - Changed default value for `background` to `null` in `ImageInterface::resizeCanvas()`
 - Changed default value for `background` to `null` in `ImageInterface::resizeCanvasRelative()`
 - Changed default value for `background` to `null` in `ImageInterface::contain()`
-- Changed default value for `background` to `null` in `ImageInterface::pad()`
+- Changed default value for `background` to `null` in `ImageInterface::containDown()` former `ImageInterface::pad()`
 - Changed default value for `background` to `null` in `ImageInterface::crop()`
 - Signature of `ImageInterface::crop()` changed from `offset_x` to `x` and `offset_y` to `y`
 - Attribute `$per_unit` has change to `$unit` with different signature in `Resolution::class`

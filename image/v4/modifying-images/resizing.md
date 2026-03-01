@@ -341,8 +341,8 @@ original image format.
 | - | - | - |
 | width | integer or `Fraction` | Width of the rectangular cutout |
 | height | integer or `Fraction` | Height of the rectangular cutout |
-| x (optional) | int | Amount of pixels the cutout will be moved on the x-axis |
-| y (optional) | int | Amount of pixels the cutout will be moved on the y-axis |
+| x (optional) | int | Pixel offset of the cutout on the x-axis |
+| y (optional) | int | Pixel offset of the cutout on the y-axis |
 | background (optional) | null, string or ColorInterface | Color to fill any newly created areas. By default the globally configured background color is used. |
 | alignment (optional) | string or `Alignment` | Alignment position at which the cutout will be aligned |
 
@@ -415,8 +415,8 @@ relative values which are either added (positive) or subtracted (negative) from 
 
 | Name | Type | Description |
 | - | - | - |
-| width | null, integer or `Fraction` | Amount which will be added or subtracted to the original width |
-| height | null, integer or `Fraction` | Amount which will be added or subtracted to the original height |
+| width | null, integer or `Fraction` | Width in pixels to be added or subtracted to the original width |
+| height | null, integer or `Fraction` | Height in pixels to be added or subtracted to the original height |
 | background (optional) | null, string or `ColorInterface` | Background color for the new areas of the image. By default the globally configured background color is used. |
 | alignment (optional) | string or `Alignment` | Alignment position where the original image will be fixed |
 

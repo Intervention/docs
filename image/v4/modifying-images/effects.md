@@ -250,17 +250,17 @@ $image = $image->orient();
 
 ### Blur Effect
 
-> public Image::blur(int $amount = 5): ImageInterface
+> public Image::blur(int $level = 5): ImageInterface
 
-Applies a gaussian blur effect to the current image. Use the optional `amount` argument to specify the strength of the effect with values between `0` and `100`.
+Applies a gaussian blur effect to the current image. Use the optional `level` argument to specify the strength of the effect with values between `0` and `100`.
 
-**With the GD driver this method is performance intensive for larger blur amounts. Use with caution.**
+**With the GD driver this method is performance intensive for larger blur levels. Use with caution.**
 
 #### Parameters
 
 | Name | Type | Description |
 | - | - | - |
-| amount | integer | Effect strength value (0 - 100)  |
+| level | integer | Effect strength value (0 - 100)  |
 
 #### Example
 
@@ -281,15 +281,15 @@ $image = $image->blur(3);
 
 ### Sharpening Effect
 
-> public Image::sharpen(int $amount = 10): ImageInterface
+> public Image::sharpen(int $level = 10): ImageInterface
 
-Sharpen the current image instance by an optional `amount`.
+Sharpen the current image instance by an optional `level`.
 
 #### Parameters
 
 | Name | Type | Description |
 | - | - | - |
-| amount | integer | The amount of the sharpening strength. (0 - 100)  |
+| level | integer | The level of the sharpening strength. (0 - 100)  |
 
 #### Example
 

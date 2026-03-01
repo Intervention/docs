@@ -149,6 +149,12 @@ Color formats in the functional notation are also supported as shown in the foll
 ```php
 use Intervention\Image\Color;
 
+// universal parsing of color strings
+$rgb = Color::parse('rgb(34, 12, 64)');
+$hsl = Color::parse('hsl(30, 100%, 50%)');
+$hsv = Color::parse('#ff5500');
+$hsv = Color::parse('#ff5500');
+
 // rgb string format
 $rgb = Color::rgb('rgb(34, 12, 64)');
 $rgb = Color::rgb('rgb(34, 12, 64, 0.6)');

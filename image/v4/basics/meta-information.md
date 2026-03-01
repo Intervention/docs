@@ -92,7 +92,7 @@ $width = $size()->width();
 
 > public Image::resolution(): ResolutionInterface
 
-Reads out the image resolution of the current instance in DPI.
+Reads out the image resolution of the current instance.
 
 #### Example
 
