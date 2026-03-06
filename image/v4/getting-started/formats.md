@@ -103,15 +103,16 @@ Colors are defined in object form implementing `ColorInterface::class` building 
 separate color class for each color space.
 
 Each color object takes constructor parameters for the color channel values as well as an
-optional alpha channel parameter, which is defined as completely opaque by
-default.
+optional alpha channel parameter, which is defined as completely opaque by default.
 
 #### Create Color Objects
+
+The easiest way is to use the static methods of `Intervention\Image\Color` to create colors in different color spaces.
 
 ```php
 use Intervention\Image\Color;
 
-// define colors in different color spaces
+// create different colors
 $rgb = Color::rgb(255, 55, 0, .5);
 $hsl = Color::hsl(340, 55, 90);
 $hsv = Color::hsv(240, 35, 10);
@@ -144,7 +145,7 @@ $cmyk = new CmykColor(100, 50, 70, 0, .75);
 
 #### Functional String Format
 
-Color formats in the functional notation are also supported as shown in the following example.
+Color formats in string format for example in the functional notation are also readable using `Intervention\Image\Color::parse()` as shown in the following example.
 
 ```php
 use Intervention\Image\Color;
@@ -152,51 +153,14 @@ use Intervention\Image\Color;
 // universal parsing of color strings
 $rgb = Color::parse('rgb(34, 12, 64)');
 $hsl = Color::parse('hsl(30, 100%, 50%)');
-$hsv = Color::parse('#ff5500');
-$hsv = Color::parse('#ff5500');
-
-// rgb string format
-$rgb = Color::rgb('rgb(34, 12, 64)');
-$rgb = Color::rgb('rgb(34, 12, 64, 0.6)');
-$rgb = Color::rgb('rgba(34, 12, 64, 0.6)');
-$rgb = Color::rgb('rgb(34 12 64 / 0.6)');
-$rgb = Color::rgb('rgba(34 12 64 / 0.6)');
-$rgb = Color::rgb('rgb(34.6 12 64 / 60%)');
-$rgb = Color::rgb('rgba(34.6 12 64 / 60%)');
-
-// hsl string format
-$hsl = Color::hsl('hsl(30, 100%, 50%)');
-$hsl = Color::hsl('hsl(30, 100%, 50%, 0.6)');
-$hsl = Color::hsl('hsla(30, 100%, 50%, 0.6)');
-$hsl = Color::hsl('hsl(30 100% 50% / 0.6)');
-$hsl = Color::hsl('hsla(30 100% 50% / 0.6)');
-$hsl = Color::hsl('hsl(30.2 100% 50% / 60%)');
-$hsl = Color::hsl('hsla(30.2 100% 50% / 60%)');
-
-// hsv string format
-$hsv = Color::hsv('hsv(30, 100%, 50%)');
-$hsv = Color::hsv('hsv(30 100% 50% / 0.6)');
-$hsv = Color::hsv('hsva(30 100% 50% / 0.6)');
-$hsv = Color::hsv('hsv(30.2 100% 50% / 60%)');
-
-// cmyk string format
-$cmyk = Color::cmyk('cmyk(100, 40, 50, 0)');
-$cmyk = Color::cmyk('cmyk(100 40 50 0)');
-
-// oklab string format
-$oklab = Color::oklab('oklab(40.1% 0.1143 0.045)');
 $oklab = Color::oklab('oklab(59.69% 0.1007 0.1191)');
-$oklab = Color::oklab('oklab(59.69% 0.1007 0.1191 / 0.5)');
-
-// oklch string format
-$oklch = Color::oklch('oklch(40.1% 0.123 21.57)');
 $oklch = Color::oklch('oklch(59.69% 0.156 49.77');
 $oklch = Color::oklch('oklch(59.69% 0.156 49.77 / .5');
 ```
 
 #### Hexadecimal RGB Format
 
-You can pass colors as RGB hex triplets, which are commonly used in HTML and
+You can parse colors as RGB hex triplets, which are commonly used in HTML and
 CSS. It's possible to use the shorthand as well as the full format with or
 without an alpha channel. The leading `#` is optional.
 
@@ -204,10 +168,10 @@ without an alpha channel. The leading `#` is optional.
 use Intervention\Image\Color;
 
 // create color objects from hexadecimal rgb format
-$rgb = Color::rgb('b53717');
-$rgb = Color::rgb('b5371766');
-$rgb = Color::rgb('#ccc');
-$rgb = Color::rgb('#ccca');
+$rgb = Color::parse('b53717');
+$rgb = Color::parse('b5371766');
+$rgb = Color::parse('#ccc');
+$rgb = Color::parse('#ccca');
 ```
 
 #### Named CSS Colors
@@ -290,5 +254,5 @@ $image = ImageManager::usingDriver(Driver::class)->decode('rgb_image.jpg');
 $color = $image->colorAt(100, 100);
 
 // convert color to cmyk format
-$color = (string) $color->toColorspace(Cmyk::class); // 'cmyk(220 10 65)'
+$color = (string) $color->toColorspace(Cmyk::class); // 'cmyk(220 10 65 0)'
 ```
