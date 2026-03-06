@@ -18,22 +18,20 @@ This method helps to initiate the saving process directly from the image object
 without having to go via an `EncodedImage` object and encodes & writes the
 image data in one call.
 
-The resulting image format is defined by the file extension of the given path.
-If no path is given the format of the originally read image will be used.
-Define the image quality by using the second parameter.
+The resulting image format is defined by the file extension of the given path. For example if you pass `images/test.jpg` the image format will be JPEG, if `images/test.gif` is passed the format will be GIF. If no path is given the format of the originally read image will be used. 
 
-The encoded image is saved at the given path in the local file system. The respective
-folder structure must already exist and be writable.
+After the path you can pass encoder options like `quality`, `strip` or `interlaced` - these depend on the recognized format.
 
-In contrast to the other encoding methods, `save()` returns an `Image` object instead of an
-`EncodedImage` object.
+The encoded image is saved at the given path in the local file system. The folder structure must already exist and be writable.
+
+In contrast to the other encoding methods, `save()` returns an `Image` object instead of an `EncodedImage` object.
 
 #### Parameters
 
 | Name | Type | Description |
 | - | - | - |
 | path (optional) | null or string | File path from which the target format is extracted. By default the original path is used. |
-| options (optional) | mixed | Option parameters depending on the output format. |
+| options (optional) | mixed | Option encoder parameters depending on the output format. |
 
 #### Example
 
@@ -63,8 +61,8 @@ $image->save('images/example.jpg', quality: 10, progressive: true);
 
 > public Image::encodeUsingFormat(Format $format, mixed ...$options): EncodedImageInterface
 
-Encode the current image using the given `Intervention\Image\Format` enum value to resolve the
-matching encoder. Define optional encoder options with additional parameters.
+Encode the current image using the given `Intervention\Image\Format` enum value to resolve an
+encoder. Define optional encoder options with additional parameters.
 
 #### Parameters
 

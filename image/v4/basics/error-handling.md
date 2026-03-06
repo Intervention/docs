@@ -12,15 +12,13 @@ sort: 3
 
 If something goes wrong, Intervention Image throws exceptions. For this purpose, a structured hierarchy has been implemented.
 
-All exceptions are extended from a container `Intervention\Image\Exceptions\ImageException` exception class. This makes it possible to
+All exceptions are extended from a container the container class `Intervention\Image\Exceptions\ImageException`. This makes it possible to
 catch all errors in the library in general.
 
-The container class is divided into two types: `LogicException` and
-`RuntimeException` indicating and operational failure or that the error can be
-fixed by the developer by correcting the code.
+The container class is divided into two types: `LogicException` and `RuntimeException` indicating and operational failure or that the error can be
+fixed by correcting the code.
 
-These two types are each divided into further sub-branches. This makes it
-possible to intercept every type of error and respond accordingly.
+These two types are each divided into further sub-branches. This makes it possible to intercept every type of error and respond accordingly.
 
 ```
 ImageException
@@ -99,7 +97,7 @@ There is an exception type for each of these individual cases.
 #### DriverException
 
 This exception is thrown when the underlying image extension produces an error.
-It is divided into four subtypes, each dealing with a specific driver operation.
+It is divided into four sub-types, each dealing with a specific driver operation.
 
 - `Intervention\Image\Exceptions\AnalyzerException`
 - `Intervention\Image\Exceptions\ModifierException`
