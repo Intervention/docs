@@ -347,11 +347,11 @@ $image = $manager->decode('images/example.gif');
 $dataUri = $image->encode()->toDataUri();
 ```
 
-### Transform Encoded Image to File Pointer
+### Transform Encoded Image to Stream
 
-> public EncodedImage::toFilePointer(): resource
+> public EncodedImage::toStream(): resource
 
-Create a file pointer resource to handle the encoded image data.
+Create a stream resource to handle the encoded image data.
 
 #### Example
 
@@ -366,8 +366,8 @@ $manager = ImageManager::usingDriver(Driver::class);
 // read gif image
 $image = $manager->decode('images/example.gif');
 
-// create file pointer
-$pointer = $image->encodeUsingFormat(Format::JPEG)->toFilePointer();
+// create stream resource
+$stream = $image->encodeUsingFormat(Format::JPEG)->toStream();
 ```
 
 ### Retrieve Media (MIME) Type of an Encoded Image

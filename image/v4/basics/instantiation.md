@@ -34,7 +34,7 @@ The following `source` argument formats are accepted.
 - `SplFileInfo` object
 - Base64 encoded image data
 - Data Uri string or instance of `DataUriInterface`
-- File Pointer resource
+- Stream resource
 - Instance of ImageInterface
 - Instance of EncodedImageInterface
 
@@ -197,7 +197,7 @@ $manager = ImageManager::usingDriver(Driver::class);
 $image = $manager->decodeDataUri('data:image/jpeg,Zm9vYmFyYmF6MTIzNDU2Nzg5MA...');
 ```
 
-### Read Images from File Pointers
+### Read Images from Stream
 
 > public ImageManager::decodeStream(mixed $stream): ImageInterface
 
@@ -207,7 +207,7 @@ Decode an image by using the given path in filesystem.
 
 | Name | Type | Description |
 | - | - | - |
-| stream | resource | File pointer resource with image data |
+| stream | resource | Stream resource with image data |
 
 ```php
 use Intervention\Image\ImageManager;
@@ -216,7 +216,7 @@ use Intervention\Image\Drivers\Imagick\Driver;
 // create new manager instance with desired driver
 $manager = ImageManager::usingDriver(Driver::class);
 
-// open file pointer
+// open new stream resource
 $stream = fopen('example.jpg', 'r');
 
 // read image from stream

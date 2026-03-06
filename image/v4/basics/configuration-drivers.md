@@ -134,5 +134,4 @@ $manager = ImageManager::usingDriver(
 );
 ```
 
-Read more about the different methods of the image manager in the
-[instantiation section](/v4/basics/instantiation)
+Read more about the different methods of the image manager in the [instantiation section](/v4/basics/instantiation)

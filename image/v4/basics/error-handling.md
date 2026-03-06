@@ -18,7 +18,7 @@ catch all errors in the library in general.
 The container class is divided into two types: `LogicException` and `RuntimeException` indicating and operational failure or that the error can be
 fixed by correcting the code.
 
-These two types are each divided into further sub-branches. This makes it possible to intercept every type of error and respond accordingly.
+These two types are each divided into further sub-branches. Adding the possibility to intercept every type of error in detail and respond accordingly.
 
 ```
 ImageException

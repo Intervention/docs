@@ -42,7 +42,7 @@ All image formats can be read from various sources. These are in detail:
 - Raw binary image data
 - Base64 encoded image data
 - Data Uri Scheme
-- File Pointer resource
+- Stream resource
 - `SplFileInfo` from which `Illuminate\Http\UploadedFile` and `Symfony\Component\HttpFoundation\File\UploadedFile` extend
 - Intervention Image Instance (`Intervention\Image\Image`)
 - Encoded Intervention Image (`Intervention\Image\EncodedImage`)
