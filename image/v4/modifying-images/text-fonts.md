@@ -96,7 +96,7 @@ Set a path to a font file in the file system for the text.
 
 > public FontFactory::color(string|ColorInterface $color): FontFactory
 
-Define the text color in one of the valid [color formats](/v3/getting-started/formats#color-formats).
+Define the text color in one of the valid [color formats](/v4/getting-started/formats#color-formats).
 
 #### Parameters
 
@@ -118,7 +118,7 @@ only possible to use fully opaque colors for text and strokes.**
 
 | Name | Type | Description |
 | - | - | - |
-| color | string or ColorInterface | Color of strokes in valid [color format](/v3/getting-started/formats/#color-formats) |
+| color | string or ColorInterface | Color of strokes in valid [color format](/v4/getting-started/formats/#color-formats) |
 | width | int | Optional width of the stroke effect in the range from `0` to `10` (default `1`) |
 
 ### Horizontal Alignment
