@@ -1,7 +1,7 @@
 ---
 title: "Resize Images"
 subtitle: "Change the Image Size in Different Ways"
-lead: "Discover comprehensive image resizing techniques with the Intervention Image library. Learn methods for scaling, cropping, padding, and adjusting image canvas sizes, all while maintaining aspect ratios."
+lead: "Discover comprehensive image resizing techniques with the Intervention Image library. Learn methods for scaling, cropping, and adjusting image canvas sizes, all while maintaining aspect ratios."
 sort: 0
 ---
 
@@ -241,52 +241,7 @@ $img->coverDown(900, 900); // 600 x 600
 $image->coverDown(900, 450, Alignment::LEFT); // 800 x 400 px
 ```
 
-## Padded Image Resizing
-
-<a href="/v4/playground#pad" target="playground" class="demoButton">Try it out in the live demo</a>
-
-### Resizing & Padding Combined
-
-> public Image::pad(int|Fraction $width, int|Fraction $height, null|string|ColorInterface $background = null, string|Alignment $alignment = Alignment::CENTER): ImageInterface
-
-Padded resizing means that the original image is scaled to fit the
-defined target size without changing the aspect ratio. The original image is not
-scaled up but only down.
-     
-Compared to the `cover()` method, this method does not create cropped areas, but
-possibly new empty areas on the sides of the resulting image. These will be filled
-with the given background color.
-
-#### Parameters
-
-| Name | Type | Description |
-| - | - | - |
-| width | integer or `Fraction` | Image width. |
-| height | integer or `Fraction` | Image height. |
-| background (optional) | null, string or ColorInterface | Background color for the new areas of the image. By default the background color from the configuration is used. |
-| alignment (optional) | string | Alignment position where the original image is placed. |
-
-#### Example
-
-```php
-use Intervention\Image\ImageManager;
-use Intervention\Image\Drivers\Imagick\Driver;
-use Intervention\Image\Alignment;
-
-// create new image instance
-$manager = ImageManager::usingDriver(new Driver());
-$image = $manager->decode('images/example.jpg');
-
-// resize padded to 300 x 200
-$image->pad(300, 200, 'ccc');
-
-// resize padded with alignment position
-$image->pad(500, 500, alignment: Alignment::TOP_LEFT);
-```
-
-<a href="/v4/playground#contain" target="playground" class="demoButton">Try it out in the live demo</a>
-
-### Padded Resizing with Upscaling
+### Padded Resizing
 
 > public Image::contain(int|Fraction $width, int|Fraction $height, null|string|ColorInterface $background = null, string|Alignment $alignment = Alignment::CENTER): ImageInterface
 
@@ -317,6 +272,51 @@ $image->contain(900, 600);
 // padded resizing with gray background color
 $image->contain(500, 500, 'efefef');
 ```
+
+## Padded Image Resizing without Upscaling
+
+<a href="/v4/playground#containDown" target="playground" class="demoButton">Try it out in the live demo</a>
+
+### Resizing & Padding Combined
+
+> public Image::containDown(int|Fraction $width, int|Fraction $height, null|string|ColorInterface $background = null, string|Alignment $alignment = Alignment::CENTER): ImageInterface
+
+Padded resizing means that the original image is scaled to fit the
+defined target size without changing the aspect ratio. The original image is not
+scaled up but only down.
+     
+Compared to the `cover()` method, this method does not create cropped areas, but
+possibly new empty areas on the sides of the resulting image. These will be filled
+with the given background color.
+
+#### Parameters
+
+| Name | Type | Description |
+| - | - | - |
+| width | integer or `Fraction` | Image width. |
+| height | integer or `Fraction` | Image height. |
+| background (optional) | null, string or ColorInterface | Background color for the new areas of the image. By default the background color from the configuration is used. |
+| alignment (optional) | string | Alignment position where the original image is placed. |
+
+#### Example
+
+```php
+use Intervention\Image\ImageManager;
+use Intervention\Image\Drivers\Imagick\Driver;
+use Intervention\Image\Alignment;
+
+// create new image instance
+$manager = ImageManager::usingDriver(new Driver());
+$image = $manager->decode('images/example.jpg');
+
+// resize padded to 300 x 200
+$image->containDown(300, 200, 'ccc');
+
+// resize padded with alignment position
+$image->containDown(500, 500, alignment: Alignment::TOP_LEFT);
+```
+
+<a href="/v4/playground#contain" target="playground" class="demoButton">Try it out in the live demo</a>
 
 
 ## Crop Image

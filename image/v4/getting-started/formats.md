@@ -207,7 +207,7 @@ use Intervention\Image\Drivers\Imagick\Driver;
 
 $image = ImageManager::usingDriver(Driver::class)
     ->decodePath('images/example.png')
-    ->pad(300, 200, 'transparent');
+    ->containDown(300, 200, 'transparent');
 ```
 
 
