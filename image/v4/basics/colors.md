@@ -171,6 +171,152 @@ $hslColor = $color->toColorspace(Hsl::class);
 $result = $hslColor->toString(); // "hsl(180 100 50)"
 ```
 
+
+### Change the Brightness of the Color
+
+> public ColorInterface::withBrightness(int $level): ColorInterface
+
+Return a copy of the current color with adjusted brightness in a range from `-100` to `100`. Positive values lighten, negative values darken.
+
+#### Parameters
+
+| Name | Type | Description |
+| - | - | - |
+| level | int | Level of brightness change. |
+
+#### Example
+
+```php
+use Intervention\Image\ImageManager;
+use Intervention\Image\Drivers\Imagick\Driver;
+use Intervention\Image\Color;
+
+// create new manager instance with desired driver
+$manager = ImageManager::usingDriver(Driver::class);
+
+// create new image
+$image = $manager->createImage(300, 200);
+
+// instantiate color
+$color = Color::parse('ff5500');
+
+// fill image with color
+$image->fill($color);
+
+// draw pixels with slightly darker color
+$image->drawPixel(10, 10, $color->withBrightness(-45));
+$image->drawPixel(11, 11, $color->withBrightness(-45));
+$image->drawPixel(12, 12, $color->withBrightness(-45));
+```
+
+
+### Change the Saturation of the Color
+
+> public ColorInterface::withSaturation(int $level): ColorInterface
+
+Return a copy of the current color with adjusted saturation in a range from `-100` to `100`. Positive values raise the saturation, negative values lower the saturation.
+
+#### Parameters
+
+| Name | Type | Description |
+| - | - | - |
+| level | int | Level of saturation change. |
+
+#### Example
+
+```php
+use Intervention\Image\ImageManager;
+use Intervention\Image\Drivers\Imagick\Driver;
+use Intervention\Image\Color;
+
+// create new manager instance with desired driver
+$manager = ImageManager::usingDriver(Driver::class);
+
+// create new image
+$image = $manager->createImage(300, 200);
+
+// instantiate color
+$color = Color::parse('ff5500');
+
+// fill image with color
+$image->fill($color);
+
+// draw pixels with different saturated color
+$image->drawPixel(10, 10, $color->withSaturation(-80));
+$image->drawPixel(11, 11, $color->withSaturation(-80));
+$image->drawPixel(12, 12, $color->withSaturation(-80));
+```
+
+### Invert the Color
+
+> public ColorInterface::withInversion(): ColorInterface
+
+Return an inverted copy of the color.
+
+#### Example
+
+```php
+use Intervention\Image\ImageManager;
+use Intervention\Image\Drivers\Imagick\Driver;
+use Intervention\Image\Color;
+
+// create new manager instance with desired driver
+$manager = ImageManager::usingDriver(Driver::class);
+
+// create new image
+$image = $manager->createImage(300, 200);
+
+// instantiate color
+$color = Color::parse('ff5500');
+
+// fill image with color
+$image->fill($color);
+
+// draw pixels with inverted color
+$image->drawPixel(10, 10, $color->withInversion());
+$image->drawPixel(11, 11, $color->withInversion());
+$image->drawPixel(12, 12, $color->withInversion());
+```
+
+### Change the Transparency of the Color
+
+> public ColorInterface::withTransparency(float $transparency): ColorInterface
+
+Return a copy of the color with a new transparency in a range from `0` to `1`.
+
+#### Parameters
+
+| Name | Type | Description |
+| - | - | - |
+| transparency | float | Transparency value for the new color. |
+
+#### Example
+
+```php
+use Intervention\Image\ImageManager;
+use Intervention\Image\Drivers\Imagick\Driver;
+use Intervention\Image\Color;
+
+// create new manager instance with desired driver
+$manager = ImageManager::usingDriver(Driver::class);
+
+// create new image
+$image = $manager->createImage(300, 200);
+
+// instantiate color
+$color = Color::parse('ff5500');
+
+// fill image with color
+$image->fill($color);
+
+// draw rectangle with different half-transparent color
+$image->drawRectangle(function (RectangleFactory $rectangle) use ($color): void {
+    $rectangle->at(10, 10);
+    $rectangle->size(100, 100);
+    $rectangle->background($color->withTransparency(.4));
+});
+```
+
 ## Colorspaces
 
 The supported colorspaces depend mainly on the driver used. While 

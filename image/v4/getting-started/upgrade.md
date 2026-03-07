@@ -32,25 +32,24 @@ clear, immediate insight into what went wrong. These improvements include a
 restructured exception system with a well-defined hierarchy that makes handling
 exceptions easier.
 
-[Read more about exceptions](/)
+[Read more about exceptions](/v4/basics/error-handling)
 
 ### Enhancement of the Color System
 
-- Function color format now supports syntax without comma
-- ColorInterface::create() now accepts functional string color formats as well as single channel values
+- Functional [color format](/v4/getting-started/formats#string-format) now supports syntax without comma
+- New color generator object `Intervention\Image\Color` to [create and parse](/v4/getting-started/formats#color-formats) more easily
 - All colors now have full alpha channel support
-- Support for OkLab color space
-- Color::class
-- NamedColor::class
-- Color modifier methods `ColorInterface::withTransparency()`, `ColorInterface::withBrightness()`, `ColorInterface::withSaturation` and `ColorInterface::withInversion()`
+- Support for OkLab and Oklch color space
+- New enum `NamedColor::class` for css color names.
+- New [Color modifier methods](/v4/basics/colors#transforming-colors) `ColorInterface::withTransparency()`, `ColorInterface::withBrightness()`, `ColorInterface::withSaturation` and `ColorInterface::withInversion()`
 
 ### More New Features
 
 - DataUri::class
 - Alignment::class
-- DriverInterface::version()
+- New method `DriverInterface::version()` to check internal version of driver
 - Origin::format()
-- Support for ICO-Format
+- Support for encoding ICO-Format
 
 ## API Changes
 
