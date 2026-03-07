@@ -56,6 +56,8 @@ exceptions easier.
 
 ### High Impact Changes
 
+It is very likely that you will need to make these adjustments when you update to version 4.
+
 - `ImageManagerInterface::animate()` is replaced by universal `ImageManagerInterface::createImage()`
 - `ImageManagerInterface::read()` is now handled by `ImageManagerInterface::decode*()`
 - `ImageManagerInterface::withDriver()` is now handled by `Image::usingDriver()`
@@ -81,14 +83,17 @@ exceptions easier.
 - Method `ColorInterface::convertTo()` was renamed to `ColorInterface::toColorspace()`
 - `Config::class` option `blendingColor` was renamed to `backgroundColor`
 - Method `ImageInterface::rotate()` rotates clockwise by default.
-
-### Medium Impact Changes
-
-- Removed `ColorInterface::toArray()` use `ColorInterface::channels()` and map to desired format
-- Removed `ColorInterface::normalize()` use `ColorInterface::channels()` and map to desired format
 - `ImageInterface::blendTransparency()` was renamed to `ImageInterface::fillTransparentAreas()` with a different signature allowing (semi) transparent colors
 - `ImageInterface::setBlendingColor()` was renamed to `ImageInterface::setBackgroundColor()`
 - `ImageInterface::blendingColor()` was renamed to `ImageInterface::backgroundColor()`
+
+### Medium Impact Changes
+
+It is possible that you will need to make these adjustments when updating to
+version 4 if you have delved deeper into the functions.
+
+- Removed `ColorInterface::toArray()` use `ColorInterface::channels()` and map to desired format
+- Removed `ColorInterface::normalize()` use `ColorInterface::channels()` and map to desired format
 - Changed default value for `background` to `null` in `ImageInterface::rotate()`
 - Changed default value for `background` to `null` in `ImageInterface::resizeCanvas()`
 - Changed default value for `background` to `null` in `ImageInterface::resizeCanvasRelative()`
@@ -112,8 +117,13 @@ exceptions easier.
 - `FrameInterface::dispose()` was rename to `FrameInterface::disposalMethod()`
 - `FrameInterface::setDispose()` was renamed to `FrameInterface::setDisposalMethod()`
 - `ImageManagerInterface::driver()` was removed but you can use the public `$driver` property.
+- `FileInterface::toFilePointer()` was renamed to `FileInterface::toStream()`
 
 ### Low Impact Changes
+
+You will probably only need to make these adjustments when updating to version
+4 if you use the API extensively and have written your own drivers or
+modifiers, for example.
 
 - `BlendTransparencyModifer::class` was renamed to `FillTransparentAreasModifier::class`
 - `ProfileInterface::class` requires implementation of `::fromPath()`
@@ -139,3 +149,7 @@ exceptions easier.
 - Removed `topLeftPoint()` and `bottomRightPoint()` from `Rectangle::class`
 - Removed `ColorChannelInterface::__construct()` from interface
 - Removed `DriverInterface::createAnimation()`
+- `SizeInterface::relativePositionTo()` was renamed to `SizeInterface::offsetTo()`
+- `DrawableInterface` requires the implementation of `factory()` and `adjust()`.
+- `ColorProcessorInterface::colorToNative()` was renamed to `ColorProcessorInterface::export()`
+- `ColorProcessorInterface::nativeToColor()` was renamed to `ColorProcessorInterface::import()`
