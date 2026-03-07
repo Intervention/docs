@@ -364,16 +364,16 @@ $image->fillTransparentAreas('f50');
 
 > public function backgroundColor(): ColorInterface
 
-Return the currently set blending color as an instance of
+Return the currently set background color as an instance of
 `ColorInterface::class`. This corresponds either to the color originally
-configured through the ImageManager or the blending color that was last set.
+configured through the ImageManager or the background color that was last set.
 
-### Set the Blending Color
+### Set the background Color
 
 > public function setBackgroundColor(string|ColorInterface $color): ImageInterface
 
 Set a new background color in the configuration of the current image instance.
-This color will be used as the default for all subsequent blending operations
+This color will be used as the default for all subsequent background blending operations
 that use a background color to replace transparency, overwriting the original
 value defined in the ImageManager configuration.
 
@@ -381,7 +381,7 @@ value defined in the ImageManager configuration.
 
 | Name | Type | Description |
 | - | - | - |
-| color | string or ColorInterface | New blending color in supported [color formats](/v4/getting-started/formats#color-formats). |
+| color | string or ColorInterface | New background color in supported [color formats](/v4/getting-started/formats#color-formats). |
 
 #### Example
 
@@ -395,12 +395,12 @@ $manager = ImageManager::usingDriver(Driver::class, backgroundColor: 'ff0000');
 // read image
 $image = $manager->decode('images/example.png');
 
-// read configured blending color
-$blendingColor = $image->backgroundColor(); // 'ff0000'
+// read configured background color
+$backgroundColor = $image->backgroundColor(); // 'ff0000'
 
 // set gray as background color
 $image->setBackgroundColor('cccccc');
 
 // read last set background color
-$blendingColor = $image->backgroundColor(); // 'cccccc'
+$backgroundColor = $image->backgroundColor(); // 'cccccc'
 ```
