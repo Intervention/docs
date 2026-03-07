@@ -187,6 +187,38 @@ $result = $color->toString(); // "rgb(255 55 0)"
 $result = (string) $color;
 ```
 
+### Transform Colors to Hexadecimal Triplet
+
+> public ColorInterface::toHex(bool $prefix = false): ColorInterface
+
+Transform the color to a RGB hexadecimal value. The alpha channel is only
+output in the hex string if it is not completely opaque.
+
+#### Parameters
+
+| Name | Type | Description |
+| - | - | - |
+| prefix | boolean | Indicator whether the prefix `#` should be placed before the result. Default `false` |
+
+#### Example
+
+```php
+use Intervention\Image\ImageManager;
+use Intervention\Image\Colors\Hsl\Colorspace as HslColorspace;
+use Intervention\Image\Drivers\Gd\Driver;
+
+// create new manager instance with desired driver
+$manager = ImageManager::usingDriver(Driver::class);
+
+// read an image
+$image = $manager->decode('images/example.png');
+
+// read pixel color
+$color = $image->colorAt(20, 10);
+
+// transform color to hex format
+$result = $color->toHex(); // "ff5500"
+```
 
 ### Transform Colors Between Colorspaces
 
