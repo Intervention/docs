@@ -8,6 +8,58 @@ sort: 4
 
 [TOC]
 
+## Color Creation
+
+The easiest way is to use the static methods of `Intervention\Image\Color` to create or parse colors in different color spaces and from different types.
+
+### Creating Colors from String Values
+
+> public Color::parse(string $input): ColorInterface
+
+Parse colors from string values like functional notation or hexadecimal rgb notation.
+
+#### Parameters
+
+| Name | Type | Description |
+| - | - | - |
+| input | string | Color string represenation to be parsed |
+
+#### Example
+
+```php
+use Intervention\Image\Color;
+
+$rgb = Color::parse('rgb(34, 12, 64)');
+$hsl = Color::parse('hsl(30, 100%, 50%)');
+$hex = Color::parse('#ff5500');
+$hex = Color::parse('ccc');
+```
+
+### Creating Colors from Channel Values
+
+> public Color::rgb(int|Red $r, int|Green $g, int|Blue $b, float|RgbAlpha $a = 1): RgbColor
+> public Color::cmyk(int|Cyan $c, int|Magenta $m, int|Yellow $y, int|Key $k, float|CmykAlpha $a = 1): CmykColor
+> public Color::hsl(int|HslHue $h, int|HslSaturation $s, int|Luminance $l, float|HslAlpha $a = 1): HslColor
+> public Color::hsv(int|Hue $h, int|Saturation $s, int|Value $v, float|HsvAlpha $a = 1): HsvColor
+> public Color::oklab( float|OklabLightness $l, float|A $a, float|B $b, float|OklabAlpha $alpha = 1): OklabColor
+> public Color::oklch(float|OklchLightness $l, float|Chroma $c, float|Hue $h, float|OklchAlpha $a = 1): OklchColor
+
+Create colors from their channel values depending on the color space.
+
+#### Example
+
+```php
+use Intervention\Image\Color;
+
+// create different colors
+$rgb = Color::rgb(255, 55, 0, .5);
+$hsl = Color::hsl(340, 55, 90);
+$hsv = Color::hsv(240, 35, 10);
+$oklab = Color::oklab(0.7, 0.04, -0.09);
+$oklab = Color::oklch(0.7, 0.1, 232);
+$cmyk = Color::cmyk(100, 50, 70, 0, .75);
+```
+
 ## Color Information
 
 ### Read Color of a Pixel
