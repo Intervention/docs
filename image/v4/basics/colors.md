@@ -46,6 +46,10 @@ $hex = Color::parse('ccc');
 
 Create colors from their channel values depending on the color space.
 
+#### Parameters
+
+Parameters depend on the method of the color space. It is possible to pass the value or an instance of the color channel.
+
 #### Example
 
 ```php
