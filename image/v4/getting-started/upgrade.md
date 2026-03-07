@@ -85,6 +85,7 @@ It is very likely that you will need to make these adjustments when you update t
 - `ImageInterface::blendTransparency()` was renamed to `ImageInterface::fillTransparentAreas()` with a different signature allowing (semi) transparent colors
 - `ImageInterface::setBlendingColor()` was renamed to `ImageInterface::setBackgroundColor()`
 - `ImageInterface::blendingColor()` was renamed to `ImageInterface::backgroundColor()`
+- Color value string `transparent` is no longer supported. Use `Intervention\Image\Color::transparent()` instead
 
 ### Medium Impact Changes
 

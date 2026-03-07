@@ -360,21 +360,22 @@ $image = $image->pixelate(12);
 
 ### Reduce Colors
 
-> public Image::reduceColors(int $limit, string|ColorInterface $background = 'transparent'): ImageInterface
+> public Image::reduceColors(int $limit, null|string|ColorInterface $background = null): ImageInterface
 
 Apply color quantization to the current image by reducing the number of
 distinct colors in the current image to the given limit. The number of colors
 is reduced in a way that the new image is as visually similar as possible.
 
 With the GD driver (semi-)transparent colors that lose their transparency as a
-result of the reduction process are blended against the given background color.
+result of the reduction process are blended against the optional given
+background color. By default the configured background color is used here.
 
 #### Parameters
 
 | Name | Type | Description |
 | - | - | - |
 | limit | integer | Allowed number of distinct colors |
-| background | string or ColorInterface | Color formerly semi-transparent colors are blended against. |
+| background | null, string or ColorInterface | Color formerly semi-transparent colors are blended against. |
 
 #### Example
 

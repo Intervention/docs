@@ -153,9 +153,9 @@ use Intervention\Image\Color;
 // universal parsing of color strings
 $rgb = Color::parse('rgb(34, 12, 64)');
 $hsl = Color::parse('hsl(30, 100%, 50%)');
-$oklab = Color::oklab('oklab(59.69% 0.1007 0.1191)');
-$oklch = Color::oklch('oklch(59.69% 0.156 49.77');
-$oklch = Color::oklch('oklch(59.69% 0.156 49.77 / .5');
+$oklab = Color::parse('oklab(59.69% 0.1007 0.1191)');
+$oklch = Color::parse('oklch(59.69% 0.156 49.77');
+$oklch = Color::parse('oklch(59.69% 0.156 49.77 / .5');
 ```
 
 #### Hexadecimal RGB Format
@@ -198,16 +198,16 @@ $image = ImageManager::usingDriver(Driver::class)
 
 #### Transparency
 
-If it is necessary to specify transparency as a color, this can always be done
-with the keyword `transparent`.
+If it is necessary to specify transparency as a color, this can always be done with the `transparent()` method which returns the fully transparent RGB color `#ffffff00`.
 
 ```php
 use Intervention\Image\ImageManager;
 use Intervention\Image\Drivers\Imagick\Driver;
+use Intervention\Image\Color;
 
 $image = ImageManager::usingDriver(Driver::class)
     ->decodePath('images/example.png')
-    ->containDown(300, 200, 'transparent');
+    ->containDown(300, 200, Color::transparent());
 ```
 
 
