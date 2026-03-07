@@ -103,16 +103,16 @@ $hex = $color->toHex();
 $string = $color->toString();
 
 // (int) 243
-$red = $color->red()->toInt();
+$red = (int) $color->red()->value();
 
 // (int) 251
-$green = $color->green()->toInt();
+$green = (int) $color->green()->value();
 
 // (int) 230
-$blue = $color->blue()->toInt();
+$blue = (int) $color->blue()->value();
 
-// (int) 255
-$alpha = $color->alpha()->toInt();
+// 1
+$alpha = $color->alpha()->value();
 ```
 
 ### Read all Colors of Certain Pixels in Animated Images
