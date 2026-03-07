@@ -111,8 +111,8 @@ $green = (int) $color->green()->value();
 // (int) 230
 $blue = (int) $color->blue()->value();
 
-// 1
-$alpha = $color->alpha()->value();
+// (int) 255
+$alpha = (int) $color->alpha()->value();
 ```
 
 ### Read all Colors of Certain Pixels in Animated Images
