@@ -13,8 +13,8 @@ sort: 4
 
 > public Image::fill(string|ColorInterface $color, null|int $x = null, null|int $y = null): ImageInterface
 
-Fills the current image with the specified color. Optionally, it is possible to
-pass a position where the color fill should start. If these X and Y values are
+Fills the current image with the specified **color**. Optionally, it is possible to
+pass a position where the color fill should start. If these **x** and **y** values are
 specified, the color will be applied with flood fill. This means that only
 colors that are at the specified position will be filled. If no position is
 passed, the entire image will be filled.
@@ -24,8 +24,8 @@ passed, the entire image will be filled.
 | Name | Type | Description |
 | - | - | - |
 | color | string or ColorInterface | Fill color in one of the different [color formats](/v4/getting-started/formats#color-formats) |
-| x | int | Optional x-coordinate of the filling position |
-| y | int | Optional y-coordinate of the filling position |
+| x | null or int | Optional x-coordinate of the filling position |
+| y | null or int | Optional y-coordinate of the filling position |
 
 #### Example
 
@@ -99,6 +99,7 @@ shape by passing an callback or a rectangle object.
 use Intervention\Image\ImageManager;
 use Intervention\Image\Drivers\Gd\Driver;
 use Intervention\Image\Geometry\Factories\RectangleFactory;
+use Intervention\Image\Colors\NamedColor;
 
 // create an test image from a file
 $image = ImageManager::usingDriver(Driver::class)->decode('test.png');
@@ -108,7 +109,7 @@ $image->drawRectangle(function (RectangleFactory $rectangle): void {
     $rectangle->at(10, 10); // position of the rectangle on the image
     $rectangle->size(180, 125); // width & height of rectangle
     $rectangle->background('ff5500'); // background color of rectangle
-    $rectangle->border('white', 2); // border color & size of rectangle
+    $rectangle->border(NamedColor::WHITE, 2); // border color & size of rectangle
 });
 ```
 
@@ -131,6 +132,7 @@ shape by passing an callback or a ellipse object.
 use Intervention\Image\ImageManager;
 use Intervention\Image\Drivers\Gd\Driver;
 use Intervention\Image\Geometry\Factories\EllipseFactory;
+use Intervention\Image\Color;
 
 // create an test image from a file
 $image = ImageManager::usingDriver(Driver::class)->decode('test.png');
@@ -140,7 +142,7 @@ $image->drawEllipse(function (EllipseFactory $ellipse): void {
     $ellipse->at(10, 10); // position of the ellipse on the image
     $ellipse->size(180, 125); // width & height of ellipse
     $ellipse->background('ff5500'); // background color of ellipse
-    $ellipse->border('white', 2); // border color & size of ellipse
+    $ellipse->border(Color::rgb(255, 255, 255), 2); // border color & size of ellipse
 });
 ```
 
@@ -232,7 +234,7 @@ $image = ImageManager::usingDriver(Driver::class)->decode('test.png');
 
 // draw a polygon
 $image->drawpolygon(function (PolygonFactory $polygon): void {
-    $polygon->background('ff5500');
+    $polygon->background('#ff5500');
     $polygon->point(100, 100);
     $polygon->point(10, 10);
     $polygon->point(20, 10);
