@@ -12,11 +12,11 @@ combine complex transformations into a single reusable call.
 
 Intervention Image provides the simple `Intervention\Image\Interfaces\ModifierInterface`, which all modifiers need to implement.
 
-Once you have created your own modifier, you can apply them by using the `modify()` method.
+Once you have created your own modifier, you can apply them by using the `Intervention\Image\Image::modify()` method.
 
 ## Custom Modifier Implementation
 
-The following very simple example shows a custom modifier class that combines a grayscale and a pixellation effect.
+The following very simple example shows a custom modifier class that combines a grayscale and a pixelation effect.
 
 ```php
 use Intervention\Image\Interfaces\ModifierInterface;
@@ -24,11 +24,9 @@ use Intervention\Image\Interfaces\ImageInterface;
 
 class MyCustomModifier implements ModifierInterface
 {
-    protected $size;
-
-    public function __construct(int $size)
+    public function __construct(protected int $size)
     {
-        $this->size = $size;
+        //
     }
 
     public function apply(ImageInterface $image): ImageInterface
