@@ -105,7 +105,7 @@ separate color class for each color space.
 Each color object takes constructor parameters for the color channel values as well as an
 optional alpha channel parameter, which is defined as completely opaque by default.
 
-#### Create Color Objects
+#### Create Colors from Channel Values
 
 The easiest way is to use the static methods of `Intervention\Image\Color` to create colors in different color spaces.
 
@@ -120,8 +120,6 @@ $oklab = Color::oklab(0.7, 0.04, -0.09);
 $oklab = Color::oklch(0.7, 0.1, 232);
 $cmyk = Color::cmyk(100, 50, 70, 0, .75);
 ```
-
-#### Create Color Objects with Constructor
 
 Of course you can use the object constructor to create colors as well.
 
