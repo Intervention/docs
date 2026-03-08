@@ -275,12 +275,9 @@ $image->contain(900, 600);
 // padded resizing with gray background color
 $image->contain(500, 500, 'efefef');
 ```
-
-### Contain Resizing without Upscaling
-
 <a href="/v4/playground#containDown" target="playground" class="demoButton">Try it out in the live demo</a>
 
-### Resizing & Padding Combined
+### Contain Resizing without Upscaling
 
 > public Image::containDown(int|Fraction $width, int|Fraction $height, null|string|ColorInterface $background = null, string|Alignment $alignment = Alignment::CENTER): ImageInterface
 
