@@ -1,6 +1,6 @@
 ---
 title: "Insert Images"
-subtitle: "Place Images onto other Images"
+subtitle: "Inserting images onto other images"
 lead: "Learn how to insert images onto other images using the Intervention Image library. Position images, adjust offsets, and control opacity for custom overlays or watermarks."
 sort: 1
 ---
@@ -22,11 +22,11 @@ alignment position. It is also possible to control the opacity of the insertion 
 
 | Name | Type | Description |
 | - | - | - |
-| image | mixed | Source of the image to be placed |
+| image | mixed | Source of the image to be inserted |
 | x | int | Optional relative offset of the new image on x-axis |
 | y | int | Optional relative offset of the new image on y-axis |
-| alignment | string or `Alignment` | Alignment position of the image to be placed |
-| opacity | int | Control over the opacity of the placed image ranging from 0 (fully transparent) to 100 (opaque) |
+| alignment | string or `Alignment` | Alignment position of the image to be inserted |
+| opacity | int | Control over the opacity of the inserted image ranging from 0 (fully transparent) to 100 (opaque) |
 
 #### Example
 
@@ -39,12 +39,15 @@ use Intervention\Image\Alignment;
 $manager = ImageManager::usingDriver(Driver::class);
 $image = $manager->decode('test.png');
 
-// place another image
+// insert another image
 $image->insert('images/foo.png');
 
-// create a new resized watermark instance and insert at bottom-right 
-// corner with 10px offset and an opacity of 25%
-$watermark = $manager->decode('watermark.png');
+// create a new resized watermark
+$watermark = $manager
+    ->decode('watermark.png')
+    ->scale(width: 120);
+
+// insert at bottom-right corner with 10px offset and an opacity of 25%
 $image->insert(
     $watermark,
     10, 
