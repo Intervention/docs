@@ -84,7 +84,7 @@ $image->drawPixel(200, 2, NamedColor::STEELBLUE);
 
 > public Image::drawRectangle(callable|Rectangle $rectangle): ImageInterface
 
-Draw a rectangle on the current image. Define the overall appearance of the
+Draw a **rectangle** on the current image. Define the overall appearance of the
 shape by passing an callback or a rectangle object. 
 
 #### Parameters
@@ -117,7 +117,7 @@ $image->drawRectangle(function (RectangleFactory $rectangle): void {
 
 > public Image::drawEllipse(callable|Ellipse $ellipse): ImageInterface
 
-Draw a ellipse on the current image. Define the overall appearance of the
+Draw a **ellipse** on the current image. Define the overall appearance of the
 shape by passing an callback or a ellipse object. 
 
 #### Parameters
@@ -150,7 +150,7 @@ $image->drawEllipse(function (EllipseFactory $ellipse): void {
 
 > public Image::drawCircle(callable|Circle $circle): ImageInterface
 
-Draw a circle on the current image. Define the overall appearance of the
+Draw a **circle** on the current image. Define the overall appearance of the
 shape by passing an callback or a circle object.
 
 #### Parameters
@@ -182,7 +182,7 @@ $image->drawCircle(function (CircleFactory $circle): void {
 
 > public Image::drawLine(callable|Line $line): ImageInterface
 
-Draw a line on the current image. Define the overall appearance of the
+Draw a **line** on the current image. Define the overall appearance of the
 shape by passing an callback or a line object.
 
 #### Parameters
@@ -213,7 +213,7 @@ $image->drawline(function (LineFactory $line): void {
 
 > public Image::drawPolygon(callable|Polygon $polygon): ImageInterface
 
-Draw a polygon on the current image. Define the overall appearance of the
+Draw a **polygon** on the current image. Define the overall appearance of the
 shape by passing an callback or a polygon object.
 
 #### Parameters
@@ -260,7 +260,7 @@ The color, width and background color of the curve can also be set.
 
 | Name | Type | Description |
 | - | - | - |
-| init | Closure or Intervention\Image\Geometry\Bezier | Callback to define the appearance and position of the bézier curve or object. See example. |
+| bezier | callable or Intervention\Image\Geometry\Bezier | Callback to define the appearance and position of the bézier curve or object. See example. |
 
 #### Example
 
