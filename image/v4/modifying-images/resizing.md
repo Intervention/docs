@@ -241,12 +241,15 @@ $img->coverDown(900, 900); // 600 x 600
 $image->coverDown(900, 450, Alignment::LEFT); // 800 x 400 px
 ```
 
-### Padded Resizing
+## Contain Resizing
+
+<a href="/v4/playground#contain" target="playground" class="demoButton">Try it out in the live demo</a>
+
+### Contain Resizing
 
 > public Image::contain(int|Fraction $width, int|Fraction $height, null|string|ColorInterface $background = null, string|Alignment $alignment = Alignment::CENTER): ImageInterface
 
- This method does the same as `pad()`, but also scales up the original image if
- the target size exceeds the original size.
+ Resize the image to fit within the given dimensions while maintaining the aspect ratio. New areas are filled with the given background color.
 
 #### Parameters
 
@@ -273,7 +276,7 @@ $image->contain(900, 600);
 $image->contain(500, 500, 'efefef');
 ```
 
-## Padded Image Resizing without Upscaling
+### Contain Resizing without Upscaling
 
 <a href="/v4/playground#containDown" target="playground" class="demoButton">Try it out in the live demo</a>
 
@@ -281,13 +284,9 @@ $image->contain(500, 500, 'efefef');
 
 > public Image::containDown(int|Fraction $width, int|Fraction $height, null|string|ColorInterface $background = null, string|Alignment $alignment = Alignment::CENTER): ImageInterface
 
-Padded resizing means that the original image is scaled to fit the
-defined target size without changing the aspect ratio. The original image is not
-scaled up but only down.
-     
-Compared to the `cover()` method, this method does not create cropped areas, but
-possibly new empty areas on the sides of the resulting image. These will be filled
-with the given background color.
+Resize the image to fit within the given dimensions while maintaining the
+aspect ratio and without exceeding the original dimensions. New areas are
+filled with the given background color.
 
 #### Parameters
 
@@ -315,9 +314,6 @@ $image->containDown(300, 200, 'ccc');
 // resize padded with alignment position
 $image->containDown(500, 500, alignment: Alignment::TOP_LEFT);
 ```
-
-<a href="/v4/playground#contain" target="playground" class="demoButton">Try it out in the live demo</a>
-
 
 ## Crop Image
 
