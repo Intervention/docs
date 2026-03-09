@@ -18,7 +18,7 @@ Manager](/v4/basics/configuration-drivers) configuration to save resources.
 ## Create Animations
 ### Create Animated Images from Different Sources
 
-More information about the animation creation process can be found in the chapter about [instantiation](/v4/basics/instantiation#create-animations).
+More information about the animation creation process can be found in the chapter about [instantiation](/v4/basics/instantiation#create-images).
 
 ## Detect Animations
 ### Check the Current Image Instance for Animation

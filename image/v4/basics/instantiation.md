@@ -225,7 +225,7 @@ $image = $manager->decodeStream($stream);
 
 ## Create Images
 
-### Create New Images
+### Create New Images & Animations
 
 > public function createImage(int $width, int $height, null|callable|AnimationFactoryInterface $animation = null): ImageInterface;
 
@@ -235,14 +235,14 @@ instance of the `Intervention\Image\ImageManager` class and call the
 `createImage()` method with the desired image size as arguments. See the
 following example:
 
-By default the image is created with a **transparent background**. If you want to define a background color instead use the `fill()` method after creation.
+By default the image is created with a **transparent background**. If you want to define a background color instead use the `fill()` method after the `createImage()` call.
 
-Optionally you can pass a callback to add animation frames and create a
-animated image and define the delay time of the individual animation frames. It
+Optionally you can pass a callback to add animation frames and create an
+animated image. Define the delay time of the individual animation frames. It
 should be noted that the animation created this way must be decoded in a format
 that supports animations.
 
-Animations are possible in all supplied drivers. [Read more on how to modify animated images.](/v4/modifying-images/animations)
+Animations are possible in all drivers. [Read more on how to modify animated images.](/v4/modifying-images/animations)
 
 #### Parameters
 
@@ -257,6 +257,7 @@ Animations are possible in all supplied drivers. [Read more on how to modify ani
 ```php
 use Intervention\Image\ImageManager;
 use Intervention\Image\Drivers\Imagick\Driver;
+use Intervention\Image\Interfaces\AnimationFactoryInterface;
 
 // create new manager instance with desired driver
 $manager = ImageManager::usingDriver(Driver::class);
@@ -267,7 +268,7 @@ $image = $manager->createImage(640, 480);
 // create new image 512x512 with gray background
 $image = $manager->createImage(512, 512)->fill('ccc');
 
-// create new animated image 120x80 with five animation frames
+// create new animated image 120x80 with five animation frames and a delay of 250ms
 $image = $manager->createImage(120, 80, function (AnimationFactoryInterface $animation): void {
     $animation->add('image.png', .25)->pixelate(20);
     $animation->add('image.png', .25)->pixelate(15);
