@@ -2,7 +2,7 @@
 label: "Colors & Transparency"
 title: "Colors & Transparency"
 subtitle: "Handling of Image Colors"
-lead: "Explore advanced image color handling and transparency management with Intervention Image. Learn how to read and transform pixel colors, manage colorspaces, work with ICC profiles, and blend transparency for dynamic image processing."
+lead: "Explore advanced image color handling and transparency management with Intervention Image. Learn how to read and transform pixel colors, manage colorspaces, work with ICC profiles, and replace transparency for dynamic image processing."
 sort: 4
 ---
 
@@ -554,11 +554,11 @@ Intervention Image supports image formats with alpha channels. Transparent
 areas are preserved as long as the output format supports transparency.
 
 If the output format does not support transparency, no alpha channel can be
-preserved. In this case the transparent areas will be blended with an opaque color.
-
-This background color can be specified in advance in the initial [configuration of the
-image manager](/v4/basics/configuration-drivers) or as an optional argument in the following
-method. It is also possible to set or get the background color at runtime.
+preserved. In this case the transparent areas will be replaced with an opaque
+color. This color can be specified in advance in the initial [configuration of
+the image manager](/v4/basics/configuration-drivers) or as an optional argument
+in the following method. It is also possible to set or get the background color
+at runtime.
 
 ### Merge Transparent Areas with Color
 
@@ -584,7 +584,7 @@ values in the background color will be ignored.
 use Intervention\Image\ImageManager;
 use Intervention\Image\Drivers\Gd\Driver;
 
-// create new manager instance with desired driver and default blending color
+// create new manager instance with desired driver and default background color
 $manager = ImageManager::usingDriver(Driver::class);
 
 // read a transparent image

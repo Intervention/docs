@@ -27,7 +27,7 @@ PHP installation, you choose one of them.
 
 GD is bundled by default in many installations, but has the disadvantage of
 lacking advanced image processing capabilities like support for different color
-spaces. **GD also discards any Exif data in the encoding process**. The driver for
+spaces. **GD unfortunately discards any Exif data in the encoding process**. The driver for
 GD is included by default.
 
 - `Intervention\Image\Drivers\Gd\Driver`
@@ -59,7 +59,7 @@ the constructor that determine the behavior of the library.
 These parameters affect how the library handles the [orientation of the image
 according to Exif
 data](/v4/modifying-images/effects#image-orientation-according-to-exif-data), whether
-[animations are decoded or discarded](/v4/modifying-images/animations), and what the [default blending
+[animations are decoded or discarded](/v4/modifying-images/animations), and what the [default background
 color](/v4/basics/colors#transparency) is.
 
 #### Parameters
@@ -69,7 +69,7 @@ color](/v4/basics/colors#transparency) is.
 | driver | string or DriverInterface | Image Manager driver instance or driver class name |
 | autoOrientation | bool | (optional) Decides whether the image should be automatically aligned based on the Exif data. Default: `true` |
 | decodeAnimation | bool | (optional) Whether a possibly animated image is decoded as such or whether the animation is discarded. Default: `true` |
-| backgroundColor | mixed | (optional) The standard background color. Default: `ffffff` |
+| backgroundColor | mixed | (optional) The standard background color for blending operations. Default: `ffffff` |
 | strip | bool | (optional) Decides whether image meta data should be removed in the encoding process. Default: `false` |
 
 #### Example
