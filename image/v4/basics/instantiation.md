@@ -201,7 +201,7 @@ $image = $manager->decodeDataUri('data:image/jpeg,Zm9vYmFyYmF6MTIzNDU2Nzg5MA...'
 
 > public ImageManager::decodeStream(mixed $stream): ImageInterface
 
-Decode an image by using the given path in filesystem.
+Decode an image by using the given stream resource.
 
 #### Parameters
 
