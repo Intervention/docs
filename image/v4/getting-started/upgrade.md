@@ -57,6 +57,7 @@ exceptions easier.
 
 It is very likely that you will need to make these adjustments when you update to version 4.
 
+- Intervention Image 4 now requires PHP 8.3.0 or greater.
 - `ImageManagerInterface::animate()` is replaced by universal `ImageManagerInterface::createImage()`
 - `ImageManagerInterface::read()` is now handled by `ImageManagerInterface::decode*()`
 - `ImageManagerInterface::withDriver()` is now handled by `Image::usingDriver()`
