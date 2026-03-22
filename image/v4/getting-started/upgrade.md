@@ -58,38 +58,38 @@ exceptions easier.
 It is very likely that you will need to make these adjustments when you update to version 4.
 
 - Intervention Image 4 now requires PHP 8.3.0 or greater.
-- `ImageManagerInterface::read()` is now handled by `ImageManagerInterface::decode*()`
-- `ImageManagerInterface::withDriver()` is now handled by `Image::usingDriver()`
-- `ImageManagerInterface::animate()` is replaced by universal `ImageManagerInterface::createImage()`
-- `ImageInterface::toJpeg()` and `ImageInterface::toJpg()` are now handled by `ImageInterface::encodeUsingFormat()`
-- `ImageInterface::toPng()` is now handled by `ImageInterface::encodeUsingFormat()`
-- `ImageInterface::toGif()` is now handled by `ImageInterface::encodeUsingFormat()`
-- `ImageInterface::toJp2()` and `ImageInterface::toJpeg2000()` are replaced by `ImageInterface::encodeUsingFormat()`
-- `ImageInterface::toWebp()` is replaced by `ImageInterface::encodeUsingFormat()`
-- `ImageInterface::toBitmap()` and `ImageInterface::toBmp()` are replaced by `ImageInterface::encodeUsingFormat()`
-- `ImageInterface::toAvif()` is replaced by `ImageInterface::encodeUsingFormat()`
-- `ImageInterface::toHeic()` is replaced by `ImageInterface::encodeUsingFormat()`
-- `ImageInterface::toTiff()` and `ImageInterface::toTif()` are replaced by `ImageInterface::encodeUsingFormat()`
-- `ImageInterface::pickColor()` was renamed to `ImageInterface::colorAt()` and signature has changed, argument `$frame_key` is know `$frame`
-- `ImageInterface::pickColors()` was renamed to `ImageInterface::colorsAt()`
-- `ImageInterface::pad()` was renamed to `ImageInterface::containDown()` with different signature
-- `ImageInterface::flip()` now handles both vertical and horizontal mirroring with new `direction` parameter
-- `ImageInterface::flop()` was removed. Use `ImageInterface::flip()` with direction parameter
-- `ImageInterface::place()` was renamed to `ImageInterface::insert()` with a different signature. `offset_x` was renamed to `x` and `offset_y` was renamed to `y`, `opacity` was renamed to `transparency` with `float` instead of `int` and updated argument order
-- Signatures of `ImageInterface::drawRectangle()`, `ImageInterface::drawLine()`, `ImageInterface::drawEllipse()`, `ImageInterface::drawCircle()`, `ImageInterface::drawPolygon()` and `ImageInterface::drawBezier()` have changed
+- `ImageManagerInterface::read()` is now handled by `ImageManagerInterface::decode()` or the [other decode methods](/v4/basics/instantiation)
+- `ImageManagerInterface::withDriver()` is now handled by [Image::usingDriver()](/v4/basics/configuration-drivers#create-a-new-image-manager-instance-with-static-helper-methods)
+- `ImageManagerInterface::animate()` is replaced by universal [ImageManagerInterface::createImage()](/v4/basics/instantiation#create-images)
+- `ImageInterface::toJpeg()` and `ImageInterface::toJpg()` are now handled by i[ImageInterface::encodeUsingFormat()](/v4/basics/image-output#encode-images-using-format)
+- `ImageInterface::toPng()` is now handled by [ImageInterface::encodeUsingFormat()](/v4/basics/image-output#encode-images-using-format)
+- `ImageInterface::toGif()` is now handled by [ImageInterface::encodeUsingFormat()](/v4/basics/image-output#encode-images-using-format)
+- `ImageInterface::toJp2()` and `ImageInterface::toJpeg2000()` are replaced by [ImageInterface::encodeUsingFormat()](/v4/basics/image-output#encode-images-using-format)
+- `ImageInterface::toWebp()` is replaced by [ImageInterface::encodeUsingFormat()](/v4/basics/image-output#encode-images-using-format)
+- `ImageInterface::toBitmap()` and `ImageInterface::toBmp()` are replaced by [ImageInterface::encodeUsingFormat()](/v4/basics/image-output#encode-images-using-format)
+- `ImageInterface::toAvif()` is replaced by [ImageInterface::encodeUsingFormat()](/v4/basics/image-output#encode-images-using-format)
+- `ImageInterface::toHeic()` is replaced by [ImageInterface::encodeUsingFormat()](/v4/basics/image-output#encode-images-using-format)
+- `ImageInterface::toTiff()` and `ImageInterface::toTif()` are replaced by [ImageInterface::encodeUsingFormat()](/v4/basics/image-output#encode-images-using-format)
+- `ImageInterface::pickColor()` was renamed to [ImageInterface::colorAt()](/v4/basics/colors#read-color-of-a-pixel) and signature has changed, argument `$frame_key` is now `$frame`
+- `ImageInterface::pickColors()` was renamed to [ImageInterface::colorsAt()](/v4/basics/colors#read-all-colors-of-certain-pixels-in-animated-images)
+- `ImageInterface::pad()` was renamed to [ImageInterface::containDown()](/v4/modifying-images/resizing#contain-resizing-without-upscaling) with different signature
+- [ImageInterface::flip()](/v4/modifying-images/effects#mirror-images) now handles both vertical and horizontal mirroring with new `direction` parameter
+- `ImageInterface::flop()` was removed. Use [ImageInterface::flip()](/v4/modifying-images/effects#mirror-images) with direction parameter
+- `ImageInterface::place()` was renamed to [ImageInterface::insert()](/v4/modifying-images/inserting) with a different signature. `offset_x` was renamed to `x` and `offset_y` was renamed to `y`, `opacity` was renamed to `transparency` with `float` instead of `int` and updated argument order
+- Signatures of [ImageInterface::drawRectangle()](/v4/modifying-images/drawing), [ImageInterface::drawLine()](/v4/modifying-images/drawing), [ImageInterface::drawEllipse()](/v4/modifying-images/drawing), [ImageInterface::drawCircle()](/v4/modifying-images/drawing), [ImageInterface::drawPolygon()](/v4/modifying-images/drawing) and [ImageInterface::drawBezier()](/v4/modifying-images/drawing) have changed
 - Method `ImageInterface::save()` only processes known image file extensions
 - `EncodedImageInterface::toDataUri()` now returns `DataUriInterface::class` instead of `string´
-- Method `FontInterface::filename()` is replaced by `FontInterface::filepath()`
+- Method `FontInterface::filename()` is replaced by [FontInterface::filepath()](/v4/modifying-images/text-fonts#font-file)
 - Method `FontInterface::hasFilename()` is replaced by `FontInterface::hasFile()`
 - Method `FontInterface::setFilename()` is replaced by `FontInterface::setFilepath()`
-- Method `ColorInterface::convertTo()` was renamed to `ColorInterface::toColorspace()`
-- `Config::class` option `blendingColor` was renamed to `backgroundColor`
+- Method `ColorInterface::convertTo()` was renamed to [ColorInterface::toColorspace()](/v4/basics/colors#transform-colors-between-colorspaces)
+- [Config::class](/v4/basics/configuration-drivers#configuration-options) option `blendingColor` was renamed to `backgroundColor`
 - Method `ImageInterface::rotate()` rotates clockwise by default.
-- `ImageInterface::blendTransparency()` was renamed to `ImageInterface::fillTransparentAreas()` with a different signature allowing (semi) transparent colors
-- `ImageInterface::setBlendingColor()` was renamed to `ImageInterface::setBackgroundColor()`
-- `ImageInterface::blendingColor()` was renamed to `ImageInterface::backgroundColor()`
-- Color value string `transparent` is no longer supported. Use `Intervention\Image\Color::transparent()` instead
-- Parameter `$prefix` of `ColorInterface::toHex()` has now a `boolean` type
+- `ImageInterface::blendTransparency()` was renamed to [ImageInterface::fillTransparentAreas()](/v4/basics/colors#merge-transparent-areas-with-color) with a different signature allowing (semi) transparent colors
+- `ImageInterface::setBlendingColor()` was renamed to [ImageInterface::setBackgroundColor()](/v4/basics/colors#set-the-background-color)
+- `ImageInterface::blendingColor()` was renamed to [ImageInterface::backgroundColor()](/v4/basics/colors#read-the-background-color)
+- Color value string `transparent` is no longer supported. Use [Intervention\Image\Color::transparent()](/v4/basics/colors#transparency) instead
+- Parameter `$prefix` of [ColorInterface::toHex()](/v4/basics/colors#transform-colors-to-hexadecimal-triplet) has now a `boolean` type
 
 ### Medium Impact Changes
 

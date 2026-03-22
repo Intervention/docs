@@ -553,6 +553,11 @@ $image = $image->removeProfile();
 Intervention Image supports image formats with alpha channels. Transparent
 areas are preserved as long as the output format supports transparency.
 
+All color values can be created with corresponding alpha values. If you need
+complete transparency, create the colors with an alpha value of 0 or use the
+shortcut method `Intervention\Image\Color::transparent()` which will create
+white with full transparency.
+
 If the output format does not support transparency, no alpha channel can be
 preserved. In this case the transparent areas will be replaced with an opaque
 color. This color can be specified in advance in the initial [configuration of

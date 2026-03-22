@@ -57,7 +57,7 @@ $image = ImageManager::usingDriver(Driver::class)->decode('images/example.jpg');
 
 // write text to image
 $image->text('The quick brown fox', 120, 100, function (FontFactory $font) {
-    $font->filename('./fonts/comic-sans.ttf');
+    $font->filepath('./fonts/comic-sans.ttf');
     $font->size(70);
     $font->color('fff');
     $font->stroke('ff5500', 2);
@@ -82,7 +82,7 @@ Define a font size. By default, a value of `12` will be applied.
 
 ### Font File
 
-> public FontFactory::filename(string $filename): FontFactory
+> public FontFactory::filepath(string $path): FontFactory
 
 Set a path to a font file in the file system for the text.
 
@@ -90,7 +90,7 @@ Set a path to a font file in the file system for the text.
 
 | Name | Type | Description |
 | - | - | - |
-| filename | string | Path to a valid font file |
+| path | string | Path to a valid font file |
 
 ### Color
 
