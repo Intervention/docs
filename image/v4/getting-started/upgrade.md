@@ -15,13 +15,13 @@ The revised image decoding interface introduces a more transparent approach to
 handling image sources. Allowing image sources to be addressed directly instead
 of relying on a single universal method. 
 
-- ImageManagerInterface::decode()
-- ImageManagerInterface::decodePath()
-- ImageManagerInterface::decodeBinary()
-- ImageManagerInterface::decodeBas64()
-- ImageManagerInterface::decodeDataUri()
-- ImageManagerInterface::decodeSplFileInfo()
-- ImageManagerInterface::decodeStream()
+- `ImageManagerInterface::decode()`
+- `ImageManagerInterface::decodePath()`
+- `ImageManagerInterface::decodeBinary()`
+- `ImageManagerInterface::decodeBas64()`
+- `ImageManagerInterface::decodeDataUri()`
+- `ImageManagerInterface::decodeSplFileInfo()`
+- `ImageManagerInterface::decodeStream()`
 
 [Read more about decoding methods](/v4/basics/instantiation)
 
@@ -97,24 +97,24 @@ It is possible that you will need to make these adjustments when updating if you
 
 - Removed `ColorInterface::toArray()` use `ColorInterface::channels()` and map to desired format
 - Removed `ColorInterface::normalize()` use `ColorInterface::channels()` and map to desired format
-- Changed default value for `background` to `null` in `ImageInterface::rotate()`
-- Changed default value for `background` to `null` in `ImageInterface::resizeCanvas()`
-- Changed default value for `background` to `null` in `ImageInterface::resizeCanvasRelative()`
-- Changed default value for `background` to `null` in `ImageInterface::contain()`
-- Changed default value for `background` to `null` in `ImageInterface::containDown()` former `ImageInterface::pad()`
-- Changed default value for `background` to `null` in `ImageInterface::crop()`
-- Signature of `ImageInterface::crop()` changed from `offset_x` to `x` and `offset_y` to `y`
+- Changed default value for `background` to `null` in [ImageInterface::rotate()](/v4/modifying-images/resizing#resize-image-canvas)
+- Changed default value for `background` to `null` in [ImageInterface::resizeCanvas()](/v4/modifying-images/resizing#resize-image-canvas)
+- Changed default value for `background` to `null` in [ImageInterface::resizeCanvasRelative()](/v4/modifying-images/resizing#resize-image-canvas)
+- Changed default value for `background` to `null` in [ImageInterface::contain()](/v4/modifying-images/resizing#contain-resizing-1)
+- Changed default value for `background` to `null` in [ImageInterface::containDown()](/v4/modifying-images/resizing#contain-resizing-without-upscaling) former `ImageInterface::pad()`
+- Changed default value for `background` to `null` in [ImageInterface::crop()](/v4/modifying-images/resizing#crop-image)
+- Signature of [ImageInterface::crop()](/v4/modifying-images/resizing#crop-image) changed from `offset_x` to `x` and `offset_y` to `y`
 - Attribute `$per_unit` has change to `$unit` with different signature in `Resolution::class`
 - Method `DrawableFactoryInterface::init()` is replaced by `DrawableFactoryInterface::create()`
 - Method `DrawableFactoryInterface::create()` is replaced by `DrawableFactoryInterface::drawable()`
 - `DriverInterface::handleInput()` is replaced by `DriverInterface::handleImageInput()`, `DriverInterface::handleColorInput()`
 - `CollectionInterface::empty()` was renamed to `CollectionInterface::clear()`
-- `FontFactory::valign()` was replaced with `FontInterface::align()`
-- `FontInterface::valignment()` was renamed to `FontInterface::verticalAlignment()`
-- `FontInterface::setValignment()` was renamed to `FontInterface::setVerticalAlignment()`
-- `FontInterface::alignment()` was renamed to `FontInterface::horizontalAlignment()`
-- `FontInterface::setAlignment()` was renamed to `FontInterface::setHorizontalAlignment()`
-- `ImageInterface::greyscale()` was renamed to `ImageInterface::grayscale()`
+- `FontFactory::valign()` was replaced with [FontInterface::align()](/v4/modifying-images/text-fonts)
+- `FontInterface::valignment()` was renamed to [FontInterface::verticalAlignment()](/v4/modifying-images/text-fonts)
+- `FontInterface::setValignment()` was renamed to [FontInterface::setVerticalAlignment()](/v4/modifying-images/text-fonts)
+- `FontInterface::alignment()` was renamed to [FontInterface::horizontalAlignment()](/v4/modifying-images/text-fonts)
+- `FontInterface::setAlignment()` was renamed to [FontInterface::setHorizontalAlignment()](/v4/modifying-images/text-fonts)
+- `ImageInterface::greyscale()` was renamed to [ImageInterface::grayscale()](/v4/modifying-images/effects#convert-image-to-a-grayscale-version)
 - `ColorInterface::isGreyscale()` was renamed to `ColorInterface::isGrayscale()`
 - Alpha channel values in `__construct()` or `create()` methods of colors are now defined as float values between `0` and `1`
 - `FrameInterface::dispose()` was rename to `FrameInterface::disposalMethod()`
