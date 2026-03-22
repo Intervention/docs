@@ -24,7 +24,7 @@ alignment position. It is also possible to control the opacity of the insertion 
 | x | int | Optional relative offset of the new image on x-axis |
 | y | int | Optional relative offset of the new image on y-axis |
 | alignment | string or `Alignment` | Alignment position of the image to be inserted |
-| transparency | float | Control over the transparency of the inserted image ranging from 0 (fully transparent) to 1 (opaque) |
+| transparency | float | Control the transparency of the inserted image ranging from 0 (fully transparent) to 1 (opaque) |
 
 #### Example
 
