@@ -11,7 +11,7 @@ sort: 3
 
 ### New Decoding Methods
 
-The revised image decoding interace introduces a more transparent approach to
+The revised image decoding interface introduces a more transparent approach to
 handling image sources. Allowing image sources to be addressed directly instead
 of relying on a single universal method. 
 
@@ -93,8 +93,7 @@ It is very likely that you will need to make these adjustments when you update t
 
 ### Medium Impact Changes
 
-It is possible that you will need to make these adjustments when updating to
-version 4 if you have delved deeper into the functions.
+It is possible that you will need to make these adjustments when updating if you have delved deeper into the functions.
 
 - Removed `ColorInterface::toArray()` use `ColorInterface::channels()` and map to desired format
 - Removed `ColorInterface::normalize()` use `ColorInterface::channels()` and map to desired format
@@ -125,9 +124,8 @@ version 4 if you have delved deeper into the functions.
 
 ### Low Impact Changes
 
-You will probably only need to make these adjustments when updating to version
-4 if you use the API extensively and have written your own drivers or
-modifiers, for example.
+You will probably only need to make these adjustments when updating if you use
+the API extensively and have written your own drivers or modifiers.
 
 - `BlendTransparencyModifer::class` was renamed to `FillTransparentAreasModifier::class`
 - `ProfileInterface::class` requires implementation of `::fromPath()`
