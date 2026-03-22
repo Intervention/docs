@@ -58,9 +58,9 @@ exceptions easier.
 It is very likely that you will need to make these adjustments when you update to version 4.
 
 - Intervention Image 4 now requires PHP 8.3.0 or greater.
-- `ImageManagerInterface::animate()` is replaced by universal `ImageManagerInterface::createImage()`
 - `ImageManagerInterface::read()` is now handled by `ImageManagerInterface::decode*()`
 - `ImageManagerInterface::withDriver()` is now handled by `Image::usingDriver()`
+- `ImageManagerInterface::animate()` is replaced by universal `ImageManagerInterface::createImage()`
 - `ImageInterface::toJpeg()` and `ImageInterface::toJpg()` are now handled by `ImageInterface::encodeUsingFormat()`
 - `ImageInterface::toPng()` is now handled by `ImageInterface::encodeUsingFormat()`
 - `ImageInterface::toGif()` is now handled by `ImageInterface::encodeUsingFormat()`
@@ -73,7 +73,9 @@ It is very likely that you will need to make these adjustments when you update t
 - `ImageInterface::pickColor()` was renamed to `ImageInterface::colorAt()` and signature has changed, argument `$frame_key` is know `$frame`
 - `ImageInterface::pickColors()` was renamed to `ImageInterface::colorsAt()`
 - `ImageInterface::pad()` was renamed to `ImageInterface::containDown()` with different signature
-- `ImageInterface::place()` was renamed to `ImageInterface::insert()` with a different signature. `offset_x` was renamed to `x` and `offset_y` was renamed to `y` and updated argument order
+- `ImageInterface::flip()` now handles both vertical and horizontal mirroring with new `direction` parameter
+- `ImageInterface::flop()` was removed. Use `ImageInterface::flip()` with direction parameter
+- `ImageInterface::place()` was renamed to `ImageInterface::insert()` with a different signature. `offset_x` was renamed to `x` and `offset_y` was renamed to `y`, `opacity` was renamed to `transparency` with `float` instead of `int` and updated argument order
 - Signatures of `ImageInterface::drawRectangle()`, `ImageInterface::drawLine()`, `ImageInterface::drawEllipse()`, `ImageInterface::drawCircle()`, `ImageInterface::drawPolygon()` and `ImageInterface::drawBezier()` have changed
 - Method `ImageInterface::save()` only processes known image file extensions
 - `EncodedImageInterface::toDataUri()` now returns `DataUriInterface::class` instead of `string´
