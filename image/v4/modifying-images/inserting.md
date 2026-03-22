@@ -1,7 +1,7 @@
 ---
 title: "Insert Images"
 subtitle: "Inserting images onto other images"
-lead: "Learn how to insert images onto other images using the Intervention Image library. Position images, adjust offsets, and control opacity for custom overlays or watermarks."
+lead: "Learn how to insert images onto other images using the Intervention Image library. Position images, adjust offsets, and control transparency for custom overlays or watermarks."
 sort: 1
 ---
 
@@ -9,14 +9,12 @@ sort: 1
 
 ## Insert Images
 
-> public Image::insert(mixed $image, int $x = 0, int $y = 0, string|Alignment $alignment = Alignment::TOP_LEFT, int $opacity = 100): ImageInterface
+> public Image::insert(mixed $image, int $x = 0, int $y = 0, string|Alignment $alignment = Alignment::TOP_LEFT, float $transparency = 1): ImageInterface
 
 Inserts a new image on top of the current image. The image to be inserted can be specified
-from any of the [supported image
-sources](/v4/basics/instantiation#supported-image-sources). Optionally you can
+from any of the [supported image sources](/v4/basics/instantiation#supported-image-sources). Optionally you can
 pass coordinates for an offset to move the image relative to the specified
-alignment position. It is also possible to control the opacity of the insertion using the
-`opacity` parameter.
+alignment position. It is also possible to control the opacity of the insertion using the `transparency` parameter.
 
 #### Parameters
 
@@ -26,7 +24,7 @@ alignment position. It is also possible to control the opacity of the insertion 
 | x | int | Optional relative offset of the new image on x-axis |
 | y | int | Optional relative offset of the new image on y-axis |
 | alignment | string or `Alignment` | Alignment position of the image to be inserted |
-| opacity | int | Control over the opacity of the inserted image ranging from 0 (fully transparent) to 100 (opaque) |
+| transparency | float | Control over the transparency of the inserted image ranging from 0 (fully transparent) to 1 (opaque) |
 
 #### Example
 
@@ -53,6 +51,6 @@ $image->insert(
     10, 
     10,
     Alignment::BOTTOM_RIGHT, 
-    25
+    .25
 );
 ```
