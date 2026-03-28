@@ -41,7 +41,7 @@ Based on your environment, the appropriate driver must be configured later.
 Install Intervention Image with [Composer](https://getcomposer.org/) by running the following command.
 
 ```bash
-composer require intervention/image:^4
+composer require intervention/image
 ```
 
 This will install Intervention Image with the most recent version, your
