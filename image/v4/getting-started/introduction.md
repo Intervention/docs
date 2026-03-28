@@ -8,12 +8,12 @@ sort: 0
 
 ### Features
 
-- Fluent & unified API for GD, Imagick or [libvips](https://github.com/Intervention/image-driver-vips)
-- Processing of animated Images
+- Fluent API for common image editing tasks
+- Interchangable driver architecture for all popular PHP image processing extensions
+- Support for GD, Imagick and [libvips](https://github.com/Intervention/image-driver-vips)
+- Processing of animated images with all drivers
 - Support for colorspaces and profiles
 - Support for text wrapping and line height in the font system
-- Improved architecture
-- PSR-12 standardized
 
 The library is written to make PHP image manipulation easy and effortless.
 Whether you want to create image thumbnails, set watermarks, or format large
