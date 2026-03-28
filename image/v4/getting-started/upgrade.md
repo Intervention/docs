@@ -73,7 +73,7 @@ It is very likely that you will need to make these adjustments when you update t
 - `ImageInterface::encodeByMediaType()` is replaced by [ImageInterface::encodeUsingMediaType()](/v4/basics/image-output)
 - `ImageInterface::encodeByPath()` is replaced by [ImageInterface::encodeUsingPath()](/v4/basics/image-output)
 - `ImageInterface::encodeByExtension()` is replaced by [ImageInterface::encodeUsingFileExtension()](/v4/basics/image-output)
-
+- `ImageInterface::encodeByExtension()` is replaced by [ImageInterface::encodeUsingFileExtension()](/v4/basics/image-output)
 - `ImageInterface::pickColor()` was renamed to [ImageInterface::colorAt()](/v4/basics/colors#read-color-of-a-pixel) and signature has changed, argument `$frame_key` is now `$frame`
 - `ImageInterface::pickColors()` was renamed to [ImageInterface::colorsAt()](/v4/basics/colors#read-all-colors-of-certain-pixels-in-animated-images)
 - `ImageInterface::pad()` was renamed to [ImageInterface::containDown()](/v4/modifying-images/resizing#contain-resizing-without-upscaling) with different signature
