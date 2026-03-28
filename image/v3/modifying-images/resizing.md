@@ -9,8 +9,6 @@ sort: 0
 
 ## Simple Image Resizing
 
-<a href="/v3/playground#resize" target="playground" class="demoButton">Try it out in the live demo</a>
-
 ### Resize an Image
 
 > public Image::resize(null|int $width = null, null|int $height = null): ImageInterface
@@ -41,8 +39,6 @@ $image->resize(300, 200);
 // resize only image height to 200 pixel
 $image->resize(height: 200);
 ```
-
-<a href="/v3/playground#resizeDown" target="playground" class="demoButton">Try it out in the live demo</a>
 
 ### Resize Without Exceeding the Original Size
 
@@ -75,8 +71,6 @@ $image->resizeDown(width: 200);
 ```
 
 ## Scale Images
-
-<a href="/v3/playground#scale" target="playground" class="demoButton">Try it out in the live demo</a>
 
 ### Resize Images Proportionally
 
@@ -114,8 +108,6 @@ $image->scale(height: 300); // 400 x 300 (4:3)
 $image->scale(120, 100); // 120 x 90 (4:3)
 ```
 
-<a href="/v3/playground#scaleDown" target="playground" class="demoButton">Try it out in the live demo</a>
-
 ### Scale Images but do not Exceed the Original Size
 
 > public Image::scaleDown(null|int $width = null, null|int $height = null): ImageInterface
@@ -152,8 +144,6 @@ $image->scaleDown(height: 300); //  400 x 300
 ```
 
 ## Fitted Image Resizing
-
-<a href="/v3/playground#cover" target="playground" class="demoButton">Try it out in the live demo</a>
 
 ### Cropping & Resizing Combined
 
@@ -196,8 +186,6 @@ $img->cover(200, 200);
 $image->cover(300, 300, 'left'); // 300 x 300 px
 ```
 
-<a href="/v3/playground#coverDown" target="playground" class="demoButton">Try it out in the live demo</a>
-
 ### Fitted Resizing without Exceeding the Original Size
 
 > public Image::coverDown(int $width, int $height, string $position = 'center'): ImageInterface
@@ -235,8 +223,6 @@ $image->coverDown(900, 450, 'left'); // 800 x 400 px
 ```
 
 ## Padded Image Resizing
-
-<a href="/v3/playground#pad" target="playground" class="demoButton">Try it out in the live demo</a>
 
 ### Resizing & Padding Combined
 
@@ -276,8 +262,6 @@ $image->pad(300, 200, 'ccc');
 $image->pad(500, 500, position: 'top-left');
 ```
 
-<a href="/v3/playground#contain" target="playground" class="demoButton">Try it out in the live demo</a>
-
 ### Padded Resizing with Upscaling
 
 > public Image::contain(int $width, int $height, $background = 'ffffff', string $position = 'center'): ImageInterface
@@ -312,8 +296,6 @@ $image->contain(500, 500, 'efefef');
 
 
 ## Crop Image
-
-<a href="/v3/playground#crop" target="playground" class="demoButton">Try it out in the live demo</a>
 
 ### Cut Out a Rectangular Part
 
@@ -359,8 +341,6 @@ $image->crop(200, 150, 0 , 30, position: 'bottom-right');
 
 ## Resize Image Canvas
 
-<a href="/v3/playground#resizeCanvas" target="playground" class="demoButton">Try it out in the live demo</a>
-
 ### Resize Image Boundaries without Resampling the Original Image
 
 > public Image::resizeCanvas(null|int $width = null, null|int $height = null, mixed $background = 'ffffff', string $position = 'center'): ImageInterface
@@ -393,8 +373,6 @@ $image = $manager->read('images/example.jpg');
 // resize image area to 800 x 600 and fill new area with yellow
 $image->resizeCanvas(800, 600, 'ff0');
 ```
-
-<a href="/v3/playground#resizeCanvasRelative" target="playground" class="demoButton">Try it out in the live demo</a>
 
 ### Resize Image Boundaries Relative to the Original
 
