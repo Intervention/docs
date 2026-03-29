@@ -78,7 +78,7 @@ It is very likely that you will need to make these adjustments when you update t
 - `ImageInterface::pickColors()` was renamed to [ImageInterface::colorsAt()](/v4/basics/colors#read-all-colors-of-certain-pixels-in-animated-images)
 - `ImageInterface::pad()` was renamed to [ImageInterface::containDown()](/v4/modifying-images/resizing#contain-resizing-without-upscaling) with different signature
 - [ImageInterface::flip()](/v4/modifying-images/effects#mirror-images) now handles both vertical and horizontal mirroring with new `direction` parameter
-- `ImageInterface::flop()` was removed. Use [ImageInterface::flip()](/v4/modifying-images/effects#mirror-images) with direction parameter
+- `ImageInterface::flop()` was removed. Use [ImageInterface::flip()](/v4/modifying-images/effects#mirror-images) with direction parameter `Direction::HORIZONTAL`
 - `ImageInterface::place()` was renamed to [ImageInterface::insert()](/v4/modifying-images/inserting) with a different signature. `offset_x` was renamed to `x` and `offset_y` was renamed to `y`, `opacity` was renamed to `transparency` with `float` instead of `int` and updated argument order
 - Signatures of [ImageInterface::drawRectangle()](/v4/modifying-images/drawing), [ImageInterface::drawLine()](/v4/modifying-images/drawing), [ImageInterface::drawEllipse()](/v4/modifying-images/drawing), [ImageInterface::drawCircle()](/v4/modifying-images/drawing), [ImageInterface::drawPolygon()](/v4/modifying-images/drawing) and [ImageInterface::drawBezier()](/v4/modifying-images/drawing) have changed
 - Method `ImageInterface::save()` only processes known image file extensions
