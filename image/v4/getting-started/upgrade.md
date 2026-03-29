@@ -92,7 +92,7 @@ It is very likely that you will need to make these adjustments when you update t
 - `ImageInterface::blendTransparency()` was renamed to [ImageInterface::fillTransparentAreas()](/v4/basics/colors#merge-transparent-areas-with-color) with a different signature allowing (semi) transparent colors
 - `ImageInterface::setBlendingColor()` was renamed to [ImageInterface::setBackgroundColor()](/v4/basics/colors#set-the-background-color)
 - `ImageInterface::blendingColor()` was renamed to [ImageInterface::backgroundColor()](/v4/basics/colors#read-the-background-color)
-- Color value string `transparent` is no longer supported. Use [Intervention\Image\Color::transparent()](/v4/basics/colors#transparency) instead
+- Color value string `transparent` is no longer supported. Use[Intervention\Image\Color::transparent()](/v4/basics/colors#transparency) instead
 - Parameter `$prefix` of [ColorInterface::toHex()](/v4/basics/colors#transform-colors-to-hexadecimal-triplet) has now a `boolean` type
 - Method `ImageInterface::reduceColors()` has a different type and default value of the argument `$background`. Background defaults now to the configured background color instead of `transparent`.
 
@@ -126,6 +126,7 @@ It is possible that you will need to make these adjustments when updating if you
 - `FrameInterface::setDispose()` was renamed to `FrameInterface::setDisposalMethod()`
 - `ImageManagerInterface::driver()` was removed but you can use the public `$driver` property.
 - `FileInterface::toFilePointer()` was renamed to `FileInterface::toStream()`
+- Color format string `transparent` is no longer supported. Use[Intervention\Image\Color::transparent()](/v4/basics/colors#transparency) instead
 
 ### Low Impact Changes
 
