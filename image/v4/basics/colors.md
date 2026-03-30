@@ -16,7 +16,7 @@ The easiest way is to use the static methods of `Intervention\Image\Color` to cr
 
 > public Color::parse(string $input): ColorInterface
 
-Parse colors from string values like functional notation, hexadecimal rgba notation or named color values.
+Parse colors from string values like functional notation, hexadecimal `RGBA` notation or named color values.
 
 #### Parameters
 
