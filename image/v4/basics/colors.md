@@ -16,23 +16,28 @@ The easiest way is to use the static methods of `Intervention\Image\Color` to cr
 
 > public Color::parse(string $input): ColorInterface
 
-Parse colors from string values like functional notation or hexadecimal rgb notation.
+Parse colors from string values like functional notation, hexadecimal rgba notation or named color values.
 
 #### Parameters
 
 | Name | Type | Description |
 | - | - | - |
-| input | string | Color string represenation to be parsed |
+| input | string | Color string represenation |
 
 #### Example
 
 ```php
 use Intervention\Image\Color;
 
-$rgb = Color::parse('rgb(34, 12, 64)');
-$hsl = Color::parse('hsl(30, 100%, 50%)');
-$hex = Color::parse('#ff5500');
-$hex = Color::parse('ccc');
+$color = Color::parse('rgb(34, 12, 64)');
+$color = Color::parse('rgba(120, 0, 255, .4)');
+$color = Color::parse('rgb(0 45 200 / 0.7)');
+$color = Color::parse('hsl(30, 100%, 50%)');
+$color = Color::parse('#ff5500');
+$color = Color::parse('ccc');
+$color = Color::parse('ccc4');
+$color = Color::parse('magenta');
+$color = Color::parse('steelblue');
 ```
 
 ### Creating Colors from Channel Values
