@@ -196,7 +196,7 @@ $result = (string) $color;
 
 > public ColorInterface::toHex(bool $prefix = false): ColorInterface
 
-Transform the color to a RGB hexadecimal value. The alpha channel is only
+Transform the color to a `RGBA` hexadecimal value. The alpha channel is only
 output in the hex string if it is not completely opaque.
 
 #### Parameters
