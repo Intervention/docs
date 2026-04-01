@@ -81,7 +81,7 @@ It is very likely that you will need to make these adjustments when you update t
 - `ImageInterface::flop()` was removed. Use [ImageInterface::flip()](/v4/modifying-images/effects#mirror-images) with direction parameter `Direction::HORIZONTAL`
 - `ImageInterface::place()` was renamed to [ImageInterface::insert()](/v4/modifying-images/inserting) with a different signature. `offset_x` was renamed to `x` and `offset_y` was renamed to `y`, `opacity` was renamed to `transparency` with `float` instead of `int` and updated argument order
 - Signatures of [ImageInterface::drawRectangle()](/v4/modifying-images/drawing), [ImageInterface::drawLine()](/v4/modifying-images/drawing), [ImageInterface::drawEllipse()](/v4/modifying-images/drawing), [ImageInterface::drawCircle()](/v4/modifying-images/drawing), [ImageInterface::drawPolygon()](/v4/modifying-images/drawing) and [ImageInterface::drawBezier()](/v4/modifying-images/drawing) have changed
-- Method `ImageInterface::save()` only processes known image file extensions
+- Method `ImageInterface::save()` only processes known image file extensions. Use `EncodedImageInterface::save()` if you want to save with unknown file extensions.
 - `EncodedImageInterface::toDataUri()` now returns `DataUriInterface::class` instead of `string´
 - Method `FontInterface::filename()` is replaced by [FontInterface::filepath()](/v4/modifying-images/text-fonts#font-file)
 - Method `FontInterface::hasFilename()` is replaced by `FontInterface::hasFile()`
