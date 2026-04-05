@@ -152,6 +152,9 @@ $image->setResolution(300, 300);
 Currently Intervention Image is only able to read Exif information. The
 possibility to write Exif data blocks is not implemented.
 
+**Please note that the GD driver does not save EXIF data. Unfortunately, this
+is a technical limitation of the PHP extension.**
+
 ### Read Exif Information
 
 > public Image::exif(null|string $query = null): mixed
