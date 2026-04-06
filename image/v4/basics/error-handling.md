@@ -36,6 +36,7 @@ ImageException
     │   ├── FileNotFoundException
     │   ├── FileNotReadableException
     │   └── FileNotWritableException
+    ├── ColorException
     └── DriverException
         ├── AnalyzerException
         ├── ModifierException
