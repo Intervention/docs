@@ -95,6 +95,10 @@ There is an exception type for each of these individual cases.
 - `Intervention\Image\Exceptions\FileNotReadableException`
 - `Intervention\Image\Exceptions\FileNotWritableException`
 
+#### ColorException
+
+This exception is thrown when a logical error occurs in the internal color processing.
+
 #### DriverException
 
 This exception is thrown when the underlying image extension produces an error.
