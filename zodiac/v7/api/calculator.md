@@ -108,7 +108,7 @@ or an unix timestamp as string. It is also possible to read from date objects.
 
 > public Calculator::calculate(string|Stringable|int|float|DateTimeInterface $date, ?Astrology $astrology = null): SignInterface
 
-Calculate zodiac from the a date, which can be given in various formats.
+Calculate zodiac signs from the a date, which can be given in various formats.
 
 #### Parameters
 
