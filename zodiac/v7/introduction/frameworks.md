@@ -9,7 +9,9 @@ sort: 3
 
 ## Laravel
 
-Intervention Zodiac comes with Laravel facades ...
+Although the library is framework agnostic it comes with a service provider for
+the Laravel Framework. Which will be discovered automatically and registers the
+calculator into your installation.
 
 ### Application-wide Configuration
 
