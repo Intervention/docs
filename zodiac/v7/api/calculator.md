@@ -104,7 +104,7 @@ The calculator class can read dates from **integer types** (unix timestamp) as
 well as **text strings**, which can represent a relative time, an absolute time
 or an unix timestamp as string. It is also possible to read from date objects.
 
-### From String Dates
+### Calculate various date types
 
 > public Calculator::calculate(string|Stringable|int|float|DateTimeInterface $date, ?Astrology $astrology = null): SignInterface
 

@@ -11,7 +11,7 @@ sort: 0
 Intervention Zodiac is a powerful, developer-friendly tool for effortless
 zodiac sign calculation. This versatile PHP library lets you generate zodiac
 signs from various date formats, including natural language strings, Unix
-timestamps, standard `DateTime` objects, and Carbon instances. 
+timestamps and `DateTimeInterface` instances.
 
 Whether you're building horoscope features or astrology apps the Zodiac
 Calculator effortless delivers results for western as well as traditional
@@ -60,13 +60,11 @@ use Intervention\Zodiac\Sign;
 use Intervention\Zodiac\Chinese\Sign as ChineseSign;
 use Intervention\Zodiac\Western\Sign as WesternSign;
 use DateTime;
-use Carbon\Carbon;
 
 // parse signs directly
 $sign = Sign::fromString('2000-01-01');
 $sign = Sign::fromString('first day of june 2014', Astrology::CHINESE);
 $sign = Sign::fromDate(new DateTime('2001-01-01'), Astrology::WESTERN);
-$sign = Sign::fromCarbon(Carbon::yesterday(), Astrology::CHINESE);
 $sign = Sign::fromUnix(228268800, Astrology::WESTERN);
 $sign = Sign::fromUnix('228268800', Astrology::CHINESE);
 

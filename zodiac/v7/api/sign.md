@@ -39,7 +39,7 @@ $sign = ChineseSign::fromString('2000-01-01');
 
 > public static Sign::fromDate(DateTimeInterface $date, Astrology $astrology = Astrology::WESTERN): SignInterface
 
-Create zodiac signs from date objects like `DateTime` or `Carbon\Carbon`.
+Create zodiac signs from `DateTimeInterface` instances.
 
 #### Example
 
@@ -57,29 +57,6 @@ $sign = WesternSign::fromDate(new DateTime('1977-03-15'));
 
 // parse only chinese signs
 $sign = ChineseSign::fromDate(new DateTime('1977-03-15'));
-```
-
-### Create Zodiac Signs from Carbon objects
-
-> public static Sign::fromCarbon(CarbonInterface $date, Astrology $astrology = Astrology::WESTERN): SignInterface
-
-Pass date carbon date objects like `Carbon\Carbon` to instantiate new zodiac objects.
-
-#### Example
-
-```php
-use Intervention\Zodiac\Sign;
-use Intervention\Zodiac\Western\Sign as WesternSign;
-use Intervention\Zodiac\Chinese\Sign as ChineseSign;
-
-// parse zodiac sign from carbon date
-$sign = Sign::fromCarbon(Carbon\Carbon::yesterday(), Astrology::CHINESE);
-
-// parse only western signs
-$sign = WesternSign::fromCarbon(Carbon\Carbon::yesterday());
-
-// parse only chinese signs
-$sign = ChineseSign::fromCarbon(Carbon\Carbon::yesterday());
 ```
 
 ### Create Zodiac Signs from Unix Timestamps
