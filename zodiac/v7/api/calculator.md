@@ -157,4 +157,4 @@ $sign = $calculator->calculate(209262190, Astrology::CHINESE);
 
 ```
 
-Continue reading to learn what you can do with the [zodiac objects](/v6/api/sign).
+Continue reading to learn what you can do with the [zodiac objects](/v7/api/sign).

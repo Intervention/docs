@@ -10,12 +10,16 @@ sort: 0
 
 Intervention Zodiac is a powerful, developer-friendly tool for effortless
 zodiac sign calculation. This versatile PHP library lets you generate zodiac
-signs from nearly any date format, including natural language strings, Unix
+signs from various date formats, including natural language strings, Unix
 timestamps, standard `DateTime` objects, and Carbon instances. 
 
 Whether you're building horoscope features or astrology apps the Zodiac
 Calculator effortless delivers results for western as well as traditional
 chinese zodiac signs.
+
+- Fluent interface to calculate zodiac signs
+- Support for western and chinese astrology
+- Framework-agnostic
 
 ### Code Examples
 
@@ -41,7 +45,7 @@ $sign = $calculator->calculate('228268800');
 $sign = $calculator->calculate('2001-01-01', Astrology::CHINESE);
 ```
 
-Read more about the [calculator](/v6/api/calculator).
+Read more about the [calculator](/v7/api/calculator).
 
 ## Zodiac Signs
 
@@ -79,4 +83,4 @@ $localized = $sign->localize('fr')->name(); // Gémeaux
 $compatibility = $sign->compatibility($sign); // .6
 ```
 
-Read more about [zodiac signs](/v6/api/sign) or how to [install the package](/v6/introduction/installation).
+Read more about [zodiac signs](/v7/api/sign) or how to [install the package](/v7/introduction/installation).
