@@ -171,7 +171,7 @@ Encode the current image using a file path or file name to determine the encoder
 the file extension. Set optional encoder options with additional parameters.
 
 It is important to note that the given file path or name is not written. It is
-only used to determine the encoder format. Use [save()](/) if you want to write.
+only used to determine the encoder format. Use [save()](/v4/basics/image-output#encode--save-combined) if you want to write.
 
 #### Parameters
 
