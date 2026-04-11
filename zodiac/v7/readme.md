@@ -1,4 +1,4 @@
 ---
 title: "Version 7"
-status: "beta"
+status: "stable"
 ---
