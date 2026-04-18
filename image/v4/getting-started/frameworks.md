@@ -329,7 +329,7 @@ return new ImageConfig(
 ```
 
 
-Then you can then use the options to determine the behavior of the library. Read more about the different options for
+You can then use the options to determine the behavior of the library. Read more about the different options for
 [driver selection](/v4/basics/configuration-drivers#driver-selection), setting options for 
 [auto orientation](/v4/modifying-images/effects#image-orientation-according-to-exif-data), 
 [decoding animations](/v4/modifying-images/animations) and 
