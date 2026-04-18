@@ -249,6 +249,8 @@ Install the following package in your Tempest application.
 composer require intervention/image-tempest
 ```
 
+Now you're read to configure Intervention Image globally for the framework.
+
 ### Application-wide Configuration
 
 You have two configuration options, depending on how much control you need.
