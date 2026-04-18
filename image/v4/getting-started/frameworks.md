@@ -231,3 +231,131 @@ class ExampleController extends AbstractController
     }
 }
 ```
+
+## Tempest
+
+Intervention Image can be used with the [Tempest framework](https://tempestphp.com/). Although the 
+use of this integration library is not absolutely mandatory, the [official bundle](https://github.com/Intervention/image-tempest) offers 
+a convenient way of a central configuration file.
+
+### Installation
+
+Instead of installing the Intervention Image directly, it is only necessary to require the
+bundle package `intervention/image-tempest`. The dependencies are automatically installed as well.
+
+Install the following package in your Tempest application.
+
+```bash
+composer require intervention/image-tempest
+```
+
+### Application-wide Configuration
+
+After the installing, you can configure intervention image for the framework. By default, the bundle
+is using the GD library with Intervention Image. This and others options can be
+configured by setting the image driver in the `.env` file.
+
+```
+IMAGE_DRIVER="Intervention\\Image\\Drivers\\Imagick\\Driver"
+```
+
+Choose between the two supplied drivers `Intervention\Image\Drivers\Gd\Driver` and `Intervention\Image\Drivers\Imagick\Driver` for example.
+
+If you're looking for more in-depth configuration you can skip the `.env` part and publish a more detailed configuration file for Intervention Image by running the following command.
+
+```bash
+php tempest install image
+```
+
+The call will publish the configuration file `image.config.php` to your local application. Here you can set the driver and more detailed configuration options.
+
+The configuration files looks like this.
+
+```php
+use Intervention\Image\Drivers\Gd\Driver as GdDriver;
+use Intervention\Image\Tempest\Config as ImageConfig;
+
+use function Tempest\env;
+
+return new ImageConfig(
+    /*
+    |--------------------------------------------------------------------------
+    | Image Driver
+    |--------------------------------------------------------------------------
+    |
+    | Intervention Image supports “GD Library” and “Imagick” to process images
+    | internally. Depending on your PHP setup, you can choose one of them.
+    |
+    | Included options:
+    |   - \Intervention\Image\Drivers\Gd\Driver::class
+    |   - \Intervention\Image\Drivers\Imagick\Driver::class
+    |   - \Intervention\Image\Drivers\Vips\Driver::class
+    */
+
+    driver: env('IMAGE_DRIVER', GdDriver::class),
+
+    /*
+    |--------------------------------------------------------------------------
+    | Configuration Options
+    |--------------------------------------------------------------------------
+    |
+    | These options control the behavior of Intervention Image.
+    |
+    | - "autoOrientation" controls whether an imported image should be
+    |    automatically rotated according to any existing Exif data.
+    |
+    | - "decodeAnimation" decides whether a possibly animated image is
+    |    decoded as such or whether the animation is discarded.
+    |
+    | - "backgroundColor" Defines the default background & blending color.
+    |
+    | - "strip" controls if meta data like exif tags should be removed when
+    |    encoding images.
+    */
+
+    autoOrientation: true,
+    decodeAnimation: true,
+    backgroundColor: 'ffffff',
+    strip: false,
+);
+```
+
+
+Then you can then use the options to determine the behavior of the library. Read more about the different options for
+[driver selection](/v4/basics/configuration-drivers#driver-selection), setting options for 
+[auto orientation](/v4/modifying-images/effects#image-orientation-according-to-exif-data), 
+[decoding animations](/v4/modifying-images/animations) and 
+[background color](/v4/basics/colors).
+
+### Dependency Injection
+
+The following code example shows how to inject an [image manager](/v4/basics/instantiation) into your controller. The instance has already been automatically configured according to the config file. Of course you are not limited to inject into controller.
+
+```php
+use Intervention\Image\Format;
+use Intervention\Image\Interfaces\ImageManagerInterface;
+use Tempest\Router\Get;
+use Tempest\View\View;
+
+use function Tempest\View\view;
+
+final readonly class HomeController
+{
+    public function __construct(private ImageManagerInterface $imageManager)
+    {
+        //
+    }
+
+    #[Get(uri: '/')]
+    public function __invoke(): View
+    {
+        // process image
+        $image = $this->imageManager
+            ->decode('./example.jpg')
+            ->scale(height: 300)
+            ->encodeUsingFormat(Format::WEBP);
+
+        return view('./home.view.php', dataUri: $image->toDataUri());
+    }
+}
+```
