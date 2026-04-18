@@ -251,6 +251,8 @@ composer require intervention/image-tempest
 
 ### Application-wide Configuration
 
+You have two configuration options, depending on how much control you need.
+
 #### Basic Configuration
 
 After the installing, you can configure intervention image for the framework. By default, the bundle
