@@ -251,6 +251,8 @@ composer require intervention/image-tempest
 
 ### Application-wide Configuration
 
+#### Basic Configuration
+
 After the installing, you can configure intervention image for the framework. By default, the bundle
 is using the GD library with Intervention Image. This and others options can be
 configured by setting the image driver in the `.env` file.
@@ -260,6 +262,8 @@ IMAGE_DRIVER="Intervention\\Image\\Drivers\\Imagick\\Driver"
 ```
 
 Choose between the two supplied drivers `Intervention\Image\Drivers\Gd\Driver` and `Intervention\Image\Drivers\Imagick\Driver` for example.
+
+#### Detailed Configuration
 
 If you're looking for more in-depth configuration you can skip the `.env` part and publish a more detailed configuration file for Intervention Image by running the following command.
 
