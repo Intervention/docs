@@ -58,6 +58,7 @@ return [
     | Included options:
     |   - \Intervention\Image\Drivers\Gd\Driver::class
     |   - \Intervention\Image\Drivers\Imagick\Driver::class
+    |   - \Intervention\Image\Drivers\Vips\Driver::class
     |
     */
 
@@ -200,8 +201,7 @@ intervention_image:
     strip: false
 ```
 
-First choose between the two supplied drivers `Intervention\Image\Drivers\Gd\Driver` and
-`Intervention\Image\Drivers\Imagick\Driver` for example.
+Choose between the drivers `Intervention\Image\Drivers\Gd\Driver`, `Intervention\Image\Drivers\Imagick\Driver` or `Intervention\Image\Drivers\Vips\\Driver`.
 
 Then you can then use the options to determine the behavior of the library. Read more about the different options for
 [driver selection](/v4/basics/configuration-drivers#driver-selection), setting options for 
@@ -266,7 +266,7 @@ This can be easily done in the `.env` file as follows.
 IMAGE_DRIVER="Intervention\\Image\\Drivers\\Imagick\\Driver"
 ```
 
-Choose between the two supplied drivers `Intervention\Image\Drivers\Gd\Driver`, `Intervention\Image\Drivers\Imagick\Driver` or `Intervention\Image\Drivers\Vips\\Driver`.
+Choose between the drivers `Intervention\Image\Drivers\Gd\Driver`, `Intervention\Image\Drivers\Imagick\Driver` or `Intervention\Image\Drivers\Vips\\Driver`.
 
 #### Detailed Configuration
 
