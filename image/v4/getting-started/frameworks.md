@@ -249,7 +249,7 @@ Install the following package in your Tempest application.
 composer require intervention/image-tempest
 ```
 
-Now you're read to configure Intervention Image globally for the framework.
+Now you're ready to configure Intervention Image globally for the framework.
 
 ### Application-wide Configuration
 
@@ -257,15 +257,16 @@ You have two configuration options, depending on how much control you need.
 
 #### Basic Configuration
 
-After the installing, you can configure intervention image for the framework. By default, the bundle
-is using the GD library with Intervention Image. This and others options can be
-configured by setting the image driver in the `.env` file.
+This type of configuration only sets the [driver type](/v4/basics/configuration-drivers#driver-selection). By default, the bundle
+is using the GD library with Intervention Image. Depending on your server environment, you may need to adjust this and select from the available drivers.
+
+This can be easily done in the `.env` file as follows.
 
 ```
 IMAGE_DRIVER="Intervention\\Image\\Drivers\\Imagick\\Driver"
 ```
 
-Choose between the two supplied drivers `Intervention\Image\Drivers\Gd\Driver` and `Intervention\Image\Drivers\Imagick\Driver` for example.
+Choose between the two supplied drivers `Intervention\Image\Drivers\Gd\Driver`, `Intervention\Image\Drivers\Imagick\Driver` or `Intervention\Image\Drivers\Vips\\Driver`.
 
 #### Detailed Configuration
 
@@ -275,9 +276,9 @@ If you're looking for more in-depth configuration you can skip the `.env` part a
 php tempest install image
 ```
 
-The call will publish the configuration file `image.config.php` to your local application. Here you can set the driver and more detailed configuration options.
+The call will publish the configuration file `image.config.php` to your local application. Here you can set the [driver](/v4/basics/configuration-drivers#driver-selection) and more detailed configuration options.
 
-The configuration files looks like this.
+The published configuration can be included in the versioning. The file looks like this.
 
 ```php
 use Intervention\Image\Drivers\Gd\Driver as GdDriver;
@@ -329,7 +330,7 @@ return new ImageConfig(
 ```
 
 
-You can then use the options to determine the behavior of the library. Read more about the different options for
+In addition to the driver selection, you can use the options to determine the behavior of the library. Read more about the different options for
 [driver selection](/v4/basics/configuration-drivers#driver-selection), setting options for 
 [auto orientation](/v4/modifying-images/effects#image-orientation-according-to-exif-data), 
 [decoding animations](/v4/modifying-images/animations) and 
