@@ -2,7 +2,7 @@
 title: "Framework Integration"
 subtitle: "Integration in your Favorite Framework"
 lead: "Explore how to integrate Intervention Image with Laravel, Symfony or Tempest framework using the official integration packages. Learn to set up configuration files, select drivers and leverage features like auto-orientation, decoding animations, and background color."
-sort: 2
+sort: 3
 ---
 
 [TOC]
