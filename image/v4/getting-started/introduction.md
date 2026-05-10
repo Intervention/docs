@@ -9,7 +9,7 @@ sort: 0
 ### Features
 
 - Fluent API for common image editing tasks
-- Interchangable driver architecture for all popular PHP image processing extensions
+- Interchangeable driver architecture for all popular PHP image processing extensions
 - Support for GD, Imagick and [libvips](https://github.com/Intervention/image-driver-vips)
 - Processing of animated images with all drivers
 - Support for colorspaces and profiles

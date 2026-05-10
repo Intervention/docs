@@ -12,13 +12,13 @@ sort: 4
 ### New Decoding Methods
 
 The revised image decoding interface introduces a more transparent approach to
-handling image sources. Allowing image sources to be addressed directly instead
+handling image sources, allowing image sources to be addressed directly instead
 of relying on a single universal method. 
 
 - `ImageManagerInterface::decode()`
 - `ImageManagerInterface::decodePath()`
 - `ImageManagerInterface::decodeBinary()`
-- `ImageManagerInterface::decodeBas64()`
+- `ImageManagerInterface::decodeBase64()`
 - `ImageManagerInterface::decodeDataUri()`
 - `ImageManagerInterface::decodeSplFileInfo()`
 - `ImageManagerInterface::decodeStream()`
@@ -61,7 +61,7 @@ It is very likely that you will need to make these adjustments when you update t
 - `ImageManagerInterface::read()` is now handled by `ImageManagerInterface::decode()` or the [other decode methods](/v4/basics/instantiation)
 - `ImageManagerInterface::withDriver()` is now handled by [Image::usingDriver()](/v4/basics/configuration-drivers#create-a-new-image-manager-instance-with-static-helper-methods)
 - `ImageManagerInterface::animate()` is replaced by universal [ImageManagerInterface::createImage()](/v4/basics/instantiation#create-images)
-- `ImageInterface::toJpeg()` and `ImageInterface::toJpg()` are now handled by i[ImageInterface::encodeUsingFormat()](/v4/basics/image-output#encode-images-using-format)
+- `ImageInterface::toJpeg()` and `ImageInterface::toJpg()` are now handled by [ImageInterface::encodeUsingFormat()](/v4/basics/image-output#encode-images-using-format)
 - `ImageInterface::toPng()` is now handled by [ImageInterface::encodeUsingFormat()](/v4/basics/image-output#encode-images-using-format)
 - `ImageInterface::toGif()` is now handled by [ImageInterface::encodeUsingFormat()](/v4/basics/image-output#encode-images-using-format)
 - `ImageInterface::toJp2()` and `ImageInterface::toJpeg2000()` are replaced by [ImageInterface::encodeUsingFormat()](/v4/basics/image-output#encode-images-using-format)
@@ -82,7 +82,7 @@ It is very likely that you will need to make these adjustments when you update t
 - `ImageInterface::place()` was renamed to [ImageInterface::insert()](/v4/modifying-images/inserting) with a different signature. `offset_x` was renamed to `x` and `offset_y` was renamed to `y`, `opacity` was renamed to `transparency` with `float` instead of `int` and updated argument order
 - Signatures of [ImageInterface::drawRectangle()](/v4/modifying-images/drawing), [ImageInterface::drawLine()](/v4/modifying-images/drawing), [ImageInterface::drawEllipse()](/v4/modifying-images/drawing), [ImageInterface::drawCircle()](/v4/modifying-images/drawing), [ImageInterface::drawPolygon()](/v4/modifying-images/drawing) and [ImageInterface::drawBezier()](/v4/modifying-images/drawing) have changed
 - Method `ImageInterface::save()` only processes known image file extensions. Use `EncodedImageInterface::save()` if you want to save with unknown file extensions.
-- `EncodedImageInterface::toDataUri()` now returns `DataUriInterface::class` instead of `string´
+- `EncodedImageInterface::toDataUri()` now returns `DataUriInterface::class` instead of `string`
 - Method `FontInterface::filename()` is replaced by [FontInterface::filepath()](/v4/modifying-images/text-fonts#font-file)
 - Method `FontInterface::hasFilename()` is replaced by `FontInterface::hasFile()`
 - Method `FontInterface::setFilename()` is replaced by `FontInterface::setFilepath()`
@@ -98,7 +98,7 @@ It is very likely that you will need to make these adjustments when you update t
 
 ### Medium Impact Changes
 
-It is possible that you will need to make these adjustments when updating if you have delved deeper into the functions.
+It is possible that you will need to make these adjustments when updating if you have used these parts of the API.
 
 - Removed `ColorInterface::toArray()` use `ColorInterface::channels()` and map to desired format
 - Removed `ColorInterface::normalize()` use `ColorInterface::channels()` and map to desired format
@@ -109,7 +109,7 @@ It is possible that you will need to make these adjustments when updating if you
 - Changed default value for `background` to `null` in [ImageInterface::containDown()](/v4/modifying-images/resizing#contain-resizing-without-upscaling) former `ImageInterface::pad()`
 - Changed default value for `background` to `null` in [ImageInterface::crop()](/v4/modifying-images/resizing#crop-image)
 - Signature of [ImageInterface::crop()](/v4/modifying-images/resizing#crop-image) changed from `offset_x` to `x` and `offset_y` to `y`
-- Attribute `$per_unit` has change to `$unit` with different signature in `Resolution::class`
+- Attribute `$per_unit` has changed to `$unit` with different signature in `Resolution::class`
 - Method `DrawableFactoryInterface::init()` is replaced by `DrawableFactoryInterface::create()`
 - Method `DrawableFactoryInterface::create()` is replaced by `DrawableFactoryInterface::drawable()`
 - `DriverInterface::handleInput()` is replaced by `DriverInterface::handleImageInput()`, `DriverInterface::handleColorInput()`
@@ -122,11 +122,11 @@ It is possible that you will need to make these adjustments when updating if you
 - `ImageInterface::greyscale()` was renamed to [ImageInterface::grayscale()](/v4/modifying-images/effects#convert-image-to-a-grayscale-version)
 - `ColorInterface::isGreyscale()` was renamed to `ColorInterface::isGrayscale()`
 - Alpha channel values in `__construct()` or `create()` methods of colors are now defined as float values between `0` and `1`
-- `FrameInterface::dispose()` was rename to `FrameInterface::disposalMethod()`
+- `FrameInterface::dispose()` was renamed to `FrameInterface::disposalMethod()`
 - `FrameInterface::setDispose()` was renamed to `FrameInterface::setDisposalMethod()`
 - `ImageManagerInterface::driver()` was removed but you can use the public `$driver` property.
 - `FileInterface::toFilePointer()` was renamed to `FileInterface::toStream()`
-- Color format string `transparent` is no longer supported. Use[Intervention\Image\Color::transparent()](/v4/basics/colors#transparency) instead
+- Color format string `transparent` is no longer supported. Use [Intervention\Image\Color::transparent()](/v4/basics/colors#transparency) instead
 
 ### Low Impact Changes
 
@@ -139,8 +139,8 @@ the API extensively and have written your own drivers or modifiers.
 - `DriverInterface::class` requires implementation of `createCore()`
 - Replace `DriverInterface::specialize()` with `DriverInterface::specializeModifier()`, `DriverInterface::specializeAnalyzer()`, `DriverInterface::specializeDecoder()` and `DriverInterface::specializeEncoder()`
 - `DriverInterface::handleColorInput()` has null as default
-- Signature of `FrameInterface::__construct()` has changed, argument `$offset_left` is know `$offsetLeft` and `$offset_top` is now `$offsetTop`
-- Signature of `PixelColorAnalyzer::__construct()` has changed, argument `$frame_key` is know `$frame`
+- Signature of `FrameInterface::__construct()` has changed, argument `$offset_left` is now `$offsetLeft` and `$offset_top` is now `$offsetTop`
+- Signature of `PixelColorAnalyzer::__construct()` has changed, argument `$frame_key` is now `$frame`
 - `ColorChannelInterface::max()` and `ColorChannelInterface::min()` are now static
 - Method `ColorChannelInterface::toInt()` was removed use `ColorChannelInterface::value()` instead
 - Method `ColorChannelInterface::colorFromNormalized()` requires now a static implementation

@@ -22,7 +22,7 @@ Parse colors from string values like functional notation, hexadecimal `RGBA` not
 
 | Name | Type | Description |
 | - | - | - |
-| input | string | Color string represenation |
+| input | string | Color string representation |
 
 #### Example
 
@@ -414,7 +414,7 @@ $image->drawRectangle(function (RectangleFactory $rectangle) use ($color): void 
 
 The supported colorspaces depend mainly on the driver used. While 
 the Imagick and Vips driver support multiple colorspaces, the GD driver
-is limited to the RGB.
+is limited to RGB.
 
 When reading CMYK images with Intervention Image using the GD driver the
 images are automatically converted to RGB colorspace.
@@ -475,7 +475,7 @@ $colorspace = $image->setColorspace(Cmyk::class);
 
 ## Color Profiles
 
-Currently Intervention Image can only handle color profiles with the `ìmagick` and `vips` driver.
+Currently Intervention Image can only handle color profiles with the `imagick` and `vips` driver.
 
 ### Read Color Profiles
 

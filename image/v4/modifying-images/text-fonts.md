@@ -126,7 +126,7 @@ only possible to use fully opaque colors for text and strokes.**
 > public FontFactory::align(null|string|Alignment $horizontal = null, null|string|Alignment $vertical = null): FontFactory
 
 Define the horizontal and vertical alignment of the text starting from the
-base point. By default the text is alignment left horizontally and at the bottom vertically.
+base point. By default the text is aligned left horizontally and at the bottom vertically.
 
 #### Parameters
 

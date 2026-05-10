@@ -29,7 +29,7 @@ installed. Intervention Image currently supports the three most popular.
 - [Imagick](https://www.php.net/manual/en/book.imagick.php)
 - [libvips](https://www.libvips.org)
 
-GD is part of most PHP installations. However I recommend using Imagick because
+GD is part of most PHP installations. However, I recommend using Imagick because
 I think it is faster and more efficient especially for larger images. Support
 for libvips is available via a driver that can be installed as an [add-on
 package](https://github.com/Intervention/image-driver-vips).
@@ -45,8 +45,8 @@ composer require intervention/image
 ```
 
 This will install Intervention Image with the most recent version, your
-`composer.json` is automatically updated and you will be able use the package's
-classes via the autoloader. To do this you will need to require the just
+`composer.json` is automatically updated and you will be able to use the package's
+classes via the autoloader. To do this you will need to require the newly
 created `vendor/autoload.php` file to PSR-4 autoload all your installed
 composer packages.
 

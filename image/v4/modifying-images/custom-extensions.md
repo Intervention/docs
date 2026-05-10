@@ -1,7 +1,7 @@
 ---
 title: "Custom Extensions"
 subtitle: "Extend Intervention Image"
-lead: "Add custom extensions to Intervention Image by streamlining image transformations architecture with own modifiers and analyzers. Learn to group and reuse complex modifications and analyzing logic using custom classes."
+lead: "Add custom extensions to Intervention Image by streamlining image transformation architecture with your own modifiers and analyzers. Learn to group and reuse complex modification and analysis logic using custom classes."
 sort: 6
 ---
 

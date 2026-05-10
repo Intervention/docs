@@ -14,7 +14,7 @@ sort: 4
 
 > public Image::width(): integer
 
-Read the pixel width in pixels from an instance.
+Read the pixel width from an image instance.
 
 #### Example
 

@@ -41,7 +41,7 @@ The following `source` argument formats are accepted.
 To decode the source, you can optionally specify a decoding strategy with the
 second parameter. This can be an array of class names or objects of decoders to
 be tried in sequence. It is also possible to pass a single object or class name
-of a decoder. If the second parameter is not set, all available images decoders
+of a decoder. If the second parameter is not set, all available image decoders
 will be tried.
 
 #### Example

@@ -329,7 +329,7 @@ $encoded = $image->encodeUsingFormat(Format::JPEG, progressive: true, quality: 2
 
 > public EncodedImage::toDataUri(): string
 
-This method takes the already encoded image data and wraps it in an base64 encoded data uri scheme. 
+This method takes the already encoded image data and wraps it in a base64 encoded data uri scheme. 
 
 #### Example
 

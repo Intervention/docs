@@ -117,7 +117,7 @@ $image->drawRectangle(function (RectangleFactory $rectangle): void {
 
 > public Image::drawEllipse(callable|Ellipse $ellipse): ImageInterface
 
-Draw a **ellipse** on the current image. Define the overall appearance of the
+Draw an **ellipse** on the current image. Define the overall appearance of the
 shape by passing an callback or a ellipse object. 
 
 #### Parameters

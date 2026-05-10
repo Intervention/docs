@@ -16,7 +16,7 @@ file and more.
 
 ### Installation
 
-Instead of installing the Intervention Image directly, it is only necessary to integrate
+Instead of installing Intervention Image directly, it is only necessary to integrate
 the `intervention/image-laravel` package. The corresponding base libraries are automatically
 installed as well.
 
@@ -39,10 +39,10 @@ php artisan vendor:publish --provider="Intervention\Image\Laravel\ServiceProvide
 
 This command will publish the configuration file `config/image.php`. Here you
 can set the desired driver and its configuration options for Intervention
-Image. By default the library is configured to use GD library for image
+Image. By default, the library is configured to use the GD library for image
 processing.
 
-The configuration files looks like this.
+The configuration file looks like this.
 
 ```php
 return [
@@ -165,9 +165,9 @@ offers a convenient way of central configuration in the Symfony framework.
 
 ### Installation
 
-Instead of installing the Intervention Image directly, it is only necessary to require the
+Instead of installing Intervention Image directly, it is only necessary to require the
 bundle package `intervention/image-symfony`. The corresponding dependencies 
-are automatically installed as well
+are automatically installed as well.
 
 ```bash
 composer require intervention/image-symfony
@@ -176,7 +176,7 @@ composer require intervention/image-symfony
 ### Application-wide Configuration
 
 After the successful installation, you can activate the bundle in the file
-`config/bundes.php` of your Symfony application by inserting the following 
+`config/bundles.php` of your Symfony application by inserting the following 
 line into the array.
 
 ```php
@@ -203,7 +203,7 @@ intervention_image:
 
 Choose between the drivers `Intervention\Image\Drivers\Gd\Driver`, `Intervention\Image\Drivers\Imagick\Driver` or `Intervention\Image\Drivers\Vips\\Driver`.
 
-Then you can then use the options to determine the behavior of the library. Read more about the different options for
+You can then use the options to determine the behavior of the library. Read more about the different options for
 [driver selection](/v4/basics/configuration-drivers#driver-selection), setting options for 
 [auto orientation](/v4/modifying-images/effects#image-orientation-according-to-exif-data), 
 [decoding animations](/v4/modifying-images/animations) and 
@@ -240,7 +240,7 @@ a convenient way of a central configuration file.
 
 ### Installation
 
-Instead of installing the Intervention Image directly, it is only necessary to require the
+Instead of installing Intervention Image directly, it is only necessary to require the
 bundle package `intervention/image-tempest`. The dependencies are automatically installed as well.
 
 Install the following package in your Tempest application.
@@ -338,7 +338,7 @@ In addition to the driver selection, you can use the options to determine the be
 
 ### Dependency Injection
 
-The following code example shows how to inject an [image manager](/v4/basics/instantiation) into your controller. The instance has already been automatically configured according to the config file. Of course you are not limited to inject into controller.
+The following code example shows how to inject an [image manager](/v4/basics/instantiation) into your controller. The instance has already been automatically configured according to the config file. Of course, you are not limited to injecting into a controller.
 
 ```php
 use Intervention\Image\Format;

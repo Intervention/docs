@@ -2,7 +2,7 @@
 label: "Error Handling"
 title: "Error Handling"
 subtitle: "Use the Exception model to handle errors"
-lead: "Discover how to use the exception model of Intervention Image to catch and handle different types of er"
+lead: "Discover how to use the exception model of Intervention Image to catch and handle different types of errors."
 sort: 3
 ---
 
@@ -12,10 +12,10 @@ sort: 3
 
 If something goes wrong, Intervention Image throws exceptions. For this purpose, a structured hierarchy has been implemented.
 
-All exceptions are extended from a container the container class `Intervention\Image\Exceptions\ImageException`. This makes it possible to
+All exceptions extend the container class `Intervention\Image\Exceptions\ImageException`. This makes it possible to
 catch all errors in the library in general.
 
-The container class is divided into two types: `LogicException` and `RuntimeException` indicating and operational failure or that the error can be
+The container class is divided into two types: `LogicException` and `RuntimeException` indicating an operational failure or that the error can be
 fixed by correcting the code.
 
 These two types are each divided into further sub-branches. Adding the possibility to intercept every type of error in detail and respond accordingly.
@@ -82,7 +82,7 @@ extension.
 
 #### FilesystemException
 
-This extension is thrown when something went wrong in the filesystem. This can
+This exception is thrown when something went wrong in the filesystem. This can
 have various causes. For example, a file cannot be read because it does not
 exist or there are no permissions to do so. Or a directory cannot be written to
 because it does not exist.

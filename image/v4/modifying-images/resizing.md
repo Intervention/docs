@@ -169,8 +169,8 @@ them to the largest possible size that matches the original size. This size is
 then positioned on the original and cropped before being resized to the desired
 size from the arguments.
 
-This method requires both width and height arguments. You can optional
-specify a alignment position to determine which part of the image should remain in focus.
+This method requires both width and height arguments. You can optionally
+specify an alignment position to determine which part of the image should remain in focus.
 
 #### Parameters
 

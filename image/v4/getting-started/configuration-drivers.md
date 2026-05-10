@@ -44,8 +44,7 @@ by default.
 #### Driver for libvips
 
 libvips is a fast, low-memory image processing library that outperforms all
-other PHP image extensions libraries. Support for this processing
-library is available via Intervention Image's [official driver to use
+other PHP image processing libraries. Support for this library is available via Intervention Image's [official driver to use
 Intervention Image with libvips](https://github.com/Intervention/image-driver-vips) which can be
 installed additionally.
 

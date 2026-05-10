@@ -9,10 +9,10 @@ sort: 5
 
 ## Image Formats
 
-The supported image formats depend on the used driver. While with Imagick and
-libvips it is possible to read all formats that the library itself supports and
-write the formats listed below with GD only the formats listed below are
-readable and writable.
+The supported image formats depend on the used driver. With Imagick and
+libvips it is possible to read all formats that the library itself supports.
+When writing, only the formats listed below are supported. With GD, only the
+formats listed below are readable and writable.
 
 Read more about [encoding different image formats](/v4/basics/image-output) in the output section.
 
