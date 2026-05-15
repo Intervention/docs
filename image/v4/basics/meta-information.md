@@ -84,6 +84,9 @@ $is_landscape = $size->isLandscape(); // false
 
 // read width from size
 $width = $size()->width();
+
+// destructuring
+[$width, $height] = $size;
 ```
 
 ## Image Resolution
