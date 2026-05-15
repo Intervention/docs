@@ -38,3 +38,30 @@ $imagick->oilPaintImage(4.5);
 Combined with [custom extensions](/v4/modifying-images/custom-extensions), Intervention
 Image can be extended with your own modifier combinations for endless
 possibilities.
+
+## Batch Modifications
+
+The `Intervention\Image\ModifierStack` class allows you to group existing modifiers together and process them in a single call.
+
+This can be helpful when you need to group individual calls into reusable units without having to create a [custom modifier](/v4/modifying-images/custom-extensions) class for that purpose.
+
+```php
+use Intervention\Image\Drivers\Gd\Driver;
+use Intervention\Image\ImageManager;
+use Intervention\Image\ModifierStack;
+use Intervention\Image\Modifiers\BrightnessModifier;
+use Intervention\Image\Modifiers\ContrastModifier;
+use Intervention\Image\Modifiers\GrayscaleModifier;
+
+$image = ImageManager::usingDriver(Driver::class)
+    ->decodePath('example.jpg');
+
+// black and white high contrast stack
+$stack = new ModifierStack([
+    new GrayscaleModifier(),
+    new BrightnessModifier(20),
+    new ContrastModifier(12),
+]);
+
+$image->modify($stack);
+```
