@@ -5,6 +5,8 @@ lead: "Discover the endless possibilities of Intervention Image by directly acce
 sort: 7
 ---
 
+[TOC]
+
 If the supplied options are not sufficient, it is possible to create your own
 solutions using your own [custom extensions](/v4/modifying-images/custom-extensions).
 Furthermore, the native image object can be accessed, so that all functions
