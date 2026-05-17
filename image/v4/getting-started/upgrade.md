@@ -93,7 +93,7 @@ It is very likely that you will need to make these adjustments when you update t
 - `ImageInterface::setBlendingColor()` was renamed to [ImageInterface::setBackgroundColor()](/v4/basics/colors#set-the-background-color)
 - `ImageInterface::blendingColor()` was renamed to [ImageInterface::backgroundColor()](/v4/basics/colors#read-the-background-color)
 - Color value string `transparent` is no longer supported. Use [Intervention\Image\Color::transparent()](/v4/basics/colors#transparency) instead
-- Parameter `$prefix` of [ColorInterface::toHex()](/v4/basics/colors#transform-colors-to-hexadecimal-triplet) has now a `boolean` type
+- Parameter `$prefix` of [ColorInterface::toHex()](/v4/basics/colors#transform-colors-to-hexadecimal-notation) has now a `boolean` type
 - Method `ImageInterface::reduceColors()` has a different type and default value of the argument `$background`. Background defaults now to the configured background color instead of `transparent`.
 
 ### Medium Impact Changes

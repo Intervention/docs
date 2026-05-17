@@ -192,12 +192,11 @@ $result = $color->toString(); // "rgb(255 55 0)"
 $result = (string) $color;
 ```
 
-### Transform Colors to Hexadecimal Triplet
+### Transform Colors to Hexadecimal Notation
 
 > public ColorInterface::toHex(bool $prefix = false): ColorInterface
 
-Transform the color to a `RGBA` hexadecimal value. The alpha channel is only
-output in the hex string if it is not completely opaque.
+Transform the color to a `RRGGBBAA` hexadecimal color notation. The alpha channel is only output if it is not completely opaque.
 
 #### Parameters
 

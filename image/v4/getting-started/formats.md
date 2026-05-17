@@ -158,7 +158,7 @@ $oklch = Color::parse('oklch(59.69% 0.156 49.77 / .5');
 
 #### Hexadecimal RGB Format
 
-You can parse colors as RGB hex triplets, which are commonly used in HTML and
+You can parse colors from RGB hexadecimal notation, which are commonly used in HTML and
 CSS. It's possible to use the shorthand as well as the full format with or
 without an alpha channel. The leading `#` is optional.
 
