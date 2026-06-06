@@ -30,8 +30,6 @@ $img->filter(new DemoFilter(45));
 #### DemoFilter Example
 
 ```php
-<?php
-
 namespace Intervention\Image\Filters;
 
 class DemoFilter implements FilterInterface

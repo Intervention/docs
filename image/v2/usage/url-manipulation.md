@@ -95,8 +95,6 @@ Just use the name instead of the template name.
 Take a look at the following example of a template filter class to learn more about [filter classes](/v2/usage/filters) and define your own templates anywhere you like.
 
 ```php
-<?php
-
 namespace YourApp\Filters;
 
 use Intervention\Image\Image;

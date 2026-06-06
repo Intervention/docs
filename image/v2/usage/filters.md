@@ -25,8 +25,6 @@ Take a look at the example of the DemoFilter ```src/Intervention/Image/Filters/D
 #### DemoFilter Example
 
 ```php
-<?php
-
 namespace Intervention\Image\Filters;
 
 class DemoFilter implements FilterInterface
