@@ -14,7 +14,7 @@ sort: 1
 
 > public ImageManager::decode(mixed $source, null|string|array|DecoderInterface $decoders = null): ImageInterface
 
-With a [configured Image Manager](/v4/basics/configuration-drivers) it is
+With a [configured Image Manager](/v4/getting-started/configuration-drivers) it is
 possible to read images from different sources. The `decode()` method accepts
 all available image sources. A complete list can be found below.
 
