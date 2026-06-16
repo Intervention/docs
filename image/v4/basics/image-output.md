@@ -190,13 +190,13 @@ use Intervention\Image\Drivers\Imagick\Driver;
 $image = ImageManager::usingDriver(Driver::class)->decode('example.webp');
 
 // encode to PNG format
-$png = $image->encodeUsingFilePath('images/output.png');
+$png = $image->encodeUsingPath('images/output.png');
 
 // encode in JPEG format with encoder options
-$jpeg = $image->encodeUsingFilePath('images/output.jpg', progressive: true, quality: 10);
+$jpeg = $image->encodeUsingPath('images/output.jpg', progressive: true, quality: 10);
 
 // encode to Webp format using file extension of a file name
-$gif = $image->encodeUsingFilePath('output.webp', quality: 10);
+$gif = $image->encodeUsingPath('output.webp', quality: 10);
 ```
 
 
