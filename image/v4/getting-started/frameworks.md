@@ -127,6 +127,46 @@ Route::get('/', function (Request $request) {
 });
 ```
 
+### Dependency Injection
+
+
+The Laravel integration package creates a binding for a fully configured [image manager](/v4/basics/instantiation).
+
+The image manager can be used by resolving either `Intervention\Image\ImageManager` or `Intervention\Image\Interfaces\ImageManagerInterface` at various points in the application via dependency injection, resulting in a manager instance based on the application-wide image configuration.
+
+The following example illustrates this using a controller.
+
+```php
+use Intervention\Image\Interfaces\ImageManagerInterface;
+use Illuminate\Http\Request;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\Support\Str;
+
+class ImageController extends Controller
+{
+    /**
+     * Create a new controller instance by injecting an image manager.
+     */
+    public function __construct(
+        protected ImageManagerInterface $imageManager,
+    ) {}
+
+    /**
+     * Handle image upload.
+     */
+    public function handleImageUpload(Request $request): RedirectResponse
+    {
+        $path = storage_path('images/' . Str::uuid() . '.webp');
+
+        $image = $this->imageManager->decode($request->file('image'));
+        $image->scale(height: 300);
+        $image->save($path);
+ 
+        return redirect('/images');
+    }
+}
+```
+
 ### Image Response Macro
 
 > image(Image $image, null|string|Format|MediaType|FileExtension $format = null, mixed ...$options)
