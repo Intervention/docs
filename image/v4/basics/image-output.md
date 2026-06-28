@@ -14,11 +14,11 @@ sort: 5
 
 > public Image::save(null|string $path = null, mixed ...$options): ImageInterface
 
-This method helps to initiate the saving process directly from the image object
+This method initiates the saving process directly from the image object
 without having to go via an `EncodedImage` object and encodes & writes the
 image data in one call.
 
-The resulting image format is defined by the file extension of the given path. For example if you pass `images/test.jpg` the image format will be JPEG, if `images/test.gif` is passed the format will be GIF. If no path is given the format of the originally read image will be used. 
+The file extension of the given path defines the resulting image format. For example if you pass `images/test.jpg` the image format will be JPEG, if `images/test.gif` is passed the format will be GIF. If no path is given the format of the originally read image will be used. 
 
 After the path you can pass encoder options like `quality`, `strip` or `interlaced` - these depend on the recognized format.
 
@@ -45,7 +45,7 @@ $manager = ImageManager::usingDriver(Driver::class);
 // read jpeg image
 $image = $manager->decode('images/example.jpg');
 
-// overwrite file at "images/example.jpg" with low quality
+// overwrite the file at "images/example.jpg" with low quality
 $image->save(quality: 10);
 
 // encode original jpeg format as png and save in a new file
@@ -61,8 +61,8 @@ $image->save('images/example.jpg', quality: 10, progressive: true);
 
 > public Image::encodeUsingFormat(Format $format, mixed ...$options): EncodedImageInterface
 
-Encode the current image using the given `Intervention\Image\Format` enum value to resolve an
-encoder. Define optional encoder options with additional parameters.
+Encode the current image using the given `Intervention\Image\Format` enum value.
+Define optional encoder options with additional parameters.
 
 #### Parameters
 
@@ -96,7 +96,7 @@ $gif = $image->encodeUsingFormat(Format::GIF);
 
 > public Image::encodeUsingMediaType(string|MediaType $mediaType, mixed ...$options): EncodedImageInterface
 
-Encode the current image using a given media (mime) type to determine the
+Encode the current image using a given media type to determine the
 encoder. The media type can be passed as string or
 `Intervention\Image\MediaType` enum value. Define optional encoder options with
 additional parameters.
@@ -132,8 +132,8 @@ $gif = $image->encodeUsingMediaType('image/gif');
 
 > public Image::encodeUsingFileExtension(string|FileExtension $fileExtension, mixed ...$options): EncodedImageInterface
 
-Encode the current image using a file extension string or enum value to determine the
-encoder. The file extension can be passed as string or `Intervention\Image\FileExtension` enum value. 
+Encode the current image by specifying a file extension as either a string or enum value.
+The file extension can be passed as string or `Intervention\Image\FileExtension` enum value.
 Set optional encoder options with additional parameters.
 
 #### Parameters
@@ -170,7 +170,7 @@ $gif = $image->encodeUsingFileExtension('webp', quality: 10);
 Encode the current image using a file path or file name to determine the encoder by
 the file extension. Set optional encoder options with additional parameters.
 
-It is important to note that the given file path or name is not written. It is
+Note that the method does not write to the given file path. It is
 only used to determine the encoder format. Use [save()](/v4/basics/image-output#encode--save-combined) if you want to write.
 
 #### Parameters
@@ -265,9 +265,9 @@ object. With this instance you can decide how to proceed with the encoded data.
 
 > public EncodedImage::__toString(): string
 
-This method can be used to obtain the raw image data as type string. This is
-particularly useful if it is to be further processed with other libraries or
-transferred to remote cloud storage for example.
+This method can be used to obtain the raw image data as a string.
+This is particularly useful if you need to further process it with other libraries or
+transfer it to remote cloud storage for example.
 
 #### Example
 
@@ -298,8 +298,8 @@ CloudStorage::put('example.jpg', $imagedata);
 
 > public EncodedImage::save(string $path): void
 
-This method writes the object's data to the given path in the local file system. The
-respective folder structure must already exist and be writable.
+This method writes the encoded image data to the given path in the local file system.
+The folder structure must already exist and be writable.
 
 #### Parameters
 

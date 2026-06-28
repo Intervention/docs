@@ -13,8 +13,8 @@ sort: 4
 
 > public Image::fill(string|ColorInterface $color, null|int $x = null, null|int $y = null): ImageInterface
 
-Fills the current image with the specified **color**. Optionally, it is possible to
-pass a position where the color fill should start. If these **x** and **y** values are
+Fills the current image with the specified color. Optionally, you can
+specify a position where the color fill should start. If these x and y values are
 specified, the color will be applied with flood fill. This means that only
 colors that are at the specified position will be filled. If no position is
 passed, the entire image will be filled.
@@ -247,8 +247,8 @@ $image->drawpolygon(function (PolygonFactory $polygon): void {
 
 > public Image::drawBezier(callable|Bezier $bezier): ImageInterface
 
-This method draws [Bézier curves](https://en.wikipedia.org/wiki/B%C3%A9zier_curve), the 
-shape of which is defined by a set of control points specified in the callback.
+This method draws [Bézier curves](https://en.wikipedia.org/wiki/B%C3%A9zier_curve) whose 
+shape is defined by a set of control points specified in the callback.
 The type of curve drawn depends on the number of control points specified, 
 which must be either three or four. With three control points, the result is a 
 **quadratic Bézier curve**, while four points result in a **cubic Bézier curve**. The 

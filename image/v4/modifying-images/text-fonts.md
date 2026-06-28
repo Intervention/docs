@@ -40,7 +40,7 @@ $image->text('The quick brown fox', 120, 100);
 ```
 ## Text & Font Settings
 
-To define the overall appearance of the text and set more details you can pass
+To define the overall appearance of the text and set more details, you can pass
 a callback as an optional parameter. The callback places the calls on the
 FontInterface and listens for following methods.
 
@@ -164,8 +164,8 @@ Default value is `1.25`.
 
 > public FontFactory::wrap(int $width): FontFactory
 
-Specifies the maximum width of the text in pixels. The text to be rendered is
-parsed using the specified font options, and each line is automatically wrapped
+Specifies the maximum width of the text in pixels. The method parses the text
+using the specified font options, and each line is automatically wrapped
 to the maximum width. Hyphenation is not performed.
 
 #### Parameters

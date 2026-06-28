@@ -11,8 +11,7 @@ Both drivers included with Intervention Image support animation by default.
 However, the GD driver uses additional resources as it does not support
 animation out of the box.
 
-If you are loading images without the intention of processing the animation at
-all, this step can be [disabled beforehand in the Image
+If you don't intend to process the animation, this step can be [disabled beforehand in the Image
 Manager](/v4/basics/configuration-drivers) configuration to save resources.
 
 ## Create Animations
@@ -105,7 +104,7 @@ $image = $image->sliceAnimation(20, 10);
 
 > public Image::loops(): int
 
-Read the count of iterations of the animated image. `0` means the image loops continuously.
+Returns the number of iterations for the animated image. `0` means the image loops continuously.
 
 #### Example
 
@@ -155,11 +154,10 @@ $image = $image->setLoops(1);
 
 > public Image::removeAnimation(int|string $position = 0): ImageInterface
 
-Turns an animated image into a non-animated one by discarding all animation
+Converts an animated image to a static image by discarding all animation
 frames of the current image instance except the one at the given position. 
 
-The position can be specified as an integer or string value. With
-integer, the exact frame number starting from 0 is used as the remaining frame.
+The position can be specified as an integer or string value. With an integer, the exact frame number starting from 0 is used as the remaining frame.
 String values must be a percentage value between `0%` and `100%`
 and the remaining frame number is only determined approximately.
 

@@ -9,8 +9,8 @@ sort: 0
 The package provides an API that makes these steps as simple as possible.
 
 The workflow is divided into two steps. In the first, an instance of the
-`Authenticator::class` class is created descided which type of authentication
-should be used. In the second step, the respective resource is secured by a
+`Authenticator::class` class is created and you decide which type of authentication
+to use. In the second step, the resource is secured with a
 single call.
 
 First, the library must be [installed](/v5/getting-started/installation) in the
@@ -48,15 +48,15 @@ $auth = Authenticator::digest(
 
 ### 2. Ask User for Credentials
 
-After you created a HTTP authentication instance, you have to call `secure()`
-to secure the resource. This results in a 401 HTTP response and the browser
-asking for credentials.
+After you create an HTTP authentication instance, you need to call `secure()`
+to secure the resource. This results in a 401 HTTP response and prompts the browser
+to ask for credentials.
 
 ```php
 $auth->secure();
 ```
 
-A character string can optionally be passed to the method. This is displayed if
+A string can optionally be passed to the method. This is displayed if
 authentication fails. Output from template engines can also be used here.
 
 ```php

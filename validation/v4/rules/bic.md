@@ -7,7 +7,7 @@ sort: 2
 
 > public Intervention\Validation\Rules\Bic::__construct()
 
-Checks if field under validation is a valid [Business Identifier Code](https://en.wikipedia.org/wiki/ISO_9362) (BIC).
+Checks if the field under validation is a valid [Business Identifier Code](https://en.wikipedia.org/wiki/ISO_9362) (BIC).
 
 ### Parameters
 

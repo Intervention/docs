@@ -13,7 +13,7 @@ sort: 2
 
 > public Image::brightness(int $level): ImageInterface
 
-Change the brightness of the current image by a given level. Use values between `-100` for minimum brightness `0` for no change and `+100` for maximum brightness.
+Change the brightness of the current image by the specified level. Use values between `-100` for minimum brightness `0` for no change and `+100` for maximum brightness.
 
 #### Parameters
 
@@ -42,7 +42,7 @@ $image = $image->brightness(35);
 
 > public Image::contrast(int $level): ImageInterface
 
-Change the contrast of the current image by a given level. Use values between `-100` for minimum contrast `0` for no change and `+100` for maximum contrast.
+Change the contrast of the current image by the specified level. Use values between `-100` for minimum contrast `0` for no change and `+100` for maximum contrast.
 
 #### Parameters
 
@@ -99,7 +99,7 @@ $image = $image->gamma(1.7);
 > public Image::colorize(int $red = 0, int $green = 0, int $blue = 0): ImageInterface
 
 Change the intensity level of the given red, green and blue color values.
-The input values are normalized so you need to include parameters from `100` for
+Use values ranging from `100` for
 maximum color intensity to `0` for no change and `-100` to remove all the specific
 color from the image.
 
@@ -221,8 +221,7 @@ $image = $image->rotate(-45);
 
 > public Image::orient(): ImageInterface
 
-This method uses Exif data to automatically orient images correctly. **This
-rotation is done automatically by default.** So you don't need to call this
+This method uses EXIF data to orient images correctly. **This rotation is performed automatically by default.** So you don't need to call this
 method unless you have [disabled the auto orientation in the ImageManager
 configuration](/v4/basics/configuration-drivers).
 
@@ -252,9 +251,9 @@ $image = $image->orient();
 
 > public Image::blur(int $level = 5): ImageInterface
 
-Applies a gaussian blur effect to the current image. Use the optional `level` argument to specify the strength of the effect with values between `0` and `100`.
+Applies a Gaussian blur effect to the current image. Use the optional `level` argument to specify the strength of the effect with values between `0` and `100`.
 
-**With the GD driver this method is performance intensive for larger blur levels. Use with caution.**
+**With the GD driver, this method is performance intensive for larger blur levels. Use with caution.**
 
 #### Parameters
 
@@ -362,11 +361,10 @@ $image = $image->pixelate(12);
 
 > public Image::reduceColors(int $limit, null|string|ColorInterface $background = null): ImageInterface
 
-Apply color quantization to the current image by reducing the number of
-distinct colors in the current image to the given limit. The number of colors
+Reduces the number of distinct colors in the current image to the given limit. The number of colors
 is reduced in a way that the new image is as visually similar as possible.
 
-With the GD driver (semi-)transparent colors that lose their transparency as a
+With the GD driver, (semi-)transparent colors that lose their transparency as a
 result of the reduction process are blended against the optional given
 background color. By default the configured background color is used here.
 

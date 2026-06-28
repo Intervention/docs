@@ -11,8 +11,8 @@ sort: 3
 
 Intervention Image can be easily integrated into a Laravel application with the
 [official integration package](https://github.com/Intervention/image-laravel). This package
-provides a Laravel service provider, facade, a publishable configuration
-file and more.
+provides a Laravel service provider, facade, publishable configuration
+file, and more.
 
 ### Installation
 
@@ -26,12 +26,12 @@ composer require intervention/image-laravel
 
 ### Application-wide Configuration
 
-The extension comes with a global configuration file that is recognized by
-Laravel. It is therefore possible to store the settings for Intervention Image
-once centrally and not have to define them individually each time you call the
+This package includes a global configuration file that Laravel recognizes.
+This allows you to store the settings for Intervention Image
+centrally without having to define them individually each time you call the
 image manager.
 
-The configuration file can be copied to the application with the following command.
+You can copy the configuration file to your application with the following command.
 
 ```bash
 php artisan vendor:publish --provider="Intervention\Image\Laravel\ServiceProvider"
@@ -42,7 +42,7 @@ can set the desired driver and its configuration options for Intervention
 Image. By default, the library is configured to use the GD library for image
 processing.
 
-The configuration file looks like this.
+The configuration file has the following structure:
 
 ```php
 return [
@@ -104,8 +104,8 @@ This package also integrates access to Intervention Image's central entry
 point, the `ImageManager::class`, via a static [facade](https://laravel.com/docs/facades). The call provides access to the
 centrally configured [image manager](/v4/basics/instantiation) via singleton pattern.
 
-The following code example shows how to read an image from an upload request
-the image facade in a Laravel route and save it on disk with a random file
+The following code example shows how to read an image from an upload request using
+the image facade in a Laravel route and save it to disk with a random file
 name.
 
 ```php
@@ -200,8 +200,8 @@ Route::get('/', function () {
 Intervention Image can also be integrated into the Symfony framework. A convenient way is to
 use the [official integration bundle](https://github.com/Intervention/image-symfony).
 
-Although the use of this integration library is not absolutely mandatory, it
-offers a convenient way of central configuration in the Symfony framework.
+Although using this integration library is not required, it
+offers a convenient way to centrally configure Intervention Image in the Symfony framework.
 
 ### Installation
 
@@ -227,7 +227,7 @@ return [
 ```
 
 Now you can configure the driver of Intervention Image. By default, the bundle
-is using the GD library with Intervention Image. This and others options can be
+is using the GD library with Intervention Image. This and other options can be
 configured by creating a file `config/packages/intervention_image.yaml` and
 setting the driver class and the default options as follows. 
 
@@ -274,9 +274,9 @@ class ExampleController extends AbstractController
 
 ## Tempest
 
-Intervention Image can be used with the [Tempest framework](https://tempestphp.com/). Although the 
-use of this integration library is not absolutely mandatory, the [official bundle](https://github.com/Intervention/image-tempest) offers 
-a convenient way of a central configuration file.
+Intervention Image can be used with the [Tempest framework](https://tempestphp.com/). Although 
+using this integration library is not required, the [official bundle](https://github.com/Intervention/image-tempest) offers 
+a convenient way to centrally configure the library.
 
 ### Installation
 
@@ -310,7 +310,7 @@ Choose between the drivers `Intervention\Image\Drivers\Gd\Driver`, `Intervention
 
 #### Detailed Configuration
 
-If you're looking for more in-depth configuration you can skip the `.env` part and publish a more detailed configuration file for Intervention Image by running the following command.
+If you're looking for more in-depth configuration, you can skip the `.env` part and publish a more detailed configuration file for Intervention Image by running the following command.
 
 ```bash
 php tempest install image
@@ -318,7 +318,7 @@ php tempest install image
 
 The call will publish the configuration file `image.config.php` to your local application. Here you can set the [driver](/v4/basics/configuration-drivers#driver-selection) and more detailed configuration options.
 
-The published configuration can be included in the versioning. The file looks like this.
+The published configuration can be included in version control. The file has the following structure:
 
 ```php
 use Intervention\Image\Drivers\Gd\Driver as GdDriver;

@@ -1,13 +1,13 @@
 ---
 title: "Creditcard Rule"
-subtitle: "Validate Creditcard Numbers"
-lead: "Learn how to validate the creditcard numbers with the additional validation rules of Intervention Validation for your Laravel application."
+subtitle: "Validate Credit Card Numbers"
+lead: "Learn how to validate credit card numbers with the additional validation rules of Intervention Validation for your Laravel application."
 sort: 5
 ---
 
 > public Intervention\Validation\Rules\Creditcard::__construct()
 
-The field under validation must be a valid [creditcard number](https://en.wikipedia.org/wiki/Payment_card_number).
+The field under validation must be a valid [credit card number](https://en.wikipedia.org/wiki/Payment_card_number).
 
 ### Parameters
 

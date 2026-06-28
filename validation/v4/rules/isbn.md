@@ -1,7 +1,7 @@
 ---
 title: "ISBN Rule"
 subtitle: "Validate International Standard Book Number"
-lead: "Learn how to validate International Static Book Numbers (ISBN) with the additional validation rules of Intervention Validation for your Laravel application."
+lead: "Learn how to validate International Standard Book Numbers (ISBN) with the additional validation rules of Intervention Validation for your Laravel application."
 sort: 15
 ---
 

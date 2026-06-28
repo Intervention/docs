@@ -1,13 +1,13 @@
 ---
 title: "Domain Name Rule"
 subtitle: "Validate Domain Names"
-lead: "Learn how to validate the domain names with the additional validation rules of Intervention Validation for your Laravel application."
+lead: "Learn how to validate domain names with the additional validation rules of Intervention Validation for your Laravel application."
 sort: 7
 ---
 
 > public Intervention\Validation\Rules\Domainname::__construct()
 
-The field under validation must be a well formed [domainname](https://en.wikipedia.org/wiki/Domain_name).
+The field under validation must be a well-formed [domain name](https://en.wikipedia.org/wiki/Domain_name).
 
 ### Parameters
 

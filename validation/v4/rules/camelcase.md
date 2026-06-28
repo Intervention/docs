@@ -7,7 +7,7 @@ sort: 3
 
 > public Intervention\Validation\Rules\Camelcase::__construct()
 
-The field under validation must be a formated in [Camel case](https://en.wikipedia.org/wiki/Camel_case).
+The field under validation must be formatted in [Camel case](https://en.wikipedia.org/wiki/Camel_case).
 
 ### Parameters
 

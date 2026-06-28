@@ -51,7 +51,7 @@ $auth = new Authenticator($vault);
 > public Authenticator::withVault(VaultInterface $vault): Authenticator
 
 Create a new authenticator instance by calling the static factory
-method directly and passign the vault instance directly.
+method and passing the vault instance directly.
 
 #### Parameters
 
@@ -80,7 +80,7 @@ $auth = Authenticator::withVault($vault);
 > public Authenticator::basic(string $username, string $password, string $realm = 'Secured Area'): Authenticator
 
 Create a new basic auth authenticator instance by calling the static factory
-method directly and passign the credentials as well as the name of the
+method and passing the credentials as well as the name of the
 resource.
 
 #### Parameters
@@ -109,7 +109,7 @@ $auth = Authenticator::basic(
 > public Authenticator::digest(string $username, string $password, string $realm = 'Secured Area'): Authenticator
 
 Create a new digest auth authenticator instance by calling the static factory
-method directly and passign the credentials as well as the name of the
+method and passing the credentials as well as the name of the
 resource.
 
 #### Parameters
@@ -140,15 +140,15 @@ $auth = Authenticator::digest(
 
 > public Authenticator::secure(?string $message = null): void
 
-After you created a HTTP authenticator instance, you have to call `secure()` to
+After you create an HTTP authenticator instance, you need to call `secure()` to
 secure the resource by checking for credentials. Otherwise nothing will happen.
 
-By calling `Authenticator::secure()` the server ask the user for a username and
-a password. If the credentials are entered incorretly a HTTP status code 401 is
-sent and the use will not be able to access the resource.
+By calling `Authenticator::secure()` the server asks the user for a username and
+a password. If the credentials are entered incorrectly, an HTTP status code 401 is
+sent and the user will not be able to access the resource.
 
-The method optionally accepts a character string as content that is displayed
-to the user if the verification fails. HTML content can also be transferred
+The method optionally accepts a string as content that is displayed
+to the user if verification fails. HTML content can also be passed
 here or output from template engines can be used.
 
 #### Parameters

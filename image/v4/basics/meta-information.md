@@ -95,7 +95,7 @@ $width = $size()->width();
 
 > public Image::resolution(): ResolutionInterface
 
-Reads out the image resolution of the current instance.
+Reads the image resolution of the current instance.
 
 #### Example
 
@@ -124,8 +124,8 @@ $y = $resolution->y();
 
 > public Image::setResolution(float $x, float $y): ImageInterface
 
-Set the image resolution in DPI for each axis. Please note that the resolution
-is encoded only for image formats that support this feature.
+Set the image resolution in DPI for each axis. Note that the resolution
+is only encoded for image formats that support this feature.
 
 #### Parameters
 
@@ -162,9 +162,9 @@ is a technical limitation of the PHP extension.**
 
 > public Image::exif(null|string $query = null): mixed
 
-This function reads Exif information from the current image instance. You have
+This function reads EXIF information from the current image instance. You have
 the option to pass a parameter to read a specific block of information from the
-Exif data directly. If no parameter is passed, all data will be returned. If
+EXIF data directly. If you don't pass a parameter, the method returns all data. If
 the specified block is not found, `null` is returned as result.
 
 **To use this function, the PHP Exif extension must be installed.**

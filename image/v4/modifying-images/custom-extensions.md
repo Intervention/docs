@@ -8,7 +8,7 @@ sort: 6
 [TOC]
 
 Intervention Image is highly scalable and can be easily customized to meet your
-specific needs. Users can use the `ModifierInterface` and the `AnalyzerInterface` to
+specific needs. You can use the `ModifierInterface` and the `AnalyzerInterface` to
 organize their own logic into classes in a clear and structured way.
 
 Together with [advanced image manipulation](/v4/modifying-images/advanced), this creates a powerful combination that offers endless possibilities for expansion.
@@ -75,7 +75,7 @@ Analyzers are designed to extract specific information from an image.
 
 ### Implement Custom Analyzers
 
-Intervention Image provides the `Intervention\Image\Interfaces\AnalyzerInterface`, which all analyzers need to implement. With your own analyzer, you can use the `Intervention\Image\Image::analyze()` method to retrieve data.
+Intervention Image provides the `Intervention\Image\Interfaces\AnalyzerInterface`, which all analyzers need to implement. Once you've created a custom analyzer, you can use the `Intervention\Image\Image::analyze()` method to retrieve data.
 
 The following very simple example shows a custom analyzer class that determines the total pixel count of an image.
 

@@ -7,7 +7,7 @@ sort: 31
 
 > public Intervention\Validation\Rules\Username::__construct()
 
-The field under validation must be a valid username. Consisting of alpha-numeric characters, underscores, minus and starting with a alphabetic character. Multiple underscore and minus chars are not allowed. Underscore and minus chars are not allowed at the beginning or end.
+The field under validation must be a valid username consisting of alphanumeric characters, underscores, and hyphens, starting with an alphabetic character. Multiple consecutive underscores and hyphens are not allowed. Underscores and hyphens are not allowed at the beginning or end.
 
 ### Parameters
 

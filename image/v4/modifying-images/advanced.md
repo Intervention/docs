@@ -7,9 +7,9 @@ sort: 7
 
 [TOC]
 
-If the supplied options are not sufficient, it is possible to create your own
+If the supplied options are not sufficient, you can create your own
 solutions using your own [custom extensions](/v4/modifying-images/custom-extensions).
-Furthermore, the native image object can be accessed, so that all functions
+Furthermore, you can access the native image object, so that all functions
 used by the actual image processing libraries (such as GD or Imagick) can
 be used — even those not covered by Intervention Image.
 
@@ -19,9 +19,7 @@ Depending on the driver, each image object is mapped internally by either an
 instance of a `GDImage::class` or an `Imagick::class` object. The parent image object of
 Intervention Image provides access to this base object.
 
-The following example uses the native Imagick function
-[oilPaintImage()](https://www.php.net/manual/en/imagick.oilpaintimage.php),
-which is not included in this library.
+The following example uses the native Imagick function [oilPaintImage()](https://www.php.net/manual/en/imagick.oilpaintimage.php) which is not included in this library.
 
 ```php
 use Intervention\Image\ImageManager;

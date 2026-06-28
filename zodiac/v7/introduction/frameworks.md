@@ -9,8 +9,8 @@ sort: 3
 
 ## Laravel
 
-Although the library is framework agnostic it comes with a service provider for
-the Laravel Framework. Which will be discovered automatically and registers the
+Although the library is framework agnostic, it comes with a service provider for
+the Laravel Framework, which will be discovered automatically and registers the
 calculator into your installation.
 
 ### Application-wide Configuration
@@ -26,7 +26,7 @@ php artisan vendor:publish --provider="Intervention\Zodiac\Laravel\ServiceProvid
 ```
 
 This command will publish the configuration file `config/zodiac.php` to your local 
-applications config folder. Here you can set the default astrology type to be used for
+application's config folder. Here you can set the default astrology type to be used for
 calculations.
 
 ```php
@@ -37,9 +37,9 @@ return [
     | Zodiac Astrology
     |--------------------------------------------------------------------------
     |
-    | Define the default astrology that is to be used application-wide
-    | for calculating zodiac signs. Your can choose between western
-    | and chinese astrology.
+    | Define the default astrology to be used application-wide
+    | for calculating zodiac signs. You can choose between Western
+    | and Chinese astrology.
     */
 
     'astrology' => \Intervention\Zodiac\Astrology::WESTERN,

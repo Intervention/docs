@@ -7,7 +7,7 @@ sort: 19
 
 > public Intervention\Validation\Rules\Jwt::__construct()
 
-The value under validation must be a in format of a [JSON Web Token](https://en.wikipedia.org/wiki/JSON_Web_Token).
+The value under validation must be in the format of a [JSON Web Token](https://en.wikipedia.org/wiki/JSON_Web_Token).
 
 ### Parameters
 

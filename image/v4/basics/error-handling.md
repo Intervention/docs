@@ -15,10 +15,9 @@ If something goes wrong, Intervention Image throws exceptions. For this purpose,
 All exceptions extend the container class `Intervention\Image\Exceptions\ImageException`. This makes it possible to
 catch all errors in the library in general.
 
-The container class is divided into two types: `LogicException` and `RuntimeException` indicating an operational failure or that the error can be
-fixed by correcting the code.
+The container class is divided into two types: `LogicException` and `RuntimeException` indicating either an operational failure or an error that can be fixed by correcting the code.
 
-These two types are each divided into further sub-branches. Adding the possibility to intercept every type of error in detail and respond accordingly.
+These two types are each divided into further sub-branches, adding the possibility to intercept every type of error in detail and respond accordingly.
 
 ```
 ImageException
@@ -48,13 +47,12 @@ ImageException
 
 ### LogicExceptions
 
-Exceptions of type `Intervention\Image\LogicException` mean that the API was
-not addressed correctly, i.e., there is an error in the end user's code. There
+Exceptions of type `Intervention\Image\LogicException` indicate that the API was not used correctly, i.e., there is an error in the end user's code. There
 are further sub-types.
 
 #### ArgumentException / InvalidArgumentException
 
-This exceptions are thrown when a argument passed does not match the expected
+These exceptions are thrown when an argument passed does not match the expected
 format. For example, if a negative value is specified for an image width.
 
 #### NotSupportedException
@@ -76,7 +74,7 @@ internal goes wrong. See the following sub-types for better understanding.
 
 #### MissingDependencyException
 
-This exception indicates that a dependency is not been met. For example when
+This exception indicates that a dependency has not been met. For example when
 you try to use the driver for Imagick but forgot to install the matching PHP
 extension.
 

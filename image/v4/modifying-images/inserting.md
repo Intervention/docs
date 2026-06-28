@@ -11,7 +11,7 @@ sort: 1
 
 > public Image::insert(mixed $image, int $x = 0, int $y = 0, string|Alignment $alignment = Alignment::TOP_LEFT, float $transparency = 1): ImageInterface
 
-Inserts a new image on top of the current image. The image to be inserted can be specified
+Inserts another image on top of the current image. The image to be inserted can be specified
 from any of the [supported image sources](/v4/basics/instantiation#supported-image-sources). Optionally you can
 pass coordinates for an offset to move the image relative to the specified
 alignment position. It is also possible to control the opacity of the insertion using the `transparency` parameter.

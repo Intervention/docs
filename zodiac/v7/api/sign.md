@@ -89,8 +89,8 @@ $sign = ChineseSign::fromUnix(228268800);
 
 > public SignInterface::name(): string
 
-Return the english name of the current zodiac sign. It's possible to cast the zodiac
-object to a string type to get the same result. If you want an localized name
+Return the English name of the current zodiac sign. It's possible to cast the zodiac
+object to a string type to get the same result. If you want a localized name,
 you can use the `localize()` method first.
 
 #### Example
@@ -109,7 +109,7 @@ $name = (string) $zodiac; // "gemini"
 > public SignInterface::localize(?string $locale = null): SignInterface
 
 Return the localized version of the zodiac sign in the given locale. The
-locale parameter is optional, by default the english language is returned.
+locale parameter is optional; by default the English language is returned.
 
 #### Example
 
@@ -118,7 +118,7 @@ use Intervention\Zodiac\Calculator;
 
 // calculate zodiac sign
 $zodiac = Calculator::fromString('1977-06-17');
-$name = $zodiac->localize('fr')–>name(); // Gémeaux
+$name = $zodiac->localize('fr')->name(); // Gémeaux
 ```
 
 ### HTML Representation
@@ -140,7 +140,7 @@ $name = $zodiac->html(); // &#9802;
 
 > public SignInterface::compatibility(ZodiacInterface $sign): float
 
-Some say said that zodiac signs have a certain type astrological compatibility
+Some say that zodiac signs have a certain type of astrological compatibility
 with each other. While some combinations are said to be compatible, others not
 so much (if you believe in it).
 

@@ -38,7 +38,7 @@ The following `source` argument formats are accepted.
 - Instance of ImageInterface
 - Instance of EncodedImageInterface
 
-To decode the source, you can optionally specify a decoding strategy with the
+To decode the source, you can optionally specify which decoder to use with the
 second parameter. This can be an array of class names or objects of decoders to
 be tried in sequence. It is also possible to pass a single object or class name
 of a decoder. If the second parameter is not set, all available image decoders
@@ -131,7 +131,7 @@ $image = $manager->decodeBinary(file_get_contents('images/example.jpg'));
 > public ImageManager::decodeSplFileInfo(SplFileInfo $splFileInfo): ImageInterface
 
 Decode an image by decoding the image data of the given SplFileInfo instance.
-This method can be used to handle image file uploads in the Laravel or Symfony
+Use this method to handle image file uploads in the Laravel or Symfony
 frameworks from `Illuminate\Http\UploadedFile` or `Symfony\Component\HttpFoundation\File\UploadedFile`.
 
 #### Parameters
@@ -238,8 +238,8 @@ following example:
 By default the image is created with a **transparent background**. If you want to define a background color instead use the `fill()` method after the `createImage()` call.
 
 Optionally you can pass a callback to add animation frames and create an
-animated image. Define the delay time of the individual animation frames. It
-should be noted that the animation created this way must be decoded in a format
+animated image. Define the delay time of the individual animation frames.
+Note that animations created this way must be encoded in a format
 that supports animations.
 
 Animations are possible in all drivers. [Read more on how to modify animated images.](/v4/modifying-images/animations)

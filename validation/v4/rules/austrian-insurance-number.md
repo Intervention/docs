@@ -7,7 +7,7 @@ sort: 0
 
 > public Intervention\Validation\Rules\AustrianInsuranceNumber::__construct()
 
-Checks for a valid [austrian social insurance number](https://de.wikipedia.org/wiki/Sozialversicherungsnummer#%C3%96sterreich).
+Checks for a valid [Austrian social insurance number](https://de.wikipedia.org/wiki/Sozialversicherungsnummer#%C3%96sterreich).
 
 ### Example
 

@@ -15,8 +15,8 @@ sort: 0
 
 > public Image::resize(null|int|Fraction $width = null, null|int|Fraction $height = null): ImageInterface
 
-The method `resize()` simply stretches the image to the desired size regardless of the original aspect ratio. Use
-`resizeDown()` to change the size but do not exceed the original size of the
+The method `resize()` stretches the image to the desired size without maintaining the original aspect ratio. Use
+`resizeDown()` to change the size without exceeding the original size of the
 image. The method supports [named arguments](https://www.php.net/manual/en/functions.arguments.php#functions.named-arguments)
 to target only one axis for the modification. 
 
@@ -51,9 +51,9 @@ $image->resize(height: 200);
 > public Image::resizeDown(null|int|Fraction $width = null, null|int|Fraction $height = null): ImageInterface
 
 The `resizeDown()` method does the same as `resize()`. It simply stretches the
-image to the specified size, but does not exceeds the original size of the image. You can
+image to the specified size, but does not exceed the original size of the image. You can
 use [named arguments](https://www.php.net/manual/en/functions.arguments.php#functions.named-arguments)
-to resize just one axis for the modification. 
+to resize just one axis. 
 
 #### Parameters
 
@@ -85,8 +85,7 @@ $image->resizeDown(width: 200);
 
 > public Image::scale(null|int|Fraction $width = null, null|int|Fraction $height = null): ImageInterface
 
-Often you want to resize an image without distorting the original image
-aspect ratio. For this kind of modification you can simply use the methods
+Often it's desirable to resize an image without distorting the original aspect ratio. For this kind of modification you can simply use the methods
 `scale()` or `scaleDown()`.
 
 Note that the resulting size may differ from the given arguments,
@@ -124,7 +123,7 @@ $image->scale(120, 100); // 120 x 90 (4:3)
 > public Image::scaleDown(null|int|Fraction $width = null, null|int|Fraction $height = null): ImageInterface
 
 The method `scale()` resizes the image while maintaining the original aspect ratio. While
-`scaleDown()` is similar to `scale()` the only difference is that it doesn't exceed the original size of the
+`scaleDown()` is similar to `scale()`, the only difference is that it doesn't exceed the original size of the
 image. The method support [named arguments](https://www.php.net/manual/en/functions.arguments.php#functions.named-arguments)
 to target only one axis for the modification. 
 
@@ -164,9 +163,9 @@ $image->scaleDown(height: 300); //  400 x 300
 > public Image::cover(int|Fraction $width, int|Fraction $height, string|Alignment $alignment = Alignment::CENTER): ImageInterface
 
 The `cover()` method is a two-step combination of cropping and resizing to
-achieve a given result size. This method takes the given dimensions and scales
-them to the largest possible size that matches the original size. This size is
-then positioned on the original and cropped before being resized to the desired
+achieve a given result size. This method scales the image to the largest possible
+size that fits within the given dimensions. The method then positions this size
+on the original image, crops it, and resizes the result to the desired
 size from the arguments.
 
 This method requires both width and height arguments. You can optionally
@@ -249,7 +248,7 @@ $image->coverDown(900, 450, Alignment::LEFT); // 800 x 400 px
 
 > public Image::contain(int|Fraction $width, int|Fraction $height, null|string|ColorInterface $background = null, string|Alignment $alignment = Alignment::CENTER): ImageInterface
 
- Resize the image to fit within the given dimensions while maintaining the aspect ratio. New areas are filled with the given background color.
+ Resizes the image to fit within the given dimensions while maintaining the aspect ratio. New areas are filled with the given background color.
 
 #### Parameters
 
@@ -281,8 +280,7 @@ $image->contain(500, 500, 'efefef');
 
 > public Image::containDown(int|Fraction $width, int|Fraction $height, null|string|ColorInterface $background = null, string|Alignment $alignment = Alignment::CENTER): ImageInterface
 
-Resize the image to fit within the given dimensions while maintaining the
-aspect ratio and without exceeding the original dimensions. New areas are
+Resizes the image to fit within the given dimensions while maintaining the aspect ratio without exceeding the original dimensions. New areas are
 filled with the given background color.
 
 #### Parameters
@@ -320,11 +318,10 @@ $image->containDown(500, 500, alignment: Alignment::TOP_LEFT);
 
 > public Image::crop(int|Fraction $width, int|Fraction $height, int $x = 0, int $y = 0, null|string|ColorInterface $background = null, string|Alignment $position = Alignment::TOP_LEFT): ImageInterface
 
-Crops a rectangular area of the current image with a given width and
-height at a given position. Pass optional x, y offset coordinates to
+Crops a rectangular area of a given width and height from the current image at a given position. Pass optional x, y offset coordinates to
 move the crop by the specified number of pixels.
 
-You may also specify a background color. This color is used to fill any new
+You can also specify a background color. This color is used to fill any new
 areas that may be created, for example if the cropped area is larger than the
 original image format.
 
@@ -366,10 +363,7 @@ $image->crop(200, 150, 0, 30, position: Alignment::BOTTOM_RIGHT);
 
 > public Image::resizeCanvas(null|int|Fraction $width = null, null|int|Fraction $height = null, null|string|ColorInterface $background = null, string|Alignment $alignment = Alignment::CENTER): ImageInterface
 
-This function changes the size of the image borders without recalculating the
-actual image. If the specified sizes are larger than the original, the image
-area is added in the specified color. If the specified sizes are smaller, the
-original image area is cropped. The specified position is taken into account and
+This function changes the canvas size without resampling the image. If the specified sizes are larger than the original, new area is added in the specified color. If the specified sizes are smaller, the image is cropped. The specified position is taken into account and
 determines where the original image is fixed.
 
 #### Parameters
@@ -401,7 +395,7 @@ $image->resizeCanvas(800, 600, 'ff0');
 
 > public Image::resizeCanvasRelative(null|int|Fraction $width = null, null|int|Fraction $height = null, null|string|ColorInterface $background = null, string|Alignment $alignment = Alignment::CENTER): ImageInterface
 
-This function behaves in the same way as `resizeCanvas()`, but here you specify
+This function behaves the same way as `resizeCanvas()`, but you specify
 relative values which are either added (positive) or subtracted (negative) from the original size.
 
 #### Parameters
@@ -467,7 +461,7 @@ $image->cover(Fraction::QUARTER, Fraction::QUARTER);
 
 > public Image::trim(int $tolerance = 0): ImageInterface
 
-Removes border areas of the image on all sides that have a similar color. The
+Removes border areas on all sides that have similar colors to the edge pixels. The
 color similarity can be varied using the optional `tolerance` parameter.
 
 This means that with a tolerance value of `0`, only color areas with exactly

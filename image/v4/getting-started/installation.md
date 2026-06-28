@@ -9,7 +9,7 @@ sort: 1
 
 ## Server Requirements
 
-Before you begin with the installation make sure that your server environment
+Before you begin with the installation, make sure that your server environment
 supports the following requirements.
 
 - PHP >= 8.3
@@ -29,8 +29,8 @@ installed. Intervention Image currently supports the three most popular.
 - [Imagick](https://www.php.net/manual/en/book.imagick.php)
 - [libvips](https://www.libvips.org)
 
-GD is part of most PHP installations. However, I recommend using Imagick because
-I think it is faster and more efficient especially for larger images. Support
+GD is part of most PHP installations. However, Imagick is recommended because
+it is faster and more efficient especially for larger images. Support
 for libvips is available via a driver that can be installed as an [add-on
 package](https://github.com/Intervention/image-driver-vips).
 

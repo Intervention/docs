@@ -52,9 +52,9 @@ All image formats can be read from various sources. These are in detail:
 
 > public DriverInterface::supports(string|Format|FileExtension|MediaType $identifier): bool;
 
-This method can be used during runtime to find out whether a specific format
+Use this method to check at runtime whether a specific format
 is supported. It checks if the desired format is supported by the current driver and if the underlying extension has been built with the
-necessary support, returning `true` if both conditions are met or `false` if the driver has no support.
+necessary support, returning `true` if both conditions are met or `false` if the format is not supported.
 
 #### Parameters
 
@@ -102,7 +102,7 @@ space.
 Colors are defined in object form implementing `ColorInterface::class` building a
 separate color class for each color space.
 
-Each color object takes constructor parameters for the color channel values as well as an
+Each color object takes constructor parameters for the color channel values and an
 optional alpha channel parameter, which is defined as completely opaque by default.
 
 #### Create Colors from Channel Values
@@ -196,7 +196,7 @@ $image = ImageManager::usingDriver(Driver::class)
 
 #### Transparency
 
-If it is necessary to specify transparency as a color, this can always be done with the `transparent()` method which returns the fully transparent RGB color `#ffffff00`.
+If you need to specify transparency as a color, this can always be done with the `transparent()` method which returns the fully transparent RGB color `#ffffff00`.
 
 ```php
 use Intervention\Image\ImageManager;

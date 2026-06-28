@@ -55,7 +55,7 @@ exceptions easier.
 
 ### High Impact Changes
 
-It is very likely that you will need to make these adjustments when you update to version 4.
+You will likely need to make these adjustments when you update to version 4.
 
 - Intervention Image 4 now requires PHP 8.3.0 or greater.
 - `ImageManagerInterface::read()` is now handled by `ImageManagerInterface::decode()` or the [other decode methods](/v4/basics/instantiation)
@@ -98,7 +98,7 @@ It is very likely that you will need to make these adjustments when you update t
 
 ### Medium Impact Changes
 
-It is possible that you will need to make these adjustments when updating if you have used these parts of the API.
+You may need to make these adjustments when updating if you have used these parts of the API.
 
 - Removed `ColorInterface::toArray()` use `ColorInterface::channels()` and map to desired format
 - Removed `ColorInterface::normalize()` use `ColorInterface::channels()` and map to desired format

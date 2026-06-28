@@ -7,7 +7,7 @@ sort: 25
 
 > public Intervention\Validation\Rules\SemVer::__construct()
 
-The field under validation must be a valid version numbers using [Semantic Versioning](https://semver.org/).
+The field under validation must be a valid version number using [Semantic Versioning](https://semver.org/).
 
 ### Parameters
 

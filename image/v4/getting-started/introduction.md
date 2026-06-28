@@ -15,9 +15,9 @@ sort: 0
 - Support for colorspaces and profiles
 - Support for text wrapping and line height in the font system
 
-The library is written to make PHP image manipulation easy and effortless.
-Whether you want to create image thumbnails, set watermarks, or format large
-image files, Intervention Image helps you accomplish any task with just a few
+The library is written to make PHP image manipulation easy.
+Whether you want to create image thumbnails, add watermarks, or format large
+image files, Intervention Image helps you accomplish these tasks with just a few
 lines of code. 
 
 ### Code Example

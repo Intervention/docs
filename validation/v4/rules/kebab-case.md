@@ -7,7 +7,7 @@ sort: 20
 
 > public Intervention\Validation\Rules\Kebabcase::__construct()
 
-The value under validation must be formated in [Kebab case](https://en.wikipedia.org/wiki/Letter_case#Special_case_styles).
+The value under validation must be formatted in [Kebab case](https://en.wikipedia.org/wiki/Letter_case#Special_case_styles).
 
 ### Parameters
 

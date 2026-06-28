@@ -167,7 +167,7 @@ Once a color of an image has been read into an object, more options are availabl
 
 > public ColorInterface::toString(): ColorInterface
 
-Each color object can also be output as a string. You can use the `toString()`
+Each color object can also be converted to a string. You can use the `toString()`
 method or to cast the object directly. Of course, the output depends on the
 respective color space.
 
@@ -196,7 +196,7 @@ $result = (string) $color;
 
 > public ColorInterface::toHex(bool $prefix = false): ColorInterface
 
-Transform the color to a `RRGGBBAA` hexadecimal color notation. The alpha channel is only output if it is not completely opaque.
+Transform the color into `RRGGBBAA` hexadecimal color notation. The alpha channel is only output if it is not completely opaque.
 
 #### Parameters
 
@@ -411,7 +411,7 @@ $image->drawRectangle(function (RectangleFactory $rectangle) use ($color): void 
 
 ## Colorspaces
 
-The supported colorspaces depend mainly on the driver used. While 
+The supported colorspaces primarily depend on the driver used. While 
 the Imagick and Vips driver support multiple colorspaces, the GD driver
 is limited to RGB.
 
@@ -474,7 +474,7 @@ $colorspace = $image->setColorspace(Cmyk::class);
 
 ## Color Profiles
 
-Currently Intervention Image can only handle color profiles with the `imagick` and `vips` driver.
+Currently Intervention Image can only handle color profiles with the `imagick` and `vips` drivers.
 
 ### Read Color Profiles
 
@@ -564,7 +564,7 @@ white with full transparency.
 
 If the output format does not support transparency, no alpha channel can be
 preserved. In this case the transparent areas will be replaced with an opaque
-color. This color can be specified in advance in the initial [configuration of
+color. This color can be specified in the initial [configuration of
 the image manager](/v4/basics/configuration-drivers) or as an optional argument
 in the following method. It is also possible to set or get the background color
 at runtime.
@@ -616,8 +616,8 @@ configured through the ImageManager or the background color that was last set.
 > public function setBackgroundColor(string|ColorInterface $color): ImageInterface
 
 Set a new background color in the configuration of the current image instance.
-This color will be used as the default for all subsequent background blending operations
-that use a background color to replace transparency, overwriting the original
+This color will be used as the default background color for all subsequent operations
+that replace transparency, overwriting the original
 value defined in the ImageManager configuration.
 
 #### Parameters

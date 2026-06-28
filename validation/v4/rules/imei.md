@@ -7,7 +7,7 @@ sort: 14
 
 > public Intervention\Validation\Rules\Imei::__construct()
 
-The field under validation must be a [International Mobile Equipment Identity](https://en.wikipedia.org/wiki/International_Mobile_Equipment_Identity) (IMEI).
+The field under validation must be an [International Mobile Equipment Identity](https://en.wikipedia.org/wiki/International_Mobile_Equipment_Identity) (IMEI).
 
 ### Parameters
 

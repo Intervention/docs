@@ -2,7 +2,7 @@
 title: "Intervention Zodiac"
 label: "Introduction"
 subtitle: "PHP Zodiac Sign Calculator"
-lead: "Intervention Zodiac is a astrological calculator that resolves Western and Chinese zodiac signs from various data types."
+lead: "Intervention Zodiac is an astrological calculator that resolves Western and Chinese zodiac signs from various data types."
 sort: 0
 ---
 
@@ -13,12 +13,12 @@ zodiac sign calculation. This versatile PHP library lets you generate zodiac
 signs from various date formats, including natural language strings, Unix
 timestamps and `DateTimeInterface` instances.
 
-Whether you're building horoscope features or astrology apps the Zodiac
-Calculator effortless delivers results for western as well as traditional
-chinese zodiac signs.
+Whether you're building horoscope features or astrology apps, the Zodiac
+Calculator effortlessly delivers results for Western as well as traditional
+Chinese zodiac signs.
 
 - Fluent interface to calculate zodiac signs
-- Support for western and chinese astrology
+- Support for Western and Chinese astrology
 - Framework-agnostic
 
 ### Code Examples
