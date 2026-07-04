@@ -12,7 +12,7 @@ sort: 0
 - Support for GD, Imagick, and libvips drivers
 - Seamless integration with Intervention Image processing pipelines
 - Hamming distance comparison for similarity detection
-- Multiple hash format conversions (hex, bits, bytes)
+- Multiple hash format conversions
 - Optional GMP extension support for faster comparisons
 
 ### What is Perceptual Image Hashing?
