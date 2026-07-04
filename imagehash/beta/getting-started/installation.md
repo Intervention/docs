@@ -32,4 +32,4 @@ Install this package with [Composer](https://getcomposer.org).
 composer require intervention/imagehash
 ```
 
-After the installation you can start [building image hashes](/beta/api/hashing).
+After the installation you can start using the [image hasher](/beta/api/hasher).
