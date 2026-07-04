@@ -6,6 +6,15 @@ lead: "Intervention ImageHash is an extension library to Intervention Image and 
 sort: 0
 ---
 
+### Features
+
+- Four built-in hashing strategies (Average, Difference, Block, Perceptual)
+- Support for GD, Imagick, and libvips drivers
+- Seamless integration with Intervention Image processing pipelines
+- Hamming distance comparison for similarity detection
+- Multiple hash format conversions (hex, bits, bytes)
+- Optional GMP extension support for faster comparisons
+
 ### What is Perceptual Image Hashing?
 
 A perceptual hash is a fingerprint of an image derived from its visual features. Unlike cryptographic hash functions like MD5 or SHA1, which produce completely different outputs for even minor changes, perceptual hashes are "close" to one another when images are visually similar. This makes them ideal for:
@@ -15,14 +24,6 @@ A perceptual hash is a fingerprint of an image derived from its visual features.
 - Organizing and deduplicating image collections
 - Content moderation and copyright detection
 
-### Features
-
-- Four built-in hashing strategies (Average, Difference, Block, Perceptual)
-- Support for GD, Imagick, and libvips drivers
-- Seamless integration with Intervention Image processing pipelines
-- Hamming distance comparison for similarity detection
-- Multiple hash format conversions (hex, bits, bytes)
-- Optional GMP extension support for faster comparisons
 
 ### Code Example
 
