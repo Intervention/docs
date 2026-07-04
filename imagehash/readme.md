@@ -2,7 +2,7 @@
 sort: 3
 label: "ImageHash"
 title: "Intervention ImageHash"
-subtitle: "Perceptual image hashing for PHP"
+subtitle: "Perceptual Image Hashing for PHP"
 description: "Intervention ImageHash provides image hashing for PHP with different strategies."
 package: "intervention/imagehash"
 repository_url: "https://github.com/Intervention/imagehash"
