@@ -8,14 +8,7 @@ sort: 2
 
 [TOC]
 
-## Overview
-
-When you generate an image hash using any hashing strategy, you receive a `Hash` object implementing the `HashInterface`. This object represents a perceptual fingerprint of the image and provides methods for comparison, conversion, and serialization.
-
-The `Hash` object is:
-- **Immutable** - Once created, it cannot be modified
-- **Serializable** - Implements `JsonSerializable` and `Stringable`
-- **Comparable** - Can calculate hamming distance to other hashes
+When you generate an image hash using any hashing strategy, you receive a `Hash` object implementing the `HashInterface`. This object represents a perceptual fingerprint of the image and provides methods for comparison, conversion, and serialization. The `Hash` object is: **immutable**, **serializable** and **comparable**, as the following examples show.
 
 ## Comparing Hashes
 

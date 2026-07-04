@@ -1,7 +1,7 @@
 ---
-label: "Hash Images"
-title: "Building Image Hashes"
-subtitle: "Generate Perceptual Image Hashes"
+label: "Image Hasher"
+title: "Image Hasher"
+subtitle: "Generate Image Hashes with Standalone Image Hasher"
 lead: "Learn how to create perceptual image hashes using the ImageHasher class."
 sort: 1
 ---

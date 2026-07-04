@@ -6,8 +6,6 @@ lead: "Learn how to create image hashes using the Image Analyzer interface."
 sort: 0
 ---
 
-[TOC]
-
 Intervention ImageHash provides two approaches for generating perceptual image hashes. You can use the the analyzer interface to integrate hashing into an existing Intervention Image processing pipelin or use the `ImageHasher` class as a [standalone hasher](/beta/api/hasher).
 
 ## Image Hash Analyzer
