@@ -1,20 +1,25 @@
 ---
 label: "Image Hash Analyzer"
-title: "Building Image Hashes with Analyzer interface"
+title: "Using AnalyzerInterface to Build Image Hashes"
 subtitle: "Generate Perceptual Image Hashes"
-lead: "Learn how to create image hashes using the Image Analyzer interface."
+lead: "Intervention ImageHash provides two approaches for generating perceptual image hashes. Learn how to create image hashes using the Image Analyzer interface."
 sort: 0
 ---
 
-Intervention ImageHash provides two approaches for generating perceptual image hashes. You can use the the analyzer interface to integrate hashing into an existing Intervention Image processing pipelin or use the `ImageHasher` class as a [standalone hasher](/beta/api/hasher).
+You can use the the `Image::analyze()` method to integrate hashing into an existing Intervention Image processing pipelin or use the `ImageHasher` class as a [standalone hasher](/beta/api/hasher).
 
-## Image Hash Analyzer
+## Image Analyzer Method
 
 > public AnalyzerInterface::analyze(ImageInterface $image): mixed
 
 Intervention Image already provides an interface for analysis operations. This interface can also be used for hashing. All [strategies](/beta/api/strategies) already implement the analysis interface. This makes it possible to integrate hashing into an existing Intervention Image processing pipeline. This is useful when you already have an `ImageInterface` instance from previous image operations.
 
 All [hashing strategies](/beta/api/strategies) implement the `AnalyzerInterface`, so they can be passed directly to the `analyze()` method.
+
+- `Intervention\ImageHash\Strategies\Average`
+- `Intervention\ImageHash\Strategies\Block`
+- `Intervention\ImageHash\Strategies\Difference`
+- `Intervention\ImageHash\Strategies\Perceptual`
 
 #### Example
 
@@ -27,10 +32,6 @@ use Intervention\ImageHash\Strategies\Average;
 // create image manager and load image
 $manager = ImageManager::usingDriver(GdDriver::class);
 $image = $manager->decodePath('images/photo.jpg');
-
-// apply image modifications
-$image->scale(width: 800);
-$image->greyscale();
 
 // generate hash using any strategy
 $hash1 = $image->analyze(new Difference());
@@ -46,7 +47,7 @@ use Intervention\ImageHash\Strategies\Block;
 
 $manager = ImageManager::usingDriver(ImagickDriver::class);
 
-// process and hash image in one pipeline
+// process and hash image
 $hash = $manager->decodePath('images/original.jpg')
     ->resize(1200, 800)
     ->crop(800, 600)
