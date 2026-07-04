@@ -1,5 +1,5 @@
 ---
-sort: 3
+sort: 4
 label: "ImageHash"
 title: "Intervention ImageHash"
 subtitle: "Perceptual Image Hashing for PHP"
