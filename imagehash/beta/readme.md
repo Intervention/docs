@@ -1,4 +1,4 @@
 ---
-title: "Beta Release"
+title: "0.1"
 status: "beta"
 ---
