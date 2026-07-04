@@ -2,17 +2,19 @@
 label: "Hash Images"
 title: "Building Image Hashes"
 subtitle: "Generate Perceptual Image Hashes"
-lead: "Learn how to create perceptual image hashes using the ImageHasher class or the Image Analyzer interface."
-sort: 0
+lead: "Learn how to create perceptual image hashes using the ImageHasher class."
+sort: 1
 ---
 
 [TOC]
 
-## Building Hashes
+Intervention ImageHash provides two approaches for generating perceptual image hashes. You can use the `ImageHasher` class as a standalone hasher, or integrate hashing into an existing Intervention Image processing pipeline using the [analyzer interface](/beta/api/analyzer).
 
-Intervention ImageHash provides two approaches for generating perceptual image hashes. You can use the `ImageHasher` class as a standalone hasher, or integrate hashing into an existing Intervention Image processing pipeline using the analyzer interface.
+## Create an ImageHasher
 
-### Using ImageHasher
+The `ImageHasher` class provides several static factory methods for creating instances.
+
+### Using the Constructor
 
 > public ImageHasher::__construct(string|DriverInterface $driver, StrategyInterface $strategy = new Difference())
 
@@ -39,11 +41,7 @@ $hasher = new ImageHasher(new GdDriver(), new Difference());
 $hash = $hasher->hash('path/to/image.jpg');
 ```
 
-### Creating ImageHasher Instances
-
-The `ImageHasher` class provides several static factory methods for creating instances.
-
-#### Create with Static Method
+### Using Static Constructor
 
 > public static ImageHasher::create(string|DriverInterface $driver, StrategyInterface $strategy = new Difference()): ImageHasher
 
@@ -58,7 +56,7 @@ use Intervention\ImageHash\Strategies\Average;
 $hasher = ImageHasher::create(ImagickDriver::class, new Average());
 ```
 
-#### Create with Driver
+### Using with Driver Constructor
 
 > public static ImageHasher::usingDriver(string|DriverInterface $driver): ImageHasher
 
@@ -72,9 +70,11 @@ use Intervention\ImageHash\ImageHasher;
 $hasher = ImageHasher::usingDriver(GdDriver::class);
 ```
 
-#### Modify Existing Hasher
+## Modify Existing Hasher
 
 You can create new hasher instances from existing ones with modified configuration.
+
+### Update the Driver
 
 > public ImageHasher::withDriver(string|DriverInterface $driver): ImageHasher
 
@@ -90,6 +90,8 @@ $hasher = ImageHasher::usingDriver(GdDriver::class);
 $imagickHasher = $hasher->withDriver(ImagickDriver::class);
 ```
 
+### Update the Hashing Strategy
+
 > public ImageHasher::withStrategy(StrategyInterface $strategy): ImageHasher
 
 Create a new hasher instance with a different strategy, keeping the current driver.
@@ -104,7 +106,7 @@ $hasher = ImageHasher::usingDriver(GdDriver::class);
 $perceptualHasher = $hasher->withStrategy(new Perceptual());
 ```
 
-### Generate Hashes
+## Generate Hashes
 
 > public ImageHasher::hash(mixed $image): HashInterface
 
@@ -150,50 +152,5 @@ $hash3 = $hasher->hash('data:image/png;base64,iVBORw0KG...');
 // hash from stream resource
 $stream = fopen('images/photo.jpg', 'r');
 $hash4 = $hasher->hash($stream);
-```
-
-### Using the Analyzer Interface
-
-> public AnalyzerInterface::analyze(ImageInterface $image): HashInterface
-
-Instead of using `ImageHasher`, you can use the `Intervention\Image\Image::analyze()` method to integrate hashing into an existing Intervention Image processing pipeline. This is useful when you already have an `ImageInterface` instance from previous image operations.
-
-All hashing strategies implement the `AnalyzerInterface`, so they can be passed directly to the `analyze()` method.
-
-#### Example
-
-```php
-use Intervention\Image\ImageManager;
-use Intervention\Image\Drivers\Gd\Driver as GdDriver;
-use Intervention\ImageHash\Strategies\Difference;
-use Intervention\ImageHash\Strategies\Average;
-
-// create image manager and load image
-$manager = ImageManager::usingDriver(GdDriver::class);
-$image = $manager->decodePath('images/photo.jpg');
-
-// apply image modifications
-$image->scale(width: 800);
-$image->greyscale();
-
-// generate hash using any strategy
-$hash1 = $image->analyze(new Difference());
-$hash2 = $image->analyze(new Average());
-```
-
-This approach is particularly useful when you want to hash an image after processing:
-
-```php
-use Intervention\Image\ImageManager;
-use Intervention\Image\Drivers\Imagick\Driver as ImagickDriver;
-use Intervention\ImageHash\Strategies\Block;
-
-$manager = ImageManager::usingDriver(ImagickDriver::class);
-
-// process and hash image in one pipeline
-$hash = $manager->decodePath('images/original.jpg')
-    ->resize(1200, 800)
-    ->crop(800, 600)
-    ->analyze(new Block());
 ```
 

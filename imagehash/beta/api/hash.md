@@ -3,7 +3,7 @@ label: "Hash Object"
 title: "Working with Hash Objects"
 subtitle: "Compare, Convert and Store Image Hashes"
 lead: "Learn how to work with Hash objects. Compare hashes to detect similar images, convert between different formats, and reconstruct hashes from stored values."
-sort: 1
+sort: 2
 ---
 
 [TOC]

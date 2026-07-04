@@ -3,7 +3,7 @@ label: "Hashing Strategies"
 title: "Hashing Strategies"
 subtitle: "Using different strategies to build image hashes"
 lead: "Choose from four different hashing strategies to match your specific use case."
-sort: 2
+sort: 3
 ---
 
 [TOC]
