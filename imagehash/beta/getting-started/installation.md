@@ -9,7 +9,7 @@ sort: 1
 
 ## Server Requirements
 
-Before you begin with the installation make sure that your server environment supports the following requirements.
+Make sure your server meets these requirements before installing:
 
 - PHP >= 8.3
 - Mbstring PHP Extension
@@ -17,8 +17,7 @@ Before you begin with the installation make sure that your server environment su
 
 ### Image Processing Extension
 
-Your server environment must have at least one PHP image processing extension
-installed. Intervention Image currently supports the three most popular.
+You need at least one image processing extension installed. Intervention Image supports three popular options:
 
 - [GD Image](https://www.php.net/manual/en/book.image.php)
 - [Imagick](https://www.php.net/manual/en/book.imagick.php)
@@ -32,4 +31,4 @@ Install this package with [Composer](https://getcomposer.org).
 composer require intervention/imagehash
 ```
 
-After the installation you can start using the [image hasher](/beta/api/hasher).
+After installation, you can start using the [image hasher](/beta/api/hasher).

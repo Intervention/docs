@@ -8,17 +8,17 @@ sort: 2
 
 [TOC]
 
-When you generate an image hash using any hashing strategy, you receive a `Hash` object implementing the `HashInterface`. This object represents a perceptual fingerprint of the image and provides methods for comparison, conversion, and serialization. The `Hash` object is: **immutable**, **serializable** and **comparable**, as the following examples show.
+When you generate an image hash using any hashing strategy, you get a `Hash` object that implements `HashInterface`. This object represents a perceptual fingerprint of the image. It's **immutable**, **serializable**, and **comparable**.
 
 ## Comparing Hashes
 
-Perceptual hashes can be compared to determine how similar two images are. The library uses the Hamming distance algorithm to count the number of differing bits between two hashes.
+Perceptual hashes can be compared to determine image similarity. The library uses the Hamming distance algorithm, which counts the number of differing bits between two hashes.
 
 ### Calculate Distance
 
 > public Hash::distance(HashInterface $hash): int
 
-Calculate the Hamming distance between two hashes. The distance represents the number of bits that differ between the hashes. A lower distance indicates more similar images.
+Calculate the Hamming distance between two hashes. This returns the number of bits that differ. Lower distance means more similar images.
 
 #### Parameters
 
@@ -30,7 +30,7 @@ Calculate the Hamming distance between two hashes. The distance represents the n
 
 Returns an integer representing the number of differing bits. A distance of `0` means the hashes are identical.
 
-Both hashes must have the same bit length for comparison. If the GMP extension is available, it uses `gmp_hamdist()` for faster comparison. Without GMP, falls back to array comparison (still fast, but slightly slower).
+Both hashes must have the same bit length. If the GMP extension is available, the method uses `gmp_hamdist()` for faster comparison. Otherwise, it falls back to array comparison (still fast, just slightly slower).
 
 
 #### Example
@@ -63,7 +63,7 @@ if ($distance < 10) {
 
 > public Hash::equals(HashInterface $hash, int $leeway = 0): bool
 
-Determine if two hashes are equal within an optional leeway distance. This is a convenience method that compares the distance to a threshold.
+Check if two hashes are equal within an optional tolerance. This is a convenience wrapper around the distance method.
 
 #### Parameters
 
@@ -103,13 +103,13 @@ if ($hash1->equals($hash2, leeway: $tolerance)) {
 
 ## Converting Hashes
 
-Hash objects can be converted to various formats for storage, transmission, or display. All conversions are lossless and can be reversed.
+Hash objects support multiple output formats for storage, transmission, or display. All conversions are lossless and reversible.
 
 ### Convert to Hexadecimal
 
 > public Hash::toHex(): string
 
-Convert the hash to a hexadecimal string. This is the most common format for storage and is used as the default string representation.
+Convert the hash to hexadecimal. This is the most common storage format and the default string representation.
 
 #### Example
 
@@ -130,7 +130,7 @@ echo "$hash";        // "8f9e9d8b0f0f1f07"
 
 > public Hash::toBits(): string
 
-Convert the hash to a binary string representation (concatenated "0" and "1" characters).
+Convert the hash to binary string format (concatenated "0" and "1" characters).
 
 #### Example
 
@@ -150,7 +150,7 @@ $bitLength = strlen($bits); // 64
 
 > public Hash::toBytes(): string
 
-Get the raw byte string representation of the hash. This is the internal storage format.
+Get the raw byte string. This is how the hash is stored internally.
 
 #### Example
 
@@ -169,7 +169,7 @@ file_put_contents('hash.bin', $bytes);
 
 > public Hash::toBase64(): string
 
-Convert the hash to a Base64-encoded string. Useful for embedding in JSON, URLs, or text-based protocols.
+Convert to Base64 encoding. Useful for JSON, URLs, or text-based protocols.
 
 #### Example
 
@@ -192,7 +192,7 @@ $response = [
 
 > public Hash::bitLength(): int
 
-Get the total number of bits in the hash. Different strategies and configurations produce different bit lengths.
+Get the total number of bits in the hash. Different strategies and settings produce different bit lengths.
 
 #### Example
 
@@ -216,13 +216,13 @@ echo $block->bitLength(); // 256
 
 ## Parsing Hashes
 
-If you've previously stored a hash value, you can reconstruct a `Hash` object using static factory methods. This is useful for comparing newly generated hashes against previously stored ones.
+You can reconstruct a `Hash` object from previously stored values using static factory methods. This is useful for comparing new hashes against stored ones.
 
 ### Parse from Hexadecimal
 
 > public static Hash::fromHex(string $hex): Hash
 
-Create a Hash object from a hexadecimal string. The method validates the input and throws `InvalidArgumentException` if the input cannot be parsed to a hash.
+Create a Hash from hexadecimal. The method validates input and throws `InvalidArgumentException` if parsing fails.
 
 #### Parameters
 
@@ -252,14 +252,14 @@ if ($distance < 10) {
 
 > public static Hash::fromBits(string|array $bits): Hash
 
-Create a Hash object from a binary string or array of bit values. The method accepts bits in multiple formats:
+Create a Hash from binary string or array of bit values. Accepts multiple formats:
 
 - String of "0" and "1" characters: `"10011010"`
 - Array of integers: `[1, 0, 0, 1, 1, 0, 1, 0]`
 - Array of booleans: `[true, false, false, true]`
 - Array of strings: `["1", "0", "0", "1"]`
 
-The method validates the input and throws `InvalidArgumentException` if the bits cannot be converted to an image hash.
+The method validates input and throws `InvalidArgumentException` if the bits cannot be converted to an image hash.
 
 #### Parameters
 
@@ -289,7 +289,7 @@ echo $hash1->toHex();
 
 > public static Hash::fromBytes(string $bytes): Hash
 
-Create a Hash object from a raw byte string.
+Create a Hash from raw bytes.
 
 #### Parameters
 
@@ -315,7 +315,7 @@ echo $hash->distance($newHash);
 
 > public static Hash::fromBase64(string $base64): Hash
 
-Create a Hash object from a Base64-encoded string. The method throws `InvalidArgumentException` if the Base64 string cannot be decoded.
+Create a Hash from Base64. Throws `InvalidArgumentException` if decoding fails.
 
 #### Parameters
 

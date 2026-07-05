@@ -17,17 +17,19 @@ sort: 0
 
 ### What is Perceptual Image Hashing?
 
-A perceptual hash is a fingerprint of an image derived from its visual features. Unlike cryptographic hash functions like MD5 or SHA1, which produce completely different outputs for even minor changes, perceptual hashes are "close" to one another when images are visually similar. This makes them ideal for:
+A perceptual hash is a fingerprint of an image based on its visual content. Unlike cryptographic hashes (MD5, SHA1) that change completely with any modification, perceptual hashes remain similar when images look similar. 
 
-- Detecting duplicate or near-duplicate images
-- Finding images that have been resized, compressed, or slightly modified
-- Organizing and deduplicating image collections
-- Content moderation and copyright detection
+This lets you:
+
+- Detect duplicate or near-duplicate images
+- Find images that have been resized, compressed, or lightly edited
+- Organize and deduplicate image collections
+- Implement content moderation and copyright detection
 
 
 ### Code Example
 
-The library provides two approaches for generating image hashes. You can use the `ImageHasher` class directly or integrate hashing into an existing Intervention Image pipeline using the `analyze()` method.
+There are two ways to generate image hashes: use the `ImageHasher` class directly, or integrate hashing into an existing Intervention Image pipeline with the `analyze()` method.
 
 #### Using ImageHasher
 

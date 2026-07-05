@@ -10,17 +10,17 @@ sort: 3
 
 ## Hashing Strategies
 
-Intervention ImageHash provides four built-in strategies for generating perceptual hashes. Each strategy uses a different algorithm and may perform better or worse depending on your specific use case.
+Intervention ImageHash includes four hashing strategies. Each uses a different algorithm with its own strengths depending on your use case.
 
 ### Difference Strategy
 
 > public Difference::__construct(int $size = 8)
 
-The Difference strategy (also known as dHash or Gradient Hash) generates hashes based on gradients between adjacent pixels. This is the recommended starting point for most applications.
+The Difference strategy (also called dHash or Gradient Hash) generates hashes based on gradients between adjacent pixels. It's the recommended starting point for most use cases.
 
-The strategy resizes the image to 8x9 pixels (or custom size + 1), converts to grayscale, and compares each pixel with its neighbor to the right. Each hash bit is set based on whether the left pixel is brighter than the right pixel.
+The strategy resizes images to 8x9 pixels (or custom size + 1), converts to grayscale, then compares each pixel with its right neighbor. Hash bits are set based on whether the left pixel is brighter.
 
-As a general rule, the following use cases are best suited for this strategy.
+Best suited for:
 
 - General-purpose image comparison
 - Detecting rotated or flipped images
@@ -53,11 +53,11 @@ $hash = $hasher->hash('images/photo.jpg');
 
 > public Average::__construct(int $size = 8)
 
-The Average strategy (also known as aHash or Mean Hash) generates hashes based on the average image color. It's the simplest and fastest hashing algorithm.
+The Average strategy (also called aHash or Mean Hash) generates hashes based on average image color. It's the simplest and fastest algorithm.
 
-The strategy resizes the image to the specified size (default 8x8), converts to grayscale, calculates the average pixel value, and sets each hash bit based on whether each pixel is above or below the average.
+The strategy resizes images to the specified size (default 8x8), converts to grayscale, calculates the average pixel value, then sets each hash bit based on whether pixels are above or below average.
 
-Best for the following use cases.
+Best for:
 
 - Fast hashing when performance is critical
 - Simple duplicate detection
@@ -91,11 +91,11 @@ $hash = $hasher->hash('images/photo.jpg');
 
 > public Block::__construct(int $size = 16, string $mode = Block::PRECISE)
 
-The Block strategy (also known as Blockhash) divides the image into blocks and generates hashes based on block brightness compared to the median. It's based on the algorithm from [blockhash.io](http://blockhash.io).
+The Block strategy (also called Blockhash) divides images into blocks and generates hashes based on block brightness compared to median values. Based on the algorithm from [blockhash.io](http://blockhash.io).
 
-The strategy divides the image into blocks, calculates the median brightness across horizontal bands, and sets each hash bit based on whether each block is brighter than the median of its band.
+The strategy divides images into blocks, calculates median brightness across horizontal bands, then sets hash bits based on whether each block is brighter than its band median.
 
-Use this strategy in the following situations.
+Use this for:
 
 - Images with varying dimensions
 - Better resistance to scaling and aspect ratio changes
@@ -141,11 +141,11 @@ $hash = $hasher->hash('images/photo.jpg');
 
 > public Perceptual::__construct(int $size = 32, string $comparisonMethod = Perceptual::AVERAGE)
 
-The Perceptual strategy (also known as pHash) is the original perceptual hash algorithm. It uses a Discrete Cosine Transform (DCT) to identify frequency patterns in the image.
+The Perceptual strategy (also called pHash) is the original perceptual hash algorithm. It uses Discrete Cosine Transform (DCT) to identify frequency patterns.
 
-The strategy resizes the image, converts to grayscale, applies DCT to both rows and columns, extracts the top-left 8x8 DCT coefficients (low frequencies), and compares each coefficient to the average or median.
+The strategy resizes images, converts to grayscale, applies DCT to both rows and columns, extracts the top-left 8x8 DCT coefficients (low frequencies), then compares each coefficient to the average or median.
 
-The following use cases are best suited for this strategy.
+Best suited for:
 
 - Highest accuracy for similar image detection
 - Resistant to gamma correction and color changes

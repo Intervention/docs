@@ -8,7 +8,7 @@ sort: 1
 
 [TOC]
 
-Intervention ImageHash provides two approaches for generating perceptual image hashes. You can use the `ImageHasher` class as a standalone hasher, or integrate hashing into an existing Intervention Image processing pipeline using the [analyzer interface](/beta/api/analyzer).
+Intervention ImageHash offers two ways to generate perceptual image hashes: use the `ImageHasher` class as a standalone tool, or integrate hashing into an existing Intervention Image workflow using the [analyzer interface](/beta/api/analyzer).
 
 ## Create an ImageHasher
 
@@ -18,7 +18,7 @@ The `ImageHasher` class provides several static factory methods for creating ins
 
 > public ImageHasher::__construct(string|DriverInterface $driver, StrategyInterface $strategy = new Difference())
 
-The `ImageHasher` class serves as the central starting point for all hashing operations. It requires a driver matching your PHP image extension (GD, Imagick, or libvips) and a hashing strategy.
+The `ImageHasher` class is your starting point for all hashing operations. You need a driver that matches your PHP image extension (GD, Imagick, or libvips) and a hashing strategy.
 
 #### Parameters
 

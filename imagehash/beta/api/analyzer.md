@@ -12,7 +12,7 @@ You can use the `Image::analyze()` method to integrate hashing into an existing 
 
 > public AnalyzerInterface::analyze(ImageInterface $image): mixed
 
-Intervention Image already provides an interface for analysis operations. This interface can also be used for hashing. All [strategies](/beta/api/strategies) already implement the analysis interface. This makes it possible to integrate hashing into an existing Intervention Image processing pipeline. This is useful when you already have an `ImageInterface` instance from previous image operations.
+Intervention Image includes an interface for analysis operations that works perfectly for hashing. All [strategies](/beta/api/strategies) implement this interface, so you can pass them directly to the `analyze()` method. This is especially useful when you're already working with an `ImageInterface` instance from previous operations.
 
 All [hashing strategies](/beta/api/strategies) implement the `AnalyzerInterface`, so they can be passed directly to the `analyze()` method.
 
