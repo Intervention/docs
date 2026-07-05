@@ -24,6 +24,11 @@ Documentation in markdown for all projects on [intervention.io](https://interven
 - [Documentation Source](/httpauth)
 - [Website](https://httpauth.intervention.io)
 
+### Intervention ImageHash
+
+- [Documentation Source](/imagehash)
+- [Website](https://imagehash.intervention.io)
+
 ## Authors
 
 This documentation is developed and maintained by [Oliver Vogel](https://intervention.io)
