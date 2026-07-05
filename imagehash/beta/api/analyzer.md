@@ -6,7 +6,7 @@ lead: "Intervention ImageHash provides two approaches for generating perceptual 
 sort: 0
 ---
 
-You can use the the `Image::analyze()` method to integrate hashing into an existing Intervention Image processing pipelin or use the `ImageHasher` class as a [standalone hasher](/beta/api/hasher).
+You can use the `Image::analyze()` method to integrate hashing into an existing Intervention Image processing pipeline or use the `ImageHasher` class as a [standalone hasher](/beta/api/hasher).
 
 ## Image Analyzer Method
 

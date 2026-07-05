@@ -30,7 +30,7 @@ Calculate the Hamming distance between two hashes. The distance represents the n
 
 Returns an integer representing the number of differing bits. A distance of `0` means the hashes are identical.
 
-Both hashes must have the same bit length for comparison. If the GMP extension is available, it uses `gmp_hamdist()` for faster comparison. Without GMP, falls back to array comparison (still fast, but slightly slower)
+Both hashes must have the same bit length for comparison. If the GMP extension is available, it uses `gmp_hamdist()` for faster comparison. Without GMP, falls back to array comparison (still fast, but slightly slower).
 
 
 #### Example
@@ -222,7 +222,7 @@ If you've previously stored a hash value, you can reconstruct a `Hash` object us
 
 > public static Hash::fromHex(string $hex): Hash
 
-Create a Hash object from a hexadecimal string. The method validates the input and throws `InvalidArgumentException` if the input can not be parsed to a hash.
+Create a Hash object from a hexadecimal string. The method validates the input and throws `InvalidArgumentException` if the input cannot be parsed to a hash.
 
 #### Parameters
 
@@ -259,7 +259,7 @@ Create a Hash object from a binary string or array of bit values. The method acc
 - Array of booleans: `[true, false, false, true]`
 - Array of strings: `["1", "0", "0", "1"]`
 
-The method validates the input and throws `InvalidArgumentException` if the bits can not be converted to a image hash.
+The method validates the input and throws `InvalidArgumentException` if the bits cannot be converted to an image hash.
 
 #### Parameters
 
