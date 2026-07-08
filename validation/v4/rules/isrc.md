@@ -2,7 +2,7 @@
 title: "ISRC Rule"
 subtitle: "Validate International Standard Recording Codes"
 lead: "Explore how to validate International Standard Recording Codes with the validation rules of Intervention Validation for your Laravel app."
-sort: 17
+sort: 21
 ---
 
 > public Intervention\Validation\Rules\Isrc::__construct()

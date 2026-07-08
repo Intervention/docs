@@ -2,7 +2,7 @@
 title: "Creditcard Rule"
 subtitle: "Validate Credit Card Numbers"
 lead: "Learn how to validate credit card numbers with the additional validation rules of Intervention Validation for your Laravel application."
-sort: 5
+sort: 7
 ---
 
 > public Intervention\Validation\Rules\Creditcard::__construct()

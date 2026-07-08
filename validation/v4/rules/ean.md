@@ -2,7 +2,7 @@
 title: "EAN Rule"
 subtitle: "Validate European Article Numbers"
 lead: "Explore how to validate European Article Numbers with the additional validation rules of Intervention Validation for your Laravel application."
-sort: 8
+sort: 11
 ---
 
 > public Intervention\Validation\Rules\Ean::__construct(array $lengths = [8, 13])

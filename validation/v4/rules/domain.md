@@ -2,7 +2,7 @@
 title: "Domain Name Rule"
 subtitle: "Validate Domain Names"
 lead: "Learn how to validate domain names with the additional validation rules of Intervention Validation for your Laravel application."
-sort: 7
+sort: 10
 ---
 
 > public Intervention\Validation\Rules\Domainname::__construct()

@@ -2,7 +2,7 @@
 title: "Kebab Case Rule"
 subtitle: "Validate a String in Kebab Case"
 lead: "Discover how to validate strings in Kebab Case with the additional validation rules of Intervention Validation for your Laravel application."
-sort: 20
+sort: 23
 ---
 
 > public Intervention\Validation\Rules\Kebabcase::__construct()

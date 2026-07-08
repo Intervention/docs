@@ -2,7 +2,7 @@
 title: "VIN Rule"
 subtitle: "Validate Vehicle Identification Numbers"
 lead: "Learn how to validate Vehicle Identification Numbers (VIN) with the additional validation rules of Intervention Validation for your Laravel application."
-sort: 32
+sort: 36
 ---
 
 > public Intervention\Validation\Rules\Vin::__construct(bool $checkDigit = false)

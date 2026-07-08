@@ -2,7 +2,7 @@
 title: "Currency Code"
 subtitle: "Validate ISO 4217 Currency Codes"
 lead: "Learn how to validate International Standard Book Numbers (ISBN) with the additional validation rules of Intervention Validation for your Laravel application."
-sort: 15
+sort: 8
 ---
 
 > public Intervention\Validation\Rules\CurrencyCode::__construct(string $format = CurrencyCode::ALPHA, bool $strict = true)

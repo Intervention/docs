@@ -2,7 +2,7 @@
 title: "ISBN Rule"
 subtitle: "Validate International Standard Book Number"
 lead: "Learn how to validate International Standard Book Numbers (ISBN) with the additional validation rules of Intervention Validation for your Laravel application."
-sort: 15
+sort: 19
 ---
 
 > public Intervention\Validation\Rules\Isbn::__construct(array $lengths = [10, 13])

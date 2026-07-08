@@ -2,7 +2,7 @@
 title: "Country Code"
 subtitle: "Validate ISO-3166 Country Codes"
 lead: "Learn how to validate ISO-3166 Country Codes with the additional validation rules of Intervention Validation for your Laravel application."
-sort: 5
+sort: 6
 ---
 
 > public Intervention\Validation\Rules\CountryCode::__construct(string $format = CountryCode::ALPHA2, bool $strict = true)

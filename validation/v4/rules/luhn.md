@@ -2,7 +2,7 @@
 title: "Luhn Rule"
 subtitle: "Validate a String Against Luhn Algorithm"
 lead: "Learn how to validate strings against the Luhn Algorithm with the additional validation rules of Intervention Validation for your Laravel application."
-sort: 22
+sort: 26
 ---
 
 > public Intervention\Validation\Rules\Luhn::__construct()

@@ -2,7 +2,7 @@
 title: "Language Code"
 subtitle: "Validate ISO 639-1 Language Codes"
 lead: "Learn how to validate ISO 639-1 Language Codes with the additional validation rules of Intervention Validation for your Laravel application."
-sort: 15
+sort: 24
 ---
 
 > public Intervention\Validation\Rules\LanguageCode::__construct(bool $strict = true)
