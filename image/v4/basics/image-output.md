@@ -218,6 +218,7 @@ are currently available.
 - `Intervention\Image\Encoders\Jpeg2000Encoder::class`
 - `Intervention\Image\Encoders\HeicEncoder::class`
 - `Intervention\Image\Encoders\IcoEncoder::class`
+- `Intervention\Image\Encoders\JxlEncoder::class`
 
 If no encoder is passed the `AutoEncoder` is used which will attempt to detect
 the output format automatically according to the original format of the image.
