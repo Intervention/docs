@@ -30,7 +30,7 @@ Read more about [encoding different image formats](/v4/basics/image-output) in t
 | JPEG 2000 | ❌ | ✅ | ✅ |
 | HEIC | ❌ | ✅ | ✅ |
 | ICO | ❌ | ✅ | ✅ |
-| JPEG XL | ❌ | ✅ | ❌ |
+| JPEG XL | ❌ | ✅ | ✅ |
 
 **Please note that not all image formats are always included in the PHP image
 extensions. It is therefore possible, that the GD library is installed but is
