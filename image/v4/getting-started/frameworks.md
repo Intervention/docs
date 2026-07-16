@@ -37,7 +37,7 @@ You can copy the configuration file to your application with the following comma
 php artisan vendor:publish --provider="Intervention\Image\Laravel\ServiceProvider"
 ```
 
-This command will publish the configuration file `config/image.php`. Here you
+This command will publish the configuration file `config/intervention-image.php`. Here you
 can set the desired driver and its configuration options for Intervention
 Image. By default, the library is configured to use the GD library for image
 processing.
