@@ -115,16 +115,23 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use Intervention\Image\Laravel\Facades\Image;
 
-Route::get('/', function (Request $request) {
-    $upload = $request->file('image');
-    $storagePath = Str::random() . '.' . $upload->getClientOriginalExtension();
+class ImageController extends Controller
+{
+    /**
+     * Handle image upload.
+     */
+    public function handleImageUpload(Request $request): RedirectResponse
+    {
+        $upload = $request->file('image');
+        $storagePath = Str::random() . '.' . $upload->getClientOriginalExtension();
 
-    $image = Image::decode($upload)
-        ->resize(300, 200)
-        ->encode();
+        $image = Image::decode($upload)
+            ->scale(height: 300)
+            ->encode();
 
-    Storage::put($storagePath, $image);
-});
+        Storage::put($storagePath, $image);
+    }
+}
 ```
 
 ### Dependency Injection
@@ -180,12 +187,19 @@ use Illuminate\Support\Facades\Storage;
 use Intervention\Image\Format;
 use Intervention\Image\Laravel\Facades\Image;
 
-Route::get('/', function () {
-    $image = Image::decode(Storage::get('example.jpg'))
-        ->scale(height: 300);
+class ImageController extends Controller
+{
+    /**
+     * Respond with an image using the response macro.
+     */
+    public function respondWithImage(): RedirectResponse
+    {
+        $image = Image::decode(Storage::get('example.jpg'))
+            ->scale(height: 300);
 
-    return response()->image($image, Format::WEBP, quality: 65);
-});
+        return response()->image($image, Format::WEBP, quality: 65);
+    }
+}
 ```
 
 ## Symfony
