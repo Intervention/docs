@@ -117,18 +117,17 @@ use Intervention\Image\Laravel\Facades\Image;
 
 Route::get('/', function (Request $request) {
     $upload = $request->file('image');
-    $image = Image::decode($upload)
-        ->resize(300, 200);
+    $storagePath = Str::random() . '.' . $upload->getClientOriginalExtension();
 
-    Storage::put(
-        Str::random() . '.' . $upload->getClientOriginalExtension(),
-        $image->encodeUsingFileExtension($upload->getClientOriginalExtension(), quality: 70)
-    );
+    $image = Image::decode($upload)
+        ->resize(300, 200)
+        ->encode();
+
+    Storage::put($storagePath, $image);
 });
 ```
 
 ### Dependency Injection
-
 
 The Laravel integration package creates a binding for a fully configured [image manager](/v4/basics/instantiation).
 
@@ -145,24 +144,18 @@ use Illuminate\Support\Str;
 class ImageController extends Controller
 {
     /**
-     * Create a new controller instance by injecting an image manager.
-     */
-    public function __construct(
-        protected ImageManagerInterface $imageManager,
-    ) {}
-
-    /**
      * Handle image upload.
      */
-    public function handleImageUpload(Request $request): RedirectResponse
+    public function handleImageUpload(Request $request, ImageManagerInterface $imageManager): RedirectResponse
     {
-        $path = storage_path('images/' . Str::uuid() . '.webp');
+        $storagePath = storage_path('images/' . Str::uuid() . '.webp');
 
-        $image = $this->imageManager->decode($request->file('image'));
-        $image->scale(height: 300);
-        $image->save($path);
+        $imageManager
+            ->decode($request->file('image'))
+            ->scale(height: 300)
+            ->save($storagePath);
  
-        return redirect('/images');
+        return redirect('/');
     }
 }
 ```
@@ -188,8 +181,8 @@ use Intervention\Image\Format;
 use Intervention\Image\Laravel\Facades\Image;
 
 Route::get('/', function () {
-    $image = Image::decodeBinary(Storage::get('example.jpg'))
-        ->scale(300, 200);
+    $image = Image::decode(Storage::get('example.jpg'))
+        ->scale(height: 300);
 
     return response()->image($image, Format::WEBP, quality: 65);
 });
