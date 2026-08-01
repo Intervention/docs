@@ -1,7 +1,7 @@
 ---
 title: "Slug Rule"
 subtitle: "Validate a SEO-friendly Short Text"
-lead: "Explore how to validate SEO-friendly short texts with the additional validation rules of Intervention Validation for your Laravel application."
+lead: "Validate SEO-friendly URL slugs in Laravel with Intervention Validation. Check slug format and structure."
 sort: 31
 ---
 

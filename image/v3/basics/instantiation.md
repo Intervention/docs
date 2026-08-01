@@ -2,7 +2,7 @@
 label: "Read & Create Images"
 title: "Instantiation"
 subtitle: "Read & Create Images"
-lead: "Learn how to manage and process images with the Intervention Image Manager. Read and decode images from multiple sources like file paths, Base64, and Data Uri, or create custom images and animations using PHP."
+lead: "Process images with Intervention Image Manager. Read from file paths, Base64, or Data URI. Create custom images and animations in PHP seamlessly."
 sort: 1
 ---
 

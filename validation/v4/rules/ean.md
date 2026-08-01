@@ -1,7 +1,7 @@
 ---
 title: "EAN Rule"
 subtitle: "Validate European Article Numbers"
-lead: "Explore how to validate European Article Numbers with the additional validation rules of Intervention Validation for your Laravel application."
+lead: "Validate European Article Numbers (EAN) in Laravel with Intervention Validation. EAN-8 and EAN-13 checks."
 sort: 11
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "Austrian Insurance Number Rule"
 subtitle: "Validate the Austria Social Insurance Number"
-lead: "Explore how to validate the Austrian Social Insurance Number with the additional validation rules of Intervention Validation for your Laravel application."
+lead: "Validate Austrian Social Insurance Numbers in Laravel with Intervention Validation. Austrian-specific validation rule."
 sort: 1
 ---
 

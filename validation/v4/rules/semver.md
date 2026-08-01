@@ -1,7 +1,7 @@
 ---
 title: "Semantic Versioning Rule"
 subtitle: "Validate Semantic Version Numbers"
-lead: "Learn how to validate Semantic Version Numbers (semver) with the additional validation rules of Intervention Validation for your Laravel application."
+lead: "Validate Semantic Version Numbers (semver) in Laravel with Intervention Validation. Version format checks."
 sort: 30
 ---
 

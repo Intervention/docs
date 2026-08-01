@@ -1,7 +1,7 @@
 ---
 title: "Domain Name Rule"
 subtitle: "Validate Domain Names"
-lead: "Learn how to validate domain names with the additional validation rules of Intervention Validation for your Laravel application."
+lead: "Validate domain names in Laravel with Intervention Validation. DNS and domain format checks."
 sort: 10
 ---
 

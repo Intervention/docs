@@ -1,7 +1,7 @@
 ---
 title: "Postal Code Rule"
 subtitle: "Validate Postal Codes for Individual Countries"
-lead: "Explore how to validate international postal codes with the additional validation rules of Intervention Validation for your Laravel application."
+lead: "Validate international postal codes in Laravel with Intervention Validation. Multi-country ZIP/postal codes."
 sort: 29
 ---
 

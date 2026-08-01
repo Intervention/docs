@@ -1,7 +1,7 @@
 ---
 title: "Language Code"
 subtitle: "Validate ISO 639-1 Language Codes"
-lead: "Learn how to validate ISO 639-1 Language Codes with the additional validation rules of Intervention Validation for your Laravel application."
+lead: "Validate ISO 639-1 language codes in Laravel with Intervention Validation. Two-letter language identifiers."
 sort: 24
 ---
 

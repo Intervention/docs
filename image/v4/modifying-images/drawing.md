@@ -1,7 +1,7 @@
 ---
 title: "Drawing"
 subtitle: "Draw Geometric Shapes on Images"
-lead: "Learn how to draw shapes and customize images with Intervention Image. Add colors, pixels, rectangles, circles, polygons, and bézier curves using a simple interface for precise and intuitive control."
+lead: "Draw shapes on images with Intervention Image. Add pixels, rectangles, circles, polygons, and Bézier curves with a simple, intuitive PHP interface."
 sort: 4
 ---
 

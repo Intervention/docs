@@ -2,7 +2,7 @@
 label: "Hash Object"
 title: "Working with Hash Objects"
 subtitle: "Compare, Convert and Store Image Hashes"
-lead: "Learn how to work with Hash objects. Compare hashes to detect similar images, convert between different formats, and reconstruct hashes from stored values."
+lead: "Work with Hash objects to compare and detect similar images. Convert between formats and reconstruct hashes from stored values in PHP."
 sort: 2
 ---
 

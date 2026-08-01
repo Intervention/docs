@@ -1,7 +1,7 @@
 ---
 title: "Upgrade Guide"
 subtitle: "Upgrade from Intervention Image 3.x to 4.x"
-lead: "Learn how to migrate from Intervention Image version 3 to version 4. See what new features are available and what changes have been made in the update."
+lead: "Migrate from Intervention Image v3 to v4. Complete upgrade guide covering new features, breaking changes, and migration steps in PHP."
 sort: 4
 ---
 

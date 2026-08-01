@@ -1,7 +1,7 @@
 ---
 title: "JWT Rule"
 subtitle: "Validate a JSON Web Token"
-lead: "Learn how to validate the JSON Web Token format with the additional validation rules of Intervention Validation for your Laravel application."
+lead: "Validate JSON Web Token (JWT) format in Laravel with Intervention Validation. JWT structure checks."
 sort: 22
 ---
 

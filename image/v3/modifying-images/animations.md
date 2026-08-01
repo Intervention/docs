@@ -1,7 +1,7 @@
 ---
 title: "Animations"
 subtitle: "Change Details of Animated Images"
-lead: "Master image animation handling with Intervention Image. Learn to edit and customize animated images like GIF format, including frame slicing, iteration control, and converting animations to static images."
+lead: "Edit animated GIF images with Intervention Image. Frame slicing, iteration control, and convert animations to static images in PHP seamlessly."
 sort: 5
 ---
 

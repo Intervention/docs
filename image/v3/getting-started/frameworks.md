@@ -1,7 +1,7 @@
 ---
 title: "Framework Integration"
 subtitle: "Integration in your Favorite Framework"
-lead: "Explore how to integrate Intervention Image with Laravel and Symfony frameworks using the official integration packages. Learn to set up configuration files, select drivers and leverage features like auto-orientation, decoding animations, and blending color."
+lead: "Integrate Intervention Image with Laravel and Symfony. Set up configuration, select drivers (GD, Imagick, libvips), and enable auto-orientation and animations."
 sort: 2
 ---
 

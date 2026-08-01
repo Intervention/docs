@@ -2,7 +2,7 @@
 label: "Error Handling"
 title: "Error Handling"
 subtitle: "Use the Exception model to handle errors"
-lead: "Discover how to use the exception model of Intervention Image to catch and handle different types of errors."
+lead: "Exception handling in Intervention Image. Catch and handle different error types in PHP image processing."
 sort: 3
 ---
 

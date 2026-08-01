@@ -1,7 +1,7 @@
 ---
 title: "Installation"
 subtitle: "Installing Intervention Image"
-lead: "Learn how to install Intervention Image for PHP with Composer and discover what are requirements to run the library with your server environment seamlessly."
+lead: "Install Intervention Image for PHP via Composer. Requirements and setup guide for GD, Imagick, or libvips image processing."
 sort: 1
 ---
 

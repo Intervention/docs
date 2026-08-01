@@ -1,7 +1,7 @@
 ---
 title: "Upper Case Rule"
 subtitle: "Validate String Formatted in Upper Case"
-lead: "Discover how to validate strings in upper case format with the additional validation rules of Intervention Validation for your Laravel application."
+lead: "Validate UPPERCASE strings in Laravel with Intervention Validation. Ensure all characters are uppercase."
 sort: 35
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "GTIN Rule"
 subtitle: "Validate a Global Trade Item Number"
-lead: "Learn how to validate Global Trade Item Numbers (GTIN) with the additional validation rules of Intervention Validation for your Laravel application."
+lead: "Validate Global Trade Item Numbers (GTIN) in Laravel with Intervention Validation. Product ID checks."
 sort: 13
 ---
 

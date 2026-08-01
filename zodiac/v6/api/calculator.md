@@ -1,7 +1,7 @@
 ---
 title: "Calculator"
 subtitle: "Using the Zodiac Calculator Class"
-lead: "Learn how to use the Zodiac Calculator Class to transform different date formats into zodiac sign objects including reading from scalar date types or date objects."
+lead: "Zodiac Calculator Class: Transform dates into zodiac sign objects. Read from scalar types or date objects for astrological calculations in PHP."
 sort: 0
 ---
 

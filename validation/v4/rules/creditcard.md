@@ -1,7 +1,7 @@
 ---
 title: "Creditcard Rule"
 subtitle: "Validate Credit Card Numbers"
-lead: "Learn how to validate credit card numbers with the additional validation rules of Intervention Validation for your Laravel application."
+lead: "Validate credit card numbers in Laravel with Intervention Validation. Luhn algorithm and format verification."
 sort: 7
 ---
 

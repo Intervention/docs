@@ -1,7 +1,7 @@
 ---
 title: "VIN Rule"
 subtitle: "Validate Vehicle Identification Numbers"
-lead: "Learn how to validate Vehicle Identification Numbers (VIN) with the additional validation rules of Intervention Validation for your Laravel application."
+lead: "Validate Vehicle Identification Numbers (VIN) in Laravel with Intervention Validation. Automotive VIN checks."
 sort: 37
 ---
 

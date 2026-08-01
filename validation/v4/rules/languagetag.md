@@ -1,7 +1,7 @@
 ---
 title: "Language Tag"
 subtitle: "Validate IETF BCP 47 language tags"
-lead: "Learn how to validate BCP 47 IETF language tags with the additional validation rules of Intervention Validation for your Laravel application."
+lead: "Validate BCP 47 IETF language tags in Laravel with Intervention Validation. Locale and language identifiers."
 sort: 25
 ---
 

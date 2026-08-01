@@ -1,7 +1,7 @@
 ---
 title: "BIC Rule"
 subtitle: "Validate a Business Identifier Code"
-lead: "Learn how to validate Business Identifier codes with the additional validation rules of Intervention Validation for your Laravel application."
+lead: "Validate Business Identifier Codes (BIC/SWIFT) in Laravel with Intervention Validation. Banking code validation."
 sort: 3
 ---
 

@@ -2,7 +2,7 @@
 label: "Colors & Transparency"
 title: "Colors & Transparency"
 subtitle: "Handling of Image Colors"
-lead: "Explore advanced image color handling and transparency management with Intervention Image. Learn how to read and transform pixel colors, manage colorspaces, work with ICC profiles, and replace transparency for dynamic image processing."
+lead: "Advanced color handling in Intervention Image. Transform pixels, manage colorspaces, work with ICC profiles, and replace transparency in PHP image processing."
 sort: 4
 ---
 

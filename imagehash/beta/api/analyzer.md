@@ -2,7 +2,7 @@
 label: "Image Hash Analyzer"
 title: "Using AnalyzerInterface to Build Image Hashes"
 subtitle: "Generate Perceptual Image Hashes"
-lead: "Intervention ImageHash provides two approaches for generating perceptual image hashes. Learn how to create image hashes using the Image Analyzer interface."
+lead: "Generate perceptual image hashes with Intervention ImageHash. Two approaches using the Image Analyzer interface in PHP."
 sort: 0
 ---
 

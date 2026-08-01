@@ -1,7 +1,7 @@
 ---
 title: "Usage"
 subtitle: "How to Use Intervention Zodiac"
-lead: "Explore Intervention Zodiac's basic usage, static methods, Laravel integration, and Eloquent Model traits for seamless zodiac attribute generation including code examples for quick implementation."
+lead: "Intervention Zodiac usage guide: static methods, Laravel integration, and Eloquent traits. Generate zodiac attributes with PHP code examples."
 sort: 2
 ---
 

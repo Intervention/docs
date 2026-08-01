@@ -1,7 +1,7 @@
 ---
 title: "Upgrade Guide"
 subtitle: "Upgrade from Intervention Zodiac 5 to 6"
-lead: "Learn how to migrate from Intervention Zodiac version 5 to version 6. See what new features are available and what changes have been made in the update."
+lead: "Migrate from Intervention Zodiac v5 to v6. Upgrade guide covering new features, breaking changes, and migration steps in PHP."
 sort: 2
 ---
 

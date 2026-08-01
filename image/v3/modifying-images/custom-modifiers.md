@@ -1,7 +1,7 @@
 ---
 title: "Custom Modifiers"
 subtitle: "Group Image Modifications in Classes"
-lead: "Streamline image transformations architecture with custom modifiers in Intervention Image. Learn to group and reuse complex modifications using custom classes that implement the ModifierInterface."
+lead: "Create custom image modifiers in Intervention Image. Group and reuse complex transformations with classes implementing the ModifierInterface in PHP."
 sort: 6
 ---
 

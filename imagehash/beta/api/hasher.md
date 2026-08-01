@@ -2,7 +2,7 @@
 label: "Image Hasher"
 title: "Image Hasher"
 subtitle: "Generate Image Hashes with Standalone Image Hasher"
-lead: "Learn how to create perceptual image hashes using the ImageHasher class."
+lead: "Create perceptual image hashes using the ImageHasher class in Intervention ImageHash PHP."
 sort: 1
 ---
 

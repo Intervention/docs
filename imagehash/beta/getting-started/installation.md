@@ -1,7 +1,7 @@
 ---
 title: "Installation"
 subtitle: "Installation with Composer"
-lead: "Learn how to install Intervention ImageHash for PHP with Composer and discover how to configure your web server to make the library work perfectly."
+lead: "Install Intervention ImageHash for PHP via Composer. Complete setup guide for perceptual image hashing in your app."
 sort: 1
 ---
 

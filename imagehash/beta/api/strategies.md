@@ -2,7 +2,7 @@
 label: "Hashing Strategies"
 title: "Hashing Strategies"
 subtitle: "Using different strategies to build image hashes"
-lead: "Choose from four different hashing strategies to match your specific use case."
+lead: "Four different image hashing strategies for perceptual comparison. Choose the best algorithm for your use case in PHP."
 sort: 3
 ---
 

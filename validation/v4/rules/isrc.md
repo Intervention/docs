@@ -1,7 +1,7 @@
 ---
 title: "ISRC Rule"
 subtitle: "Validate International Standard Recording Codes"
-lead: "Explore how to validate International Standard Recording Codes with the validation rules of Intervention Validation for your Laravel app."
+lead: "Validate International Standard Recording Codes (ISRC) in Laravel with Intervention Validation. Music industry IDs."
 sort: 21
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "Installation"
 subtitle: "Installation with Composer"
-lead: "Learn how to install Intervention Zodiac for PHP with Composer"
+lead: "Install Intervention Zodiac for PHP via Composer. Calculate Western and Chinese zodiac signs in your application."
 sort: 1
 ---
 

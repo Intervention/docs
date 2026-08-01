@@ -1,7 +1,7 @@
 ---
 title: "Title Case Rule"
 subtitle: "Validate String Formatted in Title Case"
-lead: "Explore how to validate strings formatted in title case with the additional validation rules of Intervention Validation for your Laravel application."
+lead: "Validate Title Case strings in Laravel with Intervention Validation. Ensure proper title case format."
 sort: 33
 ---
 

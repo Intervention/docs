@@ -1,7 +1,7 @@
 ---
 title: "Hexadecimal Color Rule"
 subtitle: "Validate a Hexadecimal Color Code"
-lead: "Explore how to validate hexadecimal color codes also known as web colors with the additional validation rules of Intervention Validation for your Laravel application."
+lead: "Validate hexadecimal color codes (web colors) in Laravel with Intervention Validation. #RGB and #RRGGBB formats."
 sort: 14
 ---
 

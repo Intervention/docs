@@ -1,7 +1,7 @@
 ---
 title: "IMEI Rule"
 subtitle: "Validate International Mobile Equipment Identity "
-lead: "Learn how to validate the International Mobile Equipment Identifier format (IMEI) with the additional validation rules of Intervention Validation for your Laravel application."
+lead: "Validate International Mobile Equipment Identifier (IMEI) in Laravel with Intervention Validation. Device checks."
 sort: 17
 ---
 

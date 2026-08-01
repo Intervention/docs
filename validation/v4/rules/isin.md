@@ -1,7 +1,7 @@
 ---
 title: "ISIN Rule"
 subtitle: "Validate International Securities Identification Number"
-lead: "Discover how to validate International Securities Identification Numbers (ISIN) with the additional validation rules of Intervention Validation for your Laravel application."
+lead: "Validate International Securities Identification Numbers (ISIN) in Laravel with Intervention Validation. Stock codes."
 sort: 18
 ---
 

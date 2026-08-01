@@ -1,7 +1,7 @@
 ---
 title: "Camel Case Rule"
 subtitle: "Validate Camel Case String"
-lead: "Explore how to validate camel case strings with the additional validation rules of Intervention Validation for your Laravel application."
+lead: "Validate camelCase strings in Laravel with Intervention Validation. Ensure proper camelCase formatting."
 sort: 4
 ---
 

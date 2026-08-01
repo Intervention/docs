@@ -1,7 +1,7 @@
 ---
 title: "Country Code"
 subtitle: "Validate ISO-3166 Country Codes"
-lead: "Learn how to validate ISO-3166 Country Codes with the additional validation rules of Intervention Validation for your Laravel application."
+lead: "Validate ISO-3166 country codes in Laravel with Intervention Validation. International country code checks."
 sort: 6
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "Zodiac"
 subtitle: "Working with Zodiac Objects"
-lead: "Discover how to use the zodiac objects returned by the Intervention Image Zodiac Calculator. Generate localized contents and use a compatibility calculator based on astrological theory."
+lead: "Use zodiac sign objects from Intervention Zodiac. Generate localized content and calculate astrological compatibility in PHP applications."
 sort: 1
 ---
 

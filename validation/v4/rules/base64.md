@@ -1,7 +1,7 @@
 ---
 title: "Base64 Rule"
 subtitle: "Validate a Base64 Encoded String"
-lead: "Discover how to validate Base64 encoded strings with the additional validation rules of Intervention Validation for your Laravel application."
+lead: "Validate Base64 encoded strings in Laravel with Intervention Validation. Check Base64 encoding."
 sort: 2
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "Framework Integration"
 subtitle: "Integration in Laravel"
-lead: "Explore how to integrate Intervention Zodiac with the Laravel framework. Learn to set up configuration files and use the calculator via static facades."
+lead: "Integrate Intervention Zodiac with Laravel. Setup guide for configuration files and using the zodiac calculator via static facades."
 sort: 3
 ---
 

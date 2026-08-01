@@ -2,7 +2,7 @@
 title: "Intervention Validation"
 label: "Introduction"
 subtitle: "Missing Laravel Validation Rules"
-lead: "Enhance Laravel's validation system seamlessly with Intervention Validation, offering 30+ additional validation rules like IBAN, ISBN, postal codes, credit card checks and more."
+lead: "Intervention Validation: 30+ additional Laravel validation rules including IBAN, ISBN, postal codes, credit cards, and international format validators."
 sort: 0
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "Currency Code"
 subtitle: "Validate ISO 4217 Currency Codes"
-lead: "Learn how to validate International Standard Book Numbers (ISBN) with the additional validation rules of Intervention Validation for your Laravel application."
+lead: "Validate ISO 4217 currency codes in Laravel with Intervention Validation. International currency checks."
 sort: 8
 ---
 

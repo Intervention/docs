@@ -1,7 +1,7 @@
 ---
 title: "Insert Images"
 subtitle: "Place Images onto other Images"
-lead: "Learn how to insert images onto other images using the Intervention Image library. Position images, adjust offsets, and control opacity for custom overlays or watermarks."
+lead: "Insert images onto other images with Intervention Image. Position, adjust offsets, and control opacity for overlays and watermarks in PHP."
 sort: 1
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "Advanced"
 subtitle: "Advanced Image Modification"
-lead: "Discover the endless possibilities of Intervention Image by directly accessing the native image data and combining them with custom modifier classes."
+lead: "Advanced Intervention Image techniques: access native image data directly and combine with custom modifier classes for complex transformations."
 sort: 7
 ---
 

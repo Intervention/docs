@@ -1,7 +1,7 @@
 ---
 title: "Installation"
 subtitle: "Installation with Composer"
-lead: "Learn how to install Intervention Zodiac for PHP with Composer and discover how to use the library with the Laravel framework."
+lead: "Install Intervention Zodiac for PHP via Composer. Laravel integration guide for astrological sign calculation."
 sort: 1
 ---
 

@@ -2,7 +2,7 @@
 label: "Configuration & Drivers"
 title: "Configuration & Drivers"
 subtitle: "Use the ImageManager to Configure Intervention Image"
-lead: "Learn how to create and configure Intervention Image. Discover the image manager, driver options (GD, Imagick or libvips), and advanced settings like auto-orientation, animation decoding, and blending colors."
+lead: "Configure Intervention Image with GD, Imagick, or libvips drivers. Set up auto-orientation, animation decoding, and color blending for PHP images."
 sort: 0
 ---
 

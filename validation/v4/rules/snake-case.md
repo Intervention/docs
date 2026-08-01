@@ -1,7 +1,7 @@
 ---
 title: "Snake Case Rule"
 subtitle: "Validate String Formatted in Snake Case"
-lead: "Discover how to validate strings formatted in snake case with the additional validation rules of Intervention Validation for your Laravel application."
+lead: "Validate snake_case strings in Laravel with Intervention Validation. Ensure proper snake_case format."
 sort: 32
 ---
 

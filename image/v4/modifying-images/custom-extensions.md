@@ -1,7 +1,7 @@
 ---
 title: "Custom Extensions"
 subtitle: "Extend Intervention Image"
-lead: "Add custom extensions to Intervention Image by streamlining image transformation architecture with your own modifiers and analyzers. Learn to group and reuse complex modification and analysis logic using custom classes."
+lead: "Extend Intervention Image with custom modifiers and analyzers. Create reusable classes for complex image transformations and analysis logic in PHP."
 sort: 6
 ---
 

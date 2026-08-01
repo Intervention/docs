@@ -1,7 +1,7 @@
 ---
 title: "ULID Rule"
 subtitle: "Validate a Universally Unique Lexicographically Sortable Identifier"
-lead: "Learn how to validate the Universally Unique Lexicographically Sortable Identifier (ULID) format with the additional validation rules of Intervention Validation for your Laravel application."
+lead: "Validate ULID (Universally Unique Lexicographically Sortable Identifier) in Laravel with Intervention Validation. ULID format checks."
 sort: 34
 ---
 

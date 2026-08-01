@@ -1,7 +1,7 @@
 ---
 title: "Supported Formats"
 subtitle: "Image and Color Formats"
-lead: "Learn about supported formats in Intervention Image, including image formats and various color specifications. Discover how to check runtime format support, create transparent images, and handle color spaces."
+lead: "Supported image formats in Intervention Image. Check runtime format support, create transparent images, and handle color spaces in PHP images."
 sort: 5
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "Username Rule"
 subtitle: "Validate a Typical Username"
-lead: "Explore how to validate typical usernames with the additional validation rules of Intervention Validation for your Laravel application."
+lead: "Validate username formats in Laravel with Intervention Validation. Check username pattern and format."
 sort: 36
 ---
 

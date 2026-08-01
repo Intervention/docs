@@ -1,7 +1,7 @@
 ---
 title: "Resize Images"
 subtitle: "Change the Image Size in Different Ways"
-lead: "Discover comprehensive image resizing techniques with the Intervention Image library. Learn methods for scaling, cropping, padding, and adjusting image canvas sizes, all while maintaining aspect ratios."
+lead: "Resize images with Intervention Image. Scale, crop, pad, and adjust canvas sizes while maintaining aspect ratios in PHP image processing."
 sort: 0
 ---
 

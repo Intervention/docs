@@ -1,7 +1,7 @@
 ---
 title: "Data URI Rule"
 subtitle: "Validate Data URI scheme string"
-lead: "Explore how to validate Data URI scheme strings with the additional validation rules of Intervention Validation for your Laravel application."
+lead: "Validate Data URI scheme strings in Laravel with Intervention Validation. Check Base64 data URIs format."
 sort: 9
 ---
 

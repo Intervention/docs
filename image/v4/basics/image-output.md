@@ -2,7 +2,7 @@
 label: "Image Output"
 title: "Image Output"
 subtitle: "Encode Images in Different Formats"
-lead: "Learn how to encode images with Intervention Image, including support for various formats like JPEG, PNG, WebP, and AVIF. Discover versatile methods to encode by file path, media type, or file extension, with customization options."
+lead: "Encode images in JPEG, PNG, WebP, and AVIF formats with Intervention Image. Multiple encoding methods by file path, media type, or extension in PHP."
 sort: 5
 ---
 

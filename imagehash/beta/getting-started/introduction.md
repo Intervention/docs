@@ -2,7 +2,7 @@
 label: "Introduction"
 title: "Intervention ImageHash"
 subtitle: "Perceptual Image Hashing for PHP"
-lead: "Intervention ImageHash is an extension library to Intervention Image and provides perceptual image hashing with different strategies. Generate compact fingerprints of images and compare them to detect similar or duplicate content."
+lead: "Intervention ImageHash: PHP extension for perceptual image hashing. Generate compact fingerprints and compare images to detect similar or duplicate content."
 sort: 0
 ---
 

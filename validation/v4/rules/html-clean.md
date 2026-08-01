@@ -1,7 +1,7 @@
 ---
 title: "HTML Clean Rule"
 subtitle: "Validate if Text is Free of any HTML Tags"
-lead: "Learn how to validate that strings are free of any HTML code with the additional validation rules of Intervention Validation for your Laravel application."
+lead: "Validate HTML-free strings in Laravel with Intervention Validation. Ensure no HTML tags in user input."
 sort: 15
 ---
 
