@@ -3,7 +3,7 @@ label: "Meta Information"
 title: "Meta Information"
 subtitle: "Read Meta Data from Images"
 lead: "Read image meta information with Intervention Image. Extract dimensions, resolution, Exif data, pixel sizes, DPI settings, and metadata."
-sort: 4
+sort: 5
 ---
 
 [TOC]

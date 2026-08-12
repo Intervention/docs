@@ -3,7 +3,7 @@ label: "Image Output"
 title: "Image Output"
 subtitle: "Encode Images in Different Formats"
 lead: "Encode images in JPEG, PNG, WebP, and AVIF formats with Intervention Image. Multiple encoding methods by file path, media type, or extension in PHP."
-sort: 5
+sort: 6
 ---
 
 [TOC]
