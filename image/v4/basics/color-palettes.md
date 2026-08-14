@@ -66,18 +66,24 @@ $palette = $image->colors()->popular(32);
 
 ### Color Swatches
 
-> public ColorExtractor::swatches(): PaletteInterface
+> public ColorExtractor::swatches(string|SwatchesInterface $swatches = new Swatches\VibrantMuted()): SwatchesInterface
 
-Extract categorized color swatches from an image. This method provides semantically meaningful colors like vibrant, muted, dark, and light variations, useful for creating cohesive color schemes. If no colors could be found for a category in the image, the color swatch values may also be `null`.
+Extract categorized color swatches from an image. The result provides semantically meaningful colors of the given swatches. The default profile provides extracts colors for vibrant, muted, dark, and light variations, useful for creating cohesive color schemes. If no colors could be found for a category in the image, the color swatch values may be `null`.
 
-#### Available Swatches
+| Name | Type | Description |
+| - | - | - |
+| swatches | string or SwatchesInterface | The color swatches to extract from the image. |
 
-- `Intervention\Image\Colors\Swatches::vibrant(): ?ColorInterface`
-- `Intervention\Image\Colors\Swatches::muted(): ?ColorInterface`
-- `Intervention\Image\Colors\Swatches::darkVibrant(): ?ColorInterface`
-- `Intervention\Image\Colors\Swatches::darkMuted(): ?ColorInterface`
-- `Intervention\Image\Colors\Swatches::lightVibrant(): ?ColorInterface`
-- `Intervention\Image\Colors\Swatches::lightMuted(): ?ColorInterface`
+#### Default Swatch Properties
+
+- `Intervention\Image\Colors\Swatches\VibrantMuted::$vibrant: ?ColorInterface`
+- `Intervention\Image\Colors\Swatches\VibrantMuted::$muted: ?ColorInterface`
+- `Intervention\Image\Colors\Swatches\VibrantMuted::$darkVibrant: ?ColorInterface`
+- `Intervention\Image\Colors\Swatches\VibrantMuted::$darkMuted: ?ColorInterface`
+- `Intervention\Image\Colors\Swatches\VibrantMuted::$lightVibrant: ?ColorInterface`
+- `Intervention\Image\Colors\Swatches\VibrantMuted::$lightMuted: ?ColorInterface`
+
+It is possible to create own color swatches implementing `Intervention\Image\Interfaces\SwatchesInterface` and passing the implementation as an argument.
 
 #### Example
 
@@ -92,12 +98,15 @@ $image = ImageManager::usingDriver(Driver::class)->decode('example.jpg');
 $swatches = $image->colors()->swatches();
 
 // access individual swatches
-$color = $swatches->vibrant();  // ColorInterface or null
-$color = $swatches->muted();  // ColorInterface or null
-$color = $swatches->darkVibrant();  // ColorInterface or null
-$color = $swatches->darkMuted();  // ColorInterface or null
-$color = $swatches->lightVibrant();  // ColorInterface or null
-$color = $swatches->lightMuted();  // ColorInterface or null
+$color = $swatches->vibrant;  // ColorInterface or null
+$color = $swatches->muted;  // ColorInterface or null
+$color = $swatches->darkVibrant;  // ColorInterface or null
+$color = $swatches->darkMuted;  // ColorInterface or null
+$color = $swatches->lightVibrant;  // ColorInterface or null
+$color = $swatches->lightMuted;  // ColorInterface or null
+
+// swatches can be transformed into a palette to access all of its methods like sorting
+$palette = $swatches->toPalette();
 ```
 
 ## Color Palettes
