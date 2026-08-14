@@ -12,7 +12,7 @@ sort: 4
 
 ### Dominant Colors
 
-> public ColorExtractor::dominant(int $limit = 8): PaletteInterface
+> public ColorExtractor::dominant(int $limit = 8, ?SizeInterface $region = null): PaletteInterface
 
 Extract the most visually prominent colors from an image. This method analyzes the image using a K-Means algorithm and returns the colors that stand out most, regardless of how frequently they appear.
 
@@ -23,6 +23,7 @@ Please note that the limit is the maximum number of colors the palette may conta
 | Name | Type | Description |
 | - | - | - |
 | limit | int | The maximum number of colors in the extracted palette (Default: 8) |
+| region | null or SizeInterface | A region of the image used for extraction. By default, the entire image. |
 
 #### Example
 
@@ -39,7 +40,7 @@ $palette = $image->colors()->dominant(5);
 
 ### Popular Colors
 
-> public ColorExtractor::popular(int $limit = 256): PaletteInterface
+> public ColorExtractor::popular(int $limit = 256, ?SizeInterface $region = null): PaletteInterface
 
 Extract the most frequently used colors from an image. Unlike dominant colors, this method returns colors based on how often they appear in the image pixels. Furthermore, this method uses quantization for images with a large number of colors in order to reduce the colors in a meaningful way. This helps improve performance and prevents the palette from containing too many similar colors.
 
@@ -50,6 +51,7 @@ Please note that the limit is the maximum number of colors the extraction may co
 | Name | Type | Description |
 | - | - | - |
 | limit | int | The maximum number of colors in the extracted palette (Default: 256) |
+| region | null or SizeInterface | A region of the image used for extraction. By default, the entire image. |
 
 #### Example
 
