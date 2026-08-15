@@ -23,7 +23,7 @@ Please note that the limit is the maximum number of colors the palette may conta
 | Name | Type | Description |
 | - | - | - |
 | limit | int | The maximum number of colors in the extracted palette (Default: 8) |
-| region | null or SizeInterface | A region of the image used for extraction. By default, the entire image. |
+| region | null or SizeInterface | Limit the color extraction to a region of the image. By default, the entire image. |
 
 #### Example
 
@@ -51,7 +51,7 @@ Please note that the limit is the maximum number of colors the extraction may co
 | Name | Type | Description |
 | - | - | - |
 | limit | int | The maximum number of colors in the extracted palette (Default: 256) |
-| region | null or SizeInterface | A region of the image used for extraction. By default, the entire image. |
+| region | null or SizeInterface | Limit the color extraction to a region of the image. By default, the entire image. |
 
 #### Example
 
