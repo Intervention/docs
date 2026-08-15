@@ -138,7 +138,7 @@ foreach ($palette as $color) {
 }
 ```
 
-### Sorting
+### Sorting palettes
 
 > public PaletteInterface::sortByChannel(string|ColorChannelInterface $channel): PaletteInterface
 
@@ -160,7 +160,7 @@ $palette = $image->colors()->popular(64)->sortByChannel(Saturation::class);
 $palette = $image->colors()->popular(64)->sortByChannelDesc(Saturation::class);
 ```
 
-### Counting
+### Count the number of colors in the palette
 
 > public PaletteInterface::count(): int
 
