@@ -138,7 +138,33 @@ foreach ($palette as $color) {
 }
 ```
 
-### Sorting palettes
+### Check if a Color is in Palette
+
+> public PaletteInterface::hasColor(ColorInterface $color): bool
+
+Check whether the given color is in the palette.
+
+#### Parameters
+
+| Name | Type | Description |
+| - | - | - |
+| color | string or ColorInterface | The color to be checked. |
+
+```php
+// extract some colors from image 
+$palette = $image->colors()->popular()
+
+// check if white is part of the result
+$palette->hasColor(Color::rgb(255, 255, 255))
+
+// method also accepts strings
+$palette->hasColor('ffffff')
+
+// method also accepts NamedColor::class
+$palette->hasColor(NamedColor::WHITE)
+```
+
+### Sort Palettes by the Channel Values of their Colors
 
 > public PaletteInterface::sortByChannel(string|ColorChannelInterface $channel): PaletteInterface
 
@@ -205,4 +231,44 @@ $rgbPalette = $image->colors()->dominant(3);
 
 // convert colors in palette to cmyk
 $cmykPalette = $palette->toColorspace(Cmyk::class);
+```
+
+### Quantize Palettes
+
+> public PaletteInterface::quantizer(int $levels): PaletteInterface
+
+Combine similar colors in the palette to their quantized version according to the given level of quantization.
+
+#### Parameters
+
+| Name | Type | Description |
+| - | - | - |
+| levels | int | Quantization levels ranging from 256 (for the highest level of detail) to 1 (lowest level). |
+
+```php
+// extract popular colors from image
+$palette = $image->colors()->popular();
+
+// quantize palette to a lower detail level
+$quantizedPalette = $palette->quantize(4);
+```
+
+### Reduce Colors in Palettes
+
+> public PaletteInterface::reduce(int $levels): PaletteInterface
+
+Reduce similar colors in the palette by quantization with the given levels of detail but keep original first color values.
+
+#### Parameters
+
+| Name | Type | Description |
+| - | - | - |
+| levels | int | Quantization levels ranging from 256 (for the highest level of detail) to 1 (lowest level). |
+
+```php
+// extract popular colors from image
+$palette = $image->colors()->popular();
+
+// quantize palette to a lower detail level but keep original color values
+$reducedPalette = $palette->reduce(4);
 ```
