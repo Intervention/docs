@@ -66,26 +66,26 @@ $image = ImageManager::usingDriver(Driver::class)->decode('example.jpg');
 $palette = $image->colors()->popular(32);
 ```
 
-### Color Swatches
+### Color Themes
 
-> public ColorExtractor::swatches(string|SwatchesInterface $swatches = new Swatches\VibrantMuted()): SwatchesInterface
+> public ColorExtractor::theme(Theme|ThemeDefinitionInterface $theme = Theme::VIBRANT_MUTED): ThemeInterface
 
-Extract categorized color swatches from an image. The result provides semantically meaningful colors of the given swatches. The default profile provides extracts colors for vibrant, muted, dark, and light variations, useful for creating cohesive color schemes. If no colors could be found for a category in the image, the color swatch values may be `null`.
+Extract a color theme from an image. The result provides semantically meaningful colors of the given theme. The default theme provides colors for vibrant, muted, dark, and light variations. If no colors could be found for a theme category in the image, the color swatch property may be `null`.
 
 | Name | Type | Description |
 | - | - | - |
-| swatches | string or SwatchesInterface | The color swatches to extract from the image. |
+| theme | Theme or ThemeDefinitionInterface | The color theme to extract from the image. |
 
-#### Default Swatch Properties
+#### Default Theme Properties
 
-- `Intervention\Image\Colors\Swatches\VibrantMuted::$vibrant: ?ColorInterface`
-- `Intervention\Image\Colors\Swatches\VibrantMuted::$muted: ?ColorInterface`
-- `Intervention\Image\Colors\Swatches\VibrantMuted::$darkVibrant: ?ColorInterface`
-- `Intervention\Image\Colors\Swatches\VibrantMuted::$darkMuted: ?ColorInterface`
-- `Intervention\Image\Colors\Swatches\VibrantMuted::$lightVibrant: ?ColorInterface`
-- `Intervention\Image\Colors\Swatches\VibrantMuted::$lightMuted: ?ColorInterface`
+- `Intervention\Image\Colors\Themes\VibrantMuted\Theme::$vibrant: ?ColorInterface`
+- `Intervention\Image\Colors\Themes\VibrantMuted\Theme::$muted: ?ColorInterface`
+- `Intervention\Image\Colors\Themes\VibrantMuted\Theme::$darkVibrant: ?ColorInterface`
+- `Intervention\Image\Colors\Themes\VibrantMuted\Theme::$darkMuted: ?ColorInterface`
+- `Intervention\Image\Colors\Themes\VibrantMuted\Theme::$lightVibrant: ?ColorInterface`
+- `Intervention\Image\Colors\Themes\VibrantMuted\Theme::$lightMuted: ?ColorInterface`
 
-It is possible to create own color swatches implementing `Intervention\Image\Interfaces\SwatchesInterface` and passing the implementation as an argument.
+It is possible to create own color theme definitions implementing `Intervention\Image\Interfaces\ThemeDefinitionInterface` and passing the implementation as an argument.
 
 #### Example
 
@@ -96,19 +96,19 @@ use Intervention\Image\Drivers\Gd\Driver;
 // read an image
 $image = ImageManager::usingDriver(Driver::class)->decode('example.jpg');
 
-// extract color swatches from the image
-$swatches = $image->colors()->swatches();
+// extract color theme from the image
+$theme = $image->colors()->theme();
 
 // access individual swatches
-$color = $swatches->vibrant;  // ColorInterface or null
-$color = $swatches->muted;  // ColorInterface or null
-$color = $swatches->darkVibrant;  // ColorInterface or null
-$color = $swatches->darkMuted;  // ColorInterface or null
-$color = $swatches->lightVibrant;  // ColorInterface or null
-$color = $swatches->lightMuted;  // ColorInterface or null
+$color = $theme->vibrant;  // ColorInterface or null
+$color = $theme->muted;  // ColorInterface or null
+$color = $theme->darkVibrant;  // ColorInterface or null
+$color = $theme->darkMuted;  // ColorInterface or null
+$color = $theme->lightVibrant;  // ColorInterface or null
+$color = $theme->lightMuted;  // ColorInterface or null
 
-// swatches can be transformed into a palette to access all of its methods like sorting
-$palette = $swatches->toPalette();
+// themes can be transformed into a palette to access all of its methods like sorting
+$palette = $theme->toPalette();
 ```
 
 ## Color Palettes
@@ -195,6 +195,32 @@ Get the total number of colors in a palette. This is useful when you need to kno
 ```php
 // count colors in extracted palette
 $count = $image->colors()->popular()->count();
+```
+
+### Filter the colors in the palette
+
+> public PaletteInterface::filter(callable $callback): PaletteInterface
+
+Run callback on each color in the palette and keep only the ones that return `true`.
+
+```php
+// filter only grayscale colors
+$filtered = $image->colors()->popular()->filter(function (ColorInterface $color): bool {
+    return $color->isGrayscale();
+});
+```
+
+### Map colors in the palette
+
+> public PaletteInterface::map(callable $callback): PaletteInterface
+
+Run a callback on each color in the palette and replace it with the result.
+
+```php
+// map colors to semi-transparent variants
+$filtered = $image->colors()->popular()->map(function (ColorInterface $color): ColorInterface {
+    return $color->withTransparency(.5);
+});
 ```
 
 ### Slicing
