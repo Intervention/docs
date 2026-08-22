@@ -1,7 +1,7 @@
 ---
-label: "Color Palettes"
-title: "Color Palettes"
-subtitle: "Handling of Image Colors"
+label: "Palettes & Color Themes"
+title: "Palettes & Color Themes"
+subtitle: "Extraction of Color Palettes and Themes"
 lead: "Extract color palettes with Intervention Image."
 sort: 4
 ---
