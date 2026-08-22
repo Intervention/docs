@@ -27,7 +27,7 @@ Please note that the limit is the maximum number of colors the palette may conta
 
 #### Visual Example
 
-<div class="img-centered"><img src="/storage/projects/image/v4/_assets/palette_dominant.png"></div>
+<div class="img-centered"><img src="/storage/projects/image/v4/_assets/palette_dominant.png" width="530" height="290" alt="Visual example of dominant color extraction."></div>
 
 #### Example
 
@@ -59,7 +59,7 @@ Please note that the limit is the maximum number of colors the extraction may co
 
 #### Visual Example
 
-<div class="img-centered"><img src="/storage/projects/image/v4/_assets/palette_popular.png"></div>
+<div class="img-centered"><img src="/storage/projects/image/v4/_assets/palette_popular.png" width="530" height="290" alt="Visual example of popular color extraction."></div>
 
 #### Example
 
@@ -97,7 +97,7 @@ It is possible to create own color theme definitions implementing `Intervention\
 
 #### Visual Example
 
-<div class="img-centered"><img src="/storage/projects/image/v4/_assets/theme_vibrant.png"></div>
+<div class="img-centered"><img src="/storage/projects/image/v4/_assets/theme_vibrant.png" width="530" height="290" alt="Visual example of color theme extraction."></div>
 
 #### Example
 
