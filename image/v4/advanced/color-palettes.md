@@ -3,7 +3,7 @@ label: "Palettes & Color Themes"
 title: "Palettes & Color Themes"
 subtitle: "Extraction of Color Palettes and Themes"
 lead: "Extract color palettes with Intervention Image."
-sort: 4
+sort: 2
 ---
 
 [TOC]

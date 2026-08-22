@@ -2,7 +2,7 @@
 title: "Custom Extensions"
 subtitle: "Extend Intervention Image"
 lead: "Extend Intervention Image with custom modifiers and analyzers. Create reusable classes for complex image transformations and analysis logic in PHP."
-sort: 6
+sort: 1
 ---
 
 [TOC]
