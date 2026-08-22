@@ -25,6 +25,8 @@ Please note that the limit is the maximum number of colors the palette may conta
 | limit | int | The maximum number of colors in the extracted palette (Default: 8) |
 | region | null or SizeInterface | Limit the color extraction to a region of the image. By default, the entire image. |
 
+#### Input & Output Example
+
 <div class="img-centered"><img src="/storage/projects/image/v4/_assets/palette_dominant.png"></div>
 
 #### Example
@@ -54,6 +56,8 @@ Please note that the limit is the maximum number of colors the extraction may co
 | - | - | - |
 | limit | int | The maximum number of colors in the extracted palette (Default: 256) |
 | region | null or SizeInterface | Limit the color extraction to a region of the image. By default, the entire image. |
+
+#### Input & Output Example
 
 <div class="img-centered"><img src="/storage/projects/image/v4/_assets/palette_popular.png"></div>
 
@@ -90,6 +94,8 @@ Extract a color theme from an image. The result provides semantically meaningful
 - `Intervention\Image\Colors\Themes\VibrantMuted\Theme::$lightMuted: ?ColorInterface`
 
 It is possible to create own color theme definitions implementing `Intervention\Image\Interfaces\ThemeDefinitionInterface` and passing the implementation as an argument.
+
+#### Input & Output Example
 
 <div class="img-centered"><img src="/storage/projects/image/v4/_assets/theme_vibrant.png"></div>
 
