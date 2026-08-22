@@ -25,7 +25,7 @@ Please note that the limit is the maximum number of colors the palette may conta
 | limit | int | The maximum number of colors in the extracted palette (Default: 8) |
 | region | null or SizeInterface | Limit the color extraction to a region of the image. By default, the entire image. |
 
-<div class="img-centered"><img src="/storage/projects/image/v4/palette_dominant.png"></div>
+<div class="img-centered"><img src="/storage/projects/image/v4/_assets/palette_dominant.png"></div>
 
 #### Example
 
