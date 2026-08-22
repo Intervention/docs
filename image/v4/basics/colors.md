@@ -3,7 +3,7 @@ label: "Colors & Transparency"
 title: "Colors & Transparency"
 subtitle: "Handling of Image Colors"
 lead: "Advanced color handling in Intervention Image. Transform pixels, manage colorspaces, work with ICC profiles, and replace transparency in PHP image processing."
-sort: 4
+sort: 3
 ---
 
 [TOC]
