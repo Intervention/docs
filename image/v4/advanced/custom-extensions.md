@@ -11,7 +11,7 @@ Intervention Image is highly scalable and can be easily customized to meet your
 specific needs. You can use the `ModifierInterface` and the `AnalyzerInterface` to
 organize their own logic into classes in a clear and structured way.
 
-Together with [advanced image manipulation](/v4/modifying-images/advanced), this creates a powerful combination that offers endless possibilities for expansion.
+Together with [advanced image manipulation](/v4/advanced/driver-internals), this creates a powerful combination that offers endless possibilities for expansion.
 
 ## Custom Modifiers
 

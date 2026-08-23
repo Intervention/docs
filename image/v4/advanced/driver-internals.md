@@ -8,7 +8,7 @@ sort: 3
 [TOC]
 
 If the supplied options are not sufficient, you can create your own
-solutions using your own [custom extensions](/v4/modifying-images/custom-extensions).
+solutions using your own [custom extensions](/v4/advanced/custom-extensions).
 Furthermore, you can access the native image object, so that all functions
 used by the actual image processing libraries (such as GD or Imagick) can
 be used — even those not covered by Intervention Image.
@@ -35,6 +35,6 @@ $imagick = $image->core()->native();
 $imagick->oilPaintImage(4.5);
 ```
 
-Combined with [custom extensions](/v4/modifying-images/custom-extensions), Intervention
+Combined with [custom extensions](/v4/advanced/custom-extensions), Intervention
 Image can be extended with your own modifier combinations for endless
 possibilities.
