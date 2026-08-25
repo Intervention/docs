@@ -273,7 +273,7 @@ $cmykPalette = $palette->toColorspace(Cmyk::class);
 
 ### Quantize Palettes
 
-> public PaletteInterface::quantizer(int $levels): PaletteInterface
+> public PaletteInterface::quantize(int $levels): PaletteInterface
 
 Combine similar colors in the palette to their quantized version according to the given level of quantization.
 
@@ -295,7 +295,7 @@ $quantizedPalette = $palette->quantize(4);
 
 > public PaletteInterface::reduce(int $levels): PaletteInterface
 
-Reduce similar colors in the palette by quantization with the given levels of detail but keep original first color values.
+Reduce similar colors in the palette by quantization with the given levels of detail but make sure to keep color original color values.
 
 #### Parameters
 
