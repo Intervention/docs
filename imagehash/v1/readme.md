@@ -1,4 +1,4 @@
 ---
-title: "Version 0.1"
-status: "beta"
+title: "Version 1"
+status: "stable"
 ---
