@@ -8,7 +8,7 @@ sort: 2
 
 [TOC]
 
-When you generate an image hash using any hashing strategy, you get a `Hash` object that implements `HashInterface`. This object represents a perceptual fingerprint of the image. It's **immutable**, **serializable**, and **comparable**.
+When you generate an image hash using any hashing strategy, you get a `Intervention\ImageHash\Hash` object. This object represents a perceptual fingerprint of the image. It's **immutable**, **serializable**, and **comparable**.
 
 ## Comparing Hashes
 
@@ -16,7 +16,7 @@ Perceptual hashes can be compared to determine image similarity. The library use
 
 ### Calculate Distance
 
-> public Hash::distance(HashInterface $hash): int
+> public Hash::distance(Hash $hash): int
 
 Calculate the Hamming distance between two hashes. This returns the number of bits that differ. Lower distance means more similar images.
 
@@ -24,7 +24,7 @@ Calculate the Hamming distance between two hashes. This returns the number of bi
 
 | Name | Type | Description |
 | - | - | - |
-| hash | HashInterface | The hash to compare against |
+| hash | Hash | The hash to compare against |
 
 #### Return Value
 
@@ -38,9 +38,9 @@ Both hashes must have the same bit length. If the GMP extension is available, th
 ```php
 use Intervention\Image\Drivers\Gd\Driver as GdDriver;
 use Intervention\ImageHash\ImageHasher;
-use Intervention\ImageHash\Strategies\Difference;
+use Intervention\ImageHash\Strategies\DifferenceStrategy;
 
-$hasher = new ImageHasher(new GdDriver(), new Difference());
+$hasher = new ImageHasher(new GdDriver(), new DifferenceStrategy());
 
 // generate hashes for two images
 $hash1 = $hasher->hash('images/photo1.jpg');
@@ -61,7 +61,7 @@ if ($distance < 10) {
 
 ### Check Equality
 
-> public Hash::equals(HashInterface $hash, int $leeway = 0): bool
+> public Hash::equals(Hash $hash, int $leeway = 0): bool
 
 Check if two hashes are equal within an optional tolerance. This is a convenience wrapper around the distance method.
 
@@ -69,7 +69,7 @@ Check if two hashes are equal within an optional tolerance. This is a convenienc
 
 | Name | Type | Description |
 | - | - | - |
-| hash | HashInterface | The hash to compare against |
+| hash | Hash | The hash to compare against |
 | leeway | int | Maximum allowed distance to still consider equal (default: 0) |
 
 #### Return Value
@@ -81,9 +81,9 @@ Returns `true` if the distance is less than or equal to the leeway, `false` othe
 ```php
 use Intervention\Image\Drivers\Gd\Driver as GdDriver;
 use Intervention\ImageHash\ImageHasher;
-use Intervention\ImageHash\Strategies\Difference;
+use Intervention\ImageHash\Strategies\DifferenceStrategy;
 
-$hasher = new ImageHasher(new GdDriver(), new Difference());
+$hasher = new ImageHasher(new GdDriver(), new DifferenceStrategy());
 
 $hash1 = $hasher->hash('images/original.jpg');
 $hash2 = $hasher->hash('images/slightly_modified.jpg');
@@ -198,19 +198,19 @@ Get the total number of bits in the hash. Different strategies and settings prod
 
 ```php
 use Intervention\ImageHash\ImageHasher;
-use Intervention\ImageHash\Strategies\Difference;
-use Intervention\ImageHash\Strategies\Block;
+use Intervention\ImageHash\Strategies\DifferenceStrategy;
+use Intervention\ImageHash\Strategies\BlockStrategy;
 
 $hasher = ImageHasher::usingDriver(GdDriver::class);
 
 // different strategies have different bit lengths
-$diff8 = $hasher->withStrategy(new Difference(size: 8))->hash('image.jpg');
+$diff8 = $hasher->withStrategy(new DifferenceStrategy(size: 8))->hash('image.jpg');
 echo $diff8->bitLength(); // 64 (8x8)
 
-$diff16 = $hasher->withStrategy(new Difference(size: 16))->hash('image.jpg');
+$diff16 = $hasher->withStrategy(new DifferenceStrategy(size: 16))->hash('image.jpg');
 echo $diff16->bitLength(); // 256 (16x16)
 
-$block = $hasher->withStrategy(new Block(size: 16))->hash('image.jpg');
+$block = $hasher->withStrategy(new BlockStrategy(size: 16))->hash('image.jpg');
 echo $block->bitLength(); // 256
 ```
 

@@ -8,7 +8,7 @@ sort: 1
 
 [TOC]
 
-Intervention ImageHash offers two ways to generate perceptual image hashes: use the `ImageHasher` class as a standalone tool, or integrate hashing into an existing Intervention Image workflow using the [analyzer interface](/beta/api/analyzer).
+Intervention ImageHash offers two ways to generate perceptual image hashes: use the `ImageHasher` class as a standalone tool, or integrate hashing into an existing Intervention Image workflow using the [analyzer interface](/v1/api/analyzer).
 
 ## Create an ImageHasher
 
@@ -32,10 +32,10 @@ The `ImageHasher` class is your starting point for all hashing operations. You n
 ```php
 use Intervention\Image\Drivers\Gd\Driver as GdDriver;
 use Intervention\ImageHash\ImageHasher;
-use Intervention\ImageHash\Strategies\Difference;
+use Intervention\ImageHash\Strategies\DifferenceStrategy;
 
 // create hasher with driver and strategy
-$hasher = new ImageHasher(new GdDriver(), new Difference());
+$hasher = new ImageHasher(new GdDriver(), new DifferenceStrategy());
 
 // generate hash from image path
 $hash = $hasher->hash('path/to/image.jpg');
@@ -50,10 +50,10 @@ Create a new hasher instance with the given driver and strategy.
 ```php
 use Intervention\Image\Drivers\Imagick\Driver as ImagickDriver;
 use Intervention\ImageHash\ImageHasher;
-use Intervention\ImageHash\Strategies\Average;
+use Intervention\ImageHash\Strategies\AverageStrategy;
 
 // create hasher using static method
-$hasher = ImageHasher::create(ImagickDriver::class, new Average());
+$hasher = ImageHasher::create(ImagickDriver::class, new AverageStrategy());
 ```
 
 ### Using with Driver Constructor
@@ -97,18 +97,17 @@ $imagickHasher = $hasher->withDriver(ImagickDriver::class);
 Create a new hasher instance with a different strategy, keeping the current driver.
 
 ```php
-use Intervention\ImageHash\Strategies\Difference;
-use Intervention\ImageHash\Strategies\Perceptual;
+use Intervention\ImageHash\Strategies\PerceptualStrategy;
 
 $hasher = ImageHasher::usingDriver(GdDriver::class);
 
 // create new hasher with different strategy
-$perceptualHasher = $hasher->withStrategy(new Perceptual());
+$perceptualHasher = $hasher->withStrategy(new PerceptualStrategy());
 ```
 
 ## Generate Hashes
 
-> public ImageHasher::hash(mixed $image): HashInterface
+> public ImageHasher::hash(mixed $image): Hash
 
 Generate a perceptual hash from various image sources. This method accepts the same image sources as Intervention Image's `decode()` method.
 
@@ -136,9 +135,9 @@ The `hash()` method accepts all [image sources supported by Intervention Image](
 ```php
 use Intervention\Image\Drivers\Gd\Driver as GdDriver;
 use Intervention\ImageHash\ImageHasher;
-use Intervention\ImageHash\Strategies\Difference;
+use Intervention\ImageHash\Strategies\DifferenceStrategy;
 
-$hasher = new ImageHasher(new GdDriver(), new Difference());
+$hasher = new ImageHasher(new GdDriver(), new DifferenceStrategy());
 
 // hash from file path
 $hash1 = $hasher->hash('images/photo.jpg');

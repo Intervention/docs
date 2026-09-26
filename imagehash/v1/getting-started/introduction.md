@@ -63,4 +63,4 @@ $image = ImageManager::usingDriver(GdDriver::class)
 $hash = $image->analyze(new Difference());
 ```
 
-Read more on how to [install](/beta/getting-started/installation) the package or explore how to [build image hashes](/beta/api/hasher).
+Read more on how to [install](/v1/getting-started/installation) the package or explore how to [build image hashes](/beta/api/hasher).

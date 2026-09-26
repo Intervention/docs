@@ -14,7 +14,7 @@ Intervention ImageHash includes four hashing strategies. Each uses a different a
 
 ### Difference Strategy
 
-> public Difference::__construct(int $size = 8)
+> public DifferenceStrategy::__construct(int $size = 8)
 
 The Difference strategy (also called dHash or Gradient Hash) generates hashes based on gradients between adjacent pixels. It's the recommended starting point for most use cases.
 
@@ -37,21 +37,21 @@ Best suited for:
 
 ```php
 use Intervention\ImageHash\ImageHasher;
-use Intervention\ImageHash\Strategies\Difference;
+use Intervention\ImageHash\Strategies\DifferenceStrategy;
 use Intervention\Image\Drivers\Gd\Driver as GdDriver;
 
 // use default size (8x8 = 64 bits)
-$hasher = new ImageHasher(new GdDriver(), new Difference());
+$hasher = new ImageHasher(new GdDriver(), new DifferenceStrategy());
 
 // use custom size (16x16 = 256 bits)
-$hasher = new ImageHasher(new GdDriver(), new Difference(size: 16));
+$hasher = new ImageHasher(new GdDriver(), new DifferenceStrategy(size: 16));
 
 $hash = $hasher->hash('images/photo.jpg');
 ```
 
 ### Average Strategy
 
-> public Average::__construct(int $size = 8)
+> public AverageStrategy::__construct(int $size = 8)
 
 The Average strategy (also called aHash or Mean Hash) generates hashes based on average image color. It's the simplest and fastest algorithm.
 
@@ -75,23 +75,23 @@ Best for:
 
 ```php
 use Intervention\ImageHash\ImageHasher;
-use Intervention\ImageHash\Strategies\Average;
+use Intervention\ImageHash\Strategies\AverageStrategy;
 use Intervention\Image\Drivers\Imagick\Driver as ImagickDriver;
 
 // use default size (8x8 = 64 bits)
-$hasher = new ImageHasher(new ImagickDriver(), new Average());
+$hasher = new ImageHasher(new ImagickDriver(), new AverageStrategy());
 
 // use custom size (12x12 = 144 bits)
-$hasher = new ImageHasher(new ImagickDriver(), new Average(size: 12));
+$hasher = new ImageHasher(new ImagickDriver(), new AverageStrategy(size: 12));
 
 $hash = $hasher->hash('images/photo.jpg');
 ```
 
 ### Block Strategy
 
-> public Block::__construct(int $size = 16, string $mode = Block::PRECISE)
+> public BlockStrategy::__construct(int $size = 16, string $mode = BlockStrategy::PRECISE)
 
-The Block strategy (also called Blockhash) divides images into blocks and generates hashes based on block brightness compared to median values. Based on the algorithm from [blockhash.io](http://blockhash.io).
+The Block strategy (also called Blockhash) divides images into blocks and generates hashes based on block brightness compared to median values.
 
 The strategy divides images into blocks, calculates median brightness across horizontal bands, then sets hash bits based on whether each block is brighter than its band median.
 
@@ -107,7 +107,7 @@ Use this for:
 | Parameter | Type | Default | Description |
 | - | - | - | - |
 | size | int | 16 | Hash size in bits (must be divisible by 4) |
-| mode | string | Block::PRECISE | Computation mode: `Block::PRECISE` or `Block::QUICK` |
+| mode | string | `BlockStrategy::PRECISE` | Computation mode: `BlockStrategy::PRECISE` or `BlockStrategy::QUICK` |
 
 #### Constants
 
@@ -118,20 +118,20 @@ Use this for:
 
 ```php
 use Intervention\ImageHash\ImageHasher;
-use Intervention\ImageHash\Strategies\Block;
+use Intervention\ImageHash\Strategies\BlockStrategy;
 use Intervention\Image\Drivers\Gd\Driver as GdDriver;
 
 // use default settings (16 bits, precise mode)
-$hasher = new ImageHasher(new GdDriver(), new Block());
+$hasher = new ImageHasher(new GdDriver(), new BlockStrategy());
 
 // use custom size with quick mode
 $hasher = new ImageHasher(
     new GdDriver(),
-    new Block(size: 256, mode: Block::QUICK)
+    new Block(size: 256, mode: BlockStrategy::QUICK)
 );
 
 // size must be divisible by 4
-$hasher = new ImageHasher(new GdDriver(), new Block(size: 64));
+$hasher = new ImageHasher(new GdDriver(), new BlockStrategy(size: 64));
 
 $hash = $hasher->hash('images/photo.jpg');
 ```
@@ -139,7 +139,7 @@ $hash = $hasher->hash('images/photo.jpg');
 
 ### Perceptual Strategy
 
-> public Perceptual::__construct(int $size = 32, string $comparisonMethod = Perceptual::AVERAGE)
+> public PerceptualStrategy::__construct(int $size = 32, string $comparisonMethod = PerceptualStrategy::AVERAGE)
 
 The Perceptual strategy (also called pHash) is the original perceptual hash algorithm. It uses Discrete Cosine Transform (DCT) to identify frequency patterns.
 
@@ -157,33 +157,33 @@ Best suited for:
 | Parameter | Type | Default | Description |
 | - | - | - | - |
 | size | int | 32 | Initial resize dimension (must be at least 8) |
-| comparisonMethod | string | Perceptual::AVERAGE | Comparison method: `Perceptual::AVERAGE` or `Perceptual::MEDIAN` |
+| comparisonMethod | string | PerceptualStrategy::AVERAGE | Comparison method: `PerceptualStrategy::AVERAGE` or `PerceptualStrategy::MEDIAN` |
 
 #### Constants
 
-- `Perceptual::AVERAGE` - Compare DCT coefficients to average value
-- `Perceptual::MEDIAN` - Compare DCT coefficients to median value
+- `PerceptualStrategy::AVERAGE` - Compare DCT coefficients to average value
+- `PerceptualStrategy::MEDIAN` - Compare DCT coefficients to median value
 
 #### Example
 
 ```php
 use Intervention\ImageHash\ImageHasher;
-use Intervention\ImageHash\Strategies\Perceptual;
+use Intervention\ImageHash\Strategies\PerceptualStrategy;
 use Intervention\Image\Drivers\Imagick\Driver as ImagickDriver;
 
 // use default settings (size 32, average comparison)
-$hasher = new ImageHasher(new ImagickDriver(), new Perceptual());
+$hasher = new ImageHasher(new ImagickDriver(), new PerceptualStrategy());
 
 // use median comparison
 $hasher = new ImageHasher(
     new ImagickDriver(),
-    new Perceptual(comparisonMethod: Perceptual::MEDIAN)
+    new Perceptual(comparisonMethod: PerceptualStrategy::MEDIAN)
 );
 
 // use larger size for potentially better accuracy
 $hasher = new ImageHasher(
     new ImagickDriver(),
-    new Perceptual(size: 64)
+    new PerceptualStrategy(size: 64)
 );
 
 $hash = $hasher->hash('images/photo.jpg');
