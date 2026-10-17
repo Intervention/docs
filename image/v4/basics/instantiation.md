@@ -31,12 +31,14 @@ The following `source` argument formats are accepted.
 
 - Path in filesystem
 - Raw binary image data
-- `SplFileInfo` object
 - Base64 encoded image data
-- Data Uri string or instance of `DataUriInterface`
 - Stream resource
-- Instance of ImageInterface
-- Instance of EncodedImageInterface
+- `SplFileInfo` object
+- Data Uri string or instance of `Intervention\Image\Interfaces\DataUriInterface`
+- Instance of `Psr\Http\Message\StreamInterface`
+- Instance of `Psr\Http\Message\ResponseInterface`
+- Instance of `Intervention\Image\Interfaces\ImageInterface`
+- Instance of `Intervention\Image\Interfaces\EncodedImageInterface`
 
 To decode the source, you can optionally specify which decoder to use with the
 second parameter. This can be an array of class names or objects of decoders to
