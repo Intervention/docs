@@ -32,10 +32,9 @@ The following `source` argument formats are accepted.
 - Path in filesystem
 - Raw binary image data
 - Base64 encoded image data
-- Stream resource
+- Stream resource or instance of `Psr\Http\Message\StreamInterface`
 - `SplFileInfo` object
 - Data Uri `string` or instance of `Intervention\Image\Interfaces\DataUriInterface`
-- Instance of `Psr\Http\Message\StreamInterface`
 - Instance of `Psr\Http\Message\ResponseInterface`
 - Instance of `Intervention\Image\Interfaces\ImageInterface`
 - Instance of `Intervention\Image\Interfaces\EncodedImageInterface`
@@ -84,6 +83,7 @@ $image = $manager->decode($input, FilePathImageDecoder::class);
 // same with object instead of class name
 $image = $manager->decode($input, new FilePathImageDecoder());
 ```
+
 ### Read Images from File Paths
 
 > public ImageManager::decodePath(string|Stringable $path): ImageInterface
@@ -106,6 +106,7 @@ $manager = ImageManager::usingDriver(Driver::class);
 // read image from filesystem
 $image = $manager->decodePath('images/example.jpg');
 ```
+
 ### Read Images from Binary Data
 
 > public ImageManager::decodeBinary(string|Stringable $binary): ImageInterface
@@ -127,30 +128,6 @@ $manager = ImageManager::usingDriver(Driver::class);
 
 // read image from binary
 $image = $manager->decodeBinary(file_get_contents('images/example.jpg'));
-```
-### Read Images from SplFileInfo Objects
-
-> public ImageManager::decodeSplFileInfo(SplFileInfo $splFileInfo): ImageInterface
-
-Decode an image by decoding the image data of the given SplFileInfo instance.
-Use this method to handle image file uploads in the Laravel or Symfony
-frameworks from `Illuminate\Http\UploadedFile` or `Symfony\Component\HttpFoundation\File\UploadedFile`.
-
-#### Parameters
-
-| Name | Type | Description |
-| - | - | - |
-| splFileInfo | SplFileInfo | Instance of SplFileInfo with image data |
-
-```php
-use Intervention\Image\ImageManager;
-use Intervention\Image\Drivers\Imagick\Driver;
-
-// create new manager instance with desired driver
-$manager = ImageManager::usingDriver(Driver::class);
-
-// read image from splFileInfo object
-$image = $manager->decodeSplFileInfo(new SplFileInfo('example.jpg'));
 ```
 
 ### Read Images from Base64 Encoded Data
@@ -174,29 +151,6 @@ $manager = ImageManager::usingDriver(Driver::class);
 
 // read image from base64 encoded data
 $image = $manager->decodeBase64('Zm9vYmFyYmF6MTIzNDU2Nzg5MA...');
-```
-
-### Read Images from Data Uri Scheme
-
-> public ImageManager::decodeDataUri(string|Stringable|DataUriInterface $dataUri): ImageInterface
-
-Create an image instance by decoding the image in the given data uri scheme.
-
-#### Parameters
-
-| Name | Type | Description |
-| - | - | - |
-| dataUri | string, Stringable or DataUriInterface | Image data encoded as data uri scheme.  |
-
-```php
-use Intervention\Image\ImageManager;
-use Intervention\Image\Drivers\Imagick\Driver;
-
-// create new manager instance with desired driver
-$manager = ImageManager::usingDriver(Driver::class);
-
-// read image from data uri
-$image = $manager->decodeDataUri('data:image/jpeg,Zm9vYmFyYmF6MTIzNDU2Nzg5MA...');
 ```
 
 ### Read Images from Stream
@@ -223,6 +177,54 @@ $stream = fopen('example.jpg', 'r');
 
 // read image from stream
 $image = $manager->decodeStream($stream);
+```
+
+### Read Images from SplFileInfo Objects
+
+> public ImageManager::decodeSplFileInfo(SplFileInfo $splFileInfo): ImageInterface
+
+Decode an image by decoding the image data of the given SplFileInfo instance.
+Use this method to handle image file uploads in the Laravel or Symfony
+frameworks from `Illuminate\Http\UploadedFile` or `Symfony\Component\HttpFoundation\File\UploadedFile`.
+
+#### Parameters
+
+| Name | Type | Description |
+| - | - | - |
+| splFileInfo | SplFileInfo | Instance of SplFileInfo with image data |
+
+```php
+use Intervention\Image\ImageManager;
+use Intervention\Image\Drivers\Imagick\Driver;
+
+// create new manager instance with desired driver
+$manager = ImageManager::usingDriver(Driver::class);
+
+// read image from splFileInfo object
+$image = $manager->decodeSplFileInfo(new SplFileInfo('example.jpg'));
+```
+
+### Read Images from Data Uri Scheme
+
+> public ImageManager::decodeDataUri(string|Stringable|DataUriInterface $dataUri): ImageInterface
+
+Create an image instance by decoding the image in the given data uri scheme.
+
+#### Parameters
+
+| Name | Type | Description |
+| - | - | - |
+| dataUri | string, Stringable or DataUriInterface | Image data encoded as data uri scheme.  |
+
+```php
+use Intervention\Image\ImageManager;
+use Intervention\Image\Drivers\Imagick\Driver;
+
+// create new manager instance with desired driver
+$manager = ImageManager::usingDriver(Driver::class);
+
+// read image from data uri
+$image = $manager->decodeDataUri('data:image/jpeg,Zm9vYmFyYmF6MTIzNDU2Nzg5MA...');
 ```
 
 ### Read Images from HTTP Responses
