@@ -34,7 +34,7 @@ The following `source` argument formats are accepted.
 - Base64 encoded image data
 - Stream resource
 - `SplFileInfo` object
-- Data Uri string or instance of `Intervention\Image\Interfaces\DataUriInterface`
+- Data Uri `string` or instance of `Intervention\Image\Interfaces\DataUriInterface`
 - Instance of `Psr\Http\Message\StreamInterface`
 - Instance of `Psr\Http\Message\ResponseInterface`
 - Instance of `Intervention\Image\Interfaces\ImageInterface`
