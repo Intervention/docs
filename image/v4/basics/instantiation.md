@@ -201,13 +201,13 @@ $image = $manager->decodeDataUri('data:image/jpeg,Zm9vYmFyYmF6MTIzNDU2Nzg5MA...'
 
 > public ImageManager::decodeStream(mixed $stream): ImageInterface
 
-Decode an image by using the given stream resource.
+Decode an image by using the contents of a PHP stream resource or an implementation of `Psr\Http\Message\StreamInterface`.
 
 #### Parameters
 
 | Name | Type | Description |
 | - | - | - |
-| stream | resource | Stream resource with image data |
+| stream | resource or `Psr\Http\Message\StreamInterface` | Stream with image data |
 
 ```php
 use Intervention\Image\ImageManager;
@@ -221,6 +221,33 @@ $stream = fopen('example.jpg', 'r');
 
 // read image from stream
 $image = $manager->decodeStream($stream);
+```
+
+### Read Images from HTTP Responses
+
+> public ImageManager::decodeHttpResponse(mixed $response): ImageInterface
+
+Decode an image from the contents of a PSR7 HTTP response implementing of `Psr\Http\Message\ResponseInterface`.
+
+#### Parameters
+
+| Name | Type | Description |
+| - | - | - |
+| stream | `Psr\Http\Message\ResponseInterface` | HTTP response object with image data. |
+
+```php
+use Intervention\Image\ImageManager;
+use Intervention\Image\Drivers\Imagick\Driver;
+
+// create new manager instance with desired driver
+$manager = ImageManager::usingDriver(Driver::class);
+
+// get image via http client
+$client = new \GuzzleHttp\Client();
+$response = $client->request('GET', 'https://example.com/image.jpg');
+
+// read image from http response
+$image = $manager->decodeHttpResponse($response);
 ```
 
 ## Create Images
